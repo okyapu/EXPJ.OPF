@@ -1,0 +1,372 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+現品票両替発行
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AD0060/AD0060010.html,v $
+$Author: geng-jia $	
+$Revision: 1.3 $ $Date: 2017/02/13 03:02:59 $
+********************************************************* --%>
+<html>
+<head>
+<title>現品票両替発行</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AD0060010" version="AD0060010 $Revision: 1.3 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+<!--one start -->
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+<!--one end -->
+
+<!--two start -->
+    <tr height="71"> 
+      <td width="5" height="71"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="AD0060010form1" status="<%= TypeConverter.sanitizer(aAD0060010Control.getReadStatusString()) %>" width="934" height="27" border="1" cellspacing="0" cellpadding="0"
+			     script1="onLoad;0;CALL;onDecision@0,1"
+			     script2="onDecision;0;CHKRQ;A@*0,*1"
+			     script3="onDecision;1;CHK;?AD0060010form1/IDENT_CARD_CTL_NO[eq]SAME[and]?AD0060010form1/*[eq]NORMAL@*4,*3"
+ 			     script4="child;0;UNMASK;_AD0060010button1/select"
+ 			     script5="child;1;MASK;_AD0060010button1/select"
+			     script6="child;2;UNMASK;_AD0060010button2/Print"
+			     script7="child;3;MASK;_AD0060010button2/Print"
+			     script8="child;4;CHKRQ;A@*2,*3"
+			   >
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=170 align=right>&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=170 align=right>&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88 align=left>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td required=true align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.IDENT_CARD_CTL_NO">現品票管理番号</span></td>
+                  <td><orftextinput  name="IDENT_CARD_CTL_NO" tablename="T_IDENT_CARD" columnname="IDENT_CARD_CTL_NO" dbtype="varchar2" tablejname="現品票" columnjname="現品票管理番号"   orteus="true" width="260" required="A" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerIOrgCd" value="" pattern="none" orteus="false" width="22" height="22" attribute="BTS_PEEKER" script1="onClick;0;PEEKER;_AD0060010form1/IDENT_CARD_CTL_NO@<%=contextNo%>" sqlname="MP_IDENT_CARD_CTL_NO_01" sqlparam_1="<%=aAD0060010Control.getsysPLANT_CD()%>"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+		</tr>
+               </ornoloop> 
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"> </td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AD0060010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect"
+                     width="100" 
+                      script1="onClick;0;SUBMIT;_AD0060010form1/*@AD0060010Servlet"
+                      lock="0"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+<!--two end -->
+
+<!--three start -->
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+<!--three end -->
+
+<!--four start -->
+    <tr height="462"> 
+      <td width="5" height="462"></td>
+      <td valign="top" width="958" height="462"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04" height="418"></td>
+            <td colspan="3" class="frame05" height="418"> 
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="AD0060010form2" width="934" height="418" border="1" cellspacing="0" cellpadding="0" align="left">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=170 align=right>&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=170 align=right>&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88 align=left>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OPR_INST_CD">作業指示番号</span></td>
+                  <td><orftextinput name="OPR_INST_CD" tablename="T_IDENT_CARD" columnname="OPR_INST_CD" dbtype="varchar2" tablejname="" columnjname=""  orteus="true" width="260" editable="false" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="T_IDENT_CARD_CTL_NO" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PARTIAL_PRD_NO">分作回数</span></td>
+                  <td><orftextinput name="PARTIAL_PRD_NO" tablename="T_IDENT_CARD" columnname="PARTIAL_PRD_NO" dbtype="number" tablejname="" columnjname=""  orteus="true" width="150" editable="false" visible="true" password="false" text="" kind="OBT_INTEGER_Z;6" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                  <td><orftextinput name="ITEM_CD" tablename="T_IDENT_CARD" columnname="ITEM_CD" dbtype="varchar2" tablejname="" columnjname=""  orteus="true" width="260" editable="false" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2" tablejname="" columnjname=""  orteus="true" width="320" editable="false" visible="true" password="false" text="" kind="" maxlength="40" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.WS_CD">作業区</span></td>
+                  <td><orftextinput name="WS_CD" tablename="T_IDENT_CARD" columnname="WS_CD" dbtype="varchar2" tablejname="" columnjname=""  orteus="true" width="260" editable="false" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="WS_NAME" tablename="M_WS" columnname="WS_NAME" dbtype="varchar2" tablejname="" columnjname=""  orteus="true" width="320" editable="false" visible="true" password="false" text="" kind="" maxlength="40" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr> 
+                  <td align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CD">製番</span></td>
+                  <td><orftextinput  name="JOB_ODR_CD" tablename="T_IDENT_CARD" columnname="JOB_ODR_CD" dbtype="varchar2" tablejname="現品票" columnjname="製番" editable="false" orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr> 
+                  <td align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_LOT_CD">在庫ロット番号</span></td>
+                  <td><orftextinput  name="LOT_NO" tablename="T_IDENT_CARD" columnname="LOT_NO" dbtype="varchar2" tablejname="現品票" columnjname="在庫ロット番号" editable="false" orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OPR_DATE_3">作業日</span></td>
+                  <td><orftextinput name="OPR_DATE" tablename="T_IDENT_CARD" columnname="OPR_DATE" dbtype="date" tablejname="" columnjname=""  orteus="true" width="150" editable="false" visible="true" password="false" text="" kind="OBT_DATE;TYPE_YMD;" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="TEMP_IDENT_CARD_QTY" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FIRST_IDENT_CARD_QTY">初期現品票数量</span></td>
+                  <td><orftextinput name="FIRST_IDENT_CARD_QTY" tablename="T_IDENT_CARD" columnname="FIRST_IDENT_CARD_QTY" dbtype="number" tablejname="" columnjname=""  orteus="true" width="150" editable="false" visible="true" password="false" text="" kind="OBT_NUMBER_Z;14.1;FLOOR;4" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="ORI_IDENT_CARD_QTY" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.IDENT_CARD_QTY">現品票数量</span></td>
+                  <td><orftextinput name="IDENT_CARD_QTY" tablename="T_IDENT_CARD" columnname="IDENT_CARD_QTY" dbtype="number" tablejname="" columnjname=""  orteus="true" width="150" editable="true" visible="true" password="false" text="" kind="OBT_NUMBER_Z;14.1;FLOOR;4" maxlength="" required="" attribute=""
+ script1="onDecision;0;CHK;_AD0060010form2/UNIT_QTY_TYP[eq]1@*0,*4"
+ script2="child;0;CHK;[({_IDENT_CARD_QTY}*10000)%10000][gt]0@*1,*4"
+ script3="child;1;CFMPUT;_AD0060010form2/IDENT_CARD_QTY=YES:3,2@AB90001"
+ script4="child;2;SET;_IDENT_CARD_QTY=_ORI_IDENT_CARD_QTY"
+ script5="child;3;SET;_IDENT_CARD_QTY=[({_IDENT_CARD_QTY}-((({_IDENT_CARD_QTY}*10000)%10000)/10000))+1],*4"
+ script6="child;4;CHK;_AD0060010form2/IDENT_CARD_QTY[gt]_AD0060010form2/FIRST_IDENT_CARD_QTY[or]_AD0060010form2/IDENT_CARD_QTY[lte]0@*5,*12"
+ script7="child;5;CHK;_AD0060010form2/IDENT_CARD_QTY[gt]_AD0060010form2/FIRST_IDENT_CARD_QTY@*6,*9"
+ script8="child;6;SET;_TEMP_IDENT_CARD_QTY=_IDENT_CARD_QTY@*7"
+ script9="child;7;SET;_IDENT_CARD_QTY=_ORI_IDENT_CARD_QTY@*8"
+ script10="child;8;CHK;_AD0060010form2/TEMP_IDENT_CARD_QTY[gt]_AD0060010form2/FIRST_IDENT_CARD_QTY@!KZ10003"
+ script11="child;9;SET;_TEMP_IDENT_CARD_QTY=_IDENT_CARD_QTY@*10"
+ script12="child;10;SET;_IDENT_CARD_QTY=_ORI_IDENT_CARD_QTY@*11"
+ script13="child;11;CHK;_AD0060010form2/TEMP_IDENT_CARD_QTY[lte]0@!KZ10004"
+ script14="child;12;SET;_ORI_IDENT_CARD_QTY=_IDENT_CARD_QTY@*13"
+ script15="child;13;CHK;[({_IDENT_CARD_QTY}%{_PKG_UNIT_QTY})][eq]0@*14,*15"
+ script16="child;14;SET;_PRINT_QTY=[({_IDENT_CARD_QTY}/{_PKG_UNIT_QTY})]"
+ script17="child;15;SET;_PRINT_QTY=[({_IDENT_CARD_QTY}/{_PKG_UNIT_QTY})+1]"
+
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="MODIFY_COUNT" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PKG_UNIT_QTY_1">荷姿単位数量</span></td>
+                  <td><orftextinput name="PKG_UNIT_QTY" tablename="T_IDENT_CARD" columnname="PKG_UNIT_QTY" dbtype="number" tablejname="" columnjname=""  orteus="true" width="150" editable="false" visible="true" password="false" text="" kind="OBT_NUMBER_Z;14.1;FLOOR;4" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="DOWNLOAD_FILE" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PRINT_QTY">出力枚数</span></td>
+                  <td><orftextinput name="PRINT_QTY" orteus="true" width="" editable="false" visible="true" password="false" text="" kind="OBT_INTEGER_Z;10;;" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_UNIT_QTY_TYP" tablename="M_ITEM" columnname="UNIT_QTY_TYP" dbtype="number" tablejname="品目" columnjname="在庫数単位区分"  orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop> 
+              </table>
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06" height="418"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AD0060010button2" 
+ width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+				<td><orfbutton name="Print" value="更新" pattern="none" revokeCtrl="disabled"  orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="22" lock="0" attribute="" visible="true"
+ script1="onClick;0;CHK;_AD0060010form2/h_UNIT_QTY_TYP[eq]1@*1"
+ script2="onClick;1;CFMPUT;_AD0060010button2/Print=YES:0@ZZ07003"
+ script3="child;0;PRINTER;_AD0060010form2/*@AD0060010Servlet:H,H,H"
+ script4="child;1;CHK;[{_AD0060010form2/IDENT_CARD_QTY}%1][numneq]0@!KU10087"
+></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="462"></td>
+    </tr>
+<!--four end -->
+
+<!--five start -->
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+<!--five end -->
+
+<!--six start -->
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AD0060010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" script1="onClick;0;SUBMIT;_AD0060010form1/*@AD0060010Servlet,,$ZZ07008" lock="0"></orfbutton></td>
+                  <td><orfbutton  name="close" value="閉じる" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+<!--six end -->
+  </table>
+
+<%
+MessageStruct msgStruct = aAD0060010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

@@ -1,0 +1,2101 @@
+﻿ABC_TYP,棚卸区分/Inventory type,1,"1：棚卸対象品目(A)",0,0
+ABC_TYP,棚卸区分/Inventory type,2,"2：棚卸対象品目(B)",0,0
+ABC_TYP,棚卸区分/Inventory type,3,"3：棚卸対象品目(C)",0,0
+ABC_TYP,棚卸区分/Inventory type,9,"9：棚卸対象品目外",0,2
+ACCESS_TYP,処理方法/Process method,1,"1：追加",0,1
+ACCESS_TYP,処理方法/Process method,2,"2：削除",0,0
+ACCT_TYP,科目区分/Subject Div.,0,"0：資産・負債・資本科目（Ｂ／Ｓ科目）",1,2
+ACCT_TYP,科目区分/Subject Div.,1,"1：収益・費用科目（Ｐ／Ｌ科目）",1,2
+ACPT_INSPC_TYP,作業系列受入検査区分/WS Accpt inspec type,1,"1：受入のみ",1,2
+ACPT_INSPC_TYP,作業系列受入検査区分/WS Accpt inspec type,2,"2：受入後に検査を行う",1,2
+ACPT_STS_TYP,受入状態区分/Accpt state type,1,"1：未検査",1,2
+ACPT_STS_TYP,受入状態区分/Accpt state type,2,"2：検査完了",1,2
+ADD_TO_OD_FLG,生産計画登録フラグ/Prod plan register flag,0,"0：登録しない",1,2
+ADD_TO_OD_FLG,生産計画登録フラグ/Prod plan register flag,1,"1：登録する",1,2
+ALC_STOCK_TYP,引当在庫区分/Drawing stock type,1,"1：品目在庫",1,2
+ALC_STOCK_TYP,引当在庫区分/Drawing stock type,2,"2：製番在庫・先行手配製番",1,2
+ALC_TYP,引当処理区分/Drawing process type,1,"1：余剰在庫引当（手持在庫）",1,2
+ALC_TYP,引当処理区分/Drawing process type,2,"2：同一製番在庫（先行手配製番）引当",1,2
+ALC_TYP,引当処理区分/Drawing process type,3,"3：同一製番在庫（先行手配製番）の仕掛分引当",1,2
+ALC_TYP,引当処理区分/Drawing process type,4,"4：同一引当グループの製番在庫（先行手配製番）引当",1,2
+ALC_TYP,引当処理区分/Drawing process type,5,"5：同一引当グループの製番在庫（先行手配製番）の仕掛分引当",1,2
+ALC_TYP_2,引当区分/Drawing partition,1,"1：余剰",1,1
+ALC_TYP_2,引当区分/Drawing partition,2,"2：他製番",1,1
+ALC_TYP_2,引当区分/Drawing partition,3,"3：自製番",1,1
+AP_DATA_TYP,データ種別/Data type,10,"10：買掛計上",1,2
+AP_DATA_TYP,データ種別/Data type,20,"20：相殺",1,2
+AP_DATA_TYP,データ種別/Data type,30,"30：支払",1,2
+AP_PROC_TYP,買掛処理区分/AP Proc type,0,"0：未処理",1,2
+AP_PROC_TYP,買掛処理区分/AP Proc type,1,"1：相殺",1,2
+AP_PROC_TYP,買掛処理区分/AP Proc type,9,"9：削除",1,2
+AR_STL_STD_TYP,債権決済基準/Credit settlement STD ,1,"1：決済予定日ベース　",1,2
+AR_STL_STD_TYP,債権決済基準/Credit settlement STD ,2,"2：実決済日ベース",1,2
+AUTO_ISSUE_REL_FLG,要求解除フラグ/Demand REL flag,0,"0：未実行",0,1
+AUTO_ISSUE_REL_FLG,要求解除フラグ/Demand REL flag,1,"1：処理済み",0,0
+AUTO_JNL_TYP,自動仕訳区分/Auto journalizing Div.,1,"1：自動仕訳しない",1,2
+AUTO_JNL_TYP,自動仕訳区分/Auto journalizing Div.,2,"2：仕訳パターン指定",1,2
+AUTO_JNL_TYP,自動仕訳区分/Auto journalizing Div.,3,"3：科目指定",1,2
+AUTO_NUMBERING_TYP,自動・手動採番区分/Auto/Manual numbering Div.,1,"1：自動採番",1,2
+AUTO_NUMBERING_TYP,自動・手動採番区分/Auto/Manual numbering Div.,2,"2：手動採番",1,2
+AUTOISSUE_FLG,自動出庫制御フラグ/Auto issue control flag,0,"0：Real-Time",0,1
+AUTOISSUE_FLG,自動出庫制御フラグ/Auto issue control flag,1,"1：Batch Type",0,0
+AUTOISSUE_FLG_SAVE,自動出庫制御フラグセーブ/Auto issue control flag save,0,"0：Real-Time",0,1
+AUTOISSUE_FLG_SAVE,自動出庫制御フラグセーブ/Auto issue control flag save,1,"1：Batch Type",0,0
+B_ACCT_TYP,口座種別コード/Accnt type code,1,"1：普通",1,2
+B_ACCT_TYP,口座種別コード/Accnt type code,2,"2：当座",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,11,"11：売上",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,12,"12：返品",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,13,"13：諸掛",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,14,"14：その他",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,15,"15：値引",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,16,"16：歩引リベート",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,17,"17：その他値引き",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,19,"19：売上消費税調整",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,21,"21：振込",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,22,"22：小切手",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,23,"23：期日小切手",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,24,"24：現金",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,25,"25：期日振込",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,26,"26：手形",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,27,"27：入金値引",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,28,"28：その他入金",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,31,"31：手数料",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,32,"32：入金消費税調整",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,41,"41：買掛相殺",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,42,"42：その他相殺",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,51,"51：不良債権",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,98,"98：その他",1,2
+BALANCE_CLASS_CD,残高分類コード/Balance class code,99,"99：対象外",1,2
+BALANCE_CTRL_FLG,残高管理フラグ/Balance mgt flag,0,"0：しない",1,2
+BALANCE_CTRL_FLG,残高管理フラグ/Balance mgt flag,1,"1：する",1,2
+BALANCE_EXT_FLG_AR,残高抽出フラグ/Balance extraction flag,0,"0：未抽出",1,2
+BALANCE_EXT_FLG_AR,残高抽出フラグ/Balance extraction flag,1,"1：抽出済",1,2
+BATCH_PROCESSING_TYP,バッチ処理区分/Batch-process type,1,"1：自動運転する（夜間バッチあり）",0,1
+BATCH_PROCESSING_TYP,バッチ処理区分/Batch-process type,2,"2：自動運転しない（夜間バッチなし）",0,0
+BATCH_TYP,バッチ処理区分/Batch-process type,1,"1：夜間バッチ",1,2
+BATCH_TYP,バッチ処理区分/Batch-process type,2,"2：マニュアル",1,2
+BILL_FLG,請求書扱いフラグ/Bill treatment flag,0,"0：請求書扱いしない（自動計上可）",0,1
+BILL_FLG,請求書扱いフラグ/Bill treatment flag,1,"1：請求書扱いする（自動計上不可）",0,0
+BILL_ISS_FLG_AR,請求書発行フラグ/Bill issue flag,0,"0：未発行",1,2
+BILL_ISS_FLG_AR,請求書発行フラグ/Bill issue flag,1,"1：発行済",1,2
+BILL_PRINT_FLG,請求書発行済フラグ/Bill issued flag,0,"0：未発行",1,2
+BILL_PRINT_FLG,請求書発行済フラグ/Bill issued flag,1,"1：発行済み",1,2
+BILL_PRINTING_TYP,請求書発行単位/Bill issue unit,1,"1：得意先単位　",1,2
+BILL_PRINTING_TYP,請求書発行単位/Bill issue unit,2,"2：請求先単位",1,2
+BILL_TYP_PERMIT_FLG,手形種別許可フラグ/Bill type permit flag,0,"0：為替、約束手形",1,2
+BILL_TYP_PERMIT_FLG,手形種別許可フラグ/Bill type permit flag,1,"1：為替手形のみ",1,2
+BILL_TYP_PERMIT_FLG,手形種別許可フラグ/Bill type permit flag,2,"2：約束手形のみ",1,2
+CHANGEABLE_TYP,変更可否区分/Changeable type,0,"0：変更・削除可能",1,2
+CHANGEABLE_TYP,変更可否区分/Changeable type,1,"1：変更可能・削除不可",1,2
+CHANGEABLE_TYP,変更可否区分/Changeable type,2,"2：変更・削除不可",1,2
+CHART_TYP,グラフ種類/Graph type,1,"1：STACKCOL",1,2
+CHART_TYP,グラフ種類/Graph type,2,"2：STACKAREA",1,2
+CHECK_TYP,チェック区分/Check type,1,"1：チェックしない　　",1,2
+CHECK_TYP,チェック区分/Check type,2,"2：警告",1,2
+CHECK_TYP,チェック区分/Check type,3,"3：エラー",1,2
+CHECK_TYP_PERMIT_FLG,小切手種別許可フラグ/Check type permit flag,0,"0：期日小切手許可 ",1,2
+CHECK_TYP_PERMIT_FLG,小切手種別許可フラグ/Check type permit flag,1,"1：期日小切手不可",1,2
+CHNG_FLG_AR,変更フラグ/CHG flag,0,"0：未変更",1,2
+CHNG_FLG_AR,変更フラグ/CHG flag,1,"1：変更",1,2
+CLAIM_BNDL_TYP_AR,請求締め区分/Claim closing Div.,1,"1：請求締め未処理",1,2
+CLAIM_BNDL_TYP_AR,請求締め区分/Claim closing Div.,2,"2：請求締め保留",1,2
+CLAIM_BNDL_TYP_AR,請求締め区分/Claim closing Div.,3,"3：請求締め済",1,2
+CLAIM_CYCLE_TYP,請求サイクル/Claim cycle,1,"1：締次請求　",1,2
+CLAIM_CYCLE_TYP,請求サイクル/Claim cycle,2,"2：都度請求",1,2
+CLAIM_CYCLE_TYP_SEARCH_COND_1,請求サイクル検索条件/Claim cycle retrieval COND,1,"1:締次請求",1,2
+CLAIM_CYCLE_TYP_SEARCH_COND_1,請求サイクル検索条件/Claim cycle retrieval COND,2,"2:都度請求",1,2
+CLAIM_CYCLE_TYP_SEARCH_COND_1,請求サイクル検索条件/Claim cycle retrieval COND,99,"99:全て",1,2
+CLOSING_STATUS,締め区分/Closing Div.,1,"1：締め前",1,2
+CLOSING_STATUS,締め区分/Closing Div.,2,"2：締め保留",1,2
+CLOSING_STATUS,締め区分/Closing Div.,3,"3：締め済",1,2
+CLOSING_STATUS_SEARCH_COND_AR_1,締め区分検索条件/Closing Div. retrieval COND,1,"1：締め前",1,2
+CLOSING_STATUS_SEARCH_COND_AR_1,締め区分検索条件/Closing Div. retrieval COND,2,"2：締め保留",1,2
+CLOSING_STATUS_SEARCH_COND_AR_1,締め区分検索条件/Closing Div. retrieval COND,3,"3：締め済",1,2
+CLOSING_STATUS_SEARCH_COND_AR_1,締め区分検索条件/Closing Div. retrieval COND,99,"99：全て",1,2
+CLOSING_STATUS_SEARCH_COND_AR_2,締め区分検索条件２/Closing Div. retrieval COND2,1,"1：締め前",1,2
+CLOSING_STATUS_SEARCH_COND_AR_2,締め区分検索条件２/Closing Div. retrieval COND2,2,"2：締め保留",1,2
+CLOSING_STATUS_SEARCH_COND_AR_2,締め区分検索条件２/Closing Div. retrieval COND2,99,"99：全て",1,2
+CMPLT_FLG,完了フラグ/Completion flag,0,"0：未",1,2
+CMPLT_FLG,完了フラグ/Completion flag,1,"1：完了",1,2
+COCK_TYP,コック区分/Consigned goods type,1,"1：通常品",1,2
+COCK_TYP,コック区分/Consigned goods type,2,"2：コック品",1,2
+COND_TYP,条件区分/COND Div.,0," ",1,2
+COND_TYP,条件区分/COND Div.,1,"LIKE",1,2
+COND_TYP,条件区分/COND Div.,2,"=",1,2
+COND_TYP,条件区分/COND Div.,3,"<>",1,2
+COND_TYP,条件区分/COND Div.,4,"<=",1,2
+COND_TYP,条件区分/COND Div.,5,">=",1,2
+COND_TYP,条件区分/COND Div.,6,"<",1,2
+COND_TYP,条件区分/COND Div.,7,">",1,2
+COND_TYP,条件区分/COND Div.,8,"範囲指定",1,2
+COND_TYP,条件区分/COND Div.,9,"IN",1,2
+COND_TYP,条件区分/COND Div.,10,"IS NULL",1,2
+COND_TYP,条件区分/COND Div.,11,"IS NOT NULL",1,2
+CONS_TYP,支給区分/Supply type,0,"0：非",1,2
+CONS_TYP,支給区分/Supply type,1,"1：有償支給",1,2
+CONS_TYP,支給区分/Supply type,2,"2：無償支給",1,2
+CONTENTS_TYP,振込内容区分/Transfer contents Div.,11,"11：給与，賞与振込　",1,2
+CONTENTS_TYP,振込内容区分/Transfer contents Div.,21,"21：総合振込",1,2
+COST_ACCOUNT_CMPLT_FLG,標準原価計算済フラグ/STD cost calculated flag,0,"0：未計算",1,2
+COST_ACCOUNT_CMPLT_FLG,標準原価計算済フラグ/STD cost calculated flag,1,"1：計算（積上）済み",1,2
+COST_EXCLUDE_FLG,原価除外フラグ/Cost excluding flag,0,"0：除外しない",1,2
+COST_EXCLUDE_FLG,原価除外フラグ/Cost excluding flag,1,"1：除外する",1,2
+COST_TYP,原価種別/Cost type,1,"1：標準原価",1,2
+COST_UP_TYP,原価積上区分/Cost load type,0,"0：積上げしない",1,2
+COST_UP_TYP,原価積上区分/Cost load type,1,"1：積上げする",1,2
+CRCT_FLG,赤黒処理済フラグ/Red black the Proced flag,0,"0：未処理",1,2
+CRCT_FLG,赤黒処理済フラグ/Red black the Proced flag,1,"1：処理済",1,2
+CRCT_TYP,訂正区分/Correction type,1,"1：赤",1,2
+CRCT_TYP,訂正区分/Correction type,2,"2：黒",1,2
+CS_CALC_PROC_NO,原価計算処理番号/Cost Calc proc No.,0,"0：実行中処理無し",1,2
+CS_CALC_PROC_NO,原価計算処理番号/Cost Calc proc No.,1,"1：標準原価計算開始処理",1,2
+CS_CALC_PROC_NO,原価計算処理番号/Cost Calc proc No.,2,"2：標準原価構成品ワーク作成処理",1,2
+CS_CALC_PROC_NO,原価計算処理番号/Cost Calc proc No.,3,"3：標準材料費・加工費計算処理",1,2
+CS_CALC_PROC_NO,原価計算処理番号/Cost Calc proc No.,4,"4：標準原価計算積上処理",1,2
+CS_CALC_PROC_NO,原価計算処理番号/Cost Calc proc No.,5,"5：標準原価マスタチェック開始処理",1,2
+CS_CALC_PROC_NO,原価計算処理番号/Cost Calc proc No.,6,"6:標準材料費・加工費チェック処理",1,2
+CS_PUCH_TYP,購入品単価種別/PA UC type,1,"1：購入単価",1,2
+CS_PUCH_TYP,購入品単価種別/PA UC type,2,"2：外注単価",1,2
+CTRL_CD,権限コード/Authority code,1,"01：伝票管理　　　",1,2
+CTRL_CD,権限コード/Authority code,2,"02：支払締め管理",1,2
+CTRL_CD,権限コード/Authority code,3,"03：支払計算管理",1,2
+CTRL_CD,権限コード/Authority code,4,"04：支払確定管理",1,2
+CUST_UNIT_PRICE_TYP_AR,相手単価区分/Cust unit cost type,1,"1：確定",1,2
+CUST_UNIT_PRICE_TYP_AR,相手単価区分/Cust unit cost type,2,"2：変更",1,2
+CUST_UNIT_PRICE_TYP_AR,相手単価区分/Cust unit cost type,3,"3：未定",1,2
+CUST_VARIOUS_TYP,諸口得意先区分/Sundries cust type,1,"1：通常",1,2
+CUST_VARIOUS_TYP,諸口得意先区分/Sundries cust type,2,"2：諸口",1,2
+DATA_GENERAT_TYP_AR,データ発生区分/Data Gener Div.,1,"1：販売Ｉ／Ｆ",1,2
+DATA_GENERAT_TYP_AR,データ発生区分/Data Gener Div.,2,"2：売掛計上予定入力",1,2
+DATA_GENERAT_TYP_AR,データ発生区分/Data Gener Div.,3,"3：売掛Ｉ／Ｆ",1,2
+DATA_GENERAT_TYP_AR,データ発生区分/Data Gener Div.,4,"4：入金入力",1,2
+DATA_GENERAT_TYP_AR,データ発生区分/Data Gener Div.,5,"5：ＦＢ入金",1,2
+DEAL_STS_FLG,取引状態フラグ/Dealings state flag,0,"0：取引中",1,2
+DEAL_STS_FLG,取引状態フラグ/Dealings state flag,1,"1：取引停止",1,2
+DEAL_STS_TYP,取引状態フラグ/Dealings state flag,0,"0：取引中",1,2
+DEAL_STS_TYP,取引状態フラグ/Dealings state flag,1,"1：取引停止",1,2
+DEPO_TYP,預託倉庫区分/Deposition warehouse type,10,"10：通常",1,2
+DEPO_TYP,預託倉庫区分/Deposition warehouse type,20,"20：預託",1,2
+DETAIL_OP_FLG_AR,明細未出力フラグ/Detail un-output flag,0,"0：出力する",1,2
+DETAIL_OP_FLG_AR,明細未出力フラグ/Detail un-output flag,1,"1：出力しない",1,2
+DETAIL_ROUND_TYP,明細計算まるめ区分/Detail calc rounding indicator,1,"1:四捨五入",0,1
+DETAIL_ROUND_TYP,明細計算まるめ区分/Detail calc rounding indicator,2,"2:切り上げ",0,1
+DETAIL_ROUND_TYP,明細計算まるめ区分/Detail calc rounding indicator,3,"3:切り捨て",0,1
+DEVELOP_TYP,展開区分/Expn Typ,1,"1：正展開",1,2
+DEVELOP_TYP,展開区分/Expn Typ,2,"2：逆展開",1,2
+DIMENSION_TYP,次元/Dimension,1,"1：VIEW2D(2次元)",1,2
+DIMENSION_TYP,次元/Dimension,2,"2：VIEW3D(3次元)",1,2
+DIRECT_DLV_TYP,直納区分/Direct-deliv type,1,"1：通常品",1,2
+DIRECT_DLV_TYP,直納区分/Direct-deliv type,2,"2：直納品",1,2
+DISCOUNT_RATE_TYP,割引率計算区分/Discount rate Calc Div.,1,"1：単価×割引率",1,2
+DISCOUNT_RATE_TYP,割引率計算区分/Discount rate Calc Div.,2,"2：金額×割引率",1,2
+DLV_INST_TYP,納入指示有無区分/Delivery inst existence type,1,"1：納入指示なし",1,2
+DLV_INST_TYP,納入指示有無区分/Delivery inst existence type,2,"2：納入指示有り",1,2
+DLV_PRICE_OPEN_TYP,納品書価格表示区分/Delivery invoice price display type,1,"1：価格表示しない",1,2
+DLV_PRICE_OPEN_TYP,納品書価格表示区分/Delivery invoice price display type,2,"2：価格表示する",1,2
+DM_STS_TYP,デマンド状態区分/Demand state type,0,"0：デマンド情報ではない",1,2
+DM_STS_TYP,デマンド状態区分/Demand state type,1,"1：計画（未発効)",1,2
+DM_STS_TYP,デマンド状態区分/Demand state type,2,"2：確定（発効）",1,2
+DM_STS_TYP,デマンド状態区分/Demand state type,9,"9：完了",1,2
+DMY_ITEM_FLG,擬似品目フラグ/Likely item flag,0,"0：擬似品目以外",1,2
+DMY_ITEM_FLG,擬似品目フラグ/Likely item flag,1,"1：擬似品目",1,2
+DR_CR_TYP,貸借区分/Loan type,0,"0：貸借なし",1,2
+DR_CR_TYP,貸借区分/Loan type,1,"1：借方",1,2
+DR_CR_TYP,貸借区分/Loan type,2,"2：貸方",1,2
+DRAFT_TYP,手形種別/Bill type,0,"0：為替・予約手形",1,2
+DRAFT_TYP,手形種別/Bill type,1,"1：為替手形のみ",1,2
+DRAFT_TYP,手形種別/Bill type,2,"2：約束手形のみ",1,2
+DUE_DATE_TRF_FB_FLG,期日振込ＦＢフラグ/Deadline transfer FB flag,0,"0：受信しない",1,2
+DUE_DATE_TRF_FB_FLG,期日振込ＦＢフラグ/Deadline transfer FB flag,1,"1：受信する",1,2
+EDI_CONS_TYP,EDI支給区分/EDI supply type,1,"1：支給無し",1,2
+EDI_CONS_TYP,EDI支給区分/EDI supply type,2,"2：有償",1,2
+EDI_CONS_TYP,EDI支給区分/EDI supply type,3,"3：無償",1,2
+EDI_CONS_TYP,EDI支給区分/EDI supply type,4,"4：混在",1,2
+EDI_DATA_TYP_AR,EDIデータ種別/EDI date type,1,"1：ＥＩＡＪ",1,2
+EDI_DATA_TYP_AR,EDIデータ種別/EDI date type,2,"2：ＥＩＡＪ以外Ｉ",1,2
+EDI_DATA_TYP_AR,EDIデータ種別/EDI date type,9,"9：ＥＤＩ対象外",1,2
+EDI_ODR_ISS_FLG,データ処理済みフラグ/Data-process finishing flag,0,"0：未処理",1,2
+EDI_ODR_ISS_FLG,データ処理済みフラグ/Data-process finishing flag,1,"1：処理済",1,2
+EDI_TRN_BILL_TYP,ＥＤＩ取引区分（請求）/EDI dealings type（claim）,1,"1：明細",1,2
+EDI_TRN_BILL_TYP,ＥＤＩ取引区分（請求）/EDI dealings type（claim）,2,"2：鏡",1,2
+EDI_TRN_BILL_TYP,ＥＤＩ取引区分（請求）/EDI dealings type（claim）,3,"3：鏡、明細",1,2
+EDI_TRN_BILL_TYP,ＥＤＩ取引区分（請求）/EDI dealings type（claim）,9,"9：なし",1,2
+EDI_TRN_RM_TYP,ＥＤＩ取引区分（入金）/EDI dealings type（Recpt）,1,"1：請求先一括",1,2
+EDI_TRN_RM_TYP,ＥＤＩ取引区分（入金）/EDI dealings type（Recpt）,2,"2：得意先一括",1,2
+EDI_TRN_RM_TYP,ＥＤＩ取引区分（入金）/EDI dealings type（Recpt）,3,"3：明細　",1,2
+EDI_TRN_RM_TYP,ＥＤＩ取引区分（入金）/EDI dealings type（Recpt）,9,"9：なし",1,2
+EDIT_TYP,入力フラグ/Input flag,0,"0：ＧＵＩ設定",1,2
+EDIT_TYP,入力フラグ/Input flag,1,"1：フリー入力",1,2
+ENTRY_1_TYP,エントリ区分１/Entry type 1,1,"1：手配着手日",1,2
+ENTRY_1_TYP,エントリ区分１/Entry type 1,2,"2：製造着手日",1,2
+ENTRY_1_TYP,エントリ区分１/Entry type 1,3,"3：製造納期",1,2
+ENTRY_2_TYP,エントリ区分２/Entry type 2,1,"1：手入力",1,2
+ENTRY_2_TYP,エントリ区分２/Entry type 2,2,"2：今週",1,2
+ENTRY_2_TYP,エントリ区分２/Entry type 2,3,"3：今旬",1,2
+ENTRY_2_TYP,エントリ区分２/Entry type 2,4,"4：今月",1,2
+EXCH_TYP,為替種別/Exchange type,1,"1：社内標準",0,2
+EXCH_TYP,為替種別/Exchange type,2,"2：為替予約",0,2
+EXCH_TYP,為替種別/Exchange type,3,"3：TTS",0,0
+EXCH_TYP,為替種別/Exchange type,4,"4：TTM",0,0
+EXCH_TYP,為替種別/Exchange type,5,"5：TTB",0,0
+EXCH_TYP_AP,買掛為替種別/AP exchange type,0,"　",1,2
+EXCH_TYP_AP,買掛為替種別/AP exchange type,1,"1：社内標準",1,2
+EXCH_TYP_AP,買掛為替種別/AP exchange type,2,"2：為替予約",1,2
+EXCH_TYP_AP,買掛為替種別/AP exchange type,3,"3：ＴＴＳ",1,2
+EXCH_TYP_AP,買掛為替種別/AP exchange type,4,"4：ＴＴＭ",1,2
+EXCH_TYP_SEARCH_COND,為替種別検索条件/Exchange type retrieval COND,1,"1：社内標準",1,2
+EXCH_TYP_SEARCH_COND,為替種別検索条件/Exchange type retrieval COND,2,"2：為替予約",1,2
+EXCH_TYP_SEARCH_COND,為替種別検索条件/Exchange type retrieval COND,3,"3：ＴＴＳ",1,2
+EXCH_TYP_SEARCH_COND,為替種別検索条件/Exchange type retrieval COND,4,"4：ＴＴＭ",1,2
+EXECUTE_STATUS_TYP,実行状態区分/EXEC state type,0,"0：終了",1,2
+EXECUTE_STATUS_TYP,実行状態区分/EXEC state type,1,"1：実行中",1,2
+EXPL_TYP,摘要区分/Summary type,0,"0：摘要",1,2
+EXPL_TYP,摘要区分/Summary type,1,"1：銀行",1,2
+EXPL_TYP,摘要区分/Summary type,2,"2：得意先",1,2
+EXPL_TYP,摘要区分/Summary type,3,"3：仕入先",1,2
+EXPL_TYP,摘要区分/Summary type,4,"4：人事",1,2
+EXPL_TYP,摘要区分/Summary type,5,"5：その他取引先",1,2
+EXPORT_INSPC_ACPT_TYP,輸出検収区分/Export receiving check Div.,2,"2：受領基準",1,2
+EXPORT_INSPC_ACPT_TYP,輸出検収区分/Export receiving check Div.,3,"3：売上基準",1,2
+EXPORT_TRN_TYP,輸出取引区分/Export dealings Div.,1,"1：国内取引",1,2
+EXPORT_TRN_TYP,輸出取引区分/Export dealings Div.,2,"2：輸出取引",1,2
+EXTERNAL_DM_FLG,外部デマンドフラグ/External demand flag,0,"0：内部デマンド",1,2
+EXTERNAL_DM_FLG,外部デマンドフラグ/External demand flag,1,"1：外部デマンド",1,2
+EXTERNAL_PLAN_DEL_FLG,外部デマンド/External demand,0,"0：非",1,2
+EXTERNAL_PLAN_DEL_FLG,外部デマンド/External demand,1,"1：削除対象",1,2
+EXTERNAL_PLAN_EXP_TYP,外部デマンド/External demand,1,"1：追加",1,2
+EXTERNAL_PLAN_EXP_TYP,外部デマンド/External demand,2,"2：変更",1,2
+EXTERNAL_PLAN_EXP_TYP,外部デマンド/External demand,9,"9：済",1,2
+EXTERNAL_PLAN_REG_TYP,外部デマンド/External demand,1,"1：外部オーダデマンドメンテナンス",1,2
+EXTERNAL_PLAN_REG_TYP,外部デマンド/External demand,2,"2：総所要量展開処理",1,2
+FB_DATA_TYP,ＦＢデータ区分/FB data Div.,0,"0：ＪＩＳ",1,2
+FB_DATA_TYP,ＦＢデータ区分/FB data Div.,1,"1：ＥＢＣＤＩＣ",1,2
+FB_DATA_TYP,ＦＢデータ区分/FB data Div.,2,"2：ＦＢ対象外",1,2
+FB_FLG,ＦＢフラグ/FB flag,0,"0：一括振込依頼書",1,2
+FB_FLG,ＦＢフラグ/FB flag,1,"1：ＦＢ送信",1,2
+FEE_TYP,手数料区分/Commission type,1,"1：相手先負担　",1,2
+FEE_TYP,手数料区分/Commission type,2,"2：自社負担",1,2
+FINAL_PROC_FLG,最終系列フラグ/The last seq flag,0,"0：非",1,2
+FINAL_PROC_FLG,最終系列フラグ/The last seq flag,1,"1：最終経路",1,2
+GL_IF_AR_OUTPUT_METHOD,一般会計Ｉ／Ｆ売掛金出力方法/General accnt I/F AR output method,1,"1：日々出力",1,2
+GL_IF_AR_OUTPUT_METHOD,一般会計Ｉ／Ｆ売掛金出力方法/General accnt I/F AR output method,2,"2：月次出力",1,2
+GL_IF_FLG,一般会計インタフェースフラグ/General accnt interface flag,0,"0：インタフェースしない",1,2
+GL_IF_FLG,一般会計インタフェースフラグ/General accnt interface flag,1,"1：インタフェースする",1,2
+GL_IF_OUTPUT_TYP,一般会計Ｉ／Ｆ出力区分/General accnt I/F output Div.,1,"1：集計出力",1,2
+GL_IF_OUTPUT_TYP,一般会計Ｉ／Ｆ出力区分/General accnt I/F output Div.,2,"2：明細出力",1,2
+GROUP_NO_SETTING_COND_ARAP,グループNo設定フラグ/Group No. setting flag,0,"0：しない",1,2
+GROUP_NO_SETTING_COND_ARAP,グループNo設定フラグ/Group No. setting flag,1,"1：する",1,2
+HALF_TERM_TYP,半期区分/Half-yearly type,1,"1：上期",1,2
+HALF_TERM_TYP,半期区分/Half-yearly type,2,"2：下期",1,2
+HOLIDAY_FLG,休日フラグ/Holiday flag,0,"0：稼働日",1,2
+HOLIDAY_FLG,休日フラグ/Holiday flag,1,"1：休日",1,2
+HOLIDAY_TYP,休日処理区分/Holiday Proc type,1,"1：前日",1,2
+HOLIDAY_TYP,休日処理区分/Holiday Proc type,2,"2：翌日",1,2
+IMPORT_TRN_TYP,輸入取引区分/Import dealings type,1,"1：国内取引",0,1
+IMPORT_TRN_TYP,輸入取引区分/Import dealings type,2,"2：輸入取引",0,0
+INCLUDING_TAX_TYP,消費税区分/Consumption tax type,1,"1：税込",1,2
+INCLUDING_TAX_TYP,消費税区分/Consumption tax type,2,"2：税抜き",1,2
+INDIV_PAY_FLG_AR,個別入金完了フラグ/Ind Recpt completed flag,0,"0：未完了",1,2
+INDIV_PAY_FLG_AR,個別入金完了フラグ/Ind Recpt completed flag,1,"1：完了",1,2
+INFO_TYP,振込情報区分/Transfer Info type,1,"1：給与・賞与振込",1,2
+INFO_TYP,振込情報区分/Transfer Info type,7,"7：電信扱い",1,2
+INFO_TYP,振込情報区分/Transfer Info type,8,"8：文書扱い",1,2
+INPORT_TRN_TYP,輸入取引区分/Import dealings type,1,"1：国内取引",0,1
+INPORT_TRN_TYP,輸入取引区分/Import dealings type,2,"2：輸入取引",0,0
+INSERTABLE_TYP,追加可否区分/Insertable type,0,"0：追加可能",1,2
+INSERTABLE_TYP,追加可否区分/Insertable type,1,"1：追加不可",1,2
+INSPC_ACPT_CRCT_TYP,訂正区分/Correction type,1,"1:赤伝",1,2
+INSPC_ACPT_CRCT_TYP,訂正区分/Correction type,2,"2:黒伝",1,2
+INSPC_ACPT_FLG,仮単価計上フラグ/Temporary UC appropriation flag,0,"0：不可",1,2
+INSPC_ACPT_FLG,仮単価計上フラグ/Temporary UC appropriation flag,1,"1：可能",1,2
+INSPC_ACPT_GNR_TYP,検収発生区分/Type of receiving check,1,"1：受入実績から発生（受入のみ）",1,2
+INSPC_ACPT_GNR_TYP,検収発生区分/Type of receiving check,2,"2：検査実績から発生（受入と検査）",1,2
+INSPC_ACPT_TYP,検収区分/Receiving check indicator,1,"1：出荷基準",1,2
+INSPC_ACPT_TYP,検収区分/Receiving check indicator,2,"2：受領基準",1,2
+INSPC_ACPT_TYP,検収区分/Receiving check indicator,3,"3：売上基準",1,2
+INSPC_CMPLT_FLG,検査完了フラグ/Completion flag of inspec,0,"0：未",1,2
+INSPC_CMPLT_FLG,検査完了フラグ/Completion flag of inspec,1,"1：完了",1,2
+INSTALL_FLG,システム導入フラグ/System introduction flag,0,"0：未導入",1,2
+INSTALL_FLG,システム導入フラグ/System introduction flag,1,"1：導入",1,2
+INTERNAL_TRN_TYP,内部取引区分/Inside dealings type,0,"0：外部取引（関連会社以外）",1,2
+INTERNAL_TRN_TYP,内部取引区分/Inside dealings type,1,"1：内部取引（関連会社）",1,2
+INTRO_FLG,サブモジュール導入フラグ/Sub module introduction flag,0,"0：未導入",1,2
+INTRO_FLG,サブモジュール導入フラグ/Sub module introduction flag,1,"1：導入",1,2
+INV_CTRL_FLG,在庫管理フラグ/Stock-mgt flag,0,"0：在庫管理しない",1,2
+INV_CTRL_FLG,在庫管理フラグ/Stock-mgt flag,1,"1：在庫管理する",1,2
+INV_STS_TYP,棚卸し区分/Inventory type,0,"0：実施前",1,2
+INV_STS_TYP,棚卸し区分/Inventory type,1,"1：棚卸期間中",1,2
+INV_STS_TYP,棚卸し区分/Inventory type,2,"2：棚卸更新済",1,2
+ISS_FLG,請求書発行フラグ/Bill issue flag,0,"0：発行する",1,2
+ISS_FLG,請求書発行フラグ/Bill issue flag,1,"1：発行しない",1,2
+ISSUE_CMPLT_FLG,出庫完了フラグ/Completion flag of issue,0,"0：未",1,2
+ISSUE_CMPLT_FLG,出庫完了フラグ/Completion flag of issue,1,"1：出庫完了",1,2
+ISSUE_INST_ISS_FLG,出庫指示書発行済みフラグ/Flag issued of I.I. doc,0,"0：未",1,2
+ISSUE_INST_ISS_FLG,出庫指示書発行済みフラグ/Flag issued of I.I. doc,1,"1：発行済",1,2
+ISSUE_INST_STATUS,ステータス/Status,1,"1：支給予定",1,2
+ISSUE_INST_STATUS,ステータス/Status,2,"2：払出予定",1,2
+ISSUE_INST_STATUS,ステータス/Status,3,"3：支給実績",1,2
+ISSUE_INST_STATUS,ステータス/Status,4,"4：払出実績",1,2
+ISSUE_INST_STATUS,ステータス/Status,5,"5：完了",1,2
+ISSUE_TYP,出庫指示出庫区分/I.I. deliv type,1,"1：マニュアル出庫",1,2
+ISSUE_TYP,出庫指示出庫区分/I.I. deliv type,2,"2：キット出庫",1,2
+ISSUE_TYP,出庫指示出庫区分/I.I. deliv type,3,"3：自動出庫",1,2
+ITEM_DRAW_TYP,図面・仕様書有無/Drawing/SPEC existence,1,"1：仕様書なし",1,2
+ITEM_DRAW_TYP,図面・仕様書有無/Drawing/SPEC existence,2,"2：仕様書あり",1,2
+J_OUTSIDE_TYP,製番別進捗一覧/Progress list by PN ,1,"1：内作",1,2
+J_OUTSIDE_TYP,製番別進捗一覧/Progress list by PN ,2,"2：外作",1,2
+J_OUTSIDE_TYP,製番別進捗一覧/Progress list by PN ,9,"9：内外作",1,2
+JNL_OUTPUT_TYP,仕訳出力区分/Journalizing output Div.,1,"1：仕訳パターン指定",1,2
+JNL_OUTPUT_TYP,仕訳出力区分/Journalizing output Div.,2,"2：科目指定",1,2
+JOB_ODR_DEL_FLG,製番削除フラグ/PN del flag,0,"0：非",1,2
+JOB_ODR_DEL_FLG,製番削除フラグ/PN del flag,1,"1：削除対象",1,2
+JOB_ODR_EXP_TYP,製番処理区分/PN process type,1,"1：追加",1,2
+JOB_ODR_EXP_TYP,製番処理区分/PN process type,2,"2：変更",1,2
+JOB_ODR_EXP_TYP,製番処理区分/PN process type,9,"9：済",1,2
+JOB_ODR_FLG,個別受注フラグ/Individual order flag,0,"0：通常",1,2
+JOB_ODR_FLG,個別受注フラグ/Individual order flag,1,"1：個別",1,2
+JOB_ODR_STS_TYP,製番状態区分/PN state type,1,"1：所要量計算未対象",1,2
+JOB_ODR_STS_TYP,製番状態区分/PN state type,2,"2：所要量計算対象",1,2
+JOB_ODR_STS_TYP,製番状態区分/PN state type,3,"3：展開済み",1,2
+JOB_ODR_STS_TYP,製番状態区分/PN state type,4,"4：下位品目確定済み",1,2
+JOB_ODR_STS_TYP,製番状態区分/PN state type,5,"5：自品目確定済み",1,2
+JOB_ODR_STS_TYP,製番状態区分/PN state type,9,"9：完了",1,2
+JOB_ODR_TYP,製番種別/PN type,1,"1：受注製番",1,2
+JOB_ODR_TYP,製番種別/PN type,2,"2：先行手配製番",1,2
+JOB_ODR_TYP,製番種別/PN type,3,"3：在庫補充製番",1,2
+JOB_ODR_TYP,製番種別/PN type,4,"4：見込製番",1,2
+L_ENTRY_1_TYP,エントリ区分１（実行記録用）/Entry type 1(for EXEC log),1,"1：手配着手日",0,1
+L_ENTRY_1_TYP,エントリ区分１（実行記録用）/Entry type 1(for EXEC log),2,"2：製造着手日",0,0
+L_ENTRY_1_TYP,エントリ区分１（実行記録用）/Entry type 1(for EXEC log),3,"3：製造納期",0,0
+L_ENTRY_2_TYP,エントリ区分２（実行記録用）/Entry type 2(for EXEC log),1,"1：手入力",0,1
+L_ENTRY_2_TYP,エントリ区分２（実行記録用）/Entry type 2(for EXEC log),2,"2：今週",0,0
+L_ENTRY_2_TYP,エントリ区分２（実行記録用）/Entry type 2(for EXEC log),3,"3：今旬",0,0
+L_ENTRY_2_TYP,エントリ区分２（実行記録用）/Entry type 2(for EXEC log),4,"4：今月",0,0
+L_OUTSIDE_TYP,内外作区分（実行記録用）/I/E manuf type (for EXEC log),1,"1：内作",1,2
+L_OUTSIDE_TYP,内外作区分（実行記録用）/I/E manuf type (for EXEC log),2,"2：外作",1,2
+L_OUTSIDE_TYP,内外作区分（実行記録用）/I/E manuf type (for EXEC log),9,"9：内外作両方",1,2
+LIST_ISS_FLG,リスト出力済フラグ/List OP.ed finishing flag,0,"0：未出力",1,2
+LIST_ISS_FLG,リスト出力済フラグ/List OP.ed finishing flag,1,"1：出力済み",1,2
+LOAD_ASSIGN_TYP,負荷割付区分/Load deduction type,1,"1：均等",1,2
+LOAD_ASSIGN_TYP,負荷割付区分/Load deduction type,2,"2：初日全",1,2
+LOAD_ASSIGN_TYP,負荷割付区分/Load deduction type,3,"3：最終日全",1,2
+LOAD_CALC_TYP,負荷計算区分/Load calc type,0,"0：負荷未計算",1,2
+LOAD_CALC_TYP,負荷計算区分/Load calc type,1,"1：負荷計算中",1,2
+LOAD_CALC_TYP,負荷計算区分/Load calc type,9,"9：負荷計算済み",1,2
+LOAD_ODR_STS_TYP,負荷オーダ状態区分/Load order state type,0,"0：負荷計画",1,2
+LOAD_ODR_STS_TYP,負荷オーダ状態区分/Load order state type,1,"1：計画（未発効)",1,2
+LOAD_ODR_STS_TYP,負荷オーダ状態区分/Load order state type,2,"2：確定（発効）",1,2
+LOAD_ODR_STS_TYP,負荷オーダ状態区分/Load order state type,9,"9：完了",1,2
+LOCALE,多言語未設定/Multi-language no setting,0,"",1,1
+LOCALE,日本語/Japanese,1,"ja:日本語",1,1
+LOCALE,英語/English,2,"en:英語",1,1
+LOCALE,中国語/Chinese,3,"zh:中国語",1,1
+LOG_MODE_TYP,LOGモード/LOG mode,0,"0：LOG無し",1,2
+LOG_MODE_TYP,LOGモード/LOG mode,1,"1：エラーLOG",1,2
+LOG_MODE_TYP,LOGモード/LOG mode,2,"2：トレースLOG",1,2
+LOG_MODE_TYP,LOGモード/LOG mode,3,"3：データLOG",1,2
+LOT_SIZING_TYP,ロットまとめ区分/Lot summary type,1,"1：最大まとめ期間or最大手配数によるまとめ",1,2
+LOT_SIZING_TYP,ロットまとめ区分/Lot summary type,2,"2：月週まとめ",1,2
+LOT_SIZING_TYP,ロットまとめ区分/Lot summary type,3,"3：暦週まとめ",1,2
+LOT_SIZING_TYP,ロットまとめ区分/Lot summary type,4,"4：旬まとめ",1,2
+LOT_SIZING_TYP,ロットまとめ区分/Lot summary type,5,"5：半月まとめ",1,2
+LOT_SIZING_TYP,ロットまとめ区分/Lot summary type,6,"6：月まとめ",1,2
+LOWER_ITEM_FLG,末端品フラグ/End item flag,0,"0：末端の品目でない",1,2
+LOWER_ITEM_FLG,末端品フラグ/End item flag,1,"1：末端の品目である",1,2
+M_CS_PROC_PRIORITY_TYP,工程マスタ優先区分/Proc Master Priority type,1,"1：マスタメンテナンス優先",1,2
+M_CS_PROC_PRIORITY_TYP,工程マスタ優先区分/Proc Master Priority type,2,"2：一括処理を優先",1,2
+M_CS_PUCH_PRIORITY_TYP,購入品マスタ優先区分/PA master priority indicator,1,"1：マスタメンテナンス優先",1,2
+M_CS_PUCH_PRIORITY_TYP,購入品マスタ優先区分/PA master priority indicator,2,"2：一括処理を優先",1,2
+M_PROC_COST_PRIORITY_TYP,加工費マスタ優先区分/Proc cost Mast Prior indicator,1,"1：マスタメンテナンス優先",1,2
+M_PROC_COST_PRIORITY_TYP,加工費マスタ優先区分/Proc cost Mast Prior indicator,2,"2：一括処理を優先",1,2
+MANAGEMENT_TYP,管理区分/Mgt type,1,"1：ＭＲＰ",1,2
+MANAGEMENT_TYP,管理区分/Mgt type,2,"2：製番",1,2
+MNT_DATA_TYP,保持情報区分/Hold info type,1,"1：MRP品目情報保持期間",0,2
+MNT_DATA_TYP,保持情報区分/Hold info type,2,"2：製番品目保持期間",0,2
+MNT_DATA_TYP,保持情報区分/Hold info type,3,"3：入出庫トランザクション情報保持期間",0,2
+MNT_DATA_TYP,保持情報区分/Hold info type,4,"4：在庫情報保持期間",0,2
+MNT_DATA_TYP,保持情報区分/Hold info type,5,"5：所要量アラームリスト保持期間",0,2
+MNT_DATA_TYP,保持情報区分/Hold info type,6,"6：業務メッセージ保持期間",0,2
+MNT_DATA_TYP,保持情報区分/Hold info type,7,"7：製品構成トランザクション保持期間 ",0,2
+MNT_DATA_TYP,保持情報区分/Hold info type,8,"8：棚卸制御保持期間",0,2
+MNT_DATA_TYP,保持情報区分/Hold info type,9,"9：保管区別品目棚卸保持期間",0,2
+MNT_DATA_TYP,保持情報区分/Hold info type,10,"10：保管区別製番棚卸保持期間",0,2
+MNT_DATA_TYP,保持情報区分/Hold info type,11,"11：購買返品実績保持期間",0,2
+MNT_DATA_TYP,保持情報区分/Hold info type,12,"12：販売所要計画保持期間",0,2
+MNT_DATA_TYP,保持情報区分/Hold info type,13,"13：受注情報保持期間",0,2
+MNT_DATA_TYP,保持情報区分/Hold info type,14,"14：その他売上実績保持期間",0,2
+MNT_DATA_TYP,保持情報区分/Hold info type,15,"15：EDI情報保持期間",0,2
+MPS_FLG,ＭＰＳ品目フラグ/MPS item flag,0,"0：ＭＰＳ品目ではない",1,2
+MPS_FLG,ＭＰＳ品目フラグ/MPS item flag,1,"1：ＭＰＳ品目である",1,2
+MRP_EXP_TYP,所要量展開区分/Material requirements expansion type,0,"0：展開しない",1,2
+MRP_EXP_TYP,所要量展開区分/Material requirements expansion type,1,"1：展開する",1,2
+MRP_FLG,所要量計算対象フラグ/Flag for MRP,0,"0：非",1,2
+MRP_FLG,所要量計算対象フラグ/Flag for MRP,1,"1：所要量計算対象",1,2
+MRP_ODR_TYP,品目手配区分/Item arrangement type,1,"1：製番",1,2
+MRP_ODR_TYP,品目手配区分/Item arrangement type,2,"2：在庫引当型製番",1,2
+MRP_ODR_TYP,品目手配区分/Item arrangement type,4,"4：マニュアル手配品目",1,2
+MRP_ODR_TYP,品目手配区分/Item arrangement type,5,"5：ロット手配品目",1,2
+MRP_ODR_TYP,品目手配区分/Item arrangement type,6,"6：定量手配品目",1,2
+MRP_ODR_TYP,品目手配区分/Item arrangement type,7,"7：発注点手配品目",1,2
+MRP_ODR_TYP,品目手配区分/Item arrangement type,8,"8：擬似品目",1,2
+NON_PLANNED_CAUSE_CD,計画外理由コード/Reason code for unplanned,1,"1：理由1",0,0
+NON_PLANNED_CAUSE_CD,計画外理由コード/Reason code for unplanned,2,"2：理由2",0,0
+NON_PLANNED_CAUSE_CD,計画外理由コード/Reason code for unplanned,3,"3：理由3",0,0
+MRP_TYP,所要量処理区分/Material requirements process type,1,"1：追加 ",1,2
+MRP_TYP,所要量処理区分/Material requirements process type,2,"2：変更",1,2
+MRP_TYP,所要量処理区分/Material requirements process type,3,"3：削除",1,2
+MRP_TYP,所要量処理区分/Material requirements process type,9,"9：済",1,2
+NON_NO_ITEM_FLG,備品発注フラグ/Supply Order flag,0,"0：備品以外（通常仕入品）",1,2
+NON_NO_ITEM_FLG,備品発注フラグ/Supply Order flag,1,"1：備品発注",1,2
+NON_NO_ITEM_TYP,備品発注製品区分/Supply Ord prod type,0,"0：在庫管理をする",0,1
+NON_NO_ITEM_TYP,備品発注製品区分/Supply Ord prod type,1,"1：製品",0,1
+NON_NO_ITEM_TYP,備品発注製品区分/Supply Ord prod type,2,"2：半製品",0,0
+NON_NO_ITEM_TYP,備品発注製品区分/Supply Ord prod type,3,"3：部品",0,0
+NON_NO_ITEM_TYP,備品発注製品区分/Supply Ord prod type,4,"4：原材料",0,0
+NON_NO_ITEM_TYP,備品発注製品区分/Supply Ord prod type,5,"5：その他",0,0
+NUMBERING_TYP,月間・年間・単純採番区分/Month-long/year-long/simple numbering Div.,1,"1：月間採番",1,2
+NUMBERING_TYP,月間・年間・単純採番区分/Month-long/year-long/simple numbering Div.,2,"2：年間採番",1,2
+NUMBERING_TYP,月間・年間・単純採番区分/Month-long/year-long/simple numbering Div.,3,"3：単純採番",1,2
+OD_ALARM_FLG,所要量アラームリスト+B413発行済みフラグ/Material requirements alarm list + B413 issued flag,0,"0：未",1,2
+OD_ALARM_FLG,所要量アラームリスト+B413発行済みフラグ/Material requirements alarm list + B413 issued flag,1,"1：発行済み",1,2
+OD_CALC_FLG,所要量計算中フラグ/Flag in MRP,0,"0：処理中ではない",1,2
+OD_CALC_FLG,所要量計算中フラグ/Flag in MRP,1,"1：処理中",1,2
+OD_GNR_TYP,所要量発生処理区分/Material requirements generation Proc type,1,"1：マニュアル登録",1,2
+OD_GNR_TYP,所要量発生処理区分/Material requirements generation Proc type,2,"2：発注計画から登録",1,2
+OD_GNR_TYP,所要量発生処理区分/Material requirements generation Proc type,3,"3：作業計画から登録",1,2
+OD_GNR_TYP,所要量発生処理区分/Material requirements generation Proc type,4,"4：先行所要計画から登録",1,2
+OD_GNR_TYP,所要量発生処理区分/Material requirements generation Proc type,5,"5：販売情報から登録",1,2
+OD_GNR_TYP,所要量発生処理区分/Material requirements generation Proc type,6,"6：受注情報から登録",1,2
+OD_GNR_TYP,所要量発生処理区分/Material requirements generation Proc type,7,"7：出荷保留情報から登録",1,2
+OD_GNR_TYP,所要量発生処理区分/Material requirements generation Proc type,9,"9：所要量計算にて登録",1,2
+OD_MNT_FLG,所要量メンテナンス中フラグ/Flag in MRP maintenance,0,"0：処理中ではない",1,2
+OD_MNT_FLG,所要量メンテナンス中フラグ/Flag in MRP maintenance,1,"1：処理中",1,2
+OD_TYP,オーダデマンド区分/Order demand type,1,"1：オーダデマンド（製番）",1,2
+OD_TYP,オーダデマンド区分/Order demand type,2,"2：オーダ",1,2
+OD_TYP,オーダデマンド区分/Order demand type,3,"3：デマンド",1,2
+OD_TYP,オーダデマンド区分/Order demand type,4,"4：擬似",1,2
+ODR_CANCEL_CAUSE_CD,取消理由コード/CAN reason code,1,"1：注文取消理由1",0,0
+ODR_CANCEL_CAUSE_CD,取消理由コード/CAN reason code,2,"2：注文取消理由2",0,0
+ODR_CANCEL_CAUSE_CD,取消理由コード/CAN reason code,3,"3：注文取消理由3",0,0
+ODR_CANCEL_SLIP_ISS_FLG,注文取消伝票発行フラグ/Order CAN slip issue flag,0,"0：対象外",1,2
+ODR_CANCEL_SLIP_ISS_FLG,注文取消伝票発行フラグ/Order CAN slip issue flag,1,"1：未発行",1,2
+ODR_CANCEL_SLIP_ISS_FLG,注文取消伝票発行フラグ/Order CAN slip issue flag,2,"2：発行済",1,2
+ODR_CHG_FLG,受注変動許可フラグ/Order floating permit flag,0,"0：不可",0,1
+ODR_CHG_FLG,受注変動許可フラグ/Order floating permit flag,1,"1：許可",0,0
+ODR_DEPO_TYP,預託区分/Deposition type,10,"10：通常",1,2
+ODR_DEPO_TYP,預託区分/Deposition type,20,"20：預託",1,2
+ODR_DMD_TYP,外部デマンド/External demand,1,"1：オーダデマンド",1,2
+ODR_DMD_TYP,外部デマンド/External demand,2,"2：オーダ",1,2
+ODR_DMD_TYP,外部デマンド/External demand,3,"3：デマンド",1,2
+ODR_EDI_FLG,ＥＤＩ発注フラグ/EDI Ord flag,0,"0：データ（EDI）送信しない",1,2
+ODR_EDI_FLG,ＥＤＩ発注フラグ/EDI Ord flag,1,"1：データ（EDI）送信する",1,2
+ODR_FAX_FLG,ＦＡＸ発注フラグ/FAX Ord flag,0,"0：FAX送付しない",1,1
+ODR_FAX_FLG,ＦＡＸ発注フラグ/FAX Ord flag,1,"1：FAX送付する",1,1
+ODR_FORM_FLG,注文書発注フラグ/Order sheet Ord flag,0,"0：注文書送付しない",1,2
+ODR_FORM_FLG,注文書発注フラグ/Order sheet Ord flag,1,"1：注文書送付する",1,2
+ODR_MAIL_FLG,メール発注フラグ/Mail Ord flag,0,"0：メール送付しない",1,1
+ODR_MAIL_FLG,メール発注フラグ/Mail Ord flag,1,"1：メール送付する",1,1
+ODR_MODIFY_TYP_1,変更注文区分1/CHG order type1,1,"1：数量変更",1,2
+ODR_MODIFY_TYP_1,変更注文区分1/CHG order type1,2,"2：単価変更",1,2
+ODR_MODIFY_TYP_1,変更注文区分1/CHG order type1,3,"3：納期変更",1,2
+ODR_MODIFY_TYP_1,変更注文区分1/CHG order type1,9,"9：その他",1,2
+ODR_MODIFY_TYP_2,変更注文区分2/CHG order type2,1,"1：数量変更",1,2
+ODR_MODIFY_TYP_2,変更注文区分2/CHG order type2,2,"2：単価変更",1,2
+ODR_MODIFY_TYP_2,変更注文区分2/CHG order type2,3,"3：納期変更",1,2
+ODR_MODIFY_TYP_2,変更注文区分2/CHG order type2,9,"9：その他",1,2
+ODR_MODIFY_TYP_3,変更注文区分3/CHG order type3,1,"1：数量変更",1,2
+ODR_MODIFY_TYP_3,変更注文区分3/CHG order type3,2,"2：単価変更",1,2
+ODR_MODIFY_TYP_3,変更注文区分3/CHG order type3,3,"3：納期変更",1,2
+ODR_MODIFY_TYP_3,変更注文区分3/CHG order type3,9,"9：その他",1,2
+ODR_ODR_TYP,注文区分/Order type,1,"1：見込",0,1
+ODR_ODR_TYP,注文区分/Order type,2,"2：内示",0,1
+ODR_ODR_TYP,注文区分/Order type,3,"3：確定注文",0,1
+ODR_RELEASE_FLG,オーダ発効済フラグ/Order effect flag,0,"0：オーダ未発効",1,2
+ODR_RELEASE_FLG,オーダ発効済フラグ/Order effect flag,1,"1：オーダ発行済",1,2
+ODR_SPCL_PRICE,値引区分/Discount flag,0,"0：正規",0,1
+ODR_SPCL_PRICE,値引区分/Discount flag,1,"1：特値",0,0
+ODR_STS_TYP,オーダ状態区分/Order state type,0,"0：オーダ情報ではない",1,2
+ODR_STS_TYP,オーダ状態区分/Order state type,1,"1：計画（未発効)",1,2
+ODR_STS_TYP,オーダ状態区分/Order state type,2,"2：確定（発効）",1,2
+ODR_STS_TYP,オーダ状態区分/Order state type,9,"9：完了",1,2
+ODR_UNIT,単位/unit,3,"3：個",0,0
+ODR_UNIT,単位/unit,4,"4：P(パンチ)",0,0
+ODR_UNIT,単位/unit,5,"5:S(シート)",0,0
+OFFSET_PROC_TYP,相殺処理区分/Offset Proc type,0,"0：相殺入力",1,2
+OFFSET_PROC_TYP,相殺処理区分/Offset Proc type,1,"1：有償支給品相殺入力",1,2
+OFFSET_PROC_TYP,相殺処理区分/Offset Proc type,2,"2：売掛金自動相殺",1,2
+ONEROUS_CONS_FLG,有償支給品フラグ/Chargeable supplies flag,0,"0：有償支給品以外",1,2
+ONEROUS_CONS_FLG,有償支給品フラグ/Chargeable supplies flag,1,"1：有償支給品",1,2
+ONEROUS_FLG,有償フラグ/Chargeable flag,0,"0：無償",1,2
+ONEROUS_FLG,有償フラグ/Chargeable flag,1,"1：有償",1,2
+OPR_CRCT_TYP,作業訂正区分/Work correction type,1,"1：赤",1,2
+OPR_CRCT_TYP,作業訂正区分/Work correction type,2,"2：黒",1,2
+OPR_INST_CD_GNR_TYP,作業指示番号発生区分/WI No. generating type,1,"1：品目別",1,2
+OPR_INST_CD_GNR_TYP,作業指示番号発生区分/WI No. generating type,2,"2：作業系列別",1,2
+OPR_INST_SLIP_ISS_FLG,作業指示伝票発行済みフラグ/Flag issued of WI slip,0,"0：未",1,2
+OPR_INST_SLIP_ISS_FLG,作業指示伝票発行済みフラグ/Flag issued of WI slip,1,"1：発行済",1,2
+OPR_INST_STATUS,ステータス/Status,1,"1：確定前",1,2
+OPR_INST_STATUS,ステータス/Status,2,"2：工程展開済",1,2
+OPR_INST_STATUS,ステータス/Status,3,"3：確定済",1,2
+OPR_INST_STATUS,ステータス/Status,4,"4：発行済",1,2
+OPR_INST_STATUS,ステータス/Status,5,"5：実績",1,2
+OPR_INST_STATUS,ステータス/Status,6,"6：完了",1,2
+OPR_RSLT_TYP,作業実績区分/Work actual type,1,"1：出来高実績",1,2
+OPR_RSLT_TYP,作業実績区分/Work actual type,2,"2：作業指示実績",1,2
+OPR_TIME_UNIT_TYP,作業時間単位区分/Working Hrs unit type,1,"1：分",0,1
+OPR_TIME_UNIT_TYP,作業時間単位区分/Working Hrs unit type,2,"2：時間 ",0,1
+ORG_CD_SEARCH_COND_AP_1,対象管理部門検索条件１/Object Mgt Div. retrieval COND1,1,"1：取扱可能分",1,2
+ORG_CD_SEARCH_COND_AP_1,対象管理部門検索条件１/Object Mgt Div. retrieval COND1,2,"2：選択",1,2
+ORG_CD_SEARCH_COND_AP_1,対象管理部門検索条件１/Object Mgt Div. retrieval COND1,99,"99：全て",1,2
+ORG_CD_SEARCH_COND_AP_2,対象管理部門検索条件２/Object Mgt Div. retrieval COND2,1,"1：取扱可能分",1,2
+ORG_CD_SEARCH_COND_AP_2,対象管理部門検索条件２/Object Mgt Div. retrieval COND2,2,"2：選択",1,2
+ORG_TYP,部門設定区分/Div. setting type,1,"1：このマスタの部門コード",1,2
+ORG_TYP,部門設定区分/Div. setting type,2,"2：発生部門コード",1,2
+OUTPUT_MODE_TYP,出力モード/Output mode,1,"1：新規ファイル出力",1,2
+OUTSIDE_TYP,内外作区分/I/E type,1,"1：内作",1,2
+OUTSIDE_TYP,内外作区分/I/E type,2,"2：外作",1,2
+PART_DLV_TYP_AR,分納区分/Partial Deliv type,1,"1：分納なし",1,2
+PART_DLV_TYP_AR,分納区分/Partial Deliv type,2,"2：分納あり",1,2
+PART_DLV_TYP_AR,分納区分/Partial Deliv type,3,"3：完納",1,2
+PARTIAL_SHIP_INST_FLG,分納出荷指示フラグ/PD S.I. flag,0,"0：分納出荷指示不可 ",1,2
+PARTIAL_SHIP_INST_FLG,分納出荷指示フラグ/PD S.I. flag,1,"1：分納出荷指示可能",1,2
+PAY_CYCLE_TYP,支払サイクル/Pmt cycle,1,"1：定時支払",1,2
+PAY_CYCLE_TYP,支払サイクル/Pmt cycle,2,"2：随時支払",1,2
+PAY_CYCLE_TYP_SEARCH_COND_1,支払サイクル検索条件１/Pmt cycle retrieval COND1,1,"1：定時支払",1,2
+PAY_CYCLE_TYP_SEARCH_COND_1,支払サイクル検索条件１/Pmt cycle retrieval COND1,2,"2：随時支払",1,2
+PAY_CYCLE_TYP_SEARCH_COND_1,支払サイクル検索条件１/Pmt cycle retrieval COND1,99,"99：全て",1,2
+PAY_CYCLE_TYP_SEARCH_COND_2,支払サイクル検索条件２/Pmt cycle retrieval COND2,1,"1：定時支払",1,2
+PAY_CYCLE_TYP_SEARCH_COND_2,支払サイクル検索条件２/Pmt cycle retrieval COND2,2,"2：随時支払",1,2
+PAY_NOTICE_FLG,支払通知書送付フラグ/Sending pmt of note flag,0,"0：送付しない",0,1
+PAY_NOTICE_FLG,支払通知書送付フラグ/Sending pmt of note flag,1,"1：送付する",0,0
+PAY_TARGET_TYP,支払対象区分/Pmt target Div.,1,"1：振込",1,2
+PAY_TARGET_TYP,支払対象区分/Pmt target Div.,2,"2：小切手",1,2
+PAY_TARGET_TYP,支払対象区分/Pmt target Div.,3,"3：現金",1,2
+PAY_TARGET_TYP,支払対象区分/Pmt target Div.,11,"11：手形",1,2
+PAY_TARGET_TYP,支払対象区分/Pmt target Div.,12,"12：期日振込",1,2
+PAY_TARGET_TYP,支払対象区分/Pmt target Div.,21,"21：自動引落",1,2
+PAYEE_FIX_FLG,支払先設定フラグ/Setting pmt recipient flag,0,"0：無",0,1
+PAYEE_FIX_FLG,支払先設定フラグ/Setting pmt recipient flag,1,"1：有",0,0
+PC_FLG,生産管理導入フラグ/Prod-Mgt-introduction flag,0,"0：未導入",1,2
+PC_FLG,生産管理導入フラグ/Prod-Mgt-introduction flag,1,"1：導入済み",1,2
+PERMIT_FLG,許可フラグ/Permit flag,0,"0：許可",1,2
+PERMIT_FLG,許可フラグ/Permit flag,1,"1：不可",1,2
+PLN_TERM_TYP,計画期間タイプ/Plan period type,1,"1：日",1,2
+PLN_TERM_TYP,計画期間タイプ/Plan period type,2,"2：週・旬等",1,2
+PLN_TERM_TYP,計画期間タイプ/Plan period type,3,"3：月",1,2
+PLAN_TYP,計画タイプ/Planned type,1,"1：受注",1,2
+PLAN_TYP,計画タイプ/Planned type,2,"2：見込",1,2
+PRD_ALARM_FLG,生産アラームフラグ/Prod alarm flag,1,"1：通常",0,1
+PRD_ALARM_FLG,生産アラームフラグ/Prod alarm flag,9,"9：アラームデータ",0,0
+PRD_COMM_CODE_CHG_TYP,製品／商品変換区分/Product/goods conversion indicator,1,"1：同一コード",0,1
+PRD_COMM_CODE_CHG_TYP,製品／商品変換区分/Product/goods conversion indicator,2,"2：変換マスタ",0,0
+PRD_ERROR_TYP,生産情報エラー区分/Prod Info ERR type,1,"1：正常",0,1
+PRD_ERROR_TYP,生産情報エラー区分/Prod Info ERR type,9,"9：エラーデータ",0,0
+PRD_PLAN_FINAL_DAY_TYP,生産計画日付区分/Prod plan date type,1,"1：一日",1,2
+PRD_PLAN_FINAL_DAY_TYP,生産計画日付区分/Prod plan date type,2,"2：末日",1,2
+PRD_PLAN_PERIOD_TYP,生産計画期間区分/Prod plan period type,1,"1：FROM",1,2
+PRD_PLAN_PERIOD_TYP,生産計画期間区分/Prod plan period type,2,"2：TO",1,2
+PRD_PLAN_TYP,生産計画対象区分/Type for a prod plan,1,"1：今回生産計画対象データ",1,2
+PRD_PLAN_TYP,生産計画対象区分/Type for a prod plan,2,"2：前回生産計画対象データ",1,2
+PRD_PLAN_TYP,生産計画対象区分/Type for a prod plan,9,"9：生産要求Ｆ削除対象データ",1,2
+PRICE_ROUND_TYP,単価計算まるめ区分/Rounding type for UC Calc,1,"1:四捨五入",0,1
+PRICE_ROUND_TYP,単価計算まるめ区分/Rounding type for UC Calc,2,"2:切り上げ",0,1
+PRICE_ROUND_TYP,単価計算まるめ区分/Rounding type for UC Calc,3,"3:切り捨て",0,1
+PRIMITIVE_TYP,原始区分/Primitive Div.,0,"0：原始科目",1,2
+PRIMITIVE_TYP,原始区分/Primitive Div.,1,"1：合成科目",1,2
+PRIMITIVE_TYP,原始区分/Primitive Div.,2,"2：見出し科目",1,2
+PRIORITY_CUST_TYP,重点得意先区分/Emphasis cust Div.,1,"1：通常",1,2
+PRIORITY_CUST_TYP,重点得意先区分/Emphasis cust Div.,2,"2：重点",1,2
+PROC_EXPLOSION_FLG,作業系列展開済みフラグ/WS expanded flag,0,"0：未展開 ",1,2
+PROC_EXPLOSION_FLG,作業系列展開済みフラグ/WS expanded flag,1,"1：展開済み",1,2
+PROC_TYP,処理区分/Proc type,0,"0：未処理",1,2
+PROC_TYP,処理区分/Proc type,1,"1：相殺",1,2
+PROC_TYP,処理区分/Proc type,9,"9：削除",1,2
+PRODUCT_TYP,製品区分/Prod type,1,"1：製品",0,1
+PRODUCT_TYP,製品区分/Prod type,2,"2：半製品",0,0
+PRODUCT_TYP,製品区分/Prod type,3,"3：部品",0,0
+PRODUCT_TYP,製品区分/Prod type,4,"4：原材料",0,0
+PRODUCT_TYP,製品区分/Prod type,5,"5：その他",0,0
+PROGRESS_STS_INST,作業指示進捗一覧・発注指示進捗一覧用/For WI progress list/Ord inst progress list,0,"なし",1,2
+PROGRESS_STS_INST,作業指示進捗一覧・発注指示進捗一覧用/For WI progress list/Ord inst progress list,1,"あり",1,2
+PROGRESS_STS_JOB,製番別進捗一覧用/For progress list by PN ,0,"遅れなし",1,2
+PROGRESS_STS_JOB,製番別進捗一覧用/For progress list by PN ,1,"出庫遅れ",1,2
+PROGRESS_STS_JOB,製番別進捗一覧用/For progress list by PN ,2,"入庫遅れ",1,2
+PROGRESS_STS_JOB,製番別進捗一覧用/For progress list by PN ,3,"入出庫遅れ",1,2
+PROGRESS_STS_JOB,製番別進捗一覧用/For progress list by PN ,4,"削除",1,2
+PROGRESS_STS_ODR,オーダ別進捗一覧用/For Progress list by Ord ,0,"遅れなし",1,2
+PROGRESS_STS_ODR,オーダ別進捗一覧用/For Progress list by Ord ,1,"遅れあり",1,2
+PROGRESS_STS_ODR,オーダ別進捗一覧用/For Progress list by Ord ,2,"削除",1,2
+PRVS_MRP_ODR_TYP,前回品目手配区分/Last item arrangement type,1,"1：製番",1,2
+PRVS_MRP_ODR_TYP,前回品目手配区分/Last item arrangement type,2,"2：在庫引当型製番",1,2
+PRVS_MRP_ODR_TYP,前回品目手配区分/Last item arrangement type,4,"4：マニュアル手配品目",1,2
+PRVS_MRP_ODR_TYP,前回品目手配区分/Last item arrangement type,5,"5：ロット手配品目",1,2
+PRVS_MRP_ODR_TYP,前回品目手配区分/Last item arrangement type,6,"6：定量手配品目",1,2
+PRVS_MRP_ODR_TYP,前回品目手配区分/Last item arrangement type,7,"7：発注点手配品目",1,2
+PRVS_MRP_ODR_TYP,前回品目手配区分/Last item arrangement type,8,"8：擬似品目",1,2
+PS_LT_FLG,製品構成リードタイム使用フラグ/Prod structure LT usage flag,0,"0：製品構成マスタのL/Tを使用しない",1,2
+PS_LT_FLG,製品構成リードタイム使用フラグ/Prod structure LT usage flag,1,"1：製品構成マスタのL/Tを使用する",1,2
+PUCH_ODR_EDI_ISS_FLG,ＥＤＩデータ出力済フラグ/EDI data OP.ed finishing flag,0,"0：未出力",1,2
+PUCH_ODR_EDI_ISS_FLG,ＥＤＩデータ出力済フラグ/EDI data OP.ed finishing flag,1,"1：出力済",1,2
+PUCH_ODR_FAX_ISS_FLG,FAXデータ出力済フラグ/FAX data OP.ed finishing flag,0,"0：未出力",1,1
+PUCH_ODR_FAX_ISS_FLG,FAXデータ出力済フラグ/FAX data OP.ed finishing flag,1,"1：出力済",1,0
+PUCH_ODR_GNR_TYP,発注発生処理区分/Ord generation Proc type,1,"1：マニュアル登録",1,2
+PUCH_ODR_GNR_TYP,発注発生処理区分/Ord generation Proc type,2,"2：発注計画から登録",1,2
+PUCH_ODR_GNR_TYP,発注発生処理区分/Ord generation Proc type,3,"3：作業計画から登録",1,2
+PUCH_ODR_GNR_TYP,発注発生処理区分/Ord generation Proc type,9,"9：所要量計算で登録",1,2
+PUCH_ODR_INST_SLIP_ISS_FLG,発注伝票発行済みフラグ/Order slip issued flag,0,"0：未",1,2
+PUCH_ODR_INST_SLIP_ISS_FLG,発注伝票発行済みフラグ/Order slip issued flag,1,"1：発行済",1,2
+PUCH_ODR_MAIL_ISS_FLG,MAILデータ出力済フラグ/MAIL data OP.ed finishing flag,0,"0：未出力",1,1
+PUCH_ODR_MAIL_ISS_FLG,MAILデータ出力済フラグ/MAIL data OP.ed finishing flag,1,"1：出力済",1,0
+PUCH_ODR_STATUS,ステータス/Status,1,"1：確定前",1,2
+PUCH_ODR_STATUS,ステータス/Status,2,"2：確定済",1,2
+PUCH_ODR_STATUS,ステータス/Status,3,"3：発行済",1,2
+PUCH_ODR_STATUS,ステータス/Status,4,"4：受入",1,2
+PUCH_ODR_STATUS,ステータス/Status,5,"5：取消",1,2
+PUCH_ODR_STATUS,ステータス/Status,6,"6：取消発行済",1,2
+PUCH_ODR_STATUS,ステータス/Status,7,"7：受入完了",1,2
+PUCH_ODR_STATUS,ステータス/Status,8,"8：検査完了",1,2
+PUCH_ODR_STS_TYP,発注状態区分/Order COND type,1,"1：未指示",1,2
+PUCH_ODR_STS_TYP,発注状態区分/Order COND type,2,"2：指示済み",1,2
+PUCH_ODR_STS_TYP,発注状態区分/Order COND type,9,"9：受入完了",1,2
+PUCH_RTN_COMMENT,返品理由コード/Reason for returned goods,1,"1：購入返品理由1",0,0
+PUCH_RTN_COMMENT,返品理由コード/Reason for returned goods,2,"2：購入返品理由2",0,0
+PUCH_RTN_COMMENT,返品理由コード/Reason for returned goods,3,"3：購入返品理由3",0,0
+PUCH_RTN_FLG,購入返品フラグ/Purch returned goods flag,0,"0：非",1,1
+PUCH_RTN_FLG,購入返品フラグ/Purch returned goods flag,1,"1：返品",1,1
+QTY_CONTRACT_TYP,数量契約区分/Qt. contract type,1,"1：計算数量で決済",0,1
+QTY_CONTRACT_TYP,数量契約区分/Qt. contract type,2,"2：実数量で決済",0,0
+RCV_ISSUE_COMMENT,戻入理由コード/reason for return,1,"1：戻入理由1",0,0
+RCV_ISSUE_COMMENT,戻入理由コード/reason for return,2,"2：戻入理由2",0,0
+RCV_ISSUE_COMMENT,戻入理由コード/reason for return,3,"3：戻入理由3",0,0
+RCV_ISSUE_CMPLT_FLG,入出庫完了フラグ/GM completed flag,0,"0：未",1,2
+RCV_ISSUE_CMPLT_FLG,入出庫完了フラグ/GM completed flag,1,"1：入出庫完了",1,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,11,"11：通常入庫",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,12,"12：計画外入庫 ",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,13,"13：移動入庫",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,14,"14：振替入庫（製番在庫→品目在庫への振替）",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,15,"15：待ち保管区入庫",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,16,"16：待ち保管区入庫取消",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,17,"17：検査済み入庫",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,18,"18：検査済み入庫取消",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,19,"19：入庫取消",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,21,"21：通常出庫",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,22,"22：計画外出庫",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,23,"23：移動出庫",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,24,"24：振替出庫（製番在庫→品目在庫への振替）",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,25,"25：待ち保管区出庫",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,26,"26：待ち保管区出庫取消",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,28,"28：棚卸調整出庫",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,29,"29：出庫取消",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,31,"31：出荷",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,33,"33：返品",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,39,"39：出荷取消",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,41,"41：工程在庫出庫",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,49,"49：工程在庫出庫取消",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,51,"51：工程在庫出庫（出来高）",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,59,"59：工程在庫出庫取消（出来高）",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,61,"61：工程在庫入庫",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,69,"69：工程在庫入庫取消",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,71,"71：取引先在庫出庫",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,79,"79：取引先在庫出庫取消",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,81,"81:取引先在庫入庫",0,2
+RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,89,"89:取引先在庫入庫取消",0,2
+RCV_ISSUE_TYP,入出庫区分/GM type,1,"1：入庫",0,2
+RCV_ISSUE_TYP,入出庫区分/GM type,2,"2：出庫 ",0,2
+RCV_ISSUE_TYP,入出庫区分/GM type,3,"3：不良入庫",0,2
+RCV_ISSUE_TYP,入出庫区分/GM type,4,"4：不良出庫",0,2
+READFILE_TYP_AR,読込ファイル区分/Read file type,1,"1：入金",1,2
+READFILE_TYP_AR,読込ファイル区分/Read file type,2,"2：売掛",1,2
+REBATE_COND_TYP,リベート条件区分/Rebate COND type,1,"1：金額",1,2
+REBATE_COND_TYP,リベート条件区分/Rebate COND type,2,"2：数量",1,2
+REBATE_COND_TYP,リベート条件区分/Rebate COND type,3,"3：金額or数量",1,2
+REBATE_COND_TYP,リベート条件区分/Rebate COND type,4,"4：金額and数量",1,2
+REBATE_FLG,リベートフラグ/Rebate flag,0,"0：無し",1,2
+REBATE_FLG,リベートフラグ/Rebate flag,1,"1：有り",1,2
+REBATE_TARGET_TYP,リベート対象区分/Type for rebate,1,"1：率",1,2
+REBATE_TARGET_TYP,リベート対象区分/Type for rebate,2,"2：金額",1,2
+REBATE_TARGET_TYP,リベート対象区分/Type for rebate,3,"3：率or金額で少額な方を選択",1,2
+REBATE_TARGET_TYP,リベート対象区分/Type for rebate,4,"4：率or金額で多額な方を選択",1,2
+REJECT_RETURN_TYP,返品代納区分/Returned goods pmt-by-proxy type,1,"1：通常注文",1,2
+REJECT_RETURN_TYP,返品代納区分/Returned goods pmt-by-proxy type,2,"2：返品代納注文",1,2
+RESULT_STATUS_TYP,実行結果区分/EXEC result type,1,"1：正常",1,2
+RESULT_STATUS_TYP,実行結果区分/EXEC result type,2,"2：警告",1,2
+RESULT_STATUS_TYP,実行結果区分/EXEC result type,3,"3：異常",1,2
+RETURNED_GNR_TYP,返品発生処理区分/Returned goods generate Proc type,0,"0：非",1,1
+RETURNED_GNR_TYP,返品発生処理区分/Returned goods generate Proc type,1,"1：戻入実績から登録",1,1
+RETURNED_GNR_TYP,返品発生処理区分/Returned goods generate Proc type,2,"2：有償支給返品実績から登録",1,1
+RETURNED_GNR_TYP,返品発生処理区分/Returned goods generate Proc type,3,"3：自動出庫から登録",1,1
+RM_INP_TYP,入金入力区分/Recpt input Div.,1,"1：一括入金",1,2
+RM_INP_TYP,入金入力区分/Recpt input Div.,2,"2：個別入金",1,2
+RM_OFFSET_TYP,入金相殺区分/Recpt offset type,1,"1：なし",1,2
+RM_OFFSET_TYP,入金相殺区分/Recpt offset type,2,"2：あり",1,2
+ROUND_TYP,端数区分/Fraction type,1,"1：四捨五入",1,2
+ROUND_TYP,端数区分/Fraction type,2,"2：切り上げ",1,2
+ROUND_TYP,端数区分/Fraction type,3,"3：切り捨て",1,2
+RETURNED_CAUSE_CD,返品理由コード/Reason for returned goods,1,"1：支給返品理由1",0,0
+RETURNED_CAUSE_CD,返品理由コード/Reason for returned goods,2,"2：支給返品理由2",0,0
+RETURNED_CAUSE_CD,返品理由コード/Reason for returned goods,3,"3：支給返品理由3",0,0
+RTN_DEL_FLG,返品取消フラグ/Returned goods CAN flag,0,"0：非",1,1
+RTN_DEL_FLG,返品取消フラグ/Returned goods CAN flag,1,"1：返品取消",1,1
+SBCNT_PUCH_TYP,外注購入品区分/Sub PA type,0,"0：未使用",1,2
+SBCNT_PUCH_TYP,外注購入品区分/Sub PA type,1,"1：購入品",1,2
+SBCNT_PUCH_TYP,外注購入品区分/Sub PA type,2,"2：有償支給のみの外作品",1,2
+SBCNT_PUCH_TYP,外注購入品区分/Sub PA type,3,"3：無償支給のある外作品",1,2
+SBCNT_PUCH_TYP,外注購入品区分/Sub PA type,4,"4：工程外注",1,2
+SBCNT_PUCH_TYP,外注購入品区分/Sub PA type,5,"5：外注購入品でない",1,2
+SCH_MONTH,支払月/Pmt month,0,"0：締日と同月",1,2
+SCH_MONTH,支払月/Pmt month,1,"1：締日の翌月",1,2
+SCH_MONTH,支払月/Pmt month,2,"2：締日の翌々月",1,2
+SHIP_RSV_CANCEL_TYP,出荷保留解除区分/Ship hold REL type,1,"1：保留未解除（保留中）",0,1
+SHIP_RSV_CANCEL_TYP,出荷保留解除区分/Ship hold REL type,2,"2：保留無効（訂正により無効となった保留）",0,0
+SHIP_RSV_CANCEL_TYP,出荷保留解除区分/Ship hold REL type,3,"3：保留解除済み",0,0
+SHIP_RSV_CANCEL_TYP,出荷保留解除区分/Ship hold REL type,9,"9：保留解除済み（不正データ）",0,0
+SIGHT_TYP,サイト計算区分/Sight calculating type,1,"1：月数",1,2
+SIGHT_TYP,サイト計算区分/Sight calculating type,2,"2：日数",1,2
+SIGHT_TYP,サイト計算区分/Sight calculating type,3,"3：月数＋日数",1,2
+SLIP_PRINTING,伝票印字制約/Slip print restriction ,1,"1：印字しない",1,2
+SLIP_PRINTING,伝票印字制約/Slip print restriction ,2,"2：単価、税抜額、税額、税込額を印字",1,2
+SLIP_PRINTING,伝票印字制約/Slip print restriction ,3,"3：単価、税抜額を印字",1,2
+SLIP_PRINTING,伝票印字制約/Slip print restriction ,4,"4：単価のみ印字",1,2
+SLIP_TYP,伝票種類/Slip type,12,"12：受注伝票",1,2
+SLIP_TYP,伝票種類/Slip type,13,"13：出荷実績伝票",1,2
+SLIP_TYP,伝票種類/Slip type,14,"14：売上伝票",1,2
+SLIP_TYP,伝票種類/Slip type,17,"17：出荷指示伝票",1,2
+SLIP_TYP,伝票種類/Slip type,22,"22：発注伝票",1,2
+SLIP_TYP,伝票種類/Slip type,23,"23：入荷伝票",1,2
+SLIP_TYP,伝票種類/Slip type,24,"24：仕入伝票",1,2
+SLIP_TYP,伝票種類/Slip type,27,"27：入荷予定伝票",1,2
+SLIP_TYP,伝票種類/Slip type,30,"30：棚卸伝票",1,2
+SLIP_TYP,伝票種類/Slip type,33,"33：出庫伝票",1,2
+SLIP_TYP,伝票種類/Slip type,35,"35：生産依頼伝票",1,2
+SLIP_TYP,伝票種類/Slip type,37,"37：入庫予定伝票",1,2
+SLIP_TYP,伝票種類/Slip type,38,"38：入庫伝票",1,2
+SLIP_TYP,伝票種類/Slip type,61,"61：売掛計上伝票",1,2
+SLIP_TYP,伝票種類/Slip type,62,"62：売掛金Ｉ／Ｆ伝票",1,2
+SLIP_TYP,伝票種類/Slip type,63,"63：未収金伝票",1,2
+SLIP_TYP,伝票種類/Slip type,64,"64：未収金Ｉ／Ｆ伝票",1,2
+SLIP_TYP,伝票種類/Slip type,66,"66：請求書伝票",1,2
+SLIP_TYP,伝票種類/Slip type,67,"67：入金伝票",1,2
+SLIP_TYP,伝票種類/Slip type,68,"68：ＦＢ入金伝票",1,2
+SLIP_TYP,伝票種類/Slip type,69,"69：消費税伝票",1,2
+SLIP_TYP,伝票種類/Slip type,71,"71：買掛計上伝票",1,2
+SLIP_TYP,伝票種類/Slip type,72,"72：値引き伝票",1,2
+SLIP_TYP,伝票種類/Slip type,73,"73：割戻し伝票",1,2
+SLIP_TYP,伝票種類/Slip type,74,"74：返品伝票",1,2
+SLIP_TYP,伝票種類/Slip type,75,"75：相殺伝票",1,2
+SLIP_TYP,伝票種類/Slip type,76,"76：支払伝票",1,2
+SLIP_TYP,伝票種類/Slip type,77,"77：消費税伝票",1,2
+SLIP_TYP,伝票種類/Slip type,78,"78：為替差額伝票",1,2
+SLIP_TYP,伝票種類/Slip type,79,"79：検収Ｉ／Ｆ伝票",1,2
+SLIP_TYP_AP,伝票種類/Slip type,71,"71：買掛計上",1,2
+SLIP_TYP_AP,伝票種類/Slip type,72,"72：値引き",1,2
+SLIP_TYP_AP,伝票種類/Slip type,73,"73：リベート",1,2
+SLIP_TYP_AP,伝票種類/Slip type,74,"74：返品",1,2
+SLIP_TYP_AP,伝票種類/Slip type,79,"79：検収I／F",1,2
+SLIP_TYP_SEARCH_COND_AP_1,買掛伝票種類検索条件１/AP slip type retrieval COND1,71,"71：買掛計上",1,2
+SLIP_TYP_SEARCH_COND_AP_1,買掛伝票種類検索条件１/AP slip type retrieval COND1,72,"72：値引き",1,2
+SLIP_TYP_SEARCH_COND_AP_1,買掛伝票種類検索条件１/AP slip type retrieval COND1,73,"73：リベート",1,2
+SLIP_TYP_SEARCH_COND_AP_1,買掛伝票種類検索条件１/AP slip type retrieval COND1,74,"74：返品",1,2
+SLIP_TYP_SEARCH_COND_AP_1,買掛伝票種類検索条件１/AP slip type retrieval COND1,79,"79：検収I／F",1,2
+SLIP_TYP_SEARCH_COND_AP_2,買掛伝票種類検索条件２/AP slip type retrieval COND2,71,"71：買掛計上",1,2
+SLIP_TYP_SEARCH_COND_AP_2,買掛伝票種類検索条件２/AP slip type retrieval COND2,72,"72：値引き",1,2
+SLIP_TYP_SEARCH_COND_AP_2,買掛伝票種類検索条件２/AP slip type retrieval COND2,73,"73：リベート",1,2
+SLIP_TYP_SEARCH_COND_AP_2,買掛伝票種類検索条件２/AP slip type retrieval COND2,74,"74：返品",1,2
+SLIP_TYP_SEARCH_COND_AP_2,買掛伝票種類検索条件２/AP slip type retrieval COND2,79,"79：検収I／F",1,2
+SLIP_TYP_SEARCH_COND_AP_2,買掛伝票種類検索条件２/AP slip type retrieval COND2,99,"99：全て",1,2
+SLIP_TYP_SEARCH_COND_AP_3,買掛伝票種類検索条件３/AP slip type retrieval COND3,71,"71：買掛計上",1,2
+SLIP_TYP_SEARCH_COND_AP_3,買掛伝票種類検索条件３/AP slip type retrieval COND3,72,"72：値引き",1,2
+SLIP_TYP_SEARCH_COND_AP_3,買掛伝票種類検索条件３/AP slip type retrieval COND3,73,"73：リベート",1,2
+SLIP_TYP_SEARCH_COND_AP_3,買掛伝票種類検索条件３/AP slip type retrieval COND3,74,"74：返品",1,2
+SLIP_TYP_SEARCH_COND_AR_1,売掛伝票種類検索条件１/AR slip type retrieval COND1,14,"14:売上",1,2
+SLIP_TYP_SEARCH_COND_AR_1,売掛伝票種類検索条件１/AR slip type retrieval COND1,61,"61:売掛金",1,2
+SLIP_TYP_SEARCH_COND_AR_1,売掛伝票種類検索条件１/AR slip type retrieval COND1,62,"62:売掛金Ｉ／Ｆ",1,2
+SLIP_TYP_SEARCH_COND_AR_1,売掛伝票種類検索条件１/AR slip type retrieval COND1,63,"63:未収金",1,2
+SLIP_TYP_SEARCH_COND_AR_1,売掛伝票種類検索条件１/AR slip type retrieval COND1,64,"64:未収金Ｉ／Ｆ",1,2
+SLIP_TYP_SEARCH_COND_AR_1,売掛伝票種類検索条件１/AR slip type retrieval COND1,99,"99:全て",1,2
+SLIP_TYP_SEARCH_COND_AR_2,売掛伝票種類検索条件２/AR slip type retrieval COND2,14,"14:売上",1,2
+SLIP_TYP_SEARCH_COND_AR_2,売掛伝票種類検索条件２/AR slip type retrieval COND2,61,"61:売掛金",1,2
+SLIP_TYP_SEARCH_COND_AR_2,売掛伝票種類検索条件２/AR slip type retrieval COND2,62,"62:売掛金Ｉ／Ｆ",1,2
+SLIP_TYP_SEARCH_COND_AR_2,売掛伝票種類検索条件２/AR slip type retrieval COND2,63,"63:未収金",1,2
+SLIP_TYP_SEARCH_COND_AR_2,売掛伝票種類検索条件２/AR slip type retrieval COND2,64,"64:未収金Ｉ／Ｆ",1,2
+SLIP_TYP_SEARCH_COND_AR_3,売掛伝票種類検索条件３/AR slip type retrieval COND3,67,"67:入金",1,2
+SLIP_TYP_SEARCH_COND_AR_3,売掛伝票種類検索条件３/AR slip type retrieval COND3,68,"68：FB入金",1,2
+SLIP_TYP_SEARCH_COND_AR_3,売掛伝票種類検索条件３/AR slip type retrieval COND3,99,"99：全て",1,2
+SLIP_TYP_SEARCH_COND_AR_4,売掛伝票種類検索条件４/AR slip type retrieval COND4,67,"67：入金",1,2
+SLIP_TYP_SEARCH_COND_AR_4,売掛伝票種類検索条件４/AR slip type retrieval COND4,68,"68：FB入金",1,2
+SLIP_TYP_SEARCH_COND_AR_5,売掛伝票種類検索条件５/AR slip type retrieval COND5,14,"14：売上伝票",1,2
+SLIP_TYP_SEARCH_COND_AR_5,売掛伝票種類検索条件５/AR slip type retrieval COND5,61,"61：売掛金",1,2
+SLIP_TYP_SEARCH_COND_AR_5,売掛伝票種類検索条件５/AR slip type retrieval COND5,63,"63：未収金",1,2
+SORT_TYP,ソート区分/Sort type,0," ",1,2
+SORT_TYP,ソート区分/Sort type,1,"昇順",1,2
+SORT_TYP,ソート区分/Sort type,2,"降順",1,2
+SPL_ITEM_TYP,受給品区分/Receipt item type,0,"0：受給品ではない",1,2
+SPL_ITEM_TYP,受給品区分/Receipt item type,1,"1：有償受給",1,2
+SPL_ITEM_TYP,受給品区分/Receipt item type,2,"2：無償受給",1,2
+SPOT_VEND_FLG,スポット取引先フラグ/Spot vendor flag,0,"0：通常取引先",0,1
+SPOT_VEND_FLG,スポット取引先フラグ/Spot vendor flag,1,"1：スポット取引先",0,1
+STARTING_JUDGE_AR,処理起動判定/Process start judgment,0,"0：しない",1,2
+STARTING_JUDGE_AR,処理起動判定/Process start judgment,1,"1：する",1,2
+STATUS_TYP_AP_1,状態区分/State Div.,20,"20：買掛計上予定",1,2
+STATUS_TYP_AP_1,状態区分/State Div.,21,"21：買掛計上保留",1,2
+STATUS_TYP_AP_1,状態区分/State Div.,22,"22：買掛計上承認",1,2
+STATUS_TYP_AP_1,状態区分/State Div.,30,"30：買掛計上済",1,2
+STATUS_TYP_AP_1,状態区分/State Div.,31,"31：支払締め保留",1,2
+STATUS_TYP_AP_1,状態区分/State Div.,40,"40：支払締め済",1,2
+STATUS_TYP_AP_1,状態区分/State Div.,60,"60：支払依頼",1,2
+STATUS_TYP_AP_1,状態区分/State Div.,61,"61：支払保留",1,2
+STATUS_TYP_AP_1,状態区分/State Div.,62,"62：支払承認",1,2
+STATUS_TYP_AP_1,状態区分/State Div.,80,"80：支払確定",1,2
+STATUS_TYP_AR_1,状態区分/State Div.,10,"10:出荷検収待ち ",1,2
+STATUS_TYP_AR_1,状態区分/State Div.,20,"20:売掛計上予定",1,2
+STATUS_TYP_AR_1,状態区分/State Div.,21,"21:売掛計上保留",1,2
+STATUS_TYP_AR_1,状態区分/State Div.,22,"22:売掛計上承認",1,2
+STATUS_TYP_AR_1,状態区分/State Div.,30,"30:売掛計上済",1,2
+STATUS_TYP_AR_1,状態区分/State Div.,31,"31:請求締め保留",1,2
+STATUS_TYP_AR_1,状態区分/State Div.,40,"40:請求締め済",1,2
+STATUS_TYP_AR_1,状態区分/State Div.,50,"50:個別入金待ち",1,2
+STATUS_TYP_AR_1,状態区分/State Div.,60,"60:入金計上予定",1,2
+STATUS_TYP_AR_1,状態区分/State Div.,61,"61:入金計上保留",1,2
+STATUS_TYP_AR_1,状態区分/State Div.,62,"62:入金計上承認",1,2
+STATUS_TYP_AR_1,状態区分/State Div.,80,"80:入金計上済",1,2
+STATUS_TYP_SEARCH_COND_AR_1,状態区分検索条件/State Div. retrieval COND,50,"50:個別入金入力待ち",1,2
+STATUS_TYP_SEARCH_COND_AR_1,状態区分検索条件/State Div. retrieval COND,60,"60:入金予定",1,2
+STATUS_TYP_SEARCH_COND_AR_1,状態区分検索条件/State Div. retrieval COND,99,"99：全て",1,2
+STATUS_TYP_SEARCH_COND_AR_2,状態区分検索条件２/State Div. retrieval COND2,60,"60:入金予定",1,2
+STATUS_TYP_SEARCH_COND_AR_2,状態区分検索条件２/State Div. retrieval COND2,61,"61:入金計上保留",1,2
+STATUS_TYP_SEARCH_COND_AR_2,状態区分検索条件２/State Div. retrieval COND2,62,"62:入金計上承認",1,2
+STATUS_TYP_SEARCH_COND_AR_3,状態区分検索条件３/State Div. retrieval COND3,10,"10：出荷検収待ち",1,2
+STATUS_TYP_SEARCH_COND_AR_3,状態区分検索条件３/State Div. retrieval COND3,20,"20：売掛計上予定",1,2
+STATUS_TYP_SEARCH_COND_AR_3,状態区分検索条件３/State Div. retrieval COND3,21,"21：売掛計上保留",1,2
+STATUS_TYP_SEARCH_COND_AR_3,状態区分検索条件３/State Div. retrieval COND3,22,"22：売掛計上承認",1,2
+STATUS_TYP_SEARCH_COND_AR_3,状態区分検索条件３/State Div. retrieval COND3,99,"99：全て",1,2
+STATUS_TYP_SEARCH_COND_AR_4,状態区分検索条件４/State Div. retrieval COND4,50,"50：個別入金入力待ち",1,2
+STATUS_TYP_SEARCH_COND_AR_4,状態区分検索条件４/State Div. retrieval COND4,60,"60：入金予定",1,2
+STATUS_TYP_SEARCH_COND_AR_4,状態区分検索条件４/State Div. retrieval COND4,61,"61：入金計上保留",1,2
+STATUS_TYP_SEARCH_COND_AR_4,状態区分検索条件４/State Div. retrieval COND4,62,"62：入金計上承認",1,2
+STATUS_TYP_SEARCH_COND_AR_4,状態区分検索条件４/State Div. retrieval COND4,99,"99：全て",1,2
+STATUS_TYP_SEARCH_COND_AR_5,状態区分検索条件５/State Div. retrieval COND5,40,"40：請求締め済",1,2
+STATUS_TYP_SEARCH_COND_AR_5,状態区分検索条件５/State Div. retrieval COND5,80,"80：入金計上済",1,2
+STATUS_TYP_SEARCH_COND_AR_5,状態区分検索条件５/State Div. retrieval COND5,99,"99：全て",1,2
+STD_COST_UNIT_TYP,標準工数単位区分/STD man-hour unit indicator,1,"1：時間",1,2
+STD_COST_UNIT_TYP,標準工数単位区分/STD man-hour unit indicator,2,"2：分",1,2
+STD_COST_UNIT_TYP,標準工数単位区分/STD man-hour unit indicator,3,"3：日",1,2
+STD_COST_UNIT_TYP,標準工数単位区分/STD man-hour unit indicator,4,"4：月",1,2
+STD_PRICE_APPLY_TYP,標準単価適用区分/STD UC application Div.,1,"1：標準売上単価",1,2
+STD_PRICE_APPLY_TYP,標準単価適用区分/STD UC application Div.,2,"2：標準上代単価　",1,2
+STD_PRICE_APPLY_TYP,標準単価適用区分/STD UC application Div.,3,"3：希望小売単価",1,2
+STL_COND_TYP,決済条件区分/Settlement COND type,1,"1：基本契約",0,1
+STL_COND_TYP,決済条件区分/Settlement COND type,2,"2：別途協議",0,0
+STL_COND_TYP,決済条件区分/Settlement COND type,3,"3：交付書面",0,0
+STL_TYP,回収方法/Collection method,1,"1：集金",1,2
+STL_TYP,回収方法/Collection method,2,"2：通常",1,2
+STL_TYP,回収方法/Collection method,3,"3：速達",1,2
+STL_TYP,回収方法/Collection method,4,"4：簡易書留",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,11,"11：通常出荷",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,12,"12：委託出荷",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,13,"13：委託売上",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,14,"14：預け出荷",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,15,"15：預かり売上",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,16,"16：預かり出荷 ",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,17,"17：その他出荷",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,21,"21：通常出荷返品",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,22,"22：委託出荷返品",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,23,"23：委託売上返品",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,24,"24：預け出荷返品",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,25,"25：預かり売上返品",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,26,"26：預かり出荷返品",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,27,"27：その他出荷返品",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,31,"31：入荷（2次）",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,41,"41：出庫（2次） ",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,51,"51：入庫（2次）",1,2
+STOCK_CLASS_CD,在庫更新分類コード/Stock update class code,99,"99：対象外 ",1,2
+STOCK_UNIT,計量単位/Measure unit ,1,"PC",0,0
+STOCK_UNIT,計量単位/Measure unit ,2,"KPC",0,0
+STOCK_UNIT,計量単位/Measure unit ,3,"CP",0,0
+STOCK_UNIT,計量単位/Measure unit ,4,"BT",0,0
+STOCK_UNIT,計量単位/Measure unit ,5,"SH",0,0
+STOCK_UNIT,計量単位/Measure unit ,6,"RL",0,0
+STOCK_UNIT,計量単位/Measure unit ,7,"VL",0,0
+STOCK_UNIT,計量単位/Measure unit ,8,"CN",0,0
+STOCK_UNIT,計量単位/Measure unit ,9,"ST",0,0
+STOCK_UNIT,計量単位/Measure unit ,10,"KT",0,0
+STOCK_UNIT,計量単位/Measure unit ,11,"UT",0,0
+STOCK_UNIT,計量単位/Measure unit ,12,"BX",0,0
+STOCK_UNIT,計量単位/Measure unit ,13,"PR",0,0
+STOCK_UNIT,計量単位/Measure unit ,14,"PK",0,0
+STOCK_UNIT,計量単位/Measure unit ,15,"GS",0,0
+STOCK_UNIT,計量単位/Measure unit ,16,"DZ",0,0
+STOCK_UNIT,計量単位/Measure unit ,17,"TN",0,0
+STOCK_UNIT,計量単位/Measure unit ,18,"G",0,0
+STOCK_UNIT,計量単位/Measure unit ,19,"KG",0,0
+STOCK_UNIT,計量単位/Measure unit ,20,"MG",0,0
+STOCK_UNIT,計量単位/Measure unit ,21,"LB",0,0
+STOCK_UNIT,計量単位/Measure unit ,22,"OZ",0,0
+STOCK_UNIT,計量単位/Measure unit ,23,"M",0,0
+STOCK_UNIT,計量単位/Measure unit ,24,"KM",0,0
+STOCK_UNIT,計量単位/Measure unit ,25,"CM",0,0
+STOCK_UNIT,計量単位/Measure unit ,26,"MM",0,0
+STOCK_UNIT,計量単位/Measure unit ,27,"FT",0,0
+STOCK_UNIT,計量単位/Measure unit ,28,"IN",0,0
+STOCK_UNIT,計量単位/Measure unit ,29,"M2",0,0
+STOCK_UNIT,計量単位/Measure unit ,30,"CM2",0,0
+STOCK_UNIT,計量単位/Measure unit ,31,"M3",0,0
+STOCK_UNIT,計量単位/Measure unit ,32,"CM3",0,0
+STOCK_UNIT,計量単位/Measure unit ,33,"L",0,0
+STOCK_UNIT,計量単位/Measure unit ,34,"KL",0,0
+STOCK_UNIT,計量単位/Measure unit ,35,"GL",0,0
+STOCK_UNIT,計量単位/Measure unit ,36,"QT",0,0
+STOCK_UNIT,計量単位/Measure unit ,37,"HR",0,0
+STOCK_UNIT,計量単位/Measure unit ,38,"W",0,0
+STOCK_UNIT,計量単位/Measure unit ,39,"WH",0,0
+STOCK_UNIT,計量単位/Measure unit ,40,"VA",0,0
+STOCK_UNIT,計量単位/Measure unit ,41,"個",0,0
+STOCK_UNIT,計量単位/Measure unit ,42,"袋",0,0
+STOCK_UNIT,計量単位/Measure unit ,43,"C/S",0,0
+STOCK_UNIT,計量単位/Measure unit ,44,"枚",0,0
+STOCK_UNIT,計量単位/Measure unit ,99,"ETC",0,0
+STOCK_UNIT_FLG,荷姿管理フラグ/Packing Mgt flag,0,"0：荷姿管理しない",1,2
+STOCK_UNIT_FLG,荷姿管理フラグ/Packing Mgt flag,1,"1：荷姿管理する",1,2
+STOCK_UPD_TYP,在庫更新区分/Updating type of stock,1,"1：未更新",1,2
+STOCK_UPD_TYP,在庫更新区分/Updating type of stock,2,"2：更新済み",1,2
+STOCK_UPD_TYP,在庫更新区分/Updating type of stock,3,"3：更新失敗・無効",1,2
+STRATEGIC_GOODS_TYP,戦略物資区分/Strategic material type,1,"1：戦略物資該当",0,1
+STRATEGIC_GOODS_TYP,戦略物資区分/Strategic material type,2,"2：戦略物資非該当",0,0
+SUB_ACCT_CD,補助区分コード/Auxiliary type code,0,"0：主科目",1,2
+SUB_ACCT_CD,補助区分コード/Auxiliary type code,1,"1：銀行、補助科目",1,2
+SUB_ACCT_CD,補助区分コード/Auxiliary type code,2,"2：得意先、補助科目",1,2
+SUB_ACCT_CD,補助区分コード/Auxiliary type code,3,"3：仕入先、補助科目",1,2
+SUB_ACCT_CD,補助区分コード/Auxiliary type code,4,"4：人事、補助科目",1,2
+SUB_ACCT_CD,補助区分コード/Auxiliary type code,5,"5：その他、補助科目",1,2
+SUB_ACCT_TYP_DEFAULT,補助区分既定値/Auxiliary type default ,0,"0：主科目",1,2
+SUB_ACCT_TYP_DEFAULT,補助区分既定値/Auxiliary type default ,1,"1：補助科目（銀行）",1,2
+SUB_ACCT_TYP_DEFAULT,補助区分既定値/Auxiliary type default ,2,"2：補助科目（得意先）",1,2
+SUB_ACCT_TYP_DEFAULT,補助区分既定値/Auxiliary type default ,3,"3：補助科目（仕入先）",1,2
+SUB_ACCT_TYP_DEFAULT,補助区分既定値/Auxiliary type default ,4,"4：補助科目（人事）",1,2
+SUB_ACCT_TYP_DEFAULT,補助区分既定値/Auxiliary type default ,5,"5：補助科目（その他）",1,2
+SUPPLIED_ISSUE_GNR_TYP,処理区分/Proc type,1,"1：みなし出庫",0,1
+SUPPLIED_ISSUE_GNR_TYP,処理区分/Proc type,2,"2：マニュアル修正",0,1
+SUPPLIED_ISSUE_GNR_TYP,処理区分/Proc type,3,"3：マニュアル追加",0,1
+TARGET_PLANT_TYP,対象工場区分/Object plants type,0,"0：ロックなし",1,2
+TARGET_PLANT_TYP,対象工場区分/Object plants type,1,"1：自工場のみ",1,2
+TARGET_PLANT_TYP,対象工場区分/Object plants type,2,"2：全工場",1,2
+TAX_APPLY_TYP,消費税適用区分/C-T application indicator,1,"1：品目マスタの消費税コード ",1,2
+TAX_APPLY_TYP,消費税適用区分/C-T application indicator,2,"2：取引先マスタの消費税コード",1,2
+TAX_APPLY_TYP_SAAR,販売売掛消費税適用区分/Sale AR C-T application indicator,1,"1：製品マスタの消費税コード",1,2
+TAX_APPLY_TYP_SAAR,販売売掛消費税適用区分/Sale AR C-T application indicator,2,"2：得意先マスタの消費税コード",1,2
+TAX_CALC_TYP,消費税計算区分/Consumption tax Calc indicator,1,"1：明細",1,2
+TAX_CALC_TYP,消費税計算区分/Consumption tax Calc indicator,2,"2：伝票",1,2
+TAX_CALC_TYP_SAAR,販売売掛消費税計算区分/Sale AR Consumption tax Calc indicator,1,"1：明細",1,2
+TAX_CALC_TYP_SAAR,販売売掛消費税計算区分/Sale AR Consumption tax Calc indicator,2,"2：伝票",1,2
+TAX_CALC_TYP_SAAR,販売売掛消費税計算区分/Sale AR Consumption tax Calc indicator,3,"3：請求",1,2
+TAX_CD_AR,消費税コード(売掛)/Consumption tax code(AR),0,"0：対象外",1,2
+TAX_CD_AR,消費税コード(売掛)/Consumption tax code(AR),1,"1：税抜計上（外税）",1,2
+TAX_CD_AR,消費税コード(売掛)/Consumption tax code(AR),5,"5：税込計上（内税）",1,2
+TAX_RELATION_TYP,課税区分/Imposition type,1,"1：課税取引",1,2
+TAX_RELATION_TYP,課税区分/Imposition type,2,"2：非課税取引",1,2
+TAX_RELATION_TYP,課税区分/Imposition type,3,"3：免税取引",1,2
+TAX_RELATION_TYP,課税区分/Imposition type,4,"4：経過措置取引",1,2
+TAX_RELATION_TYP,課税区分/Imposition type,9,"9：消費税対象外取引",1,2
+TAX_ROUND_TYP,税端数区分/Tax fraction type,1,"1：四捨五入  ",1,2
+TAX_ROUND_TYP,税端数区分/Tax fraction type,2,"2：切り上げ",1,2
+TAX_ROUND_TYP,税端数区分/Tax fraction type,3,"3：切り捨て",1,2
+TAX_TYP,消費税区分/Consumption tax type,0,"0：対象外",1,2
+TAX_TYP,消費税区分/Consumption tax type,1,"1：税抜計上（外税）",1,2
+TAX_TYP,消費税区分/Consumption tax type,5,"5：税込計上（内税）",1,2
+TRANSACTION_TYP,処理区分/Proc type,1,"1：新規",1,2
+TRANSACTION_TYP,処理区分/Proc type,2,"2：更新",1,2
+TRANSACTION_TYP,処理区分/Proc type,3,"3：削除",1,2
+TRANSPORT_CMPLT_TYP,積送完了フラグ/Deliv completed flag,0,"0：積送中（未完了）",1,2
+TRANSPORT_CMPLT_TYP,積送完了フラグ/Deliv completed flag,1,"1：完了",1,2
+TRANSPORT_TYP,輸送形態区分/Transportation style Div.,1,"1：トラック便",0,0
+TRANSPORT_TYP,輸送形態区分/Transportation style Div.,2,"2：船便",0,0
+TRANSPORT_TYP,輸送形態区分/Transportation style Div.,3,"3：航空便",0,0
+TRF_ADJUST_TYP,調整区分/Adjustment Div.,1,"1：調整不要",1,2
+TRF_ADJUST_TYP,調整区分/Adjustment Div.,2,"2：調整必要",1,2
+TRF_ADJUST_TYP,調整区分/Adjustment Div.,3,"3：調整済み",1,2
+TRF_ADJUST_TYP_SEARCH_COND,調整区分検索条件/Adjustment Div. retrieval COND,2,"2：調整必要",1,2
+TRF_ADJUST_TYP_SEARCH_COND,調整区分検索条件/Adjustment Div. retrieval COND,3,"3：調整済み",1,2
+TRF_ADJUST_TYP_SEARCH_COND,調整区分検索条件/Adjustment Div. retrieval COND,99,"99：全て",1,2
+TRF_FB_FLG,振込ＦＢフラグ/Transfer FB flag,0,"0：受信しない",1,2
+TRF_FB_FLG,振込ＦＢフラグ/Transfer FB flag,1,"1：受信する",1,2
+TRF_FEE_TYP_SEARCH_COND,手数料区分検索条件/Commission type retrieval COND,1,"1：相手先負担",1,2
+TRF_FEE_TYP_SEARCH_COND,手数料区分検索条件/Commission type retrieval COND,2,"2：自社負担",1,2
+TRF_FEE_TYP_SEARCH_COND,手数料区分検索条件/Commission type retrieval COND,99,"99：全て",1,2
+TRF_INFO_TYP,振込情報区分/Transfer Info type,1,"1：締め前",1,2
+TRF_INFO_TYP,振込情報区分/Transfer Info type,7,"7：電信扱い",1,2
+TRF_INFO_TYP,振込情報区分/Transfer Info type,8,"8：文書扱い",1,2
+TRF_TYP,振込先区分/Beneficiary Div.,1,"1：同行同支店",1,2
+TRF_TYP,振込先区分/Beneficiary Div.,2,"2：同行他支店",1,2
+TRF_TYP,振込先区分/Beneficiary Div.,3,"3：他行",1,2
+TRN_TYP,ＥＤＩ取引区分/EDI dealings Div.,1,"1：あり ",1,2
+TRN_TYP,ＥＤＩ取引区分/EDI dealings Div.,9,"9：なし",1,2
+UNCONFIRM_ODR_EFF_TERM_FLG,内示有効期間フラグ/UN valid period flag,0,"0：考慮しない",1,2
+UNCONFIRM_ODR_EFF_TERM_FLG,内示有効期間フラグ/UN valid period flag,1,"1：考慮する",1,2
+UNCONFIRM_ODR_TYP,内示受注区分/UN order type,1,"1：受注",0,1
+UNCONFIRM_ODR_TYP,内示受注区分/UN order type,2,"2：内示",0,0
+UNIT_COST_ACCEPT_TYP,単価適用区分/UC application Div.,1,"1：通常単価",1,2
+UNIT_COST_ACCEPT_TYP,単価適用区分/UC application Div.,2,"2：第二単価",1,2
+UNIT_COST_TYP,単価区分/UC type,1,"1：仮単価",1,2
+UNIT_COST_TYP,単価区分/UC type,2,"2：正単価",1,2
+UNIT_COST_TYP_SEARCH_COND,単価区分/UC type,1,"1：仮単価",1,2
+UNIT_COST_TYP_SEARCH_COND,単価区分/UC type,2,"2：正単価",1,2
+UNIT_COST_TYP_SEARCH_COND,単価区分/UC type,99,"99：全て",1,2
+UNIT_QTY_TYP,在庫数単位区分/Stock unit type,1,"1：整数管理",1,2
+UNIT_QTY_TYP,在庫数単位区分/Stock unit type,2,"2：小数管理",1,2
+UPD_FLG,計上承認フラグ/Recording approval flag,0,"0：承認なし",1,2
+UPD_FLG,計上承認フラグ/Recording approval flag,1,"1：承認あり",1,2
+UPDATE_FLG_AR,売掛更新フラグ/AR update flag,0,"0：未更新",1,2
+UPDATE_FLG_AR,売掛更新フラグ/AR update flag,1,"1：更新済",1,2
+UPPER_ITEM_FLG,先頭品フラグ/Leading item flag,0,"0：先頭の品目でない",1,2
+UPPER_ITEM_FLG,先頭品フラグ/Leading item flag,1,"1：先頭の品目である",1,2
+USER_TYP,利用者区分/User Div.,1,"1：一般利用者",1,2
+USER_TYP,利用者区分/User Div.,2,"2：管理者",1,2
+VEND_FLG_1,取引フラグ１（仕入）/Dealings flag 1 (stocking),0,"0：非仕入先",0,1
+VEND_FLG_1,取引フラグ１（仕入）/Dealings flag 1 (stocking),1,"1：仕入先",0,1
+VEND_FLG_2,取引フラグ２（無償）/Dealings flag 2 (free),0,"0：非外注（無償支給）",0,1
+VEND_FLG_2,取引フラグ２（無償）/Dealings flag 2 (free),1,"1：外注（無償支給）",0,1
+VEND_FLG_3,取引フラグ３（有償）/Dealings flag 3 (chargeable),0,"0：非外注（有償支給）",0,1
+VEND_FLG_3,取引フラグ３（有償）/Dealings flag 3 (chargeable),1,"1：外注（有償支給）",0,1
+VOLUNT_SPL_FLG,無償受給品フラグ/Free receipt item flag,0,"0：無償受給品以外",1,2
+VOLUNT_SPL_FLG,無償受給品フラグ/Free receipt item flag,1,"1：無償受給品",1,2
+WH_TYP,倉庫区分/Warehouse type,0,"0：倉庫",1,2
+WH_TYP,倉庫区分/Warehouse type,1,"1：工程保管場所",1,2
+WH_TYP,倉庫区分/Warehouse type,10,"10：出荷場所",1,2
+WH_TYP,倉庫区分/Warehouse type,20,"20：預託倉庫",1,2
+WH_TYP,倉庫区分/Warehouse type,30,"30：返品倉庫",1,2
+WH_TYP,倉庫区分/Warehouse type,40,"40：検査待保管場所",1,2
+WORK_STS_TYP,作業系列別作業状態区分/Working-state type by WS,1,"1：未指示",1,2
+WORK_STS_TYP,作業系列別作業状態区分/Working-state type by WS,2,"2：指示済み",1,2
+WORK_STS_TYP,作業系列別作業状態区分/Working-state type by WS,9,"9：作業完了",1,2
+COST_CALC_TYP,原価計算種別/Cost counting type,1,"1：総合原価",1,2
+COST_CALC_TYP,原価計算種別/Cost counting type,2,"2：個別原価",1,2
+TOTAL_COST_FLG,標準原価導入フラグ/STD cost introduction flag,0,"0：未導入",1,2
+TOTAL_COST_FLG,標準原価導入フラグ/STD cost introduction flag,1,"1：導入済み",1,2
+KANNRYOU_SIKAKARI_KBN ,完了仕掛区分/Completed WIP class,1,"1:完了",1,2
+KANNRYOU_SIKAKARI_KBN ,完了仕掛区分/Completed WIP class,2,"2:仕掛",1,2
+AVERAGE_UNIT_COST_TYP,平均単価区分/Average UC type,1,"1：総平均単価",1,2
+AVERAGE_UNIT_COST_TYP,平均単価区分/Average UC type,2,"2：移動平均単価",1,2
+AVERAGE_UNIT_COST_TYP,平均単価区分/Average UC type,3,"3：先入先出単価",1,2
+ERR_TYP,エラー区分/ERR type,1,"1：エラー",1,2
+ERR_TYP,エラー区分/ERR type,2,"2：ワーニング",1,2
+EXPENSE_TYP,費目区分/Expense class,1,"1：直接材料費",1,2
+EXPENSE_TYP,費目区分/Expense class,2,"2：間接材料費",1,2
+EXPENSE_TYP,費目区分/Expense class,3,"3：直接労務費",1,2
+EXPENSE_TYP,費目区分/Expense class,4,"4：間接労務費",1,2
+EXPENSE_TYP,費目区分/Expense class,5,"5：外注費",1,2
+EXPENSE_TYP,費目区分/Expense class,6,"6：直接経費",1,2
+EXPENSE_TYP,費目区分/Expense class,7,"7：間接経費",1,2
+INDIRECT_ORG_TYP,間接部門区分/Indirect section Div.,1,"1：直接部門",1,2
+INDIRECT_ORG_TYP,間接部門区分/Indirect section Div.,2,"2：間接部門",1,2
+INDIRECT_ORG_TYP,間接部門区分/Indirect section Div.,3,"3：その他部門",1,2
+MATR_UNIT_COST_CALC_TYP,材料払出単価計算区分/Calc of issue UC Div. of material,1,"1：総平均単価計算処理",1,2
+MATR_UNIT_COST_CALC_TYP,材料払出単価計算区分/Calc of issue UC Div. of material,2,"2：移動平均単価計算処理",1,2
+MATR_UNIT_COST_CALC_TYP,材料払出単価計算区分/Calc of issue UC Div. of material,3,"3：先入先出単価計算処理",1,2
+MONTHEND_FIXED_STOCK_FLG,生産月末在庫確定フラグ/Stock confirmed flag of prod end of month,1,"1：確定済",1,2
+MONTHEND_FIXED_STOCK_FLG,生産月末在庫確定フラグ/Stock confirmed flag of prod end of month,2,"2：未確定",1,2
+MONTHEND_UPD_STOCK_TYP,月末在庫更新区分/Stock update Div. of end of month,1,"1：入出庫をもとに再計算",1,2
+MONTHEND_UPD_STOCK_TYP,月末在庫更新区分/Stock update Div. of end of month,2,"2：I/F月末在庫",1,2
+OD_CMPLT_TYP,オーダ完了区分/Order completed Div.,1,"1：未完了",1,2
+OD_CMPLT_TYP,オーダ完了区分/Order completed Div.,9,"9：完了",1,2
+PROVISIONAL_CALC_TYP,仮計算区分/Provisional Calc class,1,"1：実際原価計算",1,2
+PROVISIONAL_CALC_TYP,仮計算区分/Provisional Calc class,2,"2：仮実際原価計算",1,2
+SHIP_TYP,出荷区分/Ship Div.,0,"0：出荷品目でない",1,2
+SHIP_TYP,出荷区分/Ship Div.,1,"1：出荷品目である",1,2
+WK_IN_CALC_TYP,仕掛計算区分/WIP Calc Div.,1,"1：完成数／工程の実績数",1,2
+WK_IN_CALC_TYP,仕掛計算区分/WIP Calc Div.,2,"2：すべて含む（仕掛なし）",1,2
+WK_IN_CALC_TYP,仕掛計算区分/WIP Calc Div.,3,"3：固定比率",1,2
+CS_KBN,原価計算区分/Cost Calc class,1,"1：実際原価",1,2
+CS_KBN,原価計算区分/Cost Calc class,2,"2：仮原価",1,2
+CS_KBN,原価計算区分/Cost Calc class,3,"3：標準原価",1,2
+EXEC_TYP,処理区分/Proc type,1,"1：基準情報IF処理",1,2
+EXEC_TYP,処理区分/Proc type,2,"2：実績情報IF処理",1,2
+EXEC_TYP,処理区分/Proc type,3,"3：標準原価IF処理",1,2
+EXEC_TYP,処理区分/Proc type,4,"4：基準情報CSV取込",1,2
+EXEC_TYP,処理区分/Proc type,5,"5：実績情報CSV取込",1,2
+EXEC_TYP,処理区分/Proc type,6,"6：実績データ更新処理",1,2
+EXEC_TYP,処理区分/Proc type,7,"7：材料払出単価計算処理",1,2
+EXEC_TYP,処理区分/Proc type,8,"8：仮実際原価計算処理",1,2
+EXEC_TYP,処理区分/Proc type,9,"9：実際原価計算処理",1,2
+ERR_LIST_FLG,エラーリスト出力済みフラグ/ERR list OP.ed ending flag,0,"0：未出力",1,2
+ERR_LIST_FLG,エラーリスト出力済みフラグ/ERR list OP.ed ending flag,1,"1：出力済み",1,2
+MONTHEND_FIXED_STOCK_FLG_SET_FLG,生産月末在庫確定フラグ決定フラグ/decided flag of Stock confirmed flag of prod end of month,1,"1:生産月末在庫確定する",1,2
+MONTHEND_FIXED_STOCK_FLG_SET_FLG,生産月末在庫確定フラグ決定フラグ/decided flag of Stock confirmed flag of prod end of month,2,"2:生産月末在庫確定しない",1,2
+JOB_ODR_COMP_FLG,完了フラグ/Completion flag,1,"1：未完了",1,2
+JOB_ODR_COMP_FLG,完了フラグ/Completion flag,9,"9：完了",1,2
+ONEROUS_CONS_FLG_AC,有償支給品フラグ/Chargeable supplies flag,0,"0：有償支給品以外",1,2
+ONEROUS_CONS_FLG_AC,有償支給品フラグ/Chargeable supplies flag,1,"1：有償支給品",1,2
+ONEROUS_CONS_FLG_AC,有償支給品フラグ/Chargeable supplies flag,2,"2：混在",1,2
+EXPENSE_TYP,費目区分/Expense class,8,"8：品目外注費",1,2
+PRIMARY_ALLOCATION_TYP,一次配賦先区分/the 1st allocation Dest type,0,"0:設定なし",1,2
+PRIMARY_ALLOCATION_TYP,一次配賦先区分/the 1st allocation Dest type,1,"1:部門",1,2
+PRIMARY_ALLOCATION_TYP,一次配賦先区分/the 1st allocation Dest type,2,"2:製品グループ",1,2
+PRIMARY_ALLOCATION_TYP,一次配賦先区分/the 1st allocation Dest type,3,"3:一次配賦なし",1,2
+SECONDARY_ALLOCATION_TYP,二次配賦先区分/Second allocation Dest type,0,"0:設定なし",1,2
+SECONDARY_ALLOCATION_TYP,二次配賦先区分/Second allocation Dest type,1,"1:作業工程",1,2
+SECONDARY_ALLOCATION_TYP,二次配賦先区分/Second allocation Dest type,2,"2:製番および製品",1,2
+SECONDARY_ALLOCATION_BASE,二次配賦基準/STD of the second allocation,0,"0:設定なし",1,2
+SECONDARY_ALLOCATION_BASE,二次配賦基準/STD of the second allocation,1,"1:作業実績数基準",1,2
+SECONDARY_ALLOCATION_BASE,二次配賦基準/STD of the second allocation,2,"2:作業時間基準",1,2
+SECONDARY_ALLOCATION_BASE,二次配賦基準/STD of the second allocation,3,"3:直接労務費基準",1,2
+SECONDARY_ALLOCATION_BASE,二次配賦基準/STD of the second allocation,4,"4:直接材料費基準",1,2
+SECONDARY_ALLOCATION_BASE,二次配賦基準/STD of the second allocation,5,"5:品目外注費基準",1,2
+SECONDARY_ALLOCATION_BASE,二次配賦基準/STD of the second allocation,6,"6:工程外注費基準",1,2
+SECONDARY_ALLOCATION_BASE,二次配賦基準/STD of the second allocation,7,"7:直接費合算基準",1,2
+OUTSIDE_TYP_AC,内外作区分（実際原価）/I/E manuf type (actual cost),1,"内作",1,2
+OUTSIDE_TYP_AC,内外作区分（実際原価）/I/E manuf type (actual cost),2,"外作",1,2
+OUTSIDE_TYP_AC,内外作区分（実際原価）/I/E manuf type (actual cost),9,"内外作",1,2
+HIGH_RANK_ITEM_FLG,最上位品目指定フラグ/Top item SPEC flag,0,"指定あり",1,2
+HIGH_RANK_ITEM_FLG,最上位品目指定フラグ/Top item SPEC flag,1,"指定なし",1,2
+ALLOCATION_SELECT_TYP,配賦選択区分/Allocation selection type,1,"1:全部門一次配賦対象",1,2
+ALLOCATION_SELECT_TYP,配賦選択区分/Allocation selection type,2,"2:直接部門一次配賦対象",1,2
+PRIMARY_ALLOCATION_BASE,一次配賦基準/Std of the 1st allocation,1,"1:固定比率",1,2
+SHIP_CTL_TYP,出荷管理先区分/Ship Mgt Dest Div. ,1,"1：納品場所",1,2
+SHIP_CTL_TYP,出荷管理先区分/Ship Mgt Dest Div. ,2,"2：集結場所",1,2
+SHIP_CTL_TYP,出荷管理先区分/Ship Mgt Dest Div. ,3,"3：管理対象外",1,2
+DLV_SLIP_ISS_FLG,納品書発行フラグ/Deliv book issue flag,0,"0：発行しない",1,2
+DLV_SLIP_ISS_FLG,納品書発行フラグ/Deliv book issue flag,1,"1：発行する",1,2
+IDENT_CARD_F_ISS_TYP,現品エフ発行区分/item F issue Div.,0,"0：発行しない",1,2
+IDENT_CARD_F_ISS_TYP,現品エフ発行区分/item F issue Div.,1,"1：限度なし",1,2
+IDENT_CARD_F_ISS_TYP,現品エフ発行区分/item F issue Div.,2,"2：限度１５枚",1,2
+IDENT_CARD_F_ISS_TYP,現品エフ発行区分/item F issue Div.,3,"3：数量＝収容数",1,2
+IDENT_CARD_F_FORMAT_TYP,現品エフフォーマット区分/item F format Div.,1,"1：標準",1,2
+MASS_PRODUCT_TYP,量産区分/Mass prod Div.,1,"1：量産",1,2
+MASS_PRODUCT_TYP,量産区分/Mass prod Div.,2,"2：補給",1,2
+MASS_PRODUCT_TYP,量産区分/Mass prod Div.,3,"3：試作",1,2
+DECISION_REPLACE_PTN,確定置換パターン/Confirmed substitution pattern,1,"1：Aパターン",1,2
+DECISION_REPLACE_PTN,確定置換パターン/Confirmed substitution pattern,2,"2：Bパターン",1,2
+DECISION_REPLACE_PTN,確定置換パターン/Confirmed substitution pattern,3,"3：Cパターン",1,2
+DECISION_REPLACE_PTN,確定置換パターン/Confirmed substitution pattern,4,"4：Dパターン",1,2
+SHIP_RSLT_APPLY_TYP,出荷実績適用区分/Shipping actual application Div.,1,"1：出荷照合",1,2
+SHIP_RSLT_APPLY_TYP,出荷実績適用区分/Shipping actual application Div.,2,"2：画面入力",1,2
+CNCNTRT_SHIP_RSLT_APPLY_TYP,集結先出荷実績適用区分/Shipping actual application Div. at concentration Dest,1,"1：確定受注からのみなし実績",1,2
+CNCNTRT_SHIP_RSLT_APPLY_TYP,集結先出荷実績適用区分/Shipping actual application Div. at concentration Dest,2,"2：ＣＳＶ取込",1,2
+NEXT_DLV_SHIFT_EFF_FLG,次便ずらし有無フラグ/Moving the next mail presence flag,0,"0：出荷照合時の次便ずらしなし",1,2
+NEXT_DLV_SHIFT_EFF_FLG,次便ずらし有無フラグ/Moving the next mail presence flag,1,"1：出荷照合時の次便ずらしあり",1,2
+UNCNFM_PLAN_AVG_FLG,内示計画均等割りフラグ/UN plan evenly remunerative flag,0,"0：均等割りしない",1,2
+UNCNFM_PLAN_AVG_FLG,内示計画均等割りフラグ/UN plan evenly remunerative flag,1,"1：均等割りする",1,2
+PKG_BOX_DESINATED_TYP,集結先箱種指定区分/Box kind SPEC Div. at concentration Dest,1,"1：通常",1,2
+PKG_BOX_DESINATED_TYP,集結先箱種指定区分/Box kind SPEC Div. at concentration Dest,2,"2：社内用",1,2
+BOX_STOCK_UNIT,箱外寸単位/Box size unit,1,"M",1,2
+BOX_STOCK_UNIT,箱外寸単位/Box size unit,2,"CM",1,2
+BOX_STOCK_UNIT,箱外寸単位/Box size unit,3,"MM",1,2
+PURPOSE_UNIT_PRICE_TYP,用途別単価区分/UC type by usage,1,"1:量産",1,2
+PURPOSE_UNIT_PRICE_TYP,用途別単価区分/UC type by usage,2,"2:補用",1,2
+PURPOSE_UNIT_PRICE_TYP,用途別単価区分/UC type by usage,3,"3:試作",1,2
+PURPOSE_UNIT_PRICE_TYP,用途別単価区分/UC type by usage,4,"4:量先",1,2
+PURPOSE_UNIT_PRICE_TYP,用途別単価区分/UC type by usage,5,"5:修正",1,2
+PURPOSE_UNIT_PRICE_TYP,用途別単価区分/UC type by usage,6,"6:改造",1,2
+PURPOSE_UNIT_PRICE_TYP,用途別単価区分/UC type by usage,7,"7:都度・限定",1,2
+PURPOSE_UNIT_PRICE_TYP,用途別単価区分/UC type by usage,8,"8:輸出",1,2
+PURPOSE_UNIT_PRICE_TYP,用途別単価区分/UC type by usage,9,"9:その他",1,2
+PURPOSE_KIND,用途別分類種別/Class type by usage,1,"1:分類なし",1,2
+SHIP_TIME,出荷時間/Ship time,0,"0",1,2
+SHIP_TIME,出荷時間/Ship time,1,"1",1,2
+SHIP_TIME,出荷時間/Ship time,2,"2",1,2
+SHIP_TIME,出荷時間/Ship time,3,"3",1,2
+SHIP_TIME,出荷時間/Ship time,4,"4",1,2
+SHIP_TIME,出荷時間/Ship time,5,"5",1,2
+SHIP_TIME,出荷時間/Ship time,6,"6",1,2
+SHIP_TIME,出荷時間/Ship time,7,"7",1,2
+SHIP_TIME,出荷時間/Ship time,8,"8",1,2
+SHIP_TIME,出荷時間/Ship time,9,"9",1,2
+SHIP_TIME,出荷時間/Ship time,10,"10",1,2
+SHIP_TIME,出荷時間/Ship time,11,"11",1,2
+SHIP_TIME,出荷時間/Ship time,12,"12",1,2
+SHIP_TIME,出荷時間/Ship time,13,"13",1,2
+SHIP_TIME,出荷時間/Ship time,14,"14",1,2
+SHIP_TIME,出荷時間/Ship time,15,"15",1,2
+SHIP_TIME,出荷時間/Ship time,16,"16",1,2
+SHIP_TIME,出荷時間/Ship time,17,"17",1,2
+SHIP_TIME,出荷時間/Ship time,18,"18",1,2
+SHIP_TIME,出荷時間/Ship time,19,"19",1,2
+SHIP_TIME,出荷時間/Ship time,20,"20",1,2
+SHIP_TIME,出荷時間/Ship time,21,"21",1,2
+SHIP_TIME,出荷時間/Ship time,22,"22",1,2
+SHIP_TIME,出荷時間/Ship time,23,"23",1,2
+SHIP_TYP_2,出荷区分/Ship Div.,1,"1：通常",1,2
+SHIP_TYP_2,出荷区分/Ship Div.,2,"2：かんばん",1,2
+SHIP_TYP_2,出荷区分/Ship Div.,3,"3：集結場所",1,2
+SHIP_TYP_2,出荷区分/Ship Div.,4,"4：集結場所から得意先",1,2
+SHIP_TYP_2,出荷区分/Ship Div.,5,"5：順序納入",1,2
+KANBAN_CUST_ODR_FLG,かんばん受注フラグ/Signboard order flag,0,"0：かんばん以外",1,2
+KANBAN_CUST_ODR_FLG,かんばん受注フラグ/Signboard order flag,1,"1：かんばん",1,2
+IDENT_CARD_F_KIND,現品エフ種別/Item F type,1,"1：EXPLANNER/J標準",1,2
+ENTRY_TYP,データ入力区分/Data input type,1,"1：バッチ",1,2
+ENTRY_TYP,データ入力区分/Data input type,2,"2：手入力",1,2
+SHP_CMPLT_FLG,実績処理フラグ/Actual Proc flag,0,"0：出荷実績処理未",1,2
+SHP_CMPLT_FLG,実績処理フラグ/Actual Proc flag,1,"1：出荷実績処理済",1,2
+PRINT_FLG,帳票出力フラグ/Slip output flag,0,"0：未出力",1,2
+PRINT_FLG,帳票出力フラグ/Slip output flag,1,"1：出力済み",1,2
+AUTO_ENTRY_FLG,自動登録フラグ/Auto register flag,0,"0：マニュアル登録",1,2
+AUTO_ENTRY_FLG,自動登録フラグ/Auto register flag,1,"1：自動登録",1,2
+SHIP_LT,出荷リードタイム/Ship LT,0,"0:納入予定日と同日",1,2
+SHIP_LT,出荷リードタイム/Ship LT,1,"1:納入予定日の前日",1,2
+SHIP_LT,出荷リードタイム/Ship LT,2,"2:納入予定日の2日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,3,"3:納入予定日の3日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,4,"4:納入予定日の4日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,5,"5:納入予定日の5日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,6,"6:納入予定日の6日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,7,"7:納入予定日の7日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,8,"8:納入予定日の8日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,9,"9:納入予定日の9日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,10,"10:納入予定日の10日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,11,"11:納入予定日の11日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,12,"12:納入予定日の12日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,13,"13:納入予定日の13日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,14,"14:納入予定日の14日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,15,"15:納入予定日の15日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,16,"16:納入予定日の16日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,17,"17:納入予定日の17日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,18,"18:納入予定日の18日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,19,"19:納入予定日の19日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,20,"20:納入予定日の20日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,21,"21:納入予定日の21日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,22,"22:納入予定日の22日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,23,"23:納入予定日の23日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,24,"24:納入予定日の24日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,25,"25:納入予定日の25日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,26,"26:納入予定日の26日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,27,"27:納入予定日の27日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,28,"28:納入予定日の28日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,29,"29:納入予定日の29日前",1,2
+SHIP_LT,出荷リードタイム/Ship LT,30,"30:納入予定日の30日前",1,2
+LOAD_LT,積込リードタイム/Loading LT,0,"0:出荷予定日と同日",1,2
+LOAD_LT,積込リードタイム/Loading LT,1,"1:出荷予定日の前日",1,2
+SET_LT,セットリードタイム/Set LT,0,"0:積込開始日と同日",1,2
+SET_LT,セットリードタイム/Set LT,1,"1:積込開始日の前日",1,2
+PRINT_LT,帳票出力リードタイム/Slip output LT,0,"0:セット開始日と同日",1,2
+PRINT_LT,帳票出力リードタイム/Slip output LT,1,"1:セット開始日の前日",1,2
+SHIP_INFO_SLIP_KIND,出荷案内書種別/Ship guide book type,0,"0：標準",1,2
+SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,0,"0",1,2
+SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,1,"1",1,2
+SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,2,"2",1,2
+SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,3,"3",1,2
+SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,4,"4",1,2
+SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,5,"5",1,2
+SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,6,"6",1,2
+SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,7,"7",1,2
+SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,8,"8",1,2
+TEMP_SALES_TYP,仮売上計上区分/Temp. sales appropriation Div.,1,"1：売上実績登録",1,2
+TEMP_SALES_TYP,仮売上計上区分/Temp. sales appropriation Div.,2,"2：売上実績修正",1,2
+TEMP_SALES_TYP,仮売上計上区分/Temp. sales appropriation Div.,3,"3：売上実績取消",1,2
+SALES_DISAGREEMENT_TYP,売上実績照合区分/Sales actual collation Div.,1,"1:未照合",1,2
+SALES_DISAGREEMENT_TYP,売上実績照合区分/Sales actual collation Div.,2,"2:照合済（ＯＫ）",1,2
+SALES_DISAGREEMENT_TYP,売上実績照合区分/Sales actual collation Div.,3,"3:照合済（ＮＧ）",1,2
+SALES_FLG,売上計上フラグ/Sales appropriation flag,0,"0:未計上",1,2
+SALES_FLG,売上計上フラグ/Sales appropriation flag,1,"1:計上済",1,2
+SALES_TYP,売上区分/Sales type,1,"1:出荷売上",1,2
+SALES_TYP,売上区分/Sales type,2,"2:営業売上",1,2
+SALES_TYP,売上区分/Sales type,3,"3:その他売上",1,2
+SALES_TYP,売上区分/Sales type,4,"4:非在庫品売上",1,2
+UOI_TAKE_TYP,取込区分（内示）/Take type (UN),0,"　",1,2
+UOI_TAKE_TYP,取込区分（内示）/Take type (UN),10,"10：未取込",1,2
+UOI_TAKE_TYP,取込区分（内示）/Take type (UN),11,"11：再取込",1,2
+UOI_TAKE_TYP,取込区分（内示）/Take type (UN),12,"12：未取込（CSV取込エラーあり）",1,2
+UOI_TAKE_TYP,取込区分（内示）/Take type (UN),13,"13：内示データ強制取込",1,2
+UOI_TAKE_TYP,取込区分（内示）/Take type (UN),20,"20：取込済",1,2
+UOI_TAKE_TYP,取込区分（内示）/Take type (UN),21,"21：取込済（受注生成エラーあり）",1,2
+UOI_TAKE_TYP,取込区分（内示）/Take type (UN),22,"22：取込済（内示データ生成除外）",1,2
+UOI_TAKE_TYP,取込区分（内示）/Take type (UN),99,"99：取込除外",1,2
+OIF_TAKE_TYP,取込区分（確定）/Take type (confirmed ),0,"　",1,2
+OIF_TAKE_TYP,取込区分（確定）/Take type (confirmed ),10,"10：未取込",1,2
+OIF_TAKE_TYP,取込区分（確定）/Take type (confirmed ),11,"11：再取込",1,2
+OIF_TAKE_TYP,取込区分（確定）/Take type (confirmed ),12,"12：未取込（CSV取込エラーあり）",1,2
+OIF_TAKE_TYP,取込区分（確定）/Take type (confirmed ),20,"20：取込済",1,2
+OIF_TAKE_TYP,取込区分（確定）/Take type (confirmed ),21,"21：取込済（受注生成エラーあり）",1,2
+OIF_TAKE_TYP,取込区分（確定）/Take type (confirmed ),99,"99：取込除外",1,2
+AMOUNT_TYP,金額区分/Amt type,0,"0：正規",1,2
+AMOUNT_TYP,金額区分/Amt type,1,"1：特値",1,2
+UNCNFM_PLAN_TAKE_TYP,内示計画取込区分/UN plan take type,0,"0：初版",1,2
+UNCNFM_PLAN_TAKE_TYP,内示計画取込区分/UN plan take type,1,"1：変更（置換）",1,2
+UNCNFM_PLAN_TAKE_TYP,内示計画取込区分/UN plan take type,2,"2：変更（差分）",1,2
+PARTS_SUP_TYP,部品支給区分/Parts supply type,0,"0：支給を受けない",1,2
+PARTS_SUP_TYP,部品支給区分/Parts supply type,1,"1：支給を受ける　",1,2
+PARTS_SUP_TYP,部品支給区分/Parts supply type,10,"10：二次メーカに支給する",1,2
+DEPOT_PLAN_TYP,デポ計画区分/Depo plan type,10,"10:行わない（≠デポ）",1,2
+DEPOT_PLAN_TYP,デポ計画区分/Depo plan type,20,"20:行う（＝デポ）",1,2
+ENTRY_TYP_2,データ入力区分/Data input type,10,"10：EDI",1,2
+ENTRY_TYP_2,データ入力区分/Data input type,20,"20：CSV",1,2
+ENTRY_TYP_2,データ入力区分/Data input type,21,"21：画面",1,2
+EDI_DATA_TYP,EDIデータ区分/EDI data type,1,"1：確定",1,2
+EDI_DATA_TYP,EDIデータ区分/EDI data type,2,"2：日別内示",1,2
+EDI_DATA_TYP,EDIデータ区分/EDI data type,3,"3：内示(月)",1,2
+EDI_DATA_TYP,EDIデータ区分/EDI data type,4,"4：内示(3旬)",1,2
+EDI_DATA_TYP,EDIデータ区分/EDI data type,5,"5：内示(2旬)",1,2
+EDI_DATA_TYP,EDIデータ区分/EDI data type,6,"6：納入指示(未使用)",1,2
+EDI_DATA_TYP,EDIデータ区分/EDI data type,7,"7：長期計画(未使用)",1,2
+EDI_DATA_TYP,EDIデータ区分/EDI data type,8,"8：確定変更",1,2
+EDI_DATA_TYP,EDIデータ区分/EDI data type,9,"9：確定取消",1,2
+SHIP_INFO_TYP,出荷情報区分/Ship Info Div.,10,"10:社内現品票",1,2
+SHIP_INFO_TYP,出荷情報区分/Ship Info Div.,20,"20:出荷指示",1,2
+SHIP_INFO_TYP,出荷情報区分/Ship Info Div.,30,"30:納入指示",1,2
+SHIP_INFO_TYP,出荷情報区分/Ship Info Div.,40,"40:品目番号",1,2
+CSV_TAKE_ERR_TYP,CSV取込エラー区分/ERR type of CSV take,1,"1：マスタエラー",1,2
+CSV_TAKE_ERR_TYP,CSV取込エラー区分/ERR type of CSV take,2,"2：日付整合性エラー",1,2
+CSV_TAKE_ERR_TYP,CSV取込エラー区分/ERR type of CSV take,9,"9：その他のエラー",1,2
+CUST_ODR_TAKE_ERR_TYP,受注取込エラー情報/ERR Info of order take,1,"1：マスタエラー",1,2
+CUST_ODR_TAKE_ERR_TYP,受注取込エラー情報/ERR Info of order take,2,"2：日付整合性エラー",1,2
+CUST_ODR_TAKE_ERR_TYP,受注取込エラー情報/ERR Info of order take,9,"9：その他のエラー",1,2
+FIRST_LOT_CTL_FLG,初品管理フラグ/Initial item Mgt flag,0,"0：管理しない",1,2
+FIRST_LOT_CTL_FLG,初品管理フラグ/Initial item Mgt flag,1,"1：管理する",1,2
+IMP_SAFE_PARTS_FLG,重要保安部品フラグ/Important preservation parts flag,0,"0：重要保安品ではない",1,2
+IMP_SAFE_PARTS_FLG,重要保安部品フラグ/Important preservation parts flag,1,"1：重要保安品である",1,2
+ODR_STATUS,注文ステータス/Order status,0,"0：計画",1,2
+ODR_STATUS,注文ステータス/Order status,1,"1:確定前",1,2
+ODR_STATUS,注文ステータス/Order status,2,"2:確定済",1,2
+ODR_STATUS,注文ステータス/Order status,3,"3:発行済",1,2
+ODR_STATUS,注文ステータス/Order status,4,"4:受入",1,2
+ODR_STATUS,注文ステータス/Order status,5,"5:取消",1,2
+ODR_STATUS,注文ステータス/Order status,6,"6:取消発行済",1,2
+ODR_STATUS,注文ステータス/Order status,7,"7:受入完了",1,2
+ODR_STATUS,注文ステータス/Order status,8,"8:検査完了",1,2
+ODR_STATUS,注文ステータス/Order status,9,"9:在庫",1,2
+ODR_STATUS,注文ステータス/Order status,10,"10:計画",1,2
+ODR_STATUS,注文ステータス/Order status,11,"11:確定",1,2
+ODR_STATUS,注文ステータス/Order status,20,"20：内示受注",1,2
+ODR_STATUS,注文ステータス/Order status,21,"21:確定注文",1,2
+LOT_TRACE_TYP,ロットトレース区分/Lot trace type,1,"1：受入実績",1,2
+LOT_TRACE_TYP,ロットトレース区分/Lot trace type,2,"2：作業実績",1,2
+LOT_TRACE_TYP,ロットトレース区分/Lot trace type,3,"3：出来高実績",1,2
+LOT_TRACE_TYP,ロットトレース区分/Lot trace type,4,"4：振替",1,2
+LOT_TRACE_TYP,ロットトレース区分/Lot trace type,5,"5：出荷実績",1,2
+LOT_CTRL_FLG,ロット管理フラグ/Lot Mgt flag,1,"1：ロット管理を行う",1,2
+LOT_CTRL_FLG,ロット管理フラグ/Lot Mgt flag,0,"0：ロット管理を行わない",1,2
+LOT_TRACE_DEVELOP_TYP,ロットトレース参照区分/Lot trace Ref. type,1,"1：バックワード",1,2
+LOT_TRACE_DEVELOP_TYP,ロットトレース参照区分/Lot trace Ref. type,2,"2：フォワード",1,2
+AUTO_APP_TYP,自動計上区分/Auto summing up Div.,0,"0：無し",1,2
+AUTO_APP_TYP,自動計上区分/Auto summing up Div.,1,"1：在庫引当まで",1,2
+AUTO_APP_TYP,自動計上区分/Auto summing up Div.,2,"2：出荷指示まで",1,2
+AUTO_APP_TYP,自動計上区分/Auto summing up Div.,3,"3：出荷実績まで",1,2
+BILL_ADDRESSEE_FLG,請求先フラグ/Claim flag,0,"0：請求先でない",1,2
+BILL_ADDRESSEE_FLG,請求先フラグ/Claim flag,1,"1：請求先である",1,2
+CUST_FLG,得意先フラグ/Cust flag,0,"0：得意先でない",1,2
+CUST_FLG,得意先フラグ/Cust flag,1,"1：得意先である",1,2
+EDI_DLV_INST_TRN_TYP,ＥＤＩ取引区分（納入指示）/EDI dealings Div.(Deliv inst),1,"1：あり",1,2
+EDI_DLV_INST_TRN_TYP,ＥＤＩ取引区分（納入指示）/EDI dealings Div.(Deliv inst),9,"9：なし",1,2
+EDI_ODR_TRN_TYP,ＥＤＩ取引区分（受注）/EDI dealings Div.(order),1,"1：あり",1,2
+EDI_ODR_TRN_TYP,ＥＤＩ取引区分（受注）/EDI dealings Div.(order),9,"9：なし",1,2
+EDI_RCV_TRN_TYP,ＥＤＩ取引区分（受領）/EDI dealings Div.(Recpt),1,"1：あり",1,2
+EDI_RCV_TRN_TYP,ＥＤＩ取引区分（受領）/EDI dealings Div.(Recpt),9,"9：なし",1,2
+EDI_REQ_PLAN_TRN_TYP,ＥＤＩ取引区分(所要計画)/EDI dealings Div.(requirement plan),1,"1：あり",1,2
+EDI_REQ_PLAN_TRN_TYP,ＥＤＩ取引区分(所要計画)/EDI dealings Div.(requirement plan),9,"9：なし",1,2
+ORD_PROGRESS_STS,受注進捗ステータス/Order progress status,10,"10：受注",1,2
+ORD_PROGRESS_STS,受注進捗ステータス/Order progress status,20,"20：引当",1,2
+ORD_PROGRESS_STS,受注進捗ステータス/Order progress status,30,"30：出荷指示",1,2
+ORD_PROGRESS_STS,受注進捗ステータス/Order progress status,40,"40：出荷",1,2
+ORD_PROGRESS_STS,受注進捗ステータス/Order progress status,50,"50：売上",1,2
+RESERVE_TYP,引当区分/Drawing partition,0,"0：引当対象外",1,2
+RESERVE_TYP,引当区分/Drawing partition,1,"1：自動引当",1,2
+RESERVE_TYP,引当区分/Drawing partition,2,"2：即自動引当",1,2
+RESERVE_TYP,引当区分/Drawing partition,3,"3：マニュアル引当",1,2
+RM_FLG,入金先フラグ/Recpt Dest flag,0,"0：入金先でない",1,2
+RM_FLG,入金先フラグ/Recpt Dest flag,1,"1：入金先である",1,2
+SALES_PLAN_TYP,販売計画タイプ/Sale plan type,1,"1：通常",1,2
+SALES_PLAN_TYP,販売計画タイプ/Sale plan type,2,"2：特売",1,2
+SHIP_LT_2,出荷リードタイム/Ship LT,0,"0：納入予定日と同日",1,2
+SHIP_LT_2,出荷リードタイム/Ship LT,1,"1：納入予定日の前日",1,2
+SPCL_PRICE_TYP,特値区分/Special value Div.,1,"1：通常単価",1,2
+SPCL_PRICE_TYP,特値区分/Special value Div.,2,"2：特売単価",1,2
+TRN_STOP_FLG,取引停止フラグ/Dealings stop flag,0,"0：取引中",1,2
+TRN_STOP_FLG,取引停止フラグ/Dealings stop flag,1,"1：取引停止中",1,2
+ODR_SLIP_TYP,伝票区分/Slip Div.,1,"1：通常",1,2
+ODR_SLIP_TYP,伝票区分/Slip Div.,2,"2：特売",1,2
+ODR_SLIP_TYP_APR,伝票区分（受注承認）/Slip Div.(order approval),0,"0：全て",1,2
+ODR_SLIP_TYP_APR,伝票区分（受注承認）/Slip Div.(order approval),1,"1：通常",1,2
+ODR_SLIP_TYP_APR,伝票区分（受注承認）/Slip Div.(order approval),2,"2：特売",1,2
+INPUT_TYP,入力方法/Input method,1,"1：手入力",1,2
+INPUT_TYP,入力方法/Input method,2,"2：EDI",1,2
+TRANS_TYP,取引区分/Dealings Div.,1,"1：通常",1,2
+TRANS_TYP,取引区分/Dealings Div.,2,"2：特売",1,2
+TRANS_TYP,取引区分/Dealings Div.,3,"3:仕入直送",1,2
+LOAD_LT_2,積込リードタイム/Loading LT,0,"0：出荷予定日と同日",1,2
+LOAD_LT_2,積込リードタイム/Loading LT,1,"1：出荷予定日の前日",1,2
+SET_LT_2,セットリードタイム/Set LT,0,"0：積込開始日と同日",1,2
+SET_LT_2,セットリードタイム/Set LT,1,"1：積込開始日の前日",1,2
+PRINT_LT_2,帳票出力リードタイム/Slip output LT,0,"0：セット開始日と同日",1,2
+PRINT_LT_2,帳票出力リードタイム/Slip output LT,1,"1：セット開始日の前日",1,2
+CAUSE_SHIP_RET_CD,出荷返品理由/Reason of ship returned goods,1,"1：出荷返品理由1",0,0
+CAUSE_SHIP_RET_CD,出荷返品理由/Reason of ship returned goods,2,"2：出荷返品理由2",0,0
+CAUSE_SHIP_RET_CD,出荷返品理由/Reason of ship returned goods,3,"3：出荷返品理由3",0,0
+SPCL_PRICE_TYPE,特値区分/Special value Div.,1,"1：通常単価",0,0
+SPCL_PRICE_TYPE,特値区分/Special value Div.,2,"2：特売単価",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,0," ",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,1,"PC",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,2,"KPC",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,3,"CP",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,4,"BT",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,5,"SH",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,6,"RL",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,7,"VL",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,8,"CN",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,9,"ST",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,10,"KT",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,11,"UT",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,12,"BX",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,13,"PR",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,14,"PK",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,15,"GS",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,16,"DZ",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,17,"TN",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,18,"G",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,19,"KG",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,20,"MG",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,21,"LB",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,22,"OZ",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,23,"M",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,24,"KM",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,25,"CM",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,26,"MM",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,27,"FT",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,28,"IN",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,29,"M2",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,30,"CM2",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,31,"M3",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,32,"CM3",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,33,"L",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,34,"KL",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,35,"GL",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,36,"QT",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,37,"HR",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,38,"W",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,39,"WH",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,40,"VA",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,41,"個",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,42,"袋",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,43,"C/S",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,44,"枚",0,0
+STOCK_UNIT_2,計量単位/Measure unit ,99,"ETC",0,0
+WH_COND,保管区分/storage type,1,"1：常温",1,2
+WH_COND,保管区分/storage type,2,"2：など",1,2
+LOT_TYP,ロット管理フラグ/Lot Mgt flag,0,"0：ロット管理を行わない",1,2
+LOT_TYP,ロット管理フラグ/Lot Mgt flag,1,"1：ロット管理を行う",1,2
+LOT_NUMBERING,ロット採番区分/Lot numbering Div.,0,"0：手入力",1,2
+LOT_NUMBERING,ロット採番区分/Lot numbering Div.,1,"1：自動採番（連番）",1,2
+LOT_NUMBERING,ロット採番区分/Lot numbering Div.,2,"2：日単位採番",1,2
+LOT_NUMBERING,ロット採番区分/Lot numbering Div.,3,"3：日単位自動採番(連番)",1,2
+ODR_SLIP_TYP_2,伝票区分/Slip Div.,1,"1：通常",1,2
+ODR_SLIP_TYP_2,伝票区分/Slip Div.,2,"2：特売",1,2
+ODR_SLIP_TYP_2,伝票区分/Slip Div.,3,"3：移動",1,2
+ODR_SLIP_TYP_2,伝票区分/Slip Div.,0,"0：全て",1,2
+TRANS_TYPE_2,取引区分/Dealings Div.,0,"0：全て",1,2
+TRANS_TYPE_2,取引区分/Dealings Div.,10,"10：倉出",1,2
+TRANS_TYPE_2,取引区分/Dealings Div.,20,"20：外部倉庫出荷",1,2
+TRANS_TYPE_2,取引区分/Dealings Div.,30,"30：サンプル（無償品）",1,2
+TRANS_TYPE_2,取引区分/Dealings Div.,40,"40：転送出荷",1,2
+TRANS_TYPE_2,取引区分/Dealings Div.,50,"50：明細値引き",1,2
+TRANS_TYPE_2,取引区分/Dealings Div.,60,"60：明細値増し",1,2
+TRANS_TYPE_2,取引区分/Dealings Div.,70,"70：伝票値引き",1,2
+TRANS_TYPE_2,取引区分/Dealings Div.,80,"80：伝票値増し",1,2
+TRANS_TYPE_2,取引区分/Dealings Div.,90,"90：運賃",1,2
+ODR_STS_2,受注進捗ステータス/Order progress status,0,"0：全て",1,2
+ODR_STS_2,受注進捗ステータス/Order progress status,10,"10：受注",1,2
+ODR_STS_2,受注進捗ステータス/Order progress status,20,"20：引当",1,2
+ODR_STS_2,受注進捗ステータス/Order progress status,30,"30：出荷指示",1,2
+ODR_STS_2,受注進捗ステータス/Order progress status,40,"40：出荷",1,2
+ODR_STS_2,受注進捗ステータス/Order progress status,50,"50：売上",1,2
+TRANS_TYP_2,取引区分/Dealings Div.,0,"0：全て",1,2
+TRANS_TYP_2,取引区分/Dealings Div.,1,"1：通常",1,2
+TRANS_TYP_2,取引区分/Dealings Div.,2,"2：特売",1,2
+TRANS_TYP_2,取引区分/Dealings Div.,3,"3：直送",1,2
+TRANS_TYP_2,取引区分/Dealings Div.,6,"6：単価０",1,2
+TRANS_TYP_3,取引区分/Dealings Div.,1,"1：通常",1,2
+TRANS_TYP_3,取引区分/Dealings Div.,2,"2：特売",1,2
+TRANS_TYP_3,取引区分/Dealings Div.,6,"6：単価０",1,2
+ODR_SLIP_TYP_99,伝票区分/Slip Div.,3,"3：移動",1,2
+UNIFY_LOT_SHIP_FLG,単一ロット出荷フラグ/Single lot ship flag,0,"0：単一ロット出荷に制限しない",1,2
+UNIFY_LOT_SHIP_FLG,単一ロット出荷フラグ/Single lot ship flag,1,"1：単一ロット出荷に制限する",1,2
+LAST_SHIP_PERIOD,賞味期限逆転不可フラグ/Flag for cannot reversal the expiration date,0,"0：賞味期限を逆転して出荷できる",1,2
+LAST_SHIP_PERIOD,賞味期限逆転不可フラグ/Flag for cannot reversal the expiration date,1,"1：賞味期限を逆転して出荷できない",1,2
+STATUS_TYP_SA_FD,状態区分/State Div.,10,"10：出荷検収待ち",1,2
+STATUS_TYP_SA_FD,状態区分/State Div.,20,"20：売掛計上予定",1,2
+FD_SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,0,"0",1,2
+FD_SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,1,"1",1,2
+FD_SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,2,"2",1,2
+FD_SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,3,"3",1,2
+FD_SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,4,"4",1,2
+FD_SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,5,"5",1,2
+FD_SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,6,"6",1,2
+FD_SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,7,"7",1,2
+FD_SHIP_PATTERN_NO,出荷パターン番号/Ship pattern No.,8,"8",1,2
+FD_SHIP_LT,出荷リードタイム/Ship LT,0,"0:納入予定日と同日",1,2
+FD_SHIP_LT,出荷リードタイム/Ship LT,1,"1:納入予定日の前日",1,2
+FD_SHIP_LT,出荷リードタイム/Ship LT,2,"2:納入予定日の2日前",1,2
+FD_SHIP_LT,出荷リードタイム/Ship LT,3,"3:納入予定日の3日前",1,2
+FD_SET_LT,セットリードタイム/Set LT,0,"0:出荷予定日と同日",1,2
+FD_SET_LT,セットリードタイム/Set LT,1,"1:出荷予定日の前日",1,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,11,"11：通常入庫",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,12,"12：計画外入庫 ",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,13,"13：移動入庫",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,14,"14：振替入庫",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,19,"19：入庫取消",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,21,"21：通常出庫",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,22,"22：計画外出庫",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,23,"23：移動出庫",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,24,"24：振替出庫",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,28,"28：棚卸調整出庫",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,29,"29：出庫取消",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,31,"31：出荷",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,33,"33：返品",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,39,"39：出荷取消",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,41,"41：工程在庫出庫",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,49,"49：工程在庫出庫取消",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,51,"51：工程在庫出庫（出来高）",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,59,"59：工程在庫出庫取消（出来高）",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,61,"61：工程在庫入庫",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,69,"69：工程在庫入庫取消",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,71,"71：取引先在庫出庫",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,79,"79：取引先在庫出庫取消",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,81,"81:取引先在庫入庫",0,2
+FD_RCV_ISSUE_GNR_TYP,入出庫発生区分/GM generating type,89,"89:取引先在庫入庫取消",0,2
+AUTO_APP_TYP2,自動計上区分/Auto summing up Div.,0,"0：無し",1,2
+AUTO_APP_TYP2,自動計上区分/Auto summing up Div.,1,"1：在庫引当まで",1,2
+AUTO_APP_TYP2,自動計上区分/Auto summing up Div.,2,"2：出荷指示まで",1,2
+AUTO_APP_TYP2,自動計上区分/Auto summing up Div.,3,"3：出荷実績まで",1,2
+ALC_TYP_3,引当区分/Drawing partition,1,"1:在庫引当",1,2
+ALC_TYP_3,引当区分/Drawing partition,2,"2:オーダ引当",1,2
+EXP_TYP,展開区分/Expn Typ,1,"1:バックワード",1,2
+EXP_TYP,展開区分/Expn Typ,2,"2:フォワード",1,2
+LOT_SIZING_TYP_2,ロットまとめ区分/Lot summary type,1,"R：",1,2
+LOT_SIZING_TYP_2,ロットまとめ区分/Lot summary type,3,"W：（週）",1,2
+LOT_SIZING_TYP_2,ロットまとめ区分/Lot summary type,4,"T：（旬）",1,2
+LOT_SIZING_TYP_2,ロットまとめ区分/Lot summary type,6,"M：（月）",1,2
+PROC_GRP_LT_UNIT,作業系列ＬＴ単位/WS LT unit,1,"日",1,2
+PROC_GRP_LT_UNIT,作業系列ＬＴ単位/WS LT unit,2,"時間",1,2
+PROC_GRP_LT_UNIT,作業系列ＬＴ単位/WS LT unit,3,"分",1,2
+SHIP_TRANS_USE_TYP,出荷便使用区分/Ship mail usage Div.,0,"0:使用しない",1,2
+SHIP_TRANS_USE_TYP,出荷便使用区分/Ship mail usage Div.,1,"1:使用する",1,2
+REV_POSS_TYP,引当可能区分/Allowed drawing type,0,"0:在庫引当でエラーにしない",1,2
+REV_POSS_TYP,引当可能区分/Allowed drawing type,1,"1:在庫引当でエラーにする",1,2
+INSPC_ACPT_APP_TYP,検収計上区分/Receipt check summing up Div.,1,"1：受入時検収",1,2
+INSPC_ACPT_APP_TYP,検収計上区分/Receipt check summing up Div.,2,"2：検査時検収",1,2
+APPR_POWER_TYP,承認権限/Approval authority,0,"0：一般ユーザ",1,2
+APPR_POWER_TYP,承認権限/Approval authority,1,"1：承認者",1,2
+APPR_STATUS_TYP,状態区分/State Div.,1,"1：承認待ち",1,2
+APPR_STATUS_TYP,状態区分/State Div.,2,"2：保留",1,2
+APPR_STATUS_TYP,状態区分/State Div.,3,"3：承認済み",1,2
+APPR_STATUS_TYP,状態区分/State Div.,4,"4：取消",1,2
+UNIT_COST_APPR_TYP,対象単価マスタ/Object UC master,1,"1：購入単価",1,2
+UNIT_COST_APPR_TYP,対象単価マスタ/Object UC master,2,"2：支給品単価",1,2
+UNIT_COST_APPR_TYP,対象単価マスタ/Object UC master,3,"3：外注単価",1,2
+UNIT_COST_APPR_TYP,対象単価マスタ/Object UC master,4,"4：製品単価",1,2
+APPR_PROC_TYP,処理区分/Proc type,1,"1：登録",1,2
+APPR_PROC_TYP,処理区分/Proc type,2,"2：更新",1,2
+APPR_PROC_TYP,処理区分/Proc type,3,"3：削除",1,2
+WH_COND_TYP,保管区分/storage type,1,"1：常温",1,2
+WH_COND_TYP,保管区分/storage type,2,"2：冷蔵",1,2
+WH_COND_TYP,保管区分/storage type,3,"3：その他",1,2
+MP_ODR_CMPLT_FLG,受注完了フラグ/Order completed flag,0,"0：受注未完了",1,2
+MP_ODR_CMPLT_FLG,受注完了フラグ/Order completed flag,1,"1：受注完了",1,2
+MP_ODR_CMPLT_FLG,受注完了フラグ/Order completed flag,2,"2：対象外",1,2
+MP_SHIP_FLG,出荷指示済フラグ/Ship instructed flag,0,"0：未出荷指示",1,2
+MP_SHIP_FLG,出荷指示済フラグ/Ship instructed flag,1,"1：出荷指示済み",1,2
+MP_SHIP_FLG,出荷指示済フラグ/Ship instructed flag,2,"2：対象外",1,2
+MP_ODR_STATUS,注文ステータス/Order status,0,"0:計画",1,2
+MP_ODR_STATUS,注文ステータス/Order status,1,"1:確定前",1,2
+MP_ODR_STATUS,注文ステータス/Order status,2,"2:確定済",1,2
+MP_ODR_STATUS,注文ステータス/Order status,3,"3:発行済",1,2
+MP_ODR_STATUS,注文ステータス/Order status,4,"4:受入",1,2
+MP_ODR_STATUS,注文ステータス/Order status,5,"5:取消",1,2
+MP_ODR_STATUS,注文ステータス/Order status,6,"6:取消発行済",1,2
+MP_ODR_STATUS,注文ステータス/Order status,7,"7:受入完了",1,2
+MP_ODR_STATUS,注文ステータス/Order status,8,"8:検査完了",1,2
+MP_ODR_STATUS,注文ステータス/Order status,9,"9:在庫",1,2
+MP_ODR_STATUS,注文ステータス/Order status,10,"10:計画",1,2
+MP_ODR_STATUS,注文ステータス/Order status,11,"11:確定",1,2
+MP_ODR_STATUS,注文ステータス/Order status,20,"20:内示受注",1,2
+MP_ODR_STATUS,注文ステータス/Order status,21,"21:確定注文",1,2
+MP_ODR_STATUS,注文ステータス/Order status,22,"22:デポ計画",1,2
+MP_ODR_STATUS,注文ステータス/Order status,23,"23:混在",1,2
+UNIT_COST_USE_TYP,単価取得区分/UC acquisition Div.,0,"0:出荷予定日",1,2
+UNIT_COST_USE_TYP,単価取得区分/UC acquisition Div.,1,"1:納入予定日",1,2
+DELIVERY_FLG,納入先フラグ/Dlv Dest flag,0,"0:納入先でない",1,2
+DELIVERY_FLG,納入先フラグ/Dlv Dest flag,1,"1:納入先である",1,2
+BALA_ACCO_FLG,帳合先フラグ/Balance account flag,0,"0:帳合先でない",1,2
+BALA_ACCO_FLG,帳合先フラグ/Balance account flag,1,"1:帳合先である",1,2
+STOCK_STATUS_FLG,在庫状態管理フラグ/Stock state mgt flag,0,"0:在庫状態管理しない",1,2
+STOCK_STATUS_FLG,在庫状態管理フラグ/Stock state mgt flag,1,"1:在庫状態管理する",1,2
+STOCK_TYP,在庫状態タイプ/Stock state type,1,"1:良品",1,2
+STOCK_TYP,在庫状態タイプ/Stock state type,2,"2:未検査",1,2
+STOCK_TYP,在庫状態タイプ/Stock state type,4,"4:不良品",1,2
+EFF_STOCK_TYP,有効在庫区分/Valid stock Div.,1,"1:有効在庫",1,2
+EFF_STOCK_TYP,有効在庫区分/Valid stock Div.,2,"2:無効在庫",1,2
+SHIP_TYP_3,出荷区分/Ship Div.,1,"1:出荷可能",1,2
+SHIP_TYP_3,出荷区分/Ship Div.,2,"2:マニュアル出荷可",1,2
+SHIP_TYP_3,出荷区分/Ship Div.,3,"3:出荷不可",1,2
+INJECT_FLG,投入量合計フラグ/Investment Qt. total flag,0,"0：投入量合計しない",1,2
+INJECT_FLG,投入量合計フラグ/Investment Qt. total flag,1,"1：投入量合計する",1,2
+BATCH_FLG,配合バッチ生産/Mixing batch prod,0,"0：配合バッチ生産しない",1,2
+BATCH_FLG,配合バッチ生産/Mixing batch prod,1,"1：配合バッチ生産",1,2
+COM_LINE_FLG,汎用ラインフラグ/General-purpose line flag,0,"0：共用ラインでない",1,2
+COM_LINE_FLG,汎用ラインフラグ/General-purpose line flag,1,"1：共用ラインである",1,2
+PROC_BATCH_FLG,工程バッチ管理フラグ/Proc batch Mgt flag,0,"0：工程バッチ生産管理しない",1,2
+PROC_BATCH_FLG,工程バッチ管理フラグ/Proc batch Mgt flag,1,"1：工程バッチ生産管理",1,2
+FIRST_PKG_FLG,既定荷姿/Predetermined style of packing,0,"0：通常荷姿",1,2
+FIRST_PKG_FLG,既定荷姿/Predetermined style of packing,1,"1：受注既定荷姿",1,2
+FIRST_PKG_FLG,既定荷姿/Predetermined style of packing,2,"2：発注/生産既定荷姿",1,2
+FIRST_PKG_FLG,既定荷姿/Predetermined style of packing,3,"3：受注荷姿/発注荷姿/生産既定荷姿",1,2
+SPCL_PRICE_TYP_1,特値区分/Special value Div.,1,"1：通常",1,2
+SPCL_PRICE_TYP_1,特値区分/Special value Div.,2,"2：特売",1,2
+ADD_TYP,上乗区分/Splendid Div.,1,"1：使用しない",1,2
+ADD_TYP,上乗区分/Splendid Div.,2,"2：上乗率を入力",1,2
+ADD_TYP,上乗区分/Splendid Div.,3,"3：上乗価格",1,2
+INSPC_TYP,検査タイプ/Inspec type,1,"1:製品検査",1,2
+INSPC_TYP,検査タイプ/Inspec type,2,"2:中間品(半製品)検査",1,2
+INSPC_TYP,検査タイプ/Inspec type,3,"3:受入検査",1,2
+STATUS,ステータス/Status,1,"1：登録済",1,2
+STATUS,ステータス/Status,2,"2：依頼済",1,2
+STATUS,ステータス/Status,3,"3：検査完了",1,2
+APR_INV_STS_TYP,棚卸承認区分/Inventory approval type,1,"1：棚卸未承認",1,2
+APR_INV_STS_TYP,棚卸承認区分/Inventory approval type,2,"2：棚卸承認済み",1,2
+SLIP_TRN_CD_01,伝票区分/Slip Div.,1,"1：出荷",1,2
+SLIP_TRN_CD_01,伝票区分/Slip Div.,2,"2：返品",1,2
+MANHOUR_TYP,工数管理品目区分/Man-Hr Mgt item type,0,"0：通常品目",1,2
+MANHOUR_TYP,工数管理品目区分/Man-Hr Mgt item type,1,"1：工数管理品目",1,2
+DEFECT_CAUSE_CD_OUTER,不良理由コード（外作）/Reason code for defect(Ext manuf),0,"",1,2
+DEFECT_CAUSE_CD_OUTER,不良理由コード（外作）/Reason code for defect(Ext manuf),1,"1：外作不良理由1",1,2
+DEFECT_CAUSE_CD_OUTER,不良理由コード（外作）/Reason code for defect(Ext manuf),2,"2：外作不良理由2",1,2
+DEFECT_CAUSE_CD_OUTER,不良理由コード（外作）/Reason code for defect(Ext manuf),3,"3：外作不良理由3",1,2
+DEFECT_CAUSE_CD_OUTER,不良理由コード（外作）/Reason code for defect(Ext manuf),4,"4：外作不良理由4",1,2
+DEFECT_CAUSE_CD_OUTER,不良理由コード（外作）/Reason code for defect(Ext manuf),5,"5：外作不良理由5",1,2
+DEFECT_CAUSE_CD_OUTER,不良理由コード（外作）/Reason code for defect(Ext manuf),6,"6：外作不良理由6",1,2
+DEFECT_CAUSE_CD_OUTER,不良理由コード（外作）/Reason code for defect(Ext manuf),7,"7：外作不良理由7",1,2
+DEFECT_CAUSE_CD_OUTER,不良理由コード（外作）/Reason code for defect(Ext manuf),8,"8：外作不良理由8",1,2
+DEFECT_CAUSE_CD_OUTER,不良理由コード（外作）/Reason code for defect(Ext manuf),9,"9：外作不良理由9",1,2
+DEFECT_CAUSE_CD_OUTER,不良理由コード（外作）/Reason code for defect(Ext manuf),10,"10：外作不良理由10",1,2
+DEFECT_CAUSE_CD_INNER,不良理由コード（内作）/Reason code for defect(internal manuf),0,"",1,2
+DEFECT_CAUSE_CD_INNER,不良理由コード（内作）/Reason code for defect(internal manuf),1,"1：内作不良理由1",1,2
+DEFECT_CAUSE_CD_INNER,不良理由コード（内作）/Reason code for defect(internal manuf),2,"2：内作不良理由2",1,2
+DEFECT_CAUSE_CD_INNER,不良理由コード（内作）/Reason code for defect(internal manuf),3,"3：内作不良理由3",1,2
+DEFECT_CAUSE_CD_INNER,不良理由コード（内作）/Reason code for defect(internal manuf),4,"4：内作不良理由4",1,2
+DEFECT_CAUSE_CD_INNER,不良理由コード（内作）/Reason code for defect(internal manuf),5,"5：内作不良理由5",1,2
+DEFECT_CAUSE_CD_INNER,不良理由コード（内作）/Reason code for defect(internal manuf),6,"6：内作不良理由6",1,2
+DEFECT_CAUSE_CD_INNER,不良理由コード（内作）/Reason code for defect(internal manuf),7,"7：内作不良理由7",1,2
+DEFECT_CAUSE_CD_INNER,不良理由コード（内作）/Reason code for defect(internal manuf),8,"8：内作不良理由8",1,2
+DEFECT_CAUSE_CD_INNER,不良理由コード（内作）/Reason code for defect(internal manuf),9,"9：内作不良理由9",1,2
+DEFECT_CAUSE_CD_INNER,不良理由コード（内作）/Reason code for defect(internal manuf),10,"10：内作不良理由10",1,2
+STOCK_TYP2,在庫状態タイプ/Stock state type,0,"0：全て",1,2
+STOCK_TYP2,在庫状態タイプ/Stock state type,1,"1：良品",1,2
+STOCK_TYP2,在庫状態タイプ/Stock state type,2,"2：未検査",1,2
+STOCK_TYP2,在庫状態タイプ/Stock state type,4,"4：不良品",1,2
+SLIP_TYP2,帳票種類/Slip type,1,"1：請求予定",1,2
+SLIP_TYP2,帳票種類/Slip type,2,"2：回収予定",1,2
+TRANS_TYP_4,取引区分/Dealings Div.,1,"1：通常",1,2
+TRANS_TYP_4,取引区分/Dealings Div.,2,"2：特売",1,2
+ODR_D_STATUS_1,ステータス(仕入直送)/Status(stocking Direct Deliv),1,"1:実績未計上",1,2
+ODR_D_STATUS_1,ステータス(仕入直送)/Status(stocking Direct Deliv),2,"2:実績計上済",1,2
+ODR_D_STATUS_1,ステータス(仕入直送)/Status(stocking Direct Deliv),3,"3:0完了",1,2
+ODR_D_STATUS_1,ステータス(仕入直送)/Status(stocking Direct Deliv),4,"4:注文書取消",1,2
+SALES_DEL_FLG,削除フラグ/Del flag,0,"0:通常",1,2
+SALES_DEL_FLG,削除フラグ/Del flag,1,"1:削除",1,2
+INSPC_APPR_FLG,検収待ち承認フラグ/Waiting receipt check approval flag,0,"0:承認しない",1,2
+INSPC_APPR_FLG,検収待ち承認フラグ/Waiting receipt check approval flag,1,"1:承認する",1,2
+AI_AR_IF_FLG,AI売掛インタフェースフラグ/AI AR interface flag,0,"0:インタフェース未",1,2
+AI_AR_IF_FLG,AI売掛インタフェースフラグ/AI AR interface flag,1,"1:インタフェース済",1,2
+OPR_PROC_TYP,作業区分/Work Div.,1,"1：製造",1,2
+OPR_PROC_TYP,作業区分/Work Div.,2,"2：物流",1,2
+OPR_PROC_TYP,作業区分/Work Div.,3,"3：対象外",1,2
+LOT_TYP_01,ロット種別/Lot type,1,"1：ロット品目管理",1,2
+LOT_TYP_01,ロット種別/Lot type,2,"2：固定メッシュ品目管理",1,2
+LOT_TYP_01,ロット種別/Lot type,3,"3：動的メッシュ品目管理",1,2
+LOT_TYP_02,ロット種別(検索用)/Lot type(for search),0,"0：全て",1,2
+LOT_TYP_02,ロット種別(検索用)/Lot type(for search),1,"1：ロット品目管理",1,2
+LOT_TYP_02,ロット種別(検索用)/Lot type(for search),2,"2：固定メッシュ品目管理",1,2
+LOT_TYP_02,ロット種別(検索用)/Lot type(for search),3,"3：動的メッシュ品目管理",1,2
+LOT_TYP_03,ロット種別(表示用)/Lot type(for display),0,"0：対象外",1,2
+LOT_TYP_03,ロット種別(表示用)/Lot type(for display),1,"1：ロット品目管理",1,2
+LOT_TYP_03,ロット種別(表示用)/Lot type(for display),2,"2：固定メッシュ品目管理",1,2
+LOT_TYP_03,ロット種別(表示用)/Lot type(for display),3,"3：動的メッシュ品目管理",1,2
+SAFTY_STOCK_METHOD_TYP,安全在庫確保方式/Safty stock ensure method,1,"1：固定数量方式",1,2
+SAFTY_STOCK_METHOD_TYP,安全在庫確保方式/Safty stock ensure method,2,"2：期間比率方式",1,2
+SAFTY_STOCK_METHOD_TYP,安全在庫確保方式/Safty stock ensure method,3,"3：メッシュ比例方式",1,2
+SAFTY_STOCK_METHOD_TYP,安全在庫確保方式/Safty stock ensure method,5,"5：動的期間方式",1,2
+SAFTY_STOCK_COND_FLG,安全在庫確保条件/Safty stock ensure condition,0,"0：確保不要",1,2
+SAFTY_STOCK_COND_FLG,安全在庫確保条件/Safty stock ensure condition,1,"1：確保する",1,2
+SAFTY_STOCK_WXHAUST_FLG,安全在庫使切り区分/Safty stock consumed type,0,"0：安全在庫を残す",1,2
+SAFTY_STOCK_WXHAUST_FLG,安全在庫使切り区分/Safty stock consumed type,1,"1：安全在庫を使い切る",1,2
+FIXED_MESH_SIZE_TYP,固定メッシュ巾/Fixed mesh size,1," 1：日単位まとめ",1,2
+FIXED_MESH_SIZE_TYP,固定メッシュ巾/Fixed mesh size,2," 2：2日でまとめ（実稼働日）",1,2
+FIXED_MESH_SIZE_TYP,固定メッシュ巾/Fixed mesh size,3," 3：3日でまとめ（実稼働日）",1,2
+FIXED_MESH_SIZE_TYP,固定メッシュ巾/Fixed mesh size,4," 4：4日でまとめ（実稼働日）",1,2
+FIXED_MESH_SIZE_TYP,固定メッシュ巾/Fixed mesh size,5," 5：5日でまとめ（実稼働日）",1,2
+FIXED_MESH_SIZE_TYP,固定メッシュ巾/Fixed mesh size,6," 6：6日でまとめ（実稼働日）",1,2
+FIXED_MESH_SIZE_TYP,固定メッシュ巾/Fixed mesh size,7," 7：7日でまとめ（実稼働日）",1,2
+FIXED_MESH_SIZE_TYP,固定メッシュ巾/Fixed mesh size,8," 8：8日でまとめ（実稼働日）",1,2
+FIXED_MESH_SIZE_TYP,固定メッシュ巾/Fixed mesh size,9," 9：9日でまとめ（実稼働日）",1,2
+FIXED_MESH_SIZE_TYP,固定メッシュ巾/Fixed mesh size,10,"10：5日の単位でまとめ(暦日）",1,2
+FIXED_MESH_SIZE_TYP,固定メッシュ巾/Fixed mesh size,11,"11：週の単位でまとめ",1,2
+FIXED_MESH_SIZE_TYP,固定メッシュ巾/Fixed mesh size,12,"12：旬の単位でまとめ",1,2
+FIXED_MESH_SIZE_TYP,固定メッシュ巾/Fixed mesh size,13,"13：半月単位でまとめ",1,2
+FIXED_MESH_SIZE_TYP,固定メッシュ巾/Fixed mesh size,14,"14：月単位でまとめ",1,2
+CARRY_WS_TYP,積送在庫保管区区分/Consignment stock SS Div.,0,"0：積送在庫保管区でない",1,2
+CARRY_WS_TYP,積送在庫保管区区分/Consignment stock SS Div.,1,"1：積送在庫保管区である",1,2
+SHIFT_INPUT_TYP,シフト指定区分/Shift SPEC Div. ,0,"0：全指定",1,2
+SHIFT_INPUT_TYP,シフト指定区分/Shift SPEC Div. ,1,"1：週指定",1,2
+SHIFT_WORK_TYP,稼働区分/Operating  Div.,0,"0：未設定",1,2
+SHIFT_WORK_TYP,稼働区分/Operating  Div.,1,"1：稼働",1,2
+SHIFT_WORK_TYP,稼働区分/Operating  Div.,2,"2：非稼働",1,2
+SHIFT_WORK_TYP,稼働区分/Operating  Div.,3,"3：集約ポイント(稼働)",1,2
+FIRST_DAY_OF_WEEK_TYP,週開始曜日/Start day of the week,1,"1：月曜日",1,2
+FIRST_DAY_OF_WEEK_TYP,週開始曜日/Start day of the week,2,"2：火曜日",1,2
+FIRST_DAY_OF_WEEK_TYP,週開始曜日/Start day of the week,3,"3：水曜日",1,2
+FIRST_DAY_OF_WEEK_TYP,週開始曜日/Start day of the week,4,"4：木曜日",1,2
+FIRST_DAY_OF_WEEK_TYP,週開始曜日/Start day of the week,5,"5：金曜日",1,2
+FIRST_DAY_OF_WEEK_TYP,週開始曜日/Start day of the week,6,"6：土曜日",1,2
+FIRST_DAY_OF_WEEK_TYP,週開始曜日/Start day of the week,7,"7：日曜日",1,2
+ISSUE_DATE_SET_TYP,出庫可能日設定タイプ/Possible-issued date setting type,1,"1：そのメッシュの先頭日",1,2
+ISSUE_DATE_SET_TYP,出庫可能日設定タイプ/Possible-issued date setting type,2,"2：在庫割れがおきた日",1,2
+LOCK_STATUS_TYP,ロックステータス/Lock status,1,"1：ロック中",1,2
+LOCK_STATUS_TYP,ロックステータス/Lock status,2,"2：通常品目",1,2
+ISSUE_CTRL_TYP,出庫管理区分/Issue mgt type,1,"1：上位品目完成時、自動払出・デマンド管理を行わない。",1,2
+ISSUE_CTRL_TYP,出庫管理区分/Issue mgt type,2,"2：上位品目完成時、自動払出・デマンド管理を行い消し込みを行う。",1,2
+ISSUE_CTRL_TYP,出庫管理区分/Issue mgt type,3,"3：マニュアルによる報告を行う。",1,2
+PARTITION_SUM_FLG,パーティション集約有無/Partition summary flag,0,"0：パーティション集約無し",1,2
+PARTITION_SUM_FLG,パーティション集約有無/Partition summary flag,1,"1：パーティション集約有り",1,2
+EXHAUSION_FLG,使い切り計算対象フラグ/Using calculated object flag,0,"0：対象外",1,2
+EXHAUSION_FLG,使い切り計算対象フラグ/Using calculated object flag,1,"1：対象",1,2
+MULTI_AOURCE_TYP,手配先決定方式/Arrangement local determined way,0,"0：分割無し",1,2
+MULTI_AOURCE_TYP,手配先決定方式/Arrangement local determined way,1,"1：固定数量分割",1,2
+MULTI_AOURCE_TYP,手配先決定方式/Arrangement local determined way,2,"2：比率分割",1,2
+RELEASE_POINT_TYP,発効ポイント/Generating point,1,"1：要求納期",1,2
+RELEASE_POINT_TYP,発効ポイント/Generating point,2,"2：製造納期",1,2
+RELEASE_POINT_TYP,発効ポイント/Generating point,3,"3：製造着手日",1,2
+RELEASE_POINT_TYP,発効ポイント/Generating point,4,"4：手配着手日",1,2
+DISABLED_POINT_TYP,無効ポイント/Ineffective point ,1,"1：要求納期",1,2
+DISABLED_POINT_TYP,無効ポイント/Ineffective point ,2,"2：製造納期",1,2
+DISABLED_POINT_TYP,無効ポイント/Ineffective point ,3,"3：製造着手日",1,2
+DISABLED_POINT_TYP,無効ポイント/Ineffective point ,4,"4：手配着手日",1,2
+START_POINT_TYP,起点ポイント/The start point,1,"1：要求納期",1,2
+START_POINT_TYP,起点ポイント/The start point,2,"2：製造納期",1,2
+START_POINT_TYP,起点ポイント/The start point,3,"3：製造着手日",1,2
+START_POINT_TYP,起点ポイント/The start point,4,"4：手配着手日",1,2
+EXP_TYP_01,展開区分(製品構成)/Expansion type(prod structure),1,"1：通常部品",1,2
+EXP_TYP_01,展開区分(製品構成)/Expansion type(prod structure),2,"2：払出先別管理部品",1,2
+EXP_TYP_01,展開区分(製品構成)/Expansion type(prod structure),3,"3：自己調達部品",1,2
+EXP_TYP_01,展開区分(製品構成)/Expansion type(prod structure),4,"4：バイパス部品（ＬＴ反映無し）",1,2
+EXP_TYP_01,展開区分(製品構成)/Expansion type(prod structure),5,"5：バイパス部品（ＬＴ反映有り）",1,2
+EXP_TYP_01,展開区分(製品構成)/Expansion type(prod structure),6,"6：展開パターン判定",1,2
+EXP_TYP_02,展開区分(手配先展開情報)/Expansion type(arrangement local expansion information),1,"1：通常部品",1,2
+EXP_TYP_02,展開区分(手配先展開情報)/Expansion type(arrangement local expansion information),2,"2：払出先別管理部品",1,2
+EXP_TYP_02,展開区分(手配先展開情報)/Expansion type(arrangement local expansion information),3,"3：自己調達部品",1,2
+EXP_TYP_02,展開区分(手配先展開情報)/Expansion type(arrangement local expansion information),4,"4：バイパス部品（ＬＴ反映無し）",1,2
+EXP_TYP_02,展開区分(手配先展開情報)/Expansion type(arrangement local expansion information),5,"5：バイパス部品（ＬＴ反映有り）",1,2
+EXP_TYP_03,展開区分(手配先展開情報(表示用))/Expansion type(arrangement local expansion information(for display)),0,"0：対象外",1,2
+EXP_TYP_03,展開区分(手配先展開情報(表示用))/Expansion type(arrangement local expansion information(for display)),1,"1：通常部品",1,2
+EXP_TYP_03,展開区分(手配先展開情報(表示用))/Expansion type(arrangement local expansion information(for display)),2,"2：払出先別管理部品",1,2
+EXP_TYP_03,展開区分(手配先展開情報(表示用))/Expansion type(arrangement local expansion information(for display)),3,"3：自己調達部品",1,2
+EXP_TYP_03,展開区分(手配先展開情報(表示用))/Expansion type(arrangement local expansion information(for display)),4,"4：バイパス部品（ＬＴ反映無し）",1,2
+EXP_TYP_03,展開区分(手配先展開情報(表示用))/Expansion type(arrangement local expansion information(for display)),5,"5：バイパス部品（ＬＴ反映有り）",1,2
+ORDERING_TYP,別建手配区分/Order arrangements type,1,"1：別建手配デマンド",1,2
+ORDERING_TYP,別建手配区分/Order arrangements type,2,"2：オーダリング対象",1,2
+ORDERING_TYP_02,別建手配区分(表示用)/Order arrangements type (for display),0,"0：対象外",1,2
+ORDERING_TYP_02,別建手配区分(表示用)/Order arrangements type (for display),1,"1：別建手配デマンド",1,2
+ORDERING_TYP_02,別建手配区分(表示用)/Order arrangements type (for display),2,"2：オーダリング対象",1,2
+ODR_PUCH_TYP,受発注区分/Order purchase type,1,"1：取引先",1,2
+ODR_PUCH_TYP,受発注区分/Order purchase type,2,"2：工場間",1,2
+ODR_PUCH_TYP,受発注区分/Order purchase type,3,"3：会社間",1,2
+ODR_PUCH_TYP,受発注区分/Order purchase type,4,"4：受発注でない",1,2
+SHIFT_CALC_TYP,シフト計算方法/Shift calculated way,1,"1：日",1,2
+SHIFT_CALC_TYP,シフト計算方法/Shift calculated way,2,"2：時",1,2
+PLAN_MESH_TYP,計画メッシュ/Plan mesh,1,"1：日単位計画",1,2
+PLAN_MESH_TYP,計画メッシュ/Plan mesh,2,"2：週単位計画",1,2
+PLAN_MESH_TYP,計画メッシュ/Plan mesh,3,"3：旬単位計画",1,2
+PLAN_MESH_TYP,計画メッシュ/Plan mesh,4,"4：半月単位計画",1,2
+PLAN_MESH_TYP,計画メッシュ/Plan mesh,5,"5：月単位計画",1,2
+PLAN_MESH_TYP_02,計画メッシュ(表示用)/Plan mesh (for display),0,"0：対象外",1,2
+PLAN_MESH_TYP_02,計画メッシュ(表示用)/Plan mesh (for display),1,"1：日単位計画",1,2
+PLAN_MESH_TYP_02,計画メッシュ(表示用)/Plan mesh (for display),2,"2：週単位計画",1,2
+PLAN_MESH_TYP_02,計画メッシュ(表示用)/Plan mesh (for display),3,"3：旬単位計画",1,2
+PLAN_MESH_TYP_02,計画メッシュ(表示用)/Plan mesh (for display),4,"4：半月単位計画",1,2
+PLAN_MESH_TYP_02,計画メッシュ(表示用)/Plan mesh (for display),5,"5：月単位計画",1,2
+DM_CREATE_TYP,デマンド生成区分/Demand generation type,1,"1：ユーザが設定したデマンド",1,2
+DM_CREATE_TYP,デマンド生成区分/Demand generation type,2,"2：ユーザが設定したデマンドをエンジンが分割",1,2
+DM_CREATE_TYP,デマンド生成区分/Demand generation type,3,"3：エンジンが展開したデマンド",1,2
+DM_CREATE_TYP,デマンド生成区分/Demand generation type,4,"4：安全在庫確保のデマンド(エンジンが展開したデマンド)",1,2
+DM_CREATE_TYP_02,デマンド生成区分(表示用)/Demand generation (for display),0,"0：対象外",1,2
+DM_CREATE_TYP_02,デマンド生成区分(表示用)/Demand generation (for display),1,"1：ユーザが設定したデマンド",1,2
+DM_CREATE_TYP_02,デマンド生成区分(表示用)/Demand generation (for display),2,"2：ユーザが設定したデマンドをエンジンが分割",1,2
+DM_CREATE_TYP_02,デマンド生成区分(表示用)/Demand generation (for display),3,"3：エンジンが展開したデマンド",1,2
+DM_CREATE_TYP_02,デマンド生成区分(表示用)/Demand generation (for display),4,"4：安全在庫確保のデマンド(エンジンが展開したデマンド)",1,2
+DM_STATUS_TYP,デマンドステータス/Demand status,1,"1：計画中デマンド",1,2
+DM_STATUS_TYP,デマンドステータス/Demand status,2,"2：今回手配済デマンド",1,2
+DM_STATUS_TYP,デマンドステータス/Demand status,3,"3：手配済みデマンド",1,2
+DM_STATUS_TYP_02,デマンドステータス(表示用)/Demand status(for display),0,"0：対象外",1,2
+DM_STATUS_TYP_02,デマンドステータス(表示用)/Demand status(for display),1,"1：計画中デマンド",1,2
+DM_STATUS_TYP_02,デマンドステータス(表示用)/Demand status(for display),2,"2：今回手配済デマンド",1,2
+DM_STATUS_TYP_02,デマンドステータス(表示用)/Demand status(for display),3,"3：手配済みデマンド",1,2
+ODR_PLAN_DATE_BREAK_FLG,所要量予定日割れフラグ/Material requirements sched date interrupt flag,0,"0：正常",1,2
+ODR_PLAN_DATE_BREAK_FLG,所要量予定日割れフラグ/Material requirements sched date interrupt flag,1,"1：所要予定日割れ",1,2
+MAX_PERIOD_QTY_OVER_FLG,最大まとめ数オーバフラグ/over Max summary qty flag,0,"0：正常",1,2
+MAX_PERIOD_QTY_OVER_FLG,最大まとめ数オーバフラグ/over Max summary qty flag,1,"1：最大まとめオーバー",1,2
+DM_FORWARD_PROPOSAL_ALERT_FLG,前倒勧告アラーム(デマンド)/Forward proposal alarm(demand),0,"0：正常",1,2
+DM_FORWARD_PROPOSAL_ALERT_FLG,前倒勧告アラーム(デマンド)/Forward proposal alarm(demand),1,"1：アラーム",1,2
+DM_BACKWORD_PROPOSAL_ALERT_FLG,後倒勧告アラーム(デマンド)/Backward proposal alarm(demand),0,"0：正常",1,2
+DM_BACKWORD_PROPOSAL_ALERT_FLG,後倒勧告アラーム(デマンド)/Backward proposal alarm(demand),1,"1：アラーム",1,2
+DM_CANCEL_ADVICE_ALERT_FLG,取消勧告アラーム(デマンド)/Cancle proposal alarm(demand),0,"0：正常",1,2
+DM_CANCEL_ADVICE_ALERT_FLG,取消勧告アラーム(デマンド)/Cancle proposal alarm(demand),1,"1：アラーム",1,2
+ODR_FORWARD_PROPOSAL_ALERT_FLG,前倒勧告アラーム（オーダ）/Forward proposal alarm(order),0,"0：正常",1,2
+ODR_FORWARD_PROPOSAL_ALERT_FLG,前倒勧告アラーム（オーダ）/Forward proposal alarm(order),1,"1：アラーム",1,2
+ODR_BACKWORD_PROP_ALERT_FLG,後倒勧告アラーム（オーダ）/Backward proposal alarm(order),0,"0：正常",1,2
+ODR_BACKWORD_PROP_ALERT_FLG,後倒勧告アラーム（オーダ）/Backward proposal alarm(order),1,"1：アラーム",1,2
+ODR_CANCEL_ADVICE_ALERT_FLG,取消勧告アラーム（オーダ）/Cancle proposal alarm(order),0,"0：正常",1,2
+ODR_CANCEL_ADVICE_ALERT_FLG,取消勧告アラーム（オーダ）/Cancle proposal alarm(order),1,"1：アラーム",1,2
+UNBACKWARD_ORDERS_ALERT_FLG,後倒許容範囲勧告アラーム/Backward permit range proposal alarm,0,"0：正常",1,2
+UNBACKWARD_ORDERS_ALERT_FLG,後倒許容範囲勧告アラーム/Backward permit range proposal alarm,1,"1：アラーム",1,2
+ODR_CREATE_TYP,オーダ生成区分/Order generation type,1,"1：ユーザが設定したオーダ",1,2
+ODR_CREATE_TYP,オーダ生成区分/Order generation type,2,"2：エンジンが設定したオーダ",1,2
+ODR_CREATE_TYP_02,オーダ生成区分(表示用)/Order generation type (for display),0,"0：対象外",1,2
+ODR_CREATE_TYP_02,オーダ生成区分(表示用)/Order generation type (for display),1,"1：ユーザが設定したオーダ",1,2
+ODR_CREATE_TYP_02,オーダ生成区分(表示用)/Order generation type (for display),2,"2：エンジンが設定したオーダ",1,2
+ODR_STATUS_TYP,オーダステータス/Order status,1,"1：計画中オーダ",1,2
+ODR_STATUS_TYP,オーダステータス/Order status,2,"2：今回手配済オーダ",1,2
+ODR_STATUS_TYP,オーダステータス/Order status,3,"3：手配済みオーダ",1,2
+ODR_STATUS_TYP_02,オーダステータス(表示用)/Order status(for display),0,"0：対象外",1,2
+ODR_STATUS_TYP_02,オーダステータス(表示用)/Order status(for display),1,"1：計画中オーダ",1,2
+ODR_STATUS_TYP_02,オーダステータス(表示用)/Order status(for display),2,"2：今回手配済オーダ",1,2
+ODR_STATUS_TYP_02,オーダステータス(表示用)/Order status(for display),3,"3：手配済みオーダ",1,2
+PRD_PERIOD_TYP,製造期間不足フラグ/Prod period deficiency flag,0,"0：正常",1,2
+PRD_PERIOD_TYP,製造期間不足フラグ/Prod period deficiency flag,1,"1：手配予定日割れ",1,2
+PRD_PERIOD_TYP,製造期間不足フラグ/Prod period deficiency flag,2,"2：着手予定日割れ",1,2
+PRD_PERIOD_TYP,製造期間不足フラグ/Prod period deficiency flag,3,"3：搬出予定日割れ",1,2
+PRD_PERIOD_TYP,製造期間不足フラグ/Prod period deficiency flag,4,"4：受入予定日割れ",1,2
+PRD_PERIOD_TYP,製造期間不足フラグ/Prod period deficiency flag,5,"5：入庫予定日割れ",1,2
+PRD_PERIOD_TYP,製造期間不足フラグ/Prod period deficiency flag,6,"6：出庫可能日割れ",1,2
+OD_ALARM_FLG_02,所要量アラーム情報出力済みフラグ/Material requirements alarm information OP.ed ending flag,0,"0：未",1,2
+OD_ALARM_FLG_02,所要量アラーム情報出力済みフラグ/Material requirements alarm information OP.ed ending flag,1,"1：出力済み",1,2
+DECISION_DM_EXP_FLG,下位確定デマンド展開フラグ/Lower confirmed demand expansion flag ,0,"0：展開対象外",1,2
+DECISION_DM_EXP_FLG,下位確定デマンド展開フラグ/Lower confirmed demand expansion flag ,1,"1：展開する",1,2
+CARRY_INST_ISS_FLG,搬送指示書発行済みフラグ/Flag issued of carry instraction,0,"0：未",1,2
+CARRY_INST_ISS_FLG,搬送指示書発行済みフラグ/Flag issued of carry instraction,1,"1：発行済み",1,2
+JOB_ODR_TYP_02,製番種別/PN type,1,"1:受注製番",1,2
+JOB_ODR_TYP_02,製番種別/PN type,3,"3:在庫補充製番",1,2
+JOB_ODR_TYP_02,製番種別/PN type,4,"4:見込製番",1,2
+ENTRY_TYP_02,データ入力区分/Data input type,10,"10：EDI",1,2
+ENTRY_TYP_02,データ入力区分/Data input type,20,"20：CSV",1,2
+ENTRY_TYP_02,データ入力区分/Data input type,21,"21：画面",1,2
+ENTRY_TYP_02,データ入力区分/Data input type,30,"30:工場間受注",1,2
+MRP_ODR_TYP_02,品目手配区分/Item arrangement type,4,"4:マニュアル手配品目",1,2
+MRP_ODR_TYP_02,品目手配区分/Item arrangement type,5,"5:ロット手配品目",1,2
+MRP_ODR_TYP_02,品目手配区分/Item arrangement type,6,"6:定量手配品目",1,2
+MRP_ODR_TYP_02,品目手配区分/Item arrangement type,7,"7:発注点手配品目",1,2
+MRP_ODR_TYP_02,品目手配区分/Item arrangement type,8,"8:擬似品目",1,2
+MRP_ODR_TYP_03,品目手配区分(検索用)/Item arrangement type (for search),0,"0：全て",1,2
+MRP_ODR_TYP_03,品目手配区分(検索用)/Item arrangement type (for search),1,"1：製番",1,2
+MRP_ODR_TYP_03,品目手配区分(検索用)/Item arrangement type (for search),2,"2：在庫引当型製番",1,2
+MRP_ODR_TYP_03,品目手配区分(検索用)/Item arrangement type (for search),4,"4：マニュアル手配品目",1,2
+MRP_ODR_TYP_03,品目手配区分(検索用)/Item arrangement type (for search),5,"5：ロット手配品目",1,2
+MRP_ODR_TYP_03,品目手配区分(検索用)/Item arrangement type (for search),6,"6：定量手配品目",1,2
+MRP_ODR_TYP_03,品目手配区分(検索用)/Item arrangement type (for search),7,"7：発注点手配品目",1,2
+MRP_ODR_TYP_03,品目手配区分(検索用)/Item arrangement type (for search),8,"8：擬似品目",1,2
+PEGGING_TYP,ペギング区分/Pegging type,0,"0：設定なし",1,2
+PEGGING_TYP,ペギング区分/Pegging type,1,"1：フルペギング",1,2
+PEGGING_TYP,ペギング区分/Pegging type,2,"2：マルチペギング",1,2
+PARENT_OUTSIDE_TYP,上位オーダ内外作区分/High-ranking order I/E manuf type,0,"0：設定なし",1,2
+PARENT_OUTSIDE_TYP,上位オーダ内外作区分/High-ranking order I/E manuf type,1,"1：内作",1,2
+PARENT_OUTSIDE_TYP,上位オーダ内外作区分/High-ranking order I/E manuf type,2,"2：外作",1,2
+ISSUE_ODR_STOCK_TYP,払出先別オーダリング在庫区分/Issue ordering stock type,0,"対象外",1,2
+ISSUE_ODR_STOCK_TYP,払出先別オーダリング在庫区分/Issue ordering stock type,1,"払出先別在庫",1,2
+ISSUE_ODR_STOCK_TYP,払出先別オーダリング在庫区分/Issue ordering stock type,2,"共通在庫",1,2
+ISSUE_INST_STATUS_02,ステータス/Status,1,"1：支給予定",1,2
+ISSUE_INST_STATUS_02,ステータス/Status,2,"2：払出予定",1,2
+ISSUE_INST_STATUS_02,ステータス/Status,3,"3：搬送予定",1,2
+ISSUE_INST_STATUS_02,ステータス/Status,4,"4：支給実績",1,2
+ISSUE_INST_STATUS_02,ステータス/Status,5,"5：払出実績",1,2
+ISSUE_INST_STATUS_02,ステータス/Status,6,"6：搬送実績",1,2
+ISSUE_INST_STATUS_02,ステータス/Status,7,"7：完了",1,2
+ORD_PROGRESS_STS_01,受注進捗ステータス/Order progress status,1,"1:受注",1,2
+ORD_PROGRESS_STS_01,受注進捗ステータス/Order progress status,2,"2:出荷計画",1,2
+ORD_PROGRESS_STS_01,受注進捗ステータス/Order progress status,3,"3:出荷指示",1,2
+ORD_PROGRESS_STS_01,受注進捗ステータス/Order progress status,4,"4:出荷済",1,2
+ORD_PROGRESS_STS_01,受注進捗ステータス/Order progress status,5,"5:受領・売上",1,2
+ORD_PROGRESS_STS_01,受注進捗ステータス/Order progress status,6,"6:売掛計上前",1,2
+ORD_PROGRESS_STS_01,受注進捗ステータス/Order progress status,7,"7:売掛計上済",1,2
+ORD_PROGRESS_STS_01,受注進捗ステータス/Order progress status,8,"8:請求締め済",1,2
+ACPT_RSLT_STS,受入実績ステータス/Accept result status,1,"1：受入",1,2
+ACPT_RSLT_STS,受入実績ステータス/Accept result status,2,"2：受入完了",1,2
+ACPT_RSLT_STS,受入実績ステータス/Accept result status,3,"3：検査完了",1,2
+ACPT_RSLT_STS,受入実績ステータス/Accept result status,4,"4：買掛計上前",1,2
+ACPT_RSLT_STS,受入実績ステータス/Accept result status,5,"5：買掛計上後",1,2
+ACPT_RSLT_STS,受入実績ステータス/Accept result status,6,"6：支払締め後",1,2
+ACPT_RSLT_STS,受入実績ステータス/Accept result status,7,"7：買掛インタフェース済",1,2
+T_OD_TYP,オーダデマンド区分/Order demand type,2,"2：オーダ",1,2
+T_OD_TYP,オーダデマンド区分/Order demand type,3,"3：デマンド",1,2
+PROJECT_STAT,案件ステータス/Case status,1,"1：引合",1,2
+PROJECT_STAT,案件ステータス/Case status,2,"2：見積",1,2
+PROJECT_STAT,案件ステータス/Case status,3,"3：内示",1,2
+PROJECT_STAT,案件ステータス/Case status,4,"4：確定受注",1,2
+PROJECT_STAT,案件ステータス/Case status,8,"8：失注",1,2
+PROJECT_STAT,案件ステータス/Case status,9,"9：完了",1,2
+ESTIMATE_TYPE,手配品目種/Arrangement item type,1,"1：製品",1,2
+ESTIMATE_TYPE,手配品目種/Arrangement item type,2,"2：役務",1,2
+ESTIMATE_STAT,見積ステータス/Estimate status,0,"0：見積中",1,2
+ESTIMATE_STAT,見積ステータス/Estimate status,1,"1：内示",1,2
+ESTIMATE_STAT,見積ステータス/Estimate status,2,"2：確定受注",1,2
+ESTIMATE_STAT,見積ステータス/Estimate status,9,"9：キャンセル",1,2
+COST_PROGRESS,案件費用進捗/Case cost progress ,0,"計画",1,2
+COST_PROGRESS,案件費用進捗/Case cost progress ,1,"仕掛",1,2
+COST_PROGRESS,案件費用進捗/Case cost progress ,2,"完了",1,2
+ACCURACY_LEVEL,確度/Accuracy,1,"1：30%未満",1,2
+ACCURACY_LEVEL,確度/Accuracy,2,"2：30%～",1,2
+ACCURACY_LEVEL,確度/Accuracy,3,"3：50%～",1,2
+ACCURACY_LEVEL,確度/Accuracy,4,"4：80%～",1,2
+SPEC_CLASS_01,製品選択1/Prod selection1,0,"0：未定",1,2
+SPEC_CLASS_01,製品選択1/Prod selection1,1,"1：標準",1,2
+SPEC_CLASS_01,製品選択1/Prod selection1,2,"2：特注",1,2
+SPEC_CLASS_02,製品選択2/Prod selection2,0,"0：未定",1,2
+SPEC_CLASS_02,製品選択2/Prod selection2,1,"1：周辺",1,2
+SPEC_CLASS_02,製品選択2/Prod selection2,2,"2：本体",1,2
+SPEC_SELECT_01,仕様選択1/SPEC selection1,0,"0：未定",1,2
+SPEC_SELECT_01,仕様選択1/SPEC selection1,1,"1：仕様1",1,2
+SPEC_SELECT_01,仕様選択1/SPEC selection1,2,"2：仕様2",1,2
+SPEC_SELECT_02,仕様選択2/SPEC selection2,0,"0：未定",1,2
+SPEC_SELECT_02,仕様選択2/SPEC selection2,1,"1：機種1",1,2
+SPEC_SELECT_02,仕様選択2/SPEC selection2,2,"2：機種2",1,2
+SPEC_SELECT_03,仕様選択3/SPEC selection3,0,"0：未定",1,2
+SPEC_SELECT_03,仕様選択3/SPEC selection3,1,"1：シリーズ1",1,2
+SPEC_SELECT_03,仕様選択3/SPEC selection3,2,"2：シリーズ2",1,2
+SPEC_SELECT_04,仕様選択4/SPEC selection4,0,"0：未定",1,2
+SPEC_SELECT_04,仕様選択4/SPEC selection4,1,"1：オプション1",1,2
+SPEC_SELECT_04,仕様選択4/SPEC selection4,2,"2：オプション2",1,2
+ODR_COMP_FLG,受注完了/Order completed,0,"0：未完了",1,2
+ODR_COMP_FLG,受注完了/Order completed,1,"1：完了",1,2
+DAILY_WORK_REP_CSV_ERR_TYP_01,作業日報CSV取込エラー区分/Work daily report CSV taking error type,1,"1：エラー",1,2
+DAILY_WORK_REP_CSV_ERR_TYP_01,作業日報CSV取込エラー区分/Work daily report CSV taking error type,2,"2：ワーニング",1,2
+DAILY_WORK_REP_CSV_ERR_TYP_01,作業日報CSV取込エラー区分/Work daily report CSV taking error type,3,"3：登録時エラー",1,2
+V_TRANSFER_TYP,振替区分/Transfer type,0,"0：振替対象外",1,2
+V_TRANSFER_TYP,振替区分/Transfer type,1,"1：振替対象",1,2
+V_SOURCE_OUTSIDE_TYP,手配先内外作区分/Provider internal/external manufacturing type,1,"1：内作",1,2
+V_SOURCE_OUTSIDE_TYP,手配先内外作区分/Provider internal/external manufacturing type,2,"2：外作",1,2
+V_PRODUCT_TYP,製品区分（原価）/Prod type(cost),1,"1：製品",1,2
+V_PRODUCT_TYP,製品区分（原価）/Prod type(cost),2,"2：半製品",1,2
+V_PRODUCT_TYP,製品区分（原価）/Prod type(cost),3,"3：部品",1,2
+V_PRODUCT_TYP,製品区分（原価）/Prod type(cost),4,"4：原材料",1,2
+V_PRODUCT_TYP,製品区分（原価）/Prod type(cost),5,"5：その他",1,2
+V_UNIT_COST_TYP,購入単価区分/Purchase unit cost type,1,"1：仮単価",1,2
+V_UNIT_COST_TYP,購入単価区分/Purchase unit cost type,2,"2：正単価",1,2
+V_SINGLE_COST_UP_TYPE,原価積上区分（単独会社原価用）/Cost load type (for single company cost),0,"0：積上げしない",1,2
+V_SINGLE_COST_UP_TYPE,原価積上区分（単独会社原価用）/Cost load type (for single company cost),1,"1：積上げする",1,2
+V_GROUP_COST_UP_TYPE,原価積上区分（グループ原価用）/Cost load type (for group cost),0,"0：積上げしない",1,2
+V_GROUP_COST_UP_TYPE,原価積上区分（グループ原価用）/Cost load type (for group cost),1,"1：積上げする",1,2
+V_OUTSIDE_TYP,作業系列内外作区分/I/E type by WS,1,"1：内作",1,2
+V_OUTSIDE_TYP,作業系列内外作区分/I/E type by WS,2,"2：外作",1,2
+V_LEVEL_VALUE,部門レベル/Division level,0,"0：なし",1,2
+V_LEVEL_VALUE,部門レベル/Division level,10,"10：会社",1,2
+V_LEVEL_VALUE,部門レベル/Division level,20,"20：工場",1,2
+V_LEVEL_VALUE,部門レベル/Division level,30,"30：部門",1,2
+V_LEVEL_VALUE,部門レベル/Division level,40,"40：課／グループ",1,2
+V_LEVEL_VALUE,部門レベル/Division level,50,"50：係",1,2
+V_LEVEL_VALUE,部門レベル/Division level,60,"60：班",1,2
+V_LEVEL_VALUE,部門レベル/Division level,70,"70：作業区",1,2
+V_RATE_OBJ_TYP,賃率計算対象区分/Fee rate calculation target Div.,0,"0：賃率計算対象外",1,2
+V_RATE_OBJ_TYP,賃率計算対象区分/Fee rate calculation target Div.,1,"1：賃率計算対象",1,2
+V_HUMAN_MACHINE_TYPE,人／マシン区分/Person/machine type,1,"1：人",1,2
+V_HUMAN_MACHINE_TYPE,人／マシン区分/Person/machine type,2,"2：マシン",1,2
+V_HUMAN_MACHINE_TYPE,人／マシン区分/Person/machine type,9,"9：他",1,2
+COST_TYPE,原価費目分類/Cost expense type,1,"1：直接労務費",1,2
+COST_TYPE,原価費目分類/Cost expense type,2,"2：直接材料費",1,2
+COST_TYPE,原価費目分類/Cost expense type,3,"3：外注加工費",1,2
+COST_TYPE,原価費目分類/Cost expense type,4,"4：買入部品費",1,2
+COST_TYPE,原価費目分類/Cost expense type,5,"5：間接労務費",1,2
+COST_TYPE,原価費目分類/Cost expense type,6,"6：間接材料費",1,2
+COST_TYPE,原価費目分類/Cost expense type,7,"7：間接経費",1,2
+COST_TYPE,原価費目分類/Cost expense type,8,"8：製造管理費",1,2
+COST_TYPE,原価費目分類/Cost expense type,9,"9：販売費、一般管理費",1,2
+COST_TYPE,原価費目分類/Cost expense type,10,"10：その他",1,2
+FIXED_VARIABLE_CODE,変動/固定費/Floating/fixed cost,1,"1:変動費",1,2
+FIXED_VARIABLE_CODE,変動/固定費/Floating/fixed cost,2,"2:固定費",1,2
+DIRECT_INDIRECT_CODE,直接/間接費/Floating/fixed cost,1,"1:直接費",1,2
+DIRECT_INDIRECT_CODE,直接/間接費/Floating/fixed cost,2,"2:間接費",1,2
+ACCOUNT_TYP,勘定科目分類/Calculation item class,1,"1：配賦",1,2
+ACCOUNT_TYP,勘定科目分類/Calculation item class,2,"2：直課",1,2
+ACCOUNT_TYP,勘定科目分類/Calculation item class,9,"9：対象外",1,2
+V_SUM_TYP,集計区分/Total type,1,"1：今期",1,2
+V_SUM_TYP,集計区分/Total type,2,"2：前期",1,2
+V_SUM_TYP,集計区分/Total type,3,"3：メンテナンス",1,2
+V_ALARM_KBN,アラーム区分/Alarm type,0,"",1,2
+V_ALARM_KBN,アラーム区分/Alarm type,1,"A:異常終了",1,2
+V_ALARM_KBN,アラーム区分/Alarm type,2,"E:エラー",1,2
+V_ALARM_KBN,アラーム区分/Alarm type,3,"W:警告",1,2
+V_ALARM_KBN,アラーム区分/Alarm type,4,"D:デバッグ",1,2
+SUM_TYP,累計区分/Accumulating type,0,"0：単月",1,2
+SUM_TYP,累計区分/Accumulating type,1,"1：累計",1,2
+LABOR_RATE_TYP,賃率データ区分/Labor rate data type,0,"0：その他",1,2
+LABOR_RATE_TYP,賃率データ区分/Labor rate data type,1,"1：製造部門賃率",1,2
+EXEC_KBN,実行区分/Execution type,0,"",1,2
+EXEC_KBN,実行区分/Execution type,1,"P：受付中",1,2
+EXEC_KBN,実行区分/Execution type,2,"S：実行中",1,2
+EXEC_KBN,実行区分/Execution type,3,"C：正常終了",1,2
+EXEC_KBN,実行区分/Execution type,4,"A：異常終了",1,2
+EXEC_KBN,実行区分/Execution type,5,"W：警告終了",1,2
+EXEC_KBN,実行区分/Execution type,6,"X：後続処理停止中",1,2
+EXEC_KBN,実行区分/Execution type,7,"Z：ユーザ停止",1,2
+V_PRODUCT_TYP_2,製品区分（原価）/Prod type(cost),0," ",1,2
+V_PRODUCT_TYP_2,製品区分（原価）/Prod type(cost),1,"1：製品",1,2
+V_PRODUCT_TYP_2,製品区分（原価）/Prod type(cost),2,"2：半製品",1,2
+V_PRODUCT_TYP_2,製品区分（原価）/Prod type(cost),3,"3：部品",1,2
+V_PRODUCT_TYP_2,製品区分（原価）/Prod type(cost),4,"4：原材料",1,2
+V_PRODUCT_TYP_2,製品区分（原価）/Prod type(cost),5,"5：その他",1,2
+DAILY_WORK_REPORT_TYP_01,日報区分/Daily report type,1,"1:日報",1,2
+OPR_TYP_CD_01,日報作業区分コード/Daily report work type code,0,"0:生産活動",1,2
+OPR_TYP_CD_01,日報作業区分コード/Daily report work type code,9,"9:その他",1,2
+UN_OPR_CAUSE_CD_01,日報不作業理由コード/Reason for daily report UN-work code,0,"0:対象外",1,2
+UN_OPR_CAUSE_CD_01,日報不作業理由コード/Reason for daily report UN-work code,9,"9:その他",1,2
+V_ALLOCATION_LEVEL,配賦先分類/Allocation destination class,0,"0：なし",1,2
+V_ALLOCATION_LEVEL,配賦先分類/Allocation destination class,10,"10：会社",1,2
+V_ALLOCATION_LEVEL,配賦先分類/Allocation destination class,20,"20：工場",1,2
+V_ALLOCATION_LEVEL,配賦先分類/Allocation destination class,30,"30：部門",1,2
+V_ALLOCATION_LEVEL,配賦先分類/Allocation destination class,40,"40：課／グループ",1,2
+V_ALLOCATION_LEVEL,配賦先分類/Allocation destination class,50,"50：係",1,2
+V_ALLOCATION_LEVEL,配賦先分類/Allocation destination class,60,"60：班",1,2
+V_ALLOCATION_LEVEL,配賦先分類/Allocation destination class,70,"70：作業区",1,2
+V_ALLOCATION_LEVEL,配賦先分類/Allocation destination class,80,"80：品目",1,2
+V_CM_BE_BATCH_NM,処理名/Processing name,1,"1：予算見積マスタ登録",1,2
+V_CM_BE_BATCH_NM,処理名/Processing name,2,"2：予算見積原価積上",1,2
+V_CM_BE_BATCH_NM,処理名/Processing name,3,"3：予算見積原価帳票データ作成",1,2
+V_MST_ENTR_TYP,マスタ登録区分/Master registration division,1,"1：マスタ新規登録",1,2
+V_MST_ENTR_TYP,マスタ登録区分/Master registration division,2,"2：マスタ流用登録",1,2
+V_MST_ENTR_TYP,マスタ登録区分/Master registration division,3,"3：賃率マスタのみ再登録",1,2
+V_MST_ENTR_TYP,マスタ登録区分/Master registration division,4,"4：予算見積コード情報更新",1,2
+V_MST_ENTR_TYP,マスタ登録区分/Master registration division,9,"9：マスタ削除",1,2
+V_BAT_PARAM,バッチ処理名/Batch processing name,1,"1：マスタ取込",1,2
+V_BAT_PARAM,バッチ処理名/Batch processing name,2,"2：生産実績取込",1,2
+V_BAT_PARAM,バッチ処理名/Batch processing name,3,"3：費用情報取込（Ai連携）",1,2
+V_BAT_PARAM,バッチ処理名/Batch processing name,4,"4：配賦処理",1,2
+V_BAT_PARAM,バッチ処理名/Batch processing name,5,"5：賃率計算(累計）",1,2
+V_BAT_PARAM,バッチ処理名/Batch processing name,6,"6：原価計算",1,2
+V_BAT_PARAM,バッチ処理名/Batch processing name,7,"7：原価帳票データ作成処理",1,2
+V_BAT_PARAM,バッチ処理名/Batch processing name,8,"8：過去データ削除処理",1,2
+V_BAT_PARAM_GROUP,バッチ処理名/Batch processing name,9,"9：グループ原価積上処理",1,2
+UNIT_COST_RETROACTION_FLG,販売単価遡及フラグ,0,"0：対象としない",1,2
+UNIT_COST_RETROACTION_FLG,販売単価遡及フラグ,1,"1：対象とする",1,2
+INSPC_SALES_APP_TYP,検収売上計上区分,0,"0：対象外",1,2
+INSPC_SALES_APP_TYP,検収売上計上区分,1,"1：対象（検収日を照合キーに含める）",1,2
+INSPC_SALES_APP_TYP,検収売上計上区分,2,"2：対象（検収日を照合キーに含めない）",1,2
+RCV_ISSUE_COMMENT_01,保管区移動理由,1,"1：理由1",0,0
+RCV_ISSUE_COMMENT_01,保管区移動理由,2,"2：理由2",0,0
+RCV_ISSUE_COMMENT_01,保管区移動理由,3,"3：理由3",0,0
+EDI_DATA_TYP,EDIデータ区分/EDI data type,10,"10：内示(期間)",1,2
+ODR_PRIORITY_TERM_ADD_FLG,確定優先期間外加算フラグ,0,"0：確定受注を統合受注の対象としない",1,2
+ODR_PRIORITY_TERM_ADD_FLG,確定優先期間外加算フラグ,1,"1：確定受注を統合受注の対象とする",1,2
+ODR_DIFF_ADD_TYP,確定期間内差分加算区分,1,"1：差分反映しない",1,2
+ODR_DIFF_ADD_TYP,確定期間内差分加算区分,2,"2：加算のみ",1,2
+ODR_DIFF_ADD_TYP,確定期間内差分加算区分,3,"3：加減",1,2
+ACCT_CD_01,科目コード,0,"0：科目コード１",1,2
+ACCT_CD_01,科目コード,1,"1：科目コード２",1,2
+PJ_CD_01,プロジェクトコード,0,"0：科目コード１",1,2
+PJ_CD_01,プロジェクトコード,1,"1：科目コード２",1,2
+SEG_CONTENTS_01,セグメント1,0,"0：セグメント１-１",1,2
+SEG_CONTENTS_01,セグメント1,1,"1：セグメント１-２",1,2
+SEG_CONTENTS_02,セグメント2,0,"0：セグメント２-１",1,2
+SEG_CONTENTS_02,セグメント2,1,"1：セグメント２-２",1,2
+SEG_CONTENTS_03,セグメント3,0,"0：セグメント３-１",1,2
+SEG_CONTENTS_03,セグメント3,1,"1：セグメント３-２",1,2
+SEG_CONTENTS_04,セグメント4,0,"0：セグメント４-１",1,2
+SEG_CONTENTS_04,セグメント4,1,"1：セグメント４-２",1,2
+DEMAND_ISSUE_FLG,払出先別生産要求フラグ,0,"0：しない",1,2
+DEMAND_ISSUE_FLG,払出先別生産要求フラグ,1,"1：する",1,2
+DECISION_REPLACE_PTN,確定置換パターン/Confirmed substitution pattern,5,"5：Eパターン",1,2
+V_OPER_CD,処理区分/Proc type,1,"1：配賦",1,2
+V_OPER_CD,処理区分/Proc type,2,"2：直課",1,2
+ODR_STATUS_KBN,受注情報状態/Order Info Status,0,"0:受注明細のみ",1,2
+ODR_STATUS_KBN,受注情報状態/Order Info Status,1,"1:受注明細/製番受注紐付あり",1,2
+ODR_STATUS_KBN,受注情報状態/Order Info Status,2,"2:製番受注紐付のみ",1,2

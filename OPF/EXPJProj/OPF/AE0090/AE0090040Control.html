@@ -1,0 +1,28 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+制御
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AE0090/AE0090040Control.html,v $
+$Author: kong-haijing $    
+$Revision: 1.2 $ $Date: 2007/10/17 03:15:14 $
+********************************************************* --%>
+<html>
+<head>
+<title>制御</title>
+<%@include file="common/expj_v5.jsp" %>
+<meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<script>
+var data1 = '<%=aAE0090040Control.getFlashTreeXML()%>';
+function onLoadAddTree() {
+    addTreeDataParent('AE0090040', "AE0090040tree1", data1);
+}
+</script>
+</head>
+<body onLoad="onLoadAddTree()">
+<%
+  MessageStruct msgStruct = aAE0090040Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

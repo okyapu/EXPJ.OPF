@@ -1,0 +1,35 @@
+■業務運用日
+  WEBアプリケーションの場合、
+     ユーザーマスタの工場コードで日付制御を読み取得する
+  バッチの場合
+     区分コードマスタに設定された、バッチ用工場コードで日付制御を読む
+
+■稼働日計算
+  WEBアプリケーションの場合
+     運送日数の稼働日計算は、顧客納品場所のカレンダコードを使用する   (WorkDay)
+     出荷準備L/Tの稼働日計算は、ユーザーマスタの工場コードを使用する  (WorkDay)
+     品目関連のL/Tの稼働日計算は、ユーザーマスタの工場コードを使用する(WorkDay)
+  バッチの場合
+     運送日数の稼働日計算は、顧客納品場所のカレンダコードを使用する(SalesWorkCalender)
+     出荷準備L/Tの稼働日計算は、区分コードマスタに設定された、バッチ用工場コードを使用する(WorkCalender)
+     品目関連のL/Tの稼働日計算は、区分コードマスタに設定された、バッチ用工場コードを使用する(WorkCalender)
+
+WorkDay,WorkCalender,SalesWorkCalender
+■３つの似たようなクラスがあるので、使い分けてください。
+　WorkDay：内部でConnectionを取得している。バッチでは使えない。
+　WorkCalender:コネクションをパラメータで渡す。
+　SalesWorkCalender:WorkCalenderにカレンダコードのパラメータを追加したもの。
+
+
+SalesWorkCalenderは、WorkCalenderをコピーして作成しました。
+　このクラスの工場コードパラメータは、ログ出力用であり、稼働日計算には使用されない。
+　このクラスを使うときの工場コードには、バッチ処理用工場コードを指定する。
+package名 com.nec.jp.orteus.metamorBase.common.WorkDay;
+
+■以下のPL/SQLを追加
+SQLISSALESWORKDAY
+SQLSALESWORKDAYCALC
+FNCSALESWORKDAYCALC
+FNCISSALESWORKDAY
+
+

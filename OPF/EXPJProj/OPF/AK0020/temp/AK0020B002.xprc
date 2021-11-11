@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<process><process-name>AK0020B002</process-name><process-jname>トランザクションデータ削除実行バッチ</process-jname><process-type>orteus-batch</process-type><process-description></process-description><event-list/><db-list/><page-list/></process>

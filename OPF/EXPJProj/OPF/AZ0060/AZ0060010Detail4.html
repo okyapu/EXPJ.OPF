@@ -1,0 +1,1387 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+詳細
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AZ0060/AZ0060010Detail4.html,v $
+$Author: geng-jia $
+$Revision: 1.1 $ $Date: 2017/02/20 10:23:39 $
+********************************************************* --%>
+<html>
+<head>
+<title>詳細4(JF)</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+
+<!--銀行口座メンテナンス -->
+<%
+if("BZ0110010Servlet".equals(aAZ0060010Control.getScreen_url())){
+%>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true" onBlur="focus()">
+<table orftype="DataGrid" mode="DETAIL" indicate="false" name="AZ0060010Detail1" width="410" height="200" border="1" cellspacing="0" cellpadding="0">
+    <orloophead>
+	  <tr bgcolor="#ccff99">
+		<td width="130" align="right">&nbsp;</td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="60">&nbsp;</td>
+	  </tr>
+	</orloophead>
+<ornoloop>
+   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">口座管理コード</span></td>
+		<td><orflabel name="d_OLD_B_ACCT_CTRL_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_B_ACCT_CTRL_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_B_ACCT_CTRL_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">口座管理名称</span></td>
+		<td><orflabel name="d_OLD_B_ACCT_MNG_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_B_ACCT_MNG_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_B_ACCT_MNG_NAME_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">銀行コード</span></td>
+		<td><orflabel name="d_OLD_BANK_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_BANK_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_BANK_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行支店コード</span></td>
+		<td><orflabel name="d_OLD_BANK_BR_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_BANK_BR_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_BANK_BR_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">口座種別</span></td>
+		<td><orflabel name="d_OLD_B_ACCT_TYP_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_B_ACCT_TYP_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_B_ACCT_TYP_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">口座番号</span></td>
+		<td><orflabel name="d_OLD_B_ACCT_NO" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_B_ACCT_NO" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_B_ACCT_NO_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">口座名称</span></td>
+		<td><orflabel name="d_OLD_B_ACCT_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_B_ACCT_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_B_ACCT_NAME_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">ＦＢデータ区分</span></td>
+		<td><orflabel name="d_OLD_FB_DATA_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_FB_DATA_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_FB_DATA_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">振込依頼人コード</span></td>
+		<td align="right"><orflabel name="d_OLD_TRF_REQUEST_CD" orteus="true" width="" height="" text="" kind="OBT_N;10" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td align="right"><orflabel name="d_NEW_TRF_REQUEST_CD" orteus="true" width="" height="" text="" kind="OBT_N;10" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_TRF_REQUEST_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">口座名称(ＦＢ)</span></td>
+		<td><orflabel name="d_OLD_B_ACCT_FB_NAME" orteus="true" width="" height="" text="" kind="OBT_TELMO" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_B_ACCT_FB_NAME" orteus="true" width="" height="" text="" kind="OBT_TELMO" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_B_ACCT_FB_NAME_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  </ornoloop>
+	</table>
+<%
+  MessageStruct msgStruct = aAZ0060010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+<%
+}
+%>
+<!-- 再評価為替レートメンテナンス-->
+<%
+if("BZ0210010Servlet".equals(aAZ0060010Control.getScreen_url())){
+%>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true" onBlur="focus()">
+<table orftype="DataGrid" mode="DETAIL" indicate="false" name="AZ0060010Detail1" width="410" height="200" border="1" cellspacing="0" cellpadding="0">
+    <orloophead>
+	  <tr bgcolor="#ccff99">
+		<td width="130" align="right">&nbsp;</td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="60">&nbsp;</td>
+	  </tr>
+	</orloophead>
+<ornoloop>
+   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" >通貨コード</span></td>
+		<td><orflabel name="d_OLD_CUR_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CUR_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CUR_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">為替種別</span></td>
+		<td><orflabel name="d_OLD_EXCH_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_EXCH_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_EXCH_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" >為替予約コード</span></td>
+		<td><orflabel name="d_OLD_EXCH_RESERVE_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_EXCH_RESERVE_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_EXCH_RESERVE_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" >為替開始日付</span></td>
+		<td><orflabel name="d_OLD_EXCH_START_DATE" orteus="true" width="" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_EXCH_START_DATE" orteus="true" width="" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_EXCH_START_DATE_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">為替レート</span></td>
+		<td align="right"><orflabel name="d_OLD_EXCH_RATE" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;6" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td align="right"><orflabel name="d_NEW_EXCH_RATE" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;6" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_EXCH_RATE_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  </ornoloop>
+	</table>
+<%
+  MessageStruct msgStruct = aAZ0060010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+<%
+}
+%>
+<!-- 科目メンテナンス-->
+<%
+if("BZ0250010Servlet".equals(aAZ0060010Control.getScreen_url())){
+%>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true" onBlur="focus()">
+<table orftype="DataGrid" mode="DETAIL" indicate="false" name="AZ0060010Detail1" width="410" height="200" border="1" cellspacing="0" cellpadding="0">
+    <orloophead>
+	  <tr bgcolor="#ccff99">
+		<td width="130" align="right">&nbsp;</td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="60">&nbsp;</td>
+	  </tr>
+	</orloophead>
+<ornoloop>
+   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">科目コード</span></td>
+		<td><orflabel name="d_OLD_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ACCT_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">補助区分コード</span></td>
+		<td><orflabel name="d_OLD_SUB_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_SUB_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_SUB_ACCT_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">原始区分</span></td>
+		<td><orflabel name="d_OLD_PRIMITIVE_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_PRIMITIVE_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_PRIMITIVE_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">科目名</span></td>
+		<td><orflabel name="d_OLD_ACCT_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ACCT_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ACCT_NAME_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">科目略名</span></td>
+		<td><orflabel name="d_OLD_ACCT_ANAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ACCT_ANAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ACCT_ANAME_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">科目名（半角カナ）</span></td>
+		<td><orflabel name="d_OLD_ACCT_KNAME" orteus="true" width="" height="" text="" kind="OBT_ANK3_SPC" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ACCT_KNAME" orteus="true" width="" height="" text="" kind="OBT_ANK3_SPC" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ACCT_KNAME_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">貸借区分</span></td>
+		<td><orflabel name="d_OLD_DR_CR_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_DR_CR_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_DR_CR_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">科目区分</span></td>
+		<td><orflabel name="d_OLD_ACCT_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ACCT_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ACCT_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">補助区分既定値</span></td>
+		<td><orflabel name="d_OLD_SUB_ACCT_TYP_DEFAULT" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_SUB_ACCT_TYP_DEFAULT" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_SUB_ACCT_TYP_DEFAULT_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">内部取引区分</span></td>
+		<td><orflabel name="d_OLD_INTERNAL_TRN_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_INTERNAL_TRN_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_INTERNAL_TRN_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  </ornoloop>
+	</table>
+<%
+  MessageStruct msgStruct = aAZ0060010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+<%
+}
+%>
+<!-- 銀行手数料メンテナンス-->
+<%
+if("BZ0270010Servlet".equals(aAZ0060010Control.getScreen_url())){
+%>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true" onBlur="focus()">
+<table orftype="DataGrid" mode="DETAIL" indicate="false" name="AZ0060010Detail1" width="410" height="200" border="1" cellspacing="0" cellpadding="0">
+    <orloophead>
+	  <tr bgcolor="#ccff99">
+		<td width="130" align="right">&nbsp;</td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="60">&nbsp;</td>
+	  </tr>
+	</orloophead>
+<ornoloop>
+   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行コード</span></td>
+		<td><orflabel name="d_OLD_BANK_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_BANK_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_BANK_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">振込先区分</span></td>
+		<td><orflabel name="d_OLD_TRF_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_TRF_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_TRF_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">振込内容区分</span></td>
+		<td><orflabel name="d_OLD_CONTENTS_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CONTENTS_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CONTENTS_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">振込情報区分</span></td>
+		<td><orflabel name="d_OLD_INFO_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_INFO_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_INFO_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">有効開始日</span></td>
+		<td><orflabel name="d_OLD_VALID_START_DATE" orteus="true" width="" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_VALID_START_DATE" orteus="true" width="" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_VALID_START_DATE_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">有効終了日</span></td>
+		<td><orflabel name="d_OLD_VALID_END_DATE" orteus="true" width="" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_VALID_END_DATE" orteus="true" width="" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_VALID_END_DATE_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">下限金額</span></td>
+		<td align="right"><orflabel name="d_OLD_MIN_AMOUNT" orteus="true" width="" height="" text="" kind="OBT_NUMBER_P;14.2;FLOOR;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td align="right"><orflabel name="d_NEW_MIN_AMOUNT" orteus="true" width="" height="" text="" kind="OBT_NUMBER_P;14.2;FLOOR;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_MIN_AMOUNT_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">上限金額</span></td>
+		<td align="right"><orflabel name="d_OLD_MAX_AMOUNT" orteus="true" width="" height="" text="" kind="OBT_NUMBER_P;14.2;FLOOR;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td align="right"><orflabel name="d_NEW_MAX_AMOUNT" orteus="true" width="" height="" text="" kind="OBT_NUMBER_P;14.2;FLOOR;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_MAX_AMOUNT_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">振込手数料</span></td>
+		<td align="right"><orflabel name="d_OLD_TRF_FEE" orteus="true" width="" height="" text="" kind="OBT_NUMBER_P;14.2;FLOOR;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td align="right"><orflabel name="d_NEW_TRF_FEE" orteus="true" width="" height="" text="" kind="OBT_NUMBER_P;14.2;FLOOR;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_TRF_FEE_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">消費税コード</span></td>
+		<td><orflabel name="d_OLD_TAX_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_TAX_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_TAX_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  </ornoloop>
+	</table>
+<%
+  MessageStruct msgStruct = aAZ0060010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+<%
+}
+%>
+<!-- 取引先メンテナンス-->
+<%
+if("CA0020010Servlet".equals(aAZ0060010Control.getScreen_url())){
+%>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true" onBlur="focus()">
+<table orftype="DataGrid" mode="DETAIL" indicate="false" name="AZ0060010Detail1" width="410" height="200" border="1" cellspacing="0" cellpadding="0">
+    <orloophead>
+	  <tr bgcolor="#ccff99">
+		<td width="130" align="right">&nbsp;</td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="60">&nbsp;</td>
+	  </tr>
+	</orloophead>
+<ornoloop>
+   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">取引先コード</span></td>
+		<td><orflabel name="d_OLD_VEND_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_VEND_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_VEND_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">取引先正式名</span></td>
+		<td><orflabel name="d_OLD_VEND_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_VEND_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_VEND_NAME_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">取引先名</span></td>
+		<td><orflabel name="d_OLD_VEND_ANAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_VEND_ANAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_VEND_ANAME_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	    <tr>
+		<td><span orteus="true">取引先カナ名</span></td>
+		<td><orflabel name="d_OLD_VEND_KNAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_VEND_KNAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_VEND_KNAME_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">郵便番号</span></td>
+		<td><orflabel name="d_OLD_ZIP_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ZIP_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ZIP_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">住所１</span></td>
+		<td><orflabel name="d_OLD_ADDRESS_1" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ADDRESS_1" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ADDRESS_1_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">住所２</span></td>
+		<td><orflabel name="d_OLD_ADDRESS_2" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ADDRESS_2" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ADDRESS_2_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">住所（カナ）１</span></td>
+		<td><orflabel name="d_OLD_ADDRESS_K_1" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ADDRESS_K_1" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ADDRESS_K_1_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">住所（カナ）２</span></td>
+		<td><orflabel name="d_OLD_ADDRESS_K_2" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ADDRESS_K_2" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ADDRESS_K_2_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">電話番号</span></td>
+		<td><orflabel name="d_OLD_TEL" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_TEL" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_TEL_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">ＦＡＸ番号</span></td>
+		<td><orflabel name="d_OLD_FAX" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_FAX" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_FAX_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+	    <td><span orteus="true">相手先担当部門</span></td>
+		<td><orflabel name="d_OLD_VEND_ORG" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_VEND_ORG" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_VEND_ORG_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">相手先担当者</span></td>
+		<td><orflabel name="d_OLD_VEND_PERSON" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_VEND_PERSON" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_VEND_PERSON_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">自社担当部門コード</span></td>
+		<td><orflabel name="d_OLD_OWN_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_OWN_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_OWN_ORG_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">自社担当者コード</span></td>
+		<td><orflabel name="d_OLD_OWN_PERSON_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_OWN_PERSON_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_OWN_PERSON_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">備考</span></td>
+		<td><orflabel name="d_OLD_VEND_REM" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_VEND_REM" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_VEND_REM_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>  
+      </tr>
+	  </ornoloop>
+	</table>
+<%
+  MessageStruct msgStruct = aAZ0060010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+<%
+}
+%>
+<!-- 取引先支払条件メンテナンス-->
+<%
+if("CA0040010Servlet".equals(aAZ0060010Control.getScreen_url())){
+%>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true" onBlur="focus()">
+<table orftype="DataGrid" mode="DETAIL" indicate="false" name="AZ0060010Detail1" width="410" height="200" border="1" cellspacing="0" cellpadding="0">
+    <orloophead>
+	  <tr bgcolor="#ccff99">
+		<td width="130" align="right">&nbsp;</td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="60">&nbsp;</td>
+	  </tr>
+	</orloophead>
+<ornoloop>
+   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">取引先コード</span></td>
+		<td><orflabel name="d_OLD_VEND_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_VEND_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_VEND_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">科目コード</span></td>
+		<td><orflabel name="d_OLD_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ACCT_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">補助区分コード</span></td>
+		<td><orflabel name="d_OLD_SUB_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_SUB_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_SUB_ACCT_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払パターンコード</span></td>
+		<td><orflabel name="d_OLD_PAY_PATTERN_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_PAY_PATTERN_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_PAY_PATTERN_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">端数処理区分</span></td>
+		<td><orflabel name="d_OLD_ROUND_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ROUND_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ROUND_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  </ornoloop>
+	</table>
+<%
+  MessageStruct msgStruct = aAZ0060010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+<%
+}
+%>
+<!-- 支払方法メンテナンス -->
+<%
+if("CA0060010Servlet".equals(aAZ0060010Control.getScreen_url())){
+%>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true" onBlur="focus()">
+<table orftype="DataGrid" mode="DETAIL" indicate="false" name="AZ0060010Detail1" width="410" height="200" border="1" cellspacing="0" cellpadding="0">
+    <orloophead>
+	  <tr bgcolor="#ccff99">
+		<td width="130" align="right">&nbsp;</td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="60">&nbsp;</td>
+	  </tr>
+	</orloophead>
+<ornoloop>
+   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払方法コード</span></td>
+		<td><orflabel name="d_OLD_PAY_METHOD_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_PAY_METHOD_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_PAY_METHOD_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払方法</span></td>
+		<td><orflabel name="d_OLD_PAY_METHOD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_PAY_METHOD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_PAY_METHOD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">科目コード</span></td>
+		<td><orflabel name="d_OLD_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ACCT_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">補助区分コード</span></td>
+		<td><orflabel name="d_OLD_SUB_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_SUB_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_SUB_ACCT_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払対象</span></td>
+		<td><orflabel name="d_OLD_PAY_TARGET_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_PAY_TARGET_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_PAY_TARGET_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  </ornoloop>
+	</table>
+<%
+  MessageStruct msgStruct = aAZ0060010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+<%
+}
+%>
+<!-- 支払パターンメンテナンス -->
+<%
+if("CA0080010Servlet".equals(aAZ0060010Control.getScreen_url())){
+%>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true" onBlur="focus()">
+<table orftype="DataGrid" mode="DETAIL" indicate="false" name="AZ0060010Detail1" width="410" height="200" border="1" cellspacing="0" cellpadding="0">
+    <orloophead>
+	  <tr bgcolor="#ccff99">
+		<td width="130" align="right">&nbsp;</td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="60">&nbsp;</td>
+	  </tr>
+	</orloophead>
+<ornoloop>
+   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払パターンコード</span></td>
+		<td><orflabel name="d_OLD_PAY_PATTERN_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_PAY_PATTERN_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_PAY_PATTERN_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払パターン名</span></td>
+		<td><orflabel name="d_OLD_PAY_PATTERN_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_PAY_PATTERN_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_PAY_PATTERN_NAME_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">条件区分</span></td>
+		<td align="right"><orflabel name="d_OLD_PAY_ODR_TYP" orteus="true" width="" height="" text="" kind="OBT_N" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td align="right"><orflabel name="d_NEW_PAY_ODR_TYP" orteus="true" width="" height="" text="" kind="OBT_N" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_PAY_ODR_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払方法コード１</span></td>
+		<td><orflabel name="d_OLD_PAY_METHOD_CD_1" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_PAY_METHOD_CD_1" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_PAY_METHOD_CD_1_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払方法コード２</span></td>
+		<td><orflabel name="d_OLD_PAY_METHOD_CD_2" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_PAY_METHOD_CD_2" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_PAY_METHOD_CD_2_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">基準金額</span></td>
+		<td align="right"><orflabel name="d_OLD_STD_AMOUNT" orteus="true" width="" height="" text="" kind="OBT_INTEGER_Z;14" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td align="right"><orflabel name="d_NEW_STD_AMOUNT" orteus="true" width="" height="" text="" kind="OBT_INTEGER_Z;14" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_STD_AMOUNT_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">割合１</span></td>
+		<td align="right"><orflabel name="d_OLD_RATIO_1" orteus="true" width="" height="" text="" kind="OBT_INTEGER_Z;3" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td align="right"><orflabel name="d_NEW_RATIO_1" orteus="true" width="" height="" text="" kind="OBT_INTEGER_Z;3" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_RATIO_1_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">割合２</span></td>
+		<td align="right"><orflabel name="d_OLD_RATIO_2" orteus="true" width="" height="" text="" kind="OBT_INTEGER_Z;3" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td align="right"><orflabel name="d_NEW_RATIO_2" orteus="true" width="" height="" text="" kind="OBT_INTEGER_Z;3" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_RATIO_2_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  </ornoloop>
+	</table>
+<%
+  MessageStruct msgStruct = aAZ0060010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+<%
+}
+%>
+<!-- 利用者権限管理メンテナンス -->
+<%
+if("CA0100010Servlet".equals(aAZ0060010Control.getScreen_url())){
+%>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true" onBlur="focus()">
+<table orftype="DataGrid" mode="DETAIL" indicate="false" name="AZ0060010Detail1" width="410" height="200" border="1" cellspacing="0" cellpadding="0">
+    <orloophead>
+	  <tr bgcolor="#ccff99">
+		<td width="130" align="right">&nbsp;</td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="60">&nbsp;</td>
+	  </tr>
+	</orloophead>
+<ornoloop>
+   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">利用者コード</span></td>
+		<td><orflabel name="d_OLD_USER_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_USER_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_USER_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">所属部門コード</span></td>
+		<td><orflabel name="d_OLD_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ORG_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">伝票管理部門コード（規定値）</span></td>
+		<td><orflabel name="d_OLD_SLIP_CTRL_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_SLIP_CTRL_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_SLIP_CTRL_ORG_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払締め管理部門コード（規定値）</span></td>
+		<td><orflabel name="d_OLD_CLOSING_CTRL_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CLOSING_CTRL_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CLOSING_CTRL_ORG_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払計算管理部門コード（規定値）</span></td>
+		<td><orflabel name="d_OLD_PAY_CALC_CTRL_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_PAY_CALC_CTRL_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_PAY_CALC_CTRL_ORG_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払確定管理部門コード（規定値）</span></td>
+		<td><orflabel name="d_OLD_PAY_FIX_CTRL_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_PAY_FIX_CTRL_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_PAY_FIX_CTRL_ORG_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  </ornoloop>
+	</table>
+<%
+  MessageStruct msgStruct = aAZ0060010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+<%
+}
+%>
+<!-- 買掛仕訳パターンメンテナンス -->
+<%
+if("CA0120010Servlet".equals(aAZ0060010Control.getScreen_url())){
+%>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true" onBlur="focus()">
+<table orftype="DataGrid" mode="DETAIL" indicate="false" name="AZ0060010Detail1" width="410" height="200" border="1" cellspacing="0" cellpadding="0">
+    <orloophead>
+	  <tr bgcolor="#ccff99">
+		<td width="130" align="right">&nbsp;</td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="60">&nbsp;</td>
+	  </tr>
+	</orloophead>
+<ornoloop>
+   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">パターンコード</span></td>
+		<td><orflabel name="d_OLD_PATTERN_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_PATTERN_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_PATTERN_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">分類１</span></td>
+		<td><orflabel name="d_OLD_CLASS_1" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CLASS_1" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CLASS_1_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">分類２</span></td>
+		<td><orflabel name="d_OLD_CLASS_2" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CLASS_2" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CLASS_2_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">分類３</span></td>
+		<td><orflabel name="d_OLD_CLASS_3" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CLASS_3" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CLASS_3_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">買掛仕訳パターン名</span></td>
+		<td><orflabel name="d_OLD_AUTO_JNL_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_AUTO_JNL_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_AUTO_JNL_NAME_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">借方科目コード</span></td>
+		<td><orflabel name="d_OLD_DR_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_DR_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_DR_ACCT_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">借方補助区分コード</span></td>
+		<td><orflabel name="d_OLD_DR_SUB_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_DR_SUB_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_DR_SUB_ACCT_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">借方部門設定区分</span></td>
+		<td><orflabel name="d_OLD_DR_ORG_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_DR_ORG_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_DR_ORG_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">借方部門コード</span></td>
+		<td><orflabel name="d_OLD_DR_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_DR_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_DR_ORG_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">貸方科目コード</span></td>
+		<td><orflabel name="d_OLD_CR_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CR_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CR_ACCT_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">貸方補助区分コード</span></td>
+		<td><orflabel name="d_OLD_CR_SUB_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CR_SUB_ACCT_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CR_SUB_ACCT_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">貸方部門設定区分</span></td>
+		<td><orflabel name="d_OLD_CR_ORG_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CR_ORG_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CR_ORG_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">貸方部門コード</span></td>
+		<td><orflabel name="d_OLD_CR_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CR_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CR_ORG_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">伝票種類（一般会計）</span></td>
+		<td align="right"><orflabel name="d_OLD_ACCT_SLIP_NUM" orteus="true" width="" height="" text="" kind="OBT_INTEGER_Z;2" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td align="right"><orflabel name="d_NEW_ACCT_SLIP_NUM" orteus="true" width="" height="" text="" kind="OBT_INTEGER_Z;2" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ACCT_SLIP_NUM_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">パターンコード（一般会計）</span></td>
+		<td><orflabel name="d_OLD_ACCT_JNL_PATTERN_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ACCT_JNL_PATTERN_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ACCT_JNL_PATTERN_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  </ornoloop>
+	</table>
+<%
+  MessageStruct msgStruct = aAZ0060010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+<%
+}
+%>
+<!-- 販売単価メンテナンスJa -->
+<%
+if("KA1020010Servlet".equals(aAZ0060010Control.getScreen_url())){
+%>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true" onBlur="focus()">
+<table orftype="DataGrid" mode="DETAIL" indicate="false" name="AZ0060010Detail1" width="410" height="200" border="1" cellspacing="0" cellpadding="0">
+    <orloophead>
+	  <tr bgcolor="#ccff99">
+		<td width="130" align="right">&nbsp;</td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="60">&nbsp;</td>
+	  </tr>
+	</orloophead>
+<ornoloop>
+   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+		<td><orflabel name="d_OLD_ITEM_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ITEM_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ITEM_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+		<td><orflabel name="d_OLD_CUST_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CUST_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CUST_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PURPOSE_UNIT_PRICE_TYP">用途別単価区分</span></td>
+		<td><orflabel name="d_OLD_PURPOSE_UNIT_PRICE_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_PURPOSE_UNIT_PRICE_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_PURPOSE_UNIT_PRICE_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_IN_DATE_4">有効開始日</span></td>
+		<td><orflabel name="d_OLD_EFF_PHASE_IN_DATE" orteus="true" width="" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_EFF_PHASE_IN_DATE" orteus="true" width="" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_EFF_PHASE_IN_DATE_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SBCNT_SIZE">サイズ</span></td>
+		<td align="right"><orflabel name="d_OLD_SALES_UNIT_SIZE" orteus="true" width="" height="" text="" kind="OBT_NUMBER_P;14.2;FLOOR;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td align="right"><orflabel name="d_NEW_SALES_UNIT_SIZE" orteus="true" width="" height="" text="" kind="OBT_NUMBER_P;14.2;FLOOR;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_SALES_UNIT_SIZE_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_TYP">単価区分</span></td>
+		<td><orflabel name="d_OLD_UNIT_COST_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_UNIT_COST_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_UNIT_COST_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST">単価</span></td>
+		<td align="right"><orflabel name="d_OLD_SALES_UNIT_COST" orteus="true" width="" height="" text="" kind="OBT_NUMBER_P;14.2;FLOOR;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td align="right"><orflabel name="d_NEW_SALES_UNIT_COST" orteus="true" width="" height="" text="" kind="OBT_NUMBER_P;14.2;FLOOR;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_SALES_UNIT_COST_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  </ornoloop>
+	</table>
+<%
+  MessageStruct msgStruct = aAZ0060010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+<%
+}
+%>
+<!-- 得意先メンテナンスJa -->
+<%
+if("KA1030010Servlet".equals(aAZ0060010Control.getScreen_url())){
+%>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true" onBlur="focus()">
+<table orftype="DataGrid" mode="DETAIL" indicate="false" name="AZ0060010Detail1" width="410" height="200" border="1" cellspacing="0" cellpadding="0">
+    <orloophead>
+	  <tr bgcolor="#ccff99">
+		<td width="130" align="right">&nbsp;</td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="60">&nbsp;</td>
+	  </tr>
+	</orloophead>
+<ornoloop>
+   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+		<td><orflabel name="d_OLD_CUST_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CUST_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CUST_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_NAME_1">得意先名称</span></td>
+		<td><orflabel name="d_OLD_CUST_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CUST_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CUST_NAME_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ANAME_2">得意先名称略称</span></td>
+		<td><orflabel name="d_OLD_CUST_ANAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CUST_ANAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CUST_ANAME_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_KNAME_1">得意先名称(カナ)</span></td>
+		<td><orflabel name="d_OLD_CUST_KNAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CUST_KNAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CUST_KNAME_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_ORG_CD">自社担当部門コード</span></td>
+		<td><orflabel name="d_OLD_OWN_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_OWN_ORG_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_OWN_ORG_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_PERSON_CD">自社担当者コード</span></td>
+		<td><orflabel name="d_OLD_OWN_PERSON_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_OWN_PERSON_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_OWN_PERSON_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_CD">通貨コード</span></td>
+		<td><orflabel name="d_OLD_CUR_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CUR_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CUR_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INSPC_ACPT_TYP">検収区分</span></td>
+		<td><orflabel name="d_OLD_INSPC_ACPT_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_INSPC_ACPT_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_INSPC_ACPT_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXCH_TYP">為替種別</span></td>
+		<td><orflabel name="d_OLD_EXCH_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_EXCH_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_EXCH_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_CD_1">消費税コード</span></td>
+		<td><orflabel name="d_OLD_TAX_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_TAX_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_TAX_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_CALC_TYP">消費税計算区分</span></td>
+		<td><orflabel name="d_OLD_TAX_CALC_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_TAX_CALC_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_TAX_CALC_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_APPLY_TYP">消費税適用区分</span></td>
+		<td><orflabel name="d_OLD_TAX_APPLY_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_TAX_APPLY_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_TAX_APPLY_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DETAIL_ROUND_TYP">明細計算まるめ区分</span></td>
+		<td><orflabel name="d_OLD_DETAIL_ROUND_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_DETAIL_ROUND_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_DETAIL_ROUND_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_GRP_CD">得意先グループコード</span></td>
+		<td><orflabel name="d_OLD_CUST_GRP_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CUST_GRP_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CUST_GRP_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  </ornoloop>
+	</table>
+<%
+  MessageStruct msgStruct = aAZ0060010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+<%
+}
+%>
+
+</html>

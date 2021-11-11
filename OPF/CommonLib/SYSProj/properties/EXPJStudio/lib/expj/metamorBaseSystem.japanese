@@ -1,0 +1,122 @@
+#
+# 共通定義
+# metamorBaseSystem(SJIS&UNICODE)
+#
+# Copyright (c) 2003 NEC Informatec Systems, Ltd.
+#
+# version 1.00
+# 2003/06/24 新規作成 Y.Inada
+# version 1.01
+# 2003/08/01 ファイル名修正 Y.Inada
+#            前：metamorBaseSystem.properties
+#            後：metamorBaseSystem
+# 2003/08/07 バッチ用・SPログ用定義追加 K.Murakami
+# 2003/08/17 基準日程計画・資材所要量結合検査環境設定 K.Murakami
+# 2003/08/22 CSV出力定義 K.Murakami
+# 2003/08/28 CSV出力定義変更 K.Murakami
+# 2003/09/28 PDF出力定義変更,JAVAバッチクラスパス修正 K.Murakami
+# 2003/10/03 バッチ用定義追加 K.Murakami
+# 2003/10/05 グラフ用定義追加 K.Murakami
+# 2003/10/14 仮パラメータ削除 K.Murakami
+# 2003/10/15 グラフ用定義追加 K.Murakami
+# 2003/10/18 URLをEXPJに変更 K.Murakami
+# 2004/01/28 EXPLANNERJ WebLogic対応,パス変更等 H.Sasa
+# 2004/09/21 EXPLANNERJ ARAP Oracle BatchPath ADD H.Sasa
+# 2004/11/12 CLASS_PATH WebLogic.jar Locate Change ADD H.Sasa
+# 2004/11/12 Base Config Change for WebLogic8.1SP3 H.Sasa
+# 2005/01/18 Base Config Change for WebLogic8.1SP4 H.Sasa
+# 2005/02/21 EXPLANNER/J Ver1.0 R3.0.0 Model Change H.Sasa
+# 2005/11/22 EXPLANNER/J Ver2.2.0 UNICODE Model Change H.Sasa
+# 2006/09/15 EXPLANNER/J Ver2.4.0 Batch Memory Add H.Sasa
+# 2006/09/15 WLS81SP6 & Oracle10gR2 Change H.Sasa
+# 2007/01/12 SVF(PRINTMODE) & PRINTER NAME Add N.Saito
+# 2007/01/23 Jf MRP Engine(MRPENGINE) Add H.Sasa
+# 2007/02/21 Log Mode (Additional or New) Add N.Saito
+#
+metamorBaseSystem.properties
+
+# PRODUCT NAME
+PRODUCTNAME=EXPLANNERJ
+
+# HELPMODE DEFINITION
+HELPMODE=EXPLANNERJ
+
+# CSVファイル削除 定義
+CSVディレクトリ=/csv
+CSV削除インターバル=5
+CSV削除リトライ回数=3
+CSVファイル保持期間=0
+
+#WEBROOT
+#WEBROOT=D:/bea/user_projects/domains/mydomain/applications/DefaultWebApp
+WEBROOT=D:/bea/user_projects/domains/mydomain/EXPJ
+
+# JAVA BATCH DEFINITION1
+JAVA_PATH=D:/bea/jdk142_11/bin/java.exe
+# SJIS(oracleconverter.jar)
+# CLASS_PATH=D:/bea/user_projects/domains/mydomain/EXPJ/WEB-INF/classes;C:/oracle/product/10.2.0/db_1/jdbc/lib/ojdbc14.jar;C:/oracle/product/10.2.0/db_1/jdbc/lib/orai18n.jar;D:/EXPJStudio/lib/expj;D:/EXPJStudio/lib/expj/expjfd.jar;D:/EXPJStudio/lib/expj/expjmp.jar;D:/EXPJStudio/lib/expj/expjarap.jar;D:/EXPJStudio/lib/expj/expjlib.jar;D:/EXPJStudio/lib/expj/metamorBaselib.jar;D:/EXPJStudio/lib/expj/commons-lang-2.0.jar;D:/EXPJStudio/lib;D:/EXPJStudio/lib/license.jar;D:/EXPJStudio/lib/wsecurity81.jar;D:/EXPJStudio/lib/dynsql.jar;D:/EXPJStudio/lib/logging.jar;D:/EXPJStudio/lib/oracleconverter.jar;D:/EXPJStudio/lib/foundation.jar;D:/EXPJStudio/lib/coreapi.jar;D:/EXPJStudio/lib/crimson.jar;D:/bea/wlserver_10.0/server/lib/weblogic.jar;D:/bea/wlserver_10.0/server/lib/api.jar;D:/bea/EspressChart/lib/EspressAPI.jar;D:/bea/EspressChart/lib/ExportLib.jar;D:/bea/EspressChart/lib/qblicense.jar;D:/bea/SVFJP/svfjpd/lib/svf.jar;D:/bea/SVFJP/svfjpd/lib/svfrclient.jar;D:/bea/SVFJP/svfjpd/lib/svfgrph.jar;D:/bea/SVFJP/svfjpd/lib/BSPro.jar;D:/bea/SVFJP/svfjpd/lib/jai_codec.jar;D:/bea/SVFJP/svfjpd/lib/jai_core.jar;D:/bea/SVFJP/svfjpd/lib/svfpdfparser.jar;D:/bea/SVFJP/svfjpd/lib/svfpstat.jar;D:\bea\SVFJP/SimpleHttpd/xercesImpl.jar
+# UNICODE(dbconverter.jar)
+CLASS_PATH=D:/bea/user_projects/domains/mydomain/EXPJ/WEB-INF/classes;C:/oracle/product/10.2.0/db_1/jdbc/lib/ojdbc14.jar;C:/oracle/product/10.2.0/db_1/jdbc/lib/orai18n.jar;D:/EXPJStudio/lib/expj;D:/EXPJStudio/lib/expj/expjfd.jar;D:/EXPJStudio/lib/expj/expjmp.jar;D:/EXPJStudio/lib/expj/expjarap.jar;D:/EXPJStudio/lib/expj/expjlib.jar;D:/EXPJStudio/lib/expj/metamorBaselib.jar;D:/EXPJStudio/lib/expj/commons-lang-2.0.jar;D:/EXPJStudio/lib;D:/EXPJStudio/lib/license.jar;D:/EXPJStudio/lib/wsecurity81.jar;D:/EXPJStudio/lib/dynsql.jar;D:/EXPJStudio/lib/logging.jar;D:/EXPJStudio/lib/dbconverter.jar;D:/EXPJStudio/lib/foundation.jar;D:/EXPJStudio/lib/coreapi.jar;D:/EXPJStudio/lib/crimson.jar;D:/bea/wlserver_10.0/server/lib/weblogic.jar;D:/bea/wlserver_10.0/server/lib/api.jar;D:/bea/EspressChart/lib/EspressAPI.jar;D:/bea/EspressChart/lib/ExportLib.jar;D:/bea/EspressChart/lib/qblicense.jar;D:/bea/SVFJP/svfjpd/lib/svf.jar;D:/bea/SVFJP/svfjpd/lib/svfrclient.jar;D:/bea/SVFJP/svfjpd/lib/svfgrph.jar;D:/bea/SVFJP/svfjpd/lib/BSPro.jar;D:/bea/SVFJP/svfjpd/lib/jai_codec.jar;D:/bea/SVFJP/svfjpd/lib/jai_core.jar;D:/bea/SVFJP/svfjpd/lib/svfpdfparser.jar;D:/bea/SVFJP/svfjpd/lib/svfpstat.jar;D:\bea\SVFJP/SimpleHttpd/xercesImpl.jar
+
+# JAVA BATCH DEFINITION2
+BATCH_PATH=D:/EXPJStudio/lib/logging.properties
+BATCH_LOG_PATH=D:/EXPJStudio/log
+# 0:ログ追記モード(Log Additional Mode), 1:ログ新規作成モード(Log New Mode)
+BATCH_LOG_MODE=1
+BATCH_CONFIG_FILE=D:/EXPJStudio/etc/batchboot.ini
+CONNECT_DBUSER=EXPJ
+CONNECT_DBPASS=EXPJ
+CONNECT_DBHOST=EXPJ
+BATCH_ROLLBACK_FLG=0
+BATCH_ROLLBACK_SEG=BATCH
+MRP_EXE_LOG_FILE=MRP.log
+# 0:ログ追記モード(Log Additional Mode), 1:ログ新規作成モード(Log New Mode)
+MRP_EXE_LOG_MODE=1
+PROGRAM_PATH=D:/EXPJStudio/expj/bin/AC0010B010.exe
+
+# JAVA BATCH MEMORY DEFINITION(MB) SERVER:512MB Developer:128MB
+HIGH_HEAP_SIZE=128
+
+# PL/SQL LOG DEFINITION
+LOG_MODE=9
+# 0:ログ追記モード(Log Additional Mode), 1:ログ新規作成モード(Log New Mode)
+OUTPUT_MODE=1
+OUTPUT_PATH=D:/EXPJStudio/log
+OUTPUT_NAME=plsql_common.log
+
+# 負荷検証Graph用定義
+GRAPH_OUT_PATH=graph
+GRAPH_TEMPLATE_PATH=D:/EXPJStudio/expj/template
+
+# ServerPrinting DEFINITION
+ACROBAT_PATH="C:/Program Files/Adobe/Reader 9.0/Reader/AcroRd32.exe"
+ACROBAT_OPTION1=/t
+ACROBAT_OPTION2=/h
+PDF_SPOOL_PATH=/spool
+FRM_PATH=D:/EXPJStudio/expj/template
+
+# KV0020B001(EDI受注取込バッチの取込ファイルPATH)
+PATH_KV0020B001=D:/EXPJStudio/log
+
+# ARAP BATCH DEFINITION
+BATCH_CONNECT_DRIVER=oracle.jdbc.driver.OracleDriver
+BATCH_CONNECT_URL=jdbc:oracle:thin:@ARAPEXPJ:1521::
+BATCH_MAX_CONNECT=100
+
+
+# PRINT MODE 定義 (帳票設計ツールを設定)
+# SVF  : "frm" SVF6.3版様式ファイル 限定("xml"ファイルは未使用)モード
+# SVFX : "xml" SVFX-Designer版様式ファイル優先("frm"ファイルも使用)モード
+PRINTMODE=SVF
+
+# PDF PRINTER 定義
+# 言語別のPDFプリンタ名を設定(SVFXモード時のみ有効)
+PDFPRINTER_JA=PDF
+PDFPRINTER_EN=PDF_EN
+PDFPRINTER_ZH=PDF_ZH_CN
+
+# SPOOL PRINTER 定義
+# 言語別のスプールプリンタ名を設定(SVFXモード時のみ有効)
+RDEPRINTER_JA=RDSpool
+RDEPRINTER_EN=RDSpool_EN
+RDEPRINTER_ZH=RDSpool_ZH_CN

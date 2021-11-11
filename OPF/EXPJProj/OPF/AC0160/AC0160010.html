@@ -1,0 +1,343 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+所要量CSV出力
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AC0160/AC0160010.html,v $
+$Author: geng-jia $	
+$Revision: 1.5 $　$Date: 2017/02/13 02:52:38 $
+********************************************************* --%>
+<html>
+<head>
+<title>所要量CSV出力</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" version="AC0160010 $Revision: 1.5 $" name="AC0160010" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="71"> 
+      <td width="5" height="71"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+			  <table orftype="DataGrid" mode="FORM" status="<%= TypeConverter.sanitizer(aAC0160010Control.getReadStatusString()) %>" float="" name="AC0160010form1" width="934" height="188" border="1" cellspacing="0" cellpadding="0"
+			   script1="onLoad;0;CALL;onDecision@0,1,2,3,4"
+               script2="onDecision;0;CHK;_r1_FILTER1[eq]true@*0,*1"
+			   script3="child;0;CHKRQ;A,B@*2,*3"
+               script4="child;1;CHKRQ;C,D@*2,*3"
+			   script5="child;2;UNMASK;_AC0160010button1/Select"
+               script6="child;3;MASK;_AC0160010button1/Select"
+			   script11="onDecision;1;CHK;_r1_FILTER1[eq]true@*4,*6"
+               script12="child;4;UNMASK;_IN_PRD_START_DATE_FROM,_CalendarPrdStartDateFrom,_IN_PRD_START_DATE_TO,_CalendarPrdStartDateTo@*5"
+               script13="child;5;MASK;_IN_PRD_DUE_DATE_FROM,_CalendarPrdDueDateFrom,_IN_PRD_DUE_DATE_TO,_CalendarPrdDueDateTo"
+               script14="child;6;UNMASK;_IN_PRD_DUE_DATE_FROM,_CalendarPrdDueDateFrom,_IN_PRD_DUE_DATE_TO,_CalendarPrdDueDateTo@*7"
+			   script15="child;7;MASK;_IN_PRD_START_DATE_FROM,_CalendarPrdStartDateFrom,_IN_PRD_START_DATE_TO,_CalendarPrdStartDateTo"
+			   script16="onDecision;2;CHK;_r1_FILTER2[eq]true@*8,*9"
+               script17="child;8;UNMASK;_IN_WS_CD,_PeekerWsCd"
+               script18="child;9;MASK;_IN_WS_CD,_PeekerWsCd,_IN_WS_NAME"
+			   script19="onDecision;3;CHK;?AC0160010form1/*[eq]NORMAL@*10,*12"
+			   script20="child;10;CHK;?r1_FILTER2[eq]SAME[and]?r2_FILTER2[eq]SAME[and]?IN_ITEM_CD[eq]SAME[and]?IN_WS_CD[eq]SAME[and]?IN_PRD_START_DATE_FROM[eq]SAME[and]?IN_PRD_START_DATE_TO[eq]SAME[and]?r1_FILTER1[eq]SAME[and]?IN_PRD_DUE_DATE_FROM[eq]SAME[and]?IN_PRD_DUE_DATE_TO[eq]SAME[and]?r2_FILTER1[eq]SAME[and]?w_OD_TYP[eq]SAME[and]?PRODUCT_TYP[eq]SAME[and]?c1_ODR_STS_TYP[eq]SAME[and]?c2_ODR_STS_TYP[eq]SAME[and]?c3_ODR_STS_TYP[eq]SAME@*11,*12"
+			   script21="child;11;UNMASK;_AC0160010button0/CsvOut"
+			   script22="child;12;MASK;_AC0160010button0/CsvOut"
+			   script23="onDecision;4;CHK;_r2_FILTER2[eq]true@*13"
+			   script24="child;13;SET;_AC0160010form1/IN_WS_CD=@*14"
+			   script25="child;14;SET;_AC0160010form1/IN_WS_NAME="
+			   >
+			    <orloophead>
+			    <tr bgcolor="#ccff99">
+			      <td width="170" align="right">&nbsp;</td>
+				  <td width="150">&nbsp;</td>
+				  <td width="22">&nbsp;</td>
+				  <td width="88">&nbsp;</td>
+				  <td width="22">&nbsp;</td>
+				  <td width="150">&nbsp;</td>
+				  <td width="117">&nbsp;</td>
+				  <td width="170">&nbsp;</td>
+				  <td width="88">&nbsp;</td>
+		        </tr>
+			    </orloophead><ornoloop>
+			    <tr>
+			      <td>&nbsp;</td>
+			      <td><orfradiobutton name="r1_FILTER2" value="true" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0220" width="190" text="内作" group="FILTER2" script1="onClick;0;SET;_AC0160010form1/TXT_FILE=1"></orfradiobutton></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td><orfradiobutton name="r2_FILTER2" value="true" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0218" width="190" text="外作" group="FILTER2" script1="onClick;0;SET;_AC0160010form1/TXT_FILE=2"></orfradiobutton></td>
+			      <td><orftextinput name="DOWNLOAD_FILE" orteus="true" width="320" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+		        </tr>
+			    <tr>
+			      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+			      <td><orftextinput name="IN_ITEM_CD" orteus="true" width="260" maxlength="25"></orftextinput></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td><orfpeeker name="PeekerItemCd" value="" pattern="none" orteus="false" width="22"
+				       attribute="BTS_PEEKER"
+ 					   script1="onClick;0;PEEKER;_AC0160010form1/IN_ITEM_CD@<%=contextNo%>"
+					   sqlname="ITEM_CD_13" sqlparam_1="_AC0160010form1/IN_ITEM_CD" sqlparam_4="_AC0160010form1/TXT_FILE"></orfpeeker></td>
+			      <td><orftextinput name="IN_ITEM_NAME" orteus="true" width="320" editable="false"></orftextinput></td>
+			      <td><orftextinput name="TXT_FILE" orteus="true" width="320" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+		        </tr>
+			    <tr>
+			      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.WS_CD">作業区コード</span></td>
+			      <td><orftextinput name="IN_WS_CD" orteus="true" width="260" maxlength="25"></orftextinput></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td><orfpeeker name="PeekerWsCd" value="" pattern="none" orteus="false" width="22"
+				       attribute="BTS_PEEKER"
+					   sqlname="WS_CD_01" sqlparam_1="<%=aAC0160010Control.getsysPLANT_CD()%>" sqlparam_2="_AC0160010form1/IN_WS_CD"
+                       script1="onClick;0;PEEKER;_AC0160010form1/IN_WS_CD@<%=contextNo%>"></orfpeeker></td>
+			      <td><orftextinput name="IN_WS_NAME" orteus="true" width="320" editable="false" visible="true" password="false" text="" kind="" maxlength="" required="" attribute=""></orftextinput></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+		        </tr>
+			    <tr>
+			      <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PRD_PUCH_START_DATE">製造着手日/発注予定日</span></td>
+			      <td><orftextinput name="IN_PRD_START_DATE_FROM" tablename="T_OD" columnname="PRD_START_DATE" tablejname="所要量" columnjname="製造着手日" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD" required="A"></orftextinput></td>
+			      <td><orfcalendar name="CalendarPrdStartDateFrom" orteus="false" width="22" attribute="BTS_CALENDAR"
+                       script1="onClick;0;CALENDAR;_AC0160010form1/IN_PRD_START_DATE_FROM@<%=contextNo%>"></orfcalendar></td>
+			      <td>&nbsp;</td>
+			      <td align="center"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0043">～</span></td>
+			      <td><orftextinput name="IN_PRD_START_DATE_TO" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD" required="B"></orftextinput></td>
+			      <td><orfcalendar name="CalendarPrdStartDateTo" orteus="false" width="22" attribute="BTS_CALENDAR"
+                       script1="onClick;0;CALENDAR;_AC0160010form1/IN_PRD_START_DATE_TO@<%=contextNo%>"></orfcalendar></td>
+			      <td><orfradiobutton name="r1_FILTER1" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt6683_1" width="220" height="" text="製造着手日/発注予定日で絞り込む" group="FILTER1" editable="true" visible="true"
+ script1="onClick;0;SET;_IN_PRD_DUE_DATE_FROM="
+ script2="onClick;1;SET;_IN_PRD_DUE_DATE_TO="
+></orfradiobutton></td>
+			      <td>&nbsp;</td>
+		        </tr>
+			    <tr>
+			      <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PRD_PUCH_DUE_DATE">製造納期/発注納期</span></td>
+			      <td><orftextinput name="IN_PRD_DUE_DATE_FROM" tablename="T_OD" columnname="PRD_DUE_DATE" tablejname="所要量" columnjname="製造納期" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD" required="C"></orftextinput></td>
+			      <td><orfcalendar name="CalendarPrdDueDateFrom" orteus="false" width="22" attribute="BTS_CALENDAR"
+                       script1="onClick;0;CALENDAR;_AC0160010form1/IN_PRD_DUE_DATE_FROM@<%=contextNo%>"></orfcalendar></td>
+			      <td>&nbsp;</td>
+			      <td align="center"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0043">～</span></td>
+			      <td><orftextinput name="IN_PRD_DUE_DATE_TO" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD" required="D"></orftextinput></td>
+			      <td><orfcalendar name="CalendarPrdDueDateTo" orteus="false" width="22" attribute="BTS_CALENDAR"
+                       script1="onClick;0;CALENDAR;_AC0160010form1/IN_PRD_DUE_DATE_TO@<%=contextNo%>"></orfcalendar></td>
+			      <td><orfradiobutton name="r2_FILTER1" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt6684" width="220" height="" text="製造納期/発注納期で絞り込む" group="FILTER1" editable="true" visible="true"
+ script1="onClick;0;SET;_IN_PRD_START_DATE_FROM="
+ script2="onClick;1;SET;_IN_PRD_START_DATE_TO="
+></orfradiobutton></td>
+			      <td>&nbsp;</td>
+		        </tr>
+			    <tr>
+			      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OD_TYP">オーダデマンド区分</span></td>
+			      <td><orfcombobox name="w_OD_TYP" tablename="T_OD" columnname="OD_TYP" dbtype="number" tablejname="所要量" columnjname="オーダデマンド区分" orteus="true" width="260"></orfcombobox></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+		        </tr>
+			    <tr>
+			      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PRODUCT_TYP">製品区分</span></td>
+			      <td><orfcombobox name="PRODUCT_TYP" tablename="M_ITEM" columnname="PRODUCT_TYP" dbtype="number" tablejname="品目" columnjname="製品区分"  orteus="true" width="260"></orfcombobox></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+		        </tr>
+			    <tr>
+			      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_STS_TYP">状態区分</span></td>
+			      <td><orfcheckbox name="c1_ODR_STS_TYP" value="true" group="c_ODR_STS_TYP" checked="true" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0440" width="150" text="計画"></orfcheckbox></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td><orfcheckbox name="c2_ODR_STS_TYP" value="true" group="c_ODR_STS_TYP" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0441" width="150" text="確定"></orfcheckbox></td>
+			      <td>&nbsp;</td>
+			      <td><orfcheckbox name="c3_ODR_STS_TYP" value="true" group="c_ODR_STS_TYP" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3177" width="150" text="完了"></orfcheckbox></td>
+			      <td>&nbsp;</td>
+		        </tr>
+			    </ornoloop>
+		      </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"><table orftype="DataGrid" mode="BUTTON" status="" float=""
+ name="AC0160010button1" width="106" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td>&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="Select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="0" attribute="" visible="true"
+					 script1="onClick;1;CHK;_AC0160010form1/IN_PRD_START_DATE_FROM[neq][and]_AC0160010form1/IN_PRD_START_DATE_TO[neq][and]_AC0160010form1/IN_PRD_START_DATE_TO[lt]_AC0160010form1/IN_PRD_START_DATE_FROM@!ZZ05101"
+					 script2="onClick;2;CHK;_AC0160010form1/IN_PRD_DUE_DATE_FROM[neq][and]_AC0160010form1/IN_PRD_DUE_DATE_TO[neq][and]_AC0160010form1/IN_PRD_DUE_DATE_TO[lt]_AC0160010form1/IN_PRD_DUE_DATE_FROM@!ZZ05101"
+					 script3="onClick;3;CHK;_AC0160010form1/c1_ODR_STS_TYP[neq]true[and]_AC0160010form1/c2_ODR_STS_TYP[neq]true[and]_AC0160010form1/c3_ODR_STS_TYP[neq]true@!AC00254"
+					 script4="onClick;4;SUBMIT;_AC0160010form1/*@AC0160010Servlet"
+					 ></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+	
+<%
+     if(aAC0160010Control.getListsize() > 0) {
+		 aAC0160010Struct = (AC0160010Struct)aAC0160010Control.getListvalue(0);
+     }
+%>
+	
+    <tr height="467"> 
+      <td width="5" height="467"></td>
+      <td valign="top" width="958" height="467"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+			  <table orftype="DataGrid" attribute="DGS_SELECTOFF" mode="VIEW" status="" float=""
+ name="AC0160010view1" width="934" height="277" border="1" cellspacing="0" cellpadding="0">
+			    <orloophead>
+			    <tr bgcolor="#ccff99">
+			      <td width="90"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME">品目名</span></td>
+			      <td width="120"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PRD_PUCH_DUE_DATE">製造納期/発注納期</span></td>
+				  <td width="150"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PRD_PUCH_START_DATE">製造着手日/発注予定日</span></td>
+			      <td width="120" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OPR_INST_PUCH_ODR_QTY">作業指示数/発注数</span></td>
+			      <td width="160"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.WS_VEND_CD">作業区コード/取引先コード</span></td>
+			      <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CD">製番</span></td>
+			      <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DEALINGS_ANS_DATE">取引先回答納期</span></td>
+			      <td width="90"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REC_PLA">受入場所</span></td>
+			      <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARKS">備考</span></td>
+			      <td width="100" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.NON_NO_ITEM_FLG">備品発注フラグ</span></td>
+			      <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.NON_NO_ITEM_NAME">備品発注品目名</span></td>
+			      <td width="120" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.NON_NO_ITEM_TYP">備品発注製品区分</span></td>
+			      <td width="90"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.NON_NO_ITEM_PUCH_ODR_UNIT">備品発注単位</span></td>
+			      <td width="90"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_TYP">単価区分</span></td>
+			      <td width="80" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST">単価</span></td>
+			      <td width="80" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROCESSING_COST">加工費</span></td>
+			      <td width="80" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MATERIAL_COST">材料費</span></td>
+			      <td width="90" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OTHER_OVERHEADS">その他経費</span></td>
+			      <td width="90" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.NET_AMOUNT">本体金額</span></td>
+			      <td width="90" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_NAME">通貨名</span></td>
+			      <td width="90" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MON_EXCH_RATE">為替レート</span></td>
+				  <td hidden="true">&nbsp;</td>
+		        </tr>
+			    </orloophead><orloop>
+			    <tr>
+			      <td><orflabel name="ITEM_CD" orteus="true" dbtype="varchar2"></orflabel></td>
+				  <td><orflabel name="ITEM_NAME" orteus="true" dbtype="varchar2"></orflabel></td>
+			      <td><orflabel name="PRD_DUE_DATE" orteus="true" dbtype="date"></orflabel></td>
+			      <td><orflabel name="PRD_START_DATE" orteus="true" dbtype="date"></orflabel></td>
+			      <td><orflabel name="OPR_INST_PUCH_ODR_QTY" orteus="true" dbtype="number"></orflabel></td>
+			      <td><orflabel name="WS_VEND_CD" orteus="true" dbtype="varchar2"></orflabel></td>
+			      <td><orflabel name="JOB_ODR_CD" orteus="true" dbtype="varchar2"></orflabel></td>
+			      <td><orflabel name="CONFIRM_DLV_DATE" orteus="true" dbtype="date"></orflabel></td>
+			      <td><orflabel name="WH_CD_2" orteus="true" dbtype="varchar2"></orflabel></td>
+			      <td><orflabel name="REMARKS" orteus="true" dbtype="varchar2"></orflabel></td>
+			      <td><orflabel name="NON_NO_ITEM_FLG" orteus="true" dbtype="varchar2"></orflabel></td>
+			      <td><orflabel name="NON_NO_ITEM_NAME" orteus="true" dbtype="varchar2"></orflabel></td>
+			      <td><orflabel name="NON_NO_ITEM_TYP" orteus="true" dbtype="varchar2"></orflabel></td>
+			      <td><orflabel name="NON_NO_ITEM_PUCH_ODR_UNIT" orteus="true" dbtype="varchar2"></orflabel></td>
+			      <td><orflabel name="UNIT_COST_TYP" orteus="true" dbtype="varchar2"></orflabel></td>
+			      <td><orflabel name="UNIT_COST" orteus="true" dbtype="number"></orflabel></td>
+			      <td><orflabel name="PROCESSING_COST" orteus="true" dbtype="number"></orflabel></td>
+			      <td><orflabel name="MATERIAL_COST" orteus="true" dbtype="number"></orflabel></td>
+			      <td><orflabel name="OTHER_OVERHEADS" orteus="true" dbtype="number"></orflabel></td>
+			      <td><orflabel name="NET_AMOUNT" orteus="true" dbtype="number"></orflabel></td>
+				  <td><orflabel name="CUR_NAME" orteus="true" dbtype="varchar2"></orflabel></td>
+			      <td><orflabel name="EXCH_RATE" orteus="true" dbtype="number"></orflabel></td>
+				  <td><orflabel name="h_ODR_STS_TYP" visible="false" orteus="true"></orflabel></td>
+		        </tr>
+			    </orloop>
+		      </table>
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="559" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="315" class="frame10" height="32"></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="467"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="653"></td>
+            <td align="right" width="315"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AC0160010button0" width="315" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+				  <td width=105></td>
+                  <td width=105></td>
+                  <td width=105></td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+				  <td><orfbutton name="CsvOut" value="CSV出力" pattern="print" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCsvOut" width="100" height="" lock="0" attribute="" visible="true"
+                       script1="onClick;0;SUBMIT;_AC0160010form1/*@AC0160010Servlet,,$ZZ07011"
+                      ></orfbutton></td>
+                  <td><orfbutton name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" height="" lock="0" attribute=""
+                       script1="onClick;0;SUBMIT;@AC0160010Servlet,,$ZZ07008"
+                      ></orfbutton></td>
+                  <td><orfbutton name="Close" value="閉じる" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" height="" lock="0" attribute=""
+                       script1="onClick;0;CLOSE"
+                      ></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+<%
+MessageStruct msgStruct = aAC0160010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

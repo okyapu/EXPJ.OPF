@@ -1,0 +1,86 @@
+AZ0050のOPFは、環境によりコンパイルエラー「try 文のコードが大きすぎます。」が発生する場合が報告されています。
+現在、原因不明です。（2011/02/16現在。EJStudioVer3.0.2）
+
+AZ0050のOPFをカスタマイズする場合のみ、下記の手順で暫定の自動コーディングテンプレートに入替えて下さい。
+AZ0050のカスタマイズか完了しましたら、事後設定戻し作業を必ず実施して下さい。
+
+制限事項：本フォルダのServletTempl.vmファイルは、AZ0050以外の他のOPFでの動作は未確認です。
+
+
+【１．本ＯＰＦカスタマイズの手順】
+１．事前バックアップ
+　　下記のフォルダをrp_pfnd_tbl.orgフォルダ等を作成して、バックアップして下さい。
+　　D:\EXPJStudio\tools\framework\expj\srcgen\rp_pfnd_tbl
+
+２．暫定ServletTempl.vmファイル配置
+　　本フォルダのServletTempl.vmファイルを下記のフォルダへ配置して回避して下さい。
+　　D:\EXPJStudio\tools\framework\expj\srcgen\rp_pfnd_tbl
+
+３．AZ0050のカスタマイズ作業
+
+４．事後設定戻し作業
+　　rp_pfnd_tbl.orgフォルダを下記のフォルダへ上書きしてして下さい。
+　　~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+　　D:\EXPJStudio\tools\framework\expj\srcgen\rp_pfnd_tbl
+
+
+【２．環境によりコンパイルエラーが発生する問題について】
+
+症状：環境によってAZ0050010Servlet.javaでコンパイルエラー「try 文のコードが大きすぎます。」
+原因：不明。（発生条件が不明。try節のif文の入れ子が多い可能性と、eventHandlingメソッドは肥大化の可能性がある）
+処置：上記の手順で回避。（本パッケージの標準ＯＰＦも同様の手順で自動コーディングしております）
+
+コンパイルエラーメッセージ：★の部分が問題箇所
+
+（前略）
+    [javac] D:\dev6905JDK6\cvswork\expjUV2\EXPJProj\OPF\AZ0050\src\com\nec\jp\orteus\metamorBase\AZ0050\AZ0050010Servlet.java:3804: 警告:[deprecation] com.nec.jp.orteus.expj.util.ExpjException の add(com.nec.jp.orteus.expj.util.ExpjMessage) は推奨されません。
+    [javac] 				ee.add(new ExpjMessage("ZZ01006", "session id hash is NG"));
+    [javac] 				  ^
+    [javac] D:\dev6905JDK6\cvswork\expjUV2\EXPJProj\OPF\AZ0050\src\com\nec\jp\orteus\metamorBase\AZ0050\AZ0050010Servlet.java:3483: try 文のコードが大きすぎます。★
+    [javac] 				} catch (Exception ex){
+    [javac] 				  ^
+    [javac] D:\dev6905JDK6\cvswork\expjUV2\EXPJProj\OPF\AZ0050\src\com\nec\jp\orteus\metamorBase\AZ0050\AZ0050010Servlet.java:3486: try 文のコードが大きすぎます。★
+    [javac] 			} catch (ExpjException ee){
+    [javac] 			  ^
+    [javac] D:\dev6905JDK6\cvswork\expjUV2\EXPJProj\OPF\AZ0050\src\com\nec\jp\orteus\metamorBase\AZ0050\AZ0050010Servlet.java:3489: try 文のコードが大きすぎます。★
+    [javac] 				} catch (Exception ex){
+    [javac] 				  ^
+    [javac] D:\dev6905JDK6\cvswork\expjUV2\EXPJProj\OPF\AZ0050\src\com\nec\jp\orteus\metamorBase\AZ0050\AZ0050010Servlet.java:3503: try 文のコードが大きすぎます。★
+    [javac] 			} catch(Exception e) {
+    [javac] 			  ^
+    [javac] D:\dev6905JDK6\cvswork\expjUV2\EXPJProj\OPF\AZ0050\src\com\nec\jp\orteus\metamorBase\AZ0050\AZ0050010Servlet.java:3506: try 文のコードが大きすぎます。★
+    [javac] 				} catch (Exception ex){
+    [javac] 				  ^
+    [javac] D:\dev6905JDK6\cvswork\expjUV2\EXPJProj\OPF\AZ0050\src\com\nec\jp\orteus\metamorBase\AZ0050\AZ0050010Servlet.java:3249: try 文のコードが大きすぎます。★
+    [javac] 			try {
+    [javac] 			    ^
+    [javac] D:\dev6905JDK6\cvswork\expjUV2\EXPJProj\OPF\AZ0050\src\com\nec\jp\orteus\metamorBase\AZ0050\AZ0050010Servlet.java:3584: try 文のコードが大きすぎます。★
+    [javac] 		} catch (ExpjException ee){
+    [javac] 		  ^
+    [javac] D:\dev6905JDK6\cvswork\expjUV2\EXPJProj\OPF\AZ0050\src\com\nec\jp\orteus\metamorBase\AZ0050\AZ0050010Servlet.java:3587: try 文のコードが大きすぎます。★
+    [javac] 		} catch (FoundationException e) {
+    [javac] 		  ^
+    [javac] D:\dev6905JDK6\cvswork\expjUV2\EXPJProj\OPF\AZ0050\src\com\nec\jp\orteus\metamorBase\AZ0050\AZ0050010Servlet.java:3592: try 文のコードが大きすぎます。★
+    [javac] 		} catch( Exception e ) {
+    [javac] 		  ^
+    [javac] D:\dev6905JDK6\cvswork\expjUV2\EXPJProj\OPF\AZ0050\src\com\nec\jp\orteus\metamorBase\AZ0050\AZ0050010Servlet.java:3192: try 文のコードが大きすぎます。★
+    [javac] 		try {
+    [javac] 		    ^
+    [javac] D:\dev6905JDK6\cvswork\expjUV2\EXPJProj\OPF\AZ0050\src\com\nec\jp\orteus\metamorBase\AZ0050\AZ0050010Servlet.java:3179: コードが大きすぎます。★
+    [javac] 	public String eventHandling(
+    [javac] 	              ^
+（中略）
+    [javac] D:\dev6905JDK6\cvswork\expjUV2\EXPJProj\OPF\AZ0050\src\com\nec\jp\orteus\metamorBase\AZ0050\AZ0050SQLCreate.java:298: 警告:最終パラメータの不正確な引数型を持った可変引数メソッドの非可変引数呼び出し;
+    [javac] 可変引数呼び出しに関しては java.lang.Object にキャストします。
+    [javac] 非可変引数呼び出しに関しては java.lang.Object[] にキャストしてこの警告を出さないようにします。
+    [javac] 				sql = MessageFormat.format(sSQL, sSqlArgs);
+    [javac] 				                                 ^
+    [javac] 注:入力ファイルの操作のうち、未チェックまたは安全ではないものがあります。
+    [javac] 注:詳細については、-Xlint:unchecked オプションを指定して再コンパイルしてください。
+    [javac] エラー 11 個
+    [javac] 警告 57 個
+
+BUILD FAILED
+file:D:/dev6905JDK6/cvswork/expjUV2/EXPJProj/OPF/AZ0050/build.xml:111: Compile failed; see the compiler error output for details.
+
+以上

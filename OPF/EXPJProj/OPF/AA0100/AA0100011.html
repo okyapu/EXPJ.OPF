@@ -1,0 +1,195 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+休日メンテナンスサブ1
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AA0100/AA0100011.html,v $
+$Author: geng-jia $    
+$Revision: 1.4 $ $Date: 2017/02/13 02:16:43 $
+********************************************************* --%>
+<html>
+<head>
+<title>休日メンテナンスサブ1</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AA0100011" version="AA0100011 $Revision: 1.4 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+<% String CallButton = aAA0100010Control.getButton(); %>
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="51"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AA0100011form1" width="934" height="27" border="1" cellspacing="0" cellpadding="0"
+                 script1="onLoad;0;CALL;child@0"
+                 script2="onLoad;1;CALL;onDecision@0"
+
+                   script3="child;0;CHK;<%=CallButton%>[eq]append[or]<%=CallButton%>[eq]sub1Insert@*1,*2"
+                     script4="child;1;MASK;_AA0100011button1/sub1Update"    
+                     script5="child;2;MASK;_AA0100011button1/sub1Insert"    
+
+                   script6="onDecision;0;CHKRQ;A@*3,*6"
+                     script7="child;3;CHK;<%=CallButton%>[eq]append[or]<%=CallButton%>[eq]sub1Insert@*4,*5"
+                       script8="child;4;UNMASK;_AA0100011button1/sub1Insert"
+                       script9="child;5;UNMASK;_AA0100011button1/sub1Update"
+                     script10="child;6;MASK;_AA0100011button1/sub1Insert,_AA0100011button1/sub1Update"
+              >
+                <orloophead> 
+                <tr bgcolor="#ccff99">
+                  <td width="170" align=right>&nbsp;</td>
+                  <td width="150" align=left>&nbsp;</td>
+                  <td width="22" align=left>&nbsp;</td>
+                  <td width="88" align=left>&nbsp;</td>
+                  <td width="22" align=left>&nbsp;</td>
+                  <td width="170" align=right>&nbsp;</td>
+                  <td width="150" align=left>&nbsp;</td>
+                  <td width="22" align=left>&nbsp;</td>
+                  <td align=left>&nbsp;</td>
+                </tr>
+                </orloophead>
+                <ornoloop> 
+                <tr> 
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0103">月日</span></td>
+                  <td><orftextinput  name="HOLIDAY_MMDD" orteus="true"
+                        width="150"
+                        kind="OBT_DATE;TYPE_MD"
+                        required="A"></orftextinput>
+                  </td>
+                  <td><orftextinput  name="p_HOLIDAY_DATE" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="HOLIDAY_DATE" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="w_MODIFY_COUNT" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr> 
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" class="frame18"></td>
+            <td colspan="3" class="frame19"></td>
+            <td width="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"><td colspan="3" width="968" height="5"></td></tr>
+    <tr height="482"> 
+      <td width="5" height="482"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AA0100011form2" width="934" height="438" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99">
+                  <td width="170" align=right>&nbsp;</td>
+                  <td width="150" align=left>&nbsp;</td>
+                  <td width="22" align=left>&nbsp;</td>
+                  <td width="88" align=left>&nbsp;</td>
+                  <td width="22" align=left>&nbsp;</td>
+                  <td width="170" align=right>&nbsp;</td>
+                  <td width="150" align=left>&nbsp;</td>
+                  <td width="22" align=left>&nbsp;</td>
+                  <td align=left>&nbsp;</td>
+                </tr>
+                </orloophead>
+                <ornoloop> 
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.HOLIDAY_NAME_1">祝祭日名称</span></td>
+                  <td><orftextinput  name="p_HOLIDAY_NAME" tablename="M_HOLIDAY" columnname="HOLIDAY_NAME" width="320" orteus="true" maxlength="40"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="664" class="frame08"></td>
+            <td width="60" class="frame09"></td>
+            <td width="210" class="frame10">
+              <table orftype="DataGrid" mode="BUTTON" name="AA0100011button1" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead>
+                <ornoloop>
+                <tr>
+                  <td><orfbutton name="sub1Insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SCRCHG;_AA0100011form1/*,_AA0100011form2/*@AA0100010Servlet,,$ZZ07001"
+></orfbutton>
+                  </td>
+                  <td><orfbutton name="sub1Update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SCRCHG;_AA0100011form1/*,_AA0100011form2/*@AA0100010Servlet,,$ZZ07003"
+></orfbutton>
+                  </td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame11"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"><td colspan="3" width="968" height="5"></td></tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="863"></td>
+            <td align="right" width="105"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AA0100011button0" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="cancelSub1" value="戻る" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReturn" width="100" script1="onClick;0;SCRCHG;@AA0100010Servlet,,$ZZ07013"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<% MessageStruct msgStruct = aAA0100010Control.getMessage(); %>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

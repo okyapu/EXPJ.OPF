@@ -1,0 +1,349 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+構成系列ツリーメンテナンスサブ２
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AA0180/AA0180012.html,v $
+$Author: geng-jia $    
+$Revision: 1.4 $ $Date: 2017/02/13 02:29:12 $
+********************************************************* --%>
+<html>
+<head>
+<title>構成系列ツリーメンテナンスサブ２</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<%
+  String CallButton = aAA0180010Control.getButton();    // 呼び出し元ボタン名
+%>
+
+<body flash="true" name="AA0180012" version="AA0180012 $Revision: 1.4 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="51"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AA0180012form1" width="934" height="27" border="1" cellspacing="0" cellpadding="0"
+                   script1="onLoad;0;CALL;onDecision@0,1"
+
+                   script2="onDecision;0;CHK;<%=TypeConverter.sanitizer(CallButton)%>[eq]LineInsertProc[or]<%=TypeConverter.sanitizer(CallButton)%>[eq]Sub2insert@*0,*1"
+                     script3="child;0;MASK;_AA0180012button2/Sub2update,_AA0180012button2/Sub2delete"
+                     script4="child;1;MASK;_AA0180012button2/Sub2insert,_AA0180012form2/Sub2_PROC_CD"
+
+                   script5="onDecision;1;CHKRQ;A@*2,*3"
+                     script6="child;2;CHK;<%=TypeConverter.sanitizer(CallButton)%>[eq]LineInsertProc[or]<%=TypeConverter.sanitizer(CallButton)%>[eq]Sub2insert@*4,*5"
+                     script7="child;3;MASK;_AA0180012button2/Sub2update,_AA0180012button2/Sub2insert,_AA0180012button2/Sub2delete"
+                       script8="child;4;UNMASK;_AA0180012button2/Sub2insert"
+                       script9="child;5;UNMASK;_AA0180012button2/Sub2update,_AA0180012button2/Sub2delete"
+               >
+                <orloophead> 
+                <tr bgcolor="#ccff99">
+                  <td width="170" align=right>&nbsp;</td>
+                  <td width="150" align=left>&nbsp;</td>
+                  <td width="22" align=left>&nbsp;</td>
+                  <td width="88" align=left>&nbsp;</td>
+                  <td width="22" align=left>&nbsp;</td>
+                  <td width="170" align=right>&nbsp;</td>
+                  <td width="150" align=left>&nbsp;</td>
+                  <td width="22" align=left>&nbsp;</td>
+                  <td align=left>&nbsp;</td>
+                </tr>
+                </orloophead>
+                <ornoloop> 
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                  <td><orftextinput  name="Sub2_ITEM_CD" tablename="M_PROC_GRP" columnname="ITEM_CD" maxlength="25" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="Sub2_ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" maxlength="40" orteus="true" width="320" editable="false"></orftextinput></td>
+                  <td><orftextinput  name="MANHOUR_TYP" tablename="M_ITEM" columnname="MANHOUR_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_Sub2_MODIFY_COUNT" tablename="M_PROC_GRP" columnname="MODIFY_COUNT" dbtype="number" tablejname="M_PROC_GRP" columnjname="MODIFY_COUNT"   orteus="true" visible="false"></orftextinput></td>
+                </tr> 
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" height="12" class="frame18"></td>
+            <td colspan="3" height="12" class="frame19"></td>
+            <td width="12" height="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"><td colspan="3"></td></tr>
+    <tr height="482"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AA0180012form2" width="934" height="438" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99">
+                  <td width="170" align=right>&nbsp;</td>
+                  <td width="150" align=left>&nbsp;</td>
+                  <td width="22" align=left>&nbsp;</td>
+                  <td width="88" align=left>&nbsp;</td>
+                  <td width="22" align=left>&nbsp;</td>
+                  <td width="170" align=right>&nbsp;</td>
+                  <td width="150" align=left>&nbsp;</td>
+                  <td width="22" align=left>&nbsp;</td>
+                  <td align=left>&nbsp;</td>
+                </tr>
+                </orloophead>
+                <ornoloop> 
+                <tr> 
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_CD">品目別作業コード</span></td>
+                  <td><orftextinput  name="Sub2_PROC_CD" tablename="M_PROC_GRP" columnname="PROC_CD"   maxlength="25" orteus="true" width="260" required="A"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_Target_ITEM_CD2" tablename="M_ITEM" columnname="ITEM_CD" dbtype="varchar2" 
+                       tablejname="品目" columnjname="品目番号" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr> 
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_NAME">作業名</span></td>
+                  <td><orftextinput  name="Sub2_PROC_NAME" tablename="M_PROC_GRP" columnname="PROC_NAME" maxlength="40" orteus="true" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_TargetDate2" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_NO">作業系列番号</span></td>
+                  <td><orftextinput  name="Sub2_PROC_NO" tablename="M_PROC_GRP" columnname="PROC_NO" orteus="true" width="150" attribute="TIS_RIGHT" kind="OBT_INTEGER_P;6" required="Z"></orftextinput></td>
+                  <td><orftextinput  name="h_Sub2_PROC_NO" tablename="M_PROC_GRP" columnname="PROC_NO" orteus="true"  visible="false" width="150" attribute="TIS_RIGHT" kind="OBT_INTEGER_P;6" required="Z"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_DEVELOP_TYP2" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPOIL">作業系列仕損率</span></td>
+                  <td><orftextinput  name="Sub2_SPOIL" tablename="M_PROC_GRP" columnname="SPOIL" orteus="true" width="150" attribute="TIS_RIGHT" kind="OBT_NUMBER_Z;5.1;FLOOR;4" required="Z"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0051">％</span></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_InitLevel2" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FIXED_LT_1">作業系列固定分リードタイム</span></td>
+                  <td><orftextinput  name="Sub2_FIXED_LT" tablename="M_PROC_GRP" columnname="FIXED_LT" orteus="true" width="150" attribute="TIS_RIGHT" kind="OBT_INTEGER_Z;6" required="Z"></orftextinput></td>
+                  <td><orftextinput  name="sub2_STOCK_UNIT_1" tablename="M_ITEM" columnname="STOCK_UNIT" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROP_LT_1">作業系列比例分リードタイム</span></td>
+                  <td><orftextinput  name="Sub2_PROP_LT" tablename="M_PROC_GRP" columnname="PROP_LT" orteus="true" width="150" attribute="TIS_RIGHT" kind="OBT_INTEGER_Z;6" required="Z"></orftextinput></td>
+                  <td><orftextinput  name="sub2_STOCK_UNIT_2" tablename="M_ITEM" columnname="STOCK_UNIT" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROP_LOT_SIZE_1">作業系列比例分ロットサイズ</span></td>
+                  <td><orftextinput  name="Sub2_PROP_LOT_SIZE" tablename="M_PROC_GRP" columnname="PROP_LOT_SIZE" orteus="true" width="150" attribute="TIS_RIGHT" kind="OBT_NUMBER_P;14.1;FLOOR;4" required="Z"></orftextinput></td>
+                  <td><orftextinput  name="Sub2_STOCK_UNIT" tablename="M_ITEM" columnname="STOCK_UNIT" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SAFETY_LT_1">作業系列安全日数</span></td>
+                  <td><orftextinput  name="Sub2_SAFETY_LT" tablename="M_PROC_GRP" columnname="SAFETY_LT" orteus="true" width="150" attribute="TIS_RIGHT" kind="OBT_INTEGER_Z;6" required="Z"></orftextinput></td>
+                  <td><orftextinput  name="sub2_STOCK_UNIT_3" tablename="M_ITEM" columnname="STOCK_UNIT" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OUTSIDE_TYP_1">作業系列内外作区分</span></td>
+                  <td><orfcombobox  name="Sub2_OUTSIDE_TYP" tablename="M_PROC_GRP" columnname="OUTSIDE_TYP" dbtype="number" 
+                       width="260" orteus="true"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.WS_CD">作業区コード</span></td>
+                  <td><orftextinput  name="Sub2_WS_CD" tablename="M_PROC_GRP" columnname="WS_CD" maxlength="25" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerWsCd" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0180012form2/Sub2_WS_CD@<%=contextNo%>"
+                     sqlname="WS_CD_01" sqlparam_1="<%=aAA0180010Control.getsysPLANT_CD()%>" sqlparam_2="_AA0180012form2/Sub2_WS_CD"></orfpeeker></td>
+                  <td><orftextinput  name="Sub2_WS_NAME" tablename="M_WS" columnname="WS_NAME" maxlength="40" width="320" orteus="true" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_CD_2">代表取引先コード</span></td>
+                  <td><orftextinput  name="Sub2_VEND_CD" tablename="M_PROC_GRP" columnname="VEND_CD" maxlength="25" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerVendCd" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0180012form2/Sub2_VEND_CD@<%=contextNo%>"
+                     sqlname="VEND_CD_03" sqlparam_1="_AA0180012form2/Sub2_VEND_CD"></orfpeeker></td>
+                  <td><orftextinput  name="Sub2_VEND_NAME" tablename="M_VEND_CTRL" columnname="VEND_NAME"   maxlength="80" orteus="true" width="320" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACPT_INSPC_TYP_1">作業系列受入検査区分</span></td>
+                  <td><orfcombobox  name="Sub2_ACPT_INSPC_TYP" tablename="M_PROC_GRP" columnname="ACPT_INSPC_TYP" dbtype="number" 
+				  width="260" orteus="true"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STANDARD_COST">標準工数</span></td>
+                  <td><orftextinput  name="Sub2_STANDARD_COST" tablename="M_PROC_GRP" columnname="STANDARD_COST" orteus="true" width="150" attribute="TIS_RIGHT" kind="OBT_NUMBER_Z;14.1;FLOOR;4" required="Z"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07"></td>
+            <td width="559" class="frame08"></td>
+            <td width="60" class="frame09"></td>
+            <td width="315" class="frame10">
+              <table orftype="DataGrid" mode="BUTTON" name="AA0180012button2" width="315" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead>
+                <ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton  name="Sub2insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100"
+                       script1="onClick;0;CHK;_AA0180012form2/Sub2_PROC_NO[lte]0@#AA00064"
+                       script2="onClick;1;CHK;_AA0180012form2/Sub2_OUTSIDE_TYP[eq]2[and]_AA0180012form1/MANHOUR_TYP[eq]1@#AA00183"
+                       script3="onClick;2;CHK;_AA0180012form2/Sub2_OUTSIDE_TYP[eq]1[and]_AA0180012form2/Sub2_WS_CD[eq]@$AA90003"
+                       script4="onClick;3;CHK;_AA0180012form2/Sub2_OUTSIDE_TYP[eq]2[and]_AA0180012form2/Sub2_VEND_CD[eq]@$AA90002"
+                       script5="onClick;4;SCRCHG;_AA0180012form1/*,_AA0180012form2/*@AA0180010Servlet,,$ZZ07001"
+                       lock="1">                    </orfbutton>                  </td>
+                  <td><orfbutton  name="Sub2update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100"
+                       script1="onClick;0;CHK;_AA0180012form2/Sub2_PROC_NO[lte]0@#AA00064"
+                       script2="onClick;1;CHK;_AA0180012form2/Sub2_OUTSIDE_TYP[eq]2[and]_AA0180012form1/MANHOUR_TYP[eq]1@!AA00183"
+                       script3="onClick;2;CHK;_AA0180012form2/Sub2_OUTSIDE_TYP[eq]1[and]_AA0180012form2/Sub2_WS_CD[eq]@$AA90003"
+                       script4="onClick;3;CHK;_AA0180012form2/Sub2_OUTSIDE_TYP[eq]2[and]_AA0180012form2/Sub2_VEND_CD[eq]@$AA90002"
+                       script5="onClick;4;SCRCHG;_AA0180012form1/*,_AA0180012form2/*@AA0180010Servlet,,$ZZ07003"
+                       lock="1"> </orfbutton></td>
+                  <td>
+                    <orfbutton  name="Sub2delete" value="削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDelete" width="100"
+                       script1="onClick;3;SCRCHG;_AA0180012form1/*,_AA0180012form2/*@AA0180010Servlet,,$ZZ07004"
+                       lock="1">                    </orfbutton>                  </td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame11"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"><td colspan="3"></td></tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="863"></td>
+            <td align="right" width="105"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AA0180012button0" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="Sub2Return" value="戻る" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReturn" width="100"
+                         script1="onClick;0;SCRCHG;_AA0180012form1/*,_AA0180012form2/*@AA0180010Servlet,,$ZZ07013" lock="0"
+                      ></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<% MessageStruct msgStruct = aAA0180010Control.getMessage(); %>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>
+

@@ -1,0 +1,245 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+作業日報・人日報メンテナンス 人日報
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AD0130/AD0130011.html,v $
+$Author: geng-jia $	
+$Revision: 1.8 $　$Date: 2017/02/13 03:05:26 $
+********************************************************* --%>
+<html>
+<head>
+<title>作業日報・人日報メンテナンス 人日報</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" version="AD0130011 $Revision: 1.8 $" name="AD0130011" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="97"> 
+      <td width="5" height="97"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+			  <table orftype="DataGrid" mode="FORM" status="" float=""
+ name="AD0130011form1" width="934" height="73" border="1" cellspacing="0" cellpadding="0"
+ script1="onLoad;0;CALL;onDecision@0,1"
+ script2="onDecision;0;CHKRQ;A@*0,*1"
+ script3="onDecision;1;CHK;_AD0130011form1/h_UpdateFlag[eq]true@*2,*3"
+ script4="child;0;UNMASK;_AD0130011button1/sub1_Insert,_AD0130011button1/sub1_Update"
+ script5="child;1;MASK;_AD0130011button1/sub1_Insert,_AD0130011button1/sub1_Update"
+ script6="child;2;MASK;_AD0130011button1/sub1_Insert,_AD0130011form1/USER_CD,_AD0130011form1/PeekerUserCd,_AD0130011form1/OPR_DATE,_AD0130011form1/CalendarOPR_DATE,_AD0130011form1/WORK_SHIFT_CODE,_AD0130011form1/PeekerWorkShiftCode"
+ script7="child;3;MASK;_AD0130011button1/sub1_Update"
+ >
+			    <orloophead>
+			    <tr bgcolor="#ccff99">
+			      <td width="170" align="right">&nbsp;</td>
+			      <td width="150">&nbsp;</td>
+			      <td width="22">&nbsp;</td>
+			      <td width="88">&nbsp;</td>
+			      <td width="22">&nbsp;</td>
+			      <td width="170">&nbsp;</td>
+			      <td width="150">&nbsp;</td>
+			      <td width="22">&nbsp;</td>
+			      <td width="88">&nbsp;</td>
+		        </tr>
+			    </orloophead><ornoloop>
+			    <tr>
+			      <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.USER_CD">ユーザコード</span></td>
+			      <td><orftextinput name="USER_CD" tablename="UT_DAILY_WORK_REPORT" columnname="USER_CD" dbtype="varchar2" tablejname="作業日報" columnjname="ユーザコード"  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="A" attribute=""
+></orftextinput></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td><orfpeeker name="PeekerUserCd" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="0" attribute="BTS_PEEKER" visible="" sqlname="USER_CD_07" sqlparam_1="<%=aAD0130010Control.getPlantCd()%>" sqlparam_2="_AD0130011form1/USER_CD" 
+ script1="onClick;0;PEEKER;_AD0130011form1/USER_CD@<%=contextNo%>"
+></orfpeeker></td>
+			      <td><orftextinput name="USER_NAME" tablename="USER_MST" columnname="USER_NAME" dbtype="varchar2" tablejname="" columnjname=""  orteus="true" width="320" editable="false" visible="true" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+			      <td><orftextinput name="h_DAILY_WORK_REPORT_CTL_NO" tablename="UT_DAILY_WORK_REPORT" columnname="DAILY_WORK_REPORT_CTL_NO" dbtype="varchar2" tablejname="作業日報" columnjname="作業日報管理番号"  orteus="true" width="" editable="true" visible="false" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+		        </tr>
+			    <tr>
+			      <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5833">作業日</span></td>
+			      <td><orftextinput name="OPR_DATE" tablename="UT_DAILY_WORK_REPORT" columnname="OPR_DATE" dbtype="date" tablejname="作業日報" columnjname="作業日"  orteus="true" width="150" editable="true" visible="true" password="false" text="" kind="OBT_DATE;TYPE_YMD;" maxlength="" required="A" attribute=""
+></orftextinput></td>
+			      <td><orfcalendar name="CalendarOPR_DATE" value="" pattern="select" revokectrl="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_CALENDAR" visible="true" sqlname=""
+ script1="onClick;0;CALENDAR;_AD0130011form1/OPR_DATE@<%=contextNo%>"
+></orfcalendar></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td><orftextinput name="h_UpdateFlag" orteus="true" width="" editable="true" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+		        </tr>
+			    <tr>
+			      <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt6746">勤務シフト</span></td>
+			      <td><orftextinput name="WORK_SHIFT_CODE" tablename="UT_DAILY_WORK_REPORT" columnname="WORK_SHIFT_CODE" dbtype="varchar2" tablejname="作業日報" columnjname="勤務シフトコード"  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="A" attribute=""
+></orftextinput></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td><orfpeeker name="PeekerWorkShiftCode" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="0" attribute="BTS_PEEKER" visible="" sqlname="WORK_SHIFT_CODE_01" sqlparam_1="_AD0130011form1/WORK_SHIFT_CODE"
+ script1="onClick;0;PEEKER;_AD0130011form1/WORK_SHIFT_CODE@<%=contextNo%>"
+></orfpeeker></td>
+			      <td><orftextinput name="WORK_SHIFT_NAME" tablename="UM_WORK_SHIFT_H" columnname="WORK_SHIFT_NAME" dbtype="varchar2" tablejname="" columnjname=""  orteus="true" width="320" editable="false" visible="true" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+			      <td>&nbsp;</td>
+		        </tr>
+			    </ornoloop>
+		      </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" class="frame07" height="12"></td>
+            <td width="769" class="frame08" height="12"></td>
+            <td width="60" class="frame09" height="12"></td>
+            <td width="105" class="frame10" height="12"></td>
+            <td width="12" class="frame11" height="12"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="97"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="436"> 
+      <td width="5" height="436"></td>
+      <td valign="top" width="958" height="436"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+			  <table orftype="DataGrid" mode="VIEW" status="" float="" attribute="DGS_SELECTOFF|DGS_SORTOFF"
+ name="AD0130011view1" width="934" height="392" border="1" cellspacing="0" cellpadding="0">
+			    <orloophead>
+			    <tr bgcolor="#ccff99">
+			      <td width="20" sorttype="numeric" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.LINE_NO">行</span></td>
+			      <td width="70"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.NC_WS_CD">作業区コード</span></td>
+			      <td width="110"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.NC_WS_NAME">作業区名</span></td>
+			      <td width="60" sorttype="numeric" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.START_TIME_1">開始時刻</span></td>
+			      <td width="60" sorttype="numeric" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.END_TIME">終了時刻</span></td>
+			      <td width="60" sorttype="numeric" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OPR_TIME_MINUTE">時間（分）</span></td>
+			      <td width="110"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OPR_PROC_TYP">作業区分</span></td>
+			      <td width="180"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UN_OPR_CAUSE">不作業理由</span></td>
+			      <td width="100" sorttype="numeric" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UN_OPR_TIME">不作業時間（分）</span></td>
+			      <td width="145"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARKS">備考</span></td>
+                  <td hidden="true">h_更新数</td>
+		        </tr>
+			    </orloophead><orloop>
+			    <tr>
+			      <td><orflabel name="l_SEQ_NO" tablename="UT_DAILY_WORK_REPORT" columnname="SEQ_NO" dbtype="number" tablejname="" columnjname=""  orteus="true" width="" height="" text="" kind="OBT_INTEGER_Z;6;;" maxlength="6" attribute="" password="false" visible="true"
+></orflabel></td>
+			      <td><orftextinput name="l_WS_CD" tablename="UT_DAILY_WORK_REPORT" columnname="WS_CD" dbtype="varchar2" tablejname="作業日報" columnjname="ラインコード"  orteus="true" width="" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="A" attribute=""
+></orftextinput></td>
+			      <td><orflabel name="l_WS_NAME" tablename="M_WS" columnname="WS_NAME" dbtype="varchar2" tablejname="作業区" columnjname="作業区名"  orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+			      <td><orftextinput name="l_START_TIME" tablename="UT_DAILY_WORK_REPORT" columnname="START_TIME" dbtype="number" tablejname="作業日報" columnjname="開始時刻"  orteus="true" width="" editable="true" visible="true" password="false" text="" kind="OBT_N;" maxlength="4" required="" attribute=""
+></orftextinput></td>
+			      <td><orftextinput name="l_END_TIME" tablename="UT_DAILY_WORK_REPORT" columnname="END_TIME" dbtype="number" tablejname="作業日報" columnjname="終了時刻"  orteus="true" width="" editable="true" visible="true" password="false" text="" kind="OBT_N;" maxlength="4" required="" attribute=""
+></orftextinput></td>
+			      <td><orflabel name="l_OPR_TIME" tablename="UT_DAILY_WORK_REPORT" columnname="OPR_TIME" dbtype="number" tablejname="作業日報" columnjname="作業時間"  orteus="true" width="" height="" text="" kind="OBT_INTEGER_Z;4;;" maxlength="4" attribute="" password="false" visible="true"
+></orflabel></td>
+			      <td><orfcombobox name="l_OPR_TYP" tablename="UT_DAILY_WORK_REPORT" columnname="OPR_TYP" dbtype="number" tablejname="作業日報" columnjname="作業区分"  orteus="true" width="" height="" enable="true" visible="true"
+></orfcombobox></td>
+			      <td><orfcombobox name="l_UN_OPR_CAUSE_TYP" tablename="UT_DAILY_WORK_REPORT" columnname="UN_OPR_CAUSE_TYP" dbtype="number" tablejname="作業日報" columnjname="不作業理由区分"  orteus="true" width="" height="" enable="true" visible="true"
+></orfcombobox></td>
+			      <td><orftextinput name="l_UN_OPR_TIME" tablename="UT_DAILY_WORK_REPORT" columnname="UN_OPR_TIME" dbtype="number" tablejname="作業日報" columnjname="不作業時間"  orteus="true" width="" editable="true" visible="true" password="false" text="" kind="OBT_INTEGER_Z;4;;" maxlength="4" required="" attribute=""
+></orftextinput></td>
+			      <td><orftextinput name="l_REMARKS" tablename="UT_DAILY_WORK_REPORT" columnname="REMARKS" dbtype="varchar2" tablejname="作業日報" columnjname="備考"  orteus="true" width="" editable="true" visible="true" password="false" text="" kind="" maxlength="80" required="" attribute=""
+></orftextinput></td>
+                  <td><orflabel name="h_l_MODIFY_COUNT" tablename="UT_DAILY_WORK_REPORT" columnname="MODIFY_COUNT" dbtype="number" tablejname="作業日報" columnjname="更新数"  orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="false"
+></orflabel></td>
+		        </tr>
+			    </orloop>
+		      </table>
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="559" class="frame08" height="32"></td>
+            <td width="165" class="frame09" height="32"></td>
+            <td width="210" class="frame10" height="32"><table orftype="DataGrid" name="AD0130011button1" mode="BUTTON" status="" float=""
+ width="210" height="22" border="1" cellspacing="1" cellpadding="1">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="sub1_Insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;CHK;_AD0130011form1/OPR_DATE[gt]<%=aAD0130010Control.getBusinessOprDate()%>@!ZZ05103"
+ script2="onClick;1;SCRCHG;_AD0130011form1/*,_AD0130011view1/*@AD0130010Servlet,,$ZZ07003"
+></orfbutton></td>
+                <td><orfbutton name="sub1_Update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;CHK;_AD0130011form1/OPR_DATE[gt]<%=aAD0130010Control.getBusinessOprDate()%>@!ZZ05103"
+ script2="onClick;1;SCRCHG;_AD0130011form1/*,_AD0130011view1/*@AD0130010Servlet,,$ZZ07003"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table></td>
+			<td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="436"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="853"></td>
+            <td align="right" width="105"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AD0130011button0" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105></td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton name="sub1_Return" value="戻る" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReturn" width="100" height="22" lock="0" attribute="" visible=""
+ script1="onClick;0;SCRCHG;_AD0130011form1/*,_AD0130011view1/*@AD0130010Servlet,,$ZZ07013"
+></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+<%
+MessageStruct msgStruct = aAD0130010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

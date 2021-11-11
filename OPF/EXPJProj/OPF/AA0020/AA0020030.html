@@ -1,0 +1,181 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+製品構成台帳出力
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AA0020/AA0020030.html,v $
+$Author: geng-jia $
+$Revision: 1.4 $ $Date: 2017/02/13 02:12:22 $
+********************************************************* --%>
+<html>
+<head>
+<title>製品構成台帳出力</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AA0020030" version="AA0020030 $Revision: 1.4 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="1">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="538"> 
+      <td width="5" height="538"></td>
+      <td valign="top" width="958" height="538"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AA0020030form1" width="934" height="514" border="1" cellspacing="0" cellpadding="0"
+				 script1="onLoad;0;CALL;onDecision@0"			
+					 script2="onDecision;0;CHKRQ;A@*0,*1"		
+							 script3="child;0;UNMASK;_AA0020030button0/Print"
+							 script4="child;1;MASK;_AA0020030button0/Print"
+              >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD_6">対象品目番号</span></td>
+                  <td><orftextinput  name="w_TARGET_ITEM_CD" maxlength="25" orteus="true" width="260" required="A"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="Peekerw_TARGET_ITEM_CD" value="" pattern="none" orteus="false" width="22" 
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0020030form1/w_TARGET_ITEM_CD@<%=contextNo%>"
+                     sqlname="ITEM_CD_01" sqlparam_1="_AA0020030form1/w_TARGET_ITEM_CD"
+                  ></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_OUT_DATE_3">対象日付</span></td>
+                  <td><orftextinput  name="w_TARGET_DATE" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  name="Calendarw_TARGET_DATE" value="" pattern="none" orteus="false" width="22" attribute="BTS_CALENDAR"
+					 script1="onClick;0;CALENDAR;_AA0020030form1/w_TARGET_DATE"
+                  ></orfcalendar></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0435">展開レベル</span></td>
+                  <td><orftextinput  name="w_LEVEL" attribute="TIS_RIGHT" orteus="true" width="150" kind="OBT_INTEGER_Z;3"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0017">展開区分</span></td>
+                  <td><orfcombobox  name="s_DEVELOP_TYP" orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="DOWNLOAD_FILE" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" height="12" class="frame18"></td>
+            <td colspan="3" height="12" class="frame19"></td>
+            <td width="12" height="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="538"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="653"></td>
+            <td align="right" width="315"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AA0020030button0" width="315" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton name="Print" value="帳票出力" pattern="print" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnPrint" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;PRINTER;_AA0020030form1/*@AA0020030Servlet:C,M,M"
+></orfbutton></td>
+                  <td><orfbutton  name="clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100"
+					 script1="onClick;0;SUBMIT;_AA0020030form1/*@AA0020030Servlet,,$ZZ07008"
+					 lock="0"
+                  ></orfbutton></td>
+                  <td><orfbutton  name="close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100"
+					 script1="onClick;0;CLOSE"
+                  ></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAA0020030Control.getMessage();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

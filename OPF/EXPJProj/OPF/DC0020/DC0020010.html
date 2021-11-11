@@ -1,0 +1,388 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+標準原価計算マスタチェック実行
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/DC0020/DC0020010.html,v $
+$Author: geng-jia $
+$Revision: 1.3 $ $Date: 2017/02/13 06:34:07 $
+********************************************************* --%>
+<html>
+<head>
+<title>標準原価計算マスタチェック実行</title>
+<%@include file="common/expj_v5.jsp" %>
+<%
+String callButton = aDC0020010Control.getButton();
+%>
+</head>
+<body flash="true" name="DC0020010" version="DC0020010 $Revision: 1.3 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+<table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+  <tr height="5">
+    <td height="5" colspan="3"></td>
+  </tr>
+  <tr>
+    <td width="5"></td>
+    <td valign="top" width="958" height="94">
+      <table width="958" border="0" cellspacing="0" cellpadding="0">
+        <tr height="12">
+          <td class="frame01" width="12"></td>
+          <td class="frame02" colspan="3"></td>
+          <td class="frame03" width="12"></td>
+        </tr>
+        <tr>
+          <td class="frame04" width="12"></td>
+          <td class="frame05" colspan="3">
+            <table orftype="DataGrid" mode="FORM" name="DC0020010form1" width="934" height="50" border="1" cellspacing="0" cellpadding="0"
+              status="<%= TypeConverter.sanitizer(aDC0020010Control.getReadStatusString()) %>"
+              script1="onLoad;0;CALL;onDecision@0,1"
+              script2="onDecision;0;CHKRQ;A@*0,*1"
+              script3="child;0;UNMASK;_DC0020010button1/Select"
+              script4="child;1;MASK;_DC0020010button1/Select"
+              script5="onDecision;1;CHK;?DC0020010form1/*[eq]NORMAL@*2,*5"
+              script6="child;2;CHKRQ;A@*3,*5"
+              script7="child;3;CHK;?PLANT_CD[eq]SAME[and]?YEAR[eq]SAME[and]?HALF_TERM_TYP[eq]SAME@*4,*5"
+              script8="child;4;UNMASK;_DC0020010button2/Execute"
+              script9="child;5;MASK;_DC0020010button2/Execute"
+            >
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td width="88"></td>
+                  <td width="22"></td>
+                  <td width="170" align="right"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td width="88"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PLANT_CD">工場コード</span></td>
+                  <td>
+                    <orftextinput name="PLANT_CD" tablename="SYS_CS_CALC_CTRL" columnname="PLANT_CD" dbtype="varchar2" tablejname="原価計算処理制御" columnjname="工場コード" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="2" required="A" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orfpeeker name="PeekerPlantCd" value="" pattern="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="PLANT_CD_D01" sqlparam_1="_PLANT_CD"
+                      script1="onClick;0;PEEKER;_DC0020010form1/PLANT_CD:_DC0020010form1/PLANT_NAME@<%=contextNo%>"
+                    >
+                    </orfpeeker>
+                  </td>
+                  <td>
+                    <orftextinput name="PLANT_NAME" tablename="M_PLANT" columnname="PLANT_NAME" dbtype="varchar2" tablejname="工場" columnjname="工場名" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.YEAR">年度</span></td>
+                  <td>
+                    <orftextinput name="YEAR" tablename="SYS_CS_CALC_CTRL" columnname="YEAR" dbtype="number" tablejname="原価計算処理制御" columnjname="年度" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_N;" maxlength="4" required="A" attribute="TIS_RIGHT">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.HALF_TERM_TYP">半期区分</span></td>
+                  <td>
+                    <orfcombobox name="HALF_TERM_TYP" tablename="SYS_CS_CALC_CTRL" columnname="HALF_TERM_TYP" dbtype="number" tablejname="原価計算処理制御" columnjname="半期区分" orteus="true" width="260" height="">
+                    </orfcombobox>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame06" width="12"></td>
+        </tr>
+        <tr height="32">
+          <td class="frame07" width="12"></td>
+          <td class="frame08" width="769"></td>
+          <td class="frame09" width="60"></td>
+          <td class="frame10" width="105">
+            <table orftype="DataGrid" name="DC0020010button1" width="105" height="22" mode="BUTTON" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="Select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="0" attribute=""
+                      script1="onClick;0;SUBMIT;_DC0020010form1/*@DC0020010Servlet"
+                    >
+                    </orfbutton>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame11" width="12"></td>
+        </tr>
+      </table>
+    </td>
+    <td width="5"></td>
+  </tr>
+  <tr>
+    <td height="5" colspan="3"></td>
+  </tr>
+  <tr>
+    <td width="5"></td>
+    <td valign="top" height="439" width="958">
+      <table width="958" border="0" cellspacing="0" cellpadding="0">
+        <tr height="12">
+          <td class="frame01" width="12"></td>
+          <td class="frame02" colspan="3"></td>
+          <td class="frame03" width="12"></td>
+        </tr>
+        <tr>
+          <td class="frame04" width="12"></td>
+          <td class="frame05" colspan="3">
+            <table orftype="DataGrid" mode="FORM" status="<%= TypeConverter.sanitizer(aDC0020010Control.getReadStatus()) %>" name="DC0020010form2" width="934" height="395" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td width="88"></td>
+                  <td width="22"></td>
+                  <td width="170" align="right"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.START_TIME">実行開始時間</span></td>
+                  <td>
+                    <orftextinput name="START_TIME" tablename="SYS_CS_CALC_CTRL" columnname="START_TIME" dbtype="date" tablejname="原価計算処理制御" columnjname="実行開始時間" orteus="true" width="150" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOP_TIME">実行終了時間</span></td>
+                  <td>
+                    <orftextinput name="STOP_TIME" tablename="SYS_CS_CALC_CTRL" columnname="STOP_TIME" dbtype="date" tablejname="原価計算処理制御" columnjname="実行終了時間" orteus="true" width="150" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CS_CALC_PROC_NO">原価計算処理番号</span></td>
+                  <td>
+                    <orftextinput name="CS_CALC_PROC_NO_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明" orteus="true" width="260" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="CS_CALC_PROC_NO" tablename="SYS_CS_CALC_CTRL" columnname="CS_CALC_PROC_NO" dbtype="number" tablejname="原価計算処理制御" columnjname="実行中処理番号"  orteus="true" width="" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXECUTE_STATUS_TYP">実行状態区分</span></td>
+                  <td>
+                    <orftextinput name="EXECUTE_STATUS_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明" orteus="true" width="260" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="EXECUTE_STATUS_TYP" tablename="SYS_CS_CALC_CTRL" columnname="EXECUTE_STATUS_TYP" dbtype="number" tablejname="原価計算処理制御" columnjname="実行状態区分"  orteus="true" width="" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.RESULT_STATUS_TYP">実行結果区分</span></td>
+                  <td>
+                    <orftextinput name="RESULT_STATUS_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明" orteus="true" width="260" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="RESULT_STATUS_TYP" tablename="SYS_CS_CALC_CTRL" columnname="RESULT_STATUS_TYP" dbtype="number" tablejname="原価計算処理制御" columnjname="実行結果区分"  orteus="true" width="" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0490">実行区分</span></td>
+                  <td>
+                    <orfradiobutton name="r1_ExecuteType" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0266" width="150" height="" text="通常実行" group="ExecuteType">
+                    </orfradiobutton>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <orfradiobutton name="r2_ExecuteType" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0267" width="150" height="" text="再実行" group="ExecuteType">
+                    </orfradiobutton>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="MODIFY_COUNT" tablename="SYS_CS_CALC_CTRL" columnname="MODIFY_COUNT" dbtype="number" tablejname="原価計算処理制御" columnjname="更新数"  orteus="true" width="" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame06" width="12"></td>
+        </tr>
+        <tr height="32">
+          <td class="frame07" width="12"></td>
+          <td class="frame08" width="769"></td>
+          <td class="frame09" width="60"></td>
+          <td class="frame10" width="105">
+            <table orftype="DataGrid" mode="BUTTON" name="DC0020010button2" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="Execute" value="実行" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnExecute" width="100" height="" lock="1" attribute=""
+                      script1="onClick;0;CHK;_DC0020010form2/EXECUTE_STATUS_TYP[eq]1@#DC00101"
+                      script2="onClick;1;CHK;_DC0020010form2/RESULT_STATUS_TYP[eq]2[or]_DC0020010form2/RESULT_STATUS_TYP[eq]3@*0"
+                      script3="child;0;CHK;_DC0020010form2/r1_ExecuteType[eq]true@$DC00102"
+                      script4="onClick;2;SUBMIT;_DC0020010form1/*,_DC0020010form2/*@DC0020010Servlet,,$ZZ07009"
+                    >
+                    </orfbutton>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td width="12" class="frame11"></td>
+        </tr>
+      </table>
+    </td>
+    <td width="5"></td>
+  </tr>
+  <tr height="5">
+    <td colspan="3"></td>
+  </tr>
+  <tr height="42">
+    <td class="under" width="968" colspan="3">
+      <table width="968" border="0">
+        <tr>
+          <td width="758"></td>
+          <td align="right" width="210">
+            <table orftype="DataGrid" name="DA0010010button0" width="210" height="22" mode="BUTTON" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105"></td>
+                  <td width="105"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" height="" lock="0" attribute=""
+                      script1="onClick;0;SUBMIT;@DC0020010Servlet,,$ZZ07008"
+                    >
+                    </orfbutton>
+                  </td>
+                  <td>
+                    <orfbutton name="Close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" height="" lock="0" attribute=""
+                      script1="onClick;0;CLOSE"
+                    >
+                    </orfbutton>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<%
+MessageStruct msgStruct = aDC0020010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

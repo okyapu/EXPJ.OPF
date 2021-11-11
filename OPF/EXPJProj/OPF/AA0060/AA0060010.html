@@ -1,0 +1,329 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+作業区メンテナンス
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AA0060/AA0060010.html,v $
+$Author: geng-jia $    
+$Revision: 1.4 $ $Date: 2017/02/13 02:14:39 $
+********************************************************* --%>
+<html>
+<head>
+<title>作業区メンテナンス</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AA0060010" version="AA0060010 $Revision: 1.4 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="71">
+      <td width="5"></td>
+      <td valign="top" width="958">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <table orftype="DataGrid" mode="FORM" name="AA0060010form1" width="934" height="27" border="1" cellspacing="0" cellpadding="0"
+                 status="<%= TypeConverter.sanitizer(aAA0060010Control.getReadStatusString()) %>"
+             
+                 script1="onLoad;0;CALL;child@0,3,14,18"
+
+                   script2="child;0;CHK;?AA0060010form1/*[eq]NORMAL@*1,*2"
+                       script3="child;1;MASK;_AA0060010button2/insert"
+                       script4="child;2;MASK;_AA0060010button2/update,_AA0060010button2/delete"
+
+                 script5="onDecision;0;CHK;1[eq]1@*3"
+                   script6="child;3;CHKRQ;A@*4,*5"
+                       script7="child;4;UNMASK;_AA0060010button1/select@*6"
+                       script8="child;5;MASK;_AA0060010button1/select@*7"
+                           script9="child;6;CHK;?AA0060010form1/*[eq]INITIAL@*8,*9"
+                           script10="child;7;MASK;_AA0060010button2/insert,_AA0060010button2/update"
+                               script11="child;8;UNMASK;_AA0060010button2/insert"
+                               script12="child;9;CHK;_AA0060010form1/WS_CD[eq]_AA0060010form1/h_WS_CD@*10,*12"
+                                   script13="child;10;MASK;_AA0060010button2/insert@*11"
+                                   script14="child;11;UNMASK;_AA0060010button2/update"
+                                   script15="child;12;MASK;_AA0060010button2/update@*13"
+                                   script16="child;13;UNMASK;_AA0060010button2/insert"
+
+                 script17="onDecision;1;CHK;1[eq]1@*14"
+                       script18="child;14;CHK;?AA0060010form1/*[eq]NORMAL@*15,*17"
+                           script19="child;15;CHK;_AA0060010form1/WS_CD[eq]_AA0060010form1/h_WS_CD@*16,*17"
+                               script20="child;16;UNMASK;_AA0060010button2/delete"
+                               script21="child;17;MASK;_AA0060010button2/delete"
+				 script22="onDecision;2;CHK;1[eq]1@*18"   
+                 	   script23="child;18;CHK;_AA0060010form2/CLASS_NAME_FLAG[eq]0@*19,*20"
+				           script24="child;19;MASK;_AA0060010form2/WS_CLASS_01_CD,_AA0060010form2/PeekerWSClassCD01"
+					       script25="child;20;UNMASK;_AA0060010form2/WS_CLASS_01_CD,_AA0060010form2/PeekerWSClassCD01"
+				>
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.WS_CD">作業区コード</span></td>
+                  <td><orftextinput  name="WS_CD" tablename="M_WS" columnname="WS_CD" maxlength="25" orteus="true" width="260" required="A"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerWsCd" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0060010form1/WS_CD@<%=contextNo%>"
+                     sqlname="WS_CD_01" sqlparam_1="<%=aAA0060010Control.getsysPLANT_CD()%>" sqlparam_2="_AA0060010form1/WS_CD"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_WS_CD" tablename="M_WS" columnname="WS_CD" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="MODIFY_COUNT" tablename="M_WS" columnname="MODIFY_COUNT" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32">
+            <td width="12" class="frame07"></td>
+            <td width="769" class="frame08"></td>
+            <td width="60" class="frame09"></td>
+            <td width="105" class="frame10">
+              <table orftype="DataGrid" mode="BUTTON" name="AA0060010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton name="select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AA0060010form1/*,_AA0060010form2/CLASS_NAME,_AA0060010form2/CLASS_NAME_FLAG@AA0060010Servlet"
+></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame11"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="462">
+      <td width="5" height="462"></td>
+      <td valign="top" width="958" height="462">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <table orftype="DataGrid" mode="FORM" name="AA0060010form2" width="934" height="418" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170" align="left">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.WS_NAME">作業区名</span></td>
+                  <td><orftextinput  name="WS_NAME" tablename="M_WS" columnname="WS_NAME" maxlength="40" orteus="true" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.WS_TEL">作業区電話番号</span> </td>
+                  <td><orftextinput  name="WS_TEL" tablename="M_WS" columnname="WS_TEL" maxlength="20" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.WS_PERSON_1">作業区担当者</span> </td>
+                  <td><orftextinput  name="WS_PERSON" tablename="M_WS" columnname="WS_PERSON" maxlength="40" orteus="true" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.WH_CD">保管区コード</span></td>
+                  <td><orftextinput  name="WH_CD" tablename="M_WS" columnname="WH_CD" maxlength="25" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerWhCd" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0060010form2/WH_CD@<%=contextNo%>"
+                     sqlname="WH_CD_01" sqlparam_1="<%=aAA0060010Control.getsysPLANT_CD()%>" sqlparam_2="_AA0060010form2/WH_CD"></orfpeeker></td>
+                  <td><orftextinput  name="WH_NAME" tablename="M_WH" columnname="WH_NAME" editable="false" orteus="true"   width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SUB_WS_CD">代替作業区コード</span></td>
+                  <td><orftextinput  name="SUB_WS_CD" tablename="M_WS" columnname="SUB_WS_CD" maxlength="25" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerSubWsCd" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0060010form2/SUB_WS_CD@<%=contextNo%>"
+                     sqlname="WS_CD_01" sqlparam_1="<%=aAA0060010Control.getsysPLANT_CD()%>" sqlparam_2="_AA0060010form2/SUB_WS_CD"></orfpeeker></td>
+                  <td><orftextinput  name="SUB_WS_NAME" tablename="M_WS" columnname="WS_NAME" editable="false" orteus="true" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+                  <td> <span orteus="true" mlang="true" mlkind="common" mlname="Expj.CLASS_NAME_01">作業区分類01</span></td>
+                  <td><orftextinput name="CLASS_NAME" tablename="M_WS_CLASS" columnname="CLASS_NAME" dbtype="" tablejname="" columnjname=""  orteus="true" width="260" editable="false" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="CLASS_NAME_FLAG" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="WS_CLASS_01_CD" tablename="M_WS_CLASS" columnname="WS_CLASS_01_CD" dbtype="" tablejname="" columnjname=""  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerWSClassCD01" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="WS_CLASS_01" sqlparam_1="_AA0060010form2/WS_CLASS_01_CD"
+ script1="onClick;0;PEEKER;_AA0060010form2/WS_CLASS_01_CD:_AA0060010form2/WS_CLASS_01_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="WS_CLASS_01_NAME" tablename="M_WS_CLASS" columnname="WS_CLASS_01_NAME" dbtype="" tablejname="" columnjname=""  orteus="true" width="320" editable="false" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td><orftextinput name="h_WS_CLASS_01_CD" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_MODIFY_COUNT" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32">
+            <td width="12" class="frame07"></td>
+            <td width="559" class="frame08"></td>
+            <td width="60" class="frame09"></td>
+            <td width="315" class="frame10">
+              <table orftype="DataGrid" mode="BUTTON" name="AA0060010button2" width="315" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton name="insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_AA0060010form1/WS_CD[eq]_AA0060010form2/SUB_WS_CD@!AA00081,*0"
+ script2="child;0;SUBMIT;_AA0060010form1/*,_AA0060010form2/*@AA0060010Servlet,,$ZZ07001"
+></orfbutton></td>
+                  <td><orfbutton name="update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_AA0060010form1/WS_CD[eq]_AA0060010form2/SUB_WS_CD@!AA00081,*0"
+ script2="child;0;SUBMIT;_AA0060010form1/*,_AA0060010form2/*@AA0060010Servlet,,$ZZ07003"
+></orfbutton></td>
+                  <td><orfbutton name="delete" value="削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDelete" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AA0060010form1/*,_AA0060010form2/*@AA0060010Servlet,,$ZZ07004"
+></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame11"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3"></td>
+    </tr>
+    <tr height="42">
+      <td colspan="3" width="968" class="under">
+        <table width="968" border="0">
+          <tr>
+            <td align="left" width="758"></td>
+            <td align="right" width="210">
+              <table orftype="DataGrid" mode="BUTTON" name="AA0060010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton  name="clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear"
+                        width="100" script1="onClick;0;SUBMIT;@AA0060010Servlet,,$ZZ07008" lock="0"></orfbutton></td>
+                  <td><orfbutton  name="close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose"
+                        width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAA0060010Control.getMessage();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

@@ -1,0 +1,504 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+棚卸条件メンテナンス
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AH0020/AH0020010.html,v $
+$Author: geng-jia $	
+$Revision: 1.4 $ $Date: 2017/02/13 03:30:05 $
+********************************************************* --%>
+<html>
+<head>
+<title>棚卸条件メンテナンス</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AH0020010" version="AH0020010 $Revision: 1.4 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="71"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AH0020010form1" width="934" height="27" border="1" cellspacing="0" cellpadding="0"
+				 status=<%= TypeConverter.sanitizer(aAH0020010Control.getReadStatusString()) %>
+				 script1="onLoad;0;CALL;child@0,6"							
+
+					 script2="child;0;CHK;_AH0020010form1/h_REGULAR_INV_FLG[eq]1@*1,*2"						
+						 script3="child;1;SET;_AH0020010form2/c_REGULAR_INV_FLG=true@*2"					
+					 script4="child;2;CHK;_AH0020010form1/h_CYCLE_INV_FLG[eq]1@*3,*4"						
+						 script5="child;3;SET;_AH0020010form2/c_CYCLE_INV_FLG=true@*4"					
+					 script6="child;4;CHK;_AH0020010form1/h_TEMP_INV_FLG[eq]1@*5"						
+						 script7="child;5;SET;_AH0020010form2/c_TEMP_INV_FLG=true"					
+											
+					 script8="child;6;CHK;_AH0020010form1/h_REGULAR_INV_FLG[eq]1[and]_AH0020010form1/h_CYCLE_INV_FLG[eq]1[and]_AH0020010form1/h_TEMP_INV_FLG[eq]1@*9,*7"						
+					 script9="child;7;CHK;_AH0020010form1/h_REGULAR_INV_FLG[eq]1[and]_AH0020010form1/h_CYCLE_INV_FLG[eq]1@*9,*8"						
+					 script10="child;8;CHK;_AH0020010form1/h_REGULAR_INV_FLG[eq]1[and]_AH0020010form1/h_TEMP_INV_FLG[eq]1@*9,*11"						
+						 script11="child;9;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG@*10"					
+						 script12="child;10;MASK;_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG"					
+					 script13="child;11;CHK;_AH0020010form1/h_REGULAR_INV_FLG[neq]1[and]_AH0020010form1/h_CYCLE_INV_FLG[neq]1[and]_AH0020010form1/h_TEMP_INV_FLG[neq]1@*12,*13"						
+						 script14="child;12;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG,_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG"					
+					 script15="child;13;CHK;_AH0020010form1/h_REGULAR_INV_FLG[eq]1@*14,*15"						
+						 script16="child;14;MASK;_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG@*16"					
+						 script17="child;15;UNMASK;_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG@*16"					
+					 script18="child;16;CHK;_AH0020010form1/h_CYCLE_INV_FLG[eq]1@*17,*18"						
+						 script19="child;17;MASK;_AH0020010form2/c_REGULAR_INV_FLG@*20"					
+						 script20="child;18;CHK;_AH0020010form1/h_TEMP_INV_FLG[neq]1@*19,*20"					
+							 script21="child;19;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG@*20"				
+					 script22="child;20;CHK;_AH0020010form1/h_TEMP_INV_FLG[eq]1@*21,*22"						
+						 script23="child;21;MASK;_AH0020010form2/c_REGULAR_INV_FLG"					
+						 script24="child;22;CHK;_AH0020010form1/h_CYCLE_INV_FLG[neq]1@*23"					
+							 script25="child;23;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG"				
+											
+											
+				 script26="onLoad;1;CALL;onDecision@0,1"							
+											
+					 script27="onDecision;0;CHKRQ;A@*24,*25"						
+						 script28="child;24;UNMASK;_AH0020010button1/select"					
+						 script29="child;25;MASK;_AH0020010button1/select"					
+											
+					 script30="onDecision;1;CHKRQ;A@*26,*50"						
+						 script31="child;26;CHK;?AH0020010form1/*[eq]NORMAL@*27,*44"					
+							 script32="child;27;CHK;_AH0020010form1/INV_DATE[eq]_AH0020010form1/h_saveINV_DATE@*28,*44"				
+								 script33="child;28;CHK;_AH0020010form1/h_saveTEMP_INV_FLG[eq]1[and]_AH0020010form2/c_TEMP_INV_FLG[eq]true@*29,*30"			
+									 script34="child;29;UNMASK;_AH0020010button2/select_wh,_AH0020010button2/select_item@*31"		
+									 script35="child;30;MASK;_AH0020010button2/select_wh,_AH0020010button2/select_item@*31"		
+
+									 script36="child;31;CHK;_AH0020010form1/h_saveINV_STS_TYP[eq]0@*32,*40"		
+										 script37="child;32;CHK;_AH0020010form2/c_REGULAR_INV_FLG[neq]true[and]_AH0020010form2/c_CYCLE_INV_FLG[neq]true[and]_AH0020010form2/c_TEMP_INV_FLG[neq]true@*38,*33"	
+										 script38="child;33;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true[and]_AH0020010form2/c_CYCLE_INV_FLG[eq]true[and]_AH0020010form2/c_TEMP_INV_FLG[eq]true@*38,*34"	
+										 script39="child;34;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true[and]_AH0020010form2/c_CYCLE_INV_FLG[eq]true@*38,*35"	
+										 script40="child;35;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true[and]_AH0020010form2/c_TEMP_INV_FLG[eq]true@*38,*36"	
+											 script41="child;36;UNMASK;_AH0020010button2/update,_AH0020010button2/delete@*37"
+											 script42="child;37;MASK;_AH0020010button2/insert"
+											 script43="child;38;UNMASK;_AH0020010button2/delete@*39"
+											 script44="child;39;MASK;_AH0020010button2/insert,_AH0020010button2/update"
+
+										 script45="child;40;CHK;_AH0020010form1/h_saveINV_STS_TYP[eq]1@*41,*42"	
+											 script46="child;41;MASK;_AH0020010button2/insert,_AH0020010button2/update,_AH0020010button2/delete"
+											 script47="child;42;UNMASK;_AH0020010button2/delete@*43"
+											 script48="child;43;MASK;_AH0020010button2/insert,_AH0020010button2/update"
+
+							 script49="child;44;CHK;_AH0020010form2/c_REGULAR_INV_FLG[neq]true[and]_AH0020010form2/c_CYCLE_INV_FLG[neq]true[and]_AH0020010form2/c_TEMP_INV_FLG[neq]true@*50,*45"				
+							 script50="child;45;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true[and]_AH0020010form2/c_CYCLE_INV_FLG[eq]true[and]_AH0020010form2/c_TEMP_INV_FLG[eq]true@*50,*46"				
+							 script51="child;46;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true[and]_AH0020010form2/c_CYCLE_INV_FLG[eq]true@*50,*47"				
+							 script52="child;47;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true[and]_AH0020010form2/c_TEMP_INV_FLG[eq]true@*50,*48"				
+								 script53="child;48;UNMASK;_AH0020010button2/insert@*49"			
+								 script54="child;49;MASK;_AH0020010button2/update,_AH0020010button2/delete,_AH0020010button2/select_wh,_AH0020010button2/select_item"			
+						 script55="child;50;MASK;_AH0020010button2/insert,_AH0020010button2/update,_AH0020010button2/delete,_AH0020010button2/select_wh,_AH0020010button2/select_item"					
+              >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="80">&nbsp;</td>
+                  <td width="4">&nbsp;</td>
+                  <td width="4">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INV_DATE">棚卸日</span></td>
+                  <td><orftextinput  name="INV_DATE" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD" required="A"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarINV_DATE" value="" pattern="none" orteus="false" width="22" attribute="BTS_CALENDAR"
+					 script1="onClick;0;CALENDAR;_AH0020010form1/INV_DATE"
+                  ></orfcalendar></td>
+                  <td><orftextinput  name="w_INV_STS_TYP" editable="false" orteus="true" width="320"></orftextinput></td>
+                  <td><orftextinput  name="h_INV_STS_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_REGULAR_INV_FLG" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_CYCLE_INV_FLG" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_TEMP_INV_FLG" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_saveINV_DATE" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_saveINV_STS_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_saveTEMP_INV_FLG" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07"></td>
+            <td width="769" class="frame08"> </td>
+            <td width="60" class="frame09"></td>
+            <td width="105" class="frame10">
+            <table orftype="DataGrid" mode="BUTTON" name="AH0020010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;CHK;1[eq]1@*0"
+ script2="child;0;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true@*1,*2"
+ script3="child;1;SET;_AH0020010form1/h_REGULAR_INV_FLG=1@*3"
+ script4="child;2;SET;_AH0020010form1/h_REGULAR_INV_FLG=0@*3"
+ script5="child;3;CHK;_AH0020010form2/c_CYCLE_INV_FLG[eq]true@*4,*5"
+ script6="child;4;SET;_AH0020010form1/h_CYCLE_INV_FLG=1@*6"
+ script7="child;5;SET;_AH0020010form1/h_CYCLE_INV_FLG=0@*6"
+ script8="child;6;CHK;_AH0020010form2/c_TEMP_INV_FLG[eq]true@*7,*8"
+ script9="child;7;SET;_AH0020010form1/h_TEMP_INV_FLG=1@*9"
+ script10="child;8;SET;_AH0020010form1/h_TEMP_INV_FLG=0@*9"
+ script11="child;9;SUBMIT;_AH0020010form1/*,_AH0020010form2/*,_AH0020010form3/*@AH0020010Servlet"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="360"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr height="316"> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AH0020010form2" width="934" height="316" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_REGULAR_INV_FLG" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.REGULAR_INV_FLG_1"
+					 script1="onClick;0;CHK;1[eq]1@*0"			
+
+						 script2="child;0;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true[and]_AH0020010form2/c_CYCLE_INV_FLG[eq]true[and]_AH0020010form2/c_TEMP_INV_FLG[eq]true@*3,*1"		
+						 script3="child;1;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true[and]_AH0020010form2/c_CYCLE_INV_FLG[eq]true@*3,*2"		
+						 script4="child;2;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true[and]_AH0020010form2/c_TEMP_INV_FLG[eq]true@*3,*5"		
+							 script5="child;3;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG@*4"	
+							 script6="child;4;MASK;_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG"	
+								
+						 script7="child;5;CHK;_AH0020010form2/c_REGULAR_INV_FLG[neq]true[and]_AH0020010form2/c_CYCLE_INV_FLG[neq]true[and]_AH0020010form2/c_TEMP_INV_FLG[neq]true@*6,*7"		
+							 script8="child;6;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG,_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG"	
+								
+						 script9="child;7;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true@*8,*9"		
+							 script10="child;8;MASK;_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG@*10"	
+							 script11="child;9;UNMASK;_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG@*10"	
+						 script12="child;10;CHK;_AH0020010form2/c_CYCLE_INV_FLG[eq]true@*11,*12"		
+							 script13="child;11;MASK;_AH0020010form2/c_REGULAR_INV_FLG@*14"	
+							 script14="child;12;CHK;_AH0020010form2/c_TEMP_INV_FLG[neq]true@*13,*14"	
+								 script15="child;13;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG@*14"
+						 script16="child;14;CHK;_AH0020010form2/c_TEMP_INV_FLG[eq]true@*15,*16"		
+							 script17="child;15;MASK;_AH0020010form2/c_REGULAR_INV_FLG"	
+							 script18="child;16;CHK;_AH0020010form2/c_CYCLE_INV_FLG[neq]true@*17"	
+								 script19="child;17;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG"
+                  ></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_CYCLE_INV_FLG" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.CYCLE_INV_FLG_1"
+					 script1="onClick;0;CHK;1[eq]1@*0"			
+
+						 script2="child;0;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true[and]_AH0020010form2/c_CYCLE_INV_FLG[eq]true[and]_AH0020010form2/c_TEMP_INV_FLG[eq]true@*3,*1"		
+						 script3="child;1;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true[and]_AH0020010form2/c_CYCLE_INV_FLG[eq]true@*3,*2"		
+						 script4="child;2;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true[and]_AH0020010form2/c_TEMP_INV_FLG[eq]true@*3,*5"		
+							 script5="child;3;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG@*4"	
+							 script6="child;4;MASK;_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG"	
+								
+						 script7="child;5;CHK;_AH0020010form2/c_REGULAR_INV_FLG[neq]true[and]_AH0020010form2/c_CYCLE_INV_FLG[neq]true[and]_AH0020010form2/c_TEMP_INV_FLG[neq]true@*6,*7"		
+							 script8="child;6;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG,_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG"	
+								
+						 script9="child;7;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true@*8,*9"		
+							 script10="child;8;MASK;_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG@*10"	
+							 script11="child;9;UNMASK;_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG@*10"	
+						 script12="child;10;CHK;_AH0020010form2/c_CYCLE_INV_FLG[eq]true@*11,*12"		
+							 script13="child;11;MASK;_AH0020010form2/c_REGULAR_INV_FLG@*14"	
+							 script14="child;12;CHK;_AH0020010form2/c_TEMP_INV_FLG[neq]true@*13,*14"	
+								 script15="child;13;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG@*14"
+						 script16="child;14;CHK;_AH0020010form2/c_TEMP_INV_FLG[eq]true@*15,*16"		
+							 script17="child;15;MASK;_AH0020010form2/c_REGULAR_INV_FLG"	
+							 script18="child;16;CHK;_AH0020010form2/c_CYCLE_INV_FLG[neq]true@*17"	
+								 script19="child;17;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG"
+                  ></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_TEMP_INV_FLG" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.TEMP_INV_FLG_1"
+					 script1="onClick;0;CHK;1[eq]1@*0"			
+
+						 script2="child;0;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true[and]_AH0020010form2/c_CYCLE_INV_FLG[eq]true[and]_AH0020010form2/c_TEMP_INV_FLG[eq]true@*3,*1"		
+						 script3="child;1;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true[and]_AH0020010form2/c_CYCLE_INV_FLG[eq]true@*3,*2"		
+						 script4="child;2;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true[and]_AH0020010form2/c_TEMP_INV_FLG[eq]true@*3,*5"		
+							 script5="child;3;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG@*4"	
+							 script6="child;4;MASK;_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG"	
+								
+						 script7="child;5;CHK;_AH0020010form2/c_REGULAR_INV_FLG[neq]true[and]_AH0020010form2/c_CYCLE_INV_FLG[neq]true[and]_AH0020010form2/c_TEMP_INV_FLG[neq]true@*6,*7"		
+							 script8="child;6;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG,_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG"	
+								
+						 script9="child;7;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true@*8,*9"		
+							 script10="child;8;MASK;_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG@*10"	
+							 script11="child;9;UNMASK;_AH0020010form2/c_CYCLE_INV_FLG,_AH0020010form2/c_TEMP_INV_FLG@*10"	
+						 script12="child;10;CHK;_AH0020010form2/c_CYCLE_INV_FLG[eq]true@*11,*12"		
+							 script13="child;11;MASK;_AH0020010form2/c_REGULAR_INV_FLG@*14"	
+							 script14="child;12;CHK;_AH0020010form2/c_TEMP_INV_FLG[neq]true@*13,*14"	
+								 script15="child;13;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG@*14"
+						 script16="child;14;CHK;_AH0020010form2/c_TEMP_INV_FLG[eq]true@*15,*16"		
+							 script17="child;15;MASK;_AH0020010form2/c_REGULAR_INV_FLG"	
+							 script18="child;16;CHK;_AH0020010form2/c_CYCLE_INV_FLG[neq]true@*17"	
+								 script19="child;17;UNMASK;_AH0020010form2/c_REGULAR_INV_FLG"
+                  ></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INV_COMMENT">棚卸備考</span></td>
+                  <td><orftextinput  name="INV_COMMENT" maxlength="80" orteus="true" width="712"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07"></td>
+            <td width="349" class="frame08"> </td>
+            <td width="60" class="frame09"></td>
+            <td width="525" class="frame10">
+            <table orftype="DataGrid" mode="BUTTON" name="AH0020010button2" width="525" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;1[eq]1@*0"
+ script2="child;0;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true@*1,*2"
+ script3="child;1;SET;_AH0020010form1/h_REGULAR_INV_FLG=1@*3"
+ script4="child;2;SET;_AH0020010form1/h_REGULAR_INV_FLG=0@*3"
+ script5="child;3;CHK;_AH0020010form2/c_CYCLE_INV_FLG[eq]true@*4,*5"
+ script6="child;4;SET;_AH0020010form1/h_CYCLE_INV_FLG=1@*6"
+ script7="child;5;SET;_AH0020010form1/h_CYCLE_INV_FLG=0@*6"
+ script8="child;6;CHK;_AH0020010form2/c_TEMP_INV_FLG[eq]true@*7,*8"
+ script9="child;7;SET;_AH0020010form1/h_TEMP_INV_FLG=1@*9"
+ script10="child;8;SET;_AH0020010form1/h_TEMP_INV_FLG=0@*9"
+ script11="child;9;SUBMIT;_AH0020010form1/*,_AH0020010form2/*,_AH0020010form3/*@AH0020010Servlet,,$ZZ07001"
+></orfbutton></td>
+                <td><orfbutton name="update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;1[eq]1@*0"
+ script2="child;0;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true@*1,*2"
+ script3="child;1;SET;_AH0020010form1/h_REGULAR_INV_FLG=1@*3"
+ script4="child;2;SET;_AH0020010form1/h_REGULAR_INV_FLG=0@*3"
+ script5="child;3;CHK;_AH0020010form2/c_CYCLE_INV_FLG[eq]true@*4,*5"
+ script6="child;4;SET;_AH0020010form1/h_CYCLE_INV_FLG=1@*6"
+ script7="child;5;SET;_AH0020010form1/h_CYCLE_INV_FLG=0@*6"
+ script8="child;6;CHK;_AH0020010form2/c_TEMP_INV_FLG[eq]true@*7,*8"
+ script9="child;7;SET;_AH0020010form1/h_TEMP_INV_FLG=1@*9"
+ script10="child;8;SET;_AH0020010form1/h_TEMP_INV_FLG=0@*9"
+ script11="child;9;SUBMIT;_AH0020010form1/*,_AH0020010form2/*,_AH0020010form3/*@AH0020010Servlet,,$ZZ07003"
+></orfbutton></td>
+                <td><orfbutton name="delete" value="削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDelete" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;1[eq]1@*0"
+ script2="child;0;CHK;_AH0020010form2/c_REGULAR_INV_FLG[eq]true@*1,*2"
+ script3="child;1;SET;_AH0020010form1/h_REGULAR_INV_FLG=1@*3"
+ script4="child;2;SET;_AH0020010form1/h_REGULAR_INV_FLG=0@*3"
+ script5="child;3;CHK;_AH0020010form2/c_CYCLE_INV_FLG[eq]true@*4,*5"
+ script6="child;4;SET;_AH0020010form1/h_CYCLE_INV_FLG=1@*6"
+ script7="child;5;SET;_AH0020010form1/h_CYCLE_INV_FLG=0@*6"
+ script8="child;6;CHK;_AH0020010form2/c_TEMP_INV_FLG[eq]true@*7,*8"
+ script9="child;7;SET;_AH0020010form1/h_TEMP_INV_FLG=1@*9"
+ script10="child;8;SET;_AH0020010form1/h_TEMP_INV_FLG=0@*9"
+ script11="child;9;SUBMIT;_AH0020010form1/*,_AH0020010form2/*,_AH0020010form3/*@AH0020010Servlet,,$ZZ07004"
+></orfbutton></td>
+                <td><orfbutton name="select_wh" value="保管区指定" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0230" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;CHK;1[eq]1@*0"
+ script2="child;0;SCRCHG;_AH0020010form1/*,_AH0020010form2/*,_AH0020010form3/*@AH0020010Servlet"
+></orfbutton></td>
+                <td><orfbutton name="select_item" value="品目指定" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0231" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;CHK;1[eq]1@*0"
+ script2="child;0;SCRCHG;_AH0020010form1/*,_AH0020010form2/*,_AH0020010form3/*@AH0020010Servlet"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="97"> 
+      <td width="5" height="97"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AH0020010form3" width="934" height="73" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INV_START_DATE">棚卸開始日</span></td>
+                  <td><orftextinput  name="INV_START_DATE" editable="false" orteus="true" width="150"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_SAVE_DATE">在庫退避日時</span></td>
+                  <td><orftextinput  name="STOCK_SAVE_DATE" editable="false" orteus="true" width="150"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INV_UPDATED_DATE">実棚更新日時</span></td>
+                  <td><orftextinput  name="INV_UPDATED_DATE" editable="false" orteus="true" width="150"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" class="frame18"></td>
+            <td colspan="3" class="frame19"></td>
+            <td width="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="758"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AH0020010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" 
+					 script1="onClick;0;SUBMIT;_AH0020010form1/*,_AH0020010form2/*,_AH0020010form3/*@AH0020010Servlet,,$ZZ07008"
+					 lock="0"
+                  ></orfbutton></td>
+                  <td><orfbutton  name="close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" 
+					 script1="onClick;0;CLOSE"
+                  ></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAH0020010Control.getMessage();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

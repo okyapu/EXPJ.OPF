@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<page>
+  <opfid>AH0010</opfid>
+  <process-name>AH0010020</process-name>
+  <page-name>AH0010021</page-name>
+  <page-jname>品目別棚卸設定メンテナンスサブ1</page-jname>
+  <event-list>
+    <event>
+      <event-name>Browse</event-name>
+      <event-jname>参照</event-jname>
+      <event-type>none</event-type>
+    </event>
+    <event>
+      <event-name>CsvIn</event-name>
+      <event-jname>取込</event-jname>
+      <event-type>update</event-type>
+    </event>
+    <event>
+      <event-name>return_sub1</event-name>
+      <event-jname>戻る</event-jname>
+      <event-type>none</event-type>
+    </event>
+  </event-list>
+  <field-list>
+    <field>
+      <field-type>text</field-type>
+      <field-name>FileName</field-name>
+    </field>
+    <field>
+      <field-type>label</field-type>
+      <field-name>ERR_ADR</field-name>
+    </field>
+    <field>
+      <field-type>label</field-type>
+      <field-name>ERR_MSG</field-name>
+    </field>
+  </field-list>
+  <block-list></block-list>
+  <resource-list>
+  </resource-list>
+</page>

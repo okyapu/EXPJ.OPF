@@ -1,0 +1,1194 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+品目メンテナンス
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AA0010/AA0010010.html,v $
+$Author: geng-jia $  
+$Revision: 1.22 $ $Date: 2017/02/13 02:07:51 $
+********************************************************* --%>
+<html>
+<head>
+<title>品目メンテナンス</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<%
+   String lotCtrlFlg = aAA0010010Struct.getLOTCTRLFLG();
+%>
+<body flash="true" name="AA0010010" version="AA0010010 $Revision: 1.22 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5">
+      <td colspan="3"></td>
+    </tr>
+    <tr height="71">
+      <td width="5"></td>
+      <td valign="top" width="958">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <table orftype="DataGrid" mode="FORM" name="AA0010010form1" width="934" height="27" border="1" cellspacing="0" cellpadding="0"
+               status="<%= TypeConverter.sanitizer(aAA0010010Control.getReadStatusString()) %>"
+
+                     script1="onLoad;0;CALL;child@2,5,13"
+                     script2="onLoad;1;CALL;onDecision@0,3,4"
+
+                     script3="onDecision;0;CHKRQ;A@*0,*1"
+                         script4="child;0;UNMASK;_AA0010010button1/select"
+                         script5="child;1;MASK;_AA0010010button1/select"
+
+                     script6="child;2;CHK;?AA0010010form1/*[eq]NORMAL@*3,*4"
+                         script7="child;3;MASK;_AA0010010button2/insert"
+                         script8="child;4;MASK;_AA0010010button2/update,_AA0010010button2/delete"
+
+                     script9="onDecision;1;CHK;1[eq]1@*5"
+                     script10="child;5;CHKRQ;A@*6,*12"
+                         script11="child;6;CHK;?AA0010010form1/*[eq]INITIAL[or]?AA0010010form1/*[eq]NORMAL@*7,*12"
+                             script12="child;7;CHK;_AA0010010form1/ITEM_CD[eq]_AA0010010form1/h_ITEM_CD@*8,*10"
+                                 script13="child;8;UNMASK;_AA0010010button2/update@*9"
+                                 script14="child;9;MASK;_AA0010010button2/insert"
+                                 script15="child;10;UNMASK;_AA0010010button2/insert@*11"
+                                 script16="child;11;MASK;_AA0010010button2/update"
+                         script17="child;12;MASK;_AA0010010button2/insert,_AA0010010button2/update"
+
+                     script18="onDecision;2;CHK;1[eq]1@*13"
+                         script19="child;13;CHK;?AA0010010form1/*[eq]NORMAL@*14,*16"
+                             script20="child;14;CHK;_AA0010010form1/ITEM_CD[eq]_AA0010010form1/h_ITEM_CD@*15,*16"
+                                 script21="child;15;UNMASK;_AA0010010button2/delete"
+                                 script22="child;16;MASK;_AA0010010button2/delete"
+								 
+								  
+				 script23="onDecision;3;CHK;_AA0010010form1/h_APR_ITEM[neq]1@*17,*19"
+				 script24="child;17;SET;_AA0010010form2/APPR_REMARKS=@*18"
+				 script25="child;18;MASK;_AA0010010form2/APPR_REMARKS"
+				 script26="child;19;UNMASK;_AA0010010form2/APPR_REMARKS"
+				 
+				 script27="onDecision;4;CHK;_AA0010010form1/h_SCREENMOVE_TYP[eq]0[or]_AA0010010form1/h_SCREENMOVE_TYP[eq]1@*20"
+				 script28="child;20;MASK;_AA0010010button1/select,_AA0010010button2/insert,_AA0010010button2/update,_AA0010010button2/delete,_AA0010010button0/clear"
+			  
+              >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                  <td><orftextinput  name="ITEM_CD" tablename="M_ITEM" columnname="ITEM_CD" dbtype="varchar2" maxlength="25" tablejname="品目" columnjname="品目番号"   orteus="true" width="260" required="A"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_ITEM_CD" orteus="true" visible="false"></orftextinput></td>
+                  <td><orfpeeker  name="PeekerItemCd" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0010010form1/ITEM_CD@<%=contextNo%>"
+                     sqlname="ITEM_CD_01" sqlparam_1="_AA0010010form1/ITEM_CD"></orfpeeker></td>
+                  <td><orftextinput name="h_APR_ITEM" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput name="h_SCREENMOVE_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_APPR_ID" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32">
+            <td width="12" class="frame07"></td>
+            <td width="769" class="frame08"> </td>
+            <td width="60" class="frame09"></td>
+            <td width="105" class="frame10">
+              <table orftype="DataGrid" mode="BUTTON" name="AA0010010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton name="select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AA0010010form1/*@AA0010010Servlet"
+></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame11"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3"></td>
+    </tr>
+    <tr height="462">
+      <td width="5"></td>
+      <td valign="top" width="958" tabs="2">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <table tab_id="tab_0" tab_name="** 1 **"orftype="DataGrid" mode="FORM" name="AA0010010form2" width="934" height="398" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME">品目名</span></td>
+                  <td><orftextinput  name="ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" maxlength="40" dbtype="varchar2" tablejname="品目" columnjname="品目名"   orteus="true" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DRAW_CD">図面番号</span></td>
+                  <td><orftextinput  name="DRAW_CD" tablename="M_ITEM" columnname="DRAW_CD" maxlength="25" dbtype="varchar2" tablejname="品目" columnjname="図面番号"   orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.HIGH_LEVEL_NO">レベル番号</span></td>
+                  <td><orftextinput  name="HIGH_LEVEL_NO" tablename="M_ITEM" columnname="HIGH_LEVEL_NO" dbtype="number" tablejname="品目" columnjname="レベル番号" attribute="TIS_RIGHT" orteus="true" width="150" editable=false></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPEC">規格</span></td>
+                  <td><orftextinput  name="SPEC" tablename="M_ITEM" columnname="SPEC" maxlength="80" dbtype="varchar2" tablejname="品目" columnjname="規格" orteus="true" width="712"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_TYP">出庫区分</span></td>
+                  <td><orfcombobox  name="ISSUE_TYP" tablename="M_ITEM" columnname="ISSUE_TYP" dbtype="number" tablejname="品目" columnjname="出庫区分"   orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_QTY_TYP">在庫数単位区分</span></td>
+                  <td><orfcombobox  name="UNIT_QTY_TYP" tablename="M_ITEM" columnname="UNIT_QTY_TYP" dbtype="number" tablejname="品目" columnjname="在庫数単位区分"   orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OUTSIDE_TYP">内外作区分</span></td>
+                  <td><orfcombobox  name="OUTSIDE_TYP" tablename="M_ITEM" columnname="OUTSIDE_TYP" dbtype="number" tablejname="品目" columnjname="品目内外作区分"   orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACPT_INSPC_TYP">受入検査区分</span></td>
+                  <td><orfcombobox  name="ACPT_INSPC_TYP" tablename="M_ITEM" columnname="ACPT_INSPC_TYP" dbtype="number" tablejname="品目" columnjname="受入検査区分"   orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_UNIT_FLG">荷姿管理フラグ</span></td>
+                  <td>
+                    <orfcombobox  name="STOCK_UNIT_FLG" tablename="M_ITEM" columnname="STOCK_UNIT_FLG" dbtype="number" tablejname="品目" columnjname="荷姿管理フラグ"   orteus="true" width="260"
+                       script1="onLoad;0;CALL;onDecision@0"
+
+                       script2="onDecision;0;CHK;_AA0010010form2/STOCK_UNIT_FLG[eq]0@*0,*2"
+
+                       script3="child;0;MASK;_AA0010010form2/PKG_UNIT@*1"
+                       script4="child;1;MASK;_AA0010010form2/PKG_UNIT_QTY"
+
+                       script5="child;2;UNMASK;_AA0010010form2/PKG_UNIT@*3"
+                       script6="child;3;UNMASK;_AA0010010form2/PKG_UNIT_QTY"
+                    >
+                    </orfcombobox>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PRODUCT_TYP">製品区分</span></td>
+                  <td><orfcombobox  name="PRODUCT_TYP" tablename="M_ITEM" columnname="PRODUCT_TYP" dbtype="number" tablejname="品目" columnjname="製品区分"   orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_UNIT">計量単位</span></td>
+                  <td><orfcombobox  name="STOCK_UNIT" tablename="M_ITEM" columnname="STOCK_UNIT" dbtype="varchar2" tablejname="品目" columnjname="計量単位"   orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ABC_TYP">棚卸区分</span></td>
+                  <td><orfcombobox  name="ABC_TYP" tablename="M_ITEM" columnname="ABC_TYP" dbtype="number" tablejname="品目" columnjname="棚卸区分"   orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PKG_UNIT">荷姿計量単位</span></td>
+                  <td><orftextinput  name="PKG_UNIT" tablename="M_ITEM" columnname="PKG_UNIT" maxlength="12" dbtype="varchar2" tablejname="品目" columnjname="荷姿計量単位"   orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OPR_RSLT_TYP">作業実績区分</span></td>
+                  <td><orfcombobox  name="OPR_RSLT_TYP" tablename="M_ITEM" columnname="OPR_RSLT_TYP" dbtype="number" tablejname="品目" columnjname="作業実績区分"   orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PKG_UNIT_QTY">荷姿単位数</span></td>
+                  <td><orftextinput  name="PKG_UNIT_QTY" tablename="M_ITEM" columnname="PKG_UNIT_QTY" dbtype="number" tablejname="品目" columnjname="荷姿単位数"   orteus="true" width="150" kind="OBT_NUMBER_P;14.1;FLOOR;4"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPL_ITEM_TYP">受給品区分</span></td>
+                  <td><orfcombobox  name="SPL_ITEM_TYP" tablename="M_ITEM" columnname="SPL_ITEM_TYP" dbtype="number" tablejname="品目" columnjname="受給品区分"   orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="MODIFY_COUNT" tablename="M_ITEM" columnname="MODIFY_COUNT" dbtype="number" tablejname="品目" columnjname="更新数"   orteus="true" visible=false></orftextinput></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_LT">手配リードタイム</span></td>
+                  <td><orftextinput  name="ODR_LT" tablename="M_ITEM" columnname="ODR_LT" dbtype="number" tablejname="品目" columnjname="品目手配リードタイム" kind="OBT_INTEGER_Z;6" orteus="true" width="150"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_LT">払出リードタイム</span></td>
+                  <td><orftextinput  name="ISSUE_LT" tablename="M_ITEM" columnname="ISSUE_LT" dbtype="number" tablejname="品目" columnjname="払出リードタイム"   orteus="true" width="150" kind="OBT_INTEGER_Z;6"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FIXED_LT">固定分リードタイム</span></td>
+                  <td><orftextinput  name="FIXED_LT" tablename="M_ITEM" columnname="FIXED_LT" dbtype="number" tablejname="品目" columnjname="品目固定分リードタイム"   orteus="true" width="150" kind="OBT_INTEGER_Z;6"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROP_LOT_SIZE">比例分ロットサイズ</span></td>
+                  <td><orftextinput  name="PROP_LOT_SIZE" tablename="M_ITEM" columnname="PROP_LOT_SIZE" dbtype="number" tablejname="品目" columnjname="品目比例分ロットサイズ"   orteus="true" width="150" kind="OBT_NUMBER_P;14.1;FLOOR;4"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROP_LT">品目比例分リードタイム</span></td>
+                  <td><orftextinput  name="PROP_LT" tablename="M_ITEM" columnname="PROP_LT" dbtype="number" tablejname="品目" columnjname="品目比例分リードタイム"   orteus="true" width="150" kind="OBT_INTEGER_Z;6"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_SPOIL">品目仕損率</span></td>
+                  <td><orftextinput  name="ITEM_SPOIL" tablename="M_ITEM" columnname="ITEM_SPOIL" dbtype="number" tablejname="品目" columnjname="品目仕損率"   orteus="true" kind="OBT_NUMBER_Z;5.1;FLOOR;4"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0051">％</span></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SAFETY_LT">安全日数</span></td>
+                  <td><orftextinput  name="SAFETY_LT" tablename="M_ITEM" columnname="SAFETY_LT" dbtype="number" tablejname="品目" columnjname="安全日数"   orteus="true" width="150" kind="OBT_INTEGER_Z;6"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SAFETY_STOCK">安全在庫量</span></td>
+                  <td><orftextinput  name="SAFETY_STOCK" tablename="M_ITEM" columnname="SAFETY_STOCK" dbtype="number" tablejname="品目" columnjname="安全在庫量"   orteus="true" kind="OBT_NUMBER_Z;14.1;FLOOR;4"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MRP_ODR_TYP">品目手配区分</span></td>
+                  <td>
+                    <orfcombobox  name="MRP_ODR_TYP" tablename="M_ITEM" columnname="MRP_ODR_TYP" dbtype="number" tablejname="品目" columnjname="品目手配区分"   orteus="true" width="260"
+                       script1="onLoad;0;CALL;onDecision@0"
+
+                       script2="onDecision;0;CHK;_AA0010010form2/MRP_ODR_TYP[eq]1@*6,*0"
+                       script3="child;0;CHK;_AA0010010form2/MRP_ODR_TYP[eq]2@*16,*1"
+                       script4="child;1;CHK;_AA0010010form2/MRP_ODR_TYP[eq]4@*26,*2"
+                       script5="child;2;CHK;_AA0010010form2/MRP_ODR_TYP[eq]5@*36,*3"
+                       script6="child;3;CHK;_AA0010010form2/MRP_ODR_TYP[eq]6@*46,*4"
+                       script7="child;4;CHK;_AA0010010form2/MRP_ODR_TYP[eq]7@*56,*5"
+                       script8="child;5;CHK;_AA0010010form2/MRP_ODR_TYP[eq]8@*66"
+
+                       script9="child;6;MASK;_AA0010010form2/MPS_FLG@*7"
+                       script10="child;7;MASK;_AA0010010form2/SAFETY_STOCK@*8"
+                       script11="child;8;MASK;_AA0010010form2/LOT_SIZING_TYP@*9"
+                       script12="child;9;MASK;_AA0010010form2/MAX_PERIOD@*10"
+                       script13="child;10;MASK;_AA0010010form2/MAX_ODR_QTY@*11"
+                       script14="child;11;MASK;_AA0010010form2/ODR_POINT@*12"
+                       script15="child;12;MASK;_AA0010010form2/FIXED_ODR_QTY@*13"
+                       script16="child;13;MASK;_AA0010010form2/MIN_ODR_QTY@*14"
+                       script17="child;14;MASK;_AA0010010form2/MUL_ODR_QTY@*15"
+                       script18="child;15;UNMASK;_AA0010010form2/ITEM_SPOIL"
+
+                       script19="child;16;MASK;_AA0010010form2/MPS_FLG@*17"
+                       script20="child;17;MASK;_AA0010010form2/SAFETY_STOCK@*18"
+                       script21="child;18;MASK;_AA0010010form2/LOT_SIZING_TYP@*19"
+                       script22="child;19;MASK;_AA0010010form2/MAX_PERIOD@*20"
+                       script23="child;20;MASK;_AA0010010form2/MAX_ODR_QTY@*21"
+                       script24="child;21;MASK;_AA0010010form2/ODR_POINT@*22"
+                       script25="child;22;MASK;_AA0010010form2/FIXED_ODR_QTY@*23"
+                       script26="child;23;UNMASK;_AA0010010form2/MIN_ODR_QTY@*24"
+                       script27="child;24;UNMASK;_AA0010010form2/MUL_ODR_QTY@*25"
+                       script28="child;25;UNMASK;_AA0010010form2/ITEM_SPOIL"
+
+                       script29="child;26;UNMASK;_AA0010010form2/MPS_FLG@*27"
+                       script30="child;27;MASK;_AA0010010form2/SAFETY_STOCK@*28"
+                       script31="child;28;MASK;_AA0010010form2/LOT_SIZING_TYP@*29"
+                       script32="child;29;MASK;_AA0010010form2/MAX_PERIOD@*30"
+                       script33="child;30;MASK;_AA0010010form2/MAX_ODR_QTY@*31"
+                       script34="child;31;MASK;_AA0010010form2/ODR_POINT@*32"
+                       script35="child;32;MASK;_AA0010010form2/FIXED_ODR_QTY@*33"
+                       script36="child;33;MASK;_AA0010010form2/MIN_ODR_QTY@*34"
+                       script37="child;34;MASK;_AA0010010form2/MUL_ODR_QTY@*35"
+                       script38="child;35;UNMASK;_AA0010010form2/ITEM_SPOIL"
+
+                       script39="child;36;UNMASK;_AA0010010form2/MPS_FLG@*37"
+                       script40="child;37;UNMASK;_AA0010010form2/SAFETY_STOCK@*38"
+                       script41="child;38;UNMASK;_AA0010010form2/LOT_SIZING_TYP@*39"
+                       script42="child;39;UNMASK;_AA0010010form2/MAX_PERIOD@*40"
+                       script43="child;40;UNMASK;_AA0010010form2/MAX_ODR_QTY@*41"
+                       script44="child;41;MASK;_AA0010010form2/ODR_POINT@*42"
+                       script45="child;42;MASK;_AA0010010form2/FIXED_ODR_QTY@*43"
+                       script46="child;43;UNMASK;_AA0010010form2/MIN_ODR_QTY@*44"
+                       script47="child;44;UNMASK;_AA0010010form2/MUL_ODR_QTY@*45"
+                       script48="child;45;UNMASK;_AA0010010form2/ITEM_SPOIL"
+
+                       script49="child;46;MASK;_AA0010010form2/MPS_FLG@*47"
+                       script50="child;47;MASK;_AA0010010form2/SAFETY_STOCK@*48"
+                       script51="child;48;MASK;_AA0010010form2/LOT_SIZING_TYP@*49"
+                       script52="child;49;MASK;_AA0010010form2/MAX_PERIOD@*50"
+                       script53="child;50;MASK;_AA0010010form2/MAX_ODR_QTY@*51"
+                       script54="child;51;UNMASK;_AA0010010form2/ODR_POINT@*52"
+                       script55="child;52;UNMASK;_AA0010010form2/FIXED_ODR_QTY@*53"
+                       script56="child;53;MASK;_AA0010010form2/MIN_ODR_QTY@*54"
+                       script57="child;54;MASK;_AA0010010form2/MUL_ODR_QTY@*55"
+                       script58="child;55;UNMASK;_AA0010010form2/ITEM_SPOIL"
+
+                       script59="child;56;MASK;_AA0010010form2/MPS_FLG@*57"
+                       script60="child;57;MASK;_AA0010010form2/SAFETY_STOCK@*58"
+                       script61="child;58;MASK;_AA0010010form2/LOT_SIZING_TYP@*59"
+                       script62="child;59;MASK;_AA0010010form2/MAX_PERIOD@*60"
+                       script63="child;60;MASK;_AA0010010form2/MAX_ODR_QTY@*61"
+                       script64="child;61;UNMASK;_AA0010010form2/ODR_POINT@*62"
+                       script65="child;62;UNMASK;_AA0010010form2/FIXED_ODR_QTY@*63"
+                       script66="child;63;MASK;_AA0010010form2/MIN_ODR_QTY@*64"
+                       script67="child;64;MASK;_AA0010010form2/MUL_ODR_QTY@*65"
+                       script68="child;65;UNMASK;_AA0010010form2/ITEM_SPOIL"
+
+                       script69="child;66;MASK;_AA0010010form2/MPS_FLG@*67"
+                       script70="child;67;MASK;_AA0010010form2/SAFETY_STOCK@*68"
+                       script71="child;68;MASK;_AA0010010form2/LOT_SIZING_TYP@*69"
+                       script72="child;69;MASK;_AA0010010form2/MAX_PERIOD@*70"
+                       script73="child;70;MASK;_AA0010010form2/MAX_ODR_QTY@*71"
+                       script74="child;71;MASK;_AA0010010form2/ODR_POINT@*72"
+                       script75="child;72;MASK;_AA0010010form2/FIXED_ODR_QTY@*73"
+                       script76="child;73;MASK;_AA0010010form2/MIN_ODR_QTY@*74"
+                       script77="child;74;MASK;_AA0010010form2/MUL_ODR_QTY@*75"
+                       script78="child;75;MASK;_AA0010010form2/ITEM_SPOIL@*76"
+                       script79="child;76;SET;_AA0010010form2/ITEM_SPOIL=0"
+                    >
+                    </orfcombobox>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MANHOUR_TYP">工数管理品目区分</span></td>
+                  <td><orfcombobox  name="MANHOUR_TYP" tablename="M_ITEM" columnname="MANHOUR_TYP" dbtype="number" tablejname="品目" columnjname="工数管理品目区分"   orteus="true" width="260"
+	script1="onLoad;0;CALL;child@14"
+		script2="onDecision;0;CHK;_AA0010010form2/MANHOUR_TYP[eq]1@*0,*10"
+			script3="child;0;CFMPUT;_AA0010010form2/MANHOUR_TYP=YES:1,9@AA00179"
+
+				script4="child;1;SET;_AA0010010form2/MRP_ODR_TYP=1@*2"
+				script5="child;2;SET;_AA0010010form2/OUTSIDE_TYP=1@*3"
+				script6="child;3;SET;_AA0010010form2/ABC_TYP=9@*4"
+				script7="child;4;SET;_AA0010010form2/ITEM_SPOIL=0@*5"
+				script8="child;5;MASK;_AA0010010form2/MRP_ODR_TYP@*6"
+				script9="child;6;MASK;_AA0010010form2/OUTSIDE_TYP@*7"
+				script10="child;7;MASK;_AA0010010form2/ABC_TYP@*8"
+				script11="child;8;MASK;_AA0010010form2/ITEM_SPOIL"
+				
+				script12="child;9;SET;_AA0010010form2/MANHOUR_TYP=0"
+				
+			script13="child;10;UNMASK;_AA0010010form2/MRP_ODR_TYP@*11"
+			script14="child;11;UNMASK;_AA0010010form2/OUTSIDE_TYP@*12"
+			script15="child;12;UNMASK;_AA0010010form2/ABC_TYP@*15"
+			script16="child;13;UNMASK;_AA0010010form2/ITEM_SPOIL"
+			
+		script17="child;14;CHK;_AA0010010form2/MANHOUR_TYP[eq]1@*5,*10"
+		script18="child;15;CHK;_AA0010010form2/MRP_ODR_TYP[eq]8@*16,*13"
+		script19="child;16;MASK;_AA0010010form2/ITEM_SPOIL"
+                  ></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.LOT_SIZING_TYP">ロットまとめ区分</span></td>
+                  <td><orfcombobox  name="LOT_SIZING_TYP" tablename="M_ITEM" columnname="LOT_SIZING_TYP" dbtype="number" tablejname="M_ITEM" columnjname="LOT_SIZING_TYP"   orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MPS_FLG">MPS品目フラグ</span></td>
+                  <td><orfcombobox  name="MPS_FLG" tablename="M_ITEM" columnname="MPS_FLG" dbtype="number" tablejname="M_ITEM" columnjname="MPS_FLG"   orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MAX_PERIOD">最大まとめ期間</span></td>
+                  <td><orftextinput  name="MAX_PERIOD" tablename="M_ITEM" columnname="MAX_PERIOD" dbtype="number" tablejname="品目" columnjname="最大まとめ期間"   orteus="true" kind="OBT_INTEGER_P;6"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FIXED_ODR_QTY">定量発注数</span></td>
+                  <td><orftextinput  name="FIXED_ODR_QTY" tablename="M_ITEM" columnname="FIXED_ODR_QTY" dbtype="number" tablejname="品目" columnjname="定量発注数"   orteus="true" kind="OBT_NUMBER_P;14.1;FLOOR;4"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MAX_ODR_QTY">最大手配数</span></td>
+                  <td><orftextinput  name="MAX_ODR_QTY" tablename="M_ITEM" columnname="MAX_ODR_QTY" dbtype="number" tablejname="品目" columnjname="最大手配数"   orteus="true" kind="OBT_NUMBER_P;14.1;FLOOR;4"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MIN_ODR_QTY">最小手配数</span></td>
+                  <td><orftextinput  name="MIN_ODR_QTY" tablename="M_ITEM" columnname="MIN_ODR_QTY" dbtype="number" tablejname="品目" columnjname="最小手配数"   orteus="true" kind="OBT_NUMBER_Z;14.1;FLOOR;4"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_POINT">発注点在庫数</span></td>
+                  <td><orftextinput name="ODR_POINT" tablename="M_ITEM" columnname="ODR_POINT" dbtype="number" tablejname="" columnjname=""  orteus="true" width="" editable="false" password="false" text="" kind="OBT_NUMBER_P;14.1;FLOOR;4" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MUL_ODR_QTY">まるめ単位</span></td>
+                  <td><orftextinput  name="MUL_ODR_QTY" tablename="M_ITEM" columnname="MUL_ODR_QTY" dbtype="number" tablejname="品目" columnjname="まるめ単位"   orteus="true" kind="OBT_NUMBER_P;14.1;FLOOR;4"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CLASIFICATION_CD">管理コード</span></td>
+                  <td><orftextinput  name="CLASIFICATION_CD" tablename="M_ITEM" columnname="CLASIFICATION_CD" maxlength="25" dbtype="varchar2" tablejname="品目" columnjname="管理コード"   orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_WEIGHT">単位重量</span></td>
+                  <td><orftextinput  name="UNIT_WEIGHT" tablename="M_ITEM" columnname="UNIT_WEIGHT" dbtype="number" tablejname="品目" columnjname="単位重量"   orteus="true" width="150" kind="OBT_NUMBER_Z;14.1;FLOOR;4"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_CD_1">消費税コード</span></td>
+                  <td><orftextinput  name="TAX_CD" tablename="M_ITEM" columnname="TAX_CD" maxlength="3" dbtype="varchar2" tablejname="品目" columnjname="消費税コード" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerTaxCd" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0010010form2/TAX_CD@<%=contextNo%>"
+                     sqlname="TAX_CD_01" sqlparam_1="_AA0010010form2/TAX_CD"></orfpeeker></td>
+                  <td><orftextinput  name="TAX_NAME" tablename="M_TAX" columnname="TAX_NAME" maxlength="40" dbtype="varchar2" tablejname="消費税区分マスタ" columnjname="消費税名" orteus="true" width="320" editable=false></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CAL_NO">カレンダ番号</span></td>
+                  <td><orftextinput name="CAL_NO" tablename="M_ITEM" columnname="CAL_NO" dbtype="number" tablejname="" columnjname=""  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="OBT_N" maxlength="6" required="" attribute="TIS_RIGHT"
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerCalNo" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0010010form2/CAL_NO@<%=contextNo%>"
+                     sqlname="CAL_NO_01" sqlparam_1="_AA0010010form2/CAL_NO"></orfpeeker></td>
+                  <td><orftextinput name="CAL_NAME" tablename="M_CAL_H" columnname="CAL_NAME" dbtype="varchar2" tablejname="カレンダヘッダ" columnjname="カレンダ名"  orteus="true" width="320" editable="false" visible="true" password="false" text="" kind="" maxlength="40" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4091">保管区分</span></td>
+                  <td><orfcombobox name="DEPO_TYP" tablename="M_ITEM" columnname="DEPO_TYP" dbtype="number" tablejname="品目" columnjname=""  orteus="true" width="260" height="" 
+></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5070">品質期限年数</span></td>
+                  <td><orftextinput name="BEST_BEFORE_YEAR" tablename="M_ITEM" columnname="BEST_BEFORE_YEAR" dbtype="number" tablejname="品目" columnjname=""  orteus="true" width="150"  text="" kind="OBT_INTEGER_Z;4;FLOOR;" maxlength="4" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>				
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.LOT_CTRL_FLG">ロット管理フラグ</span></td>
+                  <td><orfcombobox name="LOT_CTRL_FLG" tablename="M_ITEM" columnname="LOT_CTRL_FLG" dbtype="number" tablejname="品目" columnjname=""  orteus="true" width="260" height="" enable = "<%=lotCtrlFlg%>"
+                       
+					   script1="onLoad;0;CALL;onDecision@0"
+					   script2="onDecision;0;CHK;_AA0010010form2/LOT_CTRL_FLG[eq]0@*19,*20"
+					   script3="child;19;MASK;_AA0010010form2/LOT_NUMBERING_TYP"
+					   script4="child;20;UNMASK;_AA0010010form2/LOT_NUMBERING_TYP"
+></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5071">品質期限月数</span></td>
+                  <td><orftextinput name="BEST_BEFORE_MONTH" tablename="M_ITEM" columnname="BEST_BEFORE_MONTH" dbtype="number" tablejname="品目" columnjname=""  orteus="true" width="150"  text="" kind="OBT_INTEGER_Z;4;FLOOR;" maxlength="4" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4092">ロット採番区分</span></td>
+                  <td><orfcombobox name="LOT_NUMBERING_TYP" tablename="M_ITEM" columnname="LOT_NUMBERING_TYP" dbtype="number" tablejname="品目" columnjname=""  orteus="true" width="260" height="" 
+></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5072">品質期限日数</span></td>
+                  <td><orftextinput name="BEST_BEFORE_DAY" tablename="M_ITEM" columnname="BEST_BEFORE_DAY" dbtype="number" tablejname="品目" columnjname=""  orteus="true" width="150"  text="" kind="OBT_INTEGER_Z;4;FLOOR;" maxlength="4" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DEPT_CD">負担部門コード</span></td>
+                  <td><orftextinput name="DEPT_CD" tablename="M_ITEM" columnname="DEPT_CD" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerDeptCd" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="true" sqlname="DEPT_CD_01" sqlparam_1="<%=aAA0010010Control.getsysCOMPANY_CD()%>" sqlparam_2="_AA0010010form2/DEPT_CD"
+ script1="onClick;0;PEEKER;_AA0010010form2/DEPT_CD@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="DEPT_NAME" orteus="true" width="320" editable="false" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PJ_CD">プロジェクトコード</span></td>
+                  <td><orfcombobox name="PJ_CD" tablename="V_PJ_CD" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="" columnjname=""  orteus="true" width="260" height="" enable="true" visible="true"
+></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SEG_CONTENTS1">セグメント1</span></td>
+                  <td><orfcombobox name="SEG_CONTENTS1" tablename="V_SEG_CONTENTS_1" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="" columnjname=""  orteus="true" width="260" height="" enable="true" visible="true"
+></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SEG_CONTENTS2">セグメント2</span></td>
+                  <td><orfcombobox name="SEG_CONTENTS2" tablename="V_SEG_CONTENTS_2" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="" columnjname=""  orteus="true" width="260" height="" enable="true" visible="true"
+></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>				
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SEG_CONTENTS3">セグメント3</span></td>
+                  <td><orfcombobox name="SEG_CONTENTS3" tablename="V_SEG_CONTENTS_3" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="" columnjname=""  orteus="true" width="260" height="" enable="true" visible="true"
+></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SEG_CONTENTS4">セグメント4</span></td>
+                  <td><orfcombobox name="SEG_CONTENTS4" tablename="V_SEG_CONTENTS_4" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="" columnjname=""  orteus="true" width="260" height="" enable="true" visible="true"
+></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARKS_1">備考１</span></td>
+                  <td><orftextinput name="REMARK1" tablename="M_ITEM" columnname="REMARK1" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="712" editable="true" visible="true" password="false" text="" kind="" maxlength="80" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARKS_2">備考２</span></td>
+                  <td><orftextinput name="REMARK2" tablename="M_ITEM" columnname="REMARK2" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="712" editable="true" visible="true" password="false" text="" kind="" maxlength="80" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>			
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3165">承認備考</span></td>
+                  <td><orftextinput name="APPR_REMARKS" orteus="true" width="712" editable="true" visible="true" password="false" text="" kind="" maxlength="80" required="" attribute=""></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>							
+                </ornoloop>
+              </table>
+                <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+		</table>
+		        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"><!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+              <table tab_id="tab_1" tab_name="** 2 **"  orftype="DataGrid" mode="FORM"  float="" name="AA0010010form3" width="934" height="398" border="1" cellspacing="0" cellpadding="0"
+			   script1="onLoad;0;CALL;onDecision@0,1,2,3,4,5,6,7,8,9,10,11,"
+               script2="onDecision;0;CHK;_AA0010010form3/ITEM_CLASS_01_TYP[eq]@*1,*0"
+               script3="onDecision;1;CHK;_AA0010010form3/ITEM_CLASS_02_TYP[eq]@*3,*2"
+               script4="onDecision;2;CHK;_AA0010010form3/ITEM_CLASS_03_TYP[eq]@*5,*4"
+               script5="onDecision;3;CHK;_AA0010010form3/ITEM_CLASS_04_TYP[eq]@*7,*6"
+               script6="onDecision;4;CHK;_AA0010010form3/ITEM_CLASS_05_TYP[eq]@*9,*8"
+               script7="onDecision;5;CHK;_AA0010010form3/ITEM_CLASS_06_TYP[eq]@*11,*10"
+               script8="onDecision;6;CHK;_AA0010010form3/ITEM_CLASS_07_TYP[eq]@*13,*12"
+               script9="onDecision;7;CHK;_AA0010010form3/ITEM_CLASS_08_TYP[eq]@*15,*14"
+               script10="onDecision;8;CHK;_AA0010010form3/ITEM_CLASS_09_TYP[eq]@*17,*16"
+               script11="onDecision;9;CHK;_AA0010010form3/ITEM_CLASS_10_TYP[eq]@*19,*18"
+               script12="onDecision;10;CHK;_AA0010010form3/ITEM_CLASS_11_TYP[eq]@*21,*20"
+               script13="onDecision;11;CHK;_AA0010010form3/ITEM_CLASS_12_TYP[eq]@*23,*22"
+               script14="child;0;UNMASK;_AA0010010form3/ITEM_CLASS_01_CD,_AA0010010form3/PeekerITEM_CLASS_01_CD"
+               script15="child;1;MASK;_AA0010010form3/ITEM_CLASS_01_CD,_AA0010010form3/PeekerITEM_CLASS_01_CD"
+               script16="child;2;UNMASK;_AA0010010form3/ITEM_CLASS_02_CD,_AA0010010form3/PeekerITEM_CLASS_02_CD"
+               script17="child;3;MASK;_AA0010010form3/ITEM_CLASS_02_CD,_AA0010010form3/PeekerITEM_CLASS_02_CD"
+               script18="child;4;UNMASK;_AA0010010form3/ITEM_CLASS_03_CD,_AA0010010form3/PeekerITEM_CLASS_03_CD"
+               script19="child;5;MASK;_AA0010010form3/ITEM_CLASS_03_CD,_AA0010010form3/PeekerITEM_CLASS_03_CD"
+               script20="child;6;UNMASK;_AA0010010form3/ITEM_CLASS_04_CD,_AA0010010form3/PeekerITEM_CLASS_04_CD"
+               script21="child;7;MASK;_AA0010010form3/ITEM_CLASS_04_CD,_AA0010010form3/PeekerITEM_CLASS_04_CD"
+               script22="child;8;UNMASK;_AA0010010form3/ITEM_CLASS_05_CD,_AA0010010form3/PeekerITEM_CLASS_05_CD"
+               script23="child;9;MASK;_AA0010010form3/ITEM_CLASS_05_CD,_AA0010010form3/PeekerITEM_CLASS_05_CD"
+               script24="child;10;UNMASK;_AA0010010form3/ITEM_CLASS_06_CD,_AA0010010form3/PeekerITEM_CLASS_06_CD"
+               script25="child;11;MASK;_AA0010010form3/ITEM_CLASS_06_CD,_AA0010010form3/PeekerITEM_CLASS_06_CD"
+               script26="child;12;UNMASK;_AA0010010form3/ITEM_CLASS_07_CD,_AA0010010form3/PeekerITEM_CLASS_07_CD"
+               script27="child;13;MASK;_AA0010010form3/ITEM_CLASS_07_CD,_AA0010010form3/PeekerITEM_CLASS_07_CD"
+               script28="child;14;UNMASK;_AA0010010form3/ITEM_CLASS_08_CD,_AA0010010form3/PeekerITEM_CLASS_08_CD"
+               script29="child;15;MASK;_AA0010010form3/ITEM_CLASS_08_CD,_AA0010010form3/PeekerITEM_CLASS_08_CD"
+               script30="child;16;UNMASK;_AA0010010form3/ITEM_CLASS_09_CD,_AA0010010form3/PeekerITEM_CLASS_09_CD"
+               script31="child;17;MASK;_AA0010010form3/ITEM_CLASS_09_CD,_AA0010010form3/PeekerITEM_CLASS_09_CD"
+               script32="child;18;UNMASK;_AA0010010form3/ITEM_CLASS_10_CD,_AA0010010form3/PeekerITEM_CLASS_10_CD"
+               script33="child;19;MASK;_AA0010010form3/ITEM_CLASS_10_CD,_AA0010010form3/PeekerITEM_CLASS_10_CD"
+               script34="child;20;UNMASK;_AA0010010form3/ITEM_CLASS_11_CD,_AA0010010form3/PeekerITEM_CLASS_11_CD"
+               script35="child;21;MASK;_AA0010010form3/ITEM_CLASS_11_CD,_AA0010010form3/PeekerITEM_CLASS_11_CD"
+               script36="child;22;UNMASK;_AA0010010form3/ITEM_CLASS_12_CD,_AA0010010form3/PeekerITEM_CLASS_12_CD"
+               script37="child;23;MASK;_AA0010010form3/ITEM_CLASS_12_CD,_AA0010010form3/PeekerITEM_CLASS_12_CD"	 
+			  >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4099">品目分類01</span></td>
+                  <td><orftextinput name="ITEM_CLASS_01_TYP" orteus="true" width="260" editable="false"  text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="ITEM_CLASS_01_CD" tablename="M_ITEM" columnname="ITEM_CLASS_01_CD" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerITEM_CLASS_01_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="ITEM_CLASS_01" sqlparam_1="_AA0010010form3/ITEM_CLASS_01_CD"
+ script1="onClick;0;PEEKER;_AA0010010form3/ITEM_CLASS_01_CD:_AA0010010form3/ITEM_CLASS_01_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="ITEM_CLASS_01_NAME" tablename="M_ITEM" columnname="ITEM_CLASS_01_NAME" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4100">品目分類02</span></td>
+                  <td><orftextinput name="ITEM_CLASS_02_TYP" tablename="M_ITEM" columnname="ITEM_CLASS_02_TYP" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260"   editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="ITEM_CLASS_02_CD" tablename="M_ITEM" columnname="ITEM_CLASS_02_CD" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerITEM_CLASS_02_CD" value="" pattern="none" revokectrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="ITEM_CLASS_02" sqlparam_1="_AA0010010form3/ITEM_CLASS_02_CD"
+ script1="onClick;0;PEEKER;_AA0010010form3/ITEM_CLASS_02_CD:_AA0010010form3/ITEM_CLASS_02_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="ITEM_CLASS_02_NAME" tablename="M_ITEM" columnname="ITEM_CLASS_02_NAME" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260"  editable="false"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4101">品目分類03</span></td>
+                  <td><orftextinput name="ITEM_CLASS_03_TYP" tablename="M_ITEM" columnname="ITEM_CLASS_03_TYP" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="ITEM_CLASS_03_CD" tablename="M_ITEM" columnname="ITEM_CLASS_03_CD" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerITEM_CLASS_03_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="ITEM_CLASS_03" sqlparam_1="_AA0010010form3/ITEM_CLASS_03_CD"
+ script1="onClick;0;PEEKER;_AA0010010form3/ITEM_CLASS_03_CD:_AA0010010form3/ITEM_CLASS_03_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="ITEM_CLASS_03_NAME" tablename="M_ITEM" columnname="ITEM_CLASS_03_NAME" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4102">品目分類04</span></td>
+                  <td><orftextinput name="ITEM_CLASS_04_TYP" tablename="M_ITEM" columnname="ITEM_CLASS_04_TYP" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="ITEM_CLASS_04_CD" tablename="M_ITEM" columnname="ITEM_CLASS_04_CD" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerITEM_CLASS_04_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="ITEM_CLASS_04" sqlparam_1="_AA0010010form3/ITEM_CLASS_04_CD"
+ script1="onClick;0;PEEKER;_AA0010010form3/ITEM_CLASS_04_CD:_AA0010010form3/ITEM_CLASS_04_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="ITEM_CLASS_04_NAME" tablename="M_ITEM" columnname="ITEM_CLASS_04_NAME" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4103">品目分類05</span></td>
+                  <td><orftextinput name="ITEM_CLASS_05_TYP" tablename="M_ITEM" columnname="ITEM_CLASS_05_TYP" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="ITEM_CLASS_05_CD" tablename="M_ITEM" columnname="ITEM_CLASS_05_CD" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerITEM_CLASS_05_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="ITEM_CLASS_05" sqlparam_1="_AA0010010form3/ITEM_CLASS_05_CD"
+ script1="onClick;0;PEEKER;_AA0010010form3/ITEM_CLASS_05_CD:_AA0010010form3/ITEM_CLASS_05_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="ITEM_CLASS_05_NAME" tablename="M_ITEM" columnname="ITEM_CLASS_05_NAME" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4104">品目分類06</span></td>
+                  <td><orftextinput name="ITEM_CLASS_06_TYP" tablename="M_ITEM" columnname="ITEM_CLASS_06_TYP" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="ITEM_CLASS_06_CD" tablename="M_ITEM" columnname="ITEM_CLASS_06_CD" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerITEM_CLASS_06_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="ITEM_CLASS_06" sqlparam_1="_AA0010010form3/ITEM_CLASS_06_CD"
+ script1="onClick;0;PEEKER;_AA0010010form3/ITEM_CLASS_06_CD:_AA0010010form3/ITEM_CLASS_06_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="ITEM_CLASS_06_NAME" tablename="M_ITEM" columnname="ITEM_CLASS_06_NAME" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4105">品目分類07</span></td>
+                  <td><orftextinput name="ITEM_CLASS_07_TYP" tablename="M_ITEM" columnname="ITEM_CLASS_07_TYP" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="ITEM_CLASS_07_CD" tablename="M_ITEM" columnname="ITEM_CLASS_07_CD" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerITEM_CLASS_07_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="ITEM_CLASS_07" sqlparam_1="_AA0010010form3/ITEM_CLASS_07_CD"
+ script1="onClick;0;PEEKER;_AA0010010form3/ITEM_CLASS_07_CD:_AA0010010form3/ITEM_CLASS_07_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="ITEM_CLASS_07_NAME" tablename="M_ITEM" columnname="ITEM_CLASS_07_NAME" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4106">品目分類08</span></td>
+                  <td><orftextinput name="ITEM_CLASS_08_TYP" tablename="M_ITEM" columnname="ITEM_CLASS_08_TYP" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="ITEM_CLASS_08_CD" tablename="M_ITEM" columnname="ITEM_CLASS_08_CD" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerITEM_CLASS_08_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="ITEM_CLASS_08" sqlparam_1="_AA0010010form3/ITEM_CLASS_08_CD"
+ script1="onClick;0;PEEKER;_AA0010010form3/ITEM_CLASS_08_CD:_AA0010010form3/ITEM_CLASS_08_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="ITEM_CLASS_08_NAME" tablename="M_ITEM" columnname="ITEM_CLASS_08_NAME" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4107">品目分類09</span></td>
+                  <td><orftextinput name="ITEM_CLASS_09_TYP" tablename="M_ITEM" columnname="ITEM_CLASS_09_TYP" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="ITEM_CLASS_09_CD" tablename="M_ITEM" columnname="ITEM_CLASS_09_CD" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerITEM_CLASS_09_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="ITEM_CLASS_09" sqlparam_1="_AA0010010form3/ITEM_CLASS_09_CD"
+ script1="onClick;0;PEEKER;_AA0010010form3/ITEM_CLASS_09_CD:_AA0010010form3/ITEM_CLASS_09_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="ITEM_CLASS_09_NAME" tablename="M_ITEM" columnname="ITEM_CLASS_09_NAME" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4108">品目分類10</span></td>
+                  <td><orftextinput name="ITEM_CLASS_10_TYP" tablename="M_ITEM" columnname="ITEM_CLASS_10_TYP" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="ITEM_CLASS_10_CD" tablename="M_ITEM" columnname="ITEM_CLASS_10_CD" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerITEM_CLASS_10_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="ITEM_CLASS_10" sqlparam_1="_AA0010010form3/ITEM_CLASS_10_CD"
+ script1="onClick;0;PEEKER;_AA0010010form3/ITEM_CLASS_10_CD:_AA0010010form3/ITEM_CLASS_10_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="ITEM_CLASS_10_NAME" tablename="M_ITEM" columnname="ITEM_CLASS_10_NAME" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4109">品目分類11</span></td>
+                  <td><orftextinput name="ITEM_CLASS_11_TYP" tablename="M_ITEM" columnname="ITEM_CLASS_11_TYP" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="ITEM_CLASS_11_CD" tablename="M_ITEM" columnname="ITEM_CLASS_11_CD" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerITEM_CLASS_11_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="ITEM_CLASS_11" sqlparam_1="_AA0010010form3/ITEM_CLASS_11_CD"
+ script1="onClick;0;PEEKER;_AA0010010form3/ITEM_CLASS_11_CD:_AA0010010form3/ITEM_CLASS_11_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="ITEM_CLASS_11_NAME" tablename="M_ITEM" columnname="ITEM_CLASS_11_NAME" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>																																		
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4110">品目分類12</span></td>
+                  <td><orftextinput name="ITEM_CLASS_12_TYP" tablename="M_ITEM" columnname="ITEM_CLASS_12_TYP" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="ITEM_CLASS_12_CD" tablename="M_ITEM" columnname="ITEM_CLASS_12_CD" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerITEM_CLASS_12_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="ITEM_CLASS_12" sqlparam_1="_AA0010010form3/ITEM_CLASS_12_CD"
+ script1="onClick;0;PEEKER;_AA0010010form3/ITEM_CLASS_12_CD:_AA0010010form3/ITEM_CLASS_12_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="ITEM_CLASS_12_NAME" tablename="M_ITEM" columnname="ITEM_CLASS_12_NAME" dbtype="varchar2" tablejname="品目" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>					
+                </ornoloop>
+              </table>
+                <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+		</table>
+		<table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="32">
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"><table orftype="DataGrid" mode="BUTTON" status="" float=""
+ name="AA0010010button2" ex_style="TAB_BUTTON" width="315" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_AA0010010form2/OPR_RSLT_TYP[eq]1[and]_AA0010010form2/MRP_ODR_TYP[neq]4@*0"
+ script2="onClick;1;CHK;_AA0010010form2/MRP_ODR_TYP[eq]6[or]_AA0010010form2/MRP_ODR_TYP[eq]7@*3"
+ script3="onClick;2;CHK;_AA0010010form2/MRP_ODR_TYP[eq]5@*4"
+ script4="onClick;3;CHK;_AA0010010form2/MRP_ODR_TYP[eq]5@*5"
+ script5="onClick;4;CHK;_AA0010010form2/MRP_ODR_TYP[eq]6[or]_AA0010010form2/MRP_ODR_TYP[eq]7@*6"
+ script6="onClick;5;CHK;_AA0010010form2/OUTSIDE_TYP[eq]1[and]_AA0010010form2/SPL_ITEM_TYP[eq]2@$AA00216"
+ script7="onClick;6;CHK;_AA0010010form3/ITEM_CLASS_01_TYP[neq][and]_AA0010010form3/ITEM_CLASS_01_CD[eq]@$AA00177:01"
+ script8="onClick;7;CHK;_AA0010010form3/ITEM_CLASS_02_TYP[neq][and]_AA0010010form3/ITEM_CLASS_02_CD[eq]@$AA00177:02"
+ script9="onClick;8;CHK;_AA0010010form3/ITEM_CLASS_03_TYP[neq][and]_AA0010010form3/ITEM_CLASS_03_CD[eq]@$AA00177:03"
+ script10="onClick;9;CHK;_AA0010010form3/ITEM_CLASS_04_TYP[neq][and]_AA0010010form3/ITEM_CLASS_04_CD[eq]@$AA00177:04"
+ script11="onClick;10;CHK;_AA0010010form3/ITEM_CLASS_05_TYP[neq][and]_AA0010010form3/ITEM_CLASS_05_CD[eq]@$AA00177:05"
+ script12="onClick;11;CHK;_AA0010010form3/ITEM_CLASS_06_TYP[neq][and]_AA0010010form3/ITEM_CLASS_06_CD[eq]@$AA00177:06"
+ script13="onClick;12;CHK;_AA0010010form3/ITEM_CLASS_07_TYP[neq][and]_AA0010010form3/ITEM_CLASS_07_CD[eq]@$AA00177:07"
+ script14="onClick;13;CHK;_AA0010010form3/ITEM_CLASS_08_TYP[neq][and]_AA0010010form3/ITEM_CLASS_08_CD[eq]@$AA00177:08"
+ script15="onClick;14;CHK;_AA0010010form3/ITEM_CLASS_09_TYP[neq][and]_AA0010010form3/ITEM_CLASS_09_CD[eq]@$AA00177:09"
+ script16="onClick;15;CHK;_AA0010010form3/ITEM_CLASS_10_TYP[neq][and]_AA0010010form3/ITEM_CLASS_10_CD[eq]@$AA00177:10"
+ script17="onClick;16;CHK;_AA0010010form3/ITEM_CLASS_11_TYP[neq][and]_AA0010010form3/ITEM_CLASS_11_CD[eq]@$AA00177:11"
+ script18="onClick;17;CHK;_AA0010010form3/ITEM_CLASS_12_TYP[neq][and]_AA0010010form3/ITEM_CLASS_12_CD[eq]@$AA00177:12"
+ script19="onClick;18;SUBMIT;_AA0010010form1/*,_AA0010010form2/*,_AA0010010form3/*@AA0010010Servlet,,$ZZ07001"
+ script20="child;0;CHK;_AA0010010form2/OPR_RSLT_TYP[eq]1[and]_AA0010010form2/MRP_ODR_TYP[neq]5@*1"
+ script21="child;1;CHK;_AA0010010form2/OPR_RSLT_TYP[eq]1[and]_AA0010010form2/MRP_ODR_TYP[neq]6@*2"
+ script22="child;2;CHK;_AA0010010form2/OPR_RSLT_TYP[eq]1[and]_AA0010010form2/MRP_ODR_TYP[neq]7@#AA00138"
+ script23="child;3;CHK;_AA0010010form2/ODR_POINT[lte]0@#AA00003"
+ script24="child;4;CHK;_AA0010010form2/MAX_ODR_QTY[lt]_AA0010010form2/MIN_ODR_QTY@#AA00147"
+ script25="child;5;CHK;_AA0010010form2/MAX_ODR_QTY[lt]_AA0010010form2/MUL_ODR_QTY@#AA00148"
+ script26="child;6;CHK;_AA0010010form2/FIXED_ODR_QTY[lte]0@#AA00200"
+ 
+></orfbutton>
+                  </td>
+
+                  <td>
+                    <orfbutton name="update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_AA0010010form2/OPR_RSLT_TYP[eq]1[and]_AA0010010form2/MRP_ODR_TYP[neq]4@*0"
+ script2="onClick;1;CHK;_AA0010010form2/MRP_ODR_TYP[eq]6[or]_AA0010010form2/MRP_ODR_TYP[eq]7@*3"
+ script3="onClick;2;CHK;_AA0010010form2/MRP_ODR_TYP[eq]5@*4"
+ script4="onClick;3;CHK;_AA0010010form2/MRP_ODR_TYP[eq]5@*5"
+ script5="onClick;4;CHK;_AA0010010form2/MRP_ODR_TYP[eq]6[or]_AA0010010form2/MRP_ODR_TYP[eq]7@*6"
+ script6="onClick;5;CHK;_AA0010010form2/OUTSIDE_TYP[eq]1[and]_AA0010010form2/SPL_ITEM_TYP[eq]2@$AA00216"
+ script7="onClick;6;CHK;_AA0010010form3/ITEM_CLASS_01_TYP[neq][and]_AA0010010form3/ITEM_CLASS_01_CD[eq]@$AA00177:01"
+ script8="onClick;7;CHK;_AA0010010form3/ITEM_CLASS_02_TYP[neq][and]_AA0010010form3/ITEM_CLASS_02_CD[eq]@$AA00177:02"
+ script9="onClick;8;CHK;_AA0010010form3/ITEM_CLASS_03_TYP[neq][and]_AA0010010form3/ITEM_CLASS_03_CD[eq]@$AA00177:03"
+ script10="onClick;9;CHK;_AA0010010form3/ITEM_CLASS_04_TYP[neq][and]_AA0010010form3/ITEM_CLASS_04_CD[eq]@$AA00177:04"
+ script11="onClick;10;CHK;_AA0010010form3/ITEM_CLASS_05_TYP[neq][and]_AA0010010form3/ITEM_CLASS_05_CD[eq]@$AA00177:05"
+ script12="onClick;11;CHK;_AA0010010form3/ITEM_CLASS_06_TYP[neq][and]_AA0010010form3/ITEM_CLASS_06_CD[eq]@$AA00177:06"
+ script13="onClick;12;CHK;_AA0010010form3/ITEM_CLASS_07_TYP[neq][and]_AA0010010form3/ITEM_CLASS_07_CD[eq]@$AA00177:07"
+ script14="onClick;13;CHK;_AA0010010form3/ITEM_CLASS_08_TYP[neq][and]_AA0010010form3/ITEM_CLASS_08_CD[eq]@$AA00177:08"
+ script15="onClick;14;CHK;_AA0010010form3/ITEM_CLASS_09_TYP[neq][and]_AA0010010form3/ITEM_CLASS_09_CD[eq]@$AA00177:09"
+ script16="onClick;15;CHK;_AA0010010form3/ITEM_CLASS_10_TYP[neq][and]_AA0010010form3/ITEM_CLASS_10_CD[eq]@$AA00177:10"
+ script17="onClick;16;CHK;_AA0010010form3/ITEM_CLASS_11_TYP[neq][and]_AA0010010form3/ITEM_CLASS_11_CD[eq]@$AA00177:11"
+ script18="onClick;17;CHK;_AA0010010form3/ITEM_CLASS_12_TYP[neq][and]_AA0010010form3/ITEM_CLASS_12_CD[eq]@$AA00177:12"
+ script19="onClick;18;SUBMIT;_AA0010010form1/*,_AA0010010form2/*,_AA0010010form3/*@AA0010010Servlet,,$ZZ07003"
+ script20="child;0;CHK;_AA0010010form2/OPR_RSLT_TYP[eq]1[and]_AA0010010form2/MRP_ODR_TYP[neq]5@*1"
+ script21="child;1;CHK;_AA0010010form2/OPR_RSLT_TYP[eq]1[and]_AA0010010form2/MRP_ODR_TYP[neq]6@*2"
+ script22="child;2;CHK;_AA0010010form2/OPR_RSLT_TYP[eq]1[and]_AA0010010form2/MRP_ODR_TYP[neq]7@#AA00138"
+ script23="child;3;CHK;_AA0010010form2/ODR_POINT[lte]0@#AA00003"
+ script24="child;4;CHK;_AA0010010form2/MAX_ODR_QTY[lt]_AA0010010form2/MIN_ODR_QTY@#AA00147"
+ script25="child;5;CHK;_AA0010010form2/MAX_ODR_QTY[lt]_AA0010010form2/MUL_ODR_QTY@#AA00148"
+ script26="child;6;CHK;_AA0010010form2/FIXED_ODR_QTY[lte]0@#AA00200"
+
+
+></orfbutton> </td>
+                  <td><orfbutton name="delete" value="削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDelete" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AA0010010form1/*,_AA0010010form2/*,_AA0010010form3/*@AA0010010Servlet,,$ZZ07004"
+></orfbutton></td>
+                </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table></td>
+      <td width="5" height="467"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AA0010010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105></td>
+                  <td width=105></td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr>
+                  <td><orfbutton  name="clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" script1="onClick;0;SUBMIT;@AA0010010Servlet,,$ZZ07008" lock="0"></orfbutton></td>
+                  <td><orfbutton  name="close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+<%
+MessageStruct msgStruct = aAA0010010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

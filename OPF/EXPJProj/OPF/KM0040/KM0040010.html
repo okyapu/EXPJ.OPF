@@ -1,0 +1,429 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+案件一覧
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/KM0040/KM0040010.html,v $
+$Author: geng-jia $	
+$Revision: 1.3 $　$Date: 2017/02/17 10:02:45 $
+********************************************************* --%>
+<html>
+<head>
+<title>案件一覧</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" version="KM0040010 $Revision: 1.3 $" name="KM0040010" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+<%ScreenMoveUtil su = new ScreenMoveUtil("KM0020010Servlet"); %>
+<%ScreenMoveUtil su1 = new ScreenMoveUtil("KM0050010Servlet"); %>
+<%ScreenMoveUtil su2 = new ScreenMoveUtil("KM0030010Servlet"); %>
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="197"> 
+      <td width="5" height="197"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" status="<%= TypeConverter.sanitizer(aKM0040010Control.getReadStatusString()) %>" float="" name="KM0040010form1" width="934" height="165" border="1" cellspacing="0" cellpadding="0"
+			  	script1="onLoad;0;CALL;onDecision@0,1"
+                script2="onDecision;0;CHKRQ;?KM0040010view1/?[eq]NOT_SELECTED@*0"
+				script3="onDecision;1;CHK;?KM0040010form1/*[eq]NORMAL@*1,*3"
+				script4="child;0;MASK;_KM0040010button2/GoSub1,_KM0040010button2/GoSub2,_KM0040010button2/GoSub3"
+				script5="child;1;CHK;?KM0040010form1/IN_PROJECT_CD[eq]SAME[and]?KM0040010form1/IN_CUST_CD[eq]SAME[and]?KM0040010form1/IN_PJ_USER_CD[eq]SAME[and]?KM0040010form1/IN_ES_USER_CD[eq]SAME[and]?KM0040010form1/IN_PJ_USER_NAME[eq]SAME[and]?KM0040010form1/IN_ES_USER_NAME[eq]SAME[and]?KM0040010form1/FROM_ASSUME_DLV_DATE[eq]SAME[and]?KM0040010form1/TO_ASSUME_DLV_DATE[eq]SAME[and]?KM0040010form1/FROM_ESTIMATE_DATE[eq]SAME[and]?KM0040010form1/TO_ESTIMATE_DATE[eq]SAME[and]?KM0040010form1/CHECK_1[eq]SAME[and]?KM0040010form1/C1_PROJECT_STAT[eq]SAME[and]?KM0040010form1/C2_PROJECT_STAT[eq]SAME[and]?KM0040010form1/C3_PROJECT_STAT[eq]SAME[and]?KM0040010form1/C4_PROJECT_STAT[eq]SAME[and]?KM0040010form1/C5_PROJECT_STAT[eq]SAME[and]?KM0040010form1/C6_PROJECT_STAT[eq]SAME@*2,*3"
+				script6="child;2;UNMASK;_KM0040010button0/CSVOut"
+                script7="child;3;MASK;_KM0040010button0/CSVOut"
+			  >
+              <orloophead>
+ 				 <tr bgcolor="#ccff99">
+   				  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="34">&nbsp;</td>
+                  <td width="20">&nbsp;</td>
+                  <td width="34">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="68">&nbsp;</td>
+                  <td width="80">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CD">案件番号</span></td>
+                <td><orftextinput  width="260" name="IN_PROJECT_CD" orteus="true" maxlength="25" kind="OBT_WILD"></orftextinput></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+				<td><orfpeeker name="PeekerIN_PROJECT_CD" value="" pattern="none" revokectrl="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" visible="true"
+					sqlname="PROJECT_CD_01" sqlparam_1="_KM0040010form1/IN_PROJECT_CD"
+ 					script1="onClick;0;PEEKER;_KM0040010form1/IN_PROJECT_CD@<%=contextNo%>"
+					></orfpeeker></td>
+				<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0002"></span></td>
+                <td><orfcheckbox  width="170" name="CHECK_1" orteus="true" value="true" group="ESTIMATE_NO" mlang="true" mlkind="common" mlname="Expj.Cmt6683" text="最新有効見積のみ"></orfcheckbox></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+				<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_STAT">案件ステータス</span></td>
+              </tr>
+              <tr>
+                <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+                <td><orftextinput  width="260" name="IN_CUST_CD" orteus="true" maxlength="25" kind="OBT_WILD"></orftextinput></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+				<td><orfpeeker name="PeekerIN_CUST_CD" value="" pattern="none" revokectrl="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" visible="true"
+					sqlname="CUST_CD_01" sqlparam_1="_KM0040010form1/IN_CUST_CD"
+ 					script1="onClick;0;PEEKER;_KM0040010form1/IN_CUST_CD@<%=contextNo%>"
+					></orfpeeker></td>
+				<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0002"></span></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+				<td><orfcheckbox  width="170" name="C1_PROJECT_STAT" orteus="true" value="true" group="C_PROJECT_STAT" mlang="true" mlkind="common" mlname="Expj.Cmt6686" text="引合"></orfcheckbox></td>
+              </tr>
+              <tr>
+                <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PJ_USER_CD">案件担当者コード</span></td>
+                <td><orftextinput  width="260" name="IN_PJ_USER_CD" orteus="true" maxlength="25" kind=""></orftextinput></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+				<td><orfpeeker name="PeekerIN_PJ_USER_CD" value="" pattern="none" revokectrl="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" visible="true"
+					sqlname="USER_CD_01" sqlparam_1="_KM0040010form1/IN_PJ_USER_CD"
+ 					script1="onClick;0;PEEKER;_KM0040010form1/IN_PJ_USER_CD@<%=contextNo%>"
+					></orfpeeker></td>
+			    <td><orftextinput name="IN_PJ_USER_NAME" orteus="true" width="320" editable="false"></orftextinput></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+				<td><orfcheckbox  width="170" name="C2_PROJECT_STAT" orteus="true" value="true" group="C_PROJECT_STAT" mlang="true" mlkind="common" mlname="Expj.Cmt6687" text="見積"></orfcheckbox></td>
+              </tr>
+              <tr>
+                <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ES_USER_CD">見積担当者コード</span></td>
+                <td><orftextinput  width="260" name="IN_ES_USER_CD" orteus="true" maxlength="25" kind=""></orftextinput></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+				<td><orfpeeker name="PeekerES_USER_CD" value="" pattern="none" revokectrl="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" visible="true"
+					sqlname="USER_CD_01" sqlparam_1="_KM0040010form1/IN_ES_USER_CD"
+ 					script1="onClick;0;PEEKER;_KM0040010form1/IN_ES_USER_CD@<%=contextNo%>"
+					></orfpeeker></td>
+				<td><orftextinput name="IN_ES_USER_NAME" orteus="true" width="320" editable="false"></orftextinput></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+				<td><orfcheckbox  width="170" name="C3_PROJECT_STAT" orteus="true" value="true" group="C_PROJECT_STAT" mlang="true" mlkind="common" mlname="Expj.Cmt6693" text="内示"></orfcheckbox></td>
+              </tr>
+			  <tr>
+                <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_DATE">引合日</span></td>
+                <td><orftextinput  width="150" name="FROM_VEND_DATE" orteus="true" maxlength="10" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                <td><orfcalendar  width="22" name="FROM_VEND_DATE_CALENDAR" pattern="none" attribute="BTS_CALENDAR" 
+                    script1="onClick;0;CALENDAR;_KM0040010form1/FROM_VEND_DATE"
+                    ></orfcalendar></td>
+                <td>&nbsp;</td>
+                <td align=center><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0043"></span></td>
+                <td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td><orftextinput  width="150" name="TO_VEND_DATE" orteus="true" maxlength="10" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                <td><orfcalendar  width="22" name="TO_VEND_DATE_CALENDAR" pattern="none" attribute="BTS_CALENDAR"
+                    script1="onClick;0;CALENDAR;_KM0040010form1/TO_VEND_DATE"
+                    ></orfcalendar></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+				<td><orfcheckbox  width="170" name="C4_PROJECT_STAT" orteus="true" value="true" group="C_PROJECT_STAT" mlang="true" mlkind="common" mlname="Expj.Cmt6688" text="確定受注"></orfcheckbox></td>
+              </tr>
+              <tr>
+                <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ASSUME_DLV_DATE">想定納期</span></td>
+                <td><orftextinput  width="150" name="FROM_ASSUME_DLV_DATE" orteus="true" maxlength="10" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                <td><orfcalendar  width="22" name="FROM_ASSUME_DLV_DATE_CALENDAR" pattern="none" attribute="BTS_CALENDAR" 
+                    script1="onClick;0;CALENDAR;_KM0040010form1/FROM_ASSUME_DLV_DATE"
+                    ></orfcalendar></td>
+                <td>&nbsp;</td>
+                <td align=center><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0043"></span></td>
+                <td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td><orftextinput  width="150" name="TO_ASSUME_DLV_DATE" orteus="true" maxlength="10" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                <td><orfcalendar  width="22" name="TO_ASSUME_DLV_DATE_CALENDAR" pattern="none" attribute="BTS_CALENDAR"
+                    script1="onClick;0;CALENDAR;_KM0040010form1/TO_ASSUME_DLV_DATE"
+                    ></orfcalendar></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td><orftextinput name="DOWNLOAD_FILE" orteus="true" width="320" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""></orftextinput></td>
+				<td><orfcheckbox  width="170" name="C5_PROJECT_STAT" orteus="true" value="true" group="C_PROJECT_STAT" mlang="true" mlkind="common" mlname="Expj.Cmt6689" text="失注"></orfcheckbox></td>
+              </tr>
+              <tr>
+                <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESTIMATE_DATE">見積日</span></td>
+                <td><orftextinput  width="150" name="FROM_ESTIMATE_DATE" orteus="true" maxlength="10" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                <td><orfcalendar  width="22" name="FROM_ESTIMATE_DATE_CALENDAR" pattern="none" attribute="BTS_CALENDAR" 
+                    script1="onClick;0;CALENDAR;_KM0040010form1/FROM_ESTIMATE_DATE"
+                    ></orfcalendar></td>
+                <td>&nbsp;</td>
+                <td align=center><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0043"></span></td>
+                <td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td><orftextinput  width="150" name="TO_ESTIMATE_DATE" orteus="true" maxlength="10" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                <td><orfcalendar  width="22" name="TO_ESTIMATE_DATE_CALENDAR" pattern="none" attribute="BTS_CALENDAR" 
+                    script1="onClick;0;CALENDAR;_KM0040010form1/TO_ESTIMATE_DATE"
+                    ></orfcalendar></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td><orftextinput name="TXT_FILE" orteus="true" width="320" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""></orftextinput></td>
+				<td><orfcheckbox  width="170" name="C6_PROJECT_STAT" orteus="true" value="true" group="C_PROJECT_STAT" mlang="true" mlkind="common" mlname="Expj.Cmt6690" text="完了"></orfcheckbox></td>
+              </tr>
+              </ornoloop>
+            </table>
+			<!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"> 
+              <table orftype="DataGrid" mode="BUTTON" name="KM0040010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton name="Select" value="読込" pattern="select" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="0" attribute="" visible=""
+ 					   script1="onClick;1;CHK;_KM0040010form1/FROM_ASSUME_DLV_DATE[neq][and]_KM0040010form1/TO_ASSUME_DLV_DATE[neq][and]_KM0040010form1/TO_ASSUME_DLV_DATE[lt]_KM0040010form1/FROM_ASSUME_DLV_DATE@!ZZ05101"
+					   script2="onClick;2;CHK;_KM0040010form1/FROM_ESTIMATE_DATE[neq][and]_KM0040010form1/TO_ESTIMATE_DATE[neq][and]_KM0040010form1/TO_ESTIMATE_DATE[lt]_KM0040010form1/FROM_ESTIMATE_DATE@!ZZ05101"
+					   script3="onClick;3;CHK;_KM0040010form1/FROM_VEND_DATE[neq][and]_KM0040010form1/TO_VEND_DATE[neq][and]_KM0040010form1/TO_VEND_DATE[lt]_KM0040010form1/FROM_VEND_DATE@!ZZ05101"
+					   script4="onClick;4;SUBMIT;_KM0040010form1/*@KM0040010Servlet"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="197"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="300"> 
+      <td width="5" height="300"></td>
+      <td valign="top" width="958" height="300"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+			  <table orftype="DataGrid" mode="VIEW" float="" name="KM0040010view1" width="934" height="280" border="1" cellspacing="0" cellpadding="0"
+			  attribute="DGS_SELECTSINGLE"
+			  script1="onClick;0;CHK;_KM0040010view1/I_PROJECT_STAT[eq]1[or]_KM0040010view1/I_PROJECT_STAT[eq]8@*0"
+			  script2="onClick;1;CHK;_KM0040010view1/I_PROJECT_STAT[eq]2@*1"
+			  script3="onClick;2;CHK;_KM0040010view1/I_PROJECT_STAT[eq]2@*2"
+			  script4="onClick;3;CHK;_KM0040010view1/I_PROJECT_STAT[eq]9@*3"
+			  script5="onClick;4;CHK;_KM0040010view1/I_PROJECT_STAT[eq]1[or]_KM0040010view1/I_PROJECT_STAT[eq]2[or]_KM0040010view1/I_PROJECT_STAT[eq]3[or]_KM0040010view1/I_PROJECT_STAT[eq]4[or]_KM0040010view1/I_PROJECT_STAT[eq]8[or]_KM0040010view1/I_PROJECT_STAT[eq]9@*4"
+              script6="onClick;5;CHK;_KM0040010view1/I_PROJECT_STAT[eq]3@*5"
+			  script7="onClick;6;CHK;_KM0040010view1/I_PROJECT_STAT[eq]3@*6"
+			  script8="onClick;7;CHK;_KM0040010view1/I_PROJECT_STAT[eq]4@*7"
+			  script9="onClick;8;CHK;_KM0040010view1/I_PROJECT_STAT[eq]9@*8"
+			  script10="onClick;9;CHK;_KM0040010view1/I_PROJECT_STAT[eq]9@*9"
+			  script11="child;0;MASK;_KM0040010button2/GoSub2,_KM0040010button2/GoSub3"
+			  script12="child;1;MASK;_KM0040010button2/GoSub2"
+			  script13="child;2;UNMASK;_KM0040010button2/GoSub3"
+			  script14="child;3;MASK;_KM0040010button2/GoSub3"
+			  script15="child;4;UNMASK;_KM0040010button2/GoSub1"
+			  script16="child;5;MASK;_KM0040010button2/GoSub2"
+			  script17="child;6;UNMASK;_KM0040010button2/GoSub3"
+			  script18="child;7;UNMASK;_KM0040010button2/GoSub1,_KM0040010button2/GoSub2,_KM0040010button2/GoSub3"
+			  script19="child;8;UNMASK;_KM0040010button2/GoSub2"
+			  script20="child;9;MASK;_KM0040010button2/GoSub3"
+			  >
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CD">案件番号</span></td>
+				<td width="70" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESTIMATE_NO">見積番号</span></td>
+				<td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_STAT">案件ステータス</span></td>
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_NAME">案件名</span></td>
+				<td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACCURACY">確度</span></td>
+				<td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ASSUME_DLV_DATE">想定納期</span></td>
+				<td width="120" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ASSUME_AMOUNT">引合想定金額</span></td>
+				<td width="120" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESTIMATE_AMOUNT">見積金額合計</span></td>
+				<td width="70"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_UNIT">通貨単位</span></td>
+				<td width="120" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ASSUME_AMOUNT_EXCH_RATES">引合想定金額(邦貨)</span></td>
+				<td width="120" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESTIMATE_AMOUNT_JPN">見積金額合計（邦貨）</span></td>
+				<td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_DATE">引合日</span></td>
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+				<td width="120"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_NAME">得意先名</span></td>
+				<td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_CD">納品場所コード</span></td>
+				<td width="120"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_NAME">納品場所名</span></td>
+                <td width="120"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PJ_ORG_CD">案件担当部門コード</span></td>
+                <td width="120"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ORG_NAME_1">案件担当部門名</span></td>
+                <td width="120"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PJ_USER_CD">案件担当者コード</span></td>
+                <td width="120"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.USER_NAME_1">案件担当者名</span></td>
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARKS1">案件備考1</span></td>
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARKS2">案件備考2</span></td>
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARKS3">案件備考3</span></td>
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARKS4">案件備考4</span></td>
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARKS5">案件備考5</span></td>
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESTIMATE_STAT">見積ステータス</span></td>
+				<td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESTIMATE_DATE">見積日</span></td>
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DESINATED_DLV_DATE">指定納期</span></td>
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5934">納品場所</span></td>
+				<td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ES_COMMET3">荷造運送費</span></td>
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ES_COMMET4">お支払条件</span></td>
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ES_COMMET5">見積有効期限</span></td>
+				<td width="120"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ES_ORG_CD">見積担当部門コード</span></td>
+                <td width="120"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ORG_NAME_2">見積担当部門名</span></td>
+                <td width="120"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ES_USER_CD">見積担当者コード</span></td>
+                <td width="120"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.USER_NAME_2">見積担当者名</span></td>
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESREMARK1">見積備考1</span></td>
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESREMARK2">見積備考2</span></td>
+                <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESREMARK3">見積備考3</span></td>
+				<td hidden="true">&nbsp;</td>
+              </tr>
+              </orloophead><orloop>
+              <tr>
+                <td><orflabel  name="PROJECT_CD" orteus="true"></orflabel></td>
+				<td align="right"><orflabel  name="ESTIMATE_NO" orteus="true"></orflabel></td>
+				<td><orflabel  name="PROJECT_STAT" orteus="true"></orflabel></td>
+                <td><orflabel  name="PROJECT_NAME" orteus="true"></orflabel></td>
+				<td><orflabel  name="ACCURACY" orteus="true"></orflabel></td>
+				<td><orflabel  name="ASSUME_DLV_DATE" orteus="true"></orflabel></td>
+				<td align="right"><orflabel  name="ASSUME_AMOUNT" kind="OBT_NUMBER;14.2;FLOOR;4" orteus="true"></orflabel></td>
+				<td align="right"><orflabel  name="ESTIMATE_AMOUNT" kind="OBT_NUMBER;14.2;FLOOR;4" orteus="true"></orflabel></td>
+				<td><orflabel  name="CUR_UNIT" orteus="true"></orflabel></td>
+				<td align="right"><orflabel  name="ASSUME_AMOUNT_EXCH_RATES" kind="OBT_NUMBER;14.2;FLOOR;4" orteus="true"></orflabel></td>
+				<td align="right"><orflabel  name="ESTIMATE_AMOUNT_JPN" kind="OBT_NUMBER;14.2;FLOOR;4" orteus="true"></orflabel></td>
+				<td><orflabel  name="VEND_DATE" orteus="true"></orflabel></td>
+                <td><orflabel  name="CUST_CD" orteus="true"></orflabel></td>
+				<td><orflabel  name="CUST_NAME" orteus="true"></orflabel></td>
+				<td><orflabel  name="DLV_LOC_CD" orteus="true"></orflabel></td>
+				<td><orflabel  name="DLV_LOC_NAME" orteus="true"></orflabel></td>
+				<td><orflabel  name="PJ_ORG_CD" orteus="true"></orflabel></td>
+                <td><orflabel  name="ORG_NAME_1" orteus="true"></orflabel></td>
+                <td><orflabel  name="PJ_USER_CD" orteus="true"></orflabel></td>
+                <td><orflabel  name="USER_NAME_1" orteus="true"></orflabel></td>
+                <td><orflabel  name="REMARKS1" orteus="true"></orflabel></td>
+				<td><orflabel  name="REMARKS2" orteus="true"></orflabel></td>
+				<td><orflabel  name="REMARKS3" orteus="true"></orflabel></td>
+                <td><orflabel  name="REMARKS4" orteus="true"></orflabel></td>
+				<td><orflabel  name="REMARKS5" orteus="true"></orflabel></td>
+                <td><orflabel  name="ESTIMATE_STAT" orteus="true"></orflabel></td>
+				<td><orflabel  name="ESTIMATE_DATE" orteus="true"></orflabel></td>
+                <td><orflabel  name="ES_COMMET1" orteus="true"></orflabel></td>
+                <td><orflabel  name="ES_COMMET2" orteus="true"></orflabel></td>
+				<td><orflabel  name="ES_COMMET3" orteus="true"></orflabel></td>
+                <td><orflabel  name="ES_COMMET4" orteus="true"></orflabel></td>
+                <td><orflabel  name="ES_COMMET5" orteus="true"></orflabel></td>
+                <td><orflabel  name="ES_ORG_CD" orteus="true"></orflabel></td>
+                <td><orflabel  name="ORG_NAME_2" orteus="true"></orflabel></td>
+                <td><orflabel  name="ES_USER_CD" orteus="true"></orflabel></td>
+                <td><orflabel  name="USER_NAME_2" orteus="true"></orflabel></td>
+                <td><orflabel  name="ESREMARK1" orteus="true"></orflabel></td>
+                <td><orflabel  name="ESREMARK2" orteus="true"></orflabel></td>
+				<td><orflabel  name="ESREMARK3" orteus="true"></orflabel></td>
+				<td><orflabel  name="I_PROJECT_STAT" orteus="true" width="100"></orflabel></td>
+              </tr>
+              </orloop>
+            </table>
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="315" class="frame08" height="32">
+			<table orftype="DataGrid" name="KM0040010button2" width="315" height="22" mode="BUTTON" border="1" cellspacing="0" cellpadding="0">
+            <orloophead> 
+            <tr bgcolor="#ccff99"> 
+            <td width=105>&nbsp;</td>
+		    <td width=105>&nbsp;</td>
+			<td width=105>&nbsp;</td>
+            </tr>
+            </orloophead><ornoloop> 
+            <tr> 
+            <td><orfbutton name="GoSub1" value="見積登録" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnEstimatedReg" width="100" height="" lock="0" attribute="" visible=""
+ 		    script1="onClick;0;SCRMV;_KM0040010view1/+@KM0020010Servlet,<%=contextNo%>,<%=su.getScreenName()%>,<%=su.getScreenID()%>"
+			></orfbutton></td>
+		    <td><orfbutton name="GoSub2" value="案件進捗" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCaseProgress" width="100" height="" lock="0" attribute="" visible=""
+ 			script1="onClick;0;SCRMV;_KM0040010view1/+@KM0050010Servlet,<%=contextNo%>,<%=su1.getScreenName()%>,<%=su1.getScreenID()%>"
+			></orfbutton></td>
+			<td><orfbutton name="GoSub3" value="案件受注登録" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCaseOrderReg" width="100" height="" lock="0" attribute="" visible=""
+ 			script1="onClick;0;SCRMV;_KM0040010view1/+@KM0030010Servlet,<%=contextNo%>,<%=su2.getScreenName()%>,<%=su2.getScreenID()%>"
+			></orfbutton></td>
+            </tr>
+            </ornoloop> 
+            </table>
+		    </td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="315" class="frame10" height="32"></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="300"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="315"> 
+              <table orftype="DataGrid" mode="BUTTON" name="KM0040010button0" width="315" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+				  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+				  <td><orfbutton name="CSVOut" value="CSV出力" pattern="print" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCsvOut" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_KM0040010form1/*@KM0040010Servlet,,$ZZ07011"
+></orfbutton></td>
+                  <td><orfbutton name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" height="" lock="0" attribute=""
+ script1="onClick;0;SUBMIT;@KM0040010Servlet,,$ZZ07008"
+></orfbutton></td>
+                  <td><orfbutton name="Close" value="閉じる" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" height="" lock="0" attribute=""
+ script1="onClick;0;CLOSE"
+></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+<%
+MessageStruct msgStruct = aKM0040010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

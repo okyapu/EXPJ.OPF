@@ -1,0 +1,426 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+見積登録1
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/KM0020/KM0020011.html,v $
+$Author: geng-jia $	
+$Revision: 1.4 $　$Date: 2017/02/13 06:40:05 $
+********************************************************* --%>
+<html>
+<head>
+<title>見積登録1</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" version="KM0020011 $Revision: 1.4 $" name="KM0020011" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+<% String CallButton = aKM0020010Control.getButton(); %>
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="74"> 
+      <td width="5" height="74"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+			  <table orftype="DataGrid" mode="FORM" name="KM0020011form1" width="934" height="50" border="1" cellspacing="0" cellpadding="0"
+                 script1="onLoad;0;CALL;onDecision@0,1,2,3,4,5,6,7"
+				 script2="onDecision;0;CHK;<%=aKM0020010Struct.geth_CALLBUTTON()%>[eq]1@*1,*3"
+					script3="child;1;CHKRQ;A@*2,*3"
+					script4="child;2;UNMASK;_KM0020011button1/insertSub1"
+                    script5="child;3;MASK;_KM0020011button1/insertSub1"
+				 script6="onDecision;1;CHK;<%=aKM0020010Struct.geth_CALLBUTTON()%>[eq]2@*4,*6"
+					script7="child;4;CHKRQ;A@*5,*6"
+					script8="child;5;UNMASK;_KM0020011button1/updateSub1"
+                    script9="child;6;MASK;_KM0020011button1/updateSub1"
+				 script10="onDecision;2;MASK;_KM0020011form2/l_ES_COST_MATERIAL,_KM0020011form2/l_ES_COST_PROCESS,_KM0020011form2/l_ES_COST_OUTSOUCE,_KM0020011form2/l_ES_COST_SERVICE"
+				 script11="onDecision;3;CHK;_KM0020011form2/l_ESTIMATE_TYP[eq]1@*7,*8"
+					script12="child;7;UNMASK;_KM0020011form2/l_ES_COST_MATERIAL,_KM0020011form2/l_ES_COST_PROCESS,_KM0020011form2/l_ES_COST_OUTSOUCE@*17"
+					script13="child;8;UNMASK;_KM0020011form2/l_ES_COST_SERVICE@*16"
+				 script14="onDecision;4;MASK;_KM0020011form2/l_ESTIMATE_TYP,_KM0020011form2/l_DESINATED_DLV_DATE,_KM0020011form2/l_CUST_ITEM_CD,_KM0020011form2/l_ITEM_NAME,_KM0020011form2/l_ESTIMATE_QTY,_KM0020011form2/l_UNIT_PRICE,_KM0020011form2/l_DISCOUNT_PRICE,_KM0020011form2/l_SPEC_CLASS1_TYP,_KM0020011form2/l_SPEC_CLASS2_TYP,_KM0020011form2/l_SPEC_SELECT1_TYP,_KM0020011form2/l_SPEC_SELECT2_TYP,_KM0020011form2/l_SPEC_SELECT3_TYP,_KM0020011form2/l_SPEC_SELECT4_TYP,_KM0020011form2/l_REMARKS,_KM0020011form2/l_UNIT_CD,_KM0020011form2/PeekerItemCd,_KM0020011form2/CalendarSalesDate"
+				 script15="onDecision;5;CHK;_KM0020011form2/PROJECT_STAT[eq]1[or]_KM0020011form2/PROJECT_STAT[eq]2@*9"
+					script16="child;9;UNMASK;_KM0020011form2/l_ESTIMATE_TYP,_KM0020011form2/l_DESINATED_DLV_DATE,_KM0020011form2/l_CUST_ITEM_CD,_KM0020011form2/l_ITEM_NAME,_KM0020011form2/l_ESTIMATE_QTY,_KM0020011form2/l_UNIT_PRICE,_KM0020011form2/l_DISCOUNT_PRICE,_KM0020011form2/l_SPEC_CLASS1_TYP,_KM0020011form2/l_SPEC_CLASS2_TYP,_KM0020011form2/l_SPEC_SELECT1_TYP,_KM0020011form2/l_SPEC_SELECT2_TYP,_KM0020011form2/l_SPEC_SELECT3_TYP,_KM0020011form2/l_SPEC_SELECT4_TYP,_KM0020011form2/l_REMARKS,_KM0020011form2/l_UNIT_CD,_KM0020011form2/PeekerItemCd,_KM0020011form2/CalendarSalesDate"
+                 script17="onDecision;6;CHK;_KM0020011form2/PROJECT_STAT[eq]1[or]_KM0020011form2/PROJECT_STAT[eq]2@*10,*11"
+					script18="child;10;CHK;_KM0020011form2/l_CUST_ITEM_CD[eq]@*11,*12"
+					script19="child;11;MASK;_KM0020011form2/SelectUnitCost"
+					script20="child;12;UNMASK;_KM0020011form2/SelectUnitCost"
+				 script21="onDecision;7;CHK;_KM0020011form2/PROJECT_STAT[eq]1[or]_KM0020011form2/PROJECT_STAT[eq]2@*13,*14"
+				    script22="child;13;CHK;<%= aKM0020010Struct.geth_CUR_CD()%>[eq]<%= aKM0020010Struct.getHOME_CUR_CD()%>@*14,*15"
+					script23="child;14;MASK;_KM0020011form2/LcConversion@*21"
+					script24="child;15;UNMASK;_KM0020011form2/LcConversion@*20"
+				 script25="child;16;SET;_KM0020011form2/l_ES_COST_MATERIAL=@*18"
+					script26="child;17;SET;_KM0020011form2/l_ES_COST_SERVICE="
+					script27="child;18;SET;_KM0020011form2/l_ES_COST_PROCESS=@*19"
+					script28="child;19;SET;_KM0020011form2/l_ES_COST_OUTSOUCE="
+				  script29="child;20;SET;_KM0020011form2/l_ESTIMATE_GAIN=[{_KM0020011form2/l_ESTIMATE_AMOUNT_JPN}-{_KM0020011form2/l_ES_COST_ALL}]"
+				  script30="child;21;SET;_KM0020011form2/l_ESTIMATE_AMOUNT_JPN=_KM0020011form2/l_ESTIMATE_AMOUNT@*22"
+				  script31="child;22;SET;_KM0020011form2/l_ESTIMATE_GAIN=[{_KM0020011form2/l_ESTIMATE_AMOUNT_JPN}-{_KM0020011form2/l_ES_COST_ALL}]"
+			  >
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+				  <td width="22" align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CD">案件番号</span></td>
+                  <td><orftextinput  name="PROJECT_CD" tablename="T_ESTIMATE" columnname="PROJECT_CD" dbtype="varchar2" tablejname="見積" columnjname="案件番号"   orteus="true" width="260" maxlength="25" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_CUR_CD" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_NAME">得意先名</span></td>
+                  <td><orftextinput  name="CUST_NAME" tablename="M_CUST" columnname="CUST_NAME" dbtype="varchar2" tablejname="得意先" columnjname="得意先名"   orteus="true" width="260" maxlength="40" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESTIMATES_CD">見積番号</span></td>
+                  <td><orftextinput  name="ESTIMATE_NO" tablename="T_ESTIMATE" columnname="ESTIMATE_NO" dbtype="NUMBER" tablejname="見積" columnjname="見積番号"   orteus="true" width="260" kind="OBT_NUMBER_Z;3.0;CEIL;0" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_CUST_CD" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DETAIL_NO">明細番号</span></td>
+                  <td><orftextinput  name="l_DETAL_NO" tablename="T_ESTIMATE_DETAL" columnname="DETAL_NO" dbtype="NUMBER" tablejname="見積明細" columnjname="明細番号"   orteus="true" width="150" kind="OBT_INTEGER;3" editable="false"></orftextinput></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.AUTO_NO">（自動採番）</span></td>
+				  <td>&nbsp;</td>
+                </tr>
+                </ornoloop> 
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" class="frame07" height="12"></td>
+            <td width="769" class="frame08" height="12"></td>
+            <td width="60" class="frame09" height="12"></td>
+            <td width="105" class="frame10" height="12"></td>
+            <td width="12" class="frame11" height="12"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="74"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="459"> 
+      <td width="5" height="459"></td>
+      <td valign="top" width="958" height="459"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+			  <table orftype="DataGrid" mode="FORM" name="KM0020011form2" width="934" height="415" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="right">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="100" align="right">&nbsp;</td>
+				  <td width="70" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ARRANGE_ITEMS_SPECIES">手配品目種</span></td>
+                  <td><orfcombobox  name="l_ESTIMATE_TYP" tablename="T_ESTIMATE_DETAL" columnname="ESTIMATE_TYPE" orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DESINATED_DLV_DATE">指定納期</span></td>
+                  <td><orftextinput  name="l_DESINATED_DLV_DATE" tablename="T_ESTIMATE_DETAL" columnname="DESINATED_DLV_DATE" dbtype="date" tablejname="見積明細" columnjname="指定納期"   orteus="true" width="150" kind="OBT_DATE;TYPE_YMD" required="A"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarSalesDate" value="" pattern="none" orteus="false" width="22" attribute="BTS_CALENDAR"
+                     script1="onClick;0;CALENDAR;_KM0020011form2/l_DESINATED_DLV_DATE"
+                  ></orfcalendar></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ITEM_CD">得意先品目番号</span></td>
+                  <td><orftextinput  name="l_CUST_ITEM_CD" tablename="T_ESTIMATE_DETAL" columnname="CUST_ITEM_CD" dbtype="varchar2" tablejname="見積明細" columnjname="得意先品目番号"   orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerItemCd" value="" pattern="none" orteus="false" width="22" attribute="BTS_PEEKER"
+				     sqlname="PJ_ITEM_CD_01" sqlparam_1="_KM0020011form2/l_CUST_ITEM_CD" sqlparam_2="_KM0020011form1/h_CUST_CD"
+                     script1="onClick;0;PEEKER;_KM0020011form2/l_CUST_ITEM_CD:_KM0020011form2/l_CUST_ITEM_NAME:_KM0020011form2/l_ITEM_NAME@<%=contextNo%>"
+                     ></orfpeeker></td>
+                  <td><orftextinput  name="l_CUST_ITEM_NAME" tablename="M_ITEM_SPEC" columnname="CUST_ITEM_NAME" dbtype="varchar2" tablejname="製品" columnjname="得意先品目名称"   orteus="true" width="320" maxlength="40"  editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME">品目名</span></td>
+                  <td><orftextinput  name="l_ITEM_NAME" tablename="T_ESTIMATE_DETAL" columnname="ITEM_NAME" dbtype="varchar2" tablejname="見積明細" columnjname="品目名"   orteus="true" width="602" maxlength="40" required="A"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.QTY">数量</span></td>
+                  <td><orftextinput  name="l_ESTIMATE_QTY" tablename="T_ESTIMATE_DETAL" columnname="ESTIMATE_QTY" dbtype="NUMBER" tablejname="見積明細" columnjname="数量"   orteus="true" width="150" kind="OBT_NUMBER_Z;14.1;FLOOR;4" required="A"
+				  script1="onDecision;0;SET;_l_AMOUNT=[{_l_ESTIMATE_QTY}*{_l_UNIT_PRICE}]"
+				  script2="onDecision;1;SET;_l_DISCOUNT_AMOUNT=[{_l_ESTIMATE_QTY}*{_l_DISCOUNT_PRICE}]"
+				  script3="onDecision;2;SET;_l_ESTIMATE_AMOUNT=[{_l_ESTIMATE_QTY}*{_l_ESTIMATE_UNIT_PRICE}]"></orftextinput></td>
+                  <td><orftextinput  name="l_UNIT_CD" tablename="T_ESTIMATE_DETAL" columnname="UNIT_CD" dbtype="varchar2" tablejname="見積明細" columnjname="単位"   orteus="true" width="110" maxlength="12"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESTIMATE_AMOUNT_1">見積金額</span></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESTIMATE_JPN">予算(邦貨)</span></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACTUAL_UNIT_PRICE">単価</span></td>
+                  <td><orftextinput name="l_UNIT_PRICE" tablename="T_ESTIMATE_DETAL" columnname="UNIT_PRICE" dbtype="NUMBER" tablejname="見積明細" columnjname="単価"  orteus="true" width="150" kind="OBT_NUMBER_Z;14.2;FLOOR;4"  required="A"
+				  script1="onDecision;0;SET;_l_AMOUNT=[{_l_ESTIMATE_QTY}*{_l_UNIT_PRICE}]"
+				  script2="onDecision;1;SET;_l_ESTIMATE_UNIT_PRICE=[{_l_UNIT_PRICE}-{_l_DISCOUNT_PRICE}]"
+				  script3="onDecision;2;SET;_l_ESTIMATE_AMOUNT=[{_l_ESTIMATE_QTY}*{_l_ESTIMATE_UNIT_PRICE}]"></orftextinput></td>
+                  <td><orftextinput  name="l_AMOUNT" tablename="T_ESTIMATE_DETAL" columnname="AMOUNT" dbtype="NUMBER" tablejname="見積明細" columnjname="金額"   orteus="true" width="110" kind="OBT_NUMBER_Z;14.2;FLOOR;4" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td><orfbutton name="SelectUnitCost" value="単価読込" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelectUnitCost" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_KM0020011form1/*,_KM0020011form2/*@KM0020010Servlet"
+></orfbutton></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MATERIAL_COST_3">材料費</span></td>
+                  <td><orftextinput  name="l_ES_COST_MATERIAL" tablename="T_ESTIMATE_DETAL" columnname="ES_COST_MATERIAL" dbtype="NUMBER" tablejname="見積明細" columnjname="見積原価　材料費"   orteus="true" width="150" kind="OBT_NUMBER_Z;14.2;FLOOR;4"
+				  script1="onDecision;0;SET;_l_ES_COST_ALL=[{_l_ES_COST_MATERIAL}+{_l_ES_COST_PROCESS}+{_l_ES_COST_OUTSOUCE}+{_l_ES_COST_ETC}+{_l_ES_COST_SERVICE}]"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DISCOUNT_PRICE">単価値引</span></td>
+                  <td><orftextinput  name="l_DISCOUNT_PRICE" tablename="T_ESTIMATE_DETAL" columnname="DISCOUNT_PRICE" dbtype="NUMBER" tablejname="見積明細" columnjname="単価値引"   orteus="true" width="150" kind="OBT_NUMBER_Z;14.2;FLOOR;4" 
+				  script1="onDecision;0;SET;_l_ESTIMATE_UNIT_PRICE=[{_l_UNIT_PRICE}-{_l_DISCOUNT_PRICE}]"
+				  script2="onDecision;1;SET;_l_DISCOUNT_AMOUNT=[{_l_ESTIMATE_QTY}*{_l_DISCOUNT_PRICE}]"
+				  script3="onDecision;2;SET;_l_ESTIMATE_AMOUNT=[{_l_ESTIMATE_QTY}*{_l_ESTIMATE_UNIT_PRICE}]"></orftextinput></td>
+                  <td><orftextinput  name="l_DISCOUNT_AMOUNT" tablename="T_ESTIMATE_DETAL" columnname="DISCOUNT_AMOUNT" dbtype="NUMBER" tablejname="見積明細" columnjname="値引金額"   orteus="true" width="110" kind="OBT_NUMBER_Z;14.2;FLOOR;4" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROCESSING_COST">加工費</span></td>
+                  <td><orftextinput  name="l_ES_COST_PROCESS" tablename="T_ESTIMATE_DETAL" columnname="ES_COST_PROCESS" dbtype="NUMBER" tablejname="見積明細" columnjname="見積原価　加工費"   orteus="true" width="150" kind="OBT_NUMBER_Z;14.2;FLOOR;4"
+				  script1="onDecision;0;SET;_l_ES_COST_ALL=[{_l_ES_COST_MATERIAL}+{_l_ES_COST_PROCESS}+{_l_ES_COST_OUTSOUCE}+{_l_ES_COST_ETC}+{_l_ES_COST_SERVICE}]"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESTIMATE_UNIT_PRICE">見積単価</span></td>
+                  <td><orftextinput  name="l_ESTIMATE_UNIT_PRICE" tablename="T_ESTIMATE" columnname="ESTIMATE_UNIT_PRICE" NUMBER="NUMBER" tablejname="見積明細" columnjname="見積単価"   orteus="true" width="150" kind="OBT_NUMBER_Z;14.2;FLOOR;4" editable="false"></orftextinput></td>
+                  <td><orftextinput  name="l_ESTIMATE_AMOUNT" tablename="T_ESTIMATE_DETAL" columnname="ESTIMATE_AMOUNT" dbtype="NUMBER" tablejname="見積明細" columnjname="見積金額"   orteus="true" width="110" kind="OBT_NUMBER_Z;14.2;FLOOR;4" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SBCNT_COST">外注費</span></td>
+                  <td><orftextinput  name="l_ES_COST_OUTSOUCE" tablename="T_ESTIMATE_DETAL" columnname="ES_COST_OUTSOUCE" dbtype="NUMBER" tablejname="見積明細" columnjname="見積原価　外注費"   orteus="true" width="150" kind="OBT_NUMBER_Z;14.2;FLOOR;4"
+				  script1="onDecision;0;SET;_l_ES_COST_ALL=[{_l_ES_COST_MATERIAL}+{_l_ES_COST_PROCESS}+{_l_ES_COST_OUTSOUCE}+{_l_ES_COST_ETC}+{_l_ES_COST_SERVICE}]"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESTIMATE_AMOUNT_JPN_1">見積金額(邦貨)</span></td>
+                  <td><orftextinput  name="l_ESTIMATE_AMOUNT_JPN" tablename="T_ESTIMATE_DETAL" columnname="ESTIMATE_AMOUNT_JPN" dbtype="NUMBER" tablejname="見積明細" columnjname="見積金額（邦貨）"   orteus="true" width="110" kind="OBT_NUMBER_Z;14.2;FLOOR;4" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td><orfbutton name="LcConversion" value="邦貨換算" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5608" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_KM0020011form1/*,_KM0020011form2/*@KM0020010Servlet"
+></orfbutton></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OTHER_COST">その他経費</span></td>
+                  <td><orftextinput  name="l_ES_COST_ETC" tablename="T_ESTIMATE_DETAL" columnname="ES_COST_OUTSOUCE" dbtype="NUMBER" tablejname="見積明細" columnjname="見積原価　その他経費"   orteus="true" width="150" kind="OBT_NUMBER_Z;14.2;FLOOR;4"
+				  script1="onDecision;0;SET;_l_ES_COST_ALL=[{_l_ES_COST_MATERIAL}+{_l_ES_COST_PROCESS}+{_l_ES_COST_OUTSOUCE}+{_l_ES_COST_ETC}+{_l_ES_COST_SERVICE}]"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESTIMATE_GAIN">見積利益</span></td>
+                  <td><orftextinput  name="l_ESTIMATE_GAIN" tablename="T_ESTIMATE_DETAL" columnname="ESTIMATE_GAIN" dbtype="NUMBER" tablejname="見積明細" columnjname="見積利益"   orteus="true" width="110" kind="OBT_NUMBER_Z;14.2;FLOOR;4" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SERVICE_COST">役務費</span></td>
+                  <td><orftextinput  name="l_ES_COST_SERVICE" tablename="T_ESTIMATE_DETAL" columnname="ES_COST_SERVICE" dbtype="NUMBER" tablejname="見積明細" columnjname="見積原価　役務費"   orteus="true" width="150" kind="OBT_NUMBER_Z;14.2;FLOOR;4"
+				  script1="onDecision;0;SET;_l_ES_COST_ALL=[{_l_ES_COST_MATERIAL}+{_l_ES_COST_PROCESS}+{_l_ES_COST_OUTSOUCE}+{_l_ES_COST_ETC}+{_l_ES_COST_SERVICE}]"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_UNIT">通貨単位</span></td>
+                  <td><orftextinput  name="l_CUR_UNIT" tablename="M_CUR" columnname="CUR_UNIT" dbtype="varchar2" tablejname="通貨" columnjname="通貨単位"   orteus="true" width="110" maxlength="40" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ES_COST_ALL">予算合計</span></td>
+                  <td><orftextinput  name="l_ES_COST_ALL" tablename="T_ESTIMATE_DETAL" columnname="ES_COST_ALL" dbtype="NUMBER" tablejname="見積明細" columnjname="見積原価　合計"   orteus="true" width="150" kind="OBT_NUMBER_Z;14.2;FLOOR;4" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPEC_CLASS1">製品選択1</span></td>
+                  <td><orfcombobox  name="l_SPEC_CLASS1_TYP" tablename="T_ESTIMATE_DETAL" columnname="SPEC_CLASS1" orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPEC_CLASS2">製品選択2</span></td>
+                  <td><orfcombobox  name="l_SPEC_CLASS2_TYP" tablename="T_ESTIMATE_DETAL" columnname="SPEC_CLASS2" orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="PROJECT_STAT" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+				<tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPEC_SELECT1">仕様選択1</span></td>
+                  <td><orfcombobox  name="l_SPEC_SELECT1_TYP" tablename="T_ESTIMATE_DETAL" columnname="SPEC_SELECT1" orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPEC_SELECT2">仕様選択2</span></td>
+                  <td><orfcombobox  name="l_SPEC_SELECT2_TYP" tablename="T_ESTIMATE_DETAL" columnname="SPEC_SELECT2" orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="l_UNIT_COST" orteus="true" dbtype="NUMBER" visible="false" kind="OBT_NUMBER_P;14.2;FLOOR;4"></orftextinput></td>
+                </tr>
+				<tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPEC_SELECT3">仕様選択3</span></td>
+                  <td><orfcombobox  name="l_SPEC_SELECT3_TYP" tablename="T_ESTIMATE_DETAL" columnname="SPEC_SELECT3" orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPEC_SELECT4">仕様選択4</span></td>
+                  <td><orfcombobox  name="l_SPEC_SELECT4_TYP" tablename="T_ESTIMATE_DETAL" columnname="SPEC_SELECT4" orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="l_FLAG" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+				<tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARKS">備考</span></td>
+                  <td><orftextinput  name="l_REMARKS" tablename="T_ESTIMATE_DETAL" columnname="REMARKS" dbtype="varchar2" tablejname="見積明細" columnjname="備考"   orteus="true" width="712" maxlength="80"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop> 
+              </table>
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="664" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="210" class="frame10" height="32">
+			   <table orftype="DataGrid" mode="BUTTON" name="KM0020011button1" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton name="insertSub1" value="追加" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnAddition" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_KM0020011form2/l_AMOUNT[numeq]0@!KM00015"
+ script2="onClick;1;CHK;_KM0020011form2/l_ESTIMATE_AMOUNT[numeq]0[or]_KM0020011form2/l_ESTIMATE_AMOUNT[lt]0@!KM00016"
+ script3="onClick;2;SCRCHG;_KM0020011form1/*,_KM0020011form2/*@KM0020010Servlet"
+></orfbutton></td>
+                  <td><orfbutton name="updateSub1" value="修正" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnModify" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_KM0020011form2/l_AMOUNT[numeq]0@!KM00015"
+ script2="onClick;1;CHK;_KM0020011form2/l_ESTIMATE_AMOUNT[numeq]0[or]_KM0020011form2/l_ESTIMATE_AMOUNT[lt]0@!KM00016"
+ script3="onClick;2;SCRCHG;_KM0020011form1/*,_KM0020011form2/*@KM0020010Servlet"
+></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="459"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="853"></td>
+            <td align="right" width="105"> 
+              <table orftype="DataGrid" mode="BUTTON" name="KM0020011button0" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105></td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="cancelSub1" value="戻る" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReturn" width="100"
+                     script1="onClick;0;SCRCHG;@KM0020010Servlet,,$ZZ07013"
+                                           lock="0">
+                    </orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+<%
+MessageStruct msgStruct = aKM0020010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

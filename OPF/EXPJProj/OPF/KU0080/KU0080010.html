@@ -1,0 +1,464 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+出荷インボイスメンテナンス
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/KU0080/KU0080010.html,v $
+$Author: geng-jia $	
+$Revision: 1.4 $　$Date: 2017/02/17 10:05:34 $
+********************************************************* --%>
+<html>
+<head>
+<title>出荷インボイスメンテナンス</title>
+<%@include file="common/expj_v5.jsp" %>
+<%
+ScreenMoveUtil su = new ScreenMoveUtil("KU0100010Servlet", so);
+%>
+</head>
+<body flash="true" version="KU0080010 $Revision: 1.4 $" name="KU0080010" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="4">
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="71"> 
+      <td width="5" height="71"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+			  <table orftype="DataGrid" mode="FORM" name="KU0080010form1" status="<%= TypeConverter.sanitizer(aKU0080010Control.getReadStatusString()) %>" width="934" height="27" border="1" cellspacing="0" cellpadding="0"
+                 script1="onLoad;0;CALL;onDecision@0,1,2,3,4,5,6,7"
+script2="onDecision;0;CHKRQ;A@*1,*0"
+script3="onDecision;1;CHK;?KU0080010form1/*[eq]NORMAL[and]?KU0080010form1/IN_SHIP_INVOICE_CTL_NO[eq]SAME@*8,*9"
+script4="onDecision;2;CHK;<%= aKU0080010Struct.getPRINT_FLG()%>[eq]1[and]?KU0080010form1/*[eq]NORMAL[and]?KU0080010form1/IN_SHIP_INVOICE_CTL_NO[eq]SAME@*7,*6"	
+script5="onDecision;3;CHK;<%= aKU0080010Struct.getPRINT_FLG()%>[eq]0[and]?KU0080010form1/*[eq]NORMAL[and]?KU0080010form1/IN_SHIP_INVOICE_CTL_NO[eq]SAME@*5,*4"
+script6="onDecision;4;CHK;<%= aKU0080010Struct.getjump_flag()%>[eq]1@*10,*2"
+script7="onDecision;5;CHK;<%= aKU0080010Struct.getjump_flag()%>[eq]1@*11,*12"
+script8="onDecision;6;CHK;<%= aKU0080010Struct.getjump_flag()%>[eq]1@*13,*14"
+script9="child;0;MASK;_KU0080010button1/Select"
+script10="child;1;UNMASK;_KU0080010button1/Select"
+script11="child;2;MASK;_KU0080010button2/Insert"
+script12="child;3;UNMASK;_KU0080010button2/Insert"
+script13="child;4;MASK;_KU0080010button2/Update,_KU0080010button2/DeleteAll"
+script14="child;5;UNMASK;_KU0080010button2/Update,_KU0080010button2/DeleteAll"
+script15="child;6;MASK;_KU0080010button2/Cancel"
+script16="child;7;UNMASK;_KU0080010button2/Cancel"
+script17="child;8;UNMASK;_KU0080010button2/GoPrint"
+script18="child;9;MASK;_KU0080010button2/GoPrint"
+script19="child;10;CHKRQ;B@*3,*2"
+script20="child;11;MASK;_KU0080010form1/IN_SHIP_INVOICE_CTL_NO,_KU0080010form1/PeekerIN_SHIP_INVOICE_CTL_NO"
+script21="child;12;UNMASK;_KU0080010form1/IN_SHIP_INVOICE_CTL_NO,_KU0080010form1/PeekerIN_SHIP_INVOICE_CTL_NO"
+script22="child;13;UNMASK;_KU0080010form2/SHIP_INVOICE_NO"
+script23="child;14;MASK;_KU0080010form2/SHIP_INVOICE_NO"
+script24="onDecision;7;CHK;<%= aKU0080010Struct.getPRINT_FLG()%>[eq]0[and]?KU0080010form1/*[eq]NORMAL[and]?KU0080010form1/IN_SHIP_INVOICE_CTL_NO[eq]SAME[and]?KU0080010view1/#[neq]0@*16,*15"
+script25="child;15;MASK;_KU0080010button3/Delete"
+script26="child;16;UNMASK;_KU0080010button3/Delete"
+                 >
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=170 align=right>&nbsp;</td>
+                  <td width=260 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=482 align=left>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SHIP_INVOICE_CTL_NO">出荷インボイス管理番号</span></td>
+                  <td><orftextinput  name="IN_SHIP_INVOICE_CTL_NO" orteus="true" maxlength="20" required="A"></orftextinput></td>
+                  <td><orfpeeker name="PeekerIN_SHIP_INVOICE_CTL_NO" value="" pattern="none" revokectrl="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" visible="true" sqlname="SHIP_INVOICE_CTL_NO_01" sqlparam_1="_KU0080010form1/IN_SHIP_INVOICE_CTL_NO"
+ script1="onClick;0;PEEKER;_KU0080010form1/IN_SHIP_INVOICE_CTL_NO@<%=contextNo%>"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop> 
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32">
+			  <table orftype="DataGrid" mode="BUTTON" name="KU0080010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  width="100" name="Select" value="読込" pattern="select" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect"
+                        script1="onClick;0;SUBMIT;_KU0080010form1/*@KU0080010Servlet"
+                        lock="0"
+                      ></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+			</td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="186"> 
+      <td width="5" height="186"></td>
+      <td valign="top" width="958" height="186"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+			   <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="KU0080010form2" width="934" height="142" border="1" cellspacing="0" cellpadding="0"
+                 >
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INVOICE_CD_1">インボイス番号</span></td>
+                  <td><orftextinput  name="SHIP_INVOICE_NO" tablename="M_SHIP_INVOICE_HEAD" columnname="SHIP_INVOICE_NO" dbtype="varchar2" tablejname="出荷インボイスヘッダ" columnjname="インボイス番号"   orteus="true" width="260" maxlength="20" required="B"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DEPARTURE_PLACE">出港元</span></td>
+                  <td><orftextinput  name="DEPARTURE_PLACE" tablename="M_SHIP_INVOICE_HEAD" columnname="DEPARTURE_PLACE" dbtype="varchar2" tablejname="出荷インボイスヘッダ" columnjname="出港元"   orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DEPARTURE_DATE">出港日</span></td>
+                  <td><orftextinput  name="DEPARTURE_DATE" orteus="true" maxlength="10" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  name="DEPARTURE_DATE_CALENDAR" pattern="none" attribute="BTS_CALENDAR"   width="22"
+                       script1="onClick;0;CALENDAR;_KU0080010form2/DEPARTURE_DATE"
+                      ></orfcalendar></td>
+				  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ARRIVAL_PLACE">到着地</span></td>
+                  <td><orftextinput  name="ARRIVAL_PLACE" tablename="M_SHIP_INVOICE_HEAD" columnname="ARRIVAL_PLACE" dbtype="varchar2" tablejname="出荷インボイスヘッダ" columnjname="到着地"   orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ARRIVAL_DATE_1">入港日</span></td>
+                  <td><orftextinput  name="ARRIVAL_DATE" orteus="true" maxlength="10" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  name="ARRIVAL_DATE_CALENDAR" pattern="none" attribute="BTS_CALENDAR"   width="22"
+                       script1="onClick;0;CALENDAR;_KU0080010form2/ARRIVAL_DATE"
+                      ></orfcalendar></td>
+				  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TRANSPORT_METHOD">輸送手段</span></td>
+                  <td><orfcombobox  name="TRANSPORT_METHOD" tablename="M_SHIP_INVOICE_HEAD" columnname="TRANSPORT_METHOD" dbtype="varchar2" tablejname="インボイスヘッダ" columnjname="輸送手段"   orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SHIP_NO">便番号</span></td>
+                  <td><orftextinput  name="SHIP_NO" tablename="M_SHIP_INVOICE_HEAD" columnname="SHIP_NO" dbtype="varchar2" tablejname="出荷インボイスヘッダ" columnjname="船便NO"   orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARKS_1">備考１</span></td>
+                  <td><orftextinput  name="REMARKS_1" tablename="M_SHIP_INVOICE_HEAD" columnname="REMARKS_1" dbtype="varchar2" tablejname="出荷インボイスヘッダ" columnjname="備考１"   orteus="true" width="712" maxlength="80"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARKS_2">備考２</span></td>
+                  <td><orftextinput  name="REMARKS_2" tablename="M_SHIP_INVOICE_HEAD" columnname="REMARKS_2" dbtype="varchar2" tablejname="出荷インボイスヘッダ" columnjname="備考２"   orteus="true" width="712" maxlength="80"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                </tr>
+                </ornoloop> 
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="349" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="525" class="frame10" height="32">
+			  <table orftype="DataGrid" mode="BUTTON" name="KU0080010button2" width="525" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+				  <td width=105>&nbsp;</td>
+				  <td width=105>&nbsp;</td>
+				  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead> <ornoloop> 
+                <tr> 
+				  <td><orfbutton  width="100" name="Insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" height="" attribute="" visible=""
+                         script1="onClick;0;SUBMIT;_KU0080010form1/*,_KU0080010form2/*,_KU0080010form3/*,_KU0080010view1/*@KU0080010Servlet,,$ZZ07001"
+                         lock="1"
+                      ></orfbutton></td>
+                  <td><orfbutton  width="100" name="Update" value="更新" pattern="update" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate"
+                         script1="onClick;0;SUBMIT;_KU0080010form1/*,_KU0080010form2/*,_KU0080010form3/*,_KU0080010view1/*@KU0080010Servlet,,$ZZ07003"
+                         lock="1"
+                      ></orfbutton></td>
+				  <td><orfbutton width="100" name="DeleteAll" value="削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDelete" height="22" lock="1" attribute="" visible=""
+                         script1="onClick;0;SUBMIT;_KU0080010form1/*,_KU0080010form2/*,_KU0080010form3/*,_KU0080010view1/*@KU0080010Servlet,,$ZZ07004"
+                      ></orfbutton></td>
+				  <td><orfbutton  width="100" name="Cancel" value="帳票取消" pattern="update" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnPrint_Cancel"
+                         script1="onClick;0;SUBMIT;_KU0080010form1/*,_KU0080010form2/*,_KU0080010form3/*,_KU0080010view1/*@KU0080010Servlet,,"
+                         lock="1"
+                      ></orfbutton></td>
+				  <td><orfbutton  width="100" name="GoPrint" value="帳票出力" pattern="none" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnPrint"
+                         script1="onClick;0;SCRMV;_KU0080010form1/*@KU0100010Servlet,<%=contextNo%>,<%=su.getScreenName()%>,<%=su.getScreenID()%>"
+                         lock="1"
+                      ></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+			</td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="186"></td>
+    </tr>
+	<tr height="5"> 
+	  <td colspan="3" height="5"></td>
+    </tr>
+    <tr height="97"> 
+	  <td height="97"></td>
+      <td height="97" colspan="2" valign="top"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="KU0080010form3" width="934" height="73" border="1" cellspacing="0" cellpadding="0"
+                 >
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+                  <td><orftextinput  width="260" name="CUST_CD" orteus="true" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.AMOUNT">金額</span></td>
+                  <td><orftextinput  width="260" name="INVOICE_AMOUNT" orteus="true" editable="false" kind="OBT_NUMBER;14.2;CEIL;4"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_CD">納品場所コード</span></td>
+                  <td><orftextinput  width="260" name="DLV_LOC_CD" orteus="true" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INVOICE_TAX_AMOUNT_1">VAT</span></td>
+                  <td><orftextinput  width="260" name="INVOICE_TAX_AMOUNT" orteus="true" editable="false" kind="OBT_NUMBER;14.2;CEIL;4"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+				<tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SCDL_SHIP_DATE">出荷予定日</span></td>
+                  <td><orftextinput  width="150" name="SCDL_SHIP_DATE" kind="OBT_DATE;TYPE_YMD" orteus="true" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="SCDL_SHIP_DATE_TIME" orteus="true" width="" editable="false" kind="" maxlength="4"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>				
+                </ornoloop> 
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" class="frame18" height="12"></td>
+            <td colspan="3" class="frame19" height="12"></td>
+            <td width="12" class="frame20" height="12"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+      <td></td>
+    </tr>
+	<tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="169"> 
+      <td width="5"></td>
+      <td valign="top" width="958" height="169"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに下段一覧用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" name="KU0080010view1" status="<%=TypeConverter.sanitizer(aKU0080010Control.getReadStatus())%>" width="934" height="125" mode="VIEW" border="1" cellspacing="0" cellpadding="0" attribute="DGS_SELECTMULTI|DGS_HSCRAUTO|DGS_VSCRAUTO">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="150" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SLIP_DETAIL_NO">出荷インボイス明細番号</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ITEM_CD">得意先品目番号</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ITEM_NAME">得意先品目名</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ODR_NO">得意先注文番号</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SHIP_ORD_CD">受注番号</span></td>
+                  <td width="100" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PART_DLV_SEQ_NO">分納項番</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME">品目名</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SHIP_ODR_NO">出荷指示番号</span></td>
+                  <td width="100" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.QTY">数量</span></td>
+				  <td width="100" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACTUAL_UNIT_PRICE">単価</span></td>
+				  <td width="100" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.AMOUNT">金額</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_TYP">単価区分</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_AMOUNT">消費税額</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_RATE">税率</span></td>
+                </tr>
+                </orloophead><orloop>
+                <tr>
+                  <td><orflabel  name="SLIP_DETAIL_NO" orteus="true"></orflabel></td>
+                  <td><orflabel  name="CUST_ITEM_CD"   orteus="true"></orflabel></td>
+				  <td><orflabel  name="CUST_ITEM_NAME"   orteus="true"></orflabel></td>
+				  <td><orflabel  name="CUST_ODR_NO" orteus="true"></orflabel></td>
+                  <td><orflabel  name="ODR_NO" orteus="true"></orflabel></td>
+                  <td><orflabel  name="PART_DLV_SEQ_NO" orteus="true"></orflabel></td>
+                  <td><orflabel  name="ITEM_CD" orteus="true"></orflabel>　</td>
+                  <td><orflabel  name="ITEM_NAME" orteus="true"></orflabel>　</td>
+                  <td><orflabel  name="SHIP_ODR_NO" orteus="true"></orflabel></td>
+                  <td><orflabel  name="SHIP_QTY" orteus="true" kind="OBT_NUMBER_P;14.1;CEIL;4"></orflabel></td>
+				  <td><orflabel  name="UNIT_PRICE" orteus="true" kind="OBT_NUMBER_P;14.2;CEIL;4"></orflabel></td>
+				  <td><orflabel  name="SHIP_ODR_AMOUNT" orteus="true" kind="OBT_NUMBER_P;14.2;CEIL;4"></orflabel></td>
+				  <td><orflabel  name="UNIT_COST_TYP" orteus="true"></orflabel>　</td>
+                  <td><orflabel  name="TAX_AMOUNT" orteus="true" kind="OBT_NUMBER_P;14.2;CEIL;4"></orflabel>　</td>
+                  <td><orflabel  name="TAX_RATE" orteus="true" kind="OBT_NUMBER_P;14.1;CEIL;4"></orflabel></td>
+               </tr>
+                </orloop>
+              </table>
+              <!-- ここに下段一覧用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+		  <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="105" class="frame08" height="32"> 
+              <table orftype="DataGrid" name="KU0080010button3" width="105" height="22" mode="BUTTON" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton name="Delete" value="選択削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDeleteAssort_1" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_KU0080010view1/+,_KU0080010form1/*,_KU0080010form2/*,_KU0080010form3/*@KU0080010Servlet,,$ZZ07004"
+></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="769" class="frame10" height="32"></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="169"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="KU0080010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105></td>
+                  <td width=105></td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" height="" lock="0" attribute=""
+ script1="onClick;0;SUBMIT;@KU0080010Servlet,,$ZZ07008"
+></orfbutton></td>
+                  <td><orfbutton name="Close" value="閉じる" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" height="" lock="0" attribute=""
+ script1="onClick;0;CLOSE"
+></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+<%
+MessageStruct msgStruct = aKU0080010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

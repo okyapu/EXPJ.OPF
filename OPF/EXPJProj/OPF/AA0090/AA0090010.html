@@ -1,0 +1,319 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+çHèÍÉÅÉìÉeÉiÉìÉX
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AA0090/AA0090010.html,v $
+$Author: geng-jia $ 
+$Revision: 1.4 $ $Date: 2017/02/13 02:16:16 $
+********************************************************* --%>
+<html>
+<head>
+<title>çHèÍÉÅÉìÉeÉiÉìÉX</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AA0090010" version="AA0090010 $Revision: 1.4 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="71"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AA0090010form1" width="934" height="27" border="1" cellspacing="0" cellpadding="0"
+               status="<%= TypeConverter.sanitizer(aAA0090010Control.getReadStatusString()) %>" 
+              
+               script1="onLoad;0;CALL;child@0,2"
+                     script2="child;0;CHK;?AA0090010form1/*[eq]INITIAL@*1"
+                         script3="child;1;MASK;_AA0090010button2/update"
+
+               script4="onDecision;0;CHK;1[eq]1@*2"
+                 script5="child;2;CHKRQ;A@*3,*4"
+                     script6="child;3;UNMASK;_AA0090010button1/select@*6"
+                     script7="child;4;MASK;_AA0090010button1/select@*5"
+                         script8="child;5;MASK;_AA0090010button2/update"
+                         script9="child;6;CHK;?AA0090010form1/*[eq]NORMAL@*7"
+                        
+                         script10="child;7;CHKRQ;B@*8,*10"
+                             script11="child;8;CHK;_AA0090010form1/PLANT_CD[eq]_AA0090010form1/h_PLANT_CD@*9,*10"
+                                 script12="child;9;UNMASK;_AA0090010button2/update"
+                                 script13="child;10;MASK;_AA0090010button2/update"
+             >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PLANT_CD">çHèÍÉRÅ[Éh</span></td>
+                  <td><orftextinput  name="PLANT_CD" tablename="M_PLANT" columnname="PLANT_CD" dbtype="varchar2" tablejname="çHèÍ" columnjname="çHèÍÉRÅ[Éh"   orteus="true" width="260" maxlength="2" required="A"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerPlantCd" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0090010form1/PLANT_CD@<%=contextNo%>"
+                     sqlname="PLANT_CD_01" sqlparam_1="_AA0090010form1/PLANT_CD"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_PLANT_CD" orteus="false" text="<%= TypeConverter.sanitizer(aAA0090010Control.getLastPLANT_CD()) %>" visible="false"></orftextinput></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07"></td>
+            <td width="769" class="frame08"></td>
+            <td width="60" class="frame09"></td>
+            <td width="105" class="frame10">
+            <table orftype="DataGrid" mode="BUTTON" name="AA0090010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td>
+                  <orfbutton name="select" value="ì«çû" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AA0090010form1/*@AA0090010Servlet"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="462"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AA0090010form2" width="934" height="418" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PLANT_NAME">çHèÍñº</span></td>
+                  <td><orftextinput  name="PLANT_NAME" tablename="M_PLANT" columnname="PLANT_NAME" dbtype="varchar2" tablejname="çHèÍ" columnjname="çHèÍñº"   orteus="true" width="320" maxlength="40"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PLANT_ANAME">çHèÍó™èÃ</span></td>
+                  <td><orftextinput  name="PLANT_ANAME" tablename="M_PLANT" columnname="PLANT_ANAME" dbtype="varchar2" tablejname="çHèÍ" columnjname="çHèÍó™èÃ"   orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ZIP_CD">óXï÷î‘çÜ</span></td>
+                  <td><orftextinput  name="ZIP_CD" tablename="M_PLANT" columnname="ZIP_CD" dbtype="varchar2" tablejname="çHèÍ" columnjname="óXï÷î‘çÜ"   orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_1">èZèä1</span></td>
+                  <td><orftextinput  name="ADDRESS_1" tablename="M_PLANT" columnname="ADDRESS_1" dbtype="varchar2" tablejname="çHèÍ" columnjname="èZèä1"   orteus="true" width="712" maxlength="80"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_2">èZèä2</span></td>
+                  <td><orftextinput  name="ADDRESS_2" tablename="M_PLANT" columnname="ADDRESS_2" dbtype="varchar2" tablejname="çHèÍ" columnjname="èZèä2"   orteus="true" width="712" maxlength="80"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_K_1">èZèäÅiÉJÉiÅj1</span></td>
+                  <td><orftextinput  name="ADDRESS_K_1" tablename="M_PLANT" columnname="ADDRESS_K_1" dbtype="varchar2" tablejname="çHèÍ" columnjname="èZèäÅiÉJÉiÅj1"   orteus="true" width="712" maxlength="80"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_K_2">èZèäÅiÉJÉiÅj2</span></td>
+                  <td><orftextinput  name="ADDRESS_K_2" tablename="M_PLANT" columnname="ADDRESS_K_2" dbtype="varchar2" tablejname="çHèÍ" columnjname="èZèäÅiÉJÉiÅj2"   orteus="true" width="712" maxlength="80"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TEL">ìdòbî‘çÜ</span></td>
+                  <td><orftextinput  name="TEL" tablename="M_PLANT" columnname="TEL" dbtype="varchar2" tablejname="çHèÍ" columnjname="ìdòbî‘çÜ"   orteus="true" width="260" maxlength="20"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FAX">FAXî‘çÜ</span></td>
+                  <td><orftextinput  name="FAX" tablename="M_PLANT" columnname="FAX" dbtype="varchar2" tablejname="çHèÍ" columnjname="FAXî‘çÜ"   orteus="true" width="260" maxlength="20"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CAL_NO">ÉJÉåÉìÉ_î‘çÜ</span></td>
+                  <td><orftextinput  name="CAL_NO" tablename="M_PLANT" columnname="CAL_NO" required="B" dbtype="varchar2" tablejname="çHèÍ" columnjname="ÉJÉåÉìÉ_î‘çÜ"   orteus="true" width="150" attribute="TIS_RIGHT" kind="OBT_N" maxlength="6"></orftextinput></td>
+                  <td><orfpeeker  name="PeekerCalNo" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0090010form2/CAL_NO@<%=contextNo%>"
+                     sqlname="CAL_NO_01" sqlparam_1="_AA0090010form2/CAL_NO"></orfpeeker></td>
+                  <td><orftextinput  name="CAL_NAME" tablename="M_CAL_H" columnname="CAL_NAME" dbtype="varchar2" tablejname="ÉJÉåÉìÉ_ÉwÉbÉ_" columnjname="ÉJÉåÉìÉ_ñº"   orteus="true" width="320" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07"></td>
+            <td width="769" class="frame08"></td>
+            <td width="60" class="frame09"></td>
+            <td width="105" class="frame10">
+            <table orftype="DataGrid" mode="BUTTON" name="AA0090010button2" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="update" value="çXêV" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AA0090010form1/PLANT_CD,_AA0090010form2/*@AA0090010Servlet,,$ZZ07003"
+></orfbutton>
+                </td>
+              </tr>
+              </ornoloop>
+            </table> 
+            </td>
+            <td width="12" class="frame11"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AA0090010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="clear" value="ÉNÉäÉA" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100"
+                       lock="0"
+                       script1="onClick;0;SUBMIT;@AA0090010Servlet,,$ZZ07008"
+                   ></orfbutton></td>
+                  <td><orfbutton  name="close" value="ï¬Ç∂ÇÈ" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAA0090010Control.getMessage();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

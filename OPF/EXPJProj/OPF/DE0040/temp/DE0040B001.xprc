@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<process><process-name>DE0040B001</process-name><process-jname>バッチ</process-jname><process-type>orteus-batch</process-type><process-description></process-description><event-list/><db-list><db><table-name></table-name><db-file></db-file><io-type>in</io-type></db><db><table-name></table-name><db-file></db-file><io-type>in</io-type></db><db><table-name></table-name><db-file></db-file><io-type>in</io-type></db><db><table-name></table-name><db-file></db-file><io-type>in</io-type></db></db-list><page-list/></process>

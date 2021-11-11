@@ -1,0 +1,286 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+品目データ取込処理
+$Source: /EXPJCVS/OPF/生産販売原価/AA0150/AA0150010.html,v $
+$Author: zhou-xingang $	
+$Revision: 1.1.1.1 $ $Date: 2007/10/12 09:23:46 $
+********************************************************* --%>
+<html>
+<head>
+<title>品目データ取込処理</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AA0150010" version="AA0150010 $Revision: 1.1.1.1 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="1">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05" height="494" valign="top"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="AA0150010form1" width="934" height="494" border="1" cellspacing="0" cellpadding="0"
+                 script1="onLoad;0;CALL;onDecision@0,1"
+                 script2="onDecision;0;CHKRQ;A@*0,*1"
+                     script3="child;0;UNMASK;_AA0150010button1/CsvIn"
+                     script4="child;1;MASK;_AA0150010button1/CsvIn"
+                 script5="onDecision;1;CHKRQ;B@*6,*7"
+                     script6="child;2;UNMASK;_AA0150010button1/CsvIn"
+                     script7="child;3;MASK;_AA0150010button1/CsvIn"
+                >
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=170 align="right">&nbsp;</td>
+                  <td width=150 align="left">&nbsp;</td>
+                  <td width=22 align="left">&nbsp;</td>
+                  <td width=88 align="left">&nbsp;</td>
+                  <td width=22 align="left">&nbsp;</td>
+                  <td width=170 align="left">&nbsp;</td>
+                  <td width=150 align="left">&nbsp;</td>
+                  <td width=22 align="left">&nbsp;</td>
+                  <td width=88 align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                 <tr>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton name="rdoInsert" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="" height="" text="登録" group="rdoPlantTyp" editable="true" visible="false"
+></orfradiobutton> </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton name="rdoUpdate" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="" height="" text="更新" group="rdoPlantTyp" editable="true" visible="false"
+></orfradiobutton> </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton name="rdoDelete" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDelete" width="" height="" text="削除" group="rdoPlantTyp" editable="true" visible="false"
+></orfradiobutton> </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox name="DO_CHK" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3093" width="190" height="" text="チェックのみ行う" editable="true" visible="false"
+></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_SYORI_KUBUN" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr> 
+                  <td><orftextinput  name="h_ITEM_CD" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_ITEM_NAME" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_DRAW_CD" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_SPEC" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_HIGH_LEVEL_NO" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_MRP_ODR_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_OUTSIDE_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_STOCK_UNIT_FLG" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_STOCK_UNIT" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr>
+                  <td><orftextinput  name="h_PKG_UNIT" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_PKG_UNIT_QTY" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_UNIT_QTY_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_ODR_LT" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_FIXED_LT" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_PROP_LT" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_SAFETY_LT" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_ISSUE_LT" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_PROP_LOT_SIZE" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr> 
+                  <td><orftextinput  name="h_ITEM_SPOIL" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_SAFETY_STOCK" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_LOT_SIZING_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_MAX_PERIOD" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_MAX_ODR_QTY" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_ODR_POINT" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_FIXED_ODR_QTY" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_MIN_ODR_QTY" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_MUL_ODR_QTY" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr> 
+                  <td><orftextinput  name="h_ISSUE_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_MPS_FLG" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_ACPT_INSPC_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_PRODUCT_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_CLASIFICATION_CD" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_UNIT_WEIGHT" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_ABC_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_OPR_RSLT_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_SPL_ITEM_TYP" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr> 
+                  <td><orftextinput  name="h_TAX_CD" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_WH_CD" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_CAL_NO" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><orftextinput  name="h_DEPT_CD" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_PJ_CD" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_SEG_CONTENTS_1" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_SEG_CONTENTS_2" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_SEG_CONTENTS_3" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_SEG_CONTENTS_4" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop> 
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="571" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AA0150010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead>
+                <ornoloop>
+                <tr>
+                <td>
+                    <orfbutton name="CsvImport" value="CSV取込" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCsvImport" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SCRCHG;_AA0150010form1/*,_AA0150010form2/*,_AA0150010form3/*@AA0150010Servlet"
+></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame11" height="42"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AA0150010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead>
+				<ornoloop> 
+                <tr> 
+                  <td><orfbutton name="Clear" value="クリア" pattern="none" revokeCtrl="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AA0150010form1/*@AA0150010Servlet,,$ZZ07008"
+></orfbutton></td>
+                  <td><orfbutton name="Close" value="閉じる" pattern="none" revokeCtrl="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CLOSE"
+></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAA0150010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

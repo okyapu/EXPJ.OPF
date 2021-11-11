@@ -1,0 +1,249 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+販売トランザクションデータ削除実行
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/KV0040/KV0040010.html,v $
+$Author: geng-jia $	
+$Revision: 1.7 $　$Date: 2017/02/13 07:03:06 $
+********************************************************* --%>
+<html>
+<head>
+<title>販売トランザクションデータ削除実行</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="KV0040010form" version="KV0040010 $Revision: 1.7 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="1">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="570"> 
+      <td width="5" height="570"></td>
+      <td valign="top" width="958" height="570"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="KV0040010form1" width="934" height="494" border="1" cellspacing="0" cellpadding="0"
+								 script1="onLoad;0;CALL;onDecision@0"
+
+								 script2="onDecision;0;CHKRQ;A@*0,*1"
+									 script3="child;0;UNMASK;_KV0040010button1/do"
+									 script4="child;1;MASK;_KV0040010button1/do"
+								>
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right" required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FINAL_MONTHLY_PROC_EXEC_DATE_2">削除処理基準年月</span></td>
+                  <td><orftextinput  name="DELETE_RECKON_YM" orteus="true" width="150" required="A" kind="OBT_DATE;TYPE_YM"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="COMPANY_CD" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="center"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0066">項目</span></td>
+                  <td align="left"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3130">保存月数</span></td>
+                  <td>&nbsp;</td>
+                  <td width="150"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3142">削除対象年月(～まで)</span></td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3131">販売所要計画情報</span> </td>
+                  <td><orftextinput  name="SALES_PLAN_TERM" orteus="true" width="150" editable="false" attribute="TIS_RIGHT"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="SALES_PLAN_TERM_LAST_YM" orteus="true" width="150" editable="false" kind="OBT_DATE;TYPE_YM"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp; </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt6710">案件・受注～出荷情報</span> </td>
+                  <td><orftextinput  name="ODR_SHIP_TERM" orteus="true" width="150" editable="false" attribute="TIS_RIGHT"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="ODR_SHIP_TERM_LAST_YM" orteus="true" width="150" editable="false" kind="OBT_DATE;TYPE_YM"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3133">その他売上実績情報</span></td>
+                  <td><orftextinput  name="SALES_TERM" orteus="true" width="150" editable="false" attribute="TIS_RIGHT"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="SALES_TERM_LAST_YM" orteus="true" width="150" editable="false" kind="OBT_DATE;TYPE_YM"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3134">EDI情報</span> </td>
+                  <td><orftextinput  name="EDI_TERM" orteus="true" width="150" editable="false" attribute="TIS_RIGHT"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="EDI_TERM_LAST_YM" orteus="true" width="150" editable="false" kind="OBT_DATE;TYPE_YM"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right">&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right">&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right">&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"><table orftype="DataGrid" mode="BUTTON" name="KV0040010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td>&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+	     		<td><orfbutton name="do" value="実行" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnExecute" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_KV0040010form1/*@KV0040010Servlet,,$ZZ07010"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="570"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="KV0040010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" script1="onClick;0;SUBMIT;@KV0040010Servlet,,$ZZ07008" lock="0"></orfbutton></td>
+                  <td><orfbutton  name="close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aKV0040010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

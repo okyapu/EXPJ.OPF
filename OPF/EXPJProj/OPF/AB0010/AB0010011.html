@@ -1,0 +1,351 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+生産計画メンテナンス(MRP)サブ
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AB0010/AB0010011.html,v $
+$Author: geng-jia $	
+$Revision: 1.8 $　$Date: 2017/02/13 02:30:52 $
+********************************************************* --%>
+<html>
+<head>
+<title>生産計画メンテナンス(MRP)サブ</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" version="AB0010011 $Revision: 1.8 $" name="AB0010011" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+  <table width="968" bgcolor="white" class="back" height="722" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="71"> 
+      <td width="5" height="71"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" name="AB0010011form1" mode="FORM" status="" float=""
+ width="934" height="50" border="1" cellspacing="1" cellpadding="1">
+                <orloophead>
+                  <tr bgcolor="#ccff99">
+                    <td width="170" align=right></td>
+                    <td width="150"></td>
+                    <td width="22"></td>
+                    <td width="88"></td>
+                    <td width="22"></td>
+                    <td width="170" align=right></td>
+                    <td width="150"></td>
+                    <td width="22"></td>
+                    <td width="88"></td>
+                  </tr>
+                </orloophead>
+                <ornoloop>
+                  <tr>
+                    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_PLANT_CD">工場コード</span></td>
+                    <td><orftextinput name="w_PLANT_CD" orteus="true" width="260" editable="false" visible="true" password="false" text="" kind="" maxlength="2" required="" attribute=""
+></orftextinput></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td><orftextinput name="PLANT_NAME" orteus="true" width="320" editable="false" visible="true" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                    <td><orftextinput  visible="false" name="UNIT_QTY_TYP" orteus="true"></orftextinput></td>
+                    <td><orftextinput name="h_saveNewPlanOrder" orteus="true" width="" editable="true" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""></orftextinput></td>
+                    <td><orftextinput name="h_saveMUL_ODR_QTY" orteus="true" width="" editable="true" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  </tr>
+                  <tr>
+                    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                    <td><orftextinput name="w_ITEM_CD" orteus="true" width="260" editable="false" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td><orftextinput name="ITEM_NAME" orteus="true" width="320" editable="false" visible="true" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                    <td><orftextinput  visible="false" name="MUL_ODR_QTY" orteus="true"></orftextinput></td>
+                    <td>&nbsp;</td>
+                    <td><orftextinput  visible="false" name="MRP_ODR_TYP" orteus="true"></orftextinput></td>
+                  </tr>
+                </ornoloop>
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+	
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    
+	<tr height="467"> 
+      <td width="5" height="263"></td>
+      <td valign="top" width="958" height="360"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" name="AB0010011view1" attribute="DGS_SELECTSINGLE|DGS_SORTOFF" mode="VIEW" status="" float=""
+ script1="onClick;0;SET;_AB0010011form2/sub_PlanDate_TIME=_AB0010011view1/PlanDate_nonCoron,_AB0010011form2/sub_PlanDate_TIME_h=_AB0010011view1/PlanDate_nonCoron, _AB0010011form2/sub_NEW_PLAN_ORDER=_AB0010011view1/NewPlanOrder"
+ width="934" height="336" border="1" cellspacing="1" cellpadding="1">
+                <orloophead>
+                  <tr bgcolor="#ccff99">
+                    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TIME">時刻</span></td>
+                    <td hidden="true">&nbsp;</td>
+                    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0405">確定デマンド</span></td>
+                    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0403">計画デマンド</span></td>
+                    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0404">確定オーダ</span></td>
+                    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0401">旧計画オーダ</span></td>
+                    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0402">新計画オーダ</span></td>
+                    <td hidden="true">この日の差分</td>
+                    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0432">有効在庫</span></td>
+                  </tr>
+                </orloophead>
+				<orloop>
+                  <tr>
+<%
+    String selColor = "000000";
+
+    if(aAB0010010Struct.isHoliday()){
+        selColor = "FF0033";
+    }
+    String canSelect = "true";
+    if(loopCount == 0 || aAB0010010Struct.isHoliday()){
+        canSelect = "false";
+    }
+    String numberColKind = "OBT_NUMBER;14.1;FLOOR;4";
+    if(loopCount == 0){
+        numberColKind = "";
+    }
+%>
+                    <td rowselectable='<%= canSelect %>' color='<%= selColor %>'><orflabel name="PlanDate" orteus="true" width="100" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                    <td><orflabel name="PlanDate_nonCoron" orteus="true" width="100" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                    <td><orflabel name="FixDemand" orteus="true" width="100" height="" text="" kind="<%= numberColKind %>" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                    <td><orflabel name="PlanDemand" orteus="true" width="100" height="" text="" kind="<%= numberColKind %>" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                    <td><orflabel name="FixOrder" orteus="true" width="100" height="" text="" kind="<%= numberColKind %>" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                    <td><orflabel name="OldPlanOrder" orteus="true" width="100" height="" text="" kind="<%= numberColKind %>" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                    <td><orflabel name="NewPlanOrder" orteus="true" width="100" height="" text="" kind="<%= numberColKind %>" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                    <td><orflabel name="Difference" orteus="true" width="100" height="" text="" kind="<%= numberColKind %>" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                    <td><orflabel name="ValidStock" orteus="true" width="100" height="" text="" kind="OBT_NUMBER;14.1;FLOOR;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                  </tr>
+                </orloop>
+              </table>
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↑ --></td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+	      </tr>
+        </table>
+      </td>
+      <td width="5" height="263"></td>
+    </tr>
+	
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    
+	<tr height="467"> 
+      <td width="5" height="289"></td>
+      <td valign="top" width="958" height="289"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" name="AB0010011form2" mode="FORM" status="" float=""
+	 script1="onLoad;0;CALL;onDecision@0,1"
+ 		
+		script2="onDecision;0;CHK;_AB0010011form2/sub_NEW_PLAN_ORDER[gt]0.0@*0,*1"
+		 	script3="child;0;UNMASK;_AB0010011button1/subInsert"
+		 	script4="child;1;MASK;_AB0010011button1/subInsert"
+		
+		script5="onDecision;1;CHK;?AB0010011view1/?[eq]SINGLE[and]_AB0010011form2/sub_PlanDate_TIME[eq]_AB0010011form2/sub_PlanDate_TIME_h[and]_AB0010011form2/sub_NEW_PLAN_ORDER[gt]0.0@*2,*3"
+			script6="child;2;UNMASK;_AB0010011button1/subUpdate,_AB0010011button1/subDelete"
+			script7="child;3;MASK;_AB0010011button1/subUpdate,_AB0010011button1/subDelete"
+		
+ width="934" height="50" border="1" cellspacing="1" cellpadding="1">
+                <orloophead>
+                  <tr bgcolor="#ccff99">
+                    <td width="170" align=right></td>
+                    <td width="150"></td>
+                    <td width="22"></td>
+                    <td width="88"></td>
+                    <td width="22"></td>
+                    <td width="170" align=right></td>
+                    <td width="150"></td>
+                    <td width="22"></td>
+                    <td width="88"></td>
+                  </tr>
+                </orloophead>
+                <ornoloop>
+                  <tr>
+                    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0420">生産計画期間</span></td>
+                    <td><orftextinput name="sub_PlanDate" orteus="true" width="150" editable="false" visible="true" password="false" text="" kind="OBT_DATE;TYPE_YMD;" maxlength="" required="" attribute=""
+></orftextinput></td>
+                    <td>&nbsp;</td>
+                    <td><orftextinput name="sub_PlanDate_TIME" orteus="true" width="88" editable="true" visible="true" password="false" text="" kind="OBT_N;" maxlength="4" required="" attribute=""
+></orftextinput></td>
+                    <td>&nbsp;</td>
+                    <td><orftextinput name="sub_PlanDate_TIME_h" orteus="true" width="88" editable="true" visible="false" password="false" text="" kind="OBT_N;" maxlength="4" required="" attribute=""
+></orftextinput></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0402">新計画オーダ</span></td>
+                    <td><orftextinput name="sub_NEW_PLAN_ORDER" orteus="true" width="150" editable="true" visible="true" password="false" text="" kind="OBT_NUMBER_Z;14.1;FLOOR;4" maxlength="15" required="A" attribute=""
+					   script1="onDecision;0;CHK;_AB0010011form1/UNIT_QTY_TYP[eq]1@*0"
+                       script2="child;0;CHK;[({_sub_NEW_PLAN_ORDER}*10000)%10000][gt]0@*1"
+					   script3="child;1;CHK;_sub_NEW_PLAN_ORDER[neq]99999999999999.0@*2"
+                       script4="child;2;SET;_AB0010011form2/sub_NEW_PLAN_ORDER=[({_AB0010011form2/sub_NEW_PLAN_ORDER}-((({_AB0010011form2/sub_NEW_PLAN_ORDER}*10000)%10000)/10000))+1-1]@*3"
+					   script5="child;3;CHK;1[eq]1@!AD00081"
+
+                       script6="onDecision;1;CHK;_AB0010011form1/MRP_ODR_TYP[eq]<%= AB0010Const.C_ODR_LOT %>@*4"
+					   script7="child;4;SET;_AB0010011form1/h_saveNewPlanOrder=[{_sub_NEW_PLAN_ORDER}*10000]@*5"
+					   script8="child;5;SET;_AB0010011form1/h_saveMUL_ODR_QTY=[{_AB0010011form1/MUL_ODR_QTY}*10000]@*6"
+					   script9="child;6;CHK;[{_AB0010011form1/h_saveNewPlanOrder}%{_AB0010011form1/h_saveMUL_ODR_QTY}][gt]0@*7"
+  					   script10="child;7;CHK;_sub_NEW_PLAN_ORDER[neq]99999999999999.0@*8"
+					   script11="child;8;CFMPUT;_AB0010011form2/sub_NEW_PLAN_ORDER=NO@AB90002"			
+							
+
+					   
+></orftextinput></td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                </ornoloop>
+              </table>
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↑ --></td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="559" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="315" class="frame10" height="32"><table orftype="DataGrid" name="AB0010011button1" mode="BUTTON" status="" float=""
+ width="315" height="22" border="1" cellspacing="1" cellpadding="1">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td><orfbutton name="subInsert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;CHK;~LEN(_AB0010011form2/sub_PlanDate_TIME)[eq]1[or]~LEN(_AB0010011form2/sub_PlanDate_TIME)[eq]2@#AS00015"
+ script2="onClick;1;CHK;~LEN(_AB0010011form2/sub_PlanDate_TIME)[eq]3@*0"
+ script3="onClick;2;CHK;~LEN(_AB0010011form2/sub_PlanDate_TIME)[eq]4@*1"
+ script4="onClick;3;CHK;_AB0010011form2/sub_PlanDate_TIME[eq]@*2"
+ script5="onClick;4;SCRCHG;_AB0010011form1/*,_AB0010011form2/*@AB0010010Servlet,,$ZZ07005"
+ script6="child;0;CHK;[{~CHARAT(_AB0010011form2/sub_PlanDate_TIME:1)}*10+{~CHARAT(_AB0010011form2/sub_PlanDate_TIME:2)}][gte]60@#AS00016"
+ script7="child;1;CHK;[{~CHARAT(_AB0010011form2/sub_PlanDate_TIME:0)}*10+{~CHARAT(_AB0010011form2/sub_PlanDate_TIME:1)}][gte]24[or][{~CHARAT(_AB0010011form2/sub_PlanDate_TIME:2)}*10+{~CHARAT(_AB0010011form2/sub_PlanDate_TIME:3)}][gte]60@#AS00016"
+ script8="child;2;SET;_AB0010011form2/sub_PlanDate_TIME=2359"
+></orfbutton></td>
+                  <td><orfbutton name="subUpdate" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;CHK;~LEN(_AB0010011form2/sub_PlanDate_TIME)[eq]1[or]~LEN(_AB0010011form2/sub_PlanDate_TIME)[eq]2@#AS00015"
+ script2="onClick;1;CHK;~LEN(_AB0010011form2/sub_PlanDate_TIME)[eq]3@*0"
+ script3="onClick;2;CHK;~LEN(_AB0010011form2/sub_PlanDate_TIME)[eq]4@*1"
+ script4="onClick;3;SCRCHG;_AB0010011form1/*,_AB0010011form2/*@AB0010010Servlet,,$ZZ07006"
+ script5="child;0;CHK;[{~CHARAT(_AB0010011form2/sub_PlanDate_TIME:1)}*10+{~CHARAT(_AB0010011form2/sub_PlanDate_TIME:2)}][gte]60@#AS00016"
+ script6="child;1;CHK;[{~CHARAT(_AB0010011form2/sub_PlanDate_TIME:0)}*10+{~CHARAT(_AB0010011form2/sub_PlanDate_TIME:1)}][gte]24[or][{~CHARAT(_AB0010011form2/sub_PlanDate_TIME:2)}*10+{~CHARAT(_AB0010011form2/sub_PlanDate_TIME:3)}][gte]60@#AS00016"
+></orfbutton></td>
+                  <td><orfbutton name="subDelete" value="削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDelete" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SCRCHG;_AB0010011form1/*,_AB0010011form2/*@AB0010010Servlet,,$ZZ07007"
+></orfbutton></td>
+                </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11" height="32"></td>
+</tr>
+        </table>
+      </td>
+      <td width="5" height="289"></td>
+    </tr>
+	
+	<tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+</tr>
+	
+	<tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+	
+	<tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AB0010011button0" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105></td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="cancelSub1" value="戻る" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReturn"
+                        width="100" 
+                        script1="onClick;0;SCRCHG;@AB0010010Servlet,,$ZZ07013" lock="0"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+	
+</table>
+<%
+MessageStruct msgStruct = aAB0010010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

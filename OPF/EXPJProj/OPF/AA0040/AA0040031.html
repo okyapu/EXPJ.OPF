@@ -1,0 +1,289 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+支給単価メンテナンスサブ1
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AA0040/AA0040031.html,v $
+$Author: geng-jia $     
+$Revision: 1.15 $ $Date: 2017/02/17 10:00:08 $
+********************************************************* --%>
+<html>
+<head>
+<title>支給単価メンテナンスサブ1</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AA0040031" version="AA0040031 $Revision: 1.15 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+<%
+// 金額の書式
+String costColKind = "OBT_NUMBER_P;14.2;FLOOR;4";
+/*if(aAA0040030Struct.getROUND_TYP() != null && aAA0040030Struct.getDECIMAL_FIG() != null
+&& "".equals(aAA0040030Struct.getROUND_TYP()) == false && "".equals(aAA0040030Struct.getDECIMAL_FIG()) == false){
+    costColKind = Kind.convertNumeric(Kind.NUMBER,Kind.Z,14,2,aAA0040030Struct.getROUND_TYP(),aAA0040030Struct.getDECIMAL_FIG());
+}*/
+%>
+
+
+<% String CallButton = aAA0040030Control.getButton(); %>
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="97"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr height="73"> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AA0040031form1" width="934" height="73" border="1" cellspacing="0" cellpadding="0"
+                 script1="onLoad;0;CALL;child@0"
+
+                   script2="child;0;CHK;<%=CallButton%>[eq]append[or]<%=CallButton%>[eq]copy[or]<%=CallButton%>[eq]sub1Insert@*1,*2"
+                     script3="child;1;MASK;_AA0040031button1/sub1Update"
+                     script4="child;2;CHK;<%=CallButton%>[eq]modify[or]<%=CallButton%>[eq]sub1Update@*3"
+                       script5="child;3;MASK;_AA0040031button1/sub1Insert,_AA0040031form2/p_EFF_PHASE_IN_DATE,_AA0040031form2/CalendarEffPhaseInDate"
+
+                 script6="onLoad;1;CALL;onDecision@0,1,2,3"
+
+                   script7="onDecision;0;CHKRQ;A@*4,*6"
+                     script8="child;4;CHK;<%=CallButton%>[eq]append[or]<%=CallButton%>[eq]copy[or]<%=CallButton%>[eq]sub1Insert@*5"
+                       script9="child;5;UNMASK;_AA0040031button1/sub1Insert"
+                     script10="child;6;MASK;_AA0040031button1/sub1Insert"
+					 
+					script11="onDecision;1;CHK;_AA0040031form2/p_ONEROUS_FLG[eq]0@*7,*9"
+					script12="child;7;MASK;_AA0040031form2/p_UNIT_COST@*8"
+					script13="child;8;SET;_AA0040031form2/p_UNIT_COST=0" 
+					script14="child;9;UNMASK;_AA0040031form2/p_UNIT_COST" 
+					script15="onDecision;2;CHK;_AA0040031form1/h_APR_CONS_UNIT_COST[eq]0@*10,*11"
+				      script16="child;10;MASK;_AA0040031form2/p_APPR_REMARKS"
+					  script17="child;11;UNMASK;_AA0040031form2/p_APPR_REMARKS"
+					script18="onDecision;3;CHK;_AA0040031form1/h_SCREENMOVE_TYP[neq]@*12"
+					  script19="child;12;MASK;_AA0040031button1/sub1Insert,_AA0040031button1/sub1Update"
+			   >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                  <td><orftextinput  name="ITEM_CD" tablename="M_ITEM" columnname="ITEM_CD" editable="false" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" editable="false" orteus="true" width="320"></orftextinput></td>
+                  <td><orftextinput name="h_SCREENMOVE_TYP" orteus="true" width="" editable="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_APPR_ID" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_CD">取引先コード</span></td>
+                  <td><orftextinput  name="VEND_CD" tablename="M_VEND_CTRL" columnname="VEND_CD" editable="false" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="VEND_ANAME" tablename="M_VEND_CTRL" columnname="VEND_ANAME" editable="false" orteus="true" width="320"></orftextinput></td>
+                  <td><orftextinput name="h_APR_CONS_UNIT_COST" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_CD">通貨コード</span></td>
+                  <td><orftextinput  name="CUR_CD" maxlength="25" editable="false" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="CUR_NAME" maxlength="40" editable="false" orteus="true" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="w_MODIFY_COUNT" tablename="M_CONS_UNIT_COST" columnname="MODIFY_COUNT" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" class="frame18"></td>
+            <td colspan="3" class="frame19"></td>
+            <td width="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="436"> 
+      <td width="5" height="436"></td>
+      <td valign="top" width="958" height="436"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr height="392"> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AA0040031form2" width="934" height="392" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_IN_DATE">有効開始日付</span></td>
+                  <td><orftextinput  name="p_EFF_PHASE_IN_DATE" tablename="M_CONS_UNIT_COST" columnname="EFF_PHASE_IN_DATE" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD" required="A"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarEffPhaseInDate" value="" pattern="select" orteus="false"
+                        width="22"
+                        attribute="BTS_CALENDAR"
+                        script1="onClick;0;CALENDAR;_AA0040031form2/p_EFF_PHASE_IN_DATE"></orfcalendar></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_TYP">単価区分</span></td>
+                  <td><orfcombobox  name="p_UNIT_COST_TYP" tablename="M_CONS_UNIT_COST" columnname="UNIT_COST_TYP" orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST">単価</span></td>
+                  <td><orftextinput name="p_UNIT_COST" tablename="M_CONS_UNIT_COST" columnname="UNIT_COST" dbtype="number" tablejname="支給単価" columnjname="単価"  orteus="true" width="150" editable="false" visible="true" password="false" text="" kind="OBT_NUMBER_Z;14.2;ROUND;4" maxlength="18" required="Z" attribute="TIS_RIGHT"
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ONEROUS_FLG">有償フラグ</span></td>
+                  <td><orfcombobox  name="p_ONEROUS_FLG" tablename="M_CONS_UNIT_COST" columnname="ONEROUS_FLG" orteus="true" width="260"
+				  ></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3165">承認備考</span></td>
+                  <td><orftextinput name="p_APPR_REMARKS" orteus="true" width="712" editable="true" maxlength="80"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07"></td>
+            <td width="664" class="frame08"></td>
+            <td width="60" class="frame09"></td>
+            <td width="210" class="frame10"><table orftype="DataGrid" mode="BUTTON" name="AA0040031button1" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                  <td><orfbutton name="sub1Insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="22" lock="1" attribute="" visible=""
+ script1="onClick;0;SCRCHG;_AA0040031form1/*,_AA0040031form2/*@AA0040030Servlet,,$ZZ07001"
+></orfbutton></td>
+                  <td><orfbutton name="sub1Update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="22" lock="1" attribute="" visible=""
+ script1="onClick;0;SCRCHG;_AA0040031form1/*,_AA0040031form2/*@AA0040030Servlet,,$ZZ07003"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table> 
+            </td>
+            <td width="12" class="frame11"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="853"></td>
+            <td align="right" width="105"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AA0040031button0" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td>
+                    <orfbutton  name="cancelSub1" value="戻る" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReturn" width="100"
+                       script1="onClick;0;CHK;_AA0040031form1/h_SCREENMOVE_TYP[eq]@*0,*1"
+				   		script2="child;0;SCRCHG;_AA0040031form1/*,_AA0040021form2/*@AA0040030Servlet,,$ZZ07013"
+				   		script3="child;1;CLOSE"
+                                           lock="0">
+                    </orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAA0040030Control.getMessage();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

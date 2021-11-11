@@ -1,0 +1,224 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+表示変更
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AZ0060/AZ0060010iframe.html,v $
+$Author: geng-jia $	
+$Revision: 1.7 $　$Date: 2017/02/20 10:23:39 $
+********************************************************* --%>
+<html>
+<head>
+<title>表示変更</title>
+<%@include file="common/expj_v5.jsp" %>
+<script>
+	var data = "<root>";
+	
+	function onInitializeOnLoad(){
+		setDataGridDataParent("AZ0060010",data + "</root>");
+	}
+</script>
+<% 
+
+String screen_Url = null;
+if("BA0040010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	screen_Url = "BA0020010Servlet";
+}else{
+	screen_Url = aAZ0060010Control.getScreen_url();
+}
+ScreenMoveUtil su1 = new ScreenMoveUtil(screen_Url,so); 
+ScreenMoveUtil su2 = new ScreenMoveUtil(screen_Url,so); 
+
+%>
+</head>
+
+<body flash="true"  onLoad="onInitializeOnLoad()" dynamic="true">
+<%
+	aAZ0060010Control.setList(aAZ0060010Control.getDetailList());		  
+%>
+
+  <table orftype="DataGrid" attribute="DGS_SELECTMULTI" mode="VIEW" float="" name="AZ0060010view2" width="934" height="170" border="1" cellspacing="0" cellpadding="0"
+  status="<%= TypeConverter.sanitizer(aAZ0060010Control.getReadStatusString()) %>"
+  script1="onLoad;0;CALL;onDecision@0"
+ 	script2="onDecision;0;CHK;?AZ0060010view2/*[eq]NORMAL@*0,*1"
+		script3="child;0;UNMASK;_AZ0060010button2/CheckAll"
+		script4="child;1;MASK;_AZ0060010button2/CheckAll"
+ script5="onLoad;1;CALL;onClick@0,1,2,3,4"
+	script6="onClick;0;CHK;?AZ0060010view2/?[eq]NOT_SELECTED@*2,*3"
+		script7="child;2;MASK;_AZ0060010button2/ApprAssort,_AZ0060010button2/ReserveAssort,_AZ0060010button2/ReserveDelAssort,_AZ0060010button2/ApprDelAssort,_AZ0060010button2/MastInfo,_AZ0060010button2/ApprInfo"
+ 		script9="child;3;SELCHK;AZ0060010view2:_h_STATUS[eq]1@*4,*6"
+			script10="child;4;UNMASK;_AZ0060010button2/ApprAssort,_AZ0060010button2/ReserveAssort,_AZ0060010button2/ApprDelAssort@*5"
+				script11="child;5;MASK;_AZ0060010button2/ReserveDelAssort"
+			script12="child;6;SELCHK;AZ0060010view2:_h_STATUS[eq]2@*7,*9"
+				script13="child;7;UNMASK;_AZ0060010button2/ReserveDelAssort@*8"
+					script14="child;8;MASK;_AZ0060010button2/ApprAssort,_AZ0060010button2/ReserveAssort,_AZ0060010button2/ApprDelAssort"
+				script15="child;9;MASK;_AZ0060010button2/ApprAssort,_AZ0060010button2/ReserveAssort,_AZ0060010button2/ReserveDelAssort,_AZ0060010button2/ApprDelAssort"
+	script16="onClick;1;CHK;?AZ0060010view2/?[eq]SINGLE@*10,*17"
+		script17="child;10;SELCHK;AZ0060010view2:_h_PROC_TYP[eq]1@*11,*13"
+				script18="child;11;UNMASK;_AZ0060010button2/ApprInfo@*12"
+					script19="child;12;MASK;_AZ0060010button2/MastInfo"
+				script20="child;13;SELCHK;AZ0060010view2:_h_PROC_TYP[eq]2@*14,*15"
+					script21="child;14;UNMASK;_AZ0060010button2/MastInfo,_AZ0060010button2/ApprInfo"
+					script22="child;15;UNMASK;_AZ0060010button2/MastInfo@*16"
+					script23="child;16;MASK;_AZ0060010button2/ApprInfo"
+		script24="child;17;MASK;_AZ0060010button2/MastInfo,_AZ0060010button2/ApprInfo"
+ 	script25="onClick;2;CHK;_AZ0060010form1/h_APPR_POWER_TYP[eq]0@*18"
+		script26="child;18;MASK;_AZ0060010button2/ApprAssort,_AZ0060010button2/ReserveAssort,_AZ0060010button2/ReserveDelAssort"
+	script27="onClick;3;CHK;?AZ0060010view2/?[eq]NOT_SELECTED@*19,*20"
+				script28="child;19;MASK;_AZ0060010button2/ApprDelAssort"
+				script29="child;20;SELCHK;AZ0060010view2:_l_REQUEST_BY[eq]<%=aAZ0060010Control.getsysUSER_CD()%>@*21,*19"
+					script30="child;21;UNMASK;_AZ0060010button2/ApprDelAssort"
+	script31="onClick;4;CHK;?AZ0060010view2/?[neq]NOT_SELECTED@*22"
+		script32="child;22;CHK;_AZ0060010form1/h_REQUEST_APPR_SAME[eq]0@*23"
+		script33="child;23;SELCHKT;AZ0060010view2:_l_REQUEST_BY[eq]<%=aAZ0060010Control.getsysUSER_CD()%>@*24"
+			script34="child;24;MASK;_AZ0060010button2/ApprAssort,_AZ0060010button2/ReserveAssort,_AZ0060010button2/ReserveDelAssort"	
+	script35="onClick;5;CHK;?AZ0060010view2/?[eq]SINGLE@*25"
+		script36="child;25;FSHOW;AZ0060010float1@93"
+	script37="onClick;6;CHK;?AZ0060010view2/?[eq]SINGLE@*26"
+ 		script38="child;26;SUBMIT;ClickDetail=ACT,_AZ0060010view2/+@AZ0060010Servlet"
+  >
+	<orloophead>
+	<tr bgcolor="#ccff99">
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	  <td width="60"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXEC_TYP">処理区分</span></td>
+	  <td hidden="true">&nbsp;</td>
+	  <td width="70"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5099">承認状態</span></td>
+	  <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5082">依頼日付</span></td>
+	  <td width="70"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3167">依頼者</span></td>
+	  <td hidden="true">&nbsp;</td>
+	  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3165">承認備考</span></td>
+	  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3163">保留理由</span></td>
+	  <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5088">キー1</span></td>
+	  <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5089">キー2</span></td>
+	  <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5090">キー3</span></td>
+	  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5091">項目1</span></td>
+	  <td width="95"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5092">項目2</span></td>
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	  <td hidden="true">&nbsp;</td>
+	</tr>
+	</orloophead><orloop>
+	<tr>
+	   <td><orflabel name="h_STATUS" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	   <td><orflabel name="h_APPR_ID" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="l_PROC_TYP_VALUE" orteus="true" width="80" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_PROC_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="l_STATUS_NAME" orteus="true" width="70"></orflabel></td>
+	  <td><orflabel name="l_REQUEST_DATE" orteus="true" width="80" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="l_REQUEST_BY_NAME" orteus="true" width="70" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="l_REQUEST_BY" orteus="true" width="100" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="l_APPR_REMARKS" orteus="true" width="90" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="l_RESERVE_CAUSE" orteus="true" width="90" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="l_ITEM_COL1" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="l_ITEM_COL2" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="l_ITEM_COL3" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="l_ITEM_COL4" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="l_ITEM_COL5" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_MODIFY_COUNT" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_KEY1" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_VALUE1" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	 <td><orflabel name="h_KEY2" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_VALUE2" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_KEY3" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_VALUE3" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_KEY4" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_VALUE4" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_KEY5" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_VALUE5" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_KEY6" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_VALUE6" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_KEY7" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_VALUE7" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><orflabel name="h_TABLE_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	</tr>
+	</orloop>
+  </table>
+  <table orftype="DataGrid" name="AZ0060010button2" mode="BUTTON" status="" float=""
+ width="735" height="22" border="1" cellspacing="1" cellpadding="1">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+				  <td width="105">&nbsp;</td>
+				</tr>
+                </orloophead><ornoloop>
+				<tr>
+                  <td><orfbutton name="ApprAssort" value="選択承認" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnApprAssort" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_AZ0060010form1/*,_AZ0060010view1/+,_AZ0060010view2/+@AZ0060010Servlet,,$AZ00038"
+></orfbutton></td>
+                  <td><orfbutton name="ReserveAssort" value="選択保留" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReserveAssort" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_AZ0060010form1/*,_AZ0060010view1/+,_AZ0060010form2/*,_AZ0060010view2/+@AZ0060010Servlet,,$AZ00039"
+></orfbutton></td>
+                  <td><orfbutton name="ReserveDelAssort" value="選択保留解除" pattern="update" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReserveDelAssort" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_AZ0060010form1/*,_AZ0060010view1/+,_AZ0060010view2/+@AZ0060010Servlet,,$AZ00040"
+></orfbutton></td>
+                  <td><orfbutton name="ApprDelAssort" value="選択依頼削除" pattern="delete" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnApprDelAssort" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_AZ0060010form1/*,_AZ0060010view1/+,_AZ0060010view2/+@AZ0060010Servlet,,$AZ00099"
+></orfbutton></td>
+				  <td><orfbutton name="CheckAll" value="全選択" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCheckAll" width="100" height="22" lock="0" attribute="" visible="true"
+ script1="onClick;0;DGSALL;AZ0060010view2"
+></orfbutton></td>
+				  <td><orfbutton name="MastInfo" value="変更前" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnBeforeData" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SCRMV;h_SCREENMOVE_TYP=0,_AZ0060010view2/+@<%=screen_Url%>,<%=contextNo%>,<%=su1.getScreenName()%>,<%=su1.getScreenID()%>"
+></orfbutton></td>
+                  <td><orfbutton name="ApprInfo" value="変更後" pattern="select" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnAfterData" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SCRMV;h_SCREENMOVE_TYP=1,_AZ0060010view2/+@<%=screen_Url%>,<%=contextNo%>,<%=su2.getScreenName()%>,<%=su2.getScreenID()%>"
+></orfbutton></td>
+                </tr>
+                </ornoloop>
+</table>
+  
+  <%
+MessageStruct msgStruct = aAZ0060010Control.getMsgStruct();
+%>
+  <%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

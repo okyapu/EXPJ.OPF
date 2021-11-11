@@ -1,0 +1,26 @@
+﻿---
+-------------------------------------------------------------
+-- get_onerous.sql
+-------------------------------------------------------------*/
+SET HEADING OFF
+SET FEEDBAC OFF
+SET PAGES 0
+SET TERMOUT OFF
+SET TRIMSPOOL ON
+SET TAB OFF
+SET EMBEDDED OFF
+TTITLE OFF
+BTITLE OFF
+SET LINESIZE 799
+
+SPOOL sys_parameter_onerous.csv
+ SELECT NAME ||','||
+ VALUE ||','||
+ DESCRIPTION ||','||
+ DESCRIPTION_EN ||','||
+ CHANGEABLE_TYP FROM SYS_PARAMETER WHERE
+    NAME IN (SELECT PLANT_CD || '_ONEROUS_CONS_INV_TYP' FROM M_PLANT)
+ OR NAME IN (SELECT 'CM_ACCOUNTING_IF_BAT_PATH_' || COMPANY_CD FROM SYS_MY_COMPANY);
+
+SPOOL OFF
+EXIT

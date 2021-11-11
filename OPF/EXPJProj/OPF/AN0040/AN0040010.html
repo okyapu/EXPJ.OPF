@@ -1,0 +1,224 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+パラメータメンテナンス
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AN0040/AN0040010.html,v $
+$Author: geng-jia $
+$Revision: 1.4 $ $Date: 2017/02/13 03:36:44 $
+********************************************************* --%>
+<html>
+<head>
+<title>パラメータメンテナンス</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AN0040010" version="AN0040010 $Revision: 1.4 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="71">
+      <td width="5" height="71"></td>
+      <td valign="top" width="958">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <table orftype="DataGrid" mode="FORM" name="AN0040010form1" width="934" height="27" border="1" cellspacing="0" cellpadding="0"
+                   script1="onLoad;0;CALL;onDecision@0"
+                   script2="onDecision;0;CHK;?AN0040010view1/*[eq]NORMAL[and]?AN0040010form1/s_NAME[eq]SAME@*0,*1"
+                   script3="child;0;UNMASK;_AN0040010button2/Update"
+                   script4="child;1;MASK;_AN0040010button2/Update">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=170 align=right>&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=170 align=left>&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88 align=left>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" 
+                       mlname="Expj.NAME_1">パラメータ名</span></td>
+                  <td><orftextinput  name="s_NAME" tablename="SYS_PARAMETER" columnname="NAME" dbtype="varchar2"
+                       tablejname="パラメータ" columnjname="名前" orteus="true" width="260" maxlength="25" kind="OBT_WILD"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" 
+                       mlname="Expj.Cmt0002">（ワイルドカード指定可）</span></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32">
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"> </td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32">
+              <table orftype="DataGrid" mode="BUTTON" name="AN0040010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton name="Select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AN0040010form1/*@AN0040010Servlet"
+></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="462">
+      <td width="5" height="462"></td>
+      <td valign="top" width="958" height="462">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <table orftype="DataGrid" name="AN0040010view1" mode="VIEW" attribute="DGS_SORTOFF|DGS_SELECTOFF"
+                   status="<%= TypeConverter.sanitizer(aAN0040010Control.getReadStatusString()) %>" 
+                   width="934" height="418" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td hidden=true><orfdata excell="false"></orfdata></td>
+                  <td hidden=true><orfdata excell="false"></orfdata></td>
+                  <td hidden=true><orfdata excell="false"></orfdata></td>
+                  <td hidden=true><orfdata excell="false"></orfdata></td>
+				  <td hidden=true><orfdata excell="false"></orfdata></td>
+                  <td width=200><span orteus="true" mlang="true" mlkind="common" 
+                       mlname="Expj.NAME_1">パラメータ名</span></td>
+                  <td width=200><orfdata excell="false"></orfdata><span orteus="true" mlang="true" mlkind="common" 
+                       mlname="Expj.VALUE_1">設定値</span></td>
+                  <td width=413><orfdata excell="false"></orfdata><span orteus="true" mlang="true" mlkind="common" 
+                       mlname="Expj.DESCRIPTION">説明</span></td>
+                  <td width=413><orfdata excell="false"></orfdata><span orteus="true" mlang="true" mlkind="common" 
+                       mlname="Expj.DESCRIPTION_EN">説明(EN)</span></td>
+                </tr>
+                </orloophead><orloop>
+                  <%
+                    String editableFlg = "true";
+                    if (aAN0040010Struct.geth_CHANGEABLE_TYP().equals("1")) {
+                      editableFlg = "false";
+                    }
+                  %>
+                <tr>
+                  <td><orftextinput  name="h_VALUE" tablename="SYS_PARAMETER" columnname="VALUE" dbtype="varchar2"
+                       tablejname="パラメータ" columnjname="設定値" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_DESCRIPTION" tablename="SYS_PARAMETER" columnname="DESCRIPTION" dbtype="varchar2"
+                       tablejname="パラメータ" columnjname="説明" orteus="true" visible="false"></orftextinput></td>
+				  <td><orftextinput  name="h_DESCRIPTION_EN" tablename="SYS_PARAMETER" columnname="DESCRIPTION_EN" dbtype="varchar2"
+                       tablejname="パラメータ" columnjname="説明(EN)" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_CHANGEABLE_TYP" tablename="SYS_PARAMETER" columnname="CHANGEABLE_TYP" dbtype="number"
+                       tablejname="パラメータ" columnjname="変更可否区分" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_MODIFY_COUNT" tablename="SYS_PARAMETER" columnname="MODIFY_COUNT" dbtype="number"
+                       tablejname="パラメータ" columnjname="更新数" orteus="true" visible="false"></orftextinput></td>
+				  <td><orflabel  name="l_NAME" tablename="SYS_PARAMETER" columnname="NAME" dbtype="varchar2"
+                       tablejname="パラメータ" columnjname="名前" orteus="true"></orflabel></td>
+                  <td><orftextinput  name="VALUE" tablename="SYS_PARAMETER" columnname="VALUE" dbtype="varchar2"
+                       tablejname="パラメータ" columnjname="設定値" orteus="true" maxlength="256" editable="<%=editableFlg%>"></orftextinput></td>
+                  <td><orftextinput  name="DESCRIPTION" tablename="SYS_PARAMETER" columnname="DESCRIPTION" dbtype="varchar2"
+                       tablejname="パラメータ" columnjname="説明" orteus="true" maxlength="256" editable="<%=editableFlg%>"></orftextinput></td>
+                  <td><orftextinput  name="DESCRIPTION_EN" tablename="SYS_PARAMETER" columnname="DESCRIPTION_EN" dbtype="varchar2"
+                       tablejname="パラメータ" columnjname="説明(EN)" orteus="true" maxlength="256" editable="<%=editableFlg%>"></orftextinput></td>
+                </tr>
+                </orloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32">
+            <td width="12" class="frame15" height="32"></td>
+            <td width="105" class="frame10" height="32">
+              <table orftype="DataGrid" mode="BUTTON" name="AN0040010button2" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton name="Update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;COLCHKT;AN0040010view1:_VALUE[eq]''@#AN04001"
+ script2="onClick;1;SUBMIT;_AN0040010form1/*,_AN0040010view1/*@AN0040010Servlet,,$ZZ07003"
+></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="60" class="frame16" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="12" class="frame17" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="462"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42">
+      <td colspan="3" width="968" height="42" class="under">
+        <table width="968" border="0">
+          <tr>
+            <td align="left" width="748"></td>
+            <td align="right" width="210">
+              <table orftype="DataGrid" mode="BUTTON" name="AN0040010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton  name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common"
+                       mlname="Expj.BtnClear" width="100" script1="onClick;0;SUBMIT;_AN0040010form1/*@AN0040010Servlet,,$ZZ07008" lock="0"></orfbutton></td>
+                  <td><orfbutton  name="Close" value="閉じる" pattern="none" orteus="true" mlang="true" mlkind="common"
+                       mlname="Expj.BtnClose" width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+  MessageStruct msgStruct = aAN0040010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>
+

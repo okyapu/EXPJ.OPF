@@ -1,0 +1,176 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+品目別棚卸設定メンテナンスサブ1
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AH0010/AH0010021.html,v $
+$Author: geng-jia $
+$Revision: 1.4 $ $Date: 2017/02/13 03:29:46 $
+********************************************************* --%>
+<html>
+<head>
+<title>品目別棚卸設定メンテナンスサブ1</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AH0010021" version="AH0010021 $Revision: 1.4 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+<%@include file="common/upload.jsp" %>
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="71"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AH0010021form1" width="934" height="27" border="1" cellspacing="0" cellpadding="0"
+				 script1="onLoad;0;CALL;onDecision@0"		
+
+				 script2="onDecision;0;CHKRQ;A@*0,*1"		
+						 script3="child;0;UNMASK;_AH0010021button1/CsvIn"
+						 script4="child;1;MASK;_AH0010021button1/CsvIn"
+              >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0046">取込ファイル</span></td>
+                  <td><orftextinput  name="FileName" orteus="true" width="712" editable="false" required="A" kind=""></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="664" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="210" class="frame10" height="32">
+			<table orftype="DataGrid" mode="BUTTON" name="AH0010021button1" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="Browse" value="参照" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnBrowse" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;FILEDLG;_AH0010021form1/FileName"
+></orfbutton></td>
+                <td><orfbutton name="CsvIn" value="取込" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCsvIn" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;FILEUPLOAD;AH0010020Servlet"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="462"> 
+      <td width="5" height="462"></td>
+      <td valign="top" width="958" height="462"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="VIEW" attribute="DGS_SELECTMULTI" name="AH0010021view1" width="934" height="438" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td hidden="true">&nbsp;</td>
+                  <td width="150"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0047">エラー箇所</span></td>
+                  <td width="600"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0048">エラー内容</span></td>
+                </tr>
+                </orloophead>
+                <orloop>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orflabel  name="ERR_ADR" orteus="true"></orflabel></td>
+                  <td><orflabel  name="ERR_MSG" orteus="true"></orflabel></td>
+                </tr>
+                </orloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" height="12" class="frame18"></td>
+            <td colspan="3" height="12" class="frame19"></td>
+            <td width="12" height="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="462"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="863"></td>
+            <td align="right" width="105"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AH0010021button0" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="return_sub1" value="戻る" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReturn" width="100"
+						 script1="onClick;0;SCRCHG;_AH0010021form1/*,_AH0010021view1/*@AH0010020Servlet,,$ZZ07013"
+						 lock="0"
+                    ></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAH0010020Control.getMessage();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

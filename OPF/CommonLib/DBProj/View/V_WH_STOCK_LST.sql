@@ -1,0 +1,205 @@
+CREATE OR REPLACE VIEW V_WH_STOCK_LST AS
+select
+    PLANT_CD,
+    WH_CD,
+    WH_NAME,
+    DISPLAY_NAME,
+    VEND_CD,
+    VEND_ANAME,
+    ITEM_CD,
+    ITEM_NAME,
+    JOB_ODR_CD,
+    STOCK_ON_HAND_QTY,
+    DEFECT_QTY,
+    PRVS_DAYEND_STOCK_QTY,
+    PRVS_MONTHEND_STOCK_QTY,
+    STOCK_UNIT,
+	SUPPLY_KBN
+ from (
+ 	SELECT
+	    T_ITEM_STOCK.PLANT_CD,
+	    T_ITEM_STOCK.WH_CD,
+	    M_WH.WH_NAME,
+	    SYS_TYPE_VALUE.VALUE as DISPLAY_NAME,
+	    M_WH.VEND_CD,
+	    M_VEND_CTRL.VEND_ANAME,
+	    T_ITEM_STOCK.ITEM_CD,
+	    M_ITEM.ITEM_NAME,
+	    null as JOB_ODR_CD,
+	    T_ITEM_STOCK.STOCK_ON_HAND_QTY,
+	    T_ITEM_STOCK.DEFECT_QTY,
+	    T_ITEM_STOCK.PRVS_DAYEND_STOCK_QTY,
+	    T_ITEM_STOCK.PRVS_MONTHEND_STOCK_QTY,
+	    M_ITEM.STOCK_UNIT,
+	    (CASE WHEN M_WH.VEND_CD is null THEN 
+			(SELECT VALUE FROM SYS_TYPE_VALUE WHERE NAME='CONS_TYP' AND VALUE = 0)
+		WHEN M_WH.VEND_CD is not null THEN (
+			SELECT
+				(CASE WHEN ONEROUS_FLG = 0 THEN
+					(SELECT VALUE FROM SYS_TYPE_VALUE WHERE NAME='CONS_TYP' AND VALUE = 2)
+				WHEN ONEROUS_FLG = 1 THEN
+					(SELECT VALUE FROM SYS_TYPE_VALUE WHERE NAME='CONS_TYP' AND VALUE = 1)
+				 END)
+			FROM     
+				M_CONS_UNIT_COST 
+			WHERE
+				COMPANY_CD = (
+					SELECT
+						COMPANY_CD
+					FROM
+						SYS_MY_COMPANY                     
+					WHERE
+						CTRL_CD = 'SYSTEM'
+					)		
+			AND 
+				VEND_CD = M_WH.VEND_CD 									
+			AND 
+				PLANT_CD = M_WH.PLANT_CD                                     
+			AND 
+				ITEM_CD =  T_ITEM_STOCK.ITEM_CD 
+			AND	
+				EFF_PHASE_IN_DATE = (
+				SELECT     
+					MAX(EFF_PHASE_IN_DATE) 
+				FROM
+					M_CONS_UNIT_COST 
+				WHERE
+					COMPANY_CD = (
+						SELECT                         
+							COMPANY_CD                     
+						FROM
+							SYS_MY_COMPANY                     
+						WHERE                         
+							CTRL_CD = 'SYSTEM'
+						) 									
+				AND
+					VEND_CD = M_WH.VEND_CD
+				AND
+					PLANT_CD = M_WH.PLANT_CD
+	            AND
+					ITEM_CD =  T_ITEM_STOCK.ITEM_CD
+				AND 
+					EFF_PHASE_IN_DATE <= (
+						SELECT
+							BUSINESS_OPR_DATE
+						FROM 
+							SYS_DATE_CTRL
+						WHERE 
+							PLANT_CD = M_WH.PLANT_CD
+						)
+				)
+		)
+		END ) as SUPPLY_KBN
+	FROM
+	    T_ITEM_STOCK,
+	    M_WH,
+	    M_VEND_CTRL,
+	    M_ITEM,
+	    SYS_TYPE_VALUE
+	WHERE
+	    SYS_TYPE_VALUE.NAME = 'MRP_FLG'
+	AND    
+		SYS_TYPE_VALUE.VALUE = M_WH.MRP_FLG
+	AND    
+		T_ITEM_STOCK.WH_CD = M_WH.WH_CD
+	AND
+		M_WH.COMPANY_CD = M_VEND_CTRL.COMPANY_CD(+) 
+	AND
+	    M_WH.VEND_CD = M_VEND_CTRL.VEND_CD(+)
+	AND
+	   T_ITEM_STOCK.ITEM_CD = M_ITEM.ITEM_CD
+UNION
+    select  
+		T_JOB_ODR_CD_STOCK.PLANT_CD, 
+        T_JOB_ODR_CD_STOCK.WH_CD,
+        M_WH.WH_NAME,
+        SYS_TYPE_VALUE.VALUE,
+        M_WH.VEND_CD,
+        M_VEND_CTRL.VEND_ANAME,
+        T_JOB_ODR_CD_STOCK.ITEM_CD,
+        M_ITEM.ITEM_NAME,
+        T_JOB_ODR_CD_STOCK.JOB_ODR_CD,
+        T_JOB_ODR_CD_STOCK.STOCK_ON_HAND_QTY,
+        null as DEFECT_QTY,
+        T_JOB_ODR_CD_STOCK.PRVS_DAYEND_STOCK_QTY,
+        T_JOB_ODR_CD_STOCK.PRVS_MONTHEND_STOCK_QTY,
+        M_ITEM.STOCK_UNIT,
+	    (CASE WHEN M_WH.VEND_CD is null THEN 
+			(SELECT VALUE FROM SYS_TYPE_VALUE WHERE NAME='CONS_TYP' AND VALUE = 0)
+		WHEN M_WH.VEND_CD is not null THEN (
+			SELECT
+				(CASE WHEN ONEROUS_FLG = 0 THEN
+					(SELECT VALUE FROM SYS_TYPE_VALUE WHERE NAME='CONS_TYP' AND VALUE = 2)
+				WHEN ONEROUS_FLG = 1 THEN
+					(SELECT VALUE FROM SYS_TYPE_VALUE WHERE NAME='CONS_TYP' AND VALUE = 1)
+				 END)
+			FROM     
+				M_CONS_UNIT_COST 
+			WHERE
+				COMPANY_CD = (
+					SELECT
+						COMPANY_CD
+					FROM
+						SYS_MY_COMPANY                     
+					WHERE
+						CTRL_CD = 'SYSTEM'
+					) 									
+			AND 
+				VEND_CD = M_WH.VEND_CD 									
+			AND 
+				PLANT_CD = M_WH.PLANT_CD                                     
+			AND 
+				ITEM_CD =  T_JOB_ODR_CD_STOCK.ITEM_CD 
+			AND	
+				EFF_PHASE_IN_DATE = (
+				SELECT     
+					MAX(EFF_PHASE_IN_DATE) 
+				FROM
+					M_CONS_UNIT_COST 
+				WHERE
+					COMPANY_CD = (
+						SELECT                         
+							COMPANY_CD                     
+						FROM
+							SYS_MY_COMPANY                     
+						WHERE                         
+							CTRL_CD = 'SYSTEM'
+						) 									
+				AND
+					VEND_CD = M_WH.VEND_CD
+				AND
+					PLANT_CD = M_WH.PLANT_CD
+	            AND
+					ITEM_CD =  T_JOB_ODR_CD_STOCK.ITEM_CD
+				AND 
+					EFF_PHASE_IN_DATE <= (
+						SELECT
+							BUSINESS_OPR_DATE
+						FROM 
+							SYS_DATE_CTRL
+						WHERE 
+							PLANT_CD = M_WH.PLANT_CD
+						)
+				)    									
+		) 
+		END ) as SUPPLY_KBN
+	FROM
+		T_JOB_ODR_CD_STOCK,
+	    M_WH,
+	    M_VEND_CTRL,
+	    M_ITEM,
+	    SYS_TYPE_VALUE
+	WHERE
+	    SYS_TYPE_VALUE.NAME = 'MRP_FLG'
+	AND    
+		SYS_TYPE_VALUE.VALUE = M_WH.MRP_FLG
+	AND    
+		T_JOB_ODR_CD_STOCK.WH_CD = M_WH.WH_CD
+	AND
+		M_WH.COMPANY_CD = M_VEND_CTRL.COMPANY_CD(+) 
+	AND
+	    M_WH.VEND_CD = M_VEND_CTRL.VEND_CD(+)
+	AND
+	   T_JOB_ODR_CD_STOCK.ITEM_CD = M_ITEM.ITEM_CD
+)
+/

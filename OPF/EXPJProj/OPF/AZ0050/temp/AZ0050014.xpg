@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<page>
+  <opfid>AZ0050</opfid>
+  <process-name>AZ0050010</process-name>
+  <page-name>AZ0050014</page-name>
+  <page-jname>一般検索サブ4</page-jname>
+  <event-list>
+    <event>
+      <event-name>sub4csv</event-name>
+      <event-jname>ＣＳＶ出力</event-jname>
+      <event-type>none</event-type>
+    </event>
+    <event>
+      <event-name>sub4inputTitle</event-name>
+      <event-jname>クエリ名設定</event-jname>
+      <event-type>none</event-type>
+    </event>
+    <event>
+      <event-name>sub4condition</event-name>
+      <event-jname>検索条件設定</event-jname>
+      <event-type>none</event-type>
+    </event>
+    <event>
+      <event-name>sub4freeSql</event-name>
+      <event-jname>フリー入力</event-jname>
+      <event-type>none</event-type>
+    </event>
+    <event>
+      <event-name>sub4return</event-name>
+      <event-jname>戻る</event-jname>
+      <event-type>none</event-type>
+    </event>
+  </event-list>
+  <field-list>
+  </field-list>
+  <block-list></block-list>
+  <resource-list>
+  </resource-list>
+</page>

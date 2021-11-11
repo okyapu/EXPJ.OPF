@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+
+<!-- **************************************************************************
+  WebLogic 9.0 用 Deploy 用 ANT ファイル
+
+  OrteusStudio から呼出時
+    server, pass, user, warname, warpath, dirApServer
+  のプロパティが渡されます
+*************************************************************************** -->
+
+<project name="DeployWeblogic9" default="deploy">
+
+  <!-- 可変部 -->
+  <property name="opf" value="AA0010"/>
+  <property name="jarname" value="AA0010"/>
+  <property name="warname" value="AA0010"/>
+  <property name="packageDir" value="com.nec.jp.orteus.metamorBase/AA0010"/>
+  <property name="warpath" value="."/>
+  <property name="user" value=""/>
+  <property name="server" value=""/>
+  <property name="pass" value=""/>
+  <property name="dirApServer" value="D:\bea\wlserver"/>
+  <property name="dirOrteusStudioBin" value="D:\EXPJStudio\tools\bin"/>
+  <property name="dirOrteusStudioMenu" value="D:\EXPJStudio\tools\..\menu_WebLogic10"/>
+  <property name="dirOrteusStudioLib" value="D:\EXPJStudio\tools\..\lib"/>
+
+  <property name="targets" value="AdminServer"/>
+
+  <!-- クラスパス設定 -->  
+  <path id="weblogicClasspath">
+    <pathelement path="${dirApServer}/server/lib/weblogic.jar" />
+    <pathelement path="${dirApServer}/server/lib/weblogic_sp.jar" />
+  </path>
+
+  <target name="deploy" depends="deploy_war" />
+
+  <target name="undeploy_war">
+	<echo>${warname}.war が登録されていない場合、ここでエラーが発生しますが、正しい動作です。</echo>
+    <java classname="weblogic.Deployer" classpathref="weblogicClasspath" fork="true">
+      <arg value="-name"/>
+      <arg value="${warname}"/>
+      <arg value="-user"/>
+      <arg value="${user}"/>
+      <arg value="-password"/>
+      <arg value="${pass}"/>
+      <arg value="-adminurl"/>
+      <arg value="${server}"/>
+      <arg value="-targets"/>
+      <arg value="${targets}"/>
+      <arg value="-undeploy"/>
+    </java>
+  </target>
+
+  <target name="deploy_war" depends="undeploy_war">
+    <!-- upload version -->
+    <java classname="weblogic.Deployer" classpathref="weblogicClasspath" fork="true">
+      <arg value="-upload"/>
+      <arg value="-name"/>
+      <arg value="${warname}"/>
+      <arg value="-user"/>
+      <arg value="${user}"/>
+      <arg value="-password"/>
+      <arg value="${pass}"/>
+      <arg value="-adminurl"/>
+      <arg value="${server}"/>
+      <arg value="-targets"/>
+      <arg value="${targets}"/>
+      <arg value="-deploy"/>
+      <arg value="${warpath}/${warname}.war"/>
+    </java>
+  </target>
+
+
+  <!--
+  <taskdef name="wldeploy" classname="weblogic.ant.taskdefs.management.WLDeploy" classpathref="weblogicClasspath" />
+
+  <target name="deploy">
+    <wldeploy
+      action="undeploy"
+      name="${warname}"
+      user="${user}"
+      password="${pass}"
+      adminurl="${server}"
+      debug="true"
+      targets="${targets}"/>
+    <wldeploy
+      action="deploy"
+      name="${warname}"
+      source="${warpath}/${warname}.war"
+      user="${user}"
+      password="${pass}"
+      adminurl="${server}"
+      debug="true"
+      targets="${targets}"/>
+  </target>
+  -->
+
+</project>

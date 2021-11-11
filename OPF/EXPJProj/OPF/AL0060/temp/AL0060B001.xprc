@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<process><process-name>AL0060B001</process-name><process-jname>負荷山積みバッチ処理</process-jname><process-type>orteus-batch</process-type><process-description></process-description><event-list/><db-list><db><table-name></table-name><db-file></db-file><io-type>in</io-type></db></db-list><page-list/></process>

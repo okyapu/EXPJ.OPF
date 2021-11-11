@@ -1,0 +1,589 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+加工費マスタメンテナンス
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/DA0030/DA0030010.html,v $
+$Author: geng-jia $
+$Revision: 1.3 $ $Date: 2017/02/13 06:30:35 $
+********************************************************* --%>
+<html>
+<head>
+<title>加工費マスタメンテナンス</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="DA0030010" version="DA0030010 $Revision: 1.3 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+<table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+  <tr height="5">
+    <td colspan="3"></td>
+  </tr>
+  <tr>
+    <td width="5"></td>
+    <td valign="top" width="958" height="163">
+      <table width="958" border="0" cellspacing="0" cellpadding="0">
+        <tr height="12">
+          <td class="frame01" width="12"></td>
+          <td class="frame02" colspan="3"></td>
+          <td class="frame03" width="12"></td>
+        </tr>
+        <tr>
+          <td class="frame04" width="12"></td>
+          <td class="frame05" colspan="3">
+            <table orftype="DataGrid" mode="FORM" name="DA0030010form1" width="934" height="119" border="1" cellspacing="0" cellpadding="0"
+              status="<%= TypeConverter.sanitizer(aDA0030010Control.getReadStatusString()) %>"
+              script1="onLoad;0;CALL;onDecision@0,1,2,3,4"
+              script2="onDecision;0;CHKRQ;A@*0,*1"
+              script3="child;0;UNMASK;_DA0030010button1/Select"
+              script4="child;1;MASK;_DA0030010button1/Select"
+              script5="onDecision;1;CHKRQ;A@*2,*4"
+              script6="child;2;CHK;_PLANT_CD[neq]_h_PLANT_CD[or]_YEAR[neq]_h_YEAR[or]_HALF_TERM_TYP[neq]_h_HALF_TERM_TYP[or]_COST_TYP[neq]_h_COST_TYP[or]_CS_PROC_CD[neq]_h_CS_PROC_CD[or]_PROC_COST_CLS_CD[neq]_h_PROC_COST_CLS_CD@*3,*4"
+              script7="child;3;UNMASK;_DA0030010button2/Insert"
+              script8="child;4;MASK;_DA0030010button2/Insert"
+              script9="onDecision;2;CHK;?DA0030010form1/*[eq]NORMAL@*5,*8"
+              script10="child;5;CHKRQ;A@*6,*8"
+              script11="child;6;CHK;_DA0030010form2/DEL_FLG[eq]0[and]_PLANT_CD[eq]_h_PLANT_CD[and]_YEAR[eq]_h_YEAR[and]_HALF_TERM_TYP[eq]_h_HALF_TERM_TYP[and]_COST_TYP[eq]_h_COST_TYP[and]_CS_PROC_CD[eq]_h_CS_PROC_CD[and]_PROC_COST_CLS_CD[eq]_h_PROC_COST_CLS_CD@*7,*8"
+              script12="child;7;UNMASK;_DA0030010button2/Update"
+              script13="child;8;MASK;_DA0030010button2/Update"
+              script14="onDecision;3;CHK;?DA0030010form1/*[eq]NORMAL@*9,*11"
+              script15="child;9;CHK;_DA0030010form2/DEL_FLG[eq]0[and]_PLANT_CD[eq]_h_PLANT_CD[and]_YEAR[eq]_h_YEAR[and]_HALF_TERM_TYP[eq]_h_HALF_TERM_TYP[and]_COST_TYP[eq]_h_COST_TYP[and]_CS_PROC_CD[eq]_h_CS_PROC_CD[and]_PROC_COST_CLS_CD[eq]_h_PROC_COST_CLS_CD@*10,*11"
+              script16="child;10;UNMASK;_DA0030010button2/Delete"
+              script17="child;11;MASK;_DA0030010button2/Delete"
+              script18="onDecision;4;CHK;?DA0030010form1/*[eq]NORMAL@*12,*14"
+              script20="child;12;CHK;_DA0030010form2/DEL_FLG[eq]1[and]_PLANT_CD[eq]_h_PLANT_CD[and]_YEAR[eq]_h_YEAR[and]_HALF_TERM_TYP[eq]_h_HALF_TERM_TYP[and]_COST_TYP[eq]_h_COST_TYP[and]_CS_PROC_CD[eq]_h_CS_PROC_CD[and]_PROC_COST_CLS_CD[eq]_h_PROC_COST_CLS_CD@*13,*14"
+              script21="child;13;UNMASK;_DA0030010button2/CancelDelete"
+              script22="child;14;MASK;_DA0030010button2/CancelDelete"
+            >
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">　</td>
+                  <td width="150">　</td>
+                  <td width="22">　</td>
+                  <td width="88">　</td>
+                  <td width="22">　</td>
+                  <td width="170" align="right">　</td>
+                  <td width="150">　</td>
+                  <td width="22">　</td>
+                  <td width="88">　</td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PLANT_CD">工場コード</span></td>
+                  <td>
+                    <orftextinput name="PLANT_CD" tablename="M_PROC_COST" columnname="PLANT_CD" dbtype="varchar2" tablejname="加工費マスタ" columnjname="工場コード" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="2" required="A" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="h_PLANT_CD" tablename="M_PROC_COST" columnname="PLANT_CD" dbtype="varchar2" tablejname="加工費マスタ" columnjname="工場コード" orteus="true" width="260" editable="true" visible="false" text="" kind="" maxlength="2" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td>
+                    <orfpeeker name="PeekerPlantCd" value="" pattern="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="PLANT_CD_D01" sqlparam_1="_PLANT_CD"
+                      script1="onClick;0;PEEKER;_DA0030010form1/PLANT_CD:_DA0030010form1/PLANT_NAME@<%=contextNo%>">
+                    </orfpeeker>
+                  </td>
+                  <td>
+                    <orftextinput name="PLANT_NAME" tablename="M_PLANT" columnname="PLANT_NAME" dbtype="varchar2" tablejname="工場" columnjname="工場名" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.YEAR">年度</span></td>
+                  <td>
+                    <orftextinput name="YEAR" tablename="M_PROC_COST" columnname="YEAR" dbtype="number" tablejname="加工費マスタ" columnjname="年度" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_N" maxlength="4" required="A" attribute="TIS_RIGHT">
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="h_YEAR" tablename="M_PROC_COST" columnname="YEAR" dbtype="number" tablejname="加工費マスタ" columnjname="年度" orteus="true" width="150" editable="true" visible="false" text="" kind="OBT_N" maxlength="4" required="" attribute="TIS_RIGHT">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.HALF_TERM_TYP">半期区分</span></td>
+                  <td>
+                    <orfcombobox name="HALF_TERM_TYP" tablename="M_PROC_COST" columnname="HALF_TERM_TYP" dbtype="number" tablejname="加工費マスタ" columnjname="半期区分" orteus="true" width="260" height="">
+                    </orfcombobox>
+                  </td>
+                  <td>
+                    <orftextinput name="h_HALF_TERM_TYP" tablename="M_PROC_COST" columnname="HALF_TERM_TYP" dbtype="number" tablejname="加工費マスタ" columnjname="半期区分" orteus="true" width="" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.COST_TYP">原価種別</span></td>
+                  <td>
+                    <orfcombobox name="COST_TYP" tablename="M_PROC_COST" columnname="COST_TYP" dbtype="number" tablejname="加工費マスタ" columnjname="原価種別" orteus="true" width="260" height="">
+                    </orfcombobox>
+                  </td>
+                  <td>
+                    <orftextinput name="h_COST_TYP" tablename="M_PROC_COST" columnname="COST_TYP" dbtype="number" tablejname="加工費マスタ" columnjname="原価種別" orteus="true" width="" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CS_PROC_CD">工程コード</span></td>
+                  <td>
+                    <orftextinput name="CS_PROC_CD" tablename="M_PROC_COST" columnname="CS_PROC_CD" dbtype="varchar2" tablejname="加工費マスタ" columnjname="工程コード" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="25" required="A" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="h_CS_PROC_CD" tablename="M_PROC_COST" columnname="CS_PROC_CD" dbtype="varchar2" tablejname="加工費マスタ" columnjname="工程コード" orteus="true" width="260" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td>
+                    <orfpeeker name="PeekerCsProcCd" value="" pattern="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="CS_PROC_CD_D01" sqlparam_1="_PLANT_CD" sqlparam_2="_CS_PROC_CD"
+                      script1="onClick;0;PEEKER;_DA0030010form1/CS_PROC_CD:_DA0030010form1/CS_PROC_NAME@<%=contextNo%>">
+                    </orfpeeker>
+                  </td>
+                  <td>
+                    <orftextinput name="CS_PROC_NAME" tablename="M_CS_PROC" columnname="CS_PROC_NAME" dbtype="varchar2" tablejname="工程マスタ" columnjname="工程名" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_CLS_CD">加工費分類コード</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_CLS_CD" tablename="M_PROC_COST" columnname="PROC_COST_CLS_CD" dbtype="varchar2" tablejname="加工費マスタ" columnjname="加工費分類コード" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="25" required="A" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="h_PROC_COST_CLS_CD" tablename="M_PROC_COST" columnname="PROC_COST_CLS_CD" dbtype="varchar2" tablejname="加工費マスタ" columnjname="加工費分類コード" orteus="true" width="260" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td>
+                    <orfpeeker name="PeekerProcCostClsCd" value="" pattern="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="PROC_COST_CLS_CD_D02" sqlparam_1="_PLANT_CD" sqlparam_2="_PROC_COST_CLS_CD"
+                      script1="onClick;0;PEEKER;_DA0030010form1/PROC_COST_CLS_CD:_DA0030010form1/PROC_COST_CLS_NAME:_DA0030010form2/PROC_COST_01_NAME:_DA0030010form2/PROC_COST_02_NAME:_DA0030010form2/PROC_COST_03_NAME:_DA0030010form2/PROC_COST_04_NAME:_DA0030010form2/PROC_COST_05_NAME:_DA0030010form2/PROC_COST_06_NAME:_DA0030010form2/PROC_COST_07_NAME:_DA0030010form2/PROC_COST_08_NAME:_DA0030010form2/PROC_COST_09_NAME:_DA0030010form2/PROC_COST_10_NAME:_DA0030010form2/PROC_COST_11_NAME:_DA0030010form2/PROC_COST_12_NAME@<%=contextNo%>">
+                    </orfpeeker>
+                  </td>
+                  <td>
+                    <orftextinput name="PROC_COST_CLS_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_CLS_NAME" dbtype="varchar2" tablejname="加工費分類マスタ" columnjname="加工費分類名" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="40" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </ornoloop>
+            </table>
+            <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+          </td>
+          <td class="frame06" width="12"></td>
+        </tr>
+        <tr height="32">
+          <td class="frame07" width="12"></td>
+          <td class="frame08" width="769"></td>
+          <td class="frame09" width="60"></td>
+          <td class="frame10" width="105">
+            <table orftype="DataGrid" mode="BUTTON" name="DA0030010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="Select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_DA0030010form1/*@DA0030010Servlet"
+></orfbutton>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame11" width="12"></td>
+        </tr>
+      </table>
+    </td>  
+    <td width="5"></td>
+  </tr>
+  <tr height="5">
+    <td colspan="3"></td>
+  </tr>
+  <tr height="370">
+    <td width="5"></td>
+    <td valign="top" width="958">
+      <table width="958" border="0" cellspacing="0" cellpadding="0">
+        <tr height="12">
+          <td class="frame01" width="12"></td>
+          <td class="frame02" colspan="3"></td>
+          <td class="frame03" width="12"></td>
+        </tr>
+        <tr>
+          <td class="frame04" width="12"></td>
+          <td class="frame05" colspan="3"><!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+            <table orftype="DataGrid" mode="FORM" name="DA0030010form2" width="934" height="326" border="1" cellspacing="0" cellpadding="0"
+              script1="onDecision;0;SET;_PROC_COST_SUM=[{_PROC_COST_01}+{_PROC_COST_02}+{_PROC_COST_03}+{_PROC_COST_04}+{_PROC_COST_05}+{_PROC_COST_06}+{_PROC_COST_07}+{_PROC_COST_08}+{_PROC_COST_09}+{_PROC_COST_10}+{_PROC_COST_11}+{_PROC_COST_12}]"
+            >
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">　</td>
+                  <td width="150">　</td>
+                  <td width="22">　</td>
+                  <td width="88">　</td>
+                  <td width="22">　</td>
+                  <td width="170" align="right">　</td>
+                  <td width="150">　</td>
+                  <td width="22">　</td>
+                  <td></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_UNIT_QTY">加工費単位数</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_UNIT_QTY" tablename="M_PROC_COST" columnname="PROC_COST_UNIT_QTY" dbtype="number" tablejname="加工費マスタ" columnjname="加工費単位数" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_P;14.1;FLOOR;4" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_UNIT_2">加工費単位数単位</span></td>
+                  <td>
+                    <orftextinput name="STOCK_UNIT" tablename="M_PROC_COST" columnname="STOCK_UNIT" dbtype="varchar2" tablejname="加工費マスタ" columnjname="計量単位" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="12" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_01">加工費01</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_01" tablename="M_PROC_COST" columnname="PROC_COST_01" dbtype="number" tablejname="加工費マスタ" columnjname="加工費01" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_01_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_01_NAME" dbtype="varchar2" tablejname="加工費分類マスタ" columnjname="加工費01名称" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_02">加工費02</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_02" tablename="M_PROC_COST" columnname="PROC_COST_02" dbtype="number" tablejname="加工費マスタ" columnjname="加工費02" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_02_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_02_NAME" dbtype="varchar2" tablejname="加工費分類マスタ" columnjname="加工費02名称" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_03">加工費03</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_03" tablename="M_PROC_COST" columnname="PROC_COST_03" dbtype="number" tablejname="加工費マスタ" columnjname="加工費03" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_03_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_03_NAME" dbtype="varchar2" tablejname="加工費分類マスタ" columnjname="加工費03名称" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_04">加工費04</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_04" tablename="M_PROC_COST" columnname="PROC_COST_04" dbtype="number" tablejname="加工費マスタ" columnjname="加工費04" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_04_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_04_NAME" dbtype="varchar2" tablejname="加工費分類マスタ" columnjname="加工費04名称" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_05">加工費05</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_05" tablename="M_PROC_COST" columnname="PROC_COST_05" dbtype="number" tablejname="加工費マスタ" columnjname="加工費05" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_05_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_05_NAME" dbtype="varchar2" tablejname="加工費分類マスタ" columnjname="加工費01名称" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_06">加工費06</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_06" tablename="M_PROC_COST" columnname="PROC_COST_06" dbtype="number" tablejname="加工費マスタ" columnjname="加工費06" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_06_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_06_NAME" dbtype="varchar2" tablejname="加工費分類マスタ" columnjname="加工費06名称" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_07">加工費07</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_07" tablename="M_PROC_COST" columnname="PROC_COST_07" dbtype="number" tablejname="加工費マスタ" columnjname="加工費07" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_07_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_07_NAME" dbtype="varchar2" tablejname="加工費分類マスタ" columnjname="加工費07名称" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_08">加工費08</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_08" tablename="M_PROC_COST" columnname="PROC_COST_08" dbtype="number" tablejname="加工費マスタ" columnjname="加工費08" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_08_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_08_NAME" dbtype="varchar2" tablejname="加工費分類マスタ" columnjname="加工費08名称" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_09">加工費09</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_09" tablename="M_PROC_COST" columnname="PROC_COST_09" dbtype="number" tablejname="加工費マスタ" columnjname="加工費09" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_09_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_09_NAME" dbtype="varchar2" tablejname="加工費分類マスタ" columnjname="加工費09名称" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_10">加工費10</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_10" tablename="M_PROC_COST" columnname="PROC_COST_10" dbtype="number" tablejname="加工費マスタ" columnjname="加工費10" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_10_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_10_NAME" dbtype="varchar2" tablejname="加工費分類マスタ" columnjname="加工費10名称" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_11">加工費11</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_11" tablename="M_PROC_COST" columnname="PROC_COST_11" dbtype="number" tablejname="加工費マスタ" columnjname="加工費11" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_11_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_11_NAME" dbtype="varchar2" tablejname="加工費分類マスタ" columnjname="加工費11名称" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_12">加工費12</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_12" tablename="M_PROC_COST" columnname="PROC_COST_12" dbtype="number" tablejname="加工費マスタ" columnjname="加工費12" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_12_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_12_NAME" dbtype="varchar2" tablejname="加工費分類マスタ" columnjname="加工費12名称" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_SUM">加工費計</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_SUM" tablename="M_PROC_COST" columnname="PROC_COST_SUM" dbtype="number" tablejname="加工費マスタ" columnjname="加工費計" orteus="true" width="150" editable="false" visible="true" text="" kind="OBT_NUMBER_Z;16.2;FLOOR;4" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="HOME_CUR_UNIT" tablename="M_CUR" columnname="CUR_UNIT" dbtype="varchar2" tablejname="通貨" columnjname="通貨単位"  orteus="true" width="110" editable="false" visible="true" text="" kind="" maxlength="12" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="DEL_FLG" tablename="M_PROC_COST" columnname="DEL_FLG" dbtype="number" tablejname="加工費マスタ" columnjname="削除フラグ" orteus="true" width="" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+            <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+          </td>
+          <td class="frame06" width="12"></td>
+        </tr>
+        <tr height="32">
+          <td class="frame07" width="12"></td>
+          <td class="frame08" width="454"></td>
+          <td class="frame09" width="60"></td>
+          <td class="frame10" width="420">
+            <table orftype="DataGrid" mode="BUTTON" name="DA0030010button2" width="420" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105"></td>
+                  <td width="105"></td>
+                  <td width="105"></td>
+                  <td width="105"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="Insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="22" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_DA0030010form2/STOCK_UNIT[eq]@$DA03101"
+ script2="onClick;1;CHK;_DA0030010form2/PROC_COST_SUM[numeq]0@$DA03102"
+ script3="onClick;2;SUBMIT;_DA0030010form1/*,_DA0030010form2/*@DA0030010Servlet,,$ZZ07001"
+></orfbutton>
+                  </td>
+                  <td>
+                    <orfbutton name="Update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="22" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_DA0030010form2/STOCK_UNIT[eq]@$DA03101"
+ script2="onClick;1;CHK;_DA0030010form2/PROC_COST_SUM[numeq]0@$DA03102"
+ script3="onClick;2;SUBMIT;_DA0030010form1/*,_DA0030010form2/*@DA0030010Servlet,,$ZZ07003"
+></orfbutton>
+                  </td>
+                  <td>
+                    <orfbutton name="Delete" value="削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDelete" width="100" height="22" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_DA0030010form1/*,_DA0030010form2/*@DA0030010Servlet,,$ZZ07007"
+></orfbutton>
+                  </td>
+                  <td>
+                    <orfbutton name="CancelDelete" value="削除取消" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCancelDelete" width="100" height="22" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_DA0030010form1/*,_DA0030010form2/*@DA0030010Servlet,,$ZZ07016"
+></orfbutton>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame11" width="12"></td>
+        </tr>
+      </table>
+    </td>
+    <td width="5"></td>
+  </tr>
+  <tr height="5">
+    <td colspan="3"></td>
+  </tr>
+  <tr height="42">
+    <td class="under" colspan="3">
+      <table width="968" border="0">
+        <tr>
+          <td width="758"></td>
+          <td align="right" width="210">
+            <table orftype="DataGrid" mode="BUTTON" name="DA0030010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105"></td>
+                  <td width="105"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" height="22" lock="0" attribute=""
+                      script1="onClick;0;SUBMIT;@DA0030010Servlet,,$ZZ07008"
+                    >
+                    </orfbutton>
+                  </td>
+                  <td>
+                    <orfbutton name="Close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" height="22" lock="0" attribute=""
+                      script1="onClick;0;CLOSE"
+                    >
+                    </orfbutton>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<%
+MessageStruct msgStruct = aDA0030010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

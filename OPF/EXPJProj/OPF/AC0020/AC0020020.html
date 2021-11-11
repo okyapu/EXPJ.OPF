@@ -1,0 +1,289 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+オーダ発効（ＭＲＰ）
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AC0020/AC0020020.html,v $
+$Author: geng-jia $
+$Revision: 1.5 $ $Date: 2017/02/13 02:32:39 $
+********************************************************* --%>
+<html>
+<head>
+<title>オーダ発効（ＭＲＰ）</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AC0020020" version="AC0020020 $Revision: 1.5 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="1">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="538"> 
+      <td width="5" height="538"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="AC0020020form1" width="934" height="494" border="1" cellspacing="0" cellpadding="0"
+                 script1="onLoad;0;CALL;onDecision@0,1,2,3"
+                 script2="onDecision;0;SET;_AC0020020form1/rdoOutsideTyp=1"
+                 script3="onDecision;1;SET;_AC0020020form1/rdoEntry1Typ=1"
+                 script4="onDecision;2;CHKRQ;A@*0,*1"
+                 script5="child;0;UNMASK;_AC0020020button1/Execute"
+                 script6="child;1;MASK;_AC0020020button1/Execute"
+							   script7="onDecision;3;CHK;_AC0020020form1/TIME_CTRL[eq]false@*2"
+                 script8="child;2;MASK;_AC0020020form1/txtEntryTime@*3"
+                 script9="child;3;SET;_AC0020020form1/txtEntryTime="
+              >
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="42">&nbsp;</td>
+                  <td width="120">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="882">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="rdoOutsideTyp1" orteus="true" value="true" group="GROUP1" mlang="true" mlkind="common" mlname="Expj.Cmt0220"
+                           script1="onClick;0;SET;_AC0020020form1/rdoOutsideTyp=1"
+                      ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="rdoOutsideTyp" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="rdoOutsideTyp2" orteus="true" value="true" group="GROUP1" mlang="true" mlkind="common" mlname="Expj.Cmt0218"
+                           script1="onClick;0;SET;_AC0020020form1/rdoOutsideTyp=2"
+                      ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="rdoOutsideTyp3" orteus="true" value="true" width="150" group="GROUP1" mlang="true" mlkind="common" mlname="Expj.Cmt0219"
+                           script1="onClick;0;SET;_AC0020020form1/rdoOutsideTyp=9"
+                      ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="rdoEntry1Typ1" orteus="true" value="true" group="GROUP2" mlang="true" mlkind="common" mlname="Expj.ODR_START_DATE"
+                           script1="onClick;0;SET;_AC0020020form1/rdoEntry1Typ=1"
+                      ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="rdoEntry1Typ" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="rdoEntry1Typ2" orteus="true" value="true" group="GROUP2" mlang="true" mlkind="common" mlname="Expj.OPR_INST_START_DATE"
+                           script1="onClick;0;SET;_AC0020020form1/rdoEntry1Typ=2"
+                      ></orfradiobutton></td>
+                  <td><orftextinput  name="hdnBusinessOprDate" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="rdoEntry1Typ3" orteus="true" value="true" group="GROUP2" mlang="true" mlkind="common" mlname="Expj.PRD_DUE_DATE"
+                           script1="onClick;0;SET;_AC0020020form1/rdoEntry1Typ=3"
+                      ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="txtEntryDate" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD" maxlength="10" required="A"> </orftextinput></td>
+                  <td><orfcalendar  name="CalendarEntryDate" value="" pattern="none" orteus="false"
+                        attribute="BTS_CALENDAR"
+                        script1="onClick;0;CALENDAR;_AC0020020form1/txtEntryDate"></orfcalendar>
+                  </td>
+                  <td><orftextinput name="txtEntryTime" orteus="true" kind="OBT_N;" maxlength="4"></orftextinput>&nbsp;</td>
+                  <td>&nbsp;<span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0028"></span></td>
+                  <td>&nbsp;<orftextinput  name="TIME_CTRL" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop> 
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AC0020020button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="Execute" value="実行" pattern="insert" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnExecute"
+                        script1="onClick;0;CHK;_AC0020020form1/hdnBusinessOprDate[neq][and]_AC0020020form1/txtEntryDate[lt]_AC0020020form1/hdnBusinessOprDate@!AC00200"
+                        script2="onClick;1;CHK;~LEN(_AC0020020form1/txtEntryTime)[eq]1[or]~LEN(_AC0020020form1/txtEntryTime)[eq]2@!AS00019"
+                        script3="onClick;2;CHK;~LEN(_AC0020020form1/txtEntryTime)[eq]3@*3"
+                        script4="child;3;CHK;[{~CHARAT(_AC0020020form1/txtEntryTime:1)}*10+{~CHARAT(_AC0020020form1/txtEntryTime:2)}][gte]60@!AS00020"
+                        script5="onClick;4;CHK;~LEN(_AC0020020form1/txtEntryTime)[eq]4@*5"
+                        script6="child;5;CHK;[{~CHARAT(_AC0020020form1/txtEntryTime:0)}*10+{~CHARAT(_AC0020020form1/txtEntryTime:1)}][gte]24[or][{~CHARAT(_AC0020020form1/txtEntryTime:2)}*10+{~CHARAT(_AC0020020form1/txtEntryTime:3)}][gte]60@!AS00020"
+                        script7="onClick;6;SUBMIT;_AC0020020form1/*@AC0020020Servlet,,$ZZ07010"
+                      ></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="538">　</td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AC0020020button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" script1="onClick;0;SUBMIT;@AC0020020Servlet,,$ZZ07008" lock="0"></orfbutton></td>
+                  <td><orfbutton  name="Close" value="閉じる" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAC0020020Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

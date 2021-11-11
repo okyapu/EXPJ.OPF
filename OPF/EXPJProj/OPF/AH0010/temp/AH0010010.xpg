@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<page>
+  <opfid>AH0010</opfid>
+  <process-name>AH0010010</process-name>
+  <page-name>AH0010010</page-name>
+  <page-jname>品目別棚卸設定ファイル作成</page-jname>
+  <event-list>
+    <event>
+      <event-name>execute</event-name>
+      <event-jname>実行</event-jname>
+      <event-type>insert</event-type>
+    </event>
+  </event-list>
+  <field-list>
+    <field>
+      <field-type>radio</field-type>
+      <field-name>r_PLANT_TYPE1</field-name>
+    </field>
+    <field>
+      <field-type>text</field-type>
+      <field-name>h_RADIO_TYPE</field-name>
+    </field>
+    <field>
+      <field-type>radio</field-type>
+      <field-name>r_PLANT_TYPE2</field-name>
+    </field>
+  </field-list>
+  <block-list></block-list>
+  <resource-list>
+  </resource-list>
+</page>

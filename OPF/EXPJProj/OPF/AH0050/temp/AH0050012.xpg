@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<page>
+  <opfid>AH0050</opfid>
+  <process-name>AH0050010</process-name>
+  <page-name>AH0050012</page-name>
+  <page-jname>実棚入力サブ2</page-jname>
+  <event-list>
+    <event>
+      <event-name>Browse</event-name>
+      <event-jname>参照</event-jname>
+      <event-type>none</event-type>
+    </event>
+    <event>
+      <event-name>CsvIn</event-name>
+      <event-jname>取込</event-jname>
+      <event-type>update</event-type>
+    </event>
+    <event>
+      <event-name>return_sub2</event-name>
+      <event-jname>戻る</event-jname>
+      <event-type>none</event-type>
+    </event>
+  </event-list>
+  <field-list>
+    <field>
+      <field-type>text</field-type>
+      <field-name>INV_DATE</field-name>
+    </field>
+    <field>
+      <field-type>text</field-type>
+      <field-name>FileName</field-name>
+    </field>
+    <field>
+      <field-type>label</field-type>
+      <field-name>ERR_ADR</field-name>
+    </field>
+    <field>
+      <field-type>label</field-type>
+      <field-name>ERR_MSG</field-name>
+    </field>
+  </field-list>
+  <block-list></block-list>
+  <resource-list>
+  </resource-list>
+</page>

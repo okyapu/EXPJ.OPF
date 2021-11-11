@@ -1,0 +1,130 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+生産計画期間パラメータメンテナンス
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AN0070/AN0070010.html,v $
+$Author: geng-jia $
+$Revision: 1.3 $ $Date: 2017/02/13 03:37:30 $
+********************************************************* --%>
+<html>
+<head>
+<title>生産計画期間パラメータメンテナンス</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AN0070010" version="AN0070010 $Revision: 1.3 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="1">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="538">
+      <td width="5" height="538"></td>
+      <td valign="top" width="958"> <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <table orftype="DataGrid" mode="VIEW" attribute="DGS_SORTOFF|DGS_SELECTOFF" name="AN0070010view1" width="934" height="494"
+                   status="<%= TypeConverter.sanitizer(aAN0070010Control.getReadStatusString()) %>" border="1" cellspacing="0" cellpadding="0"
+                   script1="onLoad;0;CALL;onDecision@0"
+                   script2="onDecision;0;CHK;?AN0070010view1/*[eq]NORMAL@*0,*1"
+                   script3="child;0;UNMASK;_AN0070010button1/Update"
+                   script4="child;1;MASK;_AN0070010button1/Update">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td hidden=true>&nbsp;</td>
+                  <td width="150">
+                      <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PRD_PLAN_PERIOD_TYP">生産計画期間</span></td>
+                  <td hidden=true>&nbsp;</td>
+                  <td width="100" align="right">
+                      <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PLAN_SPAN">加算月数</span></td>
+                  <td hidden=true>&nbsp;</td>
+                  <td width="150">
+                      <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PRD_PLAN_FINAL_DAY_TYP">生産計画日付区分</span></td>
+                  <td hidden=true>&nbsp;</td>
+                </tr>
+                </orloophead><orloop>
+                <tr>
+                  <td><orftextinput  name="h_MODIFY_COUNT" tablename="SYS_PRD_PLAN_PERIOD" columnname="MODIFY_COUNT" dbtype="number"
+                       tablejname="生産計画期間" columnjname="更新数" orteus="true" visible="false"></orftextinput></td>
+                  <td><orflabel  name="DISPLAY_NAME" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2"
+                       tablejname="コンボボックスデータ" columnjname="表示説明" orteus="true"></orflabel></td>
+                  <td><orftextinput  name="h_PRD_PLAN_PERIOD_TYP" tablename="SYS_PRD_PLAN_PERIOD" columnname="PRD_PLAN_PERIOD_TYP" dbtype="number"
+                       tablejname="生産計画期間" columnjname="生産計画期間区分" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="PLAN_SPAN" tablename="SYS_PRD_PLAN_PERIOD" columnname="PLAN_SPAN" dbtype="number"
+                       tablejname="生産計画期間" columnjname="加算月数" orteus="true" kind="OBT_INTEGER_Z;4"></orftextinput></td>
+                  <td><orftextinput  name="h_PLAN_SPAN" tablename="SYS_PRD_PLAN_PERIOD" columnname="PLAN_SPAN" dbtype="number"
+                       tablejname="生産計画期間" columnjname="加算月数" orteus="true" visible="false"></orftextinput></td>
+                  <td><orfcombobox  name="PRD_PLAN_FINAL_DAY_TYP" tablename="SYS_PRD_PLAN_PERIOD" columnname="PRD_PLAN_FINAL_DAY_TYP" dbtype="number"
+                       tablejname="生産計画期間" columnjname="生産計画日付区分" orteus="true" width="260"></orfcombobox></td>
+                  <td><orftextinput  name="h_PRD_PLAN_FINAL_DAY_TYP" tablename="SYS_PRD_PLAN_PERIOD" columnname="PRD_PLAN_FINAL_DAY_TYP" dbtype="number"
+                       tablejname="生産計画期間" columnjname="生産計画日付区分" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                </orloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32">
+            <td width="12" class="frame15" height="32"></td>
+            <td width="105" class="frame10" height="32">
+              <table orftype="DataGrid" mode="BUTTON" name="AN0070010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton name="Update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AN0070010view1/*@AN0070010Servlet,,$ZZ07003"
+></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="60" class="frame16" height="32"></td>
+            <td width="769" class="frame08" height="32"> </td>
+            <td width="12" class="frame17" height="32"></td>
+          </tr>
+        </table></td>
+      <td width="5" height="538"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42">
+      <td colspan="3" width="968" height="42" class="under"> <table width="968" border="0">
+          <tr>
+            <td align="left" width="853"></td>
+            <td align="right" width="105">
+              <table orftype="DataGrid" mode="BUTTON" name="AN0070010button0" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton  name="Close" value="閉じる" pattern="none" orteus="true" mlang="true" mlkind="common"
+                       mlname="Expj.BtnClose" width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+  MessageStruct msgStruct = aAN0070010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>
+

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="Windows-31J"?>
+<!--
+  for WebLogic
+  -->
+
+<project name="BuildOrteus2" default="rebuild">
+	<!-- ///////////////////////////////////////////////////////////////////////
+	プロパティの設定
+	///////////////////////////////////////////////////////////////////////-->
+
+	<!-- 可変部 -->
+	<!-- Jarファイルの名前 -->
+	<property name="jarname" value="template"/>
+	<property name="warname" value=""/>
+	<property name="packageDir" value=""/>
+	<property name="warpath" value=""/>
+	<property name="user" value=""/>
+	<property name="server" value=""/>
+	<property name="pass" value=""/>
+	<property name="dirApServer" value=""/>
+	<property name="dirOrteusStudioBin" value=""/>
+	<property name="dirOrteusStudioMenu" value=""/>
+	<property name="dirOrteusStudioLib" value=""/>
+	<property name="dirProjCommon" value=""/>
+
+	<!-- root directory -->
+	<property name="rootdir" value=".."/>
+
+	<!-- Jarファイルの名前 -->
+	<property name="jarname" value="xxx"/>
+	<!-- Srcアーカイブの名前 -->
+	<property name="zipsrcname" value="src_Opf"/>
+
+	<!-- ソースディレクトリ(build.xmlからの相対) -->
+	<property name="srcdir" value="src"/>
+
+	<!-- クラスファイルディレクトリ(build.xmlからの相対) -->
+	<property name="classdir" value="classes"/>
+	<!-- アーカイブファイルディレクトリ(build.xmlからの相対) -->
+	<property name="libdir" value="lib"/>
+	<!-- JavaDOCディレクトリ -->
+	<property name="docdir" value="javadoc"/>
+	
+	<property name="jspdir" value="jsp"/>
+	<property name="wardir" value="war"/>
+	<property name="webinfdir" value="WEB-INF"/>
+
+	<!-- property name="oraclePath" value="c:/Oracle/Ora92"/ -->
+	<property name="oraclePath" value="c:/oracle/product/10.1.0/db_1"/>
+	<!-- property name="wlserverPath" value="d:/bea/weblogic81"/ -->
+	<property name="wlserverPath" value="d:/bea/wlserver_10.0"/>
+	<property name="oslibPath" value="d:/EXPJStudio/lib"/>
+	<property name="expjlibPath" value="d:/EXPJStudio/lib/expj"/>
+	<property name="svflibPath" value="d:/bea/SVFJP/svfjpd/lib"/>
+	<property name="espresslibPath" value="d:/bea/EspressChart/lib"/>
+
+	<!-- クラスパス設定 -->  
+	<path id="project.class.path">
+		<pathelement location="classes" />
+		<pathelement path="${wlserverPath}/server/lib/weblogic.jar" />
+		<pathelement path="${wlserverPath}/server/lib/api.jar" />
+		<pathelement path="${oraclePath}/jdbc/lib/ojdbc14.jar" />
+		<pathelement path="${oraclePath}/jdbc/lib/nls_charset12.jar" />
+		<pathelement path="${oslibPath}/coreapi.jar" />
+		<pathelement path="${oslibPath}/foundation.jar" />
+		<pathelement path="${oslibPath}/oracleconverter.jar" />
+		<pathelement path="${oslibPath}/license.jar" />
+		<pathelement path="${oslibPath}/logging.jar" />
+		<pathelement path="${oslibPath}/wsecurity81.jar" />
+		<pathelement path="${oslibPath}/dynsql.jar" />
+		<pathelement path="${oslibPath}/crimson.jar" />
+		<pathelement path="${expjlibPath}/expjlib.jar" />
+		<pathelement path="${expjlibPath}/expjarap.jar" />
+		<pathelement path="${expjlibPath}/metamorBaselib.jar" />
+		<pathelement path="${expjlibPath}/commons-lang-2.0.jar" />
+		<pathelement path="${svflibPath}/svf.jar" />
+		<pathelement path="${svflibPath}/svfrclient.jar" />
+		<pathelement path="${espresslibPath}/EspressAPI.jar" />
+		<pathelement path="${espresslibPath}/ExportLib.jar" />
+	</path>
+
+	<!-- 管理対象ファイル -->
+	<patternset id="managed.src">
+		<include name="**/${ant.project.name}/build.xml" />
+		<include name="**/${ant.project.name}/${srcdir}/**/" />
+	</patternset>
+
+	<!-- ///////////////////////////////////////////////////////////////////////
+	タスク定義
+	///////////////////////////////////////////////////////////////////////--> 
+
+	<!-- 全生成 -->
+<!--
+	<target name="rebuild" depends="clean, jar, javadoc, makewar, convertMessage, makeProp" />
+-->
+	<target name="rebuild" depends="compile" />
+
+	<!-- 初期化 -->
+	<target name="init">
+		<mkdir dir="${classdir}" />
+		<mkdir dir="${libdir}" />
+	</target>
+
+	<!-- Javaコンパイル -->
+	<target name="compile" depends="init">
+		<javac srcdir="src" destdir="${classdir}"
+				deprecation="on" encoding="Windows-31J" debug="on">
+			<classpath refid="project.class.path" />
+		</javac>
+	</target>
+
+	<!-- JAR 作成 -->
+	<target name="jar" depends="compile">
+		<jar jarfile="${libdir}/${jarname}.jar" basedir="${classdir}" includes="**"/>
+	</target>
+
+	<!-- JavaDOC作成 -->
+	<target name="javadoc" if="makeJavaDoc">
+		<delete dir="${docdir}" />
+		<mkdir dir="${docdir}" />
+		<javadoc
+				encoding="Windows-31J" charset="Windows-31J"
+				sourcepath="${srcdir}"
+			classpath="${wlserverPath}/server/lib/weblogic.jar;${wlserverPath}/server/lib/api.jar;${oraclePath}/jdbc/lib/ojdbc14.jar;${oraclePath}/jdbc/lib/nls_charset12.jar;
+${oslibPath}/coreapi.jar;${oslibPath}/foundation.jar;${oslibPath}/oracleconverter.jar;${expjlibPath}/license.jar;${oslibPath}/logging.jar;
+${oslibPath}/wsecurity81.jar;${oslibPath}/dynsql.jar;${oslibPath}/crimson.jar;${expjlibPath}/expjlib.jar;${expjlibPath}/metamorBaselib.jar;
+${expjlibPath}/metamorBaseCommonlib.jar;
+${expjlibPath}/commons-lang-2.0.jar;
+${espresslibPath}/EspressAPI.jar;${espresslibPath}/ExportLib.jar;${svflibPath}/svf.jar;${svflibPath}/svfrclient.jar"
+				packagenames="*"
+				destdir="${docdir}"
+				version="true" use="true" author="true"
+				windowtitle="${ant.project.name} API Specification" />
+	</target>
+
+	<!-- 削除 -->
+	<target name="clean">
+		<delete dir="${classdir}" />
+		<delete dir="${libdir}" />
+	</target>
+
+	<!-- Srcアーカイブ(Manifest含む) -->
+	<target name="zipsrc" >
+		<zip zipfile="${rootdir}/${zipsrcname}.zip">
+			<fileset dir="${rootdir}">
+				<patternset refid="managed.src" />
+			</fileset>
+		</zip>
+	</target>
+
+	<!-- Src解凍 -->
+	<target name="unzip">
+		<unzip src="${rootdir}/${zipsrcname}.zip" dest="${rootdir}" />
+	</target>
+
+	<target name="makewar" depends="prepareWar, copyWarJsp, copyWarMenu, copyWarClass, copyWarWebXml">
+		<jar jarfile="${warname}.war" basedir="${wardir}"/>
+	</target>
+
+	<target name="prepareWar">
+		<delete dir="${wardir}"/>
+		<mkdir dir="${wardir}"/>
+		<mkdir dir="${wardir}/${webinfdir}"/>
+	</target>
+
+	<target name="copyWarWebXml">
+		<copy file="web.xml" todir="${wardir}/${webinfdir}/"/>
+	</target>
+
+	<target name="copyWarJsp" depends="checkJspDir" if="existsJspDir">
+		<copy todir="${wardir}/">
+			<fileset dir="${jspdir}/"/>
+		</copy>
+	</target>
+
+	<target name="copyWarMenu">
+		<copy todir="${wardir}/">
+			<fileset dir="${dirOrteusStudioMenu}/" includes="**" />
+		</copy>
+	</target>
+
+	<target name="copyWarClass">
+		<copy todir="${wardir}/${webinfdir}/classes/">
+			<fileset dir="${classdir}/"/>
+		</copy>
+	</target>
+	
+	<target name="checkJspDir">
+		<available property="existsJspDir" file="${jspdir}" type="dir"/>
+	</target>
+	
+	<!-- Message ファイル変換 -->
+	<target name="convertMessage">
+		<delete file="${oslibPath}/DisplayMessageResources.properties" />
+		<native2ascii src="${oslibPath}" includes="DisplayMessageResources.properties.japanese" dest="${oslibPath}/" ext=""/>
+	</target>
+
+	<!-- ユーザ定義用プロパティファイル作成 -->
+	<target name="makeProp">
+		<exec dir="${dirOrteusStudioBin}" executable="MLangConv.bat">
+			<arg line="${dirOrteusStudioBin} ${dirProjCommon} ${warname}" />
+		</exec>
+		<delete file="${oslibPath}/OrteusUserDic.properties"/>
+		<delete file="${oslibPath}/OrteusUserDic.properties.japanese"/>
+		<concat destfile="${oslibPath}/OrteusUserDic.properties.japanese">
+			<fileset dir="${dirProjCommon}/../OPF/${warname}/temp" includes="*.properties"/>
+		</concat>
+		<native2ascii src="${oslibPath}" includes="OrteusUserDic.properties.japanese" dest="${oslibPath}/" ext=""/>
+	</target>
+</project>

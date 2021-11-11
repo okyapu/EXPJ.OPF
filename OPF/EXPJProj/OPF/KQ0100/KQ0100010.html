@@ -1,0 +1,392 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+受注消費税率変更
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/KQ0100/KQ0100010.html,v $
+$Author: xu-jing $	
+$Revision: 1.4 $　$Date: 2017/04/27 09:36:50 $
+********************************************************* --%>
+<html>
+<head>
+<title>受注消費税率変更</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="KQ0100010" version="KQ0100010 $Revision: 1.4 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="3">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="94"> 
+      <td width="5" height="94"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr height="50">
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="KQ0100010form1" status="<%= TypeConverter.sanitizer(aKQ0100010Control.getReadStatusString()) %>"
+			      width="934" height="50" border="1" cellspacing="0" cellpadding="0"
+				  script1="onLoad;0;CALL;onDecision@0,1,2,3"
+				  script2="onDecision;0;CHK;_KQ0100010form1/r_SEL_PTN1[eq]true@*0"
+				  script3="onDecision;1;CHK;_KQ0100010form1/r_SEL_PTN2[eq]true@*1"
+			      script4="onDecision;2;CHK;_KQ0100010form1/r_SEL_PTN1[eq]true@*2"
+			      script5="onDecision;3;CHK;_KQ0100010form1/r_SEL_PTN2[eq]true@*3"
+				  script6="child;0;MASK;_KQ0100010form1/SLIP_CD,_KQ0100010form1/PeekerSlipCd"
+				  script7="child;1;MASK;_KQ0100010form1/ODR_NO,_KQ0100010form1/PeekerOrdNo"
+				  script8="child;2;CHKRQ;A@*4,*5"
+				  script9="child;3;CHKRQ;B@*4,*5"
+				  script10 = "child;4;UNMASK;_KQ0100010button1/select"
+				  script11 = "child;5;MASK;_KQ0100010button1/select"
+				  >
+                <orloophead>
+                <tr>
+                  <td width="170" height="23" bgcolor="#ccff99">&nbsp;</td>
+                  <td width="75" bgcolor="#ccff99">&nbsp;</td>
+                  <td width="75" bgcolor="#ccff99">&nbsp;</td>
+                  <td width="110" bgcolor="#ccff99">&nbsp;</td>
+                  <td width="22" bgcolor="#ccff99">&nbsp;</td>
+                  <td width="170" bgcolor="#ccff99">&nbsp;</td>
+                  <td width="260" bgcolor="#ccff99">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr> 
+                  <td align=right required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACPT_ODR_CD">受注番号</span></td>
+                  <td height="23"><orftextinput  name="ODR_NO" orteus="true" maxlength="15" required="A" width="260"></orftextinput></td>
+                  <td height="23">&nbsp;</td>
+                  <td height="23">&nbsp;</td>
+                  <td height="23"><orfpeeker name="PeekerOrdNo" value="" pattern="none" orteus="false" width="22" height="22" attribute="BTS_PEEKER" sqlname="ODR_NO_05" sqlparam_1="_KQ0100010form1/ODR_NO" 
+				   script1="onClick;0;PEEKER;_KQ0100010form1/ODR_NO@<%=contextNo%>"></orfpeeker></td>
+                  <td height="23"><orftextinput  name="h_UPDATE_FLG" orteus="true" width="260" visible="false"></orftextinput></td>
+                  <td height="23"><orfradiobutton  name="r_SEL_PTN1" orteus="true" value="true" group="r_SEL_PTN0" mlang="true" mlkind="common" mlname="Expj.SALES_ODR_DATA" checked 
+					 script1="onClick;0;UNMASK;_KQ0100010form1/ODR_NO,_KQ0100010form1/PeekerOrdNo"
+					 script2="onClick;1;SET;_KQ0100010form1/SLIP_CD="
+					></orfradiobutton></td>
+                </tr>
+                <tr> 
+                  <td align=right required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SLIP_CD">伝票番号</span></td>
+                  <td height="23"><orftextinput  name="SLIP_CD" orteus="true" maxlength="25" required="B" width="260"></orftextinput></td>
+                  <td height="23">&nbsp;</td>
+                  <td height="23">&nbsp;</td>
+                  <td height="23"><orfpeeker name="PeekerSlipCd" value="" pattern="none" orteus="false" width="22" height="22" attribute="BTS_PEEKER" sqlname="SLIP_CD_23" sqlparam_1="_KQ0100010form1/SLIP_CD"
+ script1="onClick;0;PEEKER;_KQ0100010form1/SLIP_CD@<%=contextNo%>"></orfpeeker></td>
+                  <td height="23"><orftextinput  name="h_ODR_NO" orteus="true" width="260" visible="false"></orftextinput></td>
+                  <td height="23"><orfradiobutton  name="r_SEL_PTN2" orteus="true" value="true" group="r_SEL_PTN0" mlang="true" mlkind="common" mlname="Expj.SHIP_INFO"
+					script1="onClick;0;UNMASK;_KQ0100010form1/SLIP_CD,_KQ0100010form1/PeekerSlipCd"
+					script2="onClick;1;SET;_KQ0100010form1/ODR_NO="
+					></orfradiobutton></td>
+                </tr>
+                </ornoloop>
+              </table> 
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"> </td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"> 
+              <table orftype="DataGrid" mode="BUTTON" name="KQ0100010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton name="select" value="読込" pattern="select" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" 
+				  script1="onClick;0;SUBMIT;_KQ0100010form1/*@KQ0100010Servlet"
+				  ></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="94"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="232"> 
+      <td width="5" height="232"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr height="188">
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="KQ0100010form2" width="934" height="188" border="1" cellspacing="0" cellpadding="0"
+			  status="<%= TypeConverter.sanitizer(aKQ0100010Control.getReadStatusString()) %>"
+			  script1="onLoad;0;CALL;onDecision@0,1"
+			  script2="onDecision;0;MASK;_KQ0100010button2/update"
+			  script3="onDecision;1;CHK;?KQ0100010form1/*[eq]NORMAL[and]_KQ0100010form1/h_UPDATE_FLG[eq]0@*0"
+			  script4="child;0;CHKRQ;C@*1"
+			  script5="child;1;CHK;?KQ0100010form1/ODR_NO[eq]SAME[and]?KQ0100010form1/SLIP_CD[eq]SAME@*2"
+			  script6="child;2;UNMASK;_KQ0100010button2/update"
+			  >
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td height="23" width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td height="23" align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ODR_NO">得意先注文番号</span></td>
+                  <td><orftextinput  name="CUST_ODR_NO" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td height="23" align=right required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_CD_1">消費税コード</span></td>
+                  <td><orftextinput  name="TAX_CD" orteus="true" width="150" maxlength="3" editable="true" required="C"></orftextinput></td>
+                  <td><orfpeeker name="PeekerTaxCd" value="" pattern="none" orteus="false" width="22" height="22" attribute="BTS_PEEKER" sqlname="TAX_CD_03" sqlparam_1="_KQ0100010form2/TAX_CD"
+ script1="onClick;0;PEEKER;_KQ0100010form2/TAX_CD@<%=contextNo%>"
+></orfpeeker></td>
+                </tr>
+                <tr> 
+                  <td height="23" align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3096">品目番号</span></td>
+                  <td><orftextinput  name="ITEM_CD" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="ITEM_NAME" orteus="true" width="320" editable="false"></orftextinput></td>
+                  <td><orftextinput  name="h_CURRNCY_CD" orteus="true" width="260" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_TRANSPORT_LT" orteus="true" width="260" visible="false"></orftextinput></td>
+                </tr>
+                <tr> 
+                  <td height="23" align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+                  <td><orftextinput  name="CUST_CD" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="CUST_NAME" orteus="true" width="320" editable="false"></orftextinput></td>
+                  <td><orftextinput  name="h_EXCH_TYP" orteus="true" width="260" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_TAX_CD" orteus="true" width="260" visible="false"></orftextinput></td>
+                </tr>
+                <tr> 
+                  <td height="23" align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ITEM_CD">得意先品目番号</span></td>
+                  <td><orftextinput  name="CUST_ITEM_CD" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="CUST_ITEM_NAME" orteus="true" width="320" editable="false"></orftextinput></td>
+                  <td><orftextinput  name="h_PRICE_ROUND_TYP" orteus="true" width="260" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_SLIP_CTRL_GRP" orteus="true" width="260" visible="false"></orftextinput></td>
+                </tr>
+                <tr> 
+                  <td height="23" align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INSPC_ACPT_TYP">検収区分</span></td>
+                  <td><orftextinput  name="INSPC_ACPT_TYP" orteus="true"  width="150" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_INSPC_ACPT_TYP" orteus="true" width="260" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td height="23" align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt1557">受注数量</span></td>
+                  <td><orftextinput  name="ODR_QTY" kind="OBT_NUMBER;14.1;CEIL;4" orteus="true" width="150" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td height="23" align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_ACPT_DATE">受注日</span></td>
+                  <td><orftextinput  name="ODR_ACPT_DATE" orteus="true" kind="OBT_DATE;TYPE_YMD" width="150" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td height="23" align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACTUAL_UNIT_PRICE">単価</span></td>
+                  <td><orftextinput  name="ODR_UNIT_PRICE" kind="OBT_NUMBER_Z;14.2;FLOOR;4" orteus="true" width="150" editable="false"></orftextinput></td>
+                  <td><orftextinput  name="ODR_UNIT_CD" orteus="true" width="100" editable="false"></orftextinput></td>
+                </tr>
+				<tr> 
+                  <td height="23" align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SCDL_SHIP_DATE">出荷予定日</span></td>
+                  <td><orftextinput name="SHIP_DLV_DATE" orteus="true" kind="OBT_DATE;TYPE_YMD" width="150" editable="false" attribute=""></orftextinput></td>
+                  <td align=right>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td height="23" align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_AMOUNT">受注金額</span></td>
+                  <td><orftextinput  name="ODR_AMOUNT" kind="OBT_NUMBER_Z;14.2;FLOOR;4" orteus="true" width="150" editable="false"></orftextinput></td>
+                  <td><orftextinput  name="ODR_AMOUNT_UNIT_CD" orteus="true" width="100" editable="false"></orftextinput></td>
+                </tr>
+                <tr> 
+                  <td height="23" align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DESINATED_DLV_DATE">指定納期</span></td>
+                  <td><orftextinput  name="DESINATED_DLV_DATE" orteus="true" kind="OBT_DATE;TYPE_YMD" width="150" editable="false"></orftextinput></td>
+                  <td align=right>&nbsp;</td>
+                  <td><orftextinput  name="h_MODIFY_COUNT" orteus="true" width="10" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                </ornoloop>
+              </table> 
+            </td>
+            <td width="12" class="frame06" height="278"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"> </td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"> 
+              <table orftype="DataGrid" mode="BUTTON" name="KQ0100010button2" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="update" value="更新" pattern="update" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" 
+				   script1="onClick;0;CHK;_KQ0100010form2/TAX_CD[eq]_KQ0100010form2/h_TAX_CD@!KQ00339"
+				   script2="onClick;1;SUBMIT;_KQ0100010form1/*,_KQ0100010form2/*,_KQ0100010form3/*@KQ0100010Servlet,,$ZZ07003"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="202"> 
+      <td width="5" height="202"></td>
+      <td valign="top" width="958" height="202"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04" height="178"></td>
+            <td colspan="3" class="frame05" height="178"> 
+              <table orftype="DataGrid" mode="VIEW" status="" float="" attribute ="DGS_SELECTOFF" name="KQ0100010form3" width="934" height="178" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="80"><orfdata excell='true'></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0721">ステータス</span></td>
+				  <td hidden="true">&nbsp;</td>
+                  <td width="80" sorttype="numeric" align="right"><orfdata excell='true'></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PART_DLV_SEQ_NO">分納項番</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SLIP_CD">伝票番号</span></td>
+                  <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DESINATED_SHIP_DATE">出荷指定日</span></td>
+                  <td width="180"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SCDL_DLV_DATE_ODR">納品予定日（出荷指示ベース）</span></td>
+                  <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SHIP_DATE">出荷実績日</span></td>
+                  <td width="180"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SCDL_DLV_DATE_SHIP">納品予定日（出荷実績ベース）</span></td>
+                  <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SALES_DATE">売上計上日</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CD">製番</span></td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+                </tr>
+                </orloophead><orloop>
+                <tr>
+					<%
+				        String bgcolor = "";
+						if (aKQ0100010Struct.getl_h_UPDATE_FLG() == "1"){
+							bgcolor="FFCCCC";
+						} else {
+							bgcolor = "";
+						}
+				    %>
+                  <td bgcolor='<%=bgcolor%>'><orflabel  name="l_STATUS" dbtype="varchar2" orteus="true"></orflabel></td>
+				  <td><orflabel  name="l_h_STATUS_CD" dbtype="varchar2" orteus="true" visible="false"></orflabel></td>
+                  <td><orflabel name="l_PART_DLV_SEQ_NO"dbtype="number"  orteus="true"></orflabel></td>
+                  <td><orflabel  name="l_SHIP_ODR_SLIP_CD" dbtype="varchar2" orteus="true"></orflabel></td>
+                  <td><orflabel  name="l_DESINATED_SHIP_DATE" dbtype="date" orteus="true" kind="OBT_DATE;TYPE_YMD"></orflabel></td>
+                  <td><orflabel  name="l_ODR_SCDL_DLV_DATE" dbtype="date" orteus="true" kind="OBT_DATE;TYPE_YMD"></orflabel></td>
+                  <td><orflabel  name="l_SHIP_DATE" dbtype="date" orteus="true" kind="OBT_DATE;TYPE_YMD"></orflabel></td>
+                  <td><orflabel  name="l_SHIP_SCDL_DLV_DATE" dbtype="date" orteus="true" kind="OBT_DATE;TYPE_YMD"></orflabel></td>
+                  <td><orflabel  name="l_SALES_DATE" dbtype="date" orteus="true" kind="OBT_DATE;TYPE_YMD"></orflabel></td>
+                  <td><orflabel  name="l_JOB_ODR_CD" dbtype="varchar2" orteus="true"></orflabel></td>
+				  <td><orflabel  name="l_h_SHIP_ODR_AMOUNT" dbtype="varchar2" orteus="true"></orflabel></td>
+				  <td><orflabel  name="l_h_SALES_AMOUNT" dbtype="varchar2" orteus="true"></orflabel></td>
+				  <td><orflabel  name="l_h_AI_AR_IF_FLG" dbtype="varchar2" orteus="true"></orflabel></td>
+				  <td><orflabel  name="l_h_TAX_DESINATED_SHIP_DATE" dbtype="varchar2" orteus="true"></orflabel></td>
+				  <td><orflabel  name="l_h_SHIP_ODR_NO" dbtype="varchar2" orteus="true"></orflabel></td>
+				  <td><orflabel  name="l_h_SALES_SEQ_NO" dbtype="varchar2" orteus="true"></orflabel></td>
+				  <td><orflabel  name="l_h_SALES_SLIP_CD" dbtype="varchar2" orteus="true"></orflabel></td>
+				  <td><orflabel  name="l_h_SHIP_ODR_AMOUNT" dbtype="varchar2" orteus="true"></orflabel></td>
+				  <td><orflabel  name="l_h_UPDATE_FLG" dbtype="varchar2" orteus="true"></orflabel></td>
+				  <td><orflabel  name="l_h_SHIP_SEQ_NO" dbtype="varchar2" orteus="true"></orflabel></td>
+				  <td><orflabel  name="l_h_INSPC_ACPT_DATE" dbtype="date" orteus="true" kind="OBT_DATE;TYPE_YMD"></orflabel></td>
+				  <td><orflabel  name="l_h_AR_INSPC_ACPT_DATE" dbtype="date" orteus="true" kind="OBT_DATE;TYPE_YMD"></orflabel></td>
+				  <td><orflabel  name="l_h_AR_SALES_AMOUNT" dbtype="varchar2" orteus="true"></orflabel></td>
+				  <td><orflabel  name="l_h_AR_TRN_INSPC_ACPT_DATE" dbtype="date" orteus="true" kind="OBT_DATE;TYPE_YMD"></orflabel></td>
+				  <td><orflabel  name="l_h_AR_TRN_SALES_AMOUNT" dbtype="varchar2" orteus="true"></orflabel></td>
+                </tr>
+                </orloop>
+              </table>
+            </td>
+            <td width="12" class="frame06" height="183"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" height="12" class="frame18"></td>
+            <td colspan="3" height="12" class="frame19"></td>
+            <td width="12" height="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="202"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="KQ0100010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" 
+                   script1="onClick;0;SUBMIT;@KQ0100010Servlet,,$ZZ07008" lock="0" 
+                  ></orfbutton></td>
+                  <td><orfbutton  name="close" value="閉じる" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aKQ0100010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

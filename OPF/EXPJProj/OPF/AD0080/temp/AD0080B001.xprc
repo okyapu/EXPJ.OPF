@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<process><process-name>AD0080B001</process-name><process-jname>作業実績取込バッチ処理</process-jname><process-type>orteus-batch</process-type><process-description></process-description><event-list/><db-list><db><table-name>T_OPR_RSLT_TEMP_HISTORY</table-name><db-file>..\..\..\common\db\temp\T_OPR_RSLT_TEMP_HISTORY.xml</db-file><io-type>out</io-type></db><db><table-name>T_OPR_RSLT_TEMP</table-name><db-file>..\..\..\common\db\temp\T_OPR_RSLT_TEMP.xml</db-file><io-type>in</io-type></db></db-list><page-list/></process>

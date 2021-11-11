@@ -1,0 +1,439 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+>一般検索（参照）
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AZ0040/AZ0040010.html,v $
+$Author: geng-jia $
+$Revision: 1.9 $ $Date: 2017/02/20 10:02:37 $
+********************************************************* --%>
+<html>
+<head>
+
+<title>一般検索（参照）</title>
+<%@include file="common/expj.jsp" %>
+<link rel="stylesheet" href="common/metamorbase.css">
+<script src="common/libs/jquery-2.2.4.min.js"></script>
+<script src="common/libs/OrteusUtils.js"></script>
+<script language="JavaScript" src="common/nonflash.js"></script>
+<script language="JavaScript">
+<!--
+/* 年月日形式チェック処理 */
+function checkDateType(){
+
+	var bRet = true;
+
+	//年未入力チェック 開始日
+	if(isNull(document.header.w_CREATED_DATE_FROM) == false){
+		var vObjDate = document.header.w_CREATED_DATE_FROM;
+		var vValDate =	document.header.w_CREATED_DATE_FROM.value;
+		vObjDate.value = vObjDate.value;
+		//年月日形式チェック
+		if( isDate(vObjDate) == false ){
+			bRet = false;
+		}
+		document.header.w_CREATED_DATE_FROM.value = vValDate;
+  }
+
+	//年未入力チェック 終了日
+	if(isNull(document.header.w_CREATED_DATE_TO) == false){
+		var vObjDate = document.header.w_CREATED_DATE_TO;
+		var vValDate =	document.header.w_CREATED_DATE_TO.value;
+		vObjDate.value = vObjDate.value;
+		//年月日形式チェック
+		if( isDate(vObjDate) == false ){
+			bRet = false;
+		}
+		document.header.w_CREATED_DATE_TO.value = vValDate;
+  }
+
+	return bRet;
+}
+// -->
+</script>
+
+<script language="JavaScript">
+<!--
+/* 年月日の開始・終了 相関チェック処理 */
+function checkDateSokan()
+{
+	var fm = document.header;
+	//開始と終了の指定がある場合は、チェックする。
+	if(isNull(fm.w_CREATED_DATE_FROM) == false && isNull(fm.w_CREATED_DATE_TO) == false){
+		if(Date.parse(fm.w_CREATED_DATE_FROM.value) > Date.parse(fm.w_CREATED_DATE_TO.value))
+		      return false;
+	}
+	return true;
+}
+// -->
+</script>
+
+<script language="JavaScript">
+<!--
+/* 読込ボタン押下時の処理 */
+function checkSelect()
+{
+
+	// 年月日形式チェック
+	if(checkDateType() == false){
+		addErrorMessage("ZZ05007");
+	}
+	if(displayErrorMessages() == true){
+		// エラー出力
+		return false;
+	}
+
+	// 年月日相関チェック
+	if(checkDateSokan() == false){
+		addErrorMessage("ZZ05101");
+	}
+	if(displayErrorMessages() == true){
+		// エラー出力
+		return false;
+	}
+
+	// submit済フラグ ON
+	prepareSubmit();
+	PreparNoLock();
+	
+	return true;
+}
+// -->
+</script>
+
+<script language="JavaScript">
+<!--
+/* 読込済みチェック */
+function checkFinishSelect()
+{
+	//読込チェック
+	if(document.header.h_MODE.value == "select"){
+		return true;
+	}
+
+    if (document.header.h_MODE.value == "normal") {
+		//未読込エラー
+		displayErrorMessage("ZZ01114");
+	} else if(document.header.h_MODE.value == "select_war"){
+		//対象データなしエラー
+		displayErrorMessage("ZZ06001");
+	}
+	return false;
+}
+
+function checkFinishSelect2()
+{
+	if((document.header.h_MODE.value == "select") || 
+	   (document.header.h_MODE.value == "select_war")) {
+		return true;
+	}
+	//未読込エラー
+	displayErrorMessage("ZZ01114");
+	return false;
+}
+
+// -->
+</script>
+
+<script language="JavaScript">
+<!--
+/* 検索実行ボタン押下時の処理 */
+function checkSubmit()
+{
+
+	// 読込実行後?
+	if(checkFinishSelect() == false) return false;
+
+	// submit済フラグ ON
+	prepareSubmit();
+	PreparNoLock();
+
+	return true;
+}
+// -->
+</script>
+
+
+<script language="JavaScript">
+<!--
+/* 検索条件設定ボタン押下時の処理 */
+function checkSubmit2()
+{
+	var fm = document.header;
+
+	// 読込実行後?
+	if(checkFinishSelect() == false) return false;
+
+	// 選択したクエリがＧＵＩかチェック
+	if (<%= aAZ0040010Control.getListsize() %> == 1) {
+		if(fm.r_Btn.checked == true){
+			if(fm.EDIT_TYP.value != <%= TypeConverter.sanitizer(AZ0040Const.C_INPUT_GUI) %> ){
+				displayErrorMessage("AZ00017"); return false;
+			}
+		}
+
+	} else {
+		for( n=0; n< <%= aAZ0040010Control.getListsize() %> ; n++ ){
+			if(fm.r_Btn[n].checked == true){
+				if(fm.EDIT_TYP[n].value != <%= TypeConverter.sanitizer(AZ0040Const.C_INPUT_GUI) %> )	{
+					displayErrorMessage("AZ00017"); return false;
+				}
+			}
+		}
+	}
+	
+	// submit済フラグ ON
+	prepareSubmit();
+	PreparNoLock();
+
+	return true;
+}
+// -->
+</script>
+
+<script language="JavaScript">
+<!--
+/* 共通チェック */
+function checkCommon()
+{
+	return true;
+}
+// -->
+</script>
+
+<script language="JavaScript">
+<!--
+/* 画面表示時処理 */
+function initialize()
+{
+	sizing();
+}
+// -->
+</script>
+
+<script language="JavaScript">
+<!--
+/* 入力項目のサイズ設定 */
+function sizing()
+{
+	var fm = document.header;
+	fm.w_QUERY_NAME.size = 100;
+	fm.w_QUERY_GROUP.size = 50;
+	fm.w_MEMO.size = 100;
+	fm.w_CREATED_BY.size = 45;				    // 作成者
+
+}
+// -->
+</script>
+
+<script language="JavaScript">
+<!--
+function PreparLock(){ document.header.SUBMIT_BUTTON_TYPE.value=1; }
+
+function PreparNoLock(){ document.header.SUBMIT_BUTTON_TYPE.value=0; }
+
+// -->
+</script>
+
+<script language="JavaScript">
+// 関数名は任意
+function exprSize() {
+
+  // Flash版との切り分け（値がnullならばFlash版）
+  var parentFrame = null;
+  if (parent !== null && parent.document !== null) {
+    parentFrame = parent.document.getElementById('expj-business-screen-tabs-body-AZ0040010');
+  }
+  if (parentFrame === null) {
+    return;
+  }
+
+  // IE専用処理
+  // isMSIEをisChromeにするとChrome専用になる
+  if (com.nec.jp.orteus.utils.ClientInfo.browser.isMSIE) {
+    // サイズ調整関数の定義
+    var resizeFunc = function () {
+      try {
+        // 業務画面に割り当てられたフレームタグを取得
+        var parentFrame = parent.document.getElementById('expj-business-screen-tabs-body-AZ0040010');
+        // 業務画面に与えられた高さを取得
+        var frameHeight = parentFrame.clientHeight;
+
+        // 与えられた高さから固定箇所の高さを引く
+        frameHeight -= document.getElementById('layoutRow1').offsetHeight;
+        frameHeight -= document.getElementById('layoutRow3').offsetHeight;
+        frameHeight -= document.getElementById('layoutRow4').offsetHeight;
+        // 誤差がある時は更に引く
+        frameHeight -= 50;
+
+        // レイアウトを調整したい場所の高さを修正
+        document.getElementById('layoutRow2').setAttribute('style', 'height:' + frameHeight + 'px');
+        document.getElementById('layoutDiv2').setAttribute('style', 'height:' + frameHeight + 'px');
+        // ※既にタグにstyle属性がある場合は、以下を利用すると既存のstyle属性に影響を与えずに修正できる
+        // $('#layoutRow2').css('height', frameHeight + 'px');
+        // $('#layoutDiv2').css('height', frameHeight + 'px');
+
+      } catch (e) {
+        // エラーが発生したらここでキャッチされる。
+      }
+    };
+
+    // 1回関数を呼び出してレイアウトを調整する
+    resizeFunc();
+
+    // すでに登録してあるwindowサイズ変更イベント関数を削除
+    $(window).off('resize.' + 'AZ0040010');
+    // windowサイズ変更イベント関数を登録
+    $(window).on('resize.' + 'AZ0040010', resizeFunc);
+    
+  } else if (com.nec.jp.orteus.utils.ClientInfo.browser.isChrome) {
+    // formタグのmargin-bottomを修正
+    $('form').css('margin-bottom', '0px');
+  }
+}
+</script>
+
+</head>
+<body onLoad="sizing();loadComplete();exprSize();">
+
+<form name="header" method="post" action="">
+  <!-- 画面モードフラグ保持用 -->
+	<input type="hidden" name="h_MODE" value="<%= TypeConverter.sanitizer(aAZ0040010Control.getMode()) %>">
+  <!-- 押下ボタン種別保持用 -->
+	<input type="hidden" name="SUBMIT_BUTTON_TYPE" value="0">
+  <!-- ウィンドウクローズ処理 -->
+	<script language="JavaScript">
+		if(document.header.h_MODE.value == "close"){
+			close();
+		}
+	</script>
+
+	<%
+		//画面表示用 Struct
+		aAZ0040010Struct = null;
+		aAZ0040010Struct=(AZ0040010Struct)aAZ0040010Control.getKeyStruct();
+	%>
+
+  <table width="100%" border="0" height="100%">
+<!----------------------------------------------------------------------------->
+<tr id="layoutRow1">
+  <td> 
+    <table border="0" width="100%">
+      <tr>
+        <td nowrap class="name"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0413">クエリ名</span></td>
+        <td colspan="2">
+            <input type="text" name="w_QUERY_NAME" orteus="true">
+            <span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0002">（ワイルドカード指定可）</span>
+        </td>
+      </tr>
+      <tr> 
+        <td class="name"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0014">分類</span></td>
+        <td colspan="2">
+          <input type="text" name="w_QUERY_GROUP" orteus="true">
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0002">（ワイルドカード指定可）</span>
+        </td>
+      </tr>
+      <tr> 
+        <td class="name"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0006">概要</span></td>
+        <td colspan="2">
+          <input type="text" name="w_MEMO" orteus="true">
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0002">（ワイルドカード指定可）</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="name"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CREATED_BY">作成者</span></td>
+        <td>
+          <input type="text" name="w_CREATED_BY" orteus="true">
+        </td>
+      </tr>
+      <tr> 
+        <td class="name"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CREATED_DATE">作成日</span></td>
+        <td>
+          <input type="text" name="w_CREATED_DATE_FROM" orteus="true" maxlength="10"> <span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0043">～</span>  <input type="text" name="w_CREATED_DATE_TO" orteus="true" maxlength="10">
+        </td>
+        <td align="right">
+          <input type="submit" name="select" value="読込" pattern="select" orteus="true" class="button" mlang="true" mlkind="common" mlname="Expj.BtnSelect" onClick="return checkSelect();">
+        </td>
+      </tr>
+      <tr> 
+        <td colspan="3"><hr></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<!----------------------------------------------------------------------------->
+<tr id="layoutRow2">
+  <td height="100%">
+    <div class="center" id="layoutDiv2">
+    <table class="outer" cellspacing=0 cellpadding=0><tr><td>
+      <table cellspacing=1 cellpadding=3>
+        <tr class="header"> 
+          <td align="center"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0015">選択</span></td>
+          <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0065">区分</span></td>
+          <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0413">クエリ名</span></td>
+          <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0014">分類</span></td>
+          <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0006">概要</span></td>
+          <td ><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CREATED_BY">作成者</span></td>
+          <td ><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CREATED_DATE">作成日</span></td>
+          <td ><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UPDATED_BY">更新者</span></td>
+          <td ><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UPDATED_DATE">更新日</span></td>
+        </tr>
+        <orloop orteus="true">
+        <tr class="rows"> 
+          <td align="center"> 
+            <% if(loopCount == 0){ %>
+              <input type="radio" name="r_Btn" value="<%=loopCount%>" id='<%="r_Btn" + loopCount%>' checked>
+            <% }else{ %>
+              <input type="radio" name="r_Btn" value="<%=loopCount%>" id='<%="r_Btn" + loopCount%>'>
+            <% } %>
+          </td>
+		  <td><orlabel name="EDIT_NAME"   dbtype="varchar2" orteus="true"></orlabel></td>
+          <td><%= TypeConverter.sanitizer(aAZ0040010Struct.getQUERY_NAME()) == null ? null : TypeConverter.sanitizer(aAZ0040010Struct.getQUERY_NAME()).replaceAll(" ","&nbsp;") %></td>
+          <td><%= TypeConverter.sanitizer(aAZ0040010Struct.getQUERY_GROUP()) == null ? null : TypeConverter.sanitizer(aAZ0040010Struct.getQUERY_GROUP()).replaceAll(" ","&nbsp;") %></td>
+          <td><%= TypeConverter.sanitizer(aAZ0040010Struct.getQUERY_MEMO()) == null ? null : TypeConverter.sanitizer(aAZ0040010Struct.getQUERY_MEMO()).replaceAll(" ","&nbsp;") %></td>
+          <td><%= TypeConverter.sanitizer(aAZ0040010Struct.getCREATED_BY()) == null ? null : TypeConverter.sanitizer(aAZ0040010Struct.getCREATED_BY()).replaceAll(" ","&nbsp;") %></td>
+          <td><orlabel name="CREATED_DATE"  dbtype="varchar2" orteus="true"></orlabel></td>
+          <td><%= TypeConverter.sanitizer(aAZ0040010Struct.getUPDATED_BY()) == null ? null : TypeConverter.sanitizer(aAZ0040010Struct.getUPDATED_BY()).replaceAll(" ","&nbsp;") %></td>
+          <td><orlabel name="UPDATED_DATE"  dbtype="varchar2" orteus="true"><br></orlabel></td>
+		  <input type="hidden" name="EDIT_TYP" orteus="true">
+        </tr>
+        </orloop>
+      </table>
+    </td>
+    </tr>
+    </table>
+    </div>
+  </td>
+</tr>
+<tr>
+  <td> 
+  </td>
+</tr>
+<tr id="layoutRow3">
+  <td>
+    <input type="submit" name="execute" value="検索実行" pattern="none" orteus="true" class="button" mlang="true" mlkind="common" mlname="Expj.BtnExcuteQuery" onClick="return checkSubmit();">
+    <input type="submit" name="condition" value="検索条件設定" pattern="none" orteus="true" class="button" mlang="true" mlkind="common" mlname="Expj.BtnSetCondition" onClick="return checkSubmit2();">
+  </td>
+</tr>
+<!----------------------------------------------------------------------------->
+<tr id="layoutRow4">
+  <td height="40px" width="100%">
+    <table  width="100%">
+      <tr>
+        <td height="10px"><hr></td>
+      </tr>
+      <tr>
+        <td height="30px" align="right">
+          <input type="submit" name="clear" value="クリア" pattern="none" orteus="true" class="button" mlang="true" mlkind="common" mlname="Expj.BtnClear" onClick="return clearPage();">
+          <input type="button" name="close" value="閉じる" pattern="none" orteus="true" class="button" mlang="true" mlkind="common" mlname="Expj.BtnClose" onClick="return delPage();">
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<% MessageStruct msgStruct = aAZ0040010Control.getMessage(); %>
+<%@ include file="common/SetServerMessage.jsp" %>
+</table>
+</form>
+</body>
+</html>

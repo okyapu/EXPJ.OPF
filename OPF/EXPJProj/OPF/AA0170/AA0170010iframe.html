@@ -1,0 +1,91 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+表示変更
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AA0170/AA0170010iframe.html,v $
+$Author: geng-jia $
+$Revision: 1.2 $ $Date: 2017/02/13 02:28:38 $
+********************************************************* --%>
+<html>
+<head>
+<title>表示変更</title>
+<%@include file="common/expj_v5.jsp" %>
+<script>
+	var data = "<root>";
+	
+	function onInitializeOnLoad(){
+		setDataGridDataParent("AA0170010",data + "</root>");
+	}
+</script>
+</head>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true">
+              <%
+                List listBackup = aAA0170010Control.getList();
+                aAA0170010Control.setList(aAA0170010Control.getProcedureList());
+              %>
+                   <table orftype="DataGrid" attribute="DGS_SELECTSINGLE" mode="VIEW" name="AA0170010view2" width="934" height="173" border="1" cellspacing="0" cellpadding="0">
+                      <orloophead>
+                      <tr bgcolor="#ccff99">
+                        <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_CD">品目別作業コード</span></td>
+                        <td width="150"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_NAME">作業名</span></td>
+                        <td width="100" align="right"><orfdata excell='true'></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_NO">作業系列番号</span></td>
+                        <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OUTSIDE_TYP_1">作業系列内外作区分</span></td>
+                        <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.WS_CD">作業区コード</span></td>
+                        <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_CD">取引先コード</span></td>
+                        <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACPT_INSPC_TYP">受入検査区分</span></td>
+                        <td width="100" sorttype="numeric" align="right"><orfdata excell='true'></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FIXED_LT_1">作業系列固定分リードタイム</span></td>
+                        <td width="100" sorttype="numeric" align="right"><orfdata excell='true'></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROP_LT_1">作業系列比例分リードタイム</span></td>
+                        <td width="100" sorttype="numeric" align="right"><orfdata excell='true'></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROP_LOT_SIZE_1">作業系列比例分ロットサイズ</span></td>
+                        <td width="100" sorttype="numeric" align="right"><orfdata excell='true'></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SAFETY_LT_1">作業系列安全日数</span></td>
+                        <td width="100" sorttype="numeric" align="right"><orfdata excell='true'></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPOIL">作業系列仕損率</span></td>
+                        <td width="100" sorttype="numeric" align="right"><orfdata excell='true'></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STANDARD_COST">標準工数</span></td>
+                        <td width="100" hidden="true">作業系列別内外作区分コンボ値</td>
+                        <td width="100" hidden="true">受入検査区分コンボ値</td>
+                        <td width="100" hidden="true">更新回数</td>
+                        <td width="100" hidden="true">作業区名</td>
+                        <td width="100" hidden="true">取引先名</td>
+                        <td width="100" hidden="true">品目コード</td>
+                        <td width="100" hidden="true">品目名</td>
+                        <td width="100" hidden="true">計量単位</td>
+                        <td width="100" hidden="true">工場コード</td>
+                        <td width="100" hidden="true">製品構成版数</td>
+                      </tr>
+                      </orloophead> 　
+                      <orloop>
+                      <tr>
+                        <td><orflabel  name="pr_PROC_CD" tablename="M_PROC_GRP" columnname="PROC_CD" orteus="true"></orflabel></td>
+                        <td><orflabel  name="pr_PROC_NAME" tablename="M_PROC_GRP" columnname="PROC_NAME" orteus="true"></orflabel></td>
+                        <td><orflabel  name="pr_PROC_NO" kind="OBT_INTEGER;6" tablename="M_PROC_GRP" columnname="PROC_NO" orteus="true"></orflabel></td>
+                        <td><orflabel  name="pr_OUTSIDE_NAME" orteus="true"></orflabel></td>
+                        <td><orflabel  name="pr_WS_CD" tablename="M_PROC_GRP" columnname="WS_CD" orteus="true"></orflabel></td>
+                        <td><orflabel  name="pr_VEND_CD" tablename="M_PROC_GRP" columnname="VEND_CD" orteus="true"></orflabel></td>
+                        <td><orflabel  name="pr_ACPT_INSPC_NAME" orteus="true"></orflabel></td>
+                        <td><orflabel  name="pr_FIXED_LT" kind="OBT_INTEGER;6" tablename="M_PROC_GRP" columnname="FIXED_LT" orteus="true"></orflabel></td>
+                        <td><orflabel  name="pr_PROP_LT" kind="OBT_INTEGER;6" tablename="M_PROC_GRP" columnname="PROP_LT" orteus="true"></orflabel></td>
+                        <td><orflabel  name="pr_PROP_LOT_SIZE" kind="OBT_NUMBER;14.1;FLOOR;4" tablename="M_PROC_GRP" columnname="PROP_LOT_SIZE" orteus="true"></orflabel></td>
+                        <td><orflabel  name="pr_SAFETY_LT" kind="OBT_INTEGER;6" tablename="M_PROC_GRP" columnname="SAFETY_LT" orteus="true"></orflabel></td>
+                        <td><orflabel  name="pr_SPOIL" kind="OBT_NUMBER;5.1;FLOOR;4" tablename="M_PROC_GRP" columnname="SPOIL" orteus="true"></orflabel></td>
+                        <td><orflabel  name="pr_STANDARD_COST" kind="OBT_NUMBER;14.1;FLOOR;4" tablename="M_PROC_GRP" columnname="STANDARD_COST" orteus="true"></orflabel></td>
+                        <td><orflabel  name="pr_OUTSIDE_TYP" tablename="M_PROC_GRP" columnname="OUTSIDE_TYP" dbtype="number" tablejname="M_PROC_GRP" columnjname="OUTSIDE_TYP"   orteus="true" visible="false"></orflabel></td>
+                        <td><orflabel  name="pr_ACPT_INSPC_TYP" tablename="M_PROC_GRP" columnname="ACPT_INSPC_TYP" dbtype="number" tablejname="M_PROC_GRP" columnjname="ACPT_INSPC_TYP"   orteus="true" visible="false"></orflabel></td>
+                        <td><orflabel  name="pr_MODIFY_COUNT" tablename="M_PROC_GRP" columnname="MODIFY_COUNT" dbtype="number" tablejname="M_PROC_GRP" columnjname="MODIFY_COUNT"   orteus="true" visible="false"></orflabel></td>
+                        <td><orflabel  name="pr_WS_NAME" orteus="true" visible="false"></orflabel></td>
+                        <td><orflabel  name="pr_VEND_NAME" orteus="true" visible="false"></orflabel></td>
+                        <td><orflabel  name="pr_ITEM_CD" orteus="true" visible="false"></orflabel></td>
+                        <td><orflabel  name="pr_ITEM_NAME" orteus="true" visible="false"></orflabel></td>
+                        <td><orflabel  name="pr_STOCK_UNIT" orteus="true" visible="false"></orflabel></td>
+                        <td><orflabel  name="pr_PLANT_CD" orteus="true" visible="false"></orflabel></td>
+                        <td><orflabel  name="pr_PS_EDITION" orteus="true" visible="false"></orflabel></td>
+                      </tr>
+                      </orloop>
+                  </table>
+              <%
+                aAA0170010Control.setList(listBackup);
+%>
+<%
+MessageStruct msgStruct = aAA0170010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<!--
+  for WebLogic 10.x
+  SVFX-Designer 8.x 対応
+  -->
+
+<project name="BuildOrteus2" default="rebuild">
+
+  <!-- ///////////////////////////////////////////////////////////////////////
+    プロパティの設定
+    ///////////////////////////////////////////////////////////////////////-->
+
+  <!-- 可変部 -->
+  <property name="opf" value="AA0010"/>
+  <property name="jarname" value="AA0010"/>
+  <property name="warname" value="AA0010"/>
+  <property name="packageDir" value="com.nec.jp.orteus.metamorBase/AA0010"/>
+  <property name="warpath" value="."/>
+  <property name="user" value=""/>
+  <property name="server" value=""/>
+  <property name="pass" value=""/>
+  <property name="dirApServer" value="D:\bea\wlserver"/>
+  <property name="dirOrteusStudioBin" value="D:\EXPJStudio\tools\bin"/>
+  <property name="dirOrteusStudioMenu" value="D:\EXPJStudio\tools\..\menu_WebLogic10"/>
+  <property name="dirOrteusStudioLib" value="D:\EXPJStudio\tools\..\lib"/>
+  <property name="dirProjCommon" value="D:\EXPJ.OPF\OPF\EXPJProj\common"/>
+  <property name="jdbcClasspath" value="C:\oracle\product\10.2.0\db_1\jdbc\lib\ojdbc14.jar;C:\oracle\product\10.2.0\db_1\jdbc\lib\nls_charset12.jar"/>
+
+  <property name="dirSvfj" value=""/>
+  <property name="dirSvfjX" value=""/>
+  <property name="dirJasperLib" value=""/>
+
+  <!-- root directory -->
+  <property name="rootdir" value=".."/>
+
+  <!-- ソースディレクトリ(build.xmlからの相対) -->
+  <property name="srcdir" value="src"/>
+
+  <!-- クラスファイルディレクトリ(build.xmlからの相対) -->
+  <property name="classdir" value="classes"/>
+  <!-- アーカイブファイルディレクトリ(build.xmlからの相対) -->
+  <property name="libdir" value="lib"/>
+  <!-- JavaDOCディレクトリ -->
+  <property name="docdir" value="javadoc"/>
+  
+  <property name="jspdir" value="jsp"/>
+  <property name="wardir" value="war"/>
+  <property name="jardir" value="jar"/>
+  <property name="webinfdir" value="${wardir}/WEB-INF"/>
+  <property name="metainfdir" value="${wardir}/META-INF"/>
+  
+
+  <property name="dirExpjLib" value="${dirOrteusStudioLib}/expj"/>
+  <property name="dirExpjMenu" value="${dirOrteusStudioBin}/../framework/expjhtml5/EJmenu"/>
+  <property name="dirExpjMenu10" value="${dirOrteusStudioBin}/../framework/expjhtml5/EJmenu_WebLogc10"/>
+  <property name="dirSvfLib" value="d:/bea/SVFJP/svfjpd/lib"/>
+  <property name="dirEspressLib" value="d:/bea/EspressChart/lib"/>
+
+  
+
+  <!-- クラスパス設定 -->  
+  <path id="project.class.path">
+    <pathelement location="classes" />
+    <pathelement path="${dirApServer}/server/lib/weblogic.jar" />
+    <pathelement path="${dirApServer}/server/lib/api.jar" />
+    <pathelement path="${jdbcClasspath}" />
+    <pathelement path="${dirOrteusStudioLib}/coreapi.jar" />
+    <pathelement path="${dirOrteusStudioLib}/foundation.jar" />
+    <pathelement path="${dirOrteusStudioLib}/dbconverter.jar" />
+    <pathelement path="${dirOrteusStudioLib}/license.jar" />
+    <pathelement path="${dirOrteusStudioLib}/logging.jar" />
+    <pathelement path="${dirOrteusStudioLib}/wsecurity90.jar" />
+    <pathelement path="${dirOrteusStudioLib}/dynsql.jar" />
+    <pathelement path="${dirOrteusStudioLib}/orteus-commons-logging.jar" />
+    <pathelement path="${dirSvfj}" />
+    <pathelement path="${dirSvfjX}" />
+    <pathelement path="${dirJasperLib}" />
+    
+
+    <pathelement path="${dirExpjLib}/expjfd.jar" />
+    <pathelement path="${dirExpjLib}/expjmp.jar" />
+    <pathelement path="${dirExpjLib}/expjarap.jar" />
+    <pathelement path="${dirExpjLib}/expjlib.jar" />
+    <pathelement path="${dirExpjLib}/metamorBaselib.jar" />
+    <pathelement path="${dirExpjLib}/metamorBaseCommonlib.jar" />
+    <pathelement path="${dirExpjLib}/metamorBaseCommon01lib.jar" />
+    <pathelement path="${dirExpjLib}/metamorBaseCommon02lib.jar" />
+    <pathelement path="${dirExpjLib}/metamorBaseCommon03lib.jar" />
+    <pathelement path="${dirExpjLib}/metamorBaseCommon04lib.jar" />
+    <pathelement path="${dirExpjLib}/metamorBaseCommon05lib.jar" />
+    <pathelement path="${dirExpjLib}/metamorBaseCommon06lib.jar" />
+    <pathelement path="${dirExpjLib}/commons-lang-2.0.jar" />
+    <pathelement path="${dirExpjLib}/commons-beanutils-1.9.2.jar" />
+    <pathelement path="${dirExpjLib}/commons-logging-1.2.jar" />
+    <pathelement path="${dirExpjLib}/ezmorph-1.0.jar" />
+    <pathelement path="${dirExpjLib}/json-lib-2.4-jdk15.jar" />
+    <pathelement path="${dirOrteusStudioLib}/nm_api2j.jar"/>
+    <pathelement path="${dirSvfLib}/svf.jar" />
+    <pathelement path="${dirSvfLib}/svfrclient.jar"/>
+    <pathelement path="${dirEspressLib}/EspressAPI.jar" />
+    <pathelement path="${dirEspressLib}/ExportLib.jar" />
+
+  
+  </path>
+
+  <!-- ///////////////////////////////////////////////////////////////////////
+    タスク定義
+    ///////////////////////////////////////////////////////////////////////--> 
+
+  <!-- 全生成 -->
+  <target name="rebuild" depends="clean, jar, javadoc, makewar, convertMessage, makeProp" />
+
+  <!-- 初期化 -->
+  <target name="init">
+    <mkdir dir="${classdir}" />
+    <mkdir dir="${libdir}" />
+  </target>
+
+  <!-- Javaコンパイル -->
+  <target name="compile" depends="init">
+    <javac srcdir="src" destdir="${classdir}"
+        deprecation="on" encoding="Windows-31J" debug="on">
+      <classpath refid="project.class.path" />
+    </javac>
+  </target>
+
+  <!-- JAR 作成 -->
+  <target name="jar" depends="compile">
+    <jar jarfile="${libdir}/${jarname}.jar" basedir="${classdir}" includes="**"/>
+  </target>
+
+  <!-- JavaDOC作成 -->
+  <target name="javadoc" if="makeJavaDoc">
+    <delete dir="${docdir}" />
+    <mkdir dir="${docdir}" />
+    <javadoc
+        encoding="Windows-31J" charset="Windows-31J"
+        sourcepath="${srcdir}"
+        classpath="${dirApServer}/server/lib/weblogic.jar;${jdbcClasspath};${dirOrteusStudioLib}/coreapi.jar;${dirOrteusStudioLib}/foundation.jar;${dirOrteusStudioLib}/dbconverter.jar;${dirOrteusStudioLib}/logging.jar;${dirOrteusStudioLib}/wsecurity90.jar;${dirOrteusStudioLib}/dynsql.jar"
+        packagenames="*"
+        destdir="${docdir}"
+        version="true" use="true" author="true"
+        windowtitle="${ant.project.name} API Specification" />
+  </target>
+
+  <!-- 削除 -->
+  <target name="clean">
+    <delete dir="${classdir}" />
+    <delete dir="${libdir}" />
+  </target>
+
+  <!-- War 作成 -->
+  <target name="makewar" depends="prepareWar, copyWarJsp, copyWarJs, copyWarMenu, copyWarPrjMenu, copyWarClass, copyWarWebXml">
+    <jar jarfile="${warname}.war" basedir="${wardir}"/>
+  </target>
+
+  <!-- War 作成準備 -->
+  <target name="prepareWar">
+    <delete dir="${wardir}"/>
+    <mkdir dir="${wardir}"/>
+    <mkdir dir="${webinfdir}"/>
+  </target>
+
+  <!-- War 対象のファイルをコピー -->
+  <target name="copyWarWebXml">
+    <copy file="web.xml" todir="${webinfdir}/"/>
+  </target>
+
+  <target name="copyWarJsp" depends="checkJspDir" if="existsJspDir">
+    <copy todir="${wardir}/">
+      <fileset dir="${jspdir}/"/>
+    </copy>
+  </target>
+
+  <target name="copyWarJs">
+    <copy todir="${wardir}/">
+      <fileset dir=".">
+        <include name="*.js"/>
+        <include name="*.css"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="copyWarMenu">
+    <copy todir="${wardir}/">
+      <fileset dir="${dirOrteusStudioMenu}/" includes="**" />
+    </copy>
+  </target>
+
+  <target name="copyWarPrjMenu" depends="checkPrjMenuDir" if="existsPrjMenuDir">
+    <native2ascii src="${dirProjCommon}/menu" 
+                  includes="**/*.sjis" 
+                  dest="${wardir}" 
+                  ext=".properties"/>
+    <copy todir="${wardir}/" overwrite="yes">
+      <fileset dir="${dirProjCommon}/menu/" includes="**" />
+    </copy>
+  </target>
+
+  <target name="copyWarClass">
+    <copy todir="${webinfdir}/classes/">
+      <fileset dir="${classdir}/"/>
+    </copy>
+    
+
+    <!-- EJメニューの追加コピー -->
+    <copy todir="${wardir}/" overwrite="yes">
+      <fileset dir="${dirExpjMenu}/" includes="**" />
+    </copy>
+    <!-- AP用メニュー系ファイルの追加コピー -->
+    <copy todir="${wardir}/" overwrite="yes">
+      <fileset dir="${dirExpjMenu}/../ap" includes="**" />
+    </copy>
+
+  
+    
+
+    <!-- WebLogic10用EJメニュー更新ファイルの上書きコピー -->
+    <copy todir="${wardir}/" overwrite="yes">
+      <fileset dir="${dirExpjMenu10}/" includes="**" />
+    </copy>
+
+  
+    
+  
+  </target>
+  
+  <target name="checkJspDir">
+    <available property="existsJspDir" file="${jspdir}" type="dir"/>
+  </target>
+  
+  <target name="checkPrjMenuDir">
+    <available property="existsPrjMenuDir" file="${dirProjCommon}/menu" type="dir"/>
+  </target>
+  
+  <!-- Message ファイル変換 -->
+  <target name="convertMessage">
+    <delete file="${dirOrteusStudioLib}/DisplayMessageResources.properties" />
+    <native2ascii src="${dirOrteusStudioLib}" includes="DisplayMessageResources.properties.japanese" dest="${dirOrteusStudioLib}/" ext=""/>
+  </target>
+
+
+  <!-- ユーザ定義用プロパティファイル作成 -->
+  <target name="makeProp">
+    <exec dir="${dirOrteusStudioBin}" executable="cmd">
+      <arg line="/c MLangConv.bat ${dirOrteusStudioBin} ${dirProjCommon} ${warname}" />
+    </exec>
+    <delete file="${dirOrteusStudioLib}/OrteusUserDic.properties"/>
+    <delete file="${dirOrteusStudioLib}/OrteusUserDic.properties.japanese"/>
+    <concat destfile="${dirOrteusStudioLib}/OrteusUserDic.properties.japanese">
+      <fileset dir="${dirProjCommon}/../OPF/${warname}/temp" includes="*.properties"/>
+    </concat>
+    <native2ascii src="${dirOrteusStudioLib}" includes="OrteusUserDic.properties.japanese" dest="${dirOrteusStudioLib}/" ext=""/>
+  </target>
+
+
+  <!-- CSRF対策用JSPファイル文字列置換 -->
+  <target name="convertJsp">
+    <replace file="${targetJsp}">
+      <replacefilter token="&lt;/form" value="&lt;input type=&quot;hidden&quot; name=&quot;ORTEUS_HASHED&quot; value=&quot;&lt;%=hashed%&gt;&quot;&gt;&lt;/form" />
+      <replacefilter token=";SUBMIT;" value=";SUBMIT;ORTEUS_HASHED=&lt;%=hashed%&gt;," />
+      <replacefilter token=";SCRCHG;" value=";SCRCHG;ORTEUS_HASHED=&lt;%=hashed%&gt;," />
+      <replacefilter token=";SCRMV;" value=";SCRMV;ORTEUS_HASHED=&lt;%=hashed%&gt;," />
+      <replacefilter token=";PRINTER;" value=";PRINTER;ORTEUS_HASHED=&lt;%=hashed%&gt;," />
+      <replacefilter token="&lt;%=hashed%&gt;,@" value="&lt;%=hashed%&gt;@" />
+      <replacefilter token="ORTEUS_HASHED=&lt;%=hashed%&gt;,ORTEUS_HASHED=&lt;%=hashed%&gt;" value="ORTEUS_HASHED=&lt;%=hashed%&gt;" />
+    </replace>
+  </target>
+</project>

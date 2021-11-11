@@ -1,0 +1,414 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+カレンダメンテナンスサブ1
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AA0080/AA0080021.html,v $
+$Author: geng-jia $	
+$Revision: 1.6 $ $Date: 2017/02/13 02:15:43 $
+********************************************************* --%>
+<html>
+<head>
+<title>カレンダメンテナンスサブ1</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AA0080021" version="AA0080021 $Revision: 1.6 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+<% String CallButton = aAA0080020Control.getButton(); %>
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="74"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AA0080021form1" width="934" height="50" border="1" cellspacing="0" cellpadding="0"
+                 script1="onLoad;0;CALL;child@0,3,7"
+                     script2="child;0;CHK;<%=CallButton%>[eq]insert[or]<%=CallButton%>[eq]insertSub1@*1,*2"
+                         script3="child;1;MASK;_AA0080021button2/updateSub1"
+                         script4="child;2;MASK;_AA0080021button2/insertSub1"
+
+                     script5="child;3;CHK;<%=CallButton%>[eq]insert[or]<%=CallButton%>[eq]insertSub1@*4,*6"
+                         script6="child;4;CHK;_AA0080021form1/w_DATE_TO[neq]@*5,*6"
+                             script7="child;5;MASK;_AA0080021form2/DATE_FROM,_AA0080021form2/CalendarFromDate"
+                             script8="child;6;UNMASK;_AA0080021form2/DATE_FROM,_AA0080021form2/CalendarFromDate"
+
+                     script9="child;7;CHK;_AA0080021form1/h_HOLIDAY_SUN[eq]1@*8,*9"
+                         script10="child;8;SET;_AA0080021form2/c_HOLIDAY_SUN=true@*9"
+                     script11="child;9;CHK;_AA0080021form1/h_HOLIDAY_MON[eq]1@*10,*11"
+                         script12="child;10;SET;_AA0080021form2/c_HOLIDAY_MON=true@*11"
+                     script13="child;11;CHK;_AA0080021form1/h_HOLIDAY_TUE[eq]1@*12,*13"
+                         script14="child;12;SET;_AA0080021form2/c_HOLIDAY_TUE=true@*13"
+                     script15="child;13;CHK;_AA0080021form1/h_HOLIDAY_WED[eq]1@*14,*15"
+                         script16="child;14;SET;_AA0080021form2/c_HOLIDAY_WED=true@*15"
+                     script17="child;15;CHK;_AA0080021form1/h_HOLIDAY_THU[eq]1@*16,*17"
+                         script18="child;16;SET;_AA0080021form2/c_HOLIDAY_THU=true@*17"
+                     script19="child;17;CHK;_AA0080021form1/h_HOLIDAY_FRI[eq]1@*18,*19"
+                         script20="child;18;SET;_AA0080021form2/c_HOLIDAY_FRI=true@*19"
+                     script21="child;19;CHK;_AA0080021form1/h_HOLIDAY_SAT[eq]1@*20"
+                         script22="child;20;SET;_AA0080021form2/c_HOLIDAY_SAT=true"
+
+                 script23="onLoad;1;CALL;onDecision@0,1"            
+                     script24="onDecision;0;CHK;<%=CallButton%>[eq]insert[or]<%=CallButton%>[eq]insertSub1@*21,*24"        
+                         script25="child;21;CHKRQ;A,B@*22,*23"    
+                             script26="child;22;UNMASK;_AA0080021button2/insertSub1"
+                             script27="child;23;MASK;_AA0080021button2/insertSub1"
+
+                         script28="child;24;CHKRQ;A,B@*25,*26"    
+                             script29="child;25;UNMASK;_AA0080021button2/updateSub1"
+                             script30="child;26;MASK;_AA0080021button2/updateSub1"
+							 
+				  script31="onDecision;1;CHK;1[eq]1@*27"
+				  script32="child;27;CHK;_AA0080021form1/h_TIME_CTRL[eq]0@*28,*35"
+				  script33="child;28;MASK;_AA0080021form2/t_HOLIDAY_SUN,_AA0080021form2/PeekerAspShiftCd_SUN@*29"
+				  script34="child;29;MASK;_AA0080021form2/t_HOLIDAY_MON,_AA0080021form2/PeekerAspShiftCd_MON@*30"
+				  script35="child;30;MASK;_AA0080021form2/t_HOLIDAY_TUE,_AA0080021form2/PeekerAspShiftCd_TUE@*31"
+				  script36="child;31;MASK;_AA0080021form2/t_HOLIDAY_WED,_AA0080021form2/PeekerAspShiftCd_WED@*32"
+				  script37="child;32;MASK;_AA0080021form2/t_HOLIDAY_THU,_AA0080021form2/PeekerAspShiftCd_THU@*33"
+				  script38="child;33;MASK;_AA0080021form2/t_HOLIDAY_FRI,_AA0080021form2/PeekerAspShiftCd_FRI@*34"
+				  script39="child;34;MASK;_AA0080021form2/t_HOLIDAY_SAT,_AA0080021form2/PeekerAspShiftCd_SAT"
+				  script40="child;35;UNMASK;_AA0080021form2/t_HOLIDAY_SUN,_AA0080021form2/PeekerAspShiftCd_SUN@*36"
+				  script41="child;36;UNMASK;_AA0080021form2/t_HOLIDAY_MON,_AA0080021form2/PeekerAspShiftCd_MON@*37"
+				  script42="child;37;UNMASK;_AA0080021form2/t_HOLIDAY_TUE,_AA0080021form2/PeekerAspShiftCd_TUE@*38"
+				  script43="child;38;UNMASK;_AA0080021form2/t_HOLIDAY_WED,_AA0080021form2/PeekerAspShiftCd_WED@*39"
+				  script44="child;39;UNMASK;_AA0080021form2/t_HOLIDAY_THU,_AA0080021form2/PeekerAspShiftCd_THU@*40"
+				  script45="child;40;UNMASK;_AA0080021form2/t_HOLIDAY_FRI,_AA0080021form2/PeekerAspShiftCd_FRI@*41"
+				  script46="child;41;UNMASK;_AA0080021form2/t_HOLIDAY_SAT,_AA0080021form2/PeekerAspShiftCd_SAT@"
+									
+              >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CAL_NO">カレンダ番号</span></td>
+                  <td><orftextinput  name="CAL_NO" attribute="TIS_RIGHT" editable="false" kind="OBT_INTEGER;6" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="h_HOLIDAY_SUN" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="CAL_NAME" editable="false" orteus="true" width="320"></orftextinput></td>
+                  <td><orftextinput  name="h_HOLIDAY_MON" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_HOLIDAY_TUE" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_HOLIDAY_WED" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_HOLIDAY_THU" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_HOLIDAY_FRI" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0117">作成済期間</span></td>
+                  <td><orftextinput  name="w_DATE_FROM" editable="false" kind="OBT_DATE;TYPE_YMD" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="h_HOLIDAY_SAT" orteus="true" visible="false"></orftextinput></td>
+                  <td align="center"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0043">～</span></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="w_DATE_TO" editable="false" kind="OBT_DATE;TYPE_YMD" orteus="true" width="150"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_TIME_CTRL" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" class="frame18"></td>
+            <td colspan="3" class="frame19"></td>
+            <td width="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="459"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr height="415"> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AA0080021form2" width="934" height="415" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="28">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="14">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0132">作成期間</span></td>
+                  <td><orftextinput  name="DATE_FROM" kind="OBT_DATE;TYPE_YMD" orteus="true" width="150" required="A"
+                  ></orftextinput></td>
+                  <td><orfcalendar  name="CalendarFromDate" attribute="BTS_CALENDAR" script1="onClick;0;CALENDAR;_AA0080021form2/DATE_FROM" width="22" pattern="none" orteus="false"></orfcalendar></td>
+                  <td align="center"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0043">～</span></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="DATE_TO"   kind="OBT_DATE;TYPE_YMD" orteus="true" width="150" required="B"
+                  ></orftextinput></td>
+                  <td><orfcalendar  name="CalendarToDate" attribute="BTS_CALENDAR" script1="onClick;0;CALENDAR;_AA0080021form2/DATE_TO" width="22" pattern="none" orteus="false"></orfcalendar></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0200">休日設定</span></td>
+                  <td><orfcheckbox  name="c_HOLIDAY_SUN" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.Cmt0110"></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                   <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ASP_SHIFT_CD">ASPシフトコード</span></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0110">日</span></td>
+                  <td><orftextinput name="t_HOLIDAY_SUN" orteus="true" width="150" maxlength="100"></orftextinput></td>
+                  <td><orfpeeker  name="PeekerAspShiftCd_SUN" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0080021form2/t_HOLIDAY_SUN@<%=contextNo%>"
+                     sqlname="SHIFT_CD_01" sqlparam_1="_AA0080021form2/t_HOLIDAY_SUN"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_HOLIDAY_MON" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.Cmt0104"></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0104">月</span></td>
+                  <td><orftextinput name="t_HOLIDAY_MON" orteus="true" width="150" maxlength="100"></orftextinput></td>
+                  <td><orfpeeker  name="PeekerAspShiftCd_MON" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0080021form2/t_HOLIDAY_MON@<%=contextNo%>"
+                     sqlname="SHIFT_CD_01" sqlparam_1="_AA0080021form2/t_HOLIDAY_MON"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_HOLIDAY_TUE" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.Cmt0105"></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0105">火</span></td>
+                  <td><orftextinput name="t_HOLIDAY_TUE" orteus="true" width="150" maxlength="100"></orftextinput></td>
+                  <td><orfpeeker  name="PeekerAspShiftCd_TUE" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0080021form2/t_HOLIDAY_TUE@<%=contextNo%>"
+                     sqlname="SHIFT_CD_01" sqlparam_1="_AA0080021form2/t_HOLIDAY_TUE"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_HOLIDAY_WED" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.Cmt0106"></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0106">水</span></td>
+                  <td><orftextinput name="t_HOLIDAY_WED" orteus="true" width="150" maxlength="100"></orftextinput></td>
+                  <td><orfpeeker  name="PeekerAspShiftCd_WED" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0080021form2/t_HOLIDAY_WED@<%=contextNo%>"
+                     sqlname="SHIFT_CD_01" sqlparam_1="_AA0080021form2/t_HOLIDAY_WED"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_HOLIDAY_THU" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.Cmt0107"></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0107">木</span></td>
+                  <td><orftextinput name="t_HOLIDAY_THU" orteus="true" width="150" maxlength="100"></orftextinput></td>
+                  <td><orfpeeker  name="PeekerAspShiftCd_THU" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0080021form2/t_HOLIDAY_THU@<%=contextNo%>"
+                     sqlname="SHIFT_CD_01" sqlparam_1="_AA0080021form2/t_HOLIDAY_THU"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_HOLIDAY_FRI" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.Cmt0108"></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0108">金</span></td>
+                  <td><orftextinput name="t_HOLIDAY_FRI" orteus="true" width="150" maxlength="100"></orftextinput></td>
+                  <td><orfpeeker  name="PeekerAspShiftCd_FRI" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0080021form2/t_HOLIDAY_FRI@<%=contextNo%>"
+                     sqlname="SHIFT_CD_01" sqlparam_1="_AA0080021form2/t_HOLIDAY_FRI"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_HOLIDAY_SAT" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.Cmt0109"></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0109">土</span></td>
+                  <td><orftextinput name="t_HOLIDAY_SAT" orteus="true" width="150" maxlength="100"></orftextinput></td>
+                  <td><orfpeeker  name="PeekerAspShiftCd_SAT" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0080021form2/t_HOLIDAY_SAT@<%=contextNo%>"
+                     sqlname="SHIFT_CD_01" sqlparam_1="_AA0080021form2/t_HOLIDAY_SAT"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07"></td>
+            <td width="664" class="frame08"></td>
+            <td width="60" class="frame09"></td>
+            <td width="210" class="frame10">
+            <table orftype="DataGrid" mode="BUTTON" name="AA0080021button2" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="insertSub1" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;1[eq]1@*0"
+ script2="child;0;CHK;_AA0080021form2/DATE_FROM[gt]_AA0080021form2/DATE_TO@!AA00133,*1"
+ script3="child;1;CHK;_AA0080021form2/c_HOLIDAY_SUN[eq]true@*2,*3"
+ script4="child;2;SET;_AA0080021form1/h_HOLIDAY_SUN=1@*4"
+ script5="child;3;SET;_AA0080021form1/h_HOLIDAY_SUN=0@*4"
+ script6="child;4;CHK;_AA0080021form2/c_HOLIDAY_MON[eq]true@*5,*6"
+ script7="child;5;SET;_AA0080021form1/h_HOLIDAY_MON=1@*7"
+ script8="child;6;SET;_AA0080021form1/h_HOLIDAY_MON=0@*7"
+ script9="child;7;CHK;_AA0080021form2/c_HOLIDAY_TUE[eq]true@*8,*9"
+ script10="child;8;SET;_AA0080021form1/h_HOLIDAY_TUE=1@*10"
+ script11="child;9;SET;_AA0080021form1/h_HOLIDAY_TUE=0@*10"
+ script12="child;10;CHK;_AA0080021form2/c_HOLIDAY_WED[eq]true@*11,*12"
+ script13="child;11;SET;_AA0080021form1/h_HOLIDAY_WED=1@*13"
+ script14="child;12;SET;_AA0080021form1/h_HOLIDAY_WED=0@*13"
+ script15="child;13;CHK;_AA0080021form2/c_HOLIDAY_THU[eq]true@*14,*15"
+ script16="child;14;SET;_AA0080021form1/h_HOLIDAY_THU=1@*16"
+ script17="child;15;SET;_AA0080021form1/h_HOLIDAY_THU=0@*16"
+ script18="child;16;CHK;_AA0080021form2/c_HOLIDAY_FRI[eq]true@*17,*18"
+ script19="child;17;SET;_AA0080021form1/h_HOLIDAY_FRI=1@*19"
+ script20="child;18;SET;_AA0080021form1/h_HOLIDAY_FRI=0@*19"
+ script21="child;19;CHK;_AA0080021form2/c_HOLIDAY_SAT[eq]true@*20,*21"
+ script22="child;20;SET;_AA0080021form1/h_HOLIDAY_SAT=1@*22"
+ script23="child;21;SET;_AA0080021form1/h_HOLIDAY_SAT=0@*22"
+ script24="child;22;SCRCHG;_AA0080021form1/*,_AA0080021form2/*@AA0080020Servlet,,$ZZ07001"
+></orfbutton></td>
+                <td><orfbutton name="updateSub1" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;1[eq]1@*0"
+ script2="child;0;CHK;_AA0080021form2/DATE_FROM[gt]_AA0080021form2/DATE_TO@!AA00133,*1"
+ script3="child;1;CHK;_AA0080021form1/w_DATE_TO[lt]_AA0080021form2/DATE_TO[or]_AA0080021form2/DATE_TO[lt]_AA0080021form1/w_DATE_FROM[or]_AA0080021form1/w_DATE_TO[lt]_AA0080021form2/DATE_FROM[or]_AA0080021form2/DATE_FROM[lt]_AA0080021form1/w_DATE_FROM@!AA00135,*2"
+ script4="child;2;CHK;_AA0080021form2/c_HOLIDAY_SUN[eq]true@*3,*4"
+ script5="child;3;SET;_AA0080021form1/h_HOLIDAY_SUN=1@*5"
+ script6="child;4;SET;_AA0080021form1/h_HOLIDAY_SUN=0@*5"
+ script7="child;5;CHK;_AA0080021form2/c_HOLIDAY_MON[eq]true@*6,*7"
+ script8="child;6;SET;_AA0080021form1/h_HOLIDAY_MON=1@*8"
+ script9="child;7;SET;_AA0080021form1/h_HOLIDAY_MON=0@*8"
+ script10="child;8;CHK;_AA0080021form2/c_HOLIDAY_TUE[eq]true@*9,*10"
+ script11="child;9;SET;_AA0080021form1/h_HOLIDAY_TUE=1@*11"
+ script12="child;10;SET;_AA0080021form1/h_HOLIDAY_TUE=0@*11"
+ script13="child;11;CHK;_AA0080021form2/c_HOLIDAY_WED[eq]true@*12,*13"
+ script14="child;12;SET;_AA0080021form1/h_HOLIDAY_WED=1@*14"
+ script15="child;13;SET;_AA0080021form1/h_HOLIDAY_WED=0@*14"
+ script16="child;14;CHK;_AA0080021form2/c_HOLIDAY_THU[eq]true@*15,*16"
+ script17="child;15;SET;_AA0080021form1/h_HOLIDAY_THU=1@*17"
+ script18="child;16;SET;_AA0080021form1/h_HOLIDAY_THU=0@*17"
+ script19="child;17;CHK;_AA0080021form2/c_HOLIDAY_FRI[eq]true@*18,*19"
+ script20="child;18;SET;_AA0080021form1/h_HOLIDAY_FRI=1@*20"
+ script21="child;19;SET;_AA0080021form1/h_HOLIDAY_FRI=0@*20"
+ script22="child;20;CHK;_AA0080021form2/c_HOLIDAY_SAT[eq]true@*21,*22"
+ script23="child;21;SET;_AA0080021form1/h_HOLIDAY_SAT=1@*23"
+ script24="child;22;SET;_AA0080021form1/h_HOLIDAY_SAT=0@*23"
+ script25="child;23;SCRCHG;_AA0080021form1/*,_AA0080021form2/*@AA0080020Servlet,,$ZZ07003"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+
+    <tr height="42"> 
+      <td colspan="3" width="968" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="863"></td>
+            <td align="right" width="105"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AA0080021button0" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td>
+                    <orfbutton  name="closeSub1" value="戻る" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReturn" width="100"
+                        script1="onClick;0;SCRCHG;_AA0080021form1/*,_AA0080021form2/*@AA0080020Servlet,,$ZZ07013" lock="0">
+                    </orfbutton>
+                  </td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAA0080020Control.getMessage();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

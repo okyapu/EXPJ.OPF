@@ -1,0 +1,187 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+>SQL入力
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AZ0050/AZ0050016.html,v $
+$Author: geng-jia $
+$Revision: 1.4 $ $Date: 2017/02/20 10:17:21 $
+********************************************************* --%>
+<HTML>
+<HEAD>
+<TITLE>SQL入力</TITLE>
+
+<%@include file="common/expj.jsp" %>
+<link rel="stylesheet" href="common/metamorbase.css">
+<script src="common/libs/jquery-2.2.4.min.js"></script>
+<script src="common/libs/OrteusUtils.js"></script>
+<script language="JavaScript" src="common/nonflash.js"></script>
+<script language="JavaScript">
+<!--
+/* 検索実行ボタン押下時の処理 */
+function checkSubmit()
+{
+	var fm = document.header;
+
+	// フリー入力データチェック
+	if(isNull(fm.disp_sub6FREE_SQL) == true)
+		addErrorMessage("ZZ01104");
+
+	if(displayErrorMessages() == true){
+		// エラー出力
+		return false;
+	}
+
+	// サーバ通信用フィールドに値コピー
+	fm.sub6FREE_SQL.value = fm.disp_sub6FREE_SQL.value;
+
+	// submit済フラグ ON
+	prepareSubmit();
+	PreparNoLock();
+
+	return true;
+}
+// -->
+</script>
+
+<script language="JavaScript">
+<!--
+/* クエリ一覧ボタン押下時の処理 */
+function checkReturn()
+{
+
+	// 確認メッセージ出力
+	if(displayConfirmMessage("AZ90001") != true) return false;
+
+	// submit済フラグ ON
+	prepareSubmit();
+	PreparNoLock();
+
+	return true;
+}
+// -->
+</script>
+
+<script language="JavaScript">
+<!--
+function initialize()
+{
+	// sizing();
+
+   if (com.nec.jp.orteus.utils.ClientInfo.browser.isChrome) {
+      // formタグのmargin-bottomを修正
+      $('form').css('margin-bottom', '0px');
+   }
+
+	var fm = document.header;
+	// サーバ通信用フィールドから値コピー
+	fm.disp_sub6FREE_SQL.value = fm.sub6FREE_SQL.value;
+
+
+}
+//-->
+</script>
+
+<script language="JavaScript">
+<!--
+function PreparLock(){ document.header.SUBMIT_BUTTON_TYPE.value=1; }
+
+function PreparNoLock(){ document.header.SUBMIT_BUTTON_TYPE.value=0; }
+
+// -->
+</script>
+
+</HEAD>
+<body onLoad="initialize();loadComplete()">
+<form name="header" method="post" action="">
+
+<table width="100%" border="0" height="100%">
+<!----------------------------------------------------------------------------->
+<tr>
+	<!--- 上段 --->
+	<td>
+<%
+	AZ0050010Struct currentQuery = aAZ0050010Control.getSelStruct();
+	// クエリ名/分類/概要いずれか設定があれば表示
+	if(currentQuery.getQUERY_NAME() != null || currentQuery.getQUERY_GROUP() != null || currentQuery.getQUERY_MEMO() != null){
+%>
+    <table border="0" width="100%">
+      <tr> 
+        <td width="120" class="name"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0413">クエリ名</span></td>
+        <td>
+          <input type="text" name="QUERY_NAME" size="100" class="readonly" readonly value="<%= TypeConverter.sanitizer(currentQuery.getQUERY_NAME()) %>">
+        </td>
+      </tr>
+      <tr>
+        <td class="name"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0014">分類</span></td>
+        <td>
+          <input type="text" name="QUERY_GROUP" size="50" class="readonly" readonly value="<%= TypeConverter.sanitizer(currentQuery.getQUERY_GROUP()) %>">
+        </td>
+      </tr>
+      <tr>
+        <td class="name"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0006">概要</span></td>
+        <td> 
+          <input type="text" name="QUERY_MEMO" size="100" class="readonly" readonly value="<%= TypeConverter.sanitizer(currentQuery.getQUERY_MEMO()) %>">
+        </td>
+      </tr>
+      <tr> 
+        <td colspan="3"> <hr></td>
+      </tr>
+    </table>
+<%	}
+	// タイトル未定のときは ダミーの入力域を配置
+	else{ %>
+      <input type="hidden" name="QUERY_NAME" value="<%= TypeConverter.sanitizer(aAZ0050010Struct.getQUERY_NAME()) %>">
+      <input type="hidden" name="QUERY_GROUP" value="<%= TypeConverter.sanitizer(aAZ0050010Struct.getQUERY_GROUP()) %>">
+      <input type="hidden" name="QUERY_MEMO" value="<%= TypeConverter.sanitizer(aAZ0050010Struct.getQUERY_MEMO()) %>">
+<%	} %>
+	</td>
+</tr>
+<!----------------------------------------------------------------------------->
+<tr>
+	<!--- 中段 --->
+	<td height="100%">
+	  <div class="center"><!--keiko-->
+		<table border="0" height="100%" width="100%">
+		  <tr align="center">
+            <td valign="top">
+              <textarea style="overflow:auto;width:100%;height:100%" name="disp_sub6FREE_SQL" wrap=soft></textarea>
+              <input type="hidden" name="sub6FREE_SQL" orteus="true">
+            </td>
+          </tr>
+        </table>
+	  </div>
+    </td>
+</tr>
+<!----------------------------------------------------------------------------->
+<tr>
+	<!--- 下段 --->
+	<td height="50" width="100%">
+		
+      <table height="50" width="100%">
+        <tr> 
+          <td height="30">
+            <hr>
+          </td>
+        </tr>
+        <tr> 
+          <td height="30"> 
+            <div align="right">
+              <input type="hidden" name="SUBMIT_BUTTON_TYPE" value="0">
+              <input type="submit" name="sub6execute" value="検索実行" pattern="none" orteus="true" class="button" mlang="true" mlkind="common" mlname="Expj.BtnExcuteQuery" onClick="return checkSubmit();">
+              <input type="submit" name="sub6clear" value="クリア" pattern="none" orteus="true" class="button" mlang="true" mlkind="common" mlname="Expj.BtnClear" onClick="return clearPage();">
+              <input type="submit" name="sub6return" value="戻る" pattern="none" orteus="true" class="button" mlang="true" mlkind="common" mlname="Expj.BtnReturn" onClick="return checkReturn();">
+            </div>
+          </td>
+        </tr>
+      </table>
+	</td>
+</tr>
+<!----------------------------------------------------------------------------->
+<% MessageStruct msgStruct = aAZ0050010Control.getMessage(); %>
+<%@ include file="common/SetServerMessage.jsp" %>
+</table>
+
+</form>
+</BODY>
+</HTML>

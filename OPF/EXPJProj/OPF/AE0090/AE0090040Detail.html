@@ -1,0 +1,162 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+詳細
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AE0090/AE0090040Detail.html,v $
+$Author: tai-yanhong $
+$Revision: 1.3 $ $Date: 2013/05/06 06:32:51 $
+********************************************************* --%>
+<html>
+<head>
+<title>詳細</title>
+<%@include file="common/expj_v5.jsp" %>
+<script>
+	var data = "<root>";
+	
+	function onInitializeOnLoad(){
+		setDataGridDataParent("AE0090040",data + "</root>");
+	}
+</script>
+</head>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true">
+  <table orftype="DataGrid" mode="DETAIL" name="AE0090040detailview1" attribute="DGS_HEADERMINI|DGS_SORTOFF|DGS_SELECTOFF"
+       indicate="false" width="358" height="323" border="1" cellspacing="0" cellpadding="0">
+    <orloophead> 
+    <tr bgcolor="#ccff99"> 
+      <td width="100" align="right">&nbsp;</td>
+      <td width="200" align="left"><orfdata excell="true"></orfdata></td>
+      <td width="30" align="left">&nbsp;</td>
+    </tr>
+    </orloophead><ornoloop> 
+    <tr> 
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+      <td><orflabel  name="Det_Parent_ITEM_CD" tablename="M_ITEM" columnname="ITEM_CD" dbtype="varchar2" 
+           tablejname="品目" columnjname="品目番号" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr> 
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME">品目名</span></td>
+      <td><orflabel  name="Det_Parent_ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2" 
+           tablejname="品目" columnjname="品目名" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+   
+    <tr> 
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.COMP_ITEM_CD_1">構成品目番号</span></td>
+      <td><orflabel  name="Det_Comp_ITEM_CD" tablename="M_ITEM" columnname="ITEM_CD" dbtype="varchar2" 
+           tablejname="品目" columnjname="品目番号" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr> 
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME_1">構成品目名</span></td>
+      <td><orflabel  name="Det_Comp_ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2" 
+           tablejname="品目" columnjname="品目名" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+	  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_UNIT_QTY_1">必要数</span></td>
+	  <td align="right"><orflabel name="Det_Comp_Need_QTY" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.1;ROUND;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td>&nbsp;</td>
+	</tr>
+	<tr> 
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3076">現在庫数量</span></td>
+      <td align="right"><orflabel name="Det_Comp_ONHAND_QTY" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.1;FLOOR;4" maxlength="" attribute="" password="" visible=""
+></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr> 
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3138">入庫予定1</span></td>
+      <td align="right"><orflabel name="RECEIPT_SCHEDULES_NUMBER1" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.1;FLOOR;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr> 
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3139">入庫予定2</span></td>
+      <td align="right"><orflabel name="RECEIPT_SCHEDULES_NUMBER2" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.1;FLOOR;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr> 
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_UNIT">計量単位</span></td>
+      <td><orflabel  name="Det_Comp_STOCK_UNIT" tablename="M_ITEM" columnname="STOCK_UNIT" dbtype="varchar2" 
+           tablejname="品目" columnjname="計量単位" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+	  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3141">構成品目製品区分</span></td>
+	  <td><orflabel name="Det_Comp_PRODUCT_TYP" tablename="M_ITEM" columnname="PRODUCT_TYP" dbtype="number" tablejname="品目" columnjname="製品区分"  orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td>&nbsp;</td>
+	</tr>
+	<tr> 
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.OUTSIDE_TYP_5">構成品目内外作区分</span></td>
+      <td><orflabel  name="Det_Comp_OUTSIDE_TYP" tablename="M_ITEM" columnname="OUTSIDE_TYP" dbtype="number" 
+           tablejname="品目" columnjname="品目内外作区分" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr> 
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.MRP_ODR_TYP_1">構成手配区分</span></td>
+      <td><orflabel  name="Det_Comp_MRP_ODR_TYP" tablename="M_ITEM" columnname="MRP_ODR_TYP" dbtype="number" 
+           tablejname="品目" columnjname="品目手配区分" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr> 
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_UNIT_QTY">製品構成単位数</span></td>
+      <td align="right"><orflabel  name="Det_Comp_PS_UNIT_QTY" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+	<tr>
+	  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt1505">品目仕損率</span></td>
+	  <td align="right"><orflabel name="Det_Comp_ITEM_SPOIL" tablename="M_ITEM" columnname="ITEM_SPOIL" dbtype="number" tablejname="品目" columnjname="品目仕損率"  orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0051">％</span></td>
+	</tr>
+     <tr> 
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_SPOIL">構成仕損率</span></td>
+      <td align="right"><orflabel  name="Det_Comp_PS_SPOIL" tablename="M_PS" columnname="PS_SPOIL" dbtype="number" 
+           tablejname="製品構成" columnjname="構成仕損率" orteus="true" kind="OBT_NUMBER;5.1;FLOOR;4"></orflabel></td>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0051">％</span></td>
+    </tr>
+    <tr> 
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_IN_DATE_4">有効開始日</span></td>
+      <td><orflabel  name="Det_Comp_EFF_PHASE_IN_DATE" tablename="M_PS" columnname="EFF_PHASE_IN_DATE" dbtype="date" 
+           tablejname="製品構成" columnjname="製品構成有効開始日" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr> 
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_OUT_DATE">有効終了日</span></td>
+      <td><orflabel  name="Det_Comp_EFF_PHASE_OUT_DATE" tablename="M_PS" columnname="EFF_PHASE_OUT_DATE" dbtype="date" 
+           tablejname="製品構成" columnjname="製品構成有効終了日" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+   
+    <tr> 
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.CONS_TYP">支給区分</span></td>
+      <td><orflabel  name="Det_Comp_CONS_TYP" tablename="M_PS" columnname="CONS_TYP" dbtype="number" 
+           tablejname="製品構成" columnjname="支給区分" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    </ornoloop> 
+  </table>
+<%
+  MessageStruct msgStruct = aAE0090040Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>
+

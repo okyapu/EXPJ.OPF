@@ -1,0 +1,73 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+表示変更
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AD0040/AD0040010iframe.html,v $
+$Author: geng-jia $
+$Revision: 1.8 $ $Date: 2017/02/21 07:13:50 $
+********************************************************* --%>
+<html>
+<head>
+<title>表示変更</title>
+<%@include file="common/expj_v5.jsp" %>
+<script>
+	var data = "<root>";
+	
+	function onInitializeOnLoad(){
+		setDataGridDataParent("AD0040010",data + "</root>");
+	}
+</script>
+</head>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true">
+              <%
+                List listBackup = aAD0040010Control.getList();
+                aAD0040010Control.setList(aAD0040010Control.getIssueList());
+              %>
+              <table orftype="DataGrid" mode="VIEW" name="AD0040010view2" indicate="false" width="934" height="156" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td hidden=true>&nbsp;</td>
+                  <td width="150"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD_5">子品目番号</span></td>
+                  <td width="200"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME_2">子品目名</span></td>
+				  <td width="120"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_LOT_CD">在庫ロット番号</span></td>
+                  <td width="120"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_TYP">出庫区分</span></td>
+                  <td hidden=true>&nbsp;</td>
+                  <td width="100" align='right' sorttype='numeric'><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0320">計画使用数量</span></td>
+                  <td width="100" align='right' sorttype='numeric'><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0321">使用済数量</span></td>
+                  <td width="100" align='right' sorttype='numeric'><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0322">計画外使用済数量</span></td>
+                  <td width="100" align='right' sorttype='numeric'><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0323">更新使用数量</span></td>
+                  <td width="150" align='right' sorttype='numeric'><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_INST_UNIT_NUMERATOR_2">分子（出庫指示単位数）</span></td>
+                  <td width="150" align='right' sorttype='numeric'><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_INST_UNIT_DENOMINATOR_2">分母（出庫指示単位数）</span></td>
+                  <td hidden=true>&nbsp;</td>
+                  <td hidden=true>&nbsp;</td>
+                </tr>
+                </orloophead>
+                <orloop>
+                <tr>
+                  <td><orflabel  name="l_PARTIAL_PRD_NO" tablename="T_OPR_RSLT" columnname="PARTIAL_PRD_NO" dbtype="number" tablejname="作業実績" columnjname="分作回数"   orteus="true" kind="OBT_INTEGER_P;6"></orflabel></td>
+                  <td><orflabel  name="l_ITEM_CD" tablename="T_ISSUE_INST" columnname="ITEM_CD" dbtype="varchar2" tablejname="出庫指示" columnjname="出庫品目番号"   orteus="true"></orflabel></td>
+                  <td><orflabel  name="l_ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2" tablejname="品目" columnjname="品目名"   orteus="true"></orflabel></td>
+				  <td><orflabel  name="l_LOT_NO" tablename="T_LOT_USE_RSLT" columnname="LOT_NO" dbtype="varchar2" tablejname="ロット別使用実績" columnjname="在庫ロット番号"   orteus="true"></orflabel></td>
+                  <td><orflabel  name="ISSUE_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明"   orteus="true"></orflabel></td>
+                  <td><orflabel  name="h_ISSUE_TYP" tablename="T_ISSUE_INST" columnname="ISSUE_TYP" dbtype="number" tablejname="出庫指示" columnjname="出庫指示出庫区分"   orteus="true"></orflabel></td>
+                  <td><orflabel  name="TEMP_PLAN_QTY" orteus="true" kind="<%=Kind.convertNumeric(aAD0040010Struct.getUNIT_QTY_TYP(), Kind.Z, 14, 1, Kind.FLOOR, 4)%>"></orflabel></td>
+                  <td><orflabel  name="TEMP_USEOVER_QTY" orteus="true" kind="<%=Kind.convertNumeric(aAD0040010Struct.getUNIT_QTY_TYP(), Kind.N, 14, 1, Kind.FLOOR, 4)%>"></orflabel></td>
+                  <td><orflabel  name="TEMP_PLANOUT_QTY" orteus="true" kind="<%=Kind.convertNumeric(aAD0040010Struct.getUNIT_QTY_TYP(), Kind.N, 14, 1, Kind.FLOOR, 4)%>"></orflabel></td>
+                  <td><orflabel  name="TEMP_USE_QTY" orteus="true" kind="<%=Kind.convertNumeric(aAD0040010Struct.getUNIT_QTY_TYP(), Kind.Z, 14, 1, Kind.FLOOR, 4)%>"></orflabel></td>
+                  <td><orflabel  name="h_ISSUE_INST_UNIT_NUMERATOR" tablename="T_ISSUE_INST" columnname="ISSUE_INST_UNIT_NUMERATOR" dbtype="number" tablejname="出庫指示" columnjname="出庫指示単位数分子"   orteus="true" kind="OBT_NUMBER;14.1;CEIL;4"></orflabel></td>
+                  <td><orflabel  name="h_ISSUE_INST_UNIT_DENOMINATOR" tablename="T_ISSUE_INST" columnname="ISSUE_INST_UNIT_DENOMINATOR" dbtype="number" tablejname="出庫指示" columnjname="出庫指示単位数分母"   orteus="true" kind="OBT_NUMBER;14.1;CEIL;4"></orflabel></td>
+                  <td><orflabel  name="ISSUE_INST_UNIT_FRACTION" orteus="true"></orflabel></td>
+                  <td><orflabel  name="h_ISSUE_INST_CD" tablename="T_ISSUE_INST" columnname="ISSUE_INST_CD" dbtype="number" tablejname="出庫指示" columnjname="出庫指示番号"   orteus="true"></orflabel></td>
+                 </tr>
+                </orloop>
+              </table>
+<%
+                aAD0040010Control.setList(listBackup);
+%>
+<%
+MessageStruct msgStruct = aAD0040010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+有償支給返品実績入力
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AE0100/AE0100010.html,v $
+$Author: geng-jia $
+$Revision: 1.11 $ $Date: 2017/02/20 10:01:06 $
+********************************************************* --%>
+<html>
+<head>
+<title>有償支給返品実績入力</title>
+<%@include file="common/expj_v5.jsp" %>
+<%ScreenMoveUtil su = new ScreenMoveUtil("AE0200010Servlet", so);%>
+</head>
+<body flash="true" name="AE0100010" version="AE0100010 $Revision: 1.11 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="982" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5">
+      <td colspan="3" height="5"></td>
+    </tr>
+    <tr>
+      <td width="5"></td>
+      <td valign="top" width="958" height="94">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" status="<%= TypeConverter.sanitizer(aAE0100010Control.getReadStatusString()) %>" name="AE0100010form1" width="934" height="27" border="1" cellspacing="0" cellpadding="0"
+                 script1="onLoad;0;CALL;onDecision@0,1,2,3,4,5,6,7"
+                 
+				 script2="onDecision;0;CHKRQ;A@*0,*1"
+                 script3="child;0;UNMASK;_AE0100010button1/Select"
+                 script4="child;1;MASK;_AE0100010button1/Select"
+				 
+                 script5="onDecision;1;CHKRQ;B@*2,*3"
+                 script6="child;2;UNMASK;_AE0100010button2/Insert"
+                 script7="child;3;MASK;_AE0100010button2/Insert"
+                 
+				 script8="onDecision;2;CHK;?AE0100010form1/ONEROUS_CONS_NO[eq]SAME[and]?AE0100010form1/*[eq]NORMAL@*4,*6"
+                 script9="child;4;CHKRQ;A,B@*5,*6"
+                 script10="child;5;UNMASK;_AE0100010button2/Update,_AE0100010button2/Delete"
+                 script11="child;6;MASK;_AE0100010button2/Update,_AE0100010button2/Delete"
+				 
+                 script12="onDecision;3;CHK;_AE0100010form2/r2_FILTER[eq]true@*7,*8"
+                 script13="child;7;UNMASK;_AE0100010form2/ISSUE_INST_CD,_AE0100010form2/PeekerIssueInstCd"
+                 script15="child;8;MASK;_AE0100010form2/ISSUE_INST_CD,_AE0100010form2/PeekerIssueInstCd@*9"
+				 script14="child;9;SET;_AE0100010form2/ISSUE_INST_CD="
+				 
+                 script16="onDecision;4;CHK;_AE0100010form2/r3_FILTER[eq]true@*10,*11"
+                 script17="child;10;UNMASK;_AE0100010form2/PUCH_ODR_CD,_AE0100010form2/PeekerPuchOdrCd"
+                 script19="child;11;MASK;_AE0100010form2/PUCH_ODR_CD,_AE0100010form2/PeekerPuchOdrCd@*12"
+				 script18="child;12;SET;_AE0100010form2/PUCH_ODR_CD="
+				 
+                 script20="onDecision;5;CHK;?AE0100010form1/*[eq]NORMAL@*13,*14"
+                 script21="child;13;MASK;_AE0100010form2/VEND_CD,_AE0100010form2/PeekerVendCd,_AE0100010form2/ITEM_CD,_AE0100010form2/PeekerItemCd,_AE0100010form2/JOB_ODR_CD,_AE0100010form2/PeekerJobOdrCd,_AE0100010form2/r2_FILTER,_AE0100010form2/r3_FILTER,_AE0100010form2/c_NON_NO_ITEM_FLG"
+                 script22="child;14;UNMASK;_AE0100010form2/VEND_CD,_AE0100010form2/PeekerVendCd,_AE0100010form2/ITEM_CD,_AE0100010form2/PeekerItemCd,_AE0100010form2/JOB_ODR_CD,_AE0100010form2/PeekerJobOdrCd,_AE0100010form2/r2_FILTER,_AE0100010form2/r3_FILTER,_AE0100010form2/c_NON_NO_ITEM_FLG"
+				 
+                 script23="onDecision;6;CHK;_AE0100010form2/r1_FILTER[eq]true@*15"
+				 script24="child;15;SET;_AE0100010form2/ISSUE_INST_CD=,_AE0100010form2/PUCH_ODR_CD="
+				 
+				 script25="onDecision;7;CHK;?AE0100010form1/*[neq]NORMAL@*16,*18"
+				 script26="child;16;CHK;_AE0100010form2/h_LOTCTRL[eq]true@*17,*18"
+				 script27="child;17;UNMASK;_AE0100010form2/LOT_NO,_AE0100010form2/PeekerLotNo,_AE0100010form2/LotCtrl"
+				 script28="child;18;MASK;_AE0100010form2/LOT_NO,_AE0100010form2/PeekerLotNo,_AE0100010form2/LotCtrl"
+              >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="170" align="left">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ONEROUS_CONS_NO">有償支給番号</span></td>
+                  <td><orftextinput name="ONEROUS_CONS_NO" tablename="T_PAST_ONEROUS_CONS" columnname="ONEROUS_CONS_NO" dbtype="varchar2" tablejname="有償支給履歴" columnjname="有償支給番号"  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="A" attribute=""
+></orftextinput></td>
+                  <td><orftextinput  name="h_ONEROUS_CONS_NO" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerOnerousConsNo" value="" pattern="none" orteus="false" width="22" attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AE0100010form1/ONEROUS_CONS_NO@<%=contextNo%>"
+                     sqlname="ONEROUS_CONS_NO_01" sqlparam_1="<%= aAE0100010Control.getsysPLANT_CD() %>" sqlparam_2="_ONEROUS_CONS_NO"
+                  ></orfpeeker></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0001">（自動採番）</span></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32">
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"> </td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32">
+              <table orftype="DataGrid" mode="BUTTON" name="AE0100010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton name="Select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AE0100010form1/*@AE0100010Servlet"
+></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+        </td>
+      <td width="19"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3" height="5"></td>
+    </tr>
+    <tr>
+      <td width="5"></td>
+      <td valign="top" width="958" height="439">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="AE0100010form2" width="934" height="418" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_CD">取引先コード</span></td>
+                  <td><orftextinput name="VEND_CD" tablename="T_PAST_ONEROUS_CONS" columnname="VEND_CD" dbtype="varchar2" tablejname="有償支給履歴" columnjname="取引先コード"  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="B" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerVendCd" value="" pattern="none" orteus="false" width="22" attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AE0100010form2/VEND_CD@<%=contextNo%>"
+                     sqlname="VEND_CD_02" sqlparam_1="_VEND_CD"
+                  ></orfpeeker></td>
+                  <td><orftextinput name="VEND_ANAME" tablename="M_VEND_CTRL" columnname="VEND_ANAME" dbtype="varchar2" tablejname="取引先マスタ" columnjname="取引先略称"  orteus="true" width="320" editable="false" visible="true" password="false" text="" kind="" maxlength="" required="" attribute=""></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="INSTALL_FLG" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                  <td><orftextinput name="ITEM_CD" tablename="T_PAST_ONEROUS_CONS" columnname="ITEM_CD" dbtype="varchar2" tablejname="有償支給履歴" columnjname="品目番号"  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="B" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerItemCd" value="" pattern="none" orteus="false" width="22"   attribute="BTS_PEEKER"  
+                     script1="onClick;0;PEEKER;_AE0100010form2/ITEM_CD@<%=contextNo%>"
+                     sqlname="ITEM_CD_01" sqlparam_1="_ITEM_CD"
+                  ></orfpeeker></td>
+                  <td><orftextinput name="ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2" tablejname="品目" columnjname="品目名"  orteus="true" width="320" editable="false" visible="true" password="false" text="" kind="" maxlength="" required="" attribute=""></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="THIS_MONTH" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CD">製番</span></td>
+                  <td><orftextinput name="JOB_ODR_CD" tablename="T_PAST_ONEROUS_CONS" columnname="JOB_ODR_CD" dbtype="varchar2" tablejname="有償支給履歴" columnjname="製番"  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerJobOdrCd" value="" pattern="none" orteus="false" width="22"   attribute="BTS_PEEKER"  
+                     script1="onClick;0;PEEKER;_AE0100010form2/JOB_ODR_CD@<%=contextNo%>"
+                     sqlname="JOB_ODR_CD_10" sqlparam_1="<%= aAE0100010Control.getsysPLANT_CD() %>" sqlparam_2="_JOB_ODR_CD"
+                  ></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="MODIFY_COUNT" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_QTY_3">返品数</span></td>
+                  <td><orftextinput name="ISSUE_QTY" tablename="T_PAST_ONEROUS_CONS" columnname="ISSUE_QTY" dbtype="number" tablejname="有償支給履歴" columnjname="出庫数"  orteus="true" width="150" editable="true" visible="true" password="false" text="" kind="OBT_NUMBER;14.1;FLOOR;4" maxlength="" required="B" attribute=""
+                      script1="onDecision;0;CHK;?THIS[eq]DIFFER@*0"
+                      script2="child;0;SET;_AE0100010form2/SelectUnitCostFlag=false"
+                      script3="onDecision;1;SET;_PUCH_ODR_AMOUNT=[{_UNIT_COST}*{_ISSUE_QTY}]"
+                      script4="onDecision;2;SET;_DISC_AMOUNT=0"
+                      ></orftextinput></td>
+                  <td><orftextinput name="STOCK_UNIT" tablename="M_ITEM" columnname="STOCK_UNIT" dbtype="varchar2" tablejname="品目" columnjname="計量単位"  orteus="true" width="110" editable="false" visible="true" password="false" text="" kind="" maxlength="" required="" attribute=""></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_DATE_2">返品日</span></td>
+                  <td><orftextinput name="ISSUE_DATE" tablename="T_PAST_ONEROUS_CONS" columnname="ISSUE_DATE" dbtype="date" tablejname="有償支給履歴" columnjname="出庫日"  orteus="true" width="150" editable="true" visible="true" password="false" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" required="B" attribute=""
+                       script1="onDecision;0;CHK;?THIS[eq]DIFFER@*0"
+                       script2="child;0;SET;_AE0100010form2/SelectUnitCostFlag=false"
+                      ></orftextinput></td>
+                  <td><orfcalendar  name="CalendarPuchRtnDate" value="" pattern="none" orteus="false" width="22" attribute="BTS_CALENDAR" script1="onClick;0;CALENDAR;_AE0100010form2/ISSUE_DATE"></orfcalendar></td>
+                  <td><orftextinput  name="h_ISSUE_DATE" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.RETURNED_WH_CD">返品先保管区コード</span></td>
+                  <td><orftextinput name="RETURNED_WH_CD" tablename="T_PAST_ONEROUS_CONS" columnname="RETURNED_WH_CD" dbtype="varchar2" tablejname="有償支給履歴" columnjname="返品先保管区コード"  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="B" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerReturnedWhCd" value="" pattern="none" orteus="false" width="22" attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AE0100010form2/RETURNED_WH_CD@<%=contextNo%>"
+                     sqlname="WH_CD_11" sqlparam_1="<%= aAE0100010Control.getsysPLANT_CD() %>" sqlparam_2="_RETURNED_WH_CD"
+                  ></orfpeeker></td>
+                  <td><orftextinput name="WH_NAME" tablename="M_WH" columnname="WH_NAME" dbtype="varchar2" tablejname="保管区" columnjname="保管区名"  orteus="true" width="320" editable="false" visible="true" password="false" text="" kind="" maxlength="" required="" attribute=""></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_LOTCTRL" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.RETURNED_CAUSE_CD">返品理由コード</span></td>
+                  <td><orftextinput name="RETURNED_CAUSE_CD" tablename="T_PAST_ONEROUS_CONS" columnname="RETURNED_CAUSE_CD" dbtype="varchar2" tablejname="有償支給履歴" columnjname="返品理由コード"  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="64" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerReturnedCauseCd" value="" pattern="none" orteus="false" width="22" attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AE0100010form2/RETURNED_CAUSE_CD@<%=contextNo%>"
+                     sqlname="RETURNED_CAUSE_CD_01" sqlparam_1="_RETURNED_CAUSE_CD"
+                  ></orfpeeker></td>
+                  <td><orftextinput  name="param1" orteus="false" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="param2" orteus="false" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="param3" orteus="false" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_LOT_NO">メーカロット番号</span></td>
+                  <td><orftextinput name="VEND_LOT_NO" tablename="T_PAST_ONEROUS_CONS" columnname="VEND_LOT_NO" dbtype="varchar2" tablejname="有償支給履歴" columnjname="メーカロット番号"  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput> </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+                <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_LOT_CD">在庫ロット番号</span></td>
+                <td><orftextinput name="LOT_NO" tablename="T_PAST_ONEROUS_CONS" columnname="LOT_NO" dbtype="varchar2" tablejname="有償支給履歴" columnjname="在庫ロット番号"  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""></orftextinput> </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td><orfpeeker name="PeekerLotNo" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="LOT_NO_08" sqlparam_1="_AE0100010form2/LOT_NO" sqlparam_2="_AE0100010form2/ITEM_CD"
+ script1="onClick;0;PEEKER;_AE0100010form2/LOT_NO:_AE0100010form2/ITEM_CD@<%=contextNo%>"
+></orfpeeker></td>
+                <td><orfbutton name="LotCtrl" value="ロット管理" pattern="none" revokeCtrl="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnLotInsert" width="100" height="22" lock="0" attribute="" visible=""
+ script1="onClick;0;CHK;_AE0100010form2/ITEM_CD[eq]@!AE22007"
+ script2="onClick;1;CHK;_AE0100010form2/ISSUE_QTY[numeq]0@!AE00128"
+ script3="onClick;2;SET;_AE0100010form2/param1=AE0100010form2/ITEM_CD,_AE0100010form2/param2=AE0100010form2/LOT_NO,_AE0100010form2/param3=AE0100010form2/ISSUE_DATE@*0"
+ script4="child;0;SCRMV;_AE0100010form2/ITEM_CD,_AE0100010form2/LOT_NO,_AE0100010form2/ISSUE_DATE,_AE0100010form2/param1,_AE0100010form2/param2,_AE0100010form2/param3@AE0200010Servlet,<%=contextNo%>,<%=su.getScreenName()%>,<%=su.getScreenID()%>"
+></orfbutton>
+				</td>
+                <td><orftextinput  name="h_LOT_NO_2" orteus="true" visible="false"></orftextinput></td>
+                <td>&nbsp;</td>
+                <td><orftextinput  name="h_LOT_CTRL_FLG" orteus="true" visible="false"></orftextinput></td>
+                <td>&nbsp;</td>
+              </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_TYP">単価区分</span></td>
+                  <td><orfcombobox name="UNIT_COST_TYP" tablename="T_PAST_ONEROUS_CONS" columnname="UNIT_COST_TYP" dbtype="number" tablejname="有償支給履歴" columnjname="単価区分"  orteus="true" width="260" height="" enable="true" visible="true"
+></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfbutton  name="SelectUnitCost" value="単価読込" pattern="select" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelectUnitCost" width="100"
+                     script1="onClick;0;CHK;_AE0100010form2/r1_FILTER[eq]true[and]_AE0100010form2/VEND_CD[eq]@#AE00019"
+                     script2="onClick;1;CHK;_AE0100010form2/r1_FILTER[eq]true[and]_AE0100010form2/ITEM_CD[eq]@#AE00009"
+                     script3="onClick;2;CHK;_AE0100010form2/r1_FILTER[eq]true[and]_AE0100010form2/ISSUE_DATE[eq]@#AE00093"
+                     script4="onClick;3;CHK;_AE0100010form2/r2_FILTER[eq]true[and]_AE0100010form2/ISSUE_INST_CD[eq]@#AE00095"
+                     script5="onClick;4;CHK;_AE0100010form2/r3_FILTER[eq]true[and]_AE0100010form2/PUCH_ODR_CD[eq]@#AE00099"
+                     script6="onClick;5;CHK;_AE0100010form2/r3_FILTER[eq]true[and]_AE0100010form2/ITEM_CD[eq]@#AE00009"
+                     script7="onClick;6;CHK;_AE0100010form2/ISSUE_QTY[numeq]0@#AE00128"
+                     script8="onClick;7;SUBMIT;_AE0100010form1/*,_AE0100010form2/*@AE0100010Servlet"
+                     lock="0"
+                  ></orfbutton></td>
+                  <td><orftextinput  name="SelectUnitCostFlag" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_LOT_NUMBERING_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_4">支給単価</span></td>
+                  <td><orftextinput name="UNIT_COST" tablename="T_PAST_ONEROUS_CONS" columnname="UNIT_COST" dbtype="number" tablejname="有償支給履歴" columnjname="単価"  orteus="true" width="150" editable="true" visible="true" password="false" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute=""
+                     script1="onDecision;0;SET;_PUCH_ODR_AMOUNT=[{_UNIT_COST}*{_ISSUE_QTY}]"
+                     script2="onDecision;1;SET;_DISC_AMOUNT=0"
+				  ></orftextinput></td>
+                  <td><orftextinput  name="VEND_CUR_UNIT" tablename="M_CUR" columnname="CUR_UNIT" dbtype="varchar2" tablejname="通貨" columnjname="通貨単位"   orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td required="true"><orfradiobutton  width="190" name="r1_FILTER" orteus="true" value="true" group="r_FILTER" mlang="true" mlkind="common" mlname="Expj.Cmt0740" text="支給単価読込" 
+                      ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0738">返品金額</span></td>
+                  <td><orftextinput name="PUCH_ODR_AMOUNT" tablename="" columnname="PUCH_ODR_AMOUNT" dbtype="number" tablejname="" columnjname="返品金額"  orteus="true" width="150" editable="false" visible="true" password="false" text="" kind="<%=Kind.convertNumeric(Kind.NUMBER, Kind.N, 14, 2, aAE0100010Struct.getROUND_TYP(), aAE0100010Struct.getVEND_DECIMAL_FIG())%>" maxlength="" required="" attribute=""></orftextinput></td>
+                  <td><orftextinput  name="d1_VEND_CUR_UNIT" orteus="false" width="110" editable="false" text="<%= TypeConverter.sanitizer(aAE0100010Struct.getVEND_CUR_UNIT()) %>"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  width="190" name="r2_FILTER" orteus="true" value="true" group="r_FILTER" mlang="true" mlkind="common" mlname="Expj.Cmt0741" text="出庫指示番号を指定する"></orfradiobutton></td>
+                  <td><orftextinput name="ISSUE_INST_CD" tablename="T_PAST_ONEROUS_CONS" columnname="ISSUE_INST_CD" dbtype="varchar2" tablejname="有償支給履歴" columnjname="出庫指示番号"  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerIssueInstCd" value="" pattern="none" orteus="false" width="22" attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AE0100010form2/ISSUE_INST_CD@<%=contextNo%>"
+                     sqlname="ISSUE_INST_CD_02" sqlparam_1="<%=aAE0100010Control.getsysPLANT_CD()%>" sqlparam_2="_ISSUE_INST_CD"
+                  ></orfpeeker></td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  width="190" name="r3_FILTER" orteus="true" value="true" group="r_FILTER" mlang="true" mlkind="common" mlname="Expj.Cmt0742" text="発注番号を指定する"></orfradiobutton></td>
+                  <td><orftextinput name="PUCH_ODR_CD" tablename="T_ACPT_RSLT" columnname="PUCH_ODR_CD" dbtype="varchar2" tablejname="受入実績" columnjname="発注番号"  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerPuchOdrCd" value="" pattern="none" orteus="false" width="22" attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AE0100010form2/PUCH_ODR_CD:_AE0100010form2/ITEM_CD@<%=contextNo%>"
+                     sqlname="PUCH_ODR_CD_19" sqlparam_1="<%=aAE0100010Control.getsysPLANT_CD()%>" sqlparam_2="_PUCH_ODR_CD"
+                  ></orfpeeker></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ONEROUS_CONS_COMMENT">有償支給備考</span></td>
+                  <td><orftextinput name="ONEROUS_CONS_COMMENT" tablename="T_PAST_ONEROUS_CONS" columnname="ONEROUS_CONS_COMMENT" dbtype="varchar2" tablejname="有償支給履歴" columnjname="有償支給備考"  orteus="true" width="712" editable="true" visible="true" password="false" text="" kind="" maxlength="80" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox name="c_ONEROUS_CONS_INV_TYP" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0739" width="190" height="" text="取引先在庫を更新する" editable="true" visible="true"
+></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32">
+            <td width="12" class="frame07" height="32"></td>
+            <td width="559" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="315" class="frame10" height="32">
+              <table orftype="DataGrid" mode="BUTTON" name="AE0100010button2" width="315" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton name="Insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_AE0100010form2/ISSUE_QTY[numeq]0@#AE00128"
+ script2="onClick;1;CHK;_AE0100010form2/SelectUnitCostFlag[eq]false@$AE00062"
+ script3="onClick;2;CHK;_AE0100010form2/INSTALL_FLG[eq]1@*0"
+ script4="onClick;3;CHK;_AE0100010form2/h_LOTCTRL[eq]true@*1"
+ script5="onClick;4;SUBMIT;_AE0100010form1/*,_AE0100010form2/*@AE0100010Servlet,,$ZZ07001"
+ script6="child;0;CHK;_AE0100010form2/THIS_MONTH[gt]~TO_YYYY_MM(_AE0100010form2/ISSUE_DATE)@$AE00120"
+ script11="child;1;CHK;_AE0100010form2/LOT_NO[eq]@$AE21000"
+></orfbutton></td>
+                  <td><orfbutton name="Update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_AE0100010form2/ISSUE_QTY[numeq]0@#AE00128"
+ script2="onClick;1;CHK;_AE0100010form2/SelectUnitCostFlag[eq]false@$AE00062"
+ script3="onClick;2;CHK;_AE0100010form2/INSTALL_FLG[eq]1@*0"
+ script4="onClick;3;SUBMIT;_AE0100010form1/*,_AE0100010form2/*@AE0100010Servlet,,$ZZ07003"
+ script5="child;0;CHK;_AE0100010form2/THIS_MONTH[gt]~TO_YYYY_MM(_AE0100010form2/ISSUE_DATE)@$AE00120"
+></orfbutton></td>
+                  <td><orfbutton name="Delete" value="削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDelete" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AE0100010form1/*,_AE0100010form2/*@AE0100010Servlet,,$ZZ07004"
+></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="19"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3" height="5"></td>
+    </tr>
+    <tr height="42">
+      <td colspan="3" height="42" class="under">
+        <table width="968" border="0">
+          <tr>
+            <td align="left" width="748"></td>
+            <td align="right" width="210">
+              <table orftype="DataGrid" mode="BUTTON" name="AE0100010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton  name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100"
+                     script1="onClick;0;SUBMIT;@AE0100010Servlet,,$ZZ07008"
+                     lock="0"
+                  ></orfbutton></td>
+                  <td><orfbutton  name="Close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100"
+                     script1="onClick;0;CLOSE"
+                  ></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAE0100010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

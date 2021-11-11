@@ -1,0 +1,236 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+負荷シミュレーションサブ１
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AL0050/AL0050011.html,v $
+$Author: geng-jia $
+$Revision: 1.3 $ $Date: 2017/02/13 03:35:39 $
+********************************************************* --%>
+<html>
+<head>
+<title>負荷シミュレーションサブ１</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AL0050011" version="AL0050011 $Revision: 1.3 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="1">
+
+<% String CallButton = aAL0050010Control.getButton(); %>
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="538">
+      <td width="5" height="538"></td>
+      <td valign="top" width="958" height="538">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <table orftype="DataGrid" mode="FORM"
+                   name="AL0050011form1" width="934" height="494" border="1" cellspacing="0" cellpadding="0"
+                   script1="onLoad;0;CALL;onDecision@0,1"
+                   script2="onDecision;0;CHKRQ;A@*0,*2"
+                   script3="child;0;CHK;<%=TypeConverter.sanitizer(CallButton)%>[eq]LineInsert[or]<%=TypeConverter.sanitizer(CallButton)%>[eq]LineCopy[or]<%=TypeConverter.sanitizer(CallButton)%>[eq]LineInsert[or]<%=TypeConverter.sanitizer(CallButton)%>[eq]Insert@*1,*2"
+                   script4="child;1;UNMASK;_AL0050011button1/Insert"
+                   script5="child;2;MASK;_AL0050011button1/Insert"
+                   script6="onDecision;1;CHKRQ;A@*3,*5"
+                   script7="child;3;CHK;<%=TypeConverter.sanitizer(CallButton)%>[eq]LineUpdate[or]<%=TypeConverter.sanitizer(CallButton)%>[eq]Update@*4,*5"
+                   script8="child;4;UNMASK;_AL0050011button1/Update"
+                   script9="child;5;MASK;_AL0050011button1/Update">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=170 align="right">&nbsp;</td>
+                  <td width=150 align="left">&nbsp;</td>
+                  <td width=22 align="left">&nbsp;</td>
+                  <td width=88 align="left">&nbsp;</td>
+                  <td width=22 align="left">&nbsp;</td>
+                  <td width=170 align="right">&nbsp;</td>
+                  <td width=150 align="left">&nbsp;</td>
+                  <td width=22 align="left">&nbsp;</td>
+                  <td width=88 align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td>
+                      <span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CD">製番</span></td>
+                  <td><orftextinput  name="SUB1_JOB_ODR_CD" tablename="T_LOAD_PLAN" columnname="JOB_ODR_CD" dbtype="varchar2"
+                       tablejname="負荷計画" columnjname="製番" orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="SUB1_h_l_JOB_ODR_CD" tablename="T_LOAD_PLAN" columnname="JOB_ODR_CD" dbtype="varchar2"
+                       tablejname="負荷計画" columnjname="製番" orteus="true" visible="false"
+                       script1="onLoad;0;CALL;child@0"
+                       script2="child;0;CHK;_THIS[eq]@*1,*2"
+                       script3="child;1;UNMASK;_SUB1_JOB_ODR_CD"
+                       script4="child;2;MASK;_SUB1_JOB_ODR_CD"></orftextinput></td>
+                </tr>
+                <tr>
+                  <td required="true">
+                      <span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                  <td><orftextinput  name="SUB1_ITEM_CD" tablename="T_LOAD_PLAN" columnname="ITEM_CD" dbtype="varchar2"
+                       tablejname="負荷計画" columnjname="品目番号" orteus="true" width="260" maxlength="25" required="A"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerSub1ItemCd" value="" pattern="none" orteus="false" width="22"
+                       attribute="BTS_PEEKER"
+                       script1="onClick;0;PEEKER;_AL0050011form1/SUB1_ITEM_CD@<%=contextNo%>"
+                       sqlname="ITEM_CD_01" sqlparam_1="_SUB1_ITEM_CD"></orfpeeker></td>
+                  <td><orftextinput  name="SUB1_ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2"
+                       tablejname="品目" columnjname="品目名" orteus="true" width="320" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="SUB1_h_l_ITEM_CD" tablename="T_LOAD_PLAN" columnname="ITEM_CD" dbtype="varchar2"
+                       tablejname="負荷計画" columnjname="品目番号" orteus="true" visible="false"
+                       script1="onLoad;0;CALL;child@0"
+                       script2="child;0;CHK;_THIS[eq]@*1,*2"
+                       script3="child;1;UNMASK;_SUB1_ITEM_CD,_PeekerSub1ItemCd"
+                       script4="child;2;MASK;_SUB1_ITEM_CD,_PeekerSub1ItemCd"></orftextinput></td>
+                </tr>
+                <tr>
+                  <td required="true">
+                      <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PRD_DUE_DATE">製造納期</span></td>
+                  <td><orftextinput  name="SUB1_PRD_DUE_DATE" tablename="T_LOAD_PLAN" columnname="PRD_DUE_DATE" dbtype="date"
+                       tablejname="負荷計画" columnjname="納期" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD" required="A"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarSub1PrdDueDate" value="" pattern="select" orteus="false" width="22"
+                       attribute="BTS_CALENDAR"
+                       script1="onClick;0;CALENDAR;_AL0050011form1/SUB1_PRD_DUE_DATE"></orfcalendar></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required="true">
+                      <span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_QTY_1">手配数</span></td>
+                  <td><orftextinput  name="SUB1_ODR_QTY" tablename="T_LOAD_PLAN" columnname="ODR_QTY" dbtype="number"
+                       tablejname="負荷計画" columnjname="手配数" orteus="true" width="150" kind="OBT_NUMBER_P;14.1;FLOOR;4" required="A"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>
+                      <span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD_1">得意先</span></td>
+                  <td><orftextinput  name="SUB1_CUST_CD" tablename="T_LOAD_PLAN" columnname="CUST_CD" dbtype="varchar2"
+                       tablejname="負荷計画" columnjname="得意先" orteus="true" width="712" maxlength="50"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="MAIN_h_PLANT_CD" tablename="T_LOAD_PLAN" columnname="PLANT_CD" dbtype="varchar2"
+                       tablejname="負荷計画" columnjname="工場コード" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="MAIN_h_JOB_ODR_CD" tablename="T_LOAD_PLAN" columnname="JOB_ODR_CD" dbtype="varchar2"
+                       tablejname="負荷計画" columnjname="製番" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="MAIN_h_ITEM_CD" tablename="T_LOAD_PLAN" columnname="ITEM_CD" dbtype="varchar2"
+                       tablejname="負荷計画" columnjname="品目番号" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="MAIN_h_PRD_DUE_DATE_FROM" tablename="T_LOAD_PLAN" columnname="PRD_DUE_DATE" dbtype="date"
+                       tablejname="負荷計画" columnjname="納期" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="MAIN_h_PRD_DUE_DATE_TO" tablename="T_LOAD_PLAN" columnname="PRD_DUE_DATE" dbtype="date"
+                       tablejname="負荷計画" columnjname="納期" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr>
+                  <td>
+                      <span orteus="true" mlang="true" mlkind="common" mlname="Expj.LOAD_PLAN_COMMENT_1">備考</span></td>
+                  <td><orftextinput  name="SUB1_LOAD_PLAN_COMMENT" tablename="T_LOAD_PLAN" columnname="LOAD_PLAN_COMMENT" dbtype="varchar2"
+                       tablejname="負荷計画" columnjname="負荷計画備考" orteus="true" width="712" maxlength="50"></orftextinput></td>
+                  <td><orftextinput  name="SUB1_h_LOAD_PLAN_CD" tablename="T_LOAD_PLAN" columnname="LOAD_PLAN_CD" dbtype="varchar2"
+                       tablejname="負荷計画" columnjname="計画識別番号" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="SUB1_h_PLANT_CD" tablename="T_LOAD_PLAN" columnname="PLANT_CD" dbtype="varchar2"
+                       tablejname="負荷計画" columnjname="工場コード" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="SUB1_h_PRD_DUE_DATE" tablename="T_LOAD_PLAN" columnname="PRD_DUE_DATE" dbtype="date"
+                       tablejname="負荷計画" columnjname="納期" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="SUB1_h_PRD_START_DATE" tablename="T_LOAD_PLAN" columnname="PRD_START_DATE" dbtype="date"
+                       tablejname="負荷計画" columnjname="製造着手日" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="SUB1_h_ENTRY_BY" tablename="T_LOAD_PLAN" columnname="ENTRY_BY" dbtype="varchar2"
+                       tablejname="負荷計画" columnjname="計画登録者" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="SUB1_h_MODIFY_COUNT" tablename="T_LOAD_PLAN" columnname="MODIFY_COUNT" dbtype="number"
+                       tablejname="負荷計画" columnjname="更新数" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table></td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32">
+            <td width="12" class="frame07" height="32"></td>
+            <td width="664" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="210" class="frame10" height="32">
+              <table orftype="DataGrid" mode="BUTTON" name="AL0050011button1" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton name="Insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_AL0050011form1/SUB1_PRD_DUE_DATE[lt]_AL0050011form1/SUB1_h_PRD_DUE_DATE@#AL50015"
+ script2="onClick;1;CHK;_AL0050011form1/SUB1_PRD_DUE_DATE[gt]~ADDDATE(_AL0050011form1/SUB1_h_PRD_DUE_DATE:180)@#AL50017"
+ script3="onClick;2;CHK;_AL0050011form1/SUB1_ODR_QTY[lte]0@#AL50010"
+ script4="onClick;3;SCRCHG;_AL0050011form1/*@AL0050010Servlet,,$ZZ07001"
+></orfbutton></td>
+                  <td><orfbutton name="Update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_AL0050011form1/SUB1_PRD_DUE_DATE[lt]_AL0050011form1/SUB1_h_PRD_DUE_DATE@#AL50015"
+ script2="onClick;1;CHK;_AL0050011form1/SUB1_PRD_DUE_DATE[gt]~ADDDATE(_AL0050011form1/SUB1_h_PRD_DUE_DATE:180)@#AL50017"
+ script3="onClick;2;CHK;_AL0050011form1/SUB1_ODR_QTY[lte]0@#AL50010"
+ script4="onClick;3;SCRCHG;_AL0050011form1/*@AL0050010Servlet,,$ZZ07003"
+></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table></td>
+      <td width="5" height="538"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42">
+      <td colspan="3" width="968" height="42" class="under">
+        <table width="968" border="0">
+          <tr>
+            <td align="left" width="863"></td>
+            <td align="right" width="105">
+              <table orftype="DataGrid" mode="BUTTON" name="AL0050011button0" width="105" height="22"
+                   border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton  name="Return" value="戻る" pattern="none" orteus="true" mlang="true" mlkind="common"
+                       mlname="Expj.BtnReturn" width="100"
+                       script1="onClick;0;SCRCHG;_AL0050011form1/*@AL0050010Servlet,,$ZZ07013" lock="0"></orfbutton></td>
+                </tr>
+                </ornoloop>
+            </table></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+  MessageStruct msgStruct = aAL0050010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>
+

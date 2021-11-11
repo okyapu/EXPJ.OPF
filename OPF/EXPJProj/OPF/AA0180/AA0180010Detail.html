@@ -1,0 +1,358 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+詳細
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AA0180/AA0180010Detail.html,v $
+$Author: wang-c $
+$Revision: 1.2 $ $Date: 2008/09/22 02:18:57 $
+********************************************************* --%>
+<html>
+<head>
+<title>詳細</title>
+<%@include file="common/expj_v5.jsp" %>
+<script>
+	var data = "<root>";
+	
+	function onInitializeOnLoad(){
+		setDataGridDataParent("AA0180010",data + "</root>");
+	}
+</script>
+</head>
+
+
+
+<% if (aAA0180010Control.getDetType().equals("PS")) { %>
+
+
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true" onBlur="focus()">
+  <table orftype="DataGrid" name="AA0180010detailview1" attribute="DGS_HEADERMINI|DGS_SORTOFF|DGS_SELECTOFF" mode="DETAIL" status="" float=""
+ width="358" height="342" border="1" cellspacing="1" cellpadding="1">
+    <orloophead>
+    <tr bgcolor="#ccff99">
+      <td width="100" align="right">&nbsp;</td>
+      <td width="200" align="left"><orfdata excell="true"></orfdata></td>
+      <td width="30" align="left">&nbsp;</td>
+    </tr>
+    </orloophead><ornoloop>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+      <td><orflabel  name="DetParent_ITEM_CD" tablename="M_ITEM" columnname="ITEM_CD" dbtype="varchar2"
+           tablejname="品目" columnjname="品目番号" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME">品目名</span></td>
+      <td><orflabel  name="DetParent_ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2"
+           tablejname="品目" columnjname="品目名" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.MRP_ODR_TYP">品目手配区分</span></td>
+      <td><orflabel  name="DetParent_MRP_ODR_TYP" tablename="M_ITEM" columnname="MRP_ODR_TYP" dbtype="number"
+           tablejname="品目" columnjname="品目手配区分" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.OUTSIDE_TYP_4">品目内外作区分</span></td>
+      <td><orflabel  name="DetParent_OUTSIDE_TYP" tablename="M_ITEM" columnname="OUTSIDE_TYP" dbtype="number"
+           tablejname="品目" columnjname="品目内外作区分" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.COMP_ITEM_CD_1">構成品目番号</span></td>
+      <td><orflabel  name="DetComp_ITEM_CD" tablename="M_ITEM" columnname="ITEM_CD" dbtype="varchar2"
+           tablejname="品目" columnjname="品目番号" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME_1">構成品目名</span></td>
+      <td><orflabel  name="DetComp_ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2"
+           tablejname="品目" columnjname="品目名" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.MRP_ODR_TYP_1">構成手配区分</span></td>
+      <td><orflabel  name="DetComp_MRP_ODR_TYP" tablename="M_ITEM" columnname="MRP_ODR_TYP" dbtype="number"
+           tablejname="品目" columnjname="品目手配区分" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.OUTSIDE_TYP_5">構成内外作区分</span></td>
+      <td><orflabel  name="DetComp_OUTSIDE_TYP" tablename="M_ITEM" columnname="OUTSIDE_TYP" dbtype="number"
+           tablejname="品目" columnjname="品目内外作区分" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_EDITION">製品構成版数</span></td>
+      <td><orflabel  name="Det_PS_EDITION" tablename="M_PS" columnname="PS_EDITION" dbtype="varchar2"
+           tablejname="製品構成" columnjname="製品構成版数" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_UNIT_QTY">製品構成単位数</span></td>
+      <td align="right"><orflabel  name="Det_PS_UNIT_QTY" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_UNIT">計量単位</span></td>
+      <td><orflabel  name="Det_STOCK_UNIT" tablename="M_ITEM" columnname="STOCK_UNIT" dbtype="varchar2"
+           tablejname="品目" columnjname="計量単位" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_IN_DATE_4">有効開始日</span></td>
+      <td><orflabel  name="Det_EFF_PHASE_IN_DATE" tablename="M_PS" columnname="EFF_PHASE_IN_DATE" dbtype="date"
+           tablejname="製品構成" columnjname="製品構成有効開始日" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_OUT_DATE">有効終了日</span></td>
+      <td><orflabel  name="Det_EFF_PHASE_OUT_DATE" tablename="M_PS" columnname="EFF_PHASE_OUT_DATE" dbtype="date"
+           tablejname="製品構成" columnjname="製品構成有効終了日" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_SPOIL">構成仕損率</span></td>
+      <td align="right"><orflabel  name="Det_PS_SPOIL" tablename="M_PS" columnname="PS_SPOIL" dbtype="number"
+           tablejname="製品構成" columnjname="構成仕損率" orteus="true" kind="OBT_NUMBER;5.1;FLOOR;4"></orflabel></td>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0051">％</span></td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.CONS_TYP">支給区分</span></td>
+      <td><orflabel  name="Det_CONS_TYP" tablename="M_PS" columnname="CONS_TYP" dbtype="number"
+           tablejname="製品構成" columnjname="支給区分" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_LT_FLG">製品構成リードタイム使用フラグ</span></td>
+      <td><orflabel  name="Det_PS_LT_FLG" tablename="M_PS" columnname="PS_LT_FLG" dbtype="number"
+           tablejname="製品構成" columnjname="製品構成リードタイム使用フラグ" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_FIXED_LT">製品構成固定分リードタイム</span></td>
+      <td align="right"><orflabel  name="Det_PS_FIXED_LT" tablename="M_PS" columnname="PS_FIXED_LT" dbtype="number"
+           tablejname="製品構成" columnjname="製品構成固定分リードタイム" orteus="true" kind="OBT_INTEGER;6"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_PROP_LT">製品構成比例分リードタイム</span></td>
+      <td align="right"><orflabel  name="Det_PS_PROP_LT" tablename="M_PS" columnname="PS_PROP_LT" dbtype="number"
+           tablejname="製品構成" columnjname="製品構成比例分リードタイム" orteus="true" kind="OBT_INTEGER;6"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_PROP_LOT_SIZE">製品構成比例分ロットサイズ</span></td>
+      <td align="right"><orflabel  name="Det_PS_PROP_LOT_SIZE" tablename="M_PS" columnname="PS_PROP_LOT_SIZE" dbtype="number"
+           tablejname="製品構成" columnjname="製品構成比例分ロットサイズ" orteus="true" kind="OBT_NUMBER;14.1;FLOOR;4"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_REF_NO">照会順序</span></td>
+      <td align="right"><orflabel  name="Det_PS_REF_NO" tablename="M_PS" columnname="PS_REF_NO" dbtype="number"
+           tablejname="製品構成" columnjname="製品構成照会キー" orteus="true" kind="OBT_INTEGER;6"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.COST_UP_TYP_2">原価積上有無</span></td>
+      <td><orflabel  name="Det_COST_UP_TYP" tablename="M_PS" columnname="COST_UP_TYP" dbtype="number"
+           tablejname="製品構成" columnjname="原価積上区分" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.MRP_EXP_TYP_2">MRP展開有無</span></td>
+      <td><orflabel  name="Det_MRP_EXP_TYP" tablename="M_PS" columnname="MRP_EXP_TYP" dbtype="number"
+           tablejname="製品構成" columnjname="所要量展開区分" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.MANHOUR_TYP_1">構成品目工数管理品目区分</span></td>
+      <td><orflabel  name="Det_MANHOUR_TYP" tablename="M_ITEM" columnname="MANHOUR_TYP" dbtype="number"
+           tablejname="品目" columnjname="工数管理品目区分" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    </ornoloop>
+  </table>
+  <%
+  MessageStruct msgStruct = aAA0180010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+
+
+<% } else if (aAA0180010Control.getDetType().equals("PROC")) { %>
+
+
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true" onBlur="focus()">
+  <table orftype="DataGrid" name="AA0180010detailview1" attribute="DGS_HEADERMINI|DGS_SORTOFF|DGS_SELECTOFF" mode="DETAIL" status="" float=""
+ width="358" height="342" border="1" cellspacing="1" cellpadding="1">
+    <orloophead>
+    <tr bgcolor="#ccff99">
+      <td width="100" align="right">&nbsp;</td>
+      <td width="200" align="left"><orfdata excell="true"></orfdata></td>
+      <td width="30" align="left">&nbsp;</td>
+    </tr>
+    </orloophead><ornoloop>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+      <td><orflabel  name="Det2ITEM_CD" tablename="M_PROC_GRP" columnname="ITEM_CD" dbtype="varchar2"
+           tablejname="作業系列" columnjname="品目番号" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME">品目名</span></td>
+      <td><orflabel  name="Det2ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2"
+           tablejname="品目" columnjname="品目名" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_CD">品目別作業コード</span></td>
+      <td><orflabel  name="Det2PROC_CD" tablename="M_PROC_GRP" columnname="PROC_CD" dbtype="varchar2"
+           tablejname="作業系列" columnjname="品目別作業コード" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_NO">作業系列番号</span></td>
+      <td align="right"><orflabel  name="Det2PROC_NO" tablename="M_PROC_GRP" columnname="PROC_NO" dbtype="number"
+           tablejname="作業系列" columnjname="作業系列番号" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_NAME">作業名</span></td>
+      <td><orflabel  name="Det2PROC_NAME" tablename="M_PROC_GRP" columnname="PROC_NAME" dbtype="varchar2"
+           tablejname="作業系列" columnjname="作業名" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.WS_CD">作業区コード</span></td>
+      <td><orflabel  name="Det2WS_CD" tablename="M_PROC_GRP" columnname="WS_CD" dbtype="varchar2"
+           tablejname="作業系列" columnjname="作業区コード" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.WS_NAME">作業区名</span></td>
+      <td><orflabel  name="Det2WS_NAME" tablename="M_WS" columnname="WS_NAME" dbtype="varchar2"
+           tablejname="作業区" columnjname="作業区名" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.COMPANY_CD">会社コード</span></td>
+      <td><orflabel  name="Det2COMPANY_CD" tablename="M_PROC_GRP" columnname="COMPANY_CD" dbtype="varchar2"
+           tablejname="作業系列" columnjname="会社コード" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_CD">取引先コード</span></td>
+      <td><orflabel  name="Det2VEND_CD" tablename="M_PROC_GRP" columnname="VEND_CD" dbtype="varchar2"
+           tablejname="作業系列" columnjname="取引先コード" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_NAME">取引先名</span></td>
+      <td><orflabel  name="Det2VEND_NAME" tablename="M_VEND_CTRL" columnname="VEND_NAME" dbtype="varchar2"
+           tablejname="取引先" columnjname="取引先名" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.FIXED_LT">固定分リードタイム</span></td>
+      <td align="right"><orflabel  name="Det2FIXED_LT" tablename="M_PROC_GRP" columnname="FIXED_LT" dbtype="number"
+           tablejname="作業系列" columnjname="固定分リードタイム" orteus="true" kind="OBT_INTEGER;6"></orflabel></td>
+      <td align="left"><orflabel  name="Det2FIXED_LT_UNIT" dbtype="varchar2" orteus="true"></orflabel></td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROP_LT">比例分リードタイム</span></td>
+      <td align="right"><orflabel  name="Det2PROP_LT" tablename="M_PROC_GRP" columnname="PROP_LT" dbtype="number"
+           tablejname="作業系列" columnjname="比例分リードタイム" orteus="true" kind="OBT_INTEGER;6"></orflabel></td>
+      <td align="left"><orflabel  name="Det2PROP_LT_UNIT" dbtype="varchar2" orteus="true"></orflabel></td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROP_LOT_SIZE">比例分ロットサイズ</span></td>
+      <td align="right"><orflabel  name="Det2PROP_LOT_SIZE" tablename="M_PROC_GRP" columnname="PROP_LOT_SIZE" dbtype="number"
+           tablejname="作業系列" columnjname="比例分ロットサイズ" orteus="true" kind="OBT_NUMBER_P;14.1;FLOOR;4"></orflabel></td>
+      <td align="left"><orflabel  name="Det2PROP_LOT_SIZE_UNIT" dbtype="varchar2" orteus="true"></orflabel></td>
+    </tr>
+	<tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.SAFETY_LT">安全日数</span></td>
+      <td align="right"><orflabel  name="Det2SAFETY_LT" tablename="M_PROC_GRP" columnname="SAFETY_LT" dbtype="number"
+           tablejname="作業系列" columnjname="安全日数" orteus="true" kind="OBT_INTEGER;6"></orflabel></td>
+      <td align="left"><orflabel  name="Det2SAFETY_LT_UNIT" dbtype="varchar2" orteus="true"></orflabel></td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPOIL">仕損率</span></td>
+      <td align="right"><orflabel  name="Det2SPOIL" tablename="M_PROC_GRP" columnname="SPOIL" dbtype="number"
+           tablejname="作業系列" columnjname="仕損率" orteus="true" kind="OBT_NUMBER;5.1;FLOOR;4"></orflabel></td>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0051">％</span></td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.OUTSIDE_TYP">内外作区分</span></td>
+      <td><orflabel  name="Det2OUTSIDE_TYP" tablename="M_PROC_GRP" columnname="OUTSIDE_TYP" dbtype="number"
+           tablejname="作業系列" columnjname="内外作区分" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACPT_INSPC_TYP">受入検査区分</span></td>
+      <td><orflabel  name="Det2ACPT_INSPC_TYP" tablename="M_PROC_GRP" columnname="ACPT_INSPC_TYP" dbtype="number"
+           tablejname="作業系列" columnjname="受入検査区分" orteus="true"></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+          <span orteus="true" mlang="true" mlkind="common" mlname="Expj.STANDARD_COST">標準工数</span></td>
+      <td align="right"><orflabel  name="Det2STANDARD_COST" tablename="M_PROC_GRP" columnname="STANDARD_COST" dbtype="number"
+           tablejname="作業系列" columnjname="標準工数" orteus="true" kind="OBT_NUMBER_Z;14.1;FLOOR;4" ></orflabel></td>
+      <td>&nbsp;</td>
+    </tr>
+    </ornoloop>
+  </table>
+  <%
+  MessageStruct msgStruct = aAA0180010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+
+
+<% } %>
+
+</html>
+

@@ -1,0 +1,181 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+日次処理実行
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AK0010/AK0010010.html,v $
+$Author: geng-jia $	
+$Revision: 1.4 $ $Date: 2017/02/13 03:32:57 $
+********************************************************* --%>
+<html>
+<head>
+<title>日次処理実行</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AK0010010" version="AK0010010 $Revision: 1.4 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="1">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05" height="494" valign="top"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="AK0010010form1" width="934" height="494" border="1" cellspacing="0" cellpadding="0"
+                 script1="onLoad;0;CALL;onDecision@0"
+                 script2="onDecision;0;CHKRQ;A,B,C@*0,*1"
+                 script3="child;0;UNMASK;_AK0010010button1/Execute"
+                 script4="child;1;MASK;_AK0010010button1/Execute">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=170 align="right">&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=170>&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88 align=left>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td required=true>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td required=true>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td required=true>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PLANT_CD">工場コード</span></td>
+                  <td><orftextinput  name="PLANT_CD" tablename="" columnname="JOB_ODR_CD" dbtype="varchar2" tablejname="" columnjname="" orteus="true" width="260" maxlength="2" required="A">
+                    </orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerPlantCd" value="" pattern="none" orteus="false" width="22" attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AK0010010form1/PLANT_CD@<%=contextNo%>" 
+                     sqlname="PLANT_CD_01" sqlparam_1="_AK0010010form1/PLANT_CD"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.BUSINESS_OPR_DATE_1">日次処理対象日</span></td>
+                  <td><orftextinput  name="BUSINESS_OPR_DATE" tablename="SYS_DATE_CTRL" columnname="BUSINESS_OPR_DATE" dbtype="date" tablejname="" columnjname=""   orteus="true" width="150" required="B" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  name="BusinessOprDate1" value="" pattern="none" orteus="false" width="22"  
+                     attribute="BTS_CALENDAR" script1="onClick;0;CALENDAR;_AK0010010form1/BUSINESS_OPR_DATE"></orfcalendar></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_PLANT_CD" tablename="" columnname="" dbtype="date" tablejname="" columnjname="" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr> 
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.BUSINESS_OPR_DATE_2">翌業務運用日</span></td>
+                  <td><orftextinput  name="NEXT_BUSINESS_OPR_DATE" tablename="SYS_DATE_CTRL" columnname="BUSINESS_OPR_DATE" dbtype="varchar2" tablejname="" columnjname=""   orteus="true" width="150" required="C" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  name="BusinessOprDate2" value="" pattern="none" orteus="false" width="22" attribute="BTS_CALENDAR"
+                     script1="onClick;0;CALENDAR;_AK0010010form1/NEXT_BUSINESS_OPR_DATE"></orfcalendar></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td required=true>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_FINAL_DAILY_PROC_EXEC_DATE" tablename="" columnname="" dbtype="date" tablejname="" columnjname="" orteus="true" visible="false" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                </tr>
+                </ornoloop> 
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AK0010010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton name="Execute" value="実行" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnExecute" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_AK0010010form1/BUSINESS_OPR_DATE[gt]_AK0010010form1/NEXT_BUSINESS_OPR_DATE@!AK33231"
+ script2="onClick;1;CHK;_AK0010010form1/PLANT_CD[eq]_AK0010010form1/h_PLANT_CD[and]_AK0010010form1/BUSINESS_OPR_DATE[lt]_AK0010010form1/h_FINAL_DAILY_PROC_EXEC_DATE@!AK33232"
+ script3="onClick;2;CHK;_AK0010010form1/PLANT_CD[eq]_AK0010010form1/h_PLANT_CD[and]_AK0010010form1/BUSINESS_OPR_DATE[eq]_AK0010010form1/h_FINAL_DAILY_PROC_EXEC_DATE@$AK25047"
+ script4="onClick;3;SUBMIT;_AK0010010form1/*@AK0010010Servlet,,$ZZ07010"
+></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AK0010010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" 
+                     script1="onClick;0;SUBMIT;_AK0010010form1/*@AK0010010Servlet,,$ZZ07008" lock="0"></orfbutton></td>
+                  <td><orfbutton  name="Close" value="閉じる" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAK0010010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

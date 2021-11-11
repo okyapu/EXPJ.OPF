@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<project name="EXPJStudio_lib" default="convert">
+
+  <!-- Property file conversion -->
+  <target name="convert" description="Property file conversion">
+    <delete>
+      <fileset dir="." includes="metamorBaseSystem.properties" />
+      <fileset dir="." includes="SystemLog.properties" />
+      <fileset dir="." includes="SystemLogApplication.properties" />
+      <fileset dir="." includes="OrteusUserDic_ja.properties" />
+      <fileset dir="." includes="OrteusUserDic_en.properties" />
+      <fileset dir="." includes="OrteusUserDic_zh.properties" />
+      <fileset dir="." includes="ExpjCombo_ja.properties" />
+      <fileset dir="." includes="ExpjCombo_en.properties" />
+      <fileset dir="." includes="ExpjCombo_zh.properties" />
+      <fileset dir="." includes="AlarmMessage.properties" />
+      <fileset dir="." includes="ExpjMessage.properties" />
+      <fileset dir="." includes="ExpjMessage_ja.properties" />
+      <fileset dir="." includes="ExpjMessage_en.properties" />
+      <fileset dir="." includes="ExpjMessage_zh.properties" />
+      <fileset dir="." includes="OrteusMenuDic_ja.properties" />
+      <fileset dir="." includes="OrteusMenuDic_en.properties" />
+      <fileset dir="." includes="OrteusMenuDic_zh.properties" />
+    </delete>
+    <native2ascii src="." includes="*.Japanese"  encoding="Windows-31J"  dest="." ext=".properties"/>
+    <native2ascii src="." includes="*.japanese"  encoding="Windows-31J"  dest="." ext=".properties"/>
+    <native2ascii src="." includes="*.English"  encoding="US-ASCII"  dest="." ext=".properties"/>
+    <native2ascii src="." includes="*.Chinese"  encoding="GB2312"    dest="." ext=".properties"/>
+  </target>
+
+</project>

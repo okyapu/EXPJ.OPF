@@ -1,0 +1,145 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+明細
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/KQ0010/KQ0010030detail.html,v $
+$Author: wang-derui $	
+$Revision: 1.1 $　$Date: 2008/08/18 09:51:45 $
+********************************************************* --%>
+<html>
+<head>
+<title>明細</title>
+<%@include file="common/expj_v5.jsp" %>
+<script>
+  var data = "<root>";
+
+  function onInitializeOnLoad(){
+	setDataGridDataParent("KQ0010030",data + "</root>");
+  }
+</script>
+</head>
+<body flash="true" onLoad="onInitializeOnLoad()" dynamic="true" onBlur="focus()">
+  <table orftype="DataGrid" mode="DETAIL" indicate="false" name="KQ0010030detail1" width="410" height="200" border="1" cellspacing="0" cellpadding="0">
+    <orloophead>
+	  <tr bgcolor="#ccff99">
+		<td width="130" align="right">&nbsp;</td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="60">&nbsp;</td>
+	  </tr>
+	</orloophead>
+	<ornoloop>
+	<tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACPT_ODR_CD">受注番号</span></td>
+		<td><orflabel name="d_OLD_ODR_NO" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ODR_NO" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ODR_NO_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_TYP">注文区分</span></td>
+		<td><orflabel name="d_OLD_ODR_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ODR_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ODR_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ODR_NO">得意先注文番号</span></td>
+		<td><orflabel name="d_OLD_CUST_ODR_NO" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CUST_ODR_NO" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CUST_ODR_NO_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+		<td><orflabel name="d_OLD_CUST_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CUST_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CUST_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ITEM_CD">得意先品目番号</span></td>
+		<td><orflabel name="d_OLD_CUST_ITEM_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="true" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_CUST_ITEM_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="true" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_CUST_ITEM_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_CD">納品場所コード</span></td>
+		<td><orflabel name="d_OLD_DLV_LOC_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_DLV_LOC_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_DLV_LOC_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_QTY_4">受注数量</span></td>
+		<td><orflabel name="d_OLD_ODR_QTY" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.1;CEIL;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ODR_QTY" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.1;CEIL;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ODR_QTY_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DESINATED_DLV_DATE">指定納期</span></td>
+		<td><orflabel name="d_OLD_DESINATED_DLV_DATE" orteus="true" width="" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_DESINATED_DLV_DATE" orteus="true" width="" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_DESINATED_DLV_DATE_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPCL_PRICE_CO">特値区分</span></td>
+		<td><orflabel name="d_OLD_SPCL_PRICE_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_SPCL_PRICE_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_SPCL_PRICE_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST">単価</span></td>
+		<td><orflabel name="d_OLD_ODR_UNIT_PRICE" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;CEIL;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ODR_UNIT_PRICE" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;CEIL;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ODR_UNIT_PRICE_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	 <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SHIP_REMARK">備考</span></td>
+		<td><orflabel name="d_OLD_REMARKS" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_REMARKS" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_REMARKS_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  </ornoloop>
+	</table>
+<%
+MessageStruct msgStruct = aKQ0010030Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

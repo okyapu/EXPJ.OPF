@@ -1,0 +1,436 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+生産計画メンテナンス（製番）サブ1
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AB0020/AB0020011.html,v $
+$Author: geng-jia $    
+$Revision: 1.13 $ $Date: 2017/02/13 02:31:12 $
+********************************************************* --%>
+<html>
+<head>
+<title>生産計画メンテナンス（製番）サブ1</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AB0020011" version="AB0020011 $Revision: 1.13 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+<% String CallButton = aAB0020010Control.getButton(); %>
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="97"> 
+      <td width="5" height="97"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AB0020011form1" width="934" height="73" border="1" cellspacing="0" cellpadding="0"
+                   script1="onLoad;0;CALL;child@0,7,18,31"
+
+                   script2="child;0;CHK;<%=CallButton%>[eq]append[or]<%=CallButton%>[eq]insertSub1@*1,*4"
+                       script3="child;1;MASK;_AB0020011button1/updateSub1@*2"
+                           script4="child;2;MASK;_AB0020011form2/c_JOB_ODR_DEL_FLG,_AB0020011form2/c_JOB_ODR_EXP_TYP@*3"
+                           script5="child;3;SET;_AB0020011form2/c_JOB_ODR_STS_TYP=true,_AB0020011form1/STS_FLG=true"
+                       script6="child;4;MASK;_AB0020011button1/insertSub1@*5"
+                       script7="child;5;SET;_AB0020011form2/c_AUTO_NUM=true@*6"
+                       script8="child;6;MASK;_AB0020011form2/c_AUTO_NUM"
+
+                   script10="child;7;CHK;<%=CallButton%>[eq]modify[or]<%=CallButton%>[eq]updateSub1@*8"
+                       script11="child;8;CHK;_AB0020011form2/JOB_ODR_STS_TYP[eq]1@*9,*10"
+                           script12="child;9;SET;_AB0020011form2/c_JOB_ODR_STS_TYP=false,_AB0020011form2/c_JOB_ODR_EXP_TYP=false,_AB0020011form2/c_JOB_ODR_DEL_FLG=false"
+                           script13="child;10;CHK;_AB0020011form2/JOB_ODR_STS_TYP[eq]2@*11,*12"
+                               script14="child;11;SET;_AB0020011form2/c_JOB_ODR_STS_TYP=true,_AB0020011form1/STS_FLG=true,_AB0020011form2/c_JOB_ODR_EXP_TYP=false,_AB0020011form2/c_JOB_ODR_DEL_FLG=false"
+                               script15="child;12;SET;_AB0020011form2/c_JOB_ODR_STS_TYP=true,_AB0020011form1/STS_FLG=true@*13"
+                               script16="child;13;CHK;_AB0020011form2/JOB_ODR_EXP_TYP[eq]1@*14,*15"
+                                   script17="child;14;SET;_AB0020011form2/c_JOB_ODR_EXP_TYP=true,_AB0020011form1/EXP_FLG=true,_AB0020011form2/c_JOB_ODR_DEL_FLG=false"
+                                   script18="child;15;CHK;_AB0020011form2/JOB_ODR_DEL_FLG[eq]0@*16,*17"
+                                       script19="child;16;SET;_AB0020011form2/c_JOB_ODR_EXP_TYP=false,_AB0020011form2/c_JOB_ODR_DEL_FLG=false"
+                                       script20="child;17;SET;_AB0020011form2/c_JOB_ODR_EXP_TYP=false,_AB0020011form2/c_JOB_ODR_DEL_FLG=true,_AB0020011form1/DEL_FLG=true"
+
+                   script21="child;18;CHK;<%=CallButton%>[eq]modify[or]<%=CallButton%>[eq]updateSub1@*19"
+                       script22="child;19;CHK;_AB0020011form2/JOB_ODR_STS_TYP[neq]1@*20,*21"
+                           script23="child;20;CHK;_AB0020011form2/JOB_ODR_STS_TYP[eq]2@*21,*22"
+                               script24="child;21;MASK;_AB0020011form2/c_JOB_ODR_EXP_TYP"
+                               script25="child;22;MASK;_AB0020011form2/c_JOB_ODR_STS_TYP,_AB0020011form2/JOB_ODR_TYP,_AB0020011form2/ALC_GRP_CD"
+
+                   script26="onLoad;1;CALL;onDecision@0,1"
+                       script27="onDecision;0;CHKRQ;B@*23,*28"
+                           script28="child;23;CHK;_AB0020011form2/c_AUTO_NUM[neq]true@*24,*25"
+                               script29="child;24;CHKRQ;A@*25,*28"
+                                   script30="child;25;CHK;<%=CallButton%>[eq]append[or]<%=CallButton%>[eq]insertSub1@*26,*27"
+                                       script31="child;26;UNMASK;_AB0020011button1/insertSub1"
+                                       script32="child;27;UNMASK;_AB0020011button1/updateSub1"
+                           script33="child;28;MASK;_AB0020011button1/insertSub1,_AB0020011button1/updateSub1"
+                       script34="onDecision;1;CHK;_AB0020011form2/TIME_CTRL[eq]true@*29,*30"
+                           script35="child;29;UNMASK;_AB0020011form2/JOB_ODR_DLV_DATE_TIME"
+                           script36="child;30;MASK;_AB0020011form2/JOB_ODR_DLV_DATE_TIME"
+					script37="child;31;CHK;<%=CallButton%>[eq]append@*32"
+						script38="child;32;CHK;_AB0020011form2/h_PRD_REQ_JOB_ODR_TYP_2[eq]0@*33"
+						script39="child;33;SET;_AB0020011form2/c_AUTO_NUM=true"
+              >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170" align="left">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_PLANT_CD">工場コード</span></td>
+                  <td><orftextinput  name="PLANT_CD" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td><orftextinput  name="UNIT_QTY_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="PLANT_NAME" orteus="true" width="320" editable="false"></orftextinput></td>
+                  <td><orftextinput  name="DEL_FLG" orteus="true" width="320" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="STS_FLG" orteus="true" width="320" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="EXP_FLG" orteus="true" width="320" visible="false"></orftextinput></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                  <td><orftextinput  name="ITEM_CD" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="ITEM_NAME" orteus="true" width="320" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0420">生産計画期間</span></td>
+                  <td><orftextinput  name="w_DATE_FROM" orteus="true" width="150" editable="false" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td align="center">&nbsp;～</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="w_DATE_TO" orteus="true" width="150" editable="false" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" height="12" class="frame18"></td>
+            <td colspan="3" height="12" class="frame19"></td>
+            <td width="12" height="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="97"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="436"> 
+      <td width="5" height="436"></td>
+      <td valign="top" width="958" height="436"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AB0020011form2" width="934" height="392" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead>
+                <ornoloop>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CD">製番</span></td>
+                  <td><orftextinput  name="JOB_ODR_CD" tablename="T_JOB_ODR" columnname="JOB_ODR_CD" maxlength="25" orteus="true"
+                        width="260"
+                        required="A"></orftextinput>
+                  </td>
+                  <td><orftextinput  name="h_AUTO_NUM" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_AUTO_NUM" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.Cmt0209"
+                        script1="onLoad;0;CALL;onClick@0"
+                        script2="onClick;0;CHK;_AB0020011form2/c_AUTO_NUM[eq]true@*1,*2"
+                        script3="child;1;MASK;_AB0020011form2/JOB_ODR_CD"
+                        script4="child;2;UNMASK;_AB0020011form2/JOB_ODR_CD"
+                       ></orfcheckbox>
+                  </td>
+                  <td><orftextinput name="h_PRD_REQ_JOB_ODR_TYP_2" tablename="SYS_PARAMETER" columnname="VALUE" dbtype="varchar2" tablejname="パラメータ" columnjname="設定値"  orteus="true" width="" editable="true" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_TYP">製番種別</span></td>
+                  <td><orfcombobox  name="JOB_ODR_TYP" orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_JOB_ODR_CD" orteus="true"  editable="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PLAN_TYP">計画タイプ</span></td>
+                  <td><orfcombobox  name="PLAN_TYP" orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_DLV_DATE">製番納期</span></td>
+                  <td><orftextinput  name="JOB_ODR_DLV_DATE" tablename="T_JOB_ODR" columnname="JOB_ODR_DLV_DATE" orteus="true"
+                        width="150"
+                        kind="OBT_DATE;TYPE_YMD"
+                        required="B"></orftextinput>
+                  </td>
+                  <td><orfcalendar  name="CalendarJOB_ODR_DLV_DATE" value="" pattern="none" orteus="false"
+                        width=22
+                        attribute="BTS_CALENDAR"
+                        script1="onClick;0;CALENDAR;_AB0020011form2/JOB_ODR_DLV_DATE"></orfcalendar>
+                  </td>
+                  <td><orftextinput name="JOB_ODR_DLV_DATE_TIME" orteus="true" width="88" editable="true" visible="true" password="false" text="" kind="OBT_N;" maxlength="4" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_QTY_1">手配数</span></td>
+                  <td><orftextinput  name="JOB_ODR_QTY" tablename="T_JOB_ODR" columnname="JOB_ODR_QTY" attribute="TIS_RIGHT" orteus="true" required="Z"
+                        width="150"
+                        kind="<%= Kind.convertNumeric(aAB0020010Struct.getUNIT_QTY_TYP().toString(), Kind.Z, 14, 1, Kind.FLOOR, 4) %>"
+                       ></orftextinput>
+                  </td>
+                  <td><orftextinput  name="STOCK_UNIT" tablename="M_ITEM" columnname="STOCK_UNIT" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ALC_GRP_CD">引当グループコード</span></td>
+                  <td><orftextinput  name="ALC_GRP_CD" tablename="T_JOB_ODR" columnname="ALC_GRP_CD" maxlength="25" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_JOB_ODR_DEL_FLG" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.Cmt0207"
+                        script1="onClick;0;CHK;<%=CallButton%>[eq]modify[or]<%=CallButton%>[eq]updateSub1@*0"
+                        script2="child;0;CHK;_AB0020011form2/c_JOB_ODR_DEL_FLG[eq]true@*1,*2"
+                                script3="child;1;MASK;_AB0020011form2/c_JOB_ODR_STS_TYP,_AB0020011form2/c_JOB_ODR_EXP_TYP"
+                                script4="child;2;CHK;_AB0020011form2/JOB_ODR_STS_TYP[neq]1@*3,*4"
+                                script5="child;3;CHK;_AB0020011form2/JOB_ODR_STS_TYP[eq]2@*4,*5"
+                                script6="child;4;UNMASK;_AB0020011form2/c_JOB_ODR_STS_TYP"
+                                script7="child;5;UNMASK;_AB0020011form2/c_JOB_ODR_EXP_TYP"></orfcheckbox></td>
+                  <td><orftextinput  name="JOB_ODR_DEL_FLG" orteus="true" visible="false"></orftextinput>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="MODIFY_COUNT" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_JOB_ODR_STS_TYP" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.Cmt0215"
+                        script1="onClick;0;CHK;<%=CallButton%>[eq]modify[or]<%=CallButton%>[eq]updateSub1@*0"
+                        script2="child;0;CHK;_AB0020011form2/c_JOB_ODR_STS_TYP[eq]true@*1,*2"
+                                script3="child;1;MASK;_AB0020011form2/c_JOB_ODR_DEL_FLG"
+                                script4="child;2;UNMASK;_AB0020011form2/c_JOB_ODR_DEL_FLG"></orfcheckbox>
+                  </td>
+                  <td><orftextinput  name="JOB_ODR_STS_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="UPDATE_FLG" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_JOB_ODR_EXP_TYP" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.Cmt0204"
+                        script1="onClick;0;CHK;<%=CallButton%>[eq]modify[or]<%=CallButton%>[eq]updateSub1@*0"
+                        script2="child;0;CHK;_AB0020011form2/c_JOB_ODR_EXP_TYP[eq]true@*1,*2"
+                                script10="child;1;MASK;_AB0020011form2/c_JOB_ODR_DEL_FLG"
+                                script20="child;2;CHK;_AB0020011form2/JOB_ODR_STS_TYP[eq]2@*3,*4"
+                                script21="child;3;MASK;_AB0020011form2/c_JOB_ODR_DEL_FLG"
+                                script22="child;4;CHK;<%=aAB0020010Control.getJobOdrStsTyp()%>[eq]4@*5,*7"
+                                script23="child;5;CHK;<%=aAB0020010Control.getSysJobOdrDelFlg()%>[eq]1@*6,*7"
+                                script24="child;6;MASK;_AB0020011form2/c_JOB_ODR_DEL_FLG"
+                                script25="child;7;UNMASK;_AB0020011form2/c_JOB_ODR_DEL_FLG"></orfcheckbox>
+                  </td>
+                  <td><orftextinput  name="JOB_ODR_EXP_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="TIME_CTRL" orteus="true" width="100" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="664" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="210" class="frame10" height="32"><table orftype="DataGrid" mode="BUTTON" name="AB0020011button1" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton  name="insertSub1" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert"
+                      width="100"
+				script1="onClick;0;CHK;_AB0020011form2/TIME_CTRL[eq]true@*0"
+					script2="child;0;CHK;~LEN(_AB0020011form2/JOB_ODR_DLV_DATE_TIME)[eq]1[or]~LEN(_AB0020011form2/JOB_ODR_DLV_DATE_TIME)[eq]2@#AS00017"
+				script3="onClick;1;CHK;_AB0020011form2/TIME_CTRL[eq]true[and]~LEN(_AB0020011form2/JOB_ODR_DLV_DATE_TIME)[eq]3@*1"
+					script4="child;1;CHK;[{~CHARAT(_AB0020011form2/JOB_ODR_DLV_DATE_TIME:1)}*10+{~CHARAT(_AB0020011form2/JOB_ODR_DLV_DATE_TIME:2)}][gte]60@#AS00018"
+				script5="onClick;2;CHK;_AB0020011form2/TIME_CTRL[eq]true[and]~LEN(_AB0020011form2/JOB_ODR_DLV_DATE_TIME)[eq]4@*2"
+					script6="child;2;CHK;[{~CHARAT(_AB0020011form2/JOB_ODR_DLV_DATE_TIME:0)}*10+{~CHARAT(_AB0020011form2/JOB_ODR_DLV_DATE_TIME:1)}][gte]24[or][{~CHARAT(_AB0020011form2/JOB_ODR_DLV_DATE_TIME:2)}*10+{~CHARAT(_AB0020011form2/JOB_ODR_DLV_DATE_TIME:3)}][gte]60@#AS00018"
+				script7="onClick;3;CHK;_AB0020011form2/TIME_CTRL[eq]true[and]_AB0020011form2/JOB_ODR_DLV_DATE_TIME[eq]@*11"
+					script8="child;11;SET;_AB0020011form2/JOB_ODR_DLV_DATE_TIME=2359"
+				script9="onClick;4;CHK;_AB0020011form2/JOB_ODR_DLV_DATE[gt]_AB0020011form1/w_DATE_TO[or]_AB0020011form2/JOB_ODR_DLV_DATE[lt]_AB0020011form1/w_DATE_FROM@#AB00020"
+				script10="onClick;5;CHK;_AB0020011form2/JOB_ODR_QTY[lte]0@#AB00037"
+				script11="onClick;6;CHK;_AB0020011form2/c_AUTO_NUM[eq]true@*3,*4"
+				script12="child;3;SET;_AB0020011form2/h_AUTO_NUM=1@*5"
+					script13="child;4;SET;_AB0020011form2/h_AUTO_NUM=0@*5"
+					script14="child;5;CHK;_AB0020011form2/c_JOB_ODR_STS_TYP[eq]true@*6,*7"
+					script15="child;6;SET;_AB0020011form2/JOB_ODR_STS_TYP=2@*8"
+					script16="child;7;SET;_AB0020011form2/JOB_ODR_STS_TYP=1@*8"
+					script17="child;8;SET;_AB0020011form2/JOB_ODR_EXP_TYP=1@*9"
+					script18="child;9;SET;_AB0020011form2/JOB_ODR_DEL_FLG=1@*10"
+					script19="child;10;SCRCHG;_AB0020011form1/*,_AB0020011form2/*@AB0020010Servlet,,$ZZ07001" lock="1"></orfbutton>
+                </td>
+                <td><orfbutton  name="updateSub1" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate"
+                      width="100"
+script1="onClick;0;CHK;_AB0020011form2/TIME_CTRL[eq]true@*0"
+	script2="child;0;CHK;~LEN(_AB0020011form2/JOB_ODR_DLV_DATE_TIME)[eq]1[or]~LEN(_AB0020011form2/JOB_ODR_DLV_DATE_TIME)[eq]2@#AS00017"
+script3="onClick;1;CHK;_AB0020011form2/TIME_CTRL[eq]true[and]~LEN(_AB0020011form2/JOB_ODR_DLV_DATE_TIME)[eq]3@*1"
+	script4="child;1;CHK;[{~CHARAT(_AB0020011form2/JOB_ODR_DLV_DATE_TIME:1)}*10+{~CHARAT(_AB0020011form2/JOB_ODR_DLV_DATE_TIME:2)}][gte]60@#AS00018"
+script5="onClick;2;CHK;_AB0020011form2/TIME_CTRL[eq]true[and]~LEN(_AB0020011form2/JOB_ODR_DLV_DATE_TIME)[eq]4@*2"
+	script6="child;2;CHK;[{~CHARAT(_AB0020011form2/JOB_ODR_DLV_DATE_TIME:0)}*10+{~CHARAT(_AB0020011form2/JOB_ODR_DLV_DATE_TIME:1)}][gte]24[or][{~CHARAT(_AB0020011form2/JOB_ODR_DLV_DATE_TIME:2)}*10+{~CHARAT(_AB0020011form2/JOB_ODR_DLV_DATE_TIME:3)}][gte]60@#AS00018"
+script7="onClick;3;CHK;_AB0020011form2/TIME_CTRL[eq]true[and]_AB0020011form2/JOB_ODR_DLV_DATE_TIME[eq]@*3"
+	script8="child;3;SET;_AB0020011form2/JOB_ODR_DLV_DATE_TIME=2359"
+script9="onClick;4;CHK;_AB0020011form2/JOB_ODR_DLV_DATE[gt]_AB0020011form1/w_DATE_TO[or]_AB0020011form2/JOB_ODR_DLV_DATE[lt]_AB0020011form1/w_DATE_FROM@#AB00020"
+script10="onClick;5;CHK;_AB0020011form2/JOB_ODR_QTY[lte]0@!AB00037"
+script11="onClick;6;CHK;_AB0020011form2/c_JOB_ODR_DEL_FLG[neq]true[and]_AB0020011form2/JOB_ODR_TYP[neq]1[and]_AB0020011form2/h_JOB_ODR_CD[neq]@!AB00052,*4"
+	script12="child;4;CHK;_AB0020011form2/c_JOB_ODR_DEL_FLG[neq]true[and]_AB0020011form2/PLAN_TYP[neq]1[and]_AB0020011form2/h_JOB_ODR_CD[neq]@!AB00052"
+script13="onClick;7;CHK;_AB0020011form2/JOB_ODR_STS_TYP[eq]1[or]_AB0020011form2/JOB_ODR_STS_TYP[eq]2@*5,*12"
+	script14="child;5;CHK;_AB0020011form2/c_JOB_ODR_DEL_FLG[eq]true@*6,*7"
+	script15="child;6;SET;_AB0020011form2/JOB_ODR_DEL_FLG=1@*23"
+	script16="child;7;SET;_AB0020011form2/JOB_ODR_EXP_TYP=1@*8"
+	script17="child;8;SET;_AB0020011form2/JOB_ODR_DEL_FLG=0@*9"
+	script18="child;9;CHK;_AB0020011form2/c_JOB_ODR_STS_TYP[eq]true@*10,*11"
+	script19="child;10;SET;_AB0020011form2/JOB_ODR_STS_TYP=2@*23"
+	script20="child;11;SET;_AB0020011form2/JOB_ODR_STS_TYP=1@*23"
+	script21="child;12;CHK;_AB0020011form2/c_JOB_ODR_EXP_TYP[eq]true@*13,*15"
+	script22="child;13;SET;_AB0020011form2/JOB_ODR_EXP_TYP=1@*14"
+	script23="child;14;SET;_AB0020011form2/JOB_ODR_DEL_FLG=1@*23"
+	script24="child;15;CHK;_AB0020011form2/c_JOB_ODR_DEL_FLG[eq]true@*16,*18"
+	script25="child;16;SET;_AB0020011form2/JOB_ODR_EXP_TYP=2@*17"
+	script26="child;17;SET;_AB0020011form2/JOB_ODR_DEL_FLG=1@*23"
+	script27="child;18;SET;_AB0020011form2/JOB_ODR_EXP_TYP=2@*19"
+	script28="child;19;SET;_AB0020011form2/JOB_ODR_DEL_FLG=0@*23"
+	script29="child;20;CHK;_AB0020011form2/JOB_ODR_DEL_FLG[eq]1[and]_AB0020011form2/h_JOB_ODR_CD[neq]@*21,*22"
+	script30="child;21;CFMPUT;_AB0020011button1/updateSub1=YES:22@AB00051"
+	script31="child;22;SCRCHG;_AB0020011form1/*,_AB0020011form2/*@AB0020010Servlet,,$ZZ07003"
+	script32="child;23;CHK;?AB0020011form2/JOB_ODR_TYP[eq]SAME[and]?AB0020011form2/PLAN_TYP[eq]SAME[and]?AB0020011form2/JOB_ODR_DLV_DATE[eq]SAME[and]?AB0020011form2/JOB_ODR_QTY[eq]SAME[and]?AB0020011form2/ALC_GRP_CD[eq]SAME[and]_AB0020011form2/c_JOB_ODR_DEL_FLG[eq]_AB0020011form1/DEL_FLG[and]_AB0020011form2/c_JOB_ODR_STS_TYP[eq]_AB0020011form1/STS_FLG[and]_AB0020011form2/c_JOB_ODR_EXP_TYP[eq]_AB0020011form1/EXP_FLG@*24,*25"
+	script33="child;24;SET;_AB0020011form2/UPDATE_FLG=1@*20"
+	script34="child;25;SET;_AB0020011form2/UPDATE_FLG=0@*20"
+	lock="1"
+	></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table> 
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="436"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="863"></td>
+            <td align="right" width="105"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AB0020011button0" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="cancelSub1" value="戻る" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReturn"
+                        width="100" 
+                        script1="onClick;0;SCRCHG;@AB0020010Servlet,,$ZZ07013" lock="0"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAB0020010Control.getMessage();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

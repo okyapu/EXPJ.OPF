@@ -1,0 +1,298 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+製品構成メンテナンス
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AA0020/AA0020010.html,v $
+$Author: geng-jia $     
+$Revision: 1.8 $ $Date: 2017/02/13 02:12:22 $
+********************************************************* --%>
+<html>
+<head>
+<title>製品構成メンテナンス</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AA0020010" version="AA0020010 $Revision: 1.8 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="94"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AA0020010form1" width="934" height="50" border="1" cellspacing="0" cellpadding="0"
+                 status="<%= TypeConverter.sanitizer(aAA0020010Control.getReadStatusString()) %>"
+
+                 script1="onLoad;0;CALL;child@0"
+
+                    script2="child;0;CHK;?AA0020010form1/*[neq]NORMAL@*1,*2"
+                      script3="child;1;MASK;_AA0020010button2/insert,_AA0020010button2/update,_AA0020010button2/delete,_AA0020010button2/deleteAll@*2"
+                      script4="child;2;MASK;_AA0020010button2/update,_AA0020010button2/delete"
+
+                 script5="onLoad;1;CALL;onDecision@0,1"
+
+                    script6="onDecision;0;CHKRQ;A@*3,*4"
+                      script7="child;3;UNMASK;_AA0020010button1/select"
+                      script8="child;4;MASK;_AA0020010button1/select"
+
+                    script9="onDecision;1;CHKRQ;?AA0020010view1/?[eq]SINGLE@*5,*9"
+                      script10="child;5;CHK;?AA0020010form1/*[eq]NORMAL@*6"
+                        script11="child;6;CHK;?AA0020010form1/w_TARGET_ITEM_CD[eq]SAME[and]?AA0020010form1/w_LEVEL[eq]SAME[and]?AA0020010form1/w_TARGET_DATE[eq]SAME[and]?AA0020010form1/s_DEVELOP_TYP[eq]SAME@*7,*8"
+                          script12="child;7;UNMASK;_AA0020010button2/insert,_AA0020010button2/update,_AA0020010button2/delete,_AA0020010button2/deleteAll"
+                          script13="child;8;MASK;_AA0020010button2/insert,_AA0020010button2/update,_AA0020010button2/delete,_AA0020010button2/deleteAll"
+                      script14="child;9;MASK;_AA0020010button2/insert,_AA0020010button2/update,_AA0020010button2/delete,_AA0020010button2/deleteAll"
+             >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD_6">対象品目番号</span></td>
+                  <td><orftextinput  name="w_TARGET_ITEM_CD" maxlength="25" orteus="true" width="260" required="A"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerTargetItemCd" value="" pattern="none" orteus="false"
+                        width="22" 
+                        attribute="BTS_PEEKER"
+                        script1="onClick;0;PEEKER;_AA0020010form1/w_TARGET_ITEM_CD@<%=contextNo%>"
+                        sqlname="ITEM_CD_01"
+                        sqlparam_1="_AA0020010form1/w_TARGET_ITEM_CD"></orfpeeker></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0017">展開区分</span></td>
+                  <td><orfcombobox  name="s_DEVELOP_TYP" orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_IN_DATE_3">対象日付</span></td>
+                  <td><orftextinput  name="w_TARGET_DATE" orteus="true"
+                         width="150"
+                         kind="OBT_DATE;TYPE_YMD"
+                     ></orftextinput></td>
+                  <td><orfcalendar  name="CalendarTargetDate" orteus="false"
+                         width="22"
+                         attribute="BTS_CALENDAR"
+                         script1="onClick;0;CALENDAR;_AA0020010form1/w_TARGET_DATE"
+                     ></orfcalendar></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0018">初期展開レベル</span></td>
+                  <td><orftextinput  name="w_LEVEL" attribute="TIS_RIGHT" orteus="true"
+                         width="150"
+                         kind="OBT_INTEGER_Z;3"
+                     ></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07"></td>
+            <td width="769" class="frame08"> </td>
+            <td width="60" class="frame09"></td>
+            <td width="105" class="frame10">
+              <table orftype="DataGrid" mode="BUTTON" name="AA0020010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AA0020010form1/*@AA0020010Servlet"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="439"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="VIEW" attribute="DGS_SELECTSINGLE|DGS_SORTOFF" name="AA0020010view1" width="934" height="395" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td hidden="true">&nbsp;</td>
+                  <td width="100" align="right"><orfdata excell="true"></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0019">相対レベル</span></td>
+                  <td width="200"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                  <td width="200"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME">品目名</span></td>
+                  <td width="200"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.COMP_ITEM_CD_1">構成品目番号</span></td>
+                  <td width="200"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME_1">構成品目名</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_EDITION">製品構成版数</span></td>
+                  <td width="100" align="right"><orfdata excell="true"></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_UNIT_NUMERATOR_2">（分子）構成単位数</span></td>
+                  <td width="100" align="right"><orfdata excell="true"></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_UNIT_DENOMINATOR_2">（分母）構成単位数</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_UNIT">計量単位</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_IN_DATE_1">構成有効開始日</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_OUT_DATE_1">構成有効終了日</span></td>
+                  <td width="100" align="right"><orfdata excell="true"></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_SPOIL">構成仕損率</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CONS_TYP">支給区分</span></td>
+                  <td hidden="true">支給区分TYP</td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_LT_FLG">製品構成リードタイム使用フラグ</span></td>
+                  <td hidden="true">構成LT使用FLG</td>
+                  <td width="100" align="right"><orfdata excell="true"></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_FIXED_LT">製品構成固定分リードタイム</span></td>
+                  <td width="100" align="right"><orfdata excell="true"></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_PROP_LT">製品構成比例分リードタイム</span></td>
+                  <td width="100" align="right"><orfdata excell="true"></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_PROP_LOT_SIZE">製品構成比例分ロットサイズ</span></td>
+                  <td width="100" align="right"><orfdata excell="true"></orfdata><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_REF_NO_1">照会順序</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.COST_UP_TYP_2">原価積上有無</span></td>
+                  <td hidden="true">原価積上有無FLG</td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MRP_EXP_TYP_2">MRP展開有無</span></td>
+                  <td hidden="true">MRP展開有無FLG</td>
+                  <td width="200"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MANHOUR_TYP_1">構成品目工数管理区分</span></td>
+                  <td hidden="true">構成品目工数管理区分TYP</td>
+                </tr>
+                </orloophead>
+                <orloop>
+                <tr>
+                  <td><orflabel  name="MODIFY_COUNT" orteus="true" visible="false"></orflabel></td>
+                  <td><orflabel  name="NO" orteus="true"></orflabel></td>
+                  <td><orflabel  name="PARENT_ITEM_CD" tablename="M_PS" columnname="PARENT_ITEM_CD" orteus="true"></orflabel></td>
+                  <td><orflabel  name="PARENT_ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" orteus="true"></orflabel></td>
+                  <td><orflabel  name="COMP_ITEM_CD" tablename="M_PS" columnname="COMP_ITEM_CD" orteus="true"></orflabel></td>
+                  <td><orflabel  name="COMP_ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" orteus="true"></orflabel></td>
+                  <td><orflabel  name="PS_EDITION" tablename="M_PS" columnname="PS_EDITION" orteus="true"></orflabel></td>
+                  <td><orflabel  name="PS_UNIT_NUMERATOR" kind="OBT_NUMBER_Z;14.1;FLOOR;4" tablename="M_PS" columnname="PS_UNIT_NUMERATOR" orteus="true"></orflabel></td>
+                  <td><orflabel  name="PS_UNIT_DENOMINATOR" kind="OBT_NUMBER_Z;14.1;FLOOR;4" tablename="M_PS" columnname="PS_UNIT_DENOMINATOR" orteus="true"></orflabel></td>
+                  <td><orflabel  name="STOCK_UNIT" tablename="M_ITEM" columnname="STOCK_UNIT" orteus="true"></orflabel></td>
+                  <td><orflabel  name="EFF_PHASE_IN_DATE" kind="OBT_DATE;TYPE_YMD" tablename="M_PS" columnname="EFF_PHASE_IN_DATE" orteus="true"></orflabel></td>
+                  <td><orflabel  name="EFF_PHASE_OUT_DATE" kind="OBT_DATE;TYPE_YMD" tablename="M_PS" columnname="EFF_PHASE_OUT_DATE" orteus="true"></orflabel></td>
+                  <td><orflabel  name="PS_SPOIL" kind="OBT_NUMBER_Z;14.1;FLOOR;4" tablename="M_PS" columnname="PS_SPOIL" orteus="true"></orflabel></td>
+                  <td><orflabel  name="s_CONS_NAME" orteus="true"></orflabel></td>
+                  <td><orflabel  name="s_CONS_TYP" orteus="true"></orflabel></td>
+                  <td><orflabel  name="PS_LT_NAME" orteus="true"></orflabel></td>
+                  <td><orflabel  name="PS_LT_FLG" orteus="true"></orflabel></td>
+                  <td><orflabel  name="PS_FIXED_LT" kind="OBT_INTEGER;6" tablename="M_PS" columnname="PS_FIXED_LT" orteus="true"></orflabel></td>
+                  <td><orflabel  name="PS_PROP_LT" kind="OBT_INTEGER;6" tablename="M_PS" columnname="PS_PROP_LT" orteus="true"></orflabel></td>
+                  <td><orflabel  name="PS_PROP_LOT_SIZE" kind="OBT_NUMBER_Z;14.1;FLOOR;4" tablename="M_PS" columnname="PS_PROP_LOT_SIZE" orteus="true"></orflabel></td>
+                  <td><orflabel  name="PS_REF_NO" kind="OBT_INTEGER;6" tablename="M_PS" columnname="PS_REF_NO" orteus="true"></orflabel></td>
+                  <td><orflabel  name="COST_UP_NAME" orteus="true"></orflabel></td>
+                  <td><orflabel  name="s_COST_UP_TYP" orteus="true"></orflabel></td>
+                  <td><orflabel  name="MRP_EXP_NAME" orteus="true"></orflabel></td>
+                  <td><orflabel  name="s_MRP_EXP_TYP" orteus="true"></orflabel></td>
+                  <td><orflabel  name="COMP_MANHOUR_NAME" orteus="true"></orflabel></td>
+                  <td><orflabel  name="COMP_MANHOUR_TYP" orteus="true"></orflabel></td>
+                </tr>
+                </orloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame15"></td>
+            <td width="420" class="frame10">
+              <table orftype="DataGrid" mode="BUTTON" name="AA0020010button2" width="420" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="insert" value="行追加" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnLineInsert" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;CHK;_AA0020010form1/s_DEVELOP_TYP[eq]1[and]_AA0020010view1/COMP_MANHOUR_TYP[eq]1@!AA00178"
+ script2="onClick;1;SCRCHG;_AA0020010form1/*,_AA0020010view1/+@AA0020010Servlet"
+></orfbutton></td>
+                <td><orfbutton name="update" value="行修正" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnLineUpdate" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;CHK;_AA0020010view1/NO[eq]1@!AA00139"
+ script2="onClick;1;SCRCHG;_AA0020010form1/*,_AA0020010view1/+@AA0020010Servlet"
+></orfbutton></td>
+                <td><orfbutton name="delete" value="行削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnLineDelete" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_AA0020010view1/NO[eq]1@!AA00139"
+ script2="onClick;1;SUBMIT;_AA0020010form1/*,_AA0020010view1/+@AA0020010Servlet,,$ZZ07004"
+></orfbutton></td>
+                <td><orfbutton name="deleteAll" value="一括削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDeleteAll_1" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_AA0020010view1/NO[eq]1@!AA00139"
+ script2="onClick;1;SUBMIT;_AA0020010form1/*,_AA0020010view1/+@AA0020010Servlet,,$ZZ07004"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table>
+
+            </td>
+            <td width="60" class="frame16"></td>
+            <td width="454" class="frame08"></td>
+            <td width="12" class="frame17"></td>
+          </tr>
+
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AA0020010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear"
+                        width="100"
+                        script1="onClick;0;SUBMIT;@AA0020010Servlet,,$ZZ07008"
+                        lock="0"></orfbutton></td>
+                  <td><orfbutton  name="Close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose"
+                        width="100"
+                        script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAA0020010Control.getMessage();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

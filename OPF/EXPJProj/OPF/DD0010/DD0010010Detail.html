@@ -1,0 +1,255 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+詳細
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/DD0010/DD0010010Detail.html,v $
+$Author: kong-haijing $
+$Revision: 1.2 $ $Date: 2007/10/17 03:44:31 $
+********************************************************* --%>
+<html>
+<head>
+<title>詳細</title>
+<%@include file="common/expj_v5.jsp" %>
+<script>
+  var data = "<root>";
+  
+  function onInitializeOnLoad(){
+    setDataGridDataParent("DD0010010",data + "</root>");
+  }
+</script>
+</head>
+<body flash="true" onLoad="onInitializeOnLoad()" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" dynamic="true">
+<table orftype="DataGrid" mode="DETAIL" indicate="false" name="DD0010010detail1" width="358" height="323" border="1" cellspacing="0" cellpadding="0">
+  <orloophead>
+    <tr bgcolor="#ccff99">
+      <td width="100" align="right"></td>
+      <td width="200" align="left"></td>
+      <td width="30" align="left"></td>
+    </tr>
+  </orloophead>
+  <ornoloop>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+      <td>
+        <orflabel name="d_ITEM_CD" tablename="T_ITEM_COST" columnname="ITEM_CD" dbtype="varchar2" tablejname="品目別原価" columnjname="品目番号" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME">品目名</span></td>
+      <td>
+        <orflabel name="d_ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2" tablejname="品目" columnjname="品目名" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_UNIT_QTY">製品構成単位数</span></td>
+      <td align="right">
+        <orflabel name="d_PS_UNIT_QTY" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.NECESSARY_QTY">必要所要量</span></td>
+      <td align="right">
+        <orflabel name="d_NECESSARY_QTY" tablename="T_ITEM_COST" columnname="NECESSARY_QTY" dbtype="number" tablejname="品目別原価" columnjname="必要所要量" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.1;FLOOR;4" maxlength="">
+        </orflabel>
+      </td>
+      <td>
+        <orflabel name="d_STOCK_UNIT" tablename="T_ITEM_COST" columnname="STOCK_UNIT" dbtype="varchar2" tablejname="品目別原価" columnjname="計量単位" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PS_INPUT_RATIO">構成仕損増分係数</span></td>
+      <td align="right">
+        <orflabel name="d_PS_INPUT_RATIO" tablename="T_ITEM_COST" columnname="PS_INPUT_RATIO" dbtype="number" tablejname="品目別原価" columnjname="構成仕損増分係数" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.1;FLOOR;4" maxlength="">
+        </orflabel>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_INPUT_RATIO">品目仕損増分係数</span></td>
+      <td align="right">
+        <orflabel name="d_ITEM_INPUT_RATIO" tablename="T_ITEM_COST" columnname="ITEM_INPUT_RATIO" dbtype="number" tablejname="品目別原価" columnjname="品目仕損増分係数" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.1;FLOOR;4" maxlength="">
+        </orflabel>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TOTAL_COST">標準原価計</span></td>
+      <td align="right">
+        <orflabel name="d_TOTAL_COST" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="">
+        </orflabel>
+      </td>
+      <td>
+        <orflabel name="d_HOME_CUR_UNIT" tablename="M_CUR" columnname="CUR_UNIT" dbtype="varchar2" tablejname="通貨" columnjname="通貨単位" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_MATR_COST">単品材料費</span></td>
+      <td align="right">
+        <orflabel name="d_OWN_MATR_COST" tablename="T_ITEM_COST" columnname="OWN_MATR_COST" dbtype="number" tablejname="品目別原価" columnjname="単品材料費" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="">
+        </orflabel>
+      </td>
+      <td>
+        <orflabel  name="d1_HOME_CUR_UNIT" orteus="false" text="<%= TypeConverter.sanitizer(aDD0010010Struct.getd_HOME_CUR_UNIT()) %>">
+        </orflabel>
+      </td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TOTAL_MATR_COST">積上材料費</span></td>
+      <td align="right">
+        <orflabel name="d_TOTAL_MATR_COST" tablename="T_ITEM_COST" columnname="TOTAL_MATR_COST" dbtype="number" tablejname="品目別原価" columnjname="積上材料費" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="">
+        </orflabel>
+      </td>
+      <td>
+        <orflabel  name="d2_HOME_CUR_UNIT" orteus="false" text="<%= TypeConverter.sanitizer(aDD0010010Struct.getd_HOME_CUR_UNIT()) %>">
+        </orflabel>
+      </td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_SBCNT_MATR_COST">単品材料費（外注）</span></td>
+      <td align="right">
+        <orflabel name="d_OWN_SBCNT_MATR_COST" tablename="T_ITEM_COST" columnname="OWN_SBCNT_MATR_COST" dbtype="number" tablejname="品目別原価" columnjname="単品材料費（外注）" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="">
+        </orflabel>
+      </td>
+      <td>
+        <orflabel  name="d3_HOME_CUR_UNIT" orteus="false" text="<%= TypeConverter.sanitizer(aDD0010010Struct.getd_HOME_CUR_UNIT()) %>">
+        </orflabel>
+      </td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TOTAL_SBCNT_MATR_COST">積上材料費（外注）</span></td>
+      <td align="right">
+        <orflabel name="d_TOTAL_SBCNT_MATR_COST" tablename="T_ITEM_COST" columnname="TOTAL_SBCNT_MATR_COST" dbtype="number" tablejname="品目別原価" columnjname="積上材料費（外注）" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="">
+        </orflabel>
+      </td>
+      <td>
+        <orflabel  name="d4_HOME_CUR_UNIT" orteus="false" text="<%= TypeConverter.sanitizer(aDD0010010Struct.getd_HOME_CUR_UNIT()) %>">
+        </orflabel>
+      </td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_PROC_COST_SUM_ALL">自工程加工費合計</span></td>
+      <td align="right">
+        <orflabel name="d_OWN_PROC_COST_SUM_ALL" tablename="T_ITEM_COST" columnname="OWN_PROC_COST_SUM_ALL" dbtype="number" tablejname="品目別原価" columnjname="自工程加工費合計" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="">
+        </orflabel>
+      </td>
+      <td>
+        <orflabel  name="d5_HOME_CUR_UNIT" orteus="false" text="<%= TypeConverter.sanitizer(aDD0010010Struct.getd_HOME_CUR_UNIT()) %>">
+        </orflabel>
+      </td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TOTAL_PROC_COST_SUM_ALL">積上加工費合計</span></td>
+      <td align="right">
+        <orflabel name="d_TOTAL_PROC_COST_SUM_ALL" tablename="T_ITEM_COST" columnname="TOTAL_PROC_COST_SUM_ALL" dbtype="number" tablejname="品目別原価" columnjname="積上加工費合計" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="">
+        </orflabel>
+      </td>
+      <td>
+        <orflabel  name="d6_HOME_CUR_UNIT" orteus="false" text="<%= TypeConverter.sanitizer(aDD0010010Struct.getd_HOME_CUR_UNIT()) %>">
+        </orflabel>
+      </td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MRP_ODR_TYP">品目手配区分</span></td>
+      <td>
+        <orflabel name="d_MRP_ODR_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OUTSIDE_TYP_4">品目内外作区分</span></td>
+      <td>
+        <orflabel name="d_OUTSIDE_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OUTSIDE_TYP_6">工程内外作区分</span></td>
+      <td>
+        <orflabel name="d_PROC_OUTSIDE_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CLASIFICATION_CD_1">品目管理コード</span></td>
+      <td>
+        <orflabel name="d_CLASIFICATION_CD" tablename="T_ITEM_COST" columnname="CLASIFICATION_CD" dbtype="varchar2" tablejname="品目別原価" columnjname="品目管理コード" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CS_PROC_CD">工程コード</span></td>
+      <td>
+        <orflabel name="d_CS_PROC_CD" tablename="T_ITEM_COST" columnname="CS_PROC_CD" dbtype="varchar2" tablejname="品目別原価" columnjname="工程コード" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CS_PROC_NAME">工程名</span></td>
+      <td>
+        <orflabel name="d_CS_PROC_NAME" tablename="M_CS_PROC" columnname="CS_PROC_NAME" dbtype="varchar2" tablejname="工程マスタ" columnjname="工程名" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.COST_UP_TYP">原価積上区分</span></td>
+      <td>
+        <orflabel name="d_COST_UP_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VOLUNT_SPL_FLG">無償受給品フラグ</span></td>
+      <td>
+        <orflabel name="d_VOLUNT_SPL_FLG_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ONEROUS_CONS_FLG">有償支給品フラグ</span></td>
+      <td>
+        <orflabel name="d_ONEROUS_CONS_FLG_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PARENT_ITEM_CD">親品目番号</span></td>
+      <td>
+        <orflabel name="d_PARENT_ITEM_CD" tablename="T_ITEM_COST" columnname="PARENT_ITEM_CD" dbtype="varchar2" tablejname="品目別原価" columnjname="親品目番号" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PARENT_ITEM_NAME">親品目名</span></td>
+      <td>
+        <orflabel name="d_PARENT_ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2" tablejname="品目" columnjname="品目名" orteus="true" width="" height="" text="" kind="" maxlength="">
+        </orflabel>
+      </td>
+      <td></td>
+    </tr>
+  </ornoloop>
+</table>
+<%
+  MessageStruct msgStruct = aDD0010010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

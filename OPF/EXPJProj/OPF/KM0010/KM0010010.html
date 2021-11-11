@@ -1,0 +1,879 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+案件登録
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/KM0010/KM0010010.html,v $
+$Author: geng-jia $  
+$Revision: 1.2 $ $Date: 2017/02/13 06:39:50 $
+********************************************************* --%>
+<html>
+<head>
+<title>案件登録</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="KM0010010" version="KM0010010 $Revision: 1.2 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5">
+      <td colspan="3"></td>
+    </tr>
+    <tr height="71">
+      <td width="5"></td>
+      <td valign="top" width="958">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <table orftype="DataGrid" mode="FORM" name="KM0010010form1" width="934" height="27" border="1" cellspacing="0" cellpadding="0"
+               status="<%= TypeConverter.sanitizer(aKM0010010Control.getReadStatusString()) %>"
+			              script1="onLoad;0;CALL;child@17"
+			   
+                          script2="onLoad;1;CALL;onDecision@0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17"
+						  
+						  script3="onDecision;0;CHKRQ;A@*0,*1"
+						  script4="child;0;CHK;_PROJECT_CD_FLG[neq]true@*2"
+                          script5="child;1;MASK;_KM0010010button1/select"
+						  script6="child;2;UNMASK;_KM0010010button1/select"
+						  
+						  script7="onDecision;1;CHK;_KM0010010form1/PROJECT_CD_FLG[eq]true@*3,*4"
+						  script8="child;3;CHKRQ;B@*8,*9"
+						  script9="child;4;CHKRQ;A,B@*8,*9"
+						  
+						  script10="onDecision;2;CHK;?KM0010010form1/*[eq]NORMAL@*5,*6"
+						  script11="child;5;MASK;_KM0010010button2/insert@*7"
+						  script12="child;6;MASK;_KM0010010button2/update,_KM0010010button2/delete"
+						  script13="child;7;UNMASK;_KM0010010button2/update,_KM0010010button2/delete"
+						  script14="child;8;UNMASK;_KM0010010button2/insert@*22"
+						  script15="child;9;MASK;_KM0010010button2/insert"
+						  
+						  script16="onDecision;3;CHK;?KM0010010form1/*[eq]NORMAL[and]_KM0010010form2/h_PROJECT_STAT[eq]1@*10,*11"
+						  script17="child;10;UNMASK;_KM0010010button2/delete,_KM0010010form2/CUST_CD,_KM0010010form2/PROJECT_STAT"
+						  script18="child;11;MASK;_KM0010010button2/delete"
+						  
+						  script21="onDecision;5;CHK;?KM0010010form1/*[eq]NORMAL[and]_KM0010010form2/PROJECT_STAT[eq]2@*13"
+						  script22="onDecision;6;CHK;?KM0010010form1/*[eq]NORMAL[and]_KM0010010form2/PROJECT_STAT[eq]3@*13"
+						  script23="onDecision;7;CHK;?KM0010010form1/*[eq]NORMAL[and]_KM0010010form2/PROJECT_STAT[eq]4@*13"
+						  script24="onDecision;8;CHK;?KM0010010form1/*[eq]NORMAL[and]_KM0010010form2/PROJECT_STAT[eq]8@*13"
+						  script25="onDecision;9;CHK;?KM0010010form1/*[eq]NORMAL[and]_KM0010010form2/PROJECT_STAT[eq]9@*13"
+						  
+						  script26="onDecision;10;CHK;?KM0010010form1/*[eq]NORMAL[and]_KM0010010form2/PROJECT_STAT[eq]2@*15"
+						  script27="onDecision;11;CHK;?KM0010010form1/*[eq]NORMAL[and]_KM0010010form2/PROJECT_STAT[eq]3@*15"
+						  script28="onDecision;12;CHK;?KM0010010form1/*[eq]NORMAL[and]_KM0010010form2/PROJECT_STAT[eq]4@*15"
+						  script29="onDecision;13;CHK;?KM0010010form1/*[eq]NORMAL[and]_KM0010010form2/PROJECT_STAT[eq]8@*15"
+						  script30="onDecision;14;CHK;?KM0010010form1/*[eq]NORMAL[and]_KM0010010form2/PROJECT_STAT[eq]9@*15"
+					
+						  script31="child;13;MASK;_KM0010010form2/CUST_CD,_KM0010010form2/PeekerICustCd"
+						  script32="child;14;UNMASK;_KM0010010form2/CUST_CD"
+						  script33="child;15;UNMASK;_KM0010010form2/PROJECT_STAT"
+						  script34="child;16;MASK;_KM0010010form2/PROJECT_STAT"
+						  
+						  script35="child;17;MASK;_KM0010010button1/select,_KM0010010button2/insert,_KM0010010button2/update,_KM0010010button2/delete"
+						  script36="onDecision;15;CHK;_KM0010010form2/h_OD_COMP_FLG[eq]1@*18,*19"
+						  script37="child;18;SET;_OD_COMP_FLG=false"
+						  script38="child;19;SET;_OD_COMP_FLG=true"
+						  script39="onDecision;16;CHK;_KM0010010form1/PROJECT_CD[neq]_KM0010010form1/h_PROJECT_CD[and]?KM0010010form1/*[eq]NORMAL@*20"
+						  script40="onDecision;17;CHK;_PROJECT_CD_FLG[eq]true[and]?KM0010010form1/*[eq]NORMAL@*20"
+						  
+						  script41="child;20;MASK;_KM0010010button2/update,_KM0010010button2/delete@*21"
+						  script42="child;21;UNMASK;_KM0010010button2/insert,_KM0010010form2/CUST_CD,_KM0010010form2/PeekerICustCd"
+						  
+              >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CD">案件番号</span></td>
+                  <td><orftextinput  name="PROJECT_CD" tablename="T_PROJECT" columnname="PROJECT_CD" dbtype="varchar2" tablejname="案件" columnjname="案件番号"   orteus="true" width="260" required="A" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_PROJECT_CD" orteus="true" visible="false"></orftextinput></td>
+                  <td><orfpeeker  name="PeekerIProjectCd" value="" pattern="none" orteus="false" width="22" height="22" attribute="BTS_PEEKER" script1="onClick;0;PEEKER;_KM0010010form1/PROJECT_CD@<%=contextNo%>" sqlname="PROJECT_CD_01" sqlparam_1="_KM0010010form1/PROJECT_CD"></orfpeeker></td>
+                  <td><orftextinput  name="h_MODIFY_COUNT" orteus="true" visible="false"></orftextinput></td>
+                  <td><orfcheckbox name="PROJECT_CD_FLG" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt6692" width="190" height="" text="案件番号を自動採番する" editable="true" visible="false"
+				  		script1="onLoad;0;CALL;onClick@0"
+						script2="onClick;0;CHK;_PROJECT_CD_FLG[eq]true@*0,*1"
+						script3="child;0;MASK;_PROJECT_CD,_PeekerIProjectCd,_KM0010010button1/select@*5"
+						script4="child;1;UNMASK;_PROJECT_CD,_PeekerIProjectCd@*2"
+						script5="child;2;CHK;PROJECT_CD[neq]@*3"
+						script6="child;3;UNMASK;_KM0010010button1/select"
+						script8="onClick;1;CHK;_PROJECT_CD_FLG[eq]false@*5"
+						script9="child;5;SET;_PROJECT_CD=,_h_PROJECT_CD="
+						
+></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32">
+            <td width="12" class="frame07"></td>
+            <td width="769" class="frame08"> </td>
+            <td width="60" class="frame09"></td>
+            <td width="105" class="frame10">
+              <table orftype="DataGrid" mode="BUTTON" name="KM0010010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton name="select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_KM0010010form1/*@KM0010010Servlet"
+></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame11"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3"></td>
+    </tr>
+    <tr height="462">
+      <td width="5"></td>
+      <td valign="top" width="958" tabs="2">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <table tab_id="tab_0" tab_name="** 1 **"orftype="DataGrid" mode="FORM" name="KM0010010form2" width="934" height="398" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td  align="right" required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_NAME">案件名</span></td>
+                  <td><orftextinput  name="PROJECT_NAME" tablename="T_PROJECT" columnname="PROJECT_NAME" dbtype="varchar2" tablejname="案件" columnjname="案件名"   orteus="true" maxlength="80" width="602" required="B"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align=right required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+                  <td><orftextinput  name="CUST_CD" tablename="M_CUST" columnname="CUST_CD" dbtype="varchar2" tablejname="得意先" columnjname="得意先コード"   orteus="true" maxlength="40" width="260" required="B"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerICustCd" value="" pattern="none" orteus="false" width="22" height="22" attribute="BTS_PEEKER" script1="onClick;0;PEEKER;_KM0010010form2/CUST_CD@<%=contextNo%>" sqlname="CUST_CD_01" sqlparam_1="_KM0010010form2/CUST_CD"></orfpeeker></td>
+                  <td><orftextinput  name="CUST_NAME" tablename="M_CUST" columnname="CUST_NAME" dbtype="varchar2" tablejname="得意先" columnjname="得意先名" orteus="true" editable="false" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_STAT">案件ステータス</span></td>
+                  <td><orfcombobox  name="PROJECT_STAT" tablename="T_PROJECT" columnname="PROJECT_STAT" dbtype="number" editable="true" tablejname="案件" columnjname="案件ステータス"   orteus="true" width="260"
+></orfcombobox></td>
+                  <td><orftextinput  name="h_PROJECT_STAT" orteus="true" visible="false" ></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align=right><span orteus="true" mlang="true" mlkind="common" mlname="Expj.COMPLETE_STAT">受注完了</span></td>
+                  <td><orftextinput  name="COMPLETE_STAT" orteus="true" editable="false" width="150"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACCURACY">確度</span></td>
+                  <td><orfcombobox  name="ACCURACY_LEVEL" tablename="T_PROJECT" columnname="ACCURACY" dbtype="number" tablejname="案件" editable="true" columnjname="案件確度"   orteus="true" width="260"></orfcombobox></td>
+                  <td><orftextinput  name="h_ESTIMATE" orteus="true" visible="false" ></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_COMPLETE_STAT" orteus="true" visible="false" ></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right" required=true ><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_DATE">引合日</span></td>
+                  <td><orftextinput  name="Vend_Date" tablename="T_PROJECT" columnname="VEND_DATE" dbtype="date" tablejname="案件" columnjname="引合日"   orteus="true" maxlength="40" width="150" required="B" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarVend_Date" value="" pattern="none" orteus="false" width="22" attribute="BTS_CALENDAR"
+                     script1="onClick;0;CALENDAR;_KM0010010form2/Vend_Date"
+                  ></orfcalendar></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="right" required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ASSUME_DLV_DATE">想定納期</span></td>
+                  <td><orftextinput  name="AssumeDlv_date" tablename="T_PROJECT" columnname="ASSUME_DLV_DATE" dbtype="date" tablejname="案件" columnjname="想定納期"   orteus="true" maxlength="40" width="150" required="B" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarAssumeDlv_date" value="" pattern="none" orteus="false" width="22" attribute="BTS_CALENDAR"
+                     script1="onClick;0;CALENDAR;_KM0010010form2/AssumeDlv_date"
+                  ></orfcalendar></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ASSUME_AMOUNT">引合想定金額</span></td>
+                  <td><orftextinput  name="AssumeAmount" tablename="T_PROJECT" columnname="ASSUME_AMOUNT" dbtype="varchar2" tablejname="案件" columnjname="引合想定金額"   orteus="true" maxlength="16" width="150"  kind="OBT_NUMBER_Z;14.2;FLOOR;4" ></orftextinput></td>
+                  <td><orftextinput  name="CurUnit" orteus="true" editable="false" width="110"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ASSUME_AMOUNT_EXCH_RATES">引合想定金額(邦貨)</span></td>
+                  <td><orftextinput  name="ASSUME_AMOUNT_EXCH_RATES" orteus="true" editable="false" width="150"  kind="OBT_NUMBER_Z;14.2;FLOOR;4"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td height="23" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_CD">納品場所コード</span></td>
+                  <td><orftextinput  name="DLV_LOC_CD" tablename="M_CUST_BASE" columnname="DLV_LOC_CD" dbtype="varchar2" tablejname="顧客納品場所" columnjname="納品場所コード"   orteus="true" width="260"  maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td height="23"><orfpeeker  name="PeekerIDlvLocCd" value="" pattern="none" orteus="false" width="22" height="22" attribute="BTS_PEEKER" script1="onClick;0;PEEKER;_KM0010010form2/DLV_LOC_CD@<%=contextNo%>" sqlname="DLV_LOC_CD_01" sqlparam_1="_KM0010010form2/CUST_CD" sqlparam_2="" sqlparam_3="_KM0010010form2/DLV_LOC_CD"></orfpeeker></td>
+                  <td  height="23"><orftextinput  name="DLV_LOC_NAME" tablename="M_CUST_BASE" columnname="DLV_LOC_NAME" dbtype="varchar2" tablejname="顧客納品場所" columnjname="納品場所名" orteus="true" editable="false" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td height="23" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PJ_USER_CD">案件担当者コード</span></td>
+                  <td height="23"><orftextinput  name="PJ_USER_CD" tablename="T_PROJECT" columnname="PJ_USER_CD" dbtype="varchar2" tablejname="案件" columnjname="案件担当者コード"   orteus="true" width="260"  maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td height="23"><orfpeeker  name="PeekerIOwnPerCd" value="" pattern="none" orteus="false" width="22" height="22" attribute="BTS_PEEKER" script1="onClick;0;PEEKER;_KM0010010form2/PJ_USER_CD@<%=contextNo%>" sqlname="USER_CD_01" sqlparam_1="_KM0010010form2/PJ_USER_CD"></orfpeeker></td>
+                  <td height ="23"><orftextinput  name="USER_NAME" tablename="USER_MST" columnname="USER_NAME" dbtype="varchar2" tablejname="ユーザマスタ" columnjname="ユーザ名" orteus="true" editable="false" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td height="23" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PJ_ORG_CD">案件担当部門コード</span></td>
+                  <td height="23"><orftextinput  name="PJ_ORG_CD" tablename="T_PROJECT" columnname="PJ_ORG_CD" dbtype="varchar2" tablejname="案件" columnjname="案件担当部門コード"   orteus="true" width="260"  maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td height = "23"><orfpeeker  name="PeekerIOwnOrgCd" value="" pattern="none" orteus="false" width="22" height="22" attribute="BTS_PEEKER" script1="onClick;0;PEEKER;_KM0010010form2/PJ_ORG_CD@<%=contextNo%>" sqlname="ORG_CD_01" sqlparam_1="_KM0010010form2/PJ_ORG_CD"></orfpeeker></td>
+                  <td height="23"><orftextinput  name="ORG_NAME" tablename="M_ORG" columnname="ORG_NAME" dbtype="varchar2" tablejname="部門" columnjname="部門名" orteus="true" editable="false" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td height="23" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARK1">備考１</span></td>
+                  <td><orftextinput name="REMARKS1" tablename="T_PROJECT" columnname="REMARKS1" dbtype="varchar2" tablejname="案件" columnjname="備考1"  orteus="true" width="712" editable="true" visible="true" password="false" text="" kind="" maxlength="80" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td height="23" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARK2">備考２</span></td>
+                  <td><orftextinput name="REMARKS2" tablename="T_PROJECT" columnname="REMARK2" dbtype="varchar2" tablejname="案件" columnjname="備考2"  orteus="true" width="712" editable="true" visible="true" password="false" text="" kind="" maxlength="80" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>			
+                <tr>
+				  <td height="23" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARK3">備考３</span></td>
+                  <td><orftextinput name="REMARKS3" tablename="T_PROJECT" columnname="REMARKS3" dbtype="varchar2" tablejname="案件" columnjname="備考3"  orteus="true" width="712" editable="true" visible="true" password="false" text="" kind="" maxlength="80" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+
+                </tr>
+				<tr>
+				  <td height="23" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARK4">備考４</span></td>
+                  <td><orftextinput name="REMARKS4" tablename="T_PROJECT" columnname="REMARKS4" dbtype="varchar2" tablejname="案件" columnjname="備考4"  orteus="true" width="712" editable="true" visible="true" password="false" text="" kind="" maxlength="80" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+				  <td height="23" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARK5">備考５</span></td>
+                  <td><orftextinput name="REMARKS5" tablename="T_PROJECT" columnname="REMARKS5" dbtype="varchar2" tablejname="案件" columnjname="備考5"  orteus="true" width="712" editable="true" visible="true" password="false" text="" kind="" maxlength="80" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+				  <td height="23" >&nbsp;</td>
+                  <td height="23"><orfcheckbox name="OD_COMP_FLG" orteus="true" value="true" mlang="true" mlkind="common" mlname="Expj.Cmt6691" width="190" height="" text="予算積上完了フラグ" editable="true" visible="false"
+				  script1="onClick;0;CHK;_OD_COMP_FLG[eq]true@*0,*1"
+				  script2="child;0;SET;_KM0010010form2/h_OD_COMP_FLG=1"
+				   script3="child;0;SET;_KM0010010form2/h_OD_COMP_FLG=0"
+></orfcheckbox></td>
+                  <td><orftextinput  name="h_OD_COMP_FLG" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>									
+                </ornoloop>
+              </table>
+                <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+		</table>
+		        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"><!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+              <table tab_id="tab_1" tab_name="** 2 **"  orftype="DataGrid" mode="FORM"  float="" name="KM0010010form3" width="934" height="398" border="1" cellspacing="0" cellpadding="0"
+               script1="onLoad;0;CALL;onDecision@0,1,2,3,4,5,6,7,8,9,10,11,"
+               script2="onDecision;0;CHK;_KM0010010form3/PJ_CLASS_01_TYP[eq]@*1,*0"
+               script3="onDecision;1;CHK;_KM0010010form3/PJ_CLASS_02_TYP[eq]@*3,*2"
+               script4="onDecision;2;CHK;_KM0010010form3/PJ_CLASS_03_TYP[eq]@*5,*4"
+               script5="onDecision;3;CHK;_KM0010010form3/PJ_CLASS_04_TYP[eq]@*7,*6"
+               script6="onDecision;4;CHK;_KM0010010form3/PJ_CLASS_05_TYP[eq]@*9,*8"
+               script7="onDecision;5;CHK;_KM0010010form3/PJ_CLASS_06_TYP[eq]@*11,*10"
+               script8="onDecision;6;CHK;_KM0010010form3/PJ_CLASS_07_TYP[eq]@*13,*12"
+               script9="onDecision;7;CHK;_KM0010010form3/PJ_CLASS_08_TYP[eq]@*15,*14"
+               script10="onDecision;8;CHK;_KM0010010form3/PJ_CLASS_09_TYP[eq]@*17,*16"
+               script11="onDecision;9;CHK;_KM0010010form3/PJ_CLASS_10_TYP[eq]@*19,*18"
+               script12="onDecision;10;CHK;_KM0010010form3/PJ_CLASS_11_TYP[eq]@*21,*20"
+               script13="onDecision;11;CHK;_KM0010010form3/PJ_CLASS_12_TYP[eq]@*23,*22"
+               script14="child;0;UNMASK;_KM0010010form3/PJ_CLASS_01_CD,_KM0010010form3/PeekerODR_CLASS_01_CD"
+               script15="child;1;MASK;_KM0010010form3/PJ_CLASS_01_CD,_KM0010010form3/PeekerODR_CLASS_01_CD"
+               script16="child;2;UNMASK;_KM0010010form3/PJ_CLASS_02_CD,_KM0010010form3/PeekerODR_CLASS_02_CD"
+               script17="child;3;MASK;_KM0010010form3/PJ_CLASS_02_CD,_KM0010010form3/PeekerODR_CLASS_02_CD"
+               script18="child;4;UNMASK;_KM0010010form3/PJ_CLASS_03_CD,_KM0010010form3/PeekerODR_CLASS_03_CD"
+               script19="child;5;MASK;_KM0010010form3/PJ_CLASS_03_CD,_KM0010010form3/PeekerODR_CLASS_03_CD"
+               script20="child;6;UNMASK;_KM0010010form3/PJ_CLASS_04_CD,_KM0010010form3/PeekerODR_CLASS_04_CD"
+               script21="child;7;MASK;_KM0010010form3/PJ_CLASS_04_CD,_KM0010010form3/PeekerODR_CLASS_04_CD"
+               script22="child;8;UNMASK;_KM0010010form3/PJ_CLASS_05_CD,_KM0010010form3/PeekerODR_CLASS_05_CD"
+               script23="child;9;MASK;_KM0010010form3/PJ_CLASS_05_CD,_KM0010010form3/PeekerODR_CLASS_05_CD"
+               script24="child;10;UNMASK;_KM0010010form3/PJ_CLASS_06_CD,_KM0010010form3/PeekerODR_CLASS_06_CD"
+               script25="child;11;MASK;_KM0010010form3/PJ_CLASS_06_CD,_KM0010010form3/PeekerODR_CLASS_06_CD"
+               script26="child;12;UNMASK;_KM0010010form3/PJ_CLASS_07_CD,_KM0010010form3/PeekerODR_CLASS_07_CD"
+               script27="child;13;MASK;_KM0010010form3/PJ_CLASS_07_CD,_KM0010010form3/PeekerODR_CLASS_07_CD"
+               script28="child;14;UNMASK;_KM0010010form3/PJ_CLASS_08_CD,_KM0010010form3/PeekerODR_CLASS_08_CD"
+               script29="child;15;MASK;_KM0010010form3/PJ_CLASS_08_CD,_KM0010010form3/PeekerODR_CLASS_08_CD"
+               script30="child;16;UNMASK;_KM0010010form3/PJ_CLASS_09_CD,_KM0010010form3/PeekerODR_CLASS_09_CD"
+               script31="child;17;MASK;_KM0010010form3/PJ_CLASS_09_CD,_KM0010010form3/PeekerODR_CLASS_09_CD"
+               script32="child;18;UNMASK;_KM0010010form3/PJ_CLASS_10_CD,_KM0010010form3/PeekerODR_CLASS_10_CD"
+               script33="child;19;MASK;_KM0010010form3/PJ_CLASS_10_CD,_KM0010010form3/PeekerODR_CLASS_10_CD"
+               script34="child;20;UNMASK;_KM0010010form3/PJ_CLASS_11_CD,_KM0010010form3/PeekerODR_CLASS_11_CD"
+               script35="child;21;MASK;_KM0010010form3/PJ_CLASS_11_CD,_KM0010010form3/PeekerODR_CLASS_11_CD"
+               script36="child;22;UNMASK;_KM0010010form3/PJ_CLASS_12_CD,_KM0010010form3/PeekerODR_CLASS_12_CD"
+               script37="child;23;MASK;_KM0010010form3/PJ_CLASS_12_CD,_KM0010010form3/PeekerODR_CLASS_12_CD" 
+			  >
+                <orloophead>
+                <tr bgcolor="#ccff99"></tr>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CLASS01">案件分類01</span></td>
+                  <td><orftextinput name="PJ_CLASS_01_TYP" orteus="true" width="260" editable="false"  text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="PJ_CLASS_01_CD" tablename="T_PROJECT" columnname="PJ_CLASS_01_CD" dbtype="varchar2" tablejname="案件" columnjname="作業区分類０１コード"  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerODR_CLASS_01_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="PJ_CLASS_01" sqlparam_1="_KM0010010form3/PJ_CLASS_01_CD" sqlparam_2="01"
+ script1="onClick;0;PEEKER;_KM0010010form3/PJ_CLASS_01_CD:_KM0010010form3/PJ_CLASS_01_NAME@<%=contextNo%>"></orfpeeker></td>
+                  <td><orftextinput name="PJ_CLASS_01_NAME" tablename="T_PROJECT" columnname="PJ_CLASS_01_NAME" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CLASS02">案件分類02</span></td>
+                  <td><orftextinput name="PJ_CLASS_02_TYP" tablename="T_PROJECT" columnname="PJ_CLASS_02_TYP" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260"   editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="PJ_CLASS_02_CD" tablename="T_PROJECT" columnname="PJ_CLASS_02_CD" dbtype="varchar2" tablejname="案件" columnjname="作業区分類０２コード"  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerODR_CLASS_02_CD" value="" pattern="none" revokectrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="PJ_CLASS_01" sqlparam_1="_KM0010010form3/PJ_CLASS_02_CD" sqlparam_2="02"
+ script1="onClick;0;PEEKER;_KM0010010form3/PJ_CLASS_02_CD:_KM0010010form3/PJ_CLASS_02_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="PJ_CLASS_02_NAME" tablename="T_PROJECT" columnname="PJ_CLASS_02_NAME" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260"  editable="false"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CLASS03">案件分類03</span></td>
+                  <td><orftextinput name="PJ_CLASS_03_TYP" tablename="T_PROJECT" columnname="PJ_CLASS_03_TYP" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="PJ_CLASS_03_CD" tablename="T_PROJECT" columnname="PJ_CLASS_03_CD" dbtype="varchar2" tablejname="案件" columnjname="作業区分類０３コード"  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerODR_CLASS_03_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="PJ_CLASS_01" sqlparam_1="_KM0010010form3/PJ_CLASS_03_CD" sqlparam_2="03"
+ script1="onClick;0;PEEKER;_KM0010010form3/PJ_CLASS_03_CD:_KM0010010form3/PJ_CLASS_03_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="PJ_CLASS_03_NAME" tablename="T_PROJECT" columnname="PJ_CLASS_03_NAME" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CLASS04">案件分類04</span></td>
+                  <td><orftextinput name="PJ_CLASS_04_TYP" tablename="T_PROJECT" columnname="ITEM_CLASS_04_TYP" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="PJ_CLASS_04_CD" tablename="T_PROJECT" columnname="PJ_CLASS_04_CD" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerODR_CLASS_04_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="PJ_CLASS_01" sqlparam_1="_KM0010010form3/PJ_CLASS_04_CD" sqlparam_2="04"
+ script1="onClick;0;PEEKER;_KM0010010form3/PJ_CLASS_04_CD:_KM0010010form3/PJ_CLASS_04_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="PJ_CLASS_04_NAME" tablename="T_PROJECT" columnname="PJ_CLASS_04_NAME" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CLASS05">案件分類05</span></td>
+                  <td><orftextinput name="PJ_CLASS_05_TYP" tablename="T_PROJECT" columnname="PJ_CLASS_05_TYP" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="PJ_CLASS_05_CD" tablename="T_PROJECT" columnname="PJ_CLASS_05_CD" dbtype="varchar2" tablejname="案件" columnjname="作業区分類０５コード"  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerODR_CLASS_05_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="PJ_CLASS_01" sqlparam_1="_KM0010010form3/PJ_CLASS_05_CD" sqlparam_2="05"
+ script1="onClick;0;PEEKER;_KM0010010form3/PJ_CLASS_05_CD:_KM0010010form3/PJ_CLASS_05_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="PJ_CLASS_05_NAME" tablename="T_PROJECT" columnname="PJ_CLASS_05_NAME" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CLASS06">案件分類06</span></td>
+                  <td><orftextinput name="PJ_CLASS_06_TYP" tablename="T_PROJECT" columnname="PJ_CLASS_06_TYP" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="PJ_CLASS_06_CD" tablename="T_PROJECT" columnname="PJ_CLASS_06_CD" dbtype="varchar2" tablejname="案件" columnjname="作業区分類０６コード"  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerODR_CLASS_06_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="PJ_CLASS_01" sqlparam_1="_KM0010010form3/PJ_CLASS_06_CD" sqlparam_2="06"
+ script1="onClick;0;PEEKER;_KM0010010form3/PJ_CLASS_06_CD:_KM0010010form3/PJ_CLASS_06_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="PJ_CLASS_06_NAME" tablename="T_PROJECT" columnname="PJ_CLASS_06_NAME" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CLASS07">案件分類07</span></td>
+                  <td><orftextinput name="PJ_CLASS_07_TYP" tablename="T_PROJECT" columnname="PJ_CLASS_07_TYP" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="PJ_CLASS_07_CD" tablename="T_PROJECT" columnname="PJ_CLASS_07_CD" dbtype="varchar2" tablejname="案件" columnjname="作業区分類０７コード"  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerODR_CLASS_07_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="PJ_CLASS_01" sqlparam_1="_KM0010010form3/PJ_CLASS_07_CD" sqlparam_2="07"
+ script1="onClick;0;PEEKER;_KM0010010form3/PJ_CLASS_07_CD:_KM0010010form3/PJ_CLASS_07_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="PJ_CLASS_07_NAME" tablename="T_PROJECT" columnname="PJ_CLASS_07_NAME" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CLASS08">案件分類08</span></td>
+                  <td><orftextinput name="PJ_CLASS_08_TYP" tablename="T_PROJECT" columnname="PJ_CLASS_08_TYP" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="PJ_CLASS_08_CD" tablename="T_PROJECT" columnname="PJ_CLASS_08_CD" dbtype="varchar2" tablejname="案件" columnjname="作業区分類０８コード"  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerODR_CLASS_08_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="PJ_CLASS_01" sqlparam_1="_KM0010010form3/PJ_CLASS_08_CD" sqlparam_2="08"
+ script1="onClick;0;PEEKER;_KM0010010form3/PJ_CLASS_08_CD:_KM0010010form3/PJ_CLASS_08_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="PJ_CLASS_08_NAME" tablename="T_PROJECT" columnname="PJ_CLASS_08_NAME" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CLASS09">案件分類09</span></td>
+                  <td><orftextinput name="PJ_CLASS_09_TYP" tablename="T_PROJECT" columnname="PJ_CLASS_09_TYP" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="PJ_CLASS_09_CD" tablename="T_PROJECT" columnname="PJ_CLASS_09_CD" dbtype="varchar2" tablejname="案件" columnjname="作業区分類０９コード"  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerODR_CLASS_09_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="PJ_CLASS_01" sqlparam_1="_KM0010010form3/PJ_CLASS_09_CD" sqlparam_2="09"
+ script1="onClick;0;PEEKER;_KM0010010form3/PJ_CLASS_09_CD:_KM0010010form3/PJ_CLASS_09_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="PJ_CLASS_09_NAME" tablename="T_PROJECT" columnname="PJ_CLASS_09_NAME" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CLASS10">案件分類10</span></td>
+                  <td><orftextinput name="PJ_CLASS_10_TYP" tablename="T_PROJECT" columnname="PJ_CLASS_10_TYP" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="PJ_CLASS_10_CD" tablename="T_PROJECT" columnname="PJ_CLASS_10_CD" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerODR_CLASS_10_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="PJ_CLASS_01" sqlparam_1="_KM0010010form3/PJ_CLASS_10_CD" sqlparam_2="10"
+ script1="onClick;0;PEEKER;_KM0010010form3/PJ_CLASS_10_CD:_KM0010010form3/PJ_CLASS_10_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="PJ_CLASS_10_NAME" tablename="T_PROJECT" columnname="PJ_CLASS_10_NAME" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CLASS11">案件分類11</span></td>
+                  <td><orftextinput name="PJ_CLASS_11_TYP" tablename="T_PROJECT" columnname="PJ_CLASS_11_TYP" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="PJ_CLASS_11_CD" tablename="T_PROJECT" columnname="PJ_CLASS_11_CD" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerODR_CLASS_11_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="PJ_CLASS_01" sqlparam_1="_KM0010010form3/PJ_CLASS_11_CD" sqlparam_2="11"
+ script1="onClick;0;PEEKER;_KM0010010form3/PJ_CLASS_11_CD:_KM0010010form3/PJ_CLASS_11_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="PJ_CLASS_11_NAME" tablename="T_PROJECT" columnname="PJ_CLASS_11_NAME" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>																																		
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CLASS12">案件分類12</span></td>
+                  <td><orftextinput name="PJ_CLASS_12_TYP" tablename="T_PROJECT" columnname="PJ_CLASS_12_TYP" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>	
+             <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="PJ_CLASS_12_CD" tablename="T_PROJECT" columnname="PJ_CLASS_12_CD" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260"   text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerODR_CLASS_12_CD" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="PJ_CLASS_01" sqlparam_1="_KM0010010form3/PJ_CLASS_12_CD" sqlparam_2="12"
+ script1="onClick;0;PEEKER;_KM0010010form3/PJ_CLASS_12_CD:_KM0010010form3/ITEM_CLASS_12_NAME@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="PJ_CLASS_12_NAME" tablename="T_PROJECT" columnname="PJ_CLASS_12_NAME" dbtype="varchar2" tablejname="案件" columnjname=""  orteus="true" width="260" editable="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>					
+                </ornoloop>
+               </table>
+                <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+		</table>
+		<table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="32">
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"><table orftype="DataGrid" mode="BUTTON" status="" float=""
+ name="KM0010010button2" ex_style="TAB_BUTTON" width="315" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="" lock="1" attribute="" visible=""
+					 script1="onClick;0;CHK;_KM0010010form2/AssumeDlv_date[lt]_KM0010010form2/Vend_Date@!KM00051"
+					 script2="onClick;1;CHK;_KM0010010form3/PJ_CLASS_01_TYP[neq][and]_KM0010010form3/PJ_CLASS_01_CD[eq]@$KM00002:01"
+					 script3="onClick;2;CHK;_KM0010010form3/PJ_CLASS_02_TYP[neq][and]_KM0010010form3/PJ_CLASS_02_CD[eq]@$KM00002:02"
+					 script4="onClick;3;CHK;_KM0010010form3/PJ_CLASS_03_TYP[neq][and]_KM0010010form3/PJ_CLASS_03_CD[eq]@$KM00002:03"
+					 script5="onClick;4;CHK;_KM0010010form3/PJ_CLASS_04_TYP[neq][and]_KM0010010form3/PJ_CLASS_04_CD[eq]@$KM00002:04"
+					 script6="onClick;5;CHK;_KM0010010form3/PJ_CLASS_05_TYP[neq][and]_KM0010010form3/PJ_CLASS_05_CD[eq]@$KM00002:05"
+					 script7="onClick;6;CHK;_KM0010010form3/PJ_CLASS_06_TYP[neq][and]_KM0010010form3/PJ_CLASS_06_CD[eq]@$KM00002:06"
+					 script8="onClick;7;CHK;_KM0010010form3/PJ_CLASS_07_TYP[neq][and]_KM0010010form3/PJ_CLASS_07_CD[eq]@$KM00002:07"
+					 script9="onClick;8;CHK;_KM0010010form3/PJ_CLASS_08_TYP[neq][and]_KM0010010form3/PJ_CLASS_08_CD[eq]@$KM00002:08"
+					 script10="onClick;9;CHK;_KM0010010form3/PJ_CLASS_09_TYP[neq][and]_KM0010010form3/PJ_CLASS_09_CD[eq]@$KM00002:09"
+					 script11="onClick;10;CHK;_KM0010010form3/PJ_CLASS_10_TYP[neq][and]_KM0010010form3/PJ_CLASS_10_CD[eq]@$KM00002:10"
+					 script12="onClick;11;CHK;_KM0010010form3/PJ_CLASS_11_TYP[neq][and]_KM0010010form3/PJ_CLASS_11_CD[eq]@$KM00002:11"
+					 script13="onClick;12;CHK;_KM0010010form3/PJ_CLASS_12_TYP[neq][and]_KM0010010form3/PJ_CLASS_12_CD[eq]@$KM00002:12"
+					 script14="onClick;13;SUBMIT;_KM0010010form1/*,_KM0010010form2/*,_KM0010010form3/*@KM0010010Servlet,,$ZZ07001"
+></orfbutton>
+                  </td>
+
+                  <td>
+                    <orfbutton name="update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="" lock="1" attribute="" visible=""
+					 script1="onClick;0;CHK;_KM0010010form2/h_PROJECT_STAT[eq]1@*0"
+					 script2="onClick;1;CHK;_KM0010010form2/h_PROJECT_STAT[eq]2@*1"
+					 script3="onClick;2;CHK;_KM0010010form2/h_PROJECT_STAT[eq]3@*2"
+					 script4="onClick;3;CHK;_KM0010010form2/h_PROJECT_STAT[eq]4@*9"
+					 script5="onClick;4;CHK;_KM0010010form2/h_PROJECT_STAT[eq]8@*3"
+					 script6="onClick;5;CHK;_KM0010010form2/h_PROJECT_STAT[eq]9@*4"
+					 script7="onClick;6;CHK;_KM0010010form2/h_PROJECT_STAT[eq]8@*5"
+					 script8="onClick;7;CHK;_KM0010010form2/h_PROJECT_STAT[eq]8@*6"
+					 script9="onClick;8;CHK;_KM0010010form2/h_PROJECT_STAT[eq]4@*7"
+					 script10="onClick;9;CHK;_KM0010010form2/h_COMPLETE_STAT[eq]0@*8"
+
+					 script11="onClick;10;CHK;_KM0010010form2/AssumeDlv_date[lt]_KM0010010form2/Vend_Date@!KM00051"
+					 
+					 script12="onClick;11;CHK;_KM0010010form3/PJ_CLASS_01_TYP[neq][and]_KM0010010form3/PJ_CLASS_01_CD[eq]@$KM00002:01"
+					 script13="onClick;12;CHK;_KM0010010form3/PJ_CLASS_02_TYP[neq][and]_KM0010010form3/PJ_CLASS_02_CD[eq]@$KM00002:02"
+					 script14="onClick;13;CHK;_KM0010010form3/PJ_CLASS_03_TYP[neq][and]_KM0010010form3/PJ_CLASS_03_CD[eq]@$KM00002:03"
+					 script15="onClick;14;CHK;_KM0010010form3/PJ_CLASS_04_TYP[neq][and]_KM0010010form3/PJ_CLASS_04_CD[eq]@$KM00002:04"
+					 script16="onClick;15;CHK;_KM0010010form3/PJ_CLASS_05_TYP[neq][and]_KM0010010form3/PJ_CLASS_05_CD[eq]@$KM00002:05"
+					 script17="onClick;16;CHK;_KM0010010form3/PJ_CLASS_06_TYP[neq][and]_KM0010010form3/PJ_CLASS_06_CD[eq]@$KM00002:06"
+					 script18="onClick;17;CHK;_KM0010010form3/PJ_CLASS_07_TYP[neq][and]_KM0010010form3/PJ_CLASS_07_CD[eq]@$KM00002:07"
+					 script19="onClick;18;CHK;_KM0010010form3/PJ_CLASS_08_TYP[neq][and]_KM0010010form3/PJ_CLASS_08_CD[eq]@$KM00002:08"
+					 script20="onClick;19;CHK;_KM0010010form3/PJ_CLASS_09_TYP[neq][and]_KM0010010form3/PJ_CLASS_09_CD[eq]@$KM00002:09"
+					 script21="onClick;20;CHK;_KM0010010form3/PJ_CLASS_10_TYP[neq][and]_KM0010010form3/PJ_CLASS_10_CD[eq]@$KM00002:10"
+					 script22="onClick;21;CHK;_KM0010010form3/PJ_CLASS_11_TYP[neq][and]_KM0010010form3/PJ_CLASS_11_CD[eq]@$KM00002:11"
+					 script23="onClick;22;CHK;_KM0010010form3/PJ_CLASS_12_TYP[neq][and]_KM0010010form3/PJ_CLASS_12_CD[eq]@$KM00002:12"
+					 script24="onClick;23;SUBMIT;_KM0010010form1/*,_KM0010010form2/*,_KM0010010form3/*@KM0010010Servlet,,$ZZ07003"
+					 
+					 script25="child;0;CHK;_KM0010010form2/PROJECT_STAT[eq]2[or]_KM0010010form2/PROJECT_STAT[eq]3[or]_KM0010010form2/PROJECT_STAT[eq]4[or]_KM0010010form2/PROJECT_STAT[eq]9@!KM00005"
+					 script26="child;1;CHK;_KM0010010form2/PROJECT_STAT[eq]1[or]_KM0010010form2/PROJECT_STAT[eq]3[or]_KM0010010form2/PROJECT_STAT[eq]4[or]_KM0010010form2/PROJECT_STAT[eq]9@!KM00005"
+					 script27="child;2;CHK;_KM0010010form2/PROJECT_STAT[eq]1[or]_KM0010010form2/PROJECT_STAT[eq]2[or]_KM0010010form2/PROJECT_STAT[eq]4[or]_KM0010010form2/PROJECT_STAT[eq]8[or]_KM0010010form2/PROJECT_STAT[eq]9@!KM00005"
+					 script28="child;3;CHK;_KM0010010form2/PROJECT_STAT[eq]3[or]_KM0010010form2/PROJECT_STAT[eq]4[or]_KM0010010form2/PROJECT_STAT[eq]9@!KM00005"
+					 script29="child;4;CHK;_KM0010010form2/PROJECT_STAT[eq]1[or]_KM0010010form2/PROJECT_STAT[eq]2[or]_KM0010010form2/PROJECT_STAT[eq]3[or]_KM0010010form2/PROJECT_STAT[eq]8@!KM00005"
+					 script30="child;5;CHK;_KM0010010form2/PROJECT_STAT[eq]1[and]_KM0010010form2/h_ESTIMATE[eq]1@!KM00020"
+					 script31="child;6;CHK;_KM0010010form2/PROJECT_STAT[eq]2[and]_KM0010010form2/h_ESTIMATE[eq]0@!KM00021"
+					 script32="child;7;CHK;_KM0010010form2/PROJECT_STAT[eq]9[and]_KM0010010form2/h_COMPLETE_STAT[eq]0@!KM00008"
+					 script33="child;8;CHK;_KM0010010form2/PROJECT_STAT[eq]9@$KM00009"
+					 script34="child;9;CHK;_KM0010010form2/PROJECT_STAT[eq]1[or]_KM0010010form2/PROJECT_STAT[eq]2[or]_KM0010010form2/PROJECT_STAT[eq]3[or]_KM0010010form2/PROJECT_STAT[eq]8@!KM00005"
+					 
+	
+					 ></orfbutton> </td>
+                  <td><orfbutton name="delete" value="削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDelete" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_KM0010010form1/*,_KM0010010form2/*,_KM0010010form3/*@KM0010010Servlet,,$ZZ07004"
+></orfbutton></td>
+                </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table></td>
+      <td width="5" height="467"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="KM0010010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105></td>
+                  <td width=105></td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr>
+                  <td><orfbutton  name="clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" script1="onClick;0;SUBMIT;@KM0010010Servlet,,$ZZ07008" lock="0"></orfbutton></td>
+                  <td><orfbutton  name="close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+<%
+MessageStruct msgStruct = aKM0010010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

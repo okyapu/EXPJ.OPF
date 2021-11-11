@@ -1,0 +1,476 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+保管区移動入庫実績入力サブ1
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AF0060/AF0060011.html,v $
+$Author: geng-jia $    
+$Revision: 1.12 $ $Date: 2017/02/13 03:25:53 $
+********************************************************* --%>
+<html>
+<head>
+<title>保管区移動入庫実績入力サブ1</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AF0060011" version="AF0060011 $Revision: 1.12 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="3">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968"></td>
+    </tr>
+    <tr height="74"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AF0060011form1" width="934" height="73" border="1" cellspacing="0" cellpadding="0"><orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CD">製番</span></td>
+                  <td><orftextinput  name="JOB_ODR_CD" tablename="T_TRANSPORT_STOCK" columnname="JOB_ODR_CD" editable="false" orteus="true" width="260"></orftextinput></td>
+                  <td><orftextinput  name="TRANSPORT_CMPLT_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="w_MODIFY_COUNT" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="w_UNIT_QTY_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TRANSPORT_SLIP_CD">積送伝票番号</span></td>
+                  <td><orftextinput  name="TRANSPORT_SLIP_CD" tablename="T_TRANSPORT_STOCK" columnname="TRANSPORT_SLIP_CD" editable="false" orteus="true" width="260"></orftextinput></td>
+                  <td><orftextinput  name="w_BUSINESS_OPR_DATE" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_TRANSPORT_CMPLT_TYP" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                  <td><orftextinput  name="ITEM_CD" tablename="T_TRANSPORT_STOCK" columnname="ITEM_CD" editable="false" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" editable="false" orteus="true" width="320"></orftextinput></td>
+                  <td><orftextinput name="h_lotCtrl" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_LOT_CD">在庫ロット番号</span></td>
+                  <td><orftextinput  name="LOT_NO" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_lotFlg" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" class="frame18"></td>
+            <td colspan="3" class="frame19"></td>
+            <td width="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="150"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr height="106"> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AF0060011form2" width="934" height="73" border="1" cellspacing="0" cellpadding="0"
+                 script1="onLoad;0;CALL;child@0"
+                   script2="child;0;SET;_AF0060011form2/c_TRANSPORT_CMPLT_TYP=true@*1"
+                   script3="child;1;SET;_AF0060011form1/h_TRANSPORT_CMPLT_TYP=1@*2"
+                   script4="child;2;CHK;<%= TypeConverter.sanitizer(aAF0060010Struct.getTRANSPORT_CMPLT_TYP()) %>[eq]1@*3"
+                   script5="child;3;MASK;_AF0060011button2/insertSub1,_AF0060011form2/RCV_ISSUE_QTY,_AF0060011form2/RCV_ISSUE_DATE,_AF0060011form2/VEND_LOT_NO,_AF0060011form2/c_TRANSPORT_CMPLT_TYP,_AF0060011form2/CalendarRcvIssueDate,_AF0060011form2/RCV_ISSUE_COMMENT,_AF0060011form2/PeekerRcvIssueCd"
+
+                 script6="onLoad;1;CALL;onDecision@0"
+                   script7="onDecision;0;CHK;<%= TypeConverter.sanitizer(aAF0060010Struct.getTRANSPORT_CMPLT_TYP()) %>[eq]0@*4"
+                   script8="child;4;CHKRQ;A@*5,*6"
+                   script9="child;5;UNMASK;_AF0060011button2/insertSub1"
+                   script10="child;6;MASK;_AF0060011button2/insertSub1"
+              ><orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="148">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+				  <td width="22">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.RCV_QTY">入庫数</span></td>
+                  <td><orftextinput  name="RCV_ISSUE_QTY" attribute="TIS_RIGHT" orteus="true" width="150" kind="OBT_NUMBER_Z;14.1;FLOOR;4" required="Z"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT" tablename="M_ITEM" columnname="T_RCV_ISSUE" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_TRANSPORT_CMPLT_TYP" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.Cmt0425"
+                         script1="onClick;0;CHK;_THIS[eq]true@*0,*1"
+                         script2="child;0;SET;_AF0060011form1/h_TRANSPORT_CMPLT_TYP=1"
+                         script3="child;1;SET;_AF0060011form1/h_TRANSPORT_CMPLT_TYP=0"
+                      ></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.RCV_DATE">入庫日</span></td>
+                  <td><orftextinput  name="RCV_ISSUE_DATE" tablename="T_RCV_ISSUE" columnname="RCV_ISSUE_DATE" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD" required="A"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarRcvIssueDate" orteus="false" width="22" attribute="BTS_CALENDAR" script1="onClick;0;CALENDAR;_AF0060011form2/RCV_ISSUE_DATE"></orfcalendar></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt6855">出庫理由</span></td>
+                  <td><orftextinput  name="ISSUE_COMMENT" tablename="T_RCV_ISSUE" columnname="RCV_ISSUE_COMMENT" maxlength="80" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_LOT_NO">メーカロット番号</span></td>
+                  <td><orftextinput  name="VEND_LOT_NO" tablename="T_RCV_ISSUE" columnname="VEND_LOT_NO" maxlength="25" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt6854">保管区移動理由</span></td>
+                  <td><orftextinput  name="RCV_ISSUE_COMMENT" tablename="T_RCV_ISSUE" columnname="RCV_ISSUE_COMMENT" maxlength="80" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+				  <td><orfpeeker  name="PeekerRcvIssueCd" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AF0060011form2/RCV_ISSUE_COMMENT@<%=contextNo%>"
+                     sqlname="RCV_ISSUE_CD_01" sqlparam_1="_AF0060011form2/RCV_ISSUE_COMMENT"></orfpeeker></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07"></td>
+            <td width="769" class="frame08"> </td>
+            <td width="60" class="frame09"></td>
+            <td width="105" class="frame10">
+            <table orftype="DataGrid" mode="BUTTON" name="AF0060011button2" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td>&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton  name="insertSub1" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" lock="1"
+                      script1="onClick;0;CHK;_AF0060011form2/RCV_ISSUE_QTY[gte]_AF0060011form3/w_LEAVE_RCV_QTY@*0,*3"
+                        script2="child;0;CHK;_AF0060011form2/c_TRANSPORT_CMPLT_TYP[neq]true@*1"
+                           script3="child;1;SET;_AF0060011form2/c_TRANSPORT_CMPLT_TYP=1@$AF90005"
+                             script4="child;2;SET;_AF0060011form2/c_TRANSPORT_CMPLT_TYP=true"
+
+                        script5="child;3;CHK;_AF0060011form2/c_TRANSPORT_CMPLT_TYP[eq]true@$AF90006"
+
+                      script6="onClick;1;CHK;_AF0060011form2/RCV_ISSUE_QTY[lt]0@#AF00062"
+                      script7="onClick;2;CHK;_AF0060011form2/RCV_ISSUE_QTY[gt]_AF0060011form3/w_LEAVE_RCV_QTY@#AF00052"
+                      script8="onClick;3;CHK;_AF0060011form2/RCV_ISSUE_DATE[gt]_AF0060011form1/w_BUSINESS_OPR_DATE@#ZZ05103"
+
+                      script9="onClick;4;CHK;_AF0060011form2/c_TRANSPORT_CMPLT_TYP[eq]true@*4,*5"
+                        script10="child;4;SET;_AF0060011form1/h_TRANSPORT_CMPLT_TYP=1"
+                        script11="child;5;SET;_AF0060011form1/h_TRANSPORT_CMPLT_TYP=0"
+                      script12="onClick;5;SCRCHG;_AF0060011form1/*,_AF0060011form2/*,_AF0060011form3/*@AF0060010Servlet,,$ZZ07003"
+                    ></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="304"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12"   class="frame01"></td>
+            <td colspan="3"   class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+		  		  <%
+	String ColKind1 = "OBT_NUMBER;14.1;FLOOR;4";
+    String ColKind2 = "OBT_NUMBER;14.1;FLOOR;4";
+    String ColKind3 = "OBT_NUMBER;14.1;FLOOR;4";
+
+
+	if(aAF0060010Struct.getSTOCK_ON_HAND_QTY() == null){
+        ColKind1 ="";
+    }
+	
+	if(aAF0060010Struct.getDEFECT_QTY() == null){
+	    ColKind2 ="";
+    }
+
+	if(aAF0060010Struct.getALLOCABLE_QTY() == null){
+        ColKind3 ="";
+    }
+%> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AF0060011form3" width="934" height="290" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DRAW_CD">図面番号</span></td>
+                  <td><orftextinput  name="DRAW_CD" tablename="M_ITEM" columnname="DRAW_CD" editable="false" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_SPEC">規格</span></td>
+                  <td><orftextinput  name="SPEC" tablename="M_ITEM" columnname="SPEC" editable="false" orteus="true" width="712"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_PLANT_CD_1">出庫工場コード</span></td>
+                  <td><orftextinput  name="ISSUE_PLANT_CD" tablename="T_TRANSPORT_STOCK" columnname="ISSUE_PLANT_CD" editable="false" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="ISSUE_PLANT_NAME" tablename="M_PLANT" columnname="PLANT_NAME" editable="false" orteus="true" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_WH_CD">出庫保管区コード</span></td>
+                  <td><orftextinput  name="ISSUE_WH_CD" tablename="T_TRANSPORT_STOCK" columnname="ISSUE_WH_CD" editable="false" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="ISSUE_WH_NAME" tablename="M_WH" columnname="WH_NAME" editable="false" orteus="true" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.RCV_ISSUE_QTY_6">出庫数</span></td>
+                  <td><orftextinput  name="ISSUE_QTY" tablename="T_TRANSPORT_STOCK" columnname="ISSUE_QTY" attribute="TIS_RIGHT" kind="OBT_NUMBER;14.1;FLOOR;4" editable="false" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_1" orteus="false" width="110" editable="false"
+                        script1="onLoad;0;CALL;child@0"
+                        script2="child;0;SET;_THIS=_AF0060011form2/STOCK_UNIT"
+                  ></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_DATE">出庫日</span></td>
+                  <td><orftextinput  name="ISSUE_DATE" tablename="T_TRANSPORT_STOCK" columnname="ISSUE_DATE" kind="OBT_DATE;TYPE_YMD" editable="false" orteus="true" width="150"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.RCV_PLANT_CD">入庫工場コード</span></td>
+                  <td><orftextinput  name="RCV_PLANT_CD" tablename="T_TRANSPORT_STOCK" columnname="RCV_PLANT_CD" editable="false" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="RCV_PLANT_NAME" tablename="M_PLANT" columnname="PLANT_NAME" editable="false" orteus="true" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.RCV_WH_CD">入庫保管区コード</span></td>
+                  <td><orftextinput  name="RCV_WH_CD" tablename="T_TRANSPORT_STOCK" columnname="RCV_WH_CD" editable="false" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="RCV_WH_NAME" tablename="M_WH" columnname="WH_NAME" editable="false" orteus="true" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TOTAL_RCV_QTY">入庫累計数</span></td>
+                  <td><orftextinput  name="RCV_QTY" tablename="T_TRANSPORT_STOCK" columnname="RCV_QTY" attribute="TIS_RIGHT" kind="OBT_NUMBER;14.1;FLOOR;4" editable="false" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_2" orteus="false" width="110" editable="false"
+                        script1="onLoad;0;CALL;child@0"
+                        script2="child;0;SET;_THIS=_AF0060011form2/STOCK_UNIT"
+                  ></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0426">入庫残数</span></td>
+                  <td><orftextinput  name="w_LEAVE_RCV_QTY" attribute="TIS_RIGHT" kind="OBT_NUMBER;14.1;FLOOR;4" editable="false" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_3" orteus="false" width="110" editable="false"
+                        script1="onLoad;0;CALL;child@0"
+                        script2="child;0;SET;_THIS=_AF0060011form2/STOCK_UNIT"
+                  ></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_ON_HAND_QTY_5">ロット別手持在庫数</span></td>
+                  <td><orftextinput  name="STOCK_ON_HAND_QTY" columnjname="ロット別手持在庫数" editable="false" kind="<%= ColKind1 %>" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_6" orteus="false" width="110" editable="false"
+                        script1="onLoad;0;CALL;child@0"
+                        script2="child;0;SET;_THIS=_AF0060011form2/STOCK_UNIT"
+                  ></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_ON_HAND_QTY_4">入庫保管区在庫数</span></td>
+                  <td><orftextinput  name="w_WH_STOCK_ON_HAND_QTY" attribute="TIS_RIGHT" kind="OBT_NUMBER;14.1;FLOOR;4" editable="false" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_4" orteus="false" width="110" editable="false"
+                        script1="onLoad;0;CALL;child@0"
+                        script2="child;0;SET;_THIS=_AF0060011form2/STOCK_UNIT"
+                  ></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DEFECT_QTY_6">ロット別不良数</span></td>
+                  <td><orftextinput  name="DEFECT_QTY" columnjname="ロット別不良数" editable="false" kind="<%= ColKind2 %>" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_7" orteus="false" width="110" editable="false"
+                        script1="onLoad;0;CALL;child@0"
+                        script2="child;0;SET;_THIS=_AF0060011form2/STOCK_UNIT"
+                  ></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0306">在庫累計数</span></td>
+                  <td><orftextinput  name="w_TOTAL_STOCK_ON_HAND_QTY" attribute="TIS_RIGHT" kind="OBT_NUMBER;14.1;FLOOR;4" editable="false" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_5" orteus="false" width="110" editable="false"
+                        script1="onLoad;0;CALL;child@0"
+                        script2="child;0;SET;_THIS=_AF0060011form2/STOCK_UNIT"
+                  ></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0340">出庫可能数</span></td>
+                  <td><orftextinput  name="ALLOCABLE_QTY" columnjname="引当可能数" editable="false" kind="<%= ColKind3 %>" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_8" orteus="false" width="110" editable="false"
+                        script1="onLoad;0;CALL;child@0"
+                        script2="child;0;SET;_THIS=_AF0060011form2/STOCK_UNIT"
+                  ></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" class="frame18"></td>
+            <td colspan="3" class="frame19"></td>
+            <td width="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="863"></td>
+            <td align="right" width="105"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AF0060011button0" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                   <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="closeSub1" value="戻る" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReturn" width="100" lock="0"
+                         script2="onClick;0;SCRCHG;_AF0060011form1/*,_AF0060011form2/*,_AF0060011form3/*@AF0060010Servlet,,$ZZ07013"
+                      ></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAF0060010Control.getMessage();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE page-template SYSTEM "ServerReportPageTemplate.dtd">
+<page-template>
+  <page name="A4PageAC0010" unit="centimeters" color="white" orientation="landscape" first="false">
+    <location x="0.0" y="0.0" />
+    <size width="29.7" height="21" />
+    <frame name="body" unit="centimeters" color="white">
+      <location x="0.8" y="4.2" />
+      <size width="28.5" height="16.2" />
+      <border type="blank" color="black" thickness="0.2" />
+      <column count="1" spacing="0.7" />
+      <margin top="0.0" bottom="0.0" left="0.0" right="0.0" />
+    </frame>
+    <frame name="title" unit="points" color="white">
+      <location x="58.4" y="47.6" />
+      <size width="384.5" height="51.9" />
+      <border type="blank" color="black" thickness="3.6" />
+      <column count="1" spacing="18.0" />
+      <margin top="0.0" bottom="0.0" left="0.0" right="0.0" />
+    </frame>
+    <frame name="datepage" unit="centimeters" color="white">
+      <location x="17.5" y="2.1" />
+      <size width="10.8" height="1.3" />
+      <border type="blank" color="black" thickness="0.2" />
+      <column count="1" spacing="0.7" />
+      <margin top="0.0" bottom="0.0" left="0.0" right="0.0" />
+    </frame>
+    <flow-frame name="body" />
+    <flow-page name="A4PageAC0010" />
+    <flow-section name="A4PageAC0010" />
+  </page>
+</page-template>
+

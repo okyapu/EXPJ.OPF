@@ -1,0 +1,263 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+íIâµçXêVèàóùé¿çs
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AH0070/AH0070010.html,v $
+$Author: geng-jia $
+$Revision: 1.7 $ $Date: 2017/02/13 03:31:23 $
+********************************************************* --%>
+<html>
+<head>
+<title>íIâµçXêVèàóùé¿çs</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AH0070010" version="AH0070010 $Revision: 1.7 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="1">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="538"> 
+      <td width="5" height="538"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AH0070010form1" width="934" height="494" border="1" cellspacing="0" cellpadding="0"
+              		 status="<%= TypeConverter.sanitizer(aAH0070010Control.getReadStatusString()) %>"
+                     script1="onLoad;0;CALL;onDecision@0,1"		
+		
+              		 script2="onDecision;0;CHK;_AH0070010form1/h_APR_INV_CTRL[eq]0@*0,*4"
+					 script3="child;0;CHKRQ;A@*1,*3"
+              		 script4="child;1;UNMASK;_AH0070010button1/execute@*2"
+              		 script5="child;2;MASK;_AH0070010button1/ApprAssort,_AH0070010button1/DelApprAssort"
+              		 script6="child;3;MASK;_AH0070010button1/ApprAssort,_AH0070010button1/execute,_AH0070010button1/DelApprAssort"
+					 script7="child;4;CHK;_AH0070010form1/h_APRR_FLG[eq]1@*5,*8"
+					 script8="child;5;CHK;_AH0070010form1/h_APRR_POWER_TYP[eq]1@*6,*3"
+              		 script9="child;6;UNMASK;_AH0070010button1/ApprAssort@*7"
+              		 script10="child;7;MASK;_AH0070010button1/execute,_AH0070010button1/DelApprAssort"
+					 script11="child;8;CHK;_AH0070010form1/h_APRR_POWER_TYP[eq]1@*9,*11"
+              		 script12="child;9;UNMASK;_AH0070010button1/execute,_AH0070010button1/DelApprAssort@*10"
+              		 script13="child;10;MASK;_AH0070010button1/ApprAssort"
+              		 script14="child;11;UNMASK;_AH0070010button1/execute@*12"
+              		 script15="child;12;MASK;_AH0070010button1/ApprAssort,_AH0070010button1/DelApprAssort"
+					 		
+              		 script16="onDecision;1;MASK;_AH0070010form1/c_REGULAR_INV_FLG,_AH0070010form1/c_CYCLE_INV_FLG,_AH0070010form1/c_TEMP_INV_FLG"
+              >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INV_DATE">íIâµì˙</span></td>
+                  <td><orftextinput  name="INV_DATE" orteus="true" 
+				        editable="false"
+                        width="150"
+                        required="A"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="w_INV_STS_TYP" orteus="true" editable="false" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_APR_INV_CTRL" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="w_APPR_INV_STS_TYP"orteus="true" editable="false" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_APRR_FLG" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_REGULAR_INV_FLG" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.REGULAR_INV_FLG_1"></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_APRR_POWER_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_CYCLE_INV_FLG" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.CYCLE_INV_FLG_1"></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_TEMP_INV_FLG" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.TEMP_INV_FLG_1"></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INV_COMMENT">íIâµîıçl</span></td>
+                  <td><orftextinput  name="INV_COMMENT" tablename="T_INV_CTRL" columnname="INV_COMMENT" dbtype="varchar2" tablejname="íIâµêßå‰" columnjname="íIâµîıçl"   orteus="true" editable="false" width="712"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INV_START_DATE">íIâµäJénì˙</span></td>
+                  <td><orftextinput  name="INV_START_DATE" tablename="T_INV_CTRL" columnname="INV_START_DATE" dbtype="date" tablejname="íIâµêßå‰" columnjname="íIâµäJénì˙"   orteus="true" editable="false" width="150"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_SAVE_DATE">ç›å…ëﬁîì˙éû</span></td>
+                  <td><orftextinput  name="STOCK_SAVE_DATE" tablename="T_INV_CTRL" columnname="STOCK_SAVE_DATE" dbtype="date" tablejname="íIâµêßå‰" columnjname="ç›å…ëﬁîì˙éû"   orteus="true" editable="false" width="150"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="INV_UPDATED_DATE" tablename="T_INV_CTRL" columnname="INV_UPDATED_DATE" dbtype="date" tablejname="íIâµêßå‰" columnjname="é¿íIçXêVì˙éû"   orteus="true" visible="false" width="150"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+</td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="559" class="frame08" height="32"> </td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="315" class="frame10" height="32">
+            <table orftype="DataGrid" mode="BUTTON" name="AH0070010button1" width="315" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="ApprAssort" value="è≥îF" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0664" width="100" height="" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_AH0070010form1/*@AH0070010Servlet,,$ZZ07009"
+></orfbutton>
+                </td>
+                <td><orfbutton name="DelApprAssort" value="è≥îFéÊè¡" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5093" width="100" height="" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_AH0070010form1/*@AH0070010Servlet,,$ZZ07009"
+></orfbutton>
+                </td>
+                <td><orfbutton name="execute" value="é¿çs" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnExecute" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AH0070010form1/*@AH0070010Servlet,,$ZZ07010"
+></orfbutton>
+                </td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="853"></td>
+            <td align="right" width="105"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AH0070010button0" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="close" value="ï¬Ç∂ÇÈ" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAH0070010Control.getMessage();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

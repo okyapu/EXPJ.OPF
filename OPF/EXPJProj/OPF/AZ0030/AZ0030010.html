@@ -1,0 +1,337 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+業務メッセージ一覧
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AZ0030/AZ0030010.html,v $
+$Author: geng-jia $    
+$Revision: 1.7 $ $Date: 2017/02/13 03:39:05 $
+********************************************************* --%>
+<html>
+<head>
+<title>業務メッセージ一覧</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AZ0030010" version="AZ0030010 $Revision: 1.7 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="140"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AZ0030010form1" width="934" height="96" border="1" cellspacing="0" cellpadding="0"
+                     status="<%= TypeConverter.sanitizer(aAZ0030010Control.getReadStatusString()) %>"
+
+                     script1="onLoad;0;CALL;child@1,7,10"
+                     script2="onLoad;1;CALL;onDecision@0,1"
+
+                     script3="onDecision;0;CHKRQ;A@*0,*0"
+                         script4="child;0;UNMASK;_AZ0030010button1/select"
+
+                     script5="child;1;CHK;_AZ0030010form1/h_plant_flg[eq]1@*2,*3"
+                         script6="child;2;SET;_AZ0030010form1/r_PLANT=true@*4"
+                         script7="child;3;SET;_AZ0030010form1/r_PLANT_ALL=true@*4"
+                         script8="child;4;CHK;_AZ0030010form1/h_sort_flg[eq]1@*5,*6"
+                         script9="child;5;SET;_AZ0030010form1/r_SORT_OLD=true"
+                         script10="child;6;SET;_AZ0030010form1/r_SORT_NEW=true"
+
+                     script11="child;7;CHK;?AZ0030010form1/*[eq]NORMAL@*8,*9"
+                         script12="child;8;UNMASK;_AZ0030010button2/selectall,_AZ0030010button2/cancelselectall"
+                         script13="child;9;MASK;_AZ0030010button2/selectall,_AZ0030010button2/cancelselectall"
+
+                     script14="onDecision;1;CHK;?AZ0030010form1/*[eq]NORMAL@*10,*19"
+                         script15="child;10;CHK;?AZ0030010form1/FROM_DATE[eq]SAME@*11,*19"
+                         script16="child;11;CHK;?AZ0030010form1/s_FROM_TIME[eq]SAME@*12,*19"
+                         script17="child;12;CHK;?AZ0030010form1/TO_DATE[eq]SAME@*13,*19"
+                         script18="child;13;CHK;?AZ0030010form1/s_TO_TIME[eq]SAME@*14,*19"
+                         script19="child;14;CHK;_AZ0030010form1/h_PLAN_TYP[eq]_AZ0030010form1/h_plant_flg@*15,*19"
+                         script20="child;15;CHK;?AZ0030010form1/c_OWN[eq]SAME@*16,*19"
+                         script21="child;16;CHK;?AZ0030010form1/r_SORT_NEW[eq]SAME@*17,*19"
+                         script22="child;17;CHK;?AZ0030010form1/r_SORT_OLD[eq]SAME@*18,*19"
+                         script23="child;18;CHKRQ;?AZ0030010view1/?[eq]SINGLE[or]?AZ0030010view1/?[eq]MULTI[or]?AZ0030010view1/?[eq]NOT_SELECTED@*20"
+                             script24="child;19;MASK;_AZ0030010button2/detail,_AZ0030010button2/confirm"
+
+                             script25="child;20;CHKRQ;?AZ0030010view1/?[eq]MULTI@*21,*23"
+                                 script26="child;21;UNMASK;_AZ0030010button2/confirm@*22"
+                                 script27="child;22;MASK;_AZ0030010button2/detail"
+                             script28="child;23;CHKRQ;?AZ0030010view1/?[eq]SINGLE@*24,*25"
+                                 script29="child;24;UNMASK;_AZ0030010button2/detail,_AZ0030010button2/confirm"
+                                 script30="child;25;MASK;_AZ0030010button2/detail,_AZ0030010button2/confirm"
+              >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="66">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="20">&nbsp;</td>
+                  <td width="66">&nbsp;</td>
+                  <td width="84">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0428">発生日</span></td>
+                  <td><orftextinput  name="FROM_DATE" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarFROM_DATE" value="" pattern="none" orteus="false"
+				        width=22
+					    attribute="BTS_CALENDAR"
+					    script1="onClick;0;CALENDAR;_AZ0030010form1/FROM_DATE"></orfcalendar></td>
+                  <td><orfcombobox  name="s_FROM_TIME" orteus="true" width="60"></orfcombobox></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0111">時</span></td>
+                  <td align="center"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0043">～</span></td>
+                  <td><orftextinput  name="TO_DATE" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarTO_DATE" value="" pattern="none" orteus="false"
+				        width=22
+					    attribute="BTS_CALENDAR"
+					    script1="onClick;0;CALENDAR;_AZ0030010form1/TO_DATE"></orfcalendar></td>
+                  <td><orfcombobox  name="s_TO_TIME" orteus="true" width="60"></orfcombobox></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0111">時</span></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0034">業務</span></td>
+                  <td><orftextinput  name="BUSINESS_NAME" orteus="true" maxlength="40" kind="OBT_WILD" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0002">(ワイルドカード指定可)</span></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0009">対象</span></td>
+                  <td><orfradiobutton  name="r_PLANT_ALL" orteus="true" value="true" group="group1" mlang="true" mlkind="common" mlname="Expj.Cmt0036"
+                        width="190"
+                        script1="onClick;0;SET;_AZ0030010form1/h_PLAN_TYP=0"></orfradiobutton>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r_PLANT" orteus="true" value="true" group="group1" mlang="true" mlkind="common" mlname="Expj.Cmt0035"
+                        width="190"
+                        script1="onClick;0;SET;_AZ0030010form1/h_PLAN_TYP=1"></orfradiobutton>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_OWN" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.Cmt0206" required="A"></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_detail_flg" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DISPLAY_ORDER">表示順</span></td>
+                  <td><orfradiobutton  name="r_SORT_NEW" orteus="true" value="true" group="group2" mlang="true" mlkind="common" mlname="Expj.Cmt0026"
+                        width="190"></orfradiobutton>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r_SORT_OLD" orteus="true" value="true" group="group2" mlang="true" mlkind="common" mlname="Expj.Cmt0027" width="190"></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_PLAN_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_plant_flg" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_own_flg" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_sort_flg" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_FROM_TIME" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_TO_TIME" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07"></td>
+            <td width="769" class="frame08"></td>
+            <td width="60" class="frame09"></td>
+            <td width="105" class="frame10">
+            <table orftype="DataGrid" mode="BUTTON" name="AZ0030010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;CHK;_AZ0030010form1/FROM_DATE[neq][and]_AZ0030010form1/TO_DATE[neq]@*0,*3"
+ script2="child;0;CHK;_AZ0030010form1/FROM_DATE[gt]_AZ0030010form1/TO_DATE@!AZ00003,*1"
+ script3="child;1;CHK;_AZ0030010form1/FROM_DATE[eq]_AZ0030010form1/TO_DATE@*2,*3"
+ script4="child;2;CHK;_AZ0030010form1/s_FROM_TIME[gt]_AZ0030010form1/s_TO_TIME@!AZ00003,*3"
+ script5="child;3;CHK;_AZ0030010form1/r_PLANT_ALL[eq]true@*4,*5"
+ script6="child;4;SET;_AZ0030010form1/h_plant_flg=0@*6"
+ script7="child;5;SET;_AZ0030010form1/h_plant_flg=1@*6"
+ script8="child;6;CHK;_AZ0030010form1/r_SORT_NEW[eq]true@*7,*8"
+ script9="child;7;SET;_AZ0030010form1/h_sort_flg=0@*9"
+ script10="child;8;SET;_AZ0030010form1/h_sort_flg=1@*9"
+ script11="child;9;CHK;_AZ0030010form1/c_OWN[eq]true@*10,*11"
+ script12="child;10;SET;_AZ0030010form1/h_own_flg=1@*12"
+ script13="child;11;SET;_AZ0030010form1/h_own_flg=0@*12"
+ script14="child;12;SUBMIT;_AZ0030010form1/*@AZ0030010Servlet"
+></orfbutton>
+                </td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="393"> 
+      <td width="5"></td>
+      <td valign="top" width="958" height="393"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="VIEW" attribute="DGS_SELECTMULTI|DGS_SORTOFF" name="AZ0030010view1" width="934" height="349" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td hidden="true">&nbsp;</td>
+                  <td width="130"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0428">発生日</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0037">工場</span></td>
+                  <td hidden="true">&nbsp;</td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0034">業務</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.USER_NAME">ユーザ名</span></td>
+                  <td hidden="true">&nbsp;</td>
+                  <td width="250"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MSG">メッセージ</span></td>
+                  <td width="220"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0040">詳細情報</span></td>
+                  <td hidden="true">&nbsp;</td>
+ 				  <td width="130"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CONFIRM_DATE">確認日時</span></td>
+                  <td width="220"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0418">識別番号</span></td>
+                </tr>
+                </orloophead>
+                <orloop>
+                <tr>
+<%
+    String bgcolor = null;
+    
+    if(TypeConverter.sanitizer(aAZ0030010Struct.getCONFIRM_DATE()) == null ||
+       TypeConverter.sanitizer(aAZ0030010Struct.getCONFIRM_DATE()).length() == 0 )
+    {
+		bgcolor="";
+	} else {
+		bgcolor="A9EA9E";
+    }
+%>
+                  <td>&nbsp;</td>
+                  <td><orflabel  name="CREATED_DATE"   orteus="true"></orflabel></td>
+                  <td><orflabel  name="PLANT_NAME"   orteus="true"></orflabel></td>
+                  <td><orflabel  name="PLANT_CD"   orteus="true" visible="false"></orflabel></td>
+                  <td><orflabel  name="w_BUSINESS_NAME"   orteus="true"></orflabel></td>
+                  <td><orflabel  name="USER_NAME"   orteus="true"></orflabel></td>
+                  <td><orflabel  name="USER_CD"   orteus="true" visible="false"></orflabel></td>
+                  <td><orflabel  name="MSG"   orteus="true"></orflabel></td>
+                  <td><orflabel  name="w_DATA_STRING"   orteus="true"></orflabel></td>
+                  <td><orflabel  name="DATA_STRING"   orteus="true" visible="false"></orflabel></td>
+                  <td bgcolor='<%=bgcolor%>'><orflabel  name="CONFIRM_DATE"   orteus="true"></orflabel></td>
+                  <td><orflabel  name="LOG_CD"   orteus="true"></orflabel></td>
+                </tr>             
+                </orloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame15"></td>
+            <td width="420" class="frame10">
+            <table orftype="DataGrid" mode="BUTTON" name="AZ0030010button2" width="420" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="detail" value="詳細" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDetail" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SCRCHG;_AZ0030010form1/*,_AZ0030010view1/+@AZ0030010Servlet"
+></orfbutton></td>
+                <td><orfbutton name="confirm" value="確認" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnConfirm" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AZ0030010form1/*,_AZ0030010view1/+@AZ0030010Servlet,,$ZZ07009"
+></orfbutton></td>
+                <td><orfbutton name="selectall" value="全選択" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCheckAll" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;DGSALL;AZ0030010view1"
+></orfbutton></td>
+                <td><orfbutton name="cancelselectall" value="全解除" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCheckClear" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;DGSCANCEL;AZ0030010view1"
+></orfbutton></td>
+
+              </tr>
+              </ornoloop>
+            </table> 
+            </td>
+            <td width="60" class="frame16"></td>
+            <td width="454" class="frame08"></td>
+            <td width="12" class="frame17"></td>
+          </tr>
+                  </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="758"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AZ0030010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" 
+				  script1="onClick;0;SUBMIT;@AZ0030010Servlet,,$ZZ07008"lock="0"></orfbutton></td>
+                  <td><orfbutton  name="close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAZ0030010Control.getMessage();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

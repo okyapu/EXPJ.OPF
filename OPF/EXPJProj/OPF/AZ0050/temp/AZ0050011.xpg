@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<page>
+  <opfid>AZ0050</opfid>
+  <process-name>AZ0050010</process-name>
+  <page-name>AZ0050011</page-name>
+  <page-jname>一般検索サブ1</page-jname>
+  <event-list>
+    <event>
+      <event-name>sub1next</event-name>
+      <event-jname>次条件設定</event-jname>
+      <event-type>none</event-type>
+    </event>
+    <event>
+      <event-name>sub1freeSql</event-name>
+      <event-jname>フリー入力</event-jname>
+      <event-type>none</event-type>
+    </event>
+    <event>
+      <event-name>sub1clear</event-name>
+      <event-jname>クリア</event-jname>
+      <event-type>none</event-type>
+    </event>
+    <event>
+      <event-name>sub1return</event-name>
+      <event-jname>戻る</event-jname>
+      <event-type>none</event-type>
+    </event>
+  </event-list>
+  <field-list>
+  </field-list>
+  <block-list></block-list>
+  <resource-list>
+  </resource-list>
+</page>

@@ -1,0 +1,381 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+複数工程日別負荷参照
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AL0040/AL0040010.html,v $
+$Author: geng-jia $    
+$Revision: 1.3 $ $Date: 2017/02/13 03:35:23 $
+********************************************************* --%>
+<html>
+<head>
+<title>複数工程日別負荷参照</title>
+<%@include file="common/expj.jsp" %>
+<STYLE>
+.black a:link       {COLOR:#000000;}
+.black a:visited    {COLOR:#000000;}
+.black a:active     {COLOR:#000000;}
+</STYLE>
+<link rel="stylesheet" href="common/metamorbase.css">
+<script language="JavaScript" src="common/nonflash.js"></script>
+<script language="JavaScript">
+  // 読込ボタン押下時の処理
+  function checkSelectKey(frmMe)
+  {
+    // 検索時のチェック
+    if (isNull(frmMe.DateFrom) == true || isNull(frmMe.DateTo) == true) {
+      // 期間(From), 期間(To)のいずれかがNullの場合
+      addErrorMessage("ZZ01104");
+    }
+  
+    if (isDate(frmMe.DateFrom) == false) {
+      // 期間(From)が日付として正しくない場合
+      addErrorMessage("AL40011");
+    }
+  
+    if (isDate(frmMe.DateTo) == false) {
+      // 期間(To)が日付として正しくない場合
+      addErrorMessage("AL40012");
+    }
+  
+    if (isNull(frmMe.DateFrom) == false && isNull(frmMe.DateTo) == false
+        && isDate(frmMe.DateTo) == true && isDate(frmMe.DateFrom) == true) {
+      // 期間(From), 期間(To)のいずれも日付として正しい場合
+  
+      // 期間の大小をチェック
+      if (Date.parse(frmMe.DateFrom.value) > Date.parse(frmMe.DateTo.value)) {
+        addErrorMessage("AL04001");
+      }
+  
+      // 90日以内かをチェック
+      ChangeDay = new Date(frmMe.DateFrom.value);
+      Day = 24 * 60 * 60 * 1000;
+      if (Date.parse(frmMe.DateTo.value) > ChangeDay.setTime(ChangeDay.getTime() + Day * 89)) {
+        addErrorMessage("AL04002");
+      }
+    }
+  
+    // エラーメッセージを表示
+    if (displayErrorMessages()) {
+      return false;
+    }
+  
+    prepareSubmit();
+    return true;
+  }
+  
+  // アンカークリックの処理
+  function clickAnchor()
+  {
+    prepareSubmit();
+    return true;
+  }
+</script>
+</head>
+<body onLoad="loadComplete()">
+<form name="header" method="post" action="">
+  <% int selectSize = 0; %>
+  <% String highColor = TypeConverter.sanitizer(aAL0040010Struct.gethidden_High_Color()); %>
+  <% String middColor = TypeConverter.sanitizer(aAL0040010Struct.gethidden_Midd_Color()); %>
+  <% String lowColor  = TypeConverter.sanitizer(aAL0040010Struct.gethidden_Low_Color()); %>
+  <table width="968px" border="0" height="100%">
+    <tr> 
+      <td height="30px" width="934px">
+        <table border="0" width="100%" align="center">
+          <tr> 
+            <td width="170px"> 
+              <div align="right"><b><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0029">期間</span></b></div>
+            </td>
+            <td width="350px"> 
+              <input type="text" name="DateFrom" tablename="T_LOAD_DETAIL" columnname="LOAD_DATE" dbtype="date" checktype="DATE" orteus="true">
+              <span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0043">～</span> 
+              <input type="text" name="DateTo" tablename="T_LOAD_DETAIL" columnname="LOAD_DATE" dbtype="date" checktype="DATE" orteus="true">
+            </td>
+            <%
+              if (aAL0040010Control.getCheckNumber() == 0) {
+                selectSize = 0;
+              } else {
+                selectSize = 1;
+              }
+            %>
+            <td> 
+              <div align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0414">シミュレーション</span></div>
+            </td> 
+            <td> 
+            <%
+              if (selectSize == 0) {
+            %>
+              <input type="radio" name="r_Btn" value="1">
+              <span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0025">表示する</span><br>
+              <input type="radio" name="r_Btn" value="0" checked>
+              <span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0024">表示しない </span>
+            <%
+              } else { 
+            %>
+              <input type="radio" name="r_Btn" value="1" checked>
+              <span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0025">表示する</span><br>
+              <input type="radio" name="r_Btn" value="0">
+              <span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0024">表示しない </span>
+            <%
+              } 
+            %>
+            </td>
+            <td> 
+              <div align="right">
+                <input type="hidden" name="hidden_DateFrom" orteus="true">
+                <input type="hidden" name="hidden_DateTo" orteus="true">
+                <input type="hidden" name="hidden_High_Color" orteus="true">
+                <input type="hidden" name="hidden_Midd_Color" orteus="true">
+                <input type="hidden" name="hidden_Low_Color" orteus="true">
+                <input type="submit" name="Select" value="読込" pattern="select" orteus="true" class="button"
+                     mlang="true" mlkind="common" mlname="Expj.BtnSelect" onClick="return checkSelectKey(this.form);">
+              </div>
+            </td>
+          </tr>
+          <tr> 
+            <td colspan="5"> 
+              <hr>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr> 
+      <td width="934px"> 
+        <%
+          if (aAL0040010Control.isInitialScreen()) {
+        %>
+        <div class="center"> 
+          <table width="934px" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td> 
+                <table width="934px" cellspacing="0" cellpadding="0">
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <%
+          } else {
+        %>
+        <div class="center"> 
+          <table class="outer" width="7450px" cellspacing="0" cellpadding="0">
+            <tr> 
+              <td> 
+                <%
+                  int headerCount = 0; 
+                %>
+                <table width="100%" height="100%" cellspacing=1 cellpadding=3>
+                  <orloop> 
+                  <%
+                    if (headerCount == 0) {
+                  %>
+                  <tr class="header"> 
+                    <%
+                      for (int i = 0; i < 90; ++i) {
+                        if (i == 0 || i == 12 || i == 24 || i == 36 || i == 48 || i == 60 || i == 72 || i == 84) {
+                    %>
+                    <td nowrap><b><span orteus="true" mlang="true" mlkind="common" mlname="Expj.NECK_PROC_CD">制約工程コード</span></b></td>
+                    <%
+                          if (Integer.parseInt(aAL0040010Control.getHoliDay(i)) == 1) {
+                    %>
+                    <td width="65px" class="holiday"> 
+                      <div align="center"> <b><%= aAL0040010Control.getHeaderDay(i).substring(5, 10) %></b> 
+                      </div>
+                    </td>
+                    <%
+                          } else {
+                    %>
+                    <td width="65px"> 
+                      <div align="center"> <b><%= aAL0040010Control.getHeaderDay(i).substring(5, 10) %></b> 
+                      </div>
+                    </td>
+                    <%
+                          }
+                        } else {
+                          if (Integer.parseInt(aAL0040010Control.getHoliDay(i)) == 1) {
+                    %>
+                    <td width="65px" class="holiday"> 
+                      <div align="center"> <b><%= aAL0040010Control.getHeaderDay(i).substring(5, 10) %></b> 
+                      </div>
+                    </td>
+                    <%
+                          } else {
+                    %>
+                    <td width="65px"> 
+                      <div align="center"> <b><%= aAL0040010Control.getHeaderDay(i).substring(5, 10) %></b> 
+                      </div>
+                    </td>
+                    <%  
+                          }  
+                        } 
+                      }
+                    %>
+                  </tr>
+                  <%
+                      headerCount++;
+                    } else {
+                      if (headerCount == 11) {
+                        headerCount = 0;
+                      } else {
+                        headerCount++;
+                      }
+                    }
+                  %>
+                  <tr> 
+                    <%
+                      if (aAL0040010Struct == null) {
+                          continue;
+                      } else {
+                        for (int j = 0; j < 90; ++j) {
+                          if (j == 0 || j == 12 || j == 24 || j == 36 || j == 48 || j == 60 || j == 72 || j == 84) {
+                    %>
+                    <td class="header" nowrap>
+                      <orlabel name="NECK_PROC_NAME" tablename="M_RES" columnname="NECK_PROC_NAME" dbtype="varchar2" orteus="true"></orlabel> 
+                      <input type="hidden" name="NECK_PROC_CD" tablename="M_RESOURCE" columnname="NECK_PROC_CD" dbtype="varchar2" orteus="true">
+                    </td>
+                    <% 
+                          } 
+                          //if (Integer.parseInt(aAL0040010Control.getLOAD_QTY(j, loopCount)) > aAL0040010Control.getHighLoad()) {
+                          java.math.BigDecimal bigdecimalLoadRatio = new java.math.BigDecimal(aAL0040010Control.getLOAD_QTY(j, loopCount));
+                          if (bigdecimalLoadRatio.compareTo(java.math.BigDecimal.valueOf((long)aAL0040010Control.getHighLoad())) > 0) {
+                    %>
+                    <td width="65px" bgcolor="<%=highColor%>" class="black"> 
+                    <%
+                            if (aAL0040010Control.isSimulation() && Integer.parseInt(aAL0040010Control.getFlg(j, loopCount)) == 1) {
+                    %>
+                      <div align="center" style="border:3px solid gray">
+                        <a href="AL0040010Servlet?KFromDay=<%=aAL0040010Control.getKFromDay()%>&KToDay=<%=aAL0040010Control.getKToDay()%>&HeaderDay=<%=aAL0040010Control.getHeaderDay(j)%>&NeckProcCd=<%=TypeConverter.sanitizer(aAL0040010Struct.getNECK_PROC_CD())%>"
+                             name="SelectNeckCD" value="SelectNeckCD" class="button" onClick="return clickAnchor()">
+                          <%= aAL0040010Control.getLOAD_QTY(j, loopCount) %> 
+                        </a>
+                      </div>
+                    <%          
+                            } else {
+                    %>
+                      <div align="center">
+                        <a href="AL0040010Servlet?KFromDay=<%=aAL0040010Control.getKFromDay()%>&KToDay=<%=aAL0040010Control.getKToDay()%>&HeaderDay=<%=aAL0040010Control.getHeaderDay(j)%>&NeckProcCd=<%=TypeConverter.sanitizer(aAL0040010Struct.getNECK_PROC_CD())%>"
+                             name="SelectNeckCD" value="SelectNeckCD" class="button" onClick="return clickAnchor()"> 
+                          <%= aAL0040010Control.getLOAD_QTY(j, loopCount) %>
+                        </a> 
+                      </div>
+                    <%
+                            }
+                    %>
+                    </td>
+                    <%
+                          //} else if (Integer.parseInt(aAL0040010Control.getLOAD_QTY(j, loopCount)) >= aAL0040010Control.getLowLoad()
+                          //    && Integer.parseInt(aAL0040010Control.getLOAD_QTY(j, loopCount)) <= aAL0040010Control.getHighLoad()) {
+                          } else if (bigdecimalLoadRatio.compareTo(java.math.BigDecimal.valueOf((long)aAL0040010Control.getLowLoad())) >= 0
+                              && bigdecimalLoadRatio.compareTo(java.math.BigDecimal.valueOf((long)aAL0040010Control.getHighLoad())) <= 0) {
+                    %>
+                    <td width="65px" bgcolor="<%= middColor %>" class="black"> 
+                    <%
+                            if (aAL0040010Control.isSimulation() && Integer.parseInt(aAL0040010Control.getFlg(j, loopCount)) == 1) {
+                    %>
+                      <div align="center" style="border:3px solid gray">
+                        <a href="AL0040010Servlet?KFromDay=<%=aAL0040010Control.getKFromDay()%>&KToDay=<%=aAL0040010Control.getKToDay()%>&HeaderDay=<%=aAL0040010Control.getHeaderDay(j)%>&NeckProcCd=<%=TypeConverter.sanitizer(aAL0040010Struct.getNECK_PROC_CD())%>"
+                             name="SelectNeckCD" value="SelectNeckCD" class="button" onClick="return clickAnchor()">
+                          <%= aAL0040010Control.getLOAD_QTY(j, loopCount) %> 
+                        </a>
+                      </div>
+                    <%
+                            } else {
+                    %>
+                      <div align="center">
+                        <a href="AL0040010Servlet?KFromDay=<%=aAL0040010Control.getKFromDay()%>&KToDay=<%=aAL0040010Control.getKToDay()%>&HeaderDay=<%=aAL0040010Control.getHeaderDay(j)%>&NeckProcCd=<%=TypeConverter.sanitizer(aAL0040010Struct.getNECK_PROC_CD())%>"
+                             name="SelectNeckCD" value="SelectNeckCD" class="button" onClick="return clickAnchor()"> 
+                          <%= aAL0040010Control.getLOAD_QTY(j, loopCount) %>
+                        </a> 
+                      </div>
+                    <%
+                            }
+                    %>
+                    </td>
+                    <%
+                          //} else if (Integer.parseInt(aAL0040010Control.getLOAD_QTY(j, loopCount)) < aAL0040010Control.getLowLoad()
+                          //    && Integer.parseInt(aAL0040010Control.getLOAD_QTY(j, loopCount)) > 0) {
+                          } else if (bigdecimalLoadRatio.compareTo(java.math.BigDecimal.valueOf((long)aAL0040010Control.getLowLoad())) < 0
+                              && bigdecimalLoadRatio.compareTo(java.math.BigDecimal.valueOf(0)) > 0) {
+                    %>
+                    <td width="65px" bgcolor="<%=lowColor%>" class="black"> 
+                    <%
+                            if (aAL0040010Control.isSimulation() && Integer.parseInt(aAL0040010Control.getFlg(j, loopCount)) == 1) {
+                    %>
+                      <div align="center" style="border:3px solid gray">
+                        <a href="AL0040010Servlet?KFromDay=<%=aAL0040010Control.getKFromDay()%>&KToDay=<%=aAL0040010Control.getKToDay()%>&HeaderDay=<%=aAL0040010Control.getHeaderDay(j) %>&NeckProcCd=<%=TypeConverter.sanitizer(aAL0040010Struct.getNECK_PROC_CD())%>"
+                             name="SelectNeckCD" value="SelectNeckCD" class="button" onClick="return clickAnchor()">
+                          <%= aAL0040010Control.getLOAD_QTY(j, loopCount) %> 
+                        </a>
+                      </div>
+                    <%
+                            } else {
+                    %>
+                      <div align="center">
+                        <a href="AL0040010Servlet?KFromDay=<%=aAL0040010Control.getKFromDay()%>&KToDay=<%=aAL0040010Control.getKToDay()%>&HeaderDay=<%=aAL0040010Control.getHeaderDay(j) %>&NeckProcCd=<%=TypeConverter.sanitizer(aAL0040010Struct.getNECK_PROC_CD())%>"
+                             name="SelectNeckCD" value="SelectNeckCD" class="button" onClick="return clickAnchor()"> 
+                          <%= aAL0040010Control.getLOAD_QTY(j,loopCount) %>
+                        </a> 
+                      </div>
+                    <%
+                            }
+                    %>
+                    </td>
+                    <%
+                          } else {
+                    %>
+                    <td width="65px" bgcolor="FFFFCC">&nbsp; </td>
+                    <%
+                          }
+                        }
+                      }
+                    %>
+                  </tr>
+                  </orloop> 
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <%
+          }
+        %>
+      </td>
+    </tr>
+    <tr> 
+      <td height="40px" width="934px"> 
+        <table width="934px">
+          <tr> 
+            <td> 
+              <hr>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="right"> 
+                <input type="hidden" name="K_PLANT_CD" orteus="true">
+                <input type="hidden" name="K_NECK_PROC_CD" tablename="T_LOAD_DETAIL" columnname="NECK_PROC_CD" dbtype="varchar2" orteus="true">
+                <input type="hidden" name="K_LOAD_DATE" tablename="T_LOAD_DETAIL" columnname="LOAD_DATE" dbtype="varchar2" orteus="true">
+                <input type="submit" name="Clear" value="クリア" pattern="none" orteus="true" class="button" mlang="true" mlkind="common"
+                     mlname="Expj.BtnClear" onClick="return clearPage();">
+                <input type="button" name="Close" value="閉じる" pattern="none" orteus="true" class="button" mlang="true" mlkind="common"
+                     mlname="Expj.BtnClose" onClick="return delPage();">
+              </div>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20%"> 
+              <%
+                MessageStruct msgStruct = aAL0040010Control.getMsgStruct();
+              %>
+              <%@ include file="common/SetServerMessage.jsp" %>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+

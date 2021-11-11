@@ -1,0 +1,408 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+製番引当メンテナンスサブ１
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AC0100/AC0100011.html,v $
+$Author: geng-jia $	
+$Revision: 1.7 $ $Date: 2017/02/13 02:34:53 $
+********************************************************* --%>
+<html>
+<head>
+<title>製番引当メンテナンスサブ１</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AC0100011" version="AC0100011 $Revision: 1.7 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="3">
+ <% String callButton = aAC0100010Control.getButton(); %>
+ <%
+ 	String kind1 = "OBT_NUMBER_P;14.1;FLOOR;4";
+ 	String kind2 = "OBT_NUMBER_P;14.1;FLOOR;4";
+	if ("1".equals(aAC0100010Struct.getALC_TYP_2())) {
+		kind2 = "";
+	}
+	if ("AlcInsert".equals(aAC0100010Control.getMode())) {
+		kind1 = "";
+	}
+ %>
+ <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr> 
+      <td width="5"></td>
+      <td valign="top" width="958" height="97"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="AC0100011form1" width="934" height="73" border="1" cellspacing="0" cellpadding="0"
+				 script1="onLoad;0;CALL;onDecision@0"
+				 script2="onDecision;0;CHK;_AC0100011form3/ALC_TYP_2[eq]3@*0,*1"
+				 script3="child;0;MASK;_AC0100011form3/ALCD_QTY,_AC0100011form3/ODR_QTY,_AC0100011button1/Insert,_AC0100011button1/Update"
+                 script4="child;1;CHK;<%=TypeConverter.sanitizer(callButton)%>[eq]AlcInsert[or]<%=TypeConverter.sanitizer(callButton)%>[eq]Insert@*2,*4"
+                 script5="child;2;UNMASK;_AC0100011button1/Insert,_AC0100011form3/ALCD_QTY@*3"
+                 script6="child;3;MASK;_AC0100011button1/Update,_AC0100011form3/ODR_QTY"
+                 script7="child;4;UNMASK;_AC0100011button1/Update,_AC0100011form3/ALCD_QTY@*5"
+                 script8="child;5;MASK;_AC0100011button1/Insert,_AC0100011form3/ODR_QTY"
+				 >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=170 align="right">&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=170 align="right">&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88 align=left>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CD_2">引当元製番</span></td>
+                  <td><orftextinput  name="JOB_ODR_CD" orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CD_2"width="260" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CANCEL_NO">製番取消発生番号</span></td>
+                  <td><orftextinput  name="JOB_ODR_CANCEL_NO" orteus="true" attribute="TIS_RIGHT" kind="OBT_INTEGER_Z;6" width="150" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                  <td><orftextinput  name="ITEM_CD" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="ITEM_NAME" orteus="true" width="320" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OD_NO">オーダデマンド番号</span></td>
+                  <td><orftextinput  name="OD_NO" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_OD_NO" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ --></td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" height="12" class="frame18"></td>
+            <td colspan="3" height="12" class="frame19"></td>
+            <td width="12" height="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="AC0100011form2" width="934" height="119" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=170 align="right">&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=170 align="right">&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88 align=left>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DM_QTY_1">要求数</span></td>
+                  <td><orftextinput  name="DM_QTY" orteus="true" kind="OBT_NUMBER_P;14.1;FLOOR;4" width="150" editable="false"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0352">引当可能数合計</span></td>
+                  <td><orftextinput  name="SUM_OF_ALLOCATABLE_QTY" orteus="true" kind="OBT_NUMBER_P;14.1;FLOOR;4" width="150" editable="false"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_4" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0353">引当済み数合計</span></td>
+                  <td><orftextinput  name="SUM_OF_ALCD_QTY" orteus="true" kind="OBT_NUMBER_P;14.1;FLOOR;4" width="150" editable="false"></orftextinput></td>
+                  <td><orftextinput name="STOCK_UNIT_1" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DM_STS_TYP">デマンド状態区分</span></td>
+                  <td><orftextinput name="DM_STS_TYP_DN" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td><orftextinput name="DM_STS_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0354">引当残数合計</span></td>
+                  <td><orftextinput  name="SUM_OF_ALC_REMAIN_QTY" orteus="true" kind="OBT_NUMBER_P;14.1;FLOOR;4" width="150" editable="false"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_2" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_STS_TYP">製番状態区分</span></td>
+                  <td><orftextinput name="JOB_ODR_STS_TYP_DN" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td><orftextinput name="JOB_ODR_STS_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TOTAL_ISSUE_QTY">出庫累計数</span></td>
+                  <td><orftextinput name="TOTAL_ISSUE_QTY" orteus="true" kind="OBT_NUMBER_P;14.1;FLOOR;4" width="150" editable="false"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_3" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ALC_GRP_CD">引当グループコード</span></td>
+                  <td><orftextinput name="ALC_GRP_CD" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DUE_DATE">要求納期</span></td>
+                  <td><orftextinput  name="DUE_DATE" kind="OBT_DATE;TYPE_YMD" orteus="true" width="150" editable="false"></orftextinput></td>
+                  <td><orftextinput name="DUE_TIME" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_QTY_TYP">在庫数単位区分</span></td>
+                  <td><orftextinput name="UNIT_QTY_TYP_DN" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td><orftextinput name="UNIT_QTY_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ --></td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" height="12" class="frame18"></td>
+            <td colspan="3" height="12" class="frame19"></td>
+            <td width="12" height="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="285"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="AC0100011form3" width="934" height="244" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=170 align=right>&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=170 align=right>&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td align=left>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0702">引当区分</span></td>
+                  <td><orftextinput name="ALC_TYP_2_DN" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td><orftextinput name="ALC_TYP_2" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CD_3">引当先製番</span></td>
+                  <td><orftextinput  name="JOB_ODR_CD_2" tablename="" columnname="" dbtype="" tablejname="" columnjname="" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td><orftextinput  name="JOB_ODR_DETAIL_NO_2" tablename="" columnname="" dbtype="" tablejname="" columnjname="" orteus="true" width="260" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="JOB_ODR_CANCEL_NO_2" tablename="" columnname="" dbtype="" tablejname="" columnjname="" orteus="true" width="260" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ALCD_QTY">引当済み数</span></td>
+                  <td><orftextinput  name="ALCD_QTY" tablename="" columnname="" dbtype="" tablejname="" columnjname="" kind="OBT_NUMBER_P;14.1;FLOOR;4" orteus="true" width="150" required="A"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_5" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_STS_TYP">オーダ状態区分</span></td>
+                  <td><orftextinput name="ODR_STS_TYP_DN" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td><orftextinput name="ODR_STS_TYP" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUEED_QTY_1">引当出庫済数</span></td>
+                  <td><orftextinput  name="ISSUEED_QTY" tablename="" columnname="" dbtype="" tablejname="" columnjname="" kind="<%=kind1%>" editable="false" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_6" orteus="true" width="110" editable="false"></orftextinput></td> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ALC_GRP_CD">引当グループコード</span></td>
+                  <td><orftextinput  name="ALC_GRP_CD_2" tablename="" columnname="" dbtype="" tablejname="" columnjname="" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0355">引当出庫残数</span></td>
+                  <td><orftextinput  name="ISSUE_REMAIN_QTY" tablename="" columnname="" dbtype="" tablejname="" columnjname="" kind="OBT_NUMBER_P;14.1;FLOOR;4" editable="false" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_7" orteus="true" width="110" editable="false"></orftextinput></td> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_STS_TYP">製番状態区分</span></td>
+                  <td><orftextinput name="JOB_ODR_STS_TYP_DN_2" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td><orftextinput name="JOB_ODR_STS_TYP_2" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0300">引当可能数</span></td>
+                  <td><orftextinput  name="ALLOCATABLE_QTY" tablename="" columnname="" dbtype="" tablejname="" columnjname="" editable="false" kind="OBT_NUMBER_P;14.1;FLOOR;4" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_8" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PRD_DUE_DATE">製造納期</span></td>
+                  <td><orftextinput  name="PRD_DUE_DATE" tablename="" columnname="" dbtype="" tablejname="" columnjname="" editable="false" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput name="PRD_DUE_TIME" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_ON_HAND_QTY">手持在庫数</span></td>
+                  <td><orftextinput  name="STOCK_ON_HAND_QTY" tablename="" columnname="" dbtype="" tablejname="" columnjname="" kind="OBT_NUMBER_P;14.1;FLOOR;4" editable="false" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_9" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_START_DATE">手配着手日</span></td>
+                  <td><orftextinput  name="ODR_START_DATE" tablename="" columnname="" dbtype="" tablejname="" columnjname="" editable="false" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput name="ODR_START_TIME" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_QTY">オーダ数</span></td>
+                  <td><orftextinput  name="ODR_QTY" tablename="" columnname="" dbtype="" tablejname="" columnjname="" editable="false" orteus="true" width="150" kind="<%=kind2%>"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_10" orteus="true" width="110" editable="false"></orftextinput></td> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PRD_START_DATE">製造着手日</span></td>
+                  <td><orftextinput  name="PRD_START_DATE" tablename="" columnname="" dbtype="" tablejname="" columnjname="" editable="false" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput name="PRD_START_TIME" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.RCV_QTY_1">入庫累計数</span></td>
+                  <td><orftextinput  name="TOTAL_RCV_QTY" tablename="" columnname="" dbtype="" tablejname="" columnjname="" editable="false" orteus="true" width="150" kind="<%=kind2%>"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_11" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="MODIFY_COUNT" tablename="" columnname="" dbtype="" tablejname="" columnjname="" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop> 
+              </table>
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="664" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="210" class="frame10" height="32"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AC0100011button1" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton name="Insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SCRCHG;_AC0100011form1/*,_AC0100011form2/*,_AC0100011form3/*@AC0100010Servlet,,$ZZ07001"
+></orfbutton></td>
+                  <td><orfbutton name="Update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SCRCHG;_AC0100011form1/*,_AC0100011form2/*,_AC0100011form3/*@AC0100010Servlet,,$ZZ07003"
+></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="863"></td>
+            <td align="right" width="105"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AC0100011button0" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="Return" value="戻る" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReturn" width="100" script1="onClick;0;SCRCHG;_AC0100011form1/*,_AC0100011form3/*@AC0100010Servlet,,$ZZ07013" lock="0"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAC0100010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

@@ -1,0 +1,49 @@
+#
+# システムログ：出力先定義ファイル
+# SystemLog
+#
+# Copyright (c) 2003 NEC Informatec Systems, Ltd.
+#
+# version 1.00
+# 2003/06/06 新規作成 M.Sakamoto
+# 2003/06/25 Copyrightの記述修正 Y.Inada
+#            前：Copyright (c) 2003 NEC informatec Systems,Ltd.
+#            後：Copyright (c) 2003 NEC Informatec Systems,Ltd.
+# version 1.01
+# 2003/08/01 ファイル名修正 Y.Inada
+#            前：SystemLog.properties
+#            後：SystemLog
+# version 1.02
+# 2003/08/15 K.Murakami
+#            検査環境用定義に変更
+#            基準情報・日程計画(Category001～Category004)の定義を追加
+# version 1.03
+# 2003/09/28 K.Murakami
+#            検査環境用定義に変更
+#            NECSTのカテゴリ反映
+#
+# version 1.04
+# 2004/01/28 H.Sasa
+#            ログ出力パス変更
+#
+# version 1.05
+# 2004/12/03 N.Saito
+#            共通定義変更
+#            個別定義廃止
+#
+
+# 環境定義
+systemlog.environment=Development
+
+# 共通定義
+com.nec.jp.orteus.metamorBase.level=INFO
+com.nec.jp.orteus.metamorBase=handler1
+com.nec.jp.orteus.metamorBase.handler1=File
+com.nec.jp.orteus.metamorBase.handler1.logfile=D:/EXPJStudio/log/Systemlog.log
+com.nec.jp.orteus.metamorBase.handler1.switchTrigger=Size
+com.nec.jp.orteus.metamorBase.handler1.switchnum=512000
+com.nec.jp.orteus.metamorBase.handler1.backup=10
+
+# 個別定義
+DefinitionCount=0
+

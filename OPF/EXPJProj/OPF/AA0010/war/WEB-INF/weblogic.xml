@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="Windows-31J"?>
+
+<weblogic-web-app xmlns="http://www.bea.com/ns/weblogic/90">
+
+  <!-- deleted options from 8.1 : noTryBlocks, compilerSupportsEncoding, superClass -->
+  <jsp-descriptor>
+    <keepgenerated>true</keepgenerated>
+
+    <package-prefix>jsp_servlet</package-prefix>
+
+    <page-check-seconds>1</page-check-seconds>
+
+    <precompile>false</precompile>
+
+    <verbose>true</verbose>
+
+  </jsp-descriptor>
+
+  <charset-params>
+    <input-charset>
+      <resource-path>/*</resource-path>
+      <java-charset-name>UTF-8</java-charset-name>
+    </input-charset>
+    <charset-mapping>
+      <iana-charset-name>Shift_JIS</iana-charset-name>
+      <java-charset-name>Windows-31J</java-charset-name>
+    </charset-mapping>
+  </charset-params>
+
+</weblogic-web-app>
+

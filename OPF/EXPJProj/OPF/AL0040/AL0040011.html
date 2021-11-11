@@ -1,0 +1,154 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+工程別負荷参照
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AL0040/AL0040011.html,v $
+$Author: shakya $    
+$Revision: 1.2 $ $Date: 2005/04/05 07:54:38 $
+********************************************************* --%>
+<html>
+<head>
+<title>工程別負荷参照</title>
+<%@include file="common/expj.jsp"%>
+<link rel="stylesheet" href="common/metamorbase.css">
+<script language="JavaScript" src="common/nonflash.js"></script>
+<script language="JavaScript">
+  // サブ(子)画面戻るボタン押下時の処理
+  function checkCancel1(frmMe)
+  {
+    // 確認ダイアログを表示
+    if (displayConfirmMessage("ZZ07013") == false) {
+        return false;
+    }
+
+    prepareSubmit();
+    return true;
+  }
+
+  // グラフ移動時のチェック処理
+  function checkSelGraph(frmMe)
+  {
+    if (isNull(frmMe.Shift_Date) == true) {
+      // 移動日数がNullの場合
+      addErrorMessage("ZZ05002");
+      displayErrorMessages();
+      return false;
+    }
+    if (isInteger(frmMe.Shift_Date) == false) {
+      // 移動日数が数値でないの場合
+      addErrorMessage("ZZ05002");
+      displayErrorMessages();
+      return false;
+    }
+  
+    prepareSubmit();
+    return true;
+  }
+  
+  // グラフハイパーリンククリックの処理
+  function clickHyperlink()
+  {
+    prepareSubmit();
+    return true;
+  }
+</script>
+</head>
+<body onLoad="loadComplete()">
+<form name="header" method="post" action="">
+  <table width="968px" border="0" height="100%">
+    <tr> 
+      <td width="934px" align="center"> 
+        <input type="hidden" name="K_PLANT_CD" orteus="true">
+        <input type="hidden" name="K_NECK_PROC_CD" tablename="T_LOAD_DETAIL" columnname="NECK_PROC_CD" dbtype="varchar2" orteus="true">
+        <input type="hidden" name="K_LOAD_DATE" tablename="T_LOAD_DETAIL" columnname="LOAD_DATE" dbtype="date" orteus="true">
+        <input type="hidden" name="DateFrom" tablename="T_LOAD_DETAIL" columnname="LOAD_DATE" dbtype="date" orteus="true">
+        <input type="hidden" name="DateTo" tablename="T_LOAD_DETAIL" columnname="LOAD_DATE" dbtype="date" orteus="true">
+        <input type="hidden" name="S_LOAD_DATE" tablename="T_LOAD_DETAIL" columnname="LOAD_DATE" dbtype="varchar2" orteus="true">
+        <table border="0" width="934px" align="center">
+          <tr> 
+            <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.NECK_PROC_CD">制約工程コード</span>
+              <input type="text" name="L_NECK_PROC_CD" class="readonly" tablename="T_LOAD_DETAIL" columnname="NECK_PROC_CD" dbtype="varchar2" orteus="true">
+              &nbsp;
+              <input type="text" name="L_NECK_PROC_NAME" class="readonly" tablename="M_RESOURCE" columnname="NECK_PROC_NAME" dbtype="varchar2" orteus="true">
+            </td>
+            <td width="35%"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.NECK_PROC_CAPA_1">能力／日</span>
+              <input type="text" name="L_NECK_PROC_CAPA" class="readonly" tablename="M_RESOURCE" columnname="NECK_PROC_CAPA" dbtype="varchar2" orteus="true"
+                   style="text-align:right">
+              &nbsp;
+              <input type="text" name="L_NECK_PROC_CAPA_UNIT" class="readonly" tablename="M_RESOURCE" columnname="NECK_PROC_CAPA_UNIT" dbtype="varchar2" orteus="true">
+            </td>
+          </tr>
+          <tr> 
+            <td colspan="2"> 
+              <hr>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr> 
+      <td height="100%"> 
+        <div class="center"> 
+          <table width="934px" border="0">
+            <tr> 
+              <td> 
+                <div align="center"> 
+                  <jsp:include page='<%=TypeConverter.sanitizer(aAL0040010Control.getMapName()+".html")%>' flush="true"> 
+                  </jsp:include>
+                  <p>
+                    <img usemap="#<%=TypeConverter.sanitizer(aAL0040010Control.getsysUSER_CD())%>" border="0"
+                         src="<%=TypeConverter.sanitizer(aAL0040010Control.getJpegName())%>.jpg?<%=aAL0040010Control.getJpegIdentifier()%>">
+                  </p>
+                </div>
+              </td>
+            </tr>
+            <tr> 
+              <td> 
+                <div align="center"> 
+                  <input type="image" name="Select_Prev" id="Select_Prev" value="Select_Prev" src="images/ya_left.gif"
+                       pattern="select" orteus="true" onClick="return checkSelGraph(this.form)">
+                  &nbsp;&nbsp;<span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0412">移動日数</span>
+                  <input type="text" name="Shift_Date" checktype="INT" orteus="true" maxlength="3" value="0" size="5" style="text-align:right">
+                  &nbsp;&nbsp; 
+                  <input type="image" name="Select_Next" id="Select_Next" value="Select_Next" src="images/ya_right.gif"
+                       pattern="select" orteus="true" onClick="return checkSelGraph(this.form)">
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="934px" align="center"> 
+        <table>
+          <tr> 
+            <td width="934px" align="center"> 
+              <hr>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="right"> 
+                <input type="submit" class="button" name="CancelSub1" value="戻る" pattern="none" orteus="true" mlang="true" mlkind="common"
+                     mlname="Expj.BtnReturn" onClick="return checkCancel1()">
+              </div>
+            </td>
+          </tr>
+          <tr> 
+            <td height="20%"> 
+              <%
+                MessageStruct msgStruct = aAL0040010Control.getMsgStruct();
+              %>
+              <%@ include file="common/SetServerMessage.jsp" %>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+

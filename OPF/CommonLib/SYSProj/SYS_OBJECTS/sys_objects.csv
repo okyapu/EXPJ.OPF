@@ -1,0 +1,327 @@
+AA0010,品目メンテナンス/Item maintenance,AA0010010,Web,梅,1,A,品目メンテナンス/Item maintenance,AA0010010
+AA0020,製品構成メンテナンス/Prod structure maintenance,AA0020010,Web,梅,1,A,製品構成メンテナンス/Prod structure maintenance,AA0020010
+AA0020,製品構成メンテナンス/Prod structure maintenance,AA0020010,Web,梅,1,A,製品構成メンテナンスサブ1/Prod structure maintenance sub1,AA0020011
+AA0020,製品構成台帳出力/Prod structure table output,AA0020030,Web,梅,1,A,製品構成台帳出力/Prod structure table output,AA0020030
+AA0030,作業系列メンテナンス/WS maintenance,AA0030010,Web,梅,1,A,作業系列メンテナンス/WS maintenance,AA0030010
+AA0030,作業系列メンテナンス/WS maintenance,AA0030010,Web,梅,1,A,作業系列メンテナンスサブ1/WS maintenance sub1,AA0030011
+AA0040,購入単価メンテナンス/Purchase unit cost maintenance,AA0040010,Web,梅,1,A,購入単価メンテナンスサブ1/Purchase unit cost maintenance sub1,AA0040011
+AA0040,購入単価メンテナンス/Purchase unit cost maintenance,AA0040010,Web,梅,1,A,購入単価メンテナンス/Purchase unit cost maintenance,AA0040010
+AA0040,支給品単価メンテナンス/Supplies unit cost maintenance,AA0040030,Web,梅,1,A,支給品単価メンテナンスサブ1/Supplies unit cost maintenance sub1,AA0040031
+AA0040,支給品単価メンテナンス/Supplies unit cost maintenance,AA0040030,Web,梅,1,A,支給品単価メンテナンス/Supplies unit cost maintenance,AA0040030
+AA0040,外注単価メンテナンス/Unit cost of sub order maintenance,AA0040020,Web,梅,1,A,外注単価メンテナンス/Unit cost of sub order maintenance,AA0040020
+AA0040,外注単価メンテナンス/Unit cost of sub order maintenance,AA0040020,Web,梅,1,A,外注単価メンテナンスサブ1/Unit cost of sub order maintenance sub1,AA0040021
+AA0050,保管先優先順位メンテナンス/Storage place priority maintenance,AA0050020,Web,梅,1,A,保管先優先順位メンテナンスサブ1/Storage place priority maintenance sub1,AA0050021
+AA0050,保管先優先順位メンテナンス/Storage place priority maintenance,AA0050020,Web,梅,1,A,保管先優先順位メンテナンス/Storage place priority maintenance,AA0050020
+AA0050,保管区メンテナンス/SS maintenance,AA0050010,Web,梅,1,A,保管区メンテナンス/SS maintenance,AA0050010
+AA0060,作業区メンテナンス/WC maintenance,AA0060010,Web,梅,1,A,作業区メンテナンス/WC maintenance,AA0060010
+AA0070,取引先メンテナンス/Vendor maintenance,AA0070010,Web,梅,1,A,取引先メンテナンス/Vendor maintenance,AA0070010
+AA0080,カレンダヘッダメンテナンス/Calendar header maintenance,AA0080010,Web,梅,1,A,カレンダヘッダメンテナンス/Calendar header maintenance,AA0080010
+AA0080,カレンダメンテナンス/Calendar maintenance,AA0080020,Web,梅,1,A,カレンダメンテナンスサブ1/Calendar maintenance sub1,AA0080021
+AA0080,カレンダメンテナンス/Calendar maintenance,AA0080020,Web,梅,1,A,カレンダメンテナンス/Calendar maintenance,AA0080020
+AA0080,カレンダ一括コピー/Calendar batch copy,AA0080030,Web,梅,1,A,カレンダ一括コピー/Calendar batch copy,AA0080030
+AA0090,工場メンテナンス/Plant maintenance,AA0090010,Web,梅,1,A,工場メンテナンス/Plant maintenance,AA0090010
+AA0090,利用者メンテナンス/User maintenance,AA0090030,Web,梅,1,A,利用者メンテナンス/User maintenance,AA0090030
+AA0100,消費税区分メンテナンス/C-T type maintenance,AA0100030,Web,梅,1,A,消費税区分メンテナンス/C-T type maintenance,AA0100030
+AA0100,休日メンテナンス/Holiday maintenance,AA0100010,Web,梅,1,A,休日メンテナンスサブ1/Holiday maintenance sub1,AA0100011
+AA0100,休日メンテナンス/Holiday maintenance,AA0100010,Web,梅,1,A,休日メンテナンス/Holiday maintenance,AA0100010
+AA0100,休日情報一括コピー/Holiday Info batch copy,AA0100020,Web,梅,1,A,休日情報一括コピー/Holiday Info batch copy,AA0100020
+AA0110,通貨情報メンテナンス/Currency Info maintenance,AA0110010,Web,梅,1,A,通貨情報メンテナンス/Currency Info maintenance,AA0110010
+AA0120,為替レート情報メンテナンス/Exchange rate Info maintenance,AA0120010,Web,梅,1,B,為替レート情報メンテナンス/Exchange rate Info maintenance,AA0120010
+AA0120,為替レート情報メンテナンス/Exchange rate Info maintenance,AA0120010,Web,梅,1,B,為替レート情報メンテナンスサブ１/Exchange rate Info maintenance sub1,AA0120011
+AA0130,製品構成一括置換/Prod structure batch sub,AA0130030,Web,梅,1,A,製品構成一括置換/Prod structure batch sub,AA0130030
+AA0130,製品構成コピー登録/Prod structure copy register,AA0130020,Web,梅,1,A,製品構成コピー登録/Prod structure copy register,AA0130020
+AA0130,製品構成ツリーメンテナンス/Prod structure tree maintenance,AA0130010,Web,梅,1,A,製品構成ツリーメンテナンス/Prod structure tree maintenance,AA0130010
+AA0130,製品構成ツリーメンテナンス/Prod structure tree maintenance,AA0130010,Web,梅,1,A,製品構成ツリーメンテナンスサブ１/Prod structure tree maintenance sub1,AA0130011
+AA0140,購入単価一覧/Purchase unit cost list,AA0140010,Web,梅,1,A,購入単価一覧/Purchase unit cost list,AA0140010
+AA0140,外注単価一覧/Unit cost of sub order list,AA0140020,Web,梅,1,A,外注単価一覧/Unit cost of sub order list,AA0140020
+AA0140,支給単価一覧/Unit cost of supply list,AA0140030,Web,梅,1,A,支給単価一覧/Unit cost of supply list,AA0140030
+AA0150,品目データ取込処理/Item data taking process,AA0150010,Web,梅,1,A,品目データ取込処理/Item data taking process,AA0150010
+AA0150,品目データ取込処理/Item data taking process,AA0150010,Web,梅,1,A,品目データ取込処理（CSVアップロード）/Item data taking process(CSV upload),AA0150011
+AA0160,製品構成データ取込処理/Prod structure data taking process,AA0160010,Web,梅,1,A,製品構成データ取込処理/Prod structure data taking process,AA0160010
+AA0160,製品構成データ取込処理/Prod structure data taking process,AA0160010,Web,梅,1,A,製品構成データ取込処理サブ1/Prod structure data taking process sub1,AA0160011
+AA0170,構成系列メンテナンス/Structure seq maintenance,AA0170010,Web,梅,1,A,構成系列メンテナンス/Structure seq maintenance,AA0170010
+AA0170,構成系列メンテナンス/Structure seq maintenance,AA0170010,Web,梅,1,A,構成系列メンテナンスサブ1/Structure seq maintenance sub1,AA0170011
+AA0170,構成系列メンテナンス/Structure seq maintenance,AA0170010,Web,梅,1,A,構成系列メンテナンスサブ2/Structure seq maintenance sub2,AA0170012
+AA0180,構成系列ツリーメンテナンス/Structure seq tree maintenance,AA0180010,Web,梅,1,A,構成系列ツリーメンテナンス/Structure seq tree maintenance,AA0180010
+AA0180,構成系列ツリーメンテナンス/Structure seq tree maintenance,AA0180010,Web,梅,1,A,構成系列ツリーメンテナンスサブ1/Structure seq tree maintenance sub1,AA0180011
+AA0180,構成系列ツリーメンテナンス/Structure seq tree maintenance,AA0180010,Web,梅,1,A,構成系列ツリーメンテナンスサブ2/Structure seq tree maintenance sub2,AA0180012
+AA0190,分類マスタメンテナンス/Class master maintenance,AA0190010,Web,梅,1,A,分類マスタメンテナンス/Class master maintenance,AA0190010
+AA0200,利用者データ取込処理/User data taking process,AA0200010,Web,梅,1,A,利用者データ取込処理/User data taking process,AA0200010
+AA0200,利用者データ取込処理/User data taking process,AA0200010,Web,梅,1,A,利用者データ取込処理サブ/User data taking process sub,AA0200011
+AA0210,取引先データ取込処理/Vendor data taking process,AA0210010,Web,梅,1,A,取引先データ取込処理/Vendor data taking process,AA0210010
+AA0210,取引先データ取込処理/Vendor data taking process,AA0210010,Web,梅,1,A,取引先データ取込処理（CSVアップロード）/Vendor data taking process(CSV Upload),AA0210011
+AB0010,生産計画メンテナンス(MRP)/Prod planning maintenance(MRP),AB0010010,Web,梅,1,A,生産計画メンテナンス(MRP)/Prod planning maintenance(MRP),AB0010010
+AB0020,生産計画メンテナンス(製番)/Prod planning maintenance (PN),AB0020010,Web,梅,1,A,生産計画メンテナンス(製番)サブ1/Prod planning maintenance (PN)sub1,AB0020011
+AB0020,生産計画メンテナンス(製番)/Prod planning maintenance (PN),AB0020010,Web,梅,1,A,生産計画メンテナンス(製番)/Prod planning maintenance (PN),AB0020010
+AC0010,所要量アラームリスト出力/MR alarm list output,AC0010020,Web,梅,1,A,所要量アラームリスト出力/MR alarm list output,AC0010020
+AC0010,所要量計算/MRP,AC0010010,Web,梅,1,A,所要量計算/MRP,AC0010010
+AC0010,所要量計算バッチ/MRP batch,AC0010B001,Batch,梅,1,A,,
+AC0020,オーダ発効（ＭＲＰ）/Order effect (MRP),AC0020020,Web,梅,1,A,オーダ発効（MRP）/Order effect (MRP),AC0020020
+AC0020,オーダ発効バッチ/Order effect batch,AC0020B001,Batch,梅,1,A,,
+AC0030,オーダ発効（製番）/Order effect (PN),AC0030020,Web,梅,1,A,オーダ発効（製番）/Order effect (PN),AC0030020
+AC0040,購入予定表出力/Purchase sched list output,AC0040010,Web,梅,1,A,購入予定表出力/Purchase sched list output,AC0040010
+AC0060,外部オーダデマンドメンテナンス/External order/demand maintenance,AC0060010,Web,梅,1,A,外部オーダデマンドメンテナンス/External order/demand maintenance,AC0060010
+AC0060,外部オーダデマンドメンテナンス/External order/demand maintenance,AC0060010,Web,梅,1,A,外部オーダデマンドメンテナンス サブ1/External order/demand maintenance sub1,AC0060011
+AC0060,総所要量展開/Gross-MR expansion,AC0060B001,Batch,梅,1,A,,
+AC0060,総所要量展開実行/Gross-MR expansion EXEC,AC0060020,Web,梅,1,A,総所要量展開実行/Gross-MR expansion EXEC,AC0060020
+AC0070,外部オーダ参照/External order reference,AC0070010,Web,梅,1,A,外部オーダ参照/External order reference,AC0070010
+AC0080,外部計画一覧/External planning list,AC0080010,Web,梅,1,A,外部計画一覧/External planning list,AC0080010
+AC0090,外部デマンド紐付け/External demand attached,AC0090010,Web,梅,1,A,外部デマンド紐付けサブ1/External demand attached sub1,AC0090011
+AC0090,外部デマンド紐付け/External demand attached,AC0090010,Web,梅,1,A,外部デマンド紐付け/External demand attached,AC0090010
+AC0100,製番引当メンテナンス/PN stock drawing maintenance,AC0100010,Web,梅,1,A,製番引当メンテナンス/PN stock drawing maintenance,AC0100010
+AC0100,製番引当メンテナンス/PN stock drawing maintenance,AC0100010,Web,梅,1,A,製番引当メンテナンスサブ1/PN stock drawing maintenance sub1,AC0100011
+AC0110,製番引当過不足一覧/PN stock drawing excess-and-deficiency list,AC0110010,Web,梅,1,A,製番引当過不足一覧/PN stock drawing excess-and-deficiency list,AC0110010
+AC0120,所要量メンテナンス（製番）/MR maintenance(PN),AC0120010,Web,梅,1,A,所要量メンテナンス（製番）/MR maintenance(PN),AC0120010
+AC0120,所要量メンテナンス（製番）/MR maintenance(PN),AC0120010,Web,梅,1,A,所要量メンテナンス（製番）/MR maintenance(PN),AC0120011
+AC0130,製番計画一覧/PN planning list,AC0130010,Web,梅,1,A,製番計画一覧/PN planning list,AC0130010
+AC0140,所要量計算（製番）/MRP(PN),AC0140010,Web,梅,1,A,所要量計算（製番）/MRP(PN),AC0140010
+AC0140,所要量計算バッチ（製番）/MRP batch(PN),AC0140B001,Batch,梅,1,A,,
+AC0150,個別オーダ発効（製番）バッチ/Order effect individual (PN) batch,AC0150B001,Batch,梅,1,A,,
+AC0150,個別オーダ発効（製番）/Order effect individual (PN),AC0150010,Web,梅,1,A,個別オーダ発効（製番）/Order effect individual (PN),AC0150010
+AC0160,所要量CSV出力/MR CSV output,AC0160010,Web,梅,1,A,所要量CSV出力/MR CSV output,AC0160010
+AD0010,品目別作業計画メンテナンス/The work planning maintenance by item,AD0010010,Web,梅,1,A,品目別作業計画メンテナンス/The work planning maintenance by item,AD0010010
+AD0020,品目別作業計画メンテナンス（製番）/The work planning maintenance by item(PN),AD0020011,Web,梅,1,A,品目別作業計画メンテナンス（製番）/The work planning maintenance by item(PN),AD0020011
+AD0020,品目別作業計画メンテナンス（製番）/The work planning maintenance by item(PN),AD0020011,Web,梅,1,A,品目別作業計画メンテナンス（製番）サブ１/The work planning maintenance by item(PN) sub1,AD0020012
+AD0020,品目別作業計画(製番品目選択)/The work planning by item(PN item selection),AD0020010,Web,梅,1,A,品目別作業計画（製番品目選択）/The work planning by item(PN item selection),AD0020010
+AD0030,作業指示確定実行/WI confirmed EXEC,AD0030030,Web,梅,1,A,作業指示確定実行/WI confirmed EXEC,AD0030030
+AD0030,系列別作業計画メンテナンス/The work planning maintenance by seq,AD0030020,Web,梅,1,A,系列別作業計画メンテナンスサブ1/The work planning maintenance by seq sub1,AD0030021
+AD0030,系列別作業計画メンテナンス/The work planning maintenance by seq,AD0030020,Web,梅,1,A,系列別作業計画メンテナンス/The work planning maintenance by seq,AD0030020
+AD0030,作業系列展開処理実行/WS development process EXEC,AD0030010,Web,梅,1,A,作業系列展開処理実行/WS development process EXEC,AD0030010
+AD0030,作業指示確定実行バッチ/WI confirmed EXEC batch,AD0030B002,Batch,梅,3,A,,
+AD0030,作業系列展開処理実行バッチ/WS development process EXEC batch,AD0030B001,Batch,梅,1,A,,
+AD0030,作業指示票発行/WI sheet issue,AD0030040,Web,梅,1,A,作業指示票発行/WI sheet issue,AD0030040
+AD0040,作業実績メンテナンス/Actual work maintenance,AD0040010,Web,梅,1,A,作業実績メンテナンス/Actual work maintenance,AD0040010
+AD0040,作業実績メンテナンス/Actual work maintenance,AD0040010,Web,梅,1,A,作業実績メンテナンスサブ１/Actual work maintenance sub1,AD0040011
+AD0040,作業実績メンテナンス/Actual work maintenance,AD0040010,Web,梅,1,A,作業実績メンテナンスサブ2/Actual work maintenance sub2,AD0040012
+AD0050,出来高実績入力/Actual amount actual input,AD0050010,Web,梅,1,A,出来高実績入力サブ１/Actual amount actual input sub1,AD0050011
+AD0050,出来高実績入力/Actual amount actual input,AD0050010,Web,梅,1,A,出来高実績入力/Actual amount actual input,AD0050010
+AD0060,現品票両替発行/Article sheet exchange issue,AD0060010,Web,梅,1,A,現品票両替発行/Article sheet exchange issue,AD0060010
+AD0070,作業指示一覧/WI list,AD0070010,Web,梅,1,A,作業指示一覧/WI list,AD0070010
+AD0080,作業実績取込バッチ処理/Actual work taking batch process,AD0080B001,Batch,梅,1,A,,
+AD0080,作業実績取込バッチ処理/Actual work taking batch process,AD0080020,Web,梅,1,A,作業実績取込バッチ処理/Actual work taking batch process,AD0080020
+AD0080,作業実績取込/Actual work taking,AD0080010,Web,梅,1,A,作業実績取込/Actual work taking,AD0080010
+AD0090,作業実績入力/Actual work input,AD0090010,Web,梅,1,A,作業実績入力/Actual work input,AD0090010
+AD0100,出来高作業指示強制完了/WI amount compulsion completion,AD0100010,Web,梅,1,A,出来高作業指示強制完了/WI amount compulsion completion,AD0100010
+AD0110,出来高実績CSV取込/Actual amount CSV taking,AD0110010,Web,梅,1,A,出来高実績CSV取込/Actual amount CSV taking,AD0110010
+AD0120,現品票印刷/Article sheet print,AD0120010,Web,梅,1,A,現品票印刷/Article sheet print,AD0120010
+AD0120,現品票印刷/Article sheet print,AD0120010,Web,梅,1,A,現品票印刷サブ1/Article sheet print sub1,AD0120011
+AD0130,日報メンテナンス/Daily report maintenance,AD0130010,Web,梅,1,A,日報メンテナンス/Daily report maintenance,AD0130010
+AD0130,日報メンテナンス/Daily report maintenance,AD0130010,Web,梅,1,A,日報メンテナンス/Daily report maintenance sub1,AD0130011
+AD0140,日報CSV取込/Daily report CSV taking,AD0140010,Web,梅,1,A,日報CSV取込/Daily report CSV taking,AD0140010
+AD0150,品目別作業計画CSV取込/The work planning by item CSV taking,AD0150010,Web,梅,1,A,品目別作業計画CSV取込/The work planning by item CSV taking,AD0150010
+AE0010,発注計画メンテナンス/Purchase order planning maintenance,AE0010010,Web,松,1,A,発注計画メンテナンス/Purchase order planning maintenance,AE0010010
+AE0020,発注計画メンテナンス（製番）/Purchase order planning maintenance(PN),AE0020020,Web,梅,1,A,発注計画メンテナンス（製番）サブ１/Purchase order planning maintenance(PN) sub1,AE0020021
+AE0020,発注計画メンテナンス（製番）/Purchase order planning maintenance(PN),AE0020020,Web,梅,1,A,発注計画メンテナンス（製番）/Purchase order planning maintenance(PN),AE0020020
+AE0020,発注計画（製番品目選択）/Purchase order planning (PN item selection),AE0020010,Web,梅,1,A,発注計画（製番品目選択）/Purchase order planning (PN item selection),AE0020010
+AE0030,発注指示確定バッチ/Ordering instruction confirmed batch,AE0030B001,Batch,松,1,A,,
+AE0030,発注指示確定実行/Ordering instruction confirmed EXEC,AE0030010,Web,松,1,A,発注指示確定実行/Ordering instruction confirmed EXEC,AE0030010
+AE0030,注文書発行/Order sheet issue,AE0030020,Web,松,1,A,注文書発行/Order sheet issue,AE0030020
+AE0040,購買ＥＤＩ注文データ作成/Purch EDI order data creation,AE0040010,Web,梅,1,A,購買ＥＤＩ注文データ作成/Purch EDI order data creation,AE0040010
+AE0040,購買ＥＤＩ所要データ作成/Purch EDI Rqrmnt data creation,AE0040030,Web,梅,1,A,購買ＥＤＩ所要データ作成/Purch EDI Rqrmnt data creation,AE0040030
+AE0050,支給予定一覧出力/Supply sched list output,AE0050010,Web,梅,1,A,支給予定一覧出力/Supply sched list output,AE0050010
+AE0050,有償支給品払出データ作成/Chargeable supplies issue data creation,AE0050020,Web,梅,1,A,有償支給品払出データ作成/Chargeable supplies issue data creation,AE0050020
+AE0060,受入実績メンテナンス/Accpt actual maintenance,AE0060020,Web,松,1,A,受入実績メンテナンスサブ2/Accpt actual maintenance sub2,AE0060022
+AE0060,受入実績メンテナンス/Accpt actual maintenance,AE0060020,Web,松,1,A,受入実績メンテナンスサブ1/Accpt actual maintenance sub1,AE0060021
+AE0060,受入実績メンテナンス/Accpt actual maintenance,AE0060020,Web,松,1,A,受入実績メンテナンス/Accpt actual maintenance,AE0060020
+AE0060,検査実績入力/Inspec actual input,AE0060030,Web,松,1,A,検査実績入力/Inspec actual input,AE0060030
+AE0060,受入実績入力/Accpt actual input,AE0060010,Web,松,1,A,受入実績入力/Accpt actual input,AE0060010
+AE0070,注文取消書発行/Order CAN sheet issue,AE0070010,Web,梅,1,A,注文取消書発行/Order CAN sheet issue,AE0070010
+AE0080,購買ＥＤＩ注文取消データ作成/Purch EDI order CAN data creation,AE0080010,Web,梅,1,A,購買ＥＤＩ注文取消データ作成/Purch EDI order CAN data creation,AE0080010
+AE0090,発注残一覧/Stock on order list,AE0090020,Web,梅,1,A,発注残一覧/Stock on order list,AE0090020
+AE0090,製品構成別発注残参照(ツリー)/Stock on order Ref. by prod structure(tree),AE0090040,Web,梅,1,A,製品構成別発注残参照(ツリー)/Stock on order Ref. by prod structure(tree),AE0090040
+AE0090,製品構成別発注残参照(ツリー)/Stock on order Ref. by prod structure(tree),AE0090040,Web,梅,1,A,製品構成別発注残参照（一覧）/Stock on order Ref. by prod structure(list),AE0090041
+AE0090,発注点割品目一覧データ作成/Order point rate item list data creation,AE0090030,Web,梅,1,A,発注点割品目一覧データ作成/Order point rate item list data creation,AE0090030
+AE0100,有償支給返品実績入力/Chargeable supply returned goods actual input,AE0100010,Web,梅,1,A,有償支給返品実績入力/Chargeable supply returned goods actual input,AE0100010
+AE0110,有償支給履歴一覧/Chargeable supply history list,AE0110010,Web,梅,1,A,有償支給履歴一覧/Chargeable supply history list,AE0110010
+AE0120,購入返品実績入力/Purchase returned goods actual input,AE0120010,Web,梅,1,A,購入返品実績入力/Purchase returned goods actual input,AE0120010
+AE0130,購入返品実績一覧/Purchase returned goods actual list,AE0130010,Web,梅,1,A,購入返品実績一覧/Purchase returned goods actual list,AE0130010
+AE0140,検査実績一覧/Inspec actual list,AE0140010,Web,梅,1,A,検査実績一覧/Inspec actual list,AE0140010
+AE0150,購買検収承認/Appr for purch receiving check,AE0150010,Web,梅,1,A,購買検収承認/Appr for purch receiving check,AE0150010
+AE0160,受入実績取込バッチ処理/Accpt actual taking batch process,AE0160020,Web,梅,1,A,受入実績取込バッチ処理/Accpt actual taking batch process,AE0160020
+AE0160,受入実績取込/Accpt actual taking,AE0160010,Web,梅,1,A,受入実績取込/Accpt actual taking,AE0160010
+AE0160,受入実績取込バッチ処理/Accpt actual taking batch process,AE0160B001,Batch,梅,1,A,,
+AE0170,発注消費税率変更/CHG order consumption tax rate,AE0170010,Web,梅,1,A,発注消費税率変更/CHG order consumption tax rate,AE0170010
+AE0180,発注計画CSV取込/Order planning CSV taking,AE0180010,Web,梅,1,A,発注計画CSV取込/Order planning CSV taking,AE0180010
+AF0010,出庫指示一覧/II list,AF0010010,Web,梅,1,A,出庫指示一覧/II list,AF0010010
+AF0020,マニュアル出庫実績入力/Manual issue actual input,AF0020010,Web,梅,1,A,マニュアル出庫実績入力サブ1/Manual issue actual input sub1,AF0020011
+AF0020,マニュアル出庫実績入力/Manual issue actual input,AF0020010,Web,梅,1,A,マニュアル出庫実績入力/Manual issue actual input,AF0020010
+AF0030,キット出庫実績入力/Kit issue actual input,AF0030010,Web,梅,1,A,キット出庫実績入力/Kit issue actual input,AF0030010
+AF0030,キット出庫実績入力/Kit issue actual input,AF0030010,Web,梅,1,A,キット出庫実績入力サブ1/Kit issue actual input sub1,AF0030011
+AF0040,追加出庫実績入力/Add issue actual input,AF0040010,Web,梅,1,A,追加出庫実績入力サブ1/Add issue actual input sub1,AF0040011
+AF0040,追加出庫実績入力/Add issue actual input,AF0040010,Web,梅,1,A,追加出庫実績入力/Add issue actual input,AF0040010
+AF0050,保管区移動出庫実績入力/SS dislodging issue actual input,AF0050010,Web,梅,1,A,保管区移動出庫実績入力/SS dislodging issue actual input,AF0050010
+AF0060,保管区移動入庫実績入力/SS dislodging receipt actual input,AF0060010,Web,梅,1,A,保管区移動入庫実績入力サブ1/SS dislodging receipt actual input sub1,AF0060011
+AF0060,保管区移動入庫実績入力/SS dislodging receipt actual input,AF0060010,Web,梅,1,A,保管区移動入庫実績入力/SS dislodging receipt actual input,AF0060010
+AF0070,余剰在庫振替入力/Surplus stock transfer input,AF0070010,Web,梅,1,A,余剰在庫振替入力/Surplus stock transfer input,AF0070010
+AF0070,余剰在庫振替入力/Surplus stock transfer input,AF0070010,Web,梅,1,A,余剰在庫振替入力サブ1/Surplus stock transfer input sub1,AF0070011
+AF0080,戻入実績入力/Actual return input,AF0080010,Web,梅,1,A,戻入実績入力サブ1/Actual return input sub1,AF0080011
+AF0080,戻入実績入力/Actual return input,AF0080010,Web,梅,1,A,戻入実績入力/Actual return input,AF0080010
+AF0090,計画外出庫実績入力/Input of unplanned issue actual,AF0090010,Web,梅,1,A,計画外出庫実績入力/Input of unplanned issue actual,AF0090010
+AF0100,計画外入庫実績入力/Input of unplanned receipt actual,AF0100010,Web,梅,1,A,計画外入庫実績入力/Input of unplanned receipt actual,AF0100010
+AF0110,余剰在庫一括振替/Surplus stock batch transfer ,AF0110010,Web,梅,1,A,余剰在庫一括振替/Surplus stock batch transfer ,AF0110010
+AF0120,オーダ問合せ/Order inquiry,AF0120010,Web,梅,1,A,オーダ問合せ/Order inquiry,AF0120010
+AF0130,マニュアル出庫実績CSV取込/Manual issue actual CSV taking,AF0130010,Web,梅,1,A,マニュアル出庫実績CSV取込/Manual issue actual CSV taking,AF0130010
+AG0010,在庫参照/Stock Ref.,AG0010010,Web,梅,1,A,在庫参照/Stock Ref.,AG0010010
+AG0010,在庫参照/Stock Ref.,AG0010010,Web,梅,1,A,在庫参照サブ1/Stock Ref. sub1,AG0010011
+AG0020,入出庫一覧/GM list,AG0020010,Web,梅,1,A,入出庫一覧/GM list,AG0020010
+AG0030,有効在庫参照/Valid stock reference,AG0030010,Web,梅,1,A,有効在庫参照/Valid stock reference,AG0030010
+AG0040,在庫一覧/Stock list,AG0040010,Web,梅,1,A,在庫一覧/Stock list,AG0040010
+AG0050,時系列入出庫予定一覧/Time seq GM sched list,AG0050010,Web,梅,1,A,時系列入出庫予定一覧/Time seq GM sched list,AG0050010
+AH0010,品目別棚卸設定メンテナンス/Inventory setting-out maintenance by item,AH0010020,Web,梅,1,A,品目別棚卸設定メンテナンスサブ1/Inventory setting-out maintenance by item sub1,AH0010021
+AH0010,品目別棚卸設定メンテナンス/Inventory setting-out maintenance by item,AH0010020,Web,梅,1,A,品目別棚卸設定メンテナンス/Inventory setting-out maintenance by item,AH0010020
+AH0010,品目別棚卸設定ファイル作成/Inventory configuration-file preparation by item,AH0010010,Web,梅,1,A,品目別棚卸設定ファイル作成/Inventory configuration-file preparation by item,AH0010010
+AH0020,棚卸条件メンテナンス/Inventory condition maintenance,AH0020010,Web,梅,1,A,棚卸条件メンテナンス/Inventory condition maintenance,AH0020010
+AH0020,棚卸条件メンテナンス/Inventory condition maintenance,AH0020010,Web,梅,1,A,棚卸条件メンテナンスサブ2/Inventory condition maintenance sub2,AH0020012
+AH0020,棚卸条件メンテナンス/Inventory condition maintenance,AH0020010,Web,梅,1,A,棚卸条件メンテナンスサブ1/Inventory condition maintenance sub1,AH0020011
+AH0020,棚卸条件メンテナンス/Inventory condition maintenance,AH0020010,Web,梅,1,A,棚卸条件メンテナンスサブ3/Inventory condition maintenance sub3,AH0020013
+AH0030,棚卸調査表出力/Inventory schedule list output,AH0030010,Web,梅,1,A,棚卸調査表出力/Inventory schedule list output,AH0030010
+AH0040,棚卸日在庫退避/Inventory date stock saved,AH0040010,Web,梅,1,A,棚卸日在庫退避/Inventory date stock saved,AH0040010
+AH0050,実棚入力/Actual inventory input,AH0050010,Web,梅,1,A,実棚入力/Actual inventory input,AH0050010
+AH0050,実棚入力/Actual inventory input,AH0050010,Web,梅,1,A,実棚入力サブ2/Actual inventory input sub2,AH0050012
+AH0050,実棚入力/Actual inventory input,AH0050010,Web,梅,1,A,実棚入力サブ1/Actual inventory input sub1,AH0050011
+AH0060,実棚一覧表出力/Actual inventory chart list output,AH0060010,Web,梅,1,A,実棚一覧表出力/Actual inventory chart list output,AH0060010
+AH0070,棚卸更新処理実行/Inventory update process EXEC,AH0070010,Web,梅,1,A,棚卸更新処理実行/Inventory update process EXEC,AH0070010
+AH0070,棚卸更新バッチ処理/Inventory update batch EXEC,AH0070B001,Batch,梅,1,A,,
+AJ0010,オーダ別進捗一覧/Progress list by order,AJ0010010,Web,梅,1,A,オーダ別進捗一覧/Progress list by order,AJ0010010
+AJ0020,製番別進捗一覧/Progress list by PN,AJ0020010,Web,梅,1,A,製番別進捗一覧/Progress list by PN,AJ0020010
+AJ0030,作業指示進捗一覧/Progress list by WI,AJ0030010,Web,梅,1,A,作業指示進捗一覧/Progress list by WI,AJ0030010
+AJ0040,発注指示進捗一覧/Progress list by ordering instruction,AJ0040010,Web,梅,1,A,発注指示進捗一覧/Progress list by ordering instruction,AJ0040010
+AK0010,日次処理実行/Daily process EXEC,AK0010010,Web,梅,1,A,日次処理実行/Daily process EXEC,AK0010010
+AK0010,日次処理実行バッチ/Daily process EXEC batch,AK0010B001,Batch,梅,1,A,,
+AK0020,月次処理実行バッチ/Monthly process EXEC batch,AK0020B001,Batch,梅,1,A,,
+AK0020,月次処理実行/Monthly process EXEC,AK0020010,Web,梅,1,A,月次処理実行/Monthly process EXEC,AK0020010
+AK0020,トランザクションデータ削除実行バッチ/Transaction data del EXEC batch,AK0020B002,Batch,梅,1,A,,
+AK0020,トランザクションデータ削除処理実行/Transaction data del process EXEC,AK0020020,Web,梅,1,A,トランザクションデータ削除実行/Transaction data del process EXEC,AK0020020
+AK0020,自動履歴削除処理実行バッチ/Automatic record history del process EXEC batch,AK0020B003,Batch,梅,1,A,,
+AK0020,自動履歴削除処理実行/Automatic record history del process EXEC,AK0020030,Web,梅,1,A,自動履歴削除処理実行/Automatic record history del process EXEC,AK0020030
+AK0030,販売情報取込処理実行/Sale Info taking process EXEC,AK0030010,Web,梅,1,A,販売情報取込処理実行/Sale Info taking process EXEC,AK0030010
+AK0030,販売情報取込処理実行バッチ/Sale Info taking process EXEC batch,AK0030B001,Batch,梅,1,A,,
+AL0010,資源メンテナンス/Resource maintenance,AL0010010,Web,梅,1,A,資源メンテナンス/Resource maintenance,AL0010010
+AL0020,制約工程メンテナンス/Constraint process maintenance,AL0020010,Web,梅,1,A,制約工程メンテナンス/Constraint process maintenance,AL0020010
+AL0030,負荷構成生成処理/Load structure creation process,AL0030B001,Batch,梅,1,A,,
+AL0030,負荷構成生成実行/Load structure creation EXEC,AL0030010,Web,梅,1,A,負荷構成生成実行/Load structure creation EXEC,AL0030010
+AL0040,複数工程日別負荷参照/Reference to the daily load of multiple process,AL0040010,Web,梅,1,A,複数工程日別負荷参照/Reference to the daily load of multiple process,AL0040010
+AL0040,複数工程日別負荷参照/Reference to the daily load of multiple process,AL0040010,Web,梅,1,A,工程別負荷参照/Reference to the Proc load of process,AL0040011
+AL0040,複数工程日別負荷参照/Reference to the daily load of multiple process,AL0040010,Web,梅,1,A,工程別負荷明細/Detail to the Proc load of process,AL0040012
+AL0050,負荷シミュレーション/Load simulation,AL0050010,Web,梅,1,A,負荷シミュレーションサブ1/Load simulation sub1,AL0050011
+AL0050,負荷シミュレーション/Load simulation,AL0050010,Web,梅,1,A,負荷シミュレーション/Load simulation,AL0050010
+AL0060,負荷山積みバッチ実行/Load pile batch EXEC,AL0060010,Web,梅,1,A,負荷山積みバッチ実行/Load pile batch EXEC,AL0060010
+AL0060,負荷山積みバッチ処理/Load pile batch process,AL0060B001,Batch,梅,1,A,,
+AN0010,業務ロックパラメータメンテナンス/Business lock parameter maintenance,AN0010010,Web,梅,1,A,業務ロックパラメータメンテナンス/Business lock parameter maintenance,AN0010010
+AN0020,負荷グラフパラメータメンテナンス/Load graph parameter maintenance,AN0020010,Web,梅,1,A,負荷グラフパラメータメンテナンス/Load graph parameter maintenance,AN0020010
+AN0030,トランザクション保持期間メンテナンス/Transaction hold period maintenance,AN0030010,Web,梅,1,A,トランザクション保持期間メンテナンス/Transaction hold period maintenance,AN0030010
+AN0040,パラメータメンテナンス/Parameter maintenance,AN0040010,Web,梅,1,A,パラメータメンテナンス/Parameter maintenance,AN0040010
+AN0050,一覧表示件数メンテナンス/List display No.-of-cases maintenance,AN0050010,Web,梅,1,A,一覧表示件数メンテナンス/List display No.-of-cases maintenance,AN0050010
+AN0060,コンボボックスデータパラメータメンテナンス/Combo box data-parameters maintenance,AN0060010,Web,梅,1,A,コンボボックスデータパラメータメンテナンス/Combo box data-parameters maintenance,AN0060010
+AN0070,生産計画期間パラメータメンテナンス/Prod plan period parameter maintenance,AN0070010,Web,梅,1,A,生産計画期間パラメータメンテナンス/Prod plan period parameter maintenance,AN0070010
+AN0080,採番パラメータメンテナンス/Number parameter maintenance,AN0080010,Web,梅,1,A,採番パラメータメンテナンス/Number parameter maintenance,AN0080010
+AN0090,所要量計算制御メンテナンス/MRP control maintenance,AN0090010,Web,梅,1,A,所要量計算制御メンテナンス/MRP control maintenance,AN0090010
+AN0110,所要量計算制御（製番）メンテナンス/MRP control(PN) maintenance,AN0110010,Web,梅,1,A,所要量計算制御（製番）メンテナンス/MRP control(PN) maintenance,AN0110010
+AN0100,システム管理情報メンテナンス/System management Info maintenance,AN0100010,Web,梅,1,A,システム管理情報メンテナンス/System management Info maintenance,AN0100010
+AZ0020,業務ロックメンテナンス/Business lock maintenance,AZ0020010,Web,梅,1,A,業務ロックメンテナンス/Business lock maintenance,AZ0020010
+AZ0030,業務メッセージ一覧/Business message list,AZ0030010,Web,梅,1,A,業務メッセージ一覧/Business message list,AZ0030010
+AZ0030,業務メッセージ一覧/Business message list,AZ0030010,Web,梅,1,A,業務メッセージ一覧サブ1/Business message list sub1,AZ0030011
+AZ0040,一般検索（参照）/General retrieval(reference),AZ0040010,Web,梅,1,A,一般検索サブ1/General retrieval sub1,AZ0040011
+AZ0040,一般検索（参照）/General retrieval(reference),AZ0040010,Web,梅,1,A,一般検索（参照）/General retrieval(reference),AZ0040010
+AZ0040,一般検索（参照）/General retrieval(reference),AZ0040010,Web,梅,1,A,一般検索サブ2/General retrieval sub2,AZ0040012
+AZ0050,一般検索/General retrieval,AZ0050010,Web,梅,1,A,一般検索サブ1/General retrieval sub1,AZ0050011
+AZ0050,一般検索/General retrieval,AZ0050010,Web,梅,1,A,一般検索サブ4/General retrieval sub4,AZ0050014
+AZ0050,一般検索/General retrieval,AZ0050010,Web,梅,1,A,一般検索サブ2/General retrieval sub2,AZ0050012
+AZ0050,一般検索/General retrieval,AZ0050010,Web,梅,1,A,一般検索サブ7/General retrieval sub7,AZ0050017
+AZ0050,一般検索/General retrieval,AZ0050010,Web,梅,1,A,一般検索/General retrieval,AZ0050010
+AZ0050,一般検索/General retrieval,AZ0050010,Web,梅,1,A,一般検索サブ8/General retrieval sub8,AZ0050018
+AZ0050,一般検索/General retrieval,AZ0050010,Web,梅,1,A,一般検索サブ3/General retrieval sub3,AZ0050013
+AZ0050,一般検索/General retrieval,AZ0050010,Web,梅,1,A,一般検索サブ6/General retrieval sub6,AZ0050016
+AZ0050,一般検索/General retrieval,AZ0050010,Web,梅,1,A,一般検索サブ5/General retrieval sub5,AZ0050015
+AZ0060,マスタ系承認/Appr for master system,AZ0060010,Web,梅,1,A,マスタ系承認/Appr for master system,AZ0060010
+AZ0060,マスタ系承認/Appr for master system,AZ0060010,Web,梅,1,A,マスタ系承認2(JF)/Appr for master system2(JF),AZ0060011
+DA0010,工程マスタメンテナンス/Process master maintenance,DA0010010,Web,梅,1,A,工程マスタメンテナンスサブ１/Process master maintenance sub1,DA0010011
+DA0010,工程マスタメンテナンス/Process master maintenance,DA0010010,Web,梅,1,A,工程マスタメンテナンス/Process master maintenance,DA0010010
+DA0020,購入品マスタメンテナンス/PA master maintenance,DA0020010,Web,梅,1,A,購入品マスタメンテナンス/PA master maintenance,DA0020010
+DA0030,加工費マスタメンテナンス/Proc cost master maintenance,DA0030010,Web,梅,1,A,加工費マスタメンテナンス/Proc cost master maintenance,DA0030010
+DA0040,品目別加工費マスタメンテナンス/The proc cost master maintenance by item,DA0040010,Web,梅,1,A,品目別加工費マスタメンテナンスサブ１/The proc cost master maintenance by item sub1,DA0040011
+DA0040,品目別加工費マスタメンテナンス/The proc cost master maintenance by item,DA0040010,Web,梅,1,A,品目別加工費マスタメンテナンス/The proc cost master maintenance by item,DA0040010
+DA0050,加工費分類マスタメンテナンス/Proc cost class master maintenance,DA0050010,Web,梅,1,A,加工費分類マスタメンテナンス/Proc cost class master maintenance,DA0050010
+DB0010,工程情報抽出／一括登録実行/Process Info extraction /batch registration EXEC,DB0010010,Web,松,1,A,工程情報抽出／一括登録実行/Process Info extraction /batch registration EXEC,DB0010010
+DB0010,バッチ/Batch,DB0010B001,Batch,松,1,A,,
+DB0020,購入単価情報抽出／一括登録実行/Purchase UC Info extraction /batch registration EXEC,DB0020010,Web,松,1,A,購入単価情報抽出／一括登録実行/Purchase UC Info extraction /batch registration EXEC,DB0020010
+DB0020,バッチ/Batch,DB0020B001,Batch,松,1,A,,
+DB0030,外注単価情報抽出／一括登録実行/Sub UC Info extraction /batch registration EXEC,DB0030010,Web,梅,1,A,外注単価情報抽出／一括登録実行/Sub UC Info extraction /batch registration EXEC,DB0030010
+DB0030,バッチ/Batch,DB0030B001,Batch,松,1,A,,
+DB0040,加工費情報一括登録実行/Proc cost Info batch registration EXEC,DB0040010,Web,梅,1,A,加工費情報一括登録実行/Proc cost Info batch registration EXEC,DB0040010
+DB0040,バッチ/Batch,DB0040B001,Batch,松,1,A,,
+DB0100,一括登録エラーリスト出力/Batch registration error output,DB0100010,Web,松,1,A,一括登録エラーリスト出力/Batch registration error output,DB0100010
+DC0010,標準原価計算処理実行/Standard cost calc processing EXEC,DC0010010,Web,松,1,A,標準原価計算処理実行/Standard cost calc processing EXEC,DC0010010
+DC0010,バッチ/Batch,DC0010B001,Batch,松,1,A,,
+DC0020,標準原価マスタチェック実行/Standard cost master check EXEC,DC0020010,Web,松,1,A,標準原価マスタチェック実行/Standard cost master check EXEC,DC0020010
+DC0020,バッチ/Batch,DC0020B001,Batch,松,1,A,,
+DC0100,標準原価計算エラーリスト出力/Standard cost calc error output,DC0100010,Web,梅,1,A,標準原価計算エラーリスト出力/Standard cost calc error output,DC0100010
+DD0010,標準原価参照（ツリー）/Standard cost reference(tree),DD0010010,Web,梅,1,A,標準原価参照（ツリー）/Standard cost reference(tree),DD0010010
+DD0010,標準原価参照（一覧）/Standard cost reference(list),DD0010020,Web,梅,1,A,標準原価参照（一覧）/Standard cost reference(list),DD0010020
+DD0020,品目別標準原価一覧表出力/Standard cost list output by item,DD0020010,Web,梅,1,A,品目別標準原価一覧表出力/Standard cost list output by item,DD0020010
+DD0030,標準原価計算書出力/Standard cost calc output,DD0030010,Web,梅,1,A,標準原価計算書出力/Standard cost calc output,DD0030010
+DE0010,月末・期末更新実行/The update EXEC of the end of the month or the term,DE0010010,Web,松,1,A,月末・期末更新実行/The update EXEC of the end of the month or the term,DE0010010
+DE0010,バッチ/Batch,DE0010B001,Batch,松,1,A,,
+DE0020,バッチ/Batch,DE0020B001,Batch,梅,1,A,,
+DE0020,原価基準情報マスタ削除実行/Cost basic Info master del EXEC,DE0020010,Web,梅,1,A,原価基準情報マスタ削除実行/Cost basic Info master del EXEC,DE0020010
+DE0030,原価基準情報インターフェース削除実行/Cost basic Info interface del EXEC,DE0030010,Web,松,1,A,原価基準情報インターフェース削除実行/Cost basic Info interface del EXEC,DE0030010
+DE0030,バッチ/Batch,DE0030B001,Batch,松,1,A,,
+DE0040,バッチ/Batch,DE0040B001,Batch,松,1,A,,
+DE0040,原価計算トランザクション削除実行/Cost calc transaction del EXEC,DE0040010,Web,松,1,A,原価計算トランザクション削除実行/Cost calc transaction del EXEC,DE0040010
+DZ0010,原価管理パラメータメンテナンス/Cost control parameter maintenance,DZ0010010,Web,梅,1,A,原価管理パラメータメンテナンス/Cost control parameter maintenance,DZ0010010
+KA0030,製品メンテナンス/Prod maintenance,KA0030010,Web,梅,1,A,製品メンテナンス/Prod maintenance,KA0030010
+KA0040,製品単価メンテナンス/Prod unit cost maintenance,KA0040010,Web,梅,1,A,製品単価メンテナンス1/Prod unit cost maintenance1,KA0040011
+KA0040,製品単価メンテナンス/Prod unit cost maintenance,KA0040010,Web,梅,1,A,製品単価メンテナンス/Prod unit cost maintenance,KA0040010
+KA0090,部門メンテナンス/Division maintenance,KA0090010,Web,梅,1,A,部門メンテナンス/Division maintenance,KA0090010
+KA0100,得意先メンテナンス/Cust maintenance,KA0100010,Web,梅,1,A,得意先メンテナンス/Cust maintenance,KA0100010
+KA0100,得意先納品場所メンテナンス/Cust delivery place maintenance,KA0100020,Web,梅,1,A,得意先納品場所メンテナンス/Cust delivery place maintenance,KA0100020
+KP0010,販売所要計画登録/Sale requirement plan register,KP0010010,Web,梅,1,A,販売所要計画登録/Sale requirement plan register,KP0010010
+KP0020,販売所要計画情報修正/Sale requirement planning Info Edit,KP0020010,Web,梅,1,A,販売所要計画情報修正/Sale requirement planning Info Edit,KP0020010
+KP0030,販売所要計画明細一覧/Sale requirement planning detailed list,KP0030010,Web,梅,1,A,販売所要計画明細一覧/Sale requirement planning detailed list,KP0030010
+KP0040,EDI所要計画データＩ／Ｆ/EDI requirment plan data I/F,KP0040B001,Batch,梅,1,A,,
+KP0040,販売所要残集計処理/Total of sale requirement remain process,KP0040B003,Batch,梅,1,A,,
+KP0040,EDI所要情報取込処理/EDI Rqrmnt info taking process,KP0040B002,Batch,梅,1,A,,
+KP0050,販売所要計画Ｉ／Ｆバッチ/Sale requirement plan I/F process batch,KP0050B001,Batch,梅,1,A,,
+KP0050,販売所要計画Ｉ／Ｆ処理実行/Sale requirement plan I/F process EXEC,KP0050010,Web,梅,1,A,販売所要計画Ｉ／Ｆ処理実行/Sale requirement plan I/F process EXEC,KP0050010
+KP0060,内示・受注Ｉ／Ｆ処理/Unofficial notification I/F process,KP0060B001,Batch,梅,1,A,,
+KQ0010,受注承認/Appr for order,KQ0010030,Web,梅,1,A,受注承認/Appr for order,KQ0010030
+KQ0010,受注修正/Order Edit,KQ0010020,Web,松,1,A,受注情報修正/Order Info Edit,KQ0010020
+KQ0010,受注登録/Order register,KQ0010010,Web,松,1,A,受注登録/Order register,KQ0010010
+KQ0010,注文情報取込/Order info taking,KQ0010B001,Batch,梅,1,A,,
+KQ0040,受注明細一覧/Order detailed list,KQ0040010,Web,梅,1,A,受注明細一覧/Order detailed list,KQ0040010
+KQ0060,受注/生産アンバランス一覧/Order/production imbalanced list,KQ0060010,Web,梅,1,A,受注/生産アンバランス一覧/Order/production imbalanced list,KQ0060010
+KQ0080,受注製番紐付/Order PN attached,KQ0080010,Web,梅,1,A,受注製番紐付/Order PN attached,KQ0080010
+KQ0090,受注登録（非在庫品）/Order register (Non-stocked products),KQ0090010,Web,梅,1,A,受注登録（非在庫品）/Order register (Non-stocked products),KQ0090010
+KQ0100,受注消費税率変更/CHG order consumption tax rate,KQ0100010,Web,梅,1,A,受注消費税率変更/CHG order consumption tax rate,KQ0100010
+KR0010,受領・売上登録/Receipt and sales register,KR0010010,Web,梅,1,A,受領・売上登録/Receipt and sales register,KR0010010
+KR0030,その他売上実績/Other sales actual,KR0030010,Web,梅,1,A,その他売上実績/Other sales actual,KR0030010
+KR0060,売上実績承認/Appr for sales actual,KR0060010,Web,梅,1,A,売上実績承認/Appr for sales actual,KR0060010
+KR0070,売上登録（非在庫品）/Sales register (Non-stocked products),KR0070010,Web,梅,1,A,売上登録（非在庫品）/Sales register (Non-stocked products),KR0070010
+KT0010,出荷計画/Shipment plan,KT0010010,Web,梅,1,A,出荷計画メンテナンス/Shipment planning maintenance,KT0010010
+KU0010,出荷指示バッチ/S.I. batch,KU0010B001,Batch,梅,1,A,,
+KU0010,出荷指示メンテナンス/S.I. maintenance,KU0010010,Web,松,1,A,出荷指示メンテナンス/S.I. maintenance,KU0010010
+KU0020,出荷関連伝票出力/Ship related slip output,KU0020010,Web,梅,1,A,出荷関連伝票出力/Ship related slip output,KU0020010
+KU0030,出荷実績メンテナンス/Shipping actual maintenance,KU0030010,Web,梅,1,A,出荷実績メンテナンス/Shipping actual maintenance,KU0030010
+KU0050,出荷指示一覧/S.I. list,KU0050010,Web,梅,1,A,出荷指示一覧/S.I. list,KU0050010
+KU0060,出荷指示一括メンテナンス/S.I. batch maintenance,KU0060010,Web,梅,1,A,出荷指示一括メンテナンス/S.I. batch maintenance,KU0060010
+KU0070,出荷インボイス出力/Shipment invoice output,KU0070010,Web,梅,1,A,出荷インボイス出力/Shipment invoice output,KU0070010
+KU0080,出荷インボイスメンテナンス/Shipment invoice maintenance,KU0080010,Web,梅,1,A,出荷インボイスメンテナンス/Shipment invoice maintenance,KU0080010
+KU0090,出荷インボイス一覧/Shipment invoice list,KU0090010,Web,梅,1,A,出荷インボイス一覧/Shipment invoice list,KU0090010
+KU0100,出荷インボイス帳票出力/Shipment invoice sheet output,KU0100010,Web,梅,1,A,出荷インボイス帳票出力/Shipment invoice sheet output,KU0100010
+KV0010,バッチ処理実行/Order batch process EXEC,KV0010010,Web,梅,1,A,バッチ処理実行/Order batch process EXEC,KV0010010
+KV0020,注文IF(EDI)変換/Order IF (EDI)conversion ,KV0020B002,Batch,梅,1,A,,
+KV0020,預託検収データI/F/Deposition receiving data I/F,KV0020B005,Batch,梅,1,A,,
+KV0020,注文IF(EDI)入力/Order IF(EDI) input,KV0020B001,Batch,梅,1,A,,
+KV0030,出荷計画Ｉ／Ｆバッチ/Ship plan I/F batch,KV0030B001,Batch,梅,1,A,,
+KV0030,出荷計画Ｉ／Ｆ処理実行/Ship plan I/F process EXEC,KV0030010,Web,梅,1,A,出荷計画Ｉ／Ｆ処理実行/Ship plan I/F process EXEC,KV0030010
+KV0040,販売トランザクションデータ削除実行/Sale transaction data del EXEC,KV0040B001,Batch,梅,3,A,,
+KV0040,販売トランザクションデータ削除実行/Sale transaction data del EXEC,KV0040010,Web,梅,1,A,販売トランザクションデータ削除実行/Sale transaction data del EXEC,KV0040010
+KZ0010,売掛管理Ｉ／Ｆ処理/AR management I/F process,KZ0010P001,WebComponent,梅,1,A,,
+AE0190,発注計画メンテナンス（製番先行手配)/Order planning maintenance(PN preceding arrangements),AE0190010,Web,松,1,A,発注計画メンテナンス（製番先行手配)/Order planning maintenance(PN preceding arrangements),AE0190010
+KM0010,案件登録/Project register,KM0010010,Web,梅,1,A,案件登録/Project register,KM0010010
+KM0020,見積登録/Estimated register,KM0020010,Web,梅,1,A,見積登録/Estimated register,KM0020010
+KM0030,案件受注登録/Project order register,KM0030010,Web,梅,1,A,案件受注登録/Project order register,KM0030010
+KM0040,案件一覧/Project list,KM0040010,Web,梅,1,A,案件一覧/Project list,KM0040010
+KM0050,案件進捗/Project progress,KM0050010,Web,梅,1,A,案件進捗/Project progress,KM0050010
+KM0060,案件予算積上バッチ処理/Project budget load batch process,KM0060B001,Batch,梅,1,A,,
+KR0080,役務実績登録/Service actual achievement register,KR0080010,Web,梅,1,A,役務実績登録/Service actual achievement register,KR0080010

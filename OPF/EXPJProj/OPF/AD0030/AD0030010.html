@@ -1,0 +1,211 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+作業系列展開処理実行
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AD0030/AD0030010.html,v $
+$Author: geng-jia $	
+$Revision: 1.7 $ $Date: 2017/02/14 06:52:55 $
+********************************************************* --%>
+<html>
+<head>
+<title>作業系列展開処理実行</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AD0030010" version="AD0030010 $Revision: 1.7 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="1">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05" height="494" valign="top"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="AD0030010form1" width="934" height="494" border="1" cellspacing="0" cellpadding="0"
+                 status="<%= TypeConverter.sanitizer(aAD0030010Control.getReadStatusString()) %>"
+                 script1="onLoad;0;CALL;onDecision@0,1,2"
+                 script2="onDecision;0;CHK;_AD0030010form1/r1_MODE[eq]true@*0,*1"
+                 script3="child;0;CHKRQ;A@*2,*3"
+                 script4="child;1;CHKRQ;B@*2,*3"
+                 script5="child;2;UNMASK;_AD0030010button1/Execute"
+                 script6="child;3;MASK;_AD0030010button1/Execute"
+                 script7="onDecision;1;CHK;_AD0030010form1/r1_MODE[eq]true@*4,*7"
+                 script8="child;4;UNMASK;_AD0030010form1/OPR_INST_START_DATE,_AD0030010form1/OPR_INST_START_TIME,_AD0030010form1/CalendarOprInstStartDate@*5"
+                 script9="child;5;MASK;_AD0030010form1/PRD_DUE_DATE,_AD0030010form1/PRD_DUE_TIME,_AD0030010form1/CalendarPrdDueDate@*6"
+                 script10="child;6;SET;_AD0030010form1/PRD_DUE_DATE=,_AD0030010form1/PRD_DUE_TIME="
+                 script11="child;7;UNMASK;_AD0030010form1/PRD_DUE_DATE,_AD0030010form1/PRD_DUE_TIME,_AD0030010form1/CalendarPrdDueDate@*8"
+                 script12="child;8;MASK;_AD0030010form1/OPR_INST_START_DATE,_AD0030010form1/OPR_INST_START_TIME,_AD0030010form1/CalendarOprInstStartDate@*9"
+                 script13="child;9;SET;_AD0030010form1/OPR_INST_START_DATE=,_AD0030010form1/OPR_INST_START_TIME="
+                 script14="onDecision;2;CHK;_AD0030010form1/TIME_CTRL[eq]false@*10"
+                 script15="child;10;MASK;_AD0030010form1/OPR_INST_START_TIME,_AD0030010form1/PRD_DUE_TIME@*11"
+                 script16="child;11;SET;_AD0030010form1/OPR_INST_START_TIME=,_AD0030010form1/PRD_DUE_TIME="
+                 >
+                <orloophead>
+                <tr bgcolor="#ccff99"> 
+                  <td width=170 align="right">&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=170>&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88 align=left>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td required=true>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OPR_INST_START_DATE_6">品目別製造着手日</span></td>
+                  <td><orftextinput  name="OPR_INST_START_DATE" orteus="true" width="150" required="A" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarOprInstStartDate" value="" pattern="none" orteus="false" 
+                     width="22" attribute="BTS_CALENDAR" script1="onClick;0;CALENDAR;_AD0030010form1/OPR_INST_START_DATE"></orfcalendar></td>
+                  <td><orftextinput name="OPR_INST_START_TIME" orteus="true" kind="OBT_N;" maxlength="4"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0028">まで</span></td>
+                  <td><orfradiobutton  name="r1_MODE" orteus="true" value="true" group="MODE" text="品目別製造着手日で絞り込む" mlang="true" mlkind="common" mlname="Expj.Cmt0510" width="190" checked></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.WORK_ODR_DLV_DATE_6">品目別製造納期</span></td>
+                  <td><orftextinput  name="PRD_DUE_DATE" orteus="true" width="150" required="B" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarPrdDueDate" value="" pattern="none" orteus="false" 
+                     width="22" attribute="BTS_CALENDAR" script1="onClick;0;CALENDAR;_AD0030010form1/PRD_DUE_DATE"></orfcalendar></td>
+                  <td><orftextinput name="PRD_DUE_TIME" orteus="true" kind="OBT_N;" maxlength="4"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0028">まで</span></td>
+                  <td><orfradiobutton  name="r2_MODE" orteus="true" value="true" group="MODE" text="品目別製造納期で絞り込む" mlang="true" mlkind="common" mlname="Expj.Cmt0511" width="190"></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CD">製番</span></td>
+                  <td><orftextinput  name="JOB_ODR_CD" orteus="true" maxlength="25" width="260" kind="OBT_WILD"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerJOB_ODR_CD" value="" pattern="none" revokectrl="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" visible="true" sqlname="JOB_ODR_CD_12" 
+				  sqlparam_2="_AD0030010form1/JOB_ODR_CD"
+ script1="onClick;0;PEEKER;_AD0030010form1/JOB_ODR_CD@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0002">（ワイルドカード指定可）</span></td>
+                  <td><orfcheckbox  name="c_JOB_ODR_CD" orteus="true" value="true" group="c_JOB_ODR_CD" text="製番を指定する" mlang="true" mlkind="common" mlname="Expj.Cmt0208" width="190"
+                     script1="onLoad;0;CALL;onClick@0"
+                     script2="onClick;0;CHK;_THIS[eq]true@*0,*1"
+                     script3="child;0;UNMASK;_AD0030010form1/JOB_ODR_CD,_AD0030010form1/PeekerJOB_ODR_CD"
+                     script4="child;1;MASK;_AD0030010form1/JOB_ODR_CD,_AD0030010form1/PeekerJOB_ODR_CD@*2"
+                     script5="child;2;SET;_AD0030010form1/JOB_ODR_CD="></orfcheckbox>
+                  </td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="TIME_CTRL" orteus="true" visible="false"></orftextinput>&nbsp;</td>
+                </tr>
+                </ornoloop> 
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AD0030010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="Execute" value="実行" pattern="insert" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnExecute" width="100" lock="1" 
+                  	 script1="onClick;0;CHK;~LEN(_AD0030010form1/OPR_INST_START_TIME)[eq]1[or]~LEN(_AD0030010form1/OPR_INST_START_TIME)[eq]2@!AS00029"
+                     script2="onClick;1;CHK;~LEN(_AD0030010form1/PRD_DUE_TIME)[eq]1[or]~LEN(_AD0030010form1/PRD_DUE_TIME)[eq]2@!AS00027"
+                     script3="onClick;2;CHK;~LEN(_AD0030010form1/OPR_INST_START_TIME)[eq]3@*3"
+                     script4="child;3;CHK;[{~CHARAT(_AD0030010form1/OPR_INST_START_TIME:1)}*10+{~CHARAT(_AD0030010form1/OPR_INST_START_TIME:2)}][gte]60@!AS00030"
+                     script5="onClick;4;CHK;~LEN(_AD0030010form1/PRD_DUE_TIME)[eq]3@*5"
+                     script6="child;5;CHK;[{~CHARAT(_AD0030010form1/PRD_DUE_TIME:1)}*10+{~CHARAT(_AD0030010form1/PRD_DUE_TIME:2)}][gte]60@!AS00028"
+                     script7="onClick;6;CHK;~LEN(_AD0030010form1/OPR_INST_START_TIME)[eq]4@*7"
+                     script8="child;7;CHK;[{~CHARAT(_AD0030010form1/OPR_INST_START_TIME:0)}*10+{~CHARAT(_AD0030010form1/OPR_INST_START_TIME:1)}][gte]24[or][{~CHARAT(_AD0030010form1/OPR_INST_START_TIME:2)}*10+{~CHARAT(_AD0030010form1/OPR_INST_START_TIME:3)}][gte]60@!AS00030"
+                     script9="onClick;8;CHK;~LEN(_AD0030010form1/PRD_DUE_TIME)[eq]4@*9"
+                     script10="child;9;CHK;[{~CHARAT(_AD0030010form1/PRD_DUE_TIME:0)}*10+{~CHARAT(_AD0030010form1/PRD_DUE_TIME:1)}][gte]24[or][{~CHARAT(_AD0030010form1/PRD_DUE_TIME:2)}*10+{~CHARAT(_AD0030010form1/PRD_DUE_TIME:3)}][gte]60@!AS00028"
+                  	 script11="onClick;10;SUBMIT;_AD0030010form1/*@AD0030010Servlet,,$ZZ07010"
+                  	> 
+                    </orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AD0030010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" 
+                     script1="onClick;0;SUBMIT;_AD0030010form1/*@AD0030010Servlet,,$ZZ07008" 
+                 lock="0"></orfbutton></td>
+                  <td><orfbutton  name="Close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100"
+                     script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAD0030010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

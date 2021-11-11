@@ -1,0 +1,556 @@
+/*
+ * $Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/KV0030/src/com/nec/jp/orteus/metamorBase/KV0030/KV0030B001/readT_ANS_DLV_DATE.java,v $
+ *
+ * Copyright (c) 2003-2005 NEC Corporation.
+ * Copyright (c) 2003-2005 NEC Informatec Systems,Ltd.
+ *
+ * ALL RIGHTS RESERVED  BY   NEC INFORMATEC SYSTEMS, LTD.
+ * THIS PROGRAM MUST BE USED SOLELY  FOR  THE PURPOSE FOR
+ * WHICH IT WAS FURNISHED BY NEC INFORMATEC SYSTEMS, LTD,
+ * NO PART OF THIS PROGRAM MAY BE REPRODUCED OR DISCLOSED
+ * TO  OTHERS,  IN ANY FORM  WITHOUT  THE  PRIOR  WRITTEN
+ * PERMISSION OF NEC INFORMATEC SYSTEMS, LTD.
+ * USE OF COPYRIGHT NOTICE  DOES NOT EVIDENCE PUBLICATION
+ * OF THE PROGRAM
+ *
+ * NEC INFORMATEC SYSTEMS  CONFIDENTIAL  AND  PROPRIETARY
+ *
+ * テンプレート履歴：
+ * EXPJ    (2004/04/05),メソッドコメントの「* @param なし」をすべて削除
+ *                     ,メソッドコメントの「* @return なし」をすべて削除
+ *                     ,EXPLANNER/J用に改造
+ * 3.1.0.1 (2003/10/30),Stored Procedure障害対応
+ * 3.1.0.0 (2003/06/24),Stored Procedure対応
+ * 3.0.0.0 (2003/03/19),mediatorリポジトリ情報修正
+ * 2.1.0.0 (2002/11/05),検索EntityのCacheモード対応
+ * 2.0.2.0 (2002/10/15),DB2対応
+ * 2.0.1.0 (2002/08/05),MS SQLServer2000対応
+ * 2.0.0.0 (2002/05/27),new foundation対応
+ *
+ */
+
+package com.nec.jp.orteus.metamorBase.KV0030.KV0030B001;
+
+import com.nec.jp.orteus.util.*;
+import com.nec.jp.orteus.xaf.foundation.*;
+import com.nec.jp.orteus.xaf.util.*;
+import com.nec.jp.orteus.xaf.ba.*;
+import com.nec.jp.orteus.xaf.wa.*;
+
+import java.lang.Number.*;
+import java.sql.*;
+import java.util.*;
+import java.util.Date;
+import java.io.*;
+
+//{{user_implement_dev:import
+ // TODO: ここにimportパッケージを記述してください
+//}}user_implement_dev:import
+
+/**
+ * CLASS     : readT_ANS_DLV_DATE クラス
+ * ファイル・クラス説明
+ * @author $Author: geng-jia $
+ * @version $Revision: 1.9 $ $Date: 2015/12/03 08:57:30 $
+ */
+
+//{{user_implement_dev:header
+//}}user_implement_dev:header
+
+public class readT_ANS_DLV_DATE extends AbstractBatchAppEntity
+{
+
+	//////////////////////////////
+
+	/**
+	 * create()メソッドが利用できるかどうかを返す
+	 *
+	 * @return 利用できる場合にはTRUE、できない場合にはFALSEを返す
+	 */
+	public boolean canCreate() { return false; }
+
+	/**
+	 * read()メソッドが利用できるかどうかを返す
+	 *
+	 * @return 利用できる場合にはTRUE、できない場合にはFALSEを返す
+	 */
+	public boolean canRead() { return true; }
+
+	/**
+	 * update()メソッドが利用できるかどうかを返す
+	 *
+	 * @return 利用できる場合にはTRUE、できない場合にはFALSEを返す
+	 */
+	public boolean canUpdate() { return false; }
+
+	/**
+	 * delete()メソッドが利用できるかどうかを返す
+	 *
+	 * @return 利用できる場合にはTRUE、できない場合にはFALSEを返す
+	 */
+	public boolean canDelete() { return false; }
+
+	/**
+	 * call()メソッドが利用できるかどうかを返す
+	 *
+	 * @return 利用できる場合にはTRUE、できない場合にはFALSEを返す
+	 */
+	public boolean canCall() { return false; }
+
+	/**
+	 * ログ部品インスタンス
+	 */
+	public DisplayMessageUtil objMessage = new DisplayMessageUtil();
+
+	//////////////////////////////
+
+	//{{user_implement_dev:db_main
+       
+        /**
+         * 初期処理
+         *
+         * @return <<コメントを記述してください>>
+         * @exception <<コメントを記述してください>>
+         */
+        public int beginProc() throws BatchAppException
+        {
+         return m_entity.beginProc();
+        }
+       
+        /**
+         * 終了処理
+         *
+         * @exception <<コメントを記述してください>>
+         */
+        public int endProc() throws BatchAppException
+        {
+         return m_entity.endProc();
+        }
+       
+        /**
+         * ＤＢアクセス処理を実行します
+         *
+         * @exception <<コメントを記述してください>>
+         */
+        public int execute() throws BatchAppException
+        {
+         return m_entity.execute();
+        }
+       
+        /**
+         * レコード新規追加処理
+         *
+         * @exception <<コメントを記述してください>>
+         */
+        public int create() throws BatchAppException
+        {
+         return m_entity.create();
+        }
+       
+        /**
+         * データ読出し処理
+         *
+         * @exception <<コメントを記述してください>>
+         */
+        public int read() throws BatchAppException
+        {
+         return m_entity.read();
+        }
+       
+        /**
+         * データ更新処理
+         *
+         * @exception <<コメントを記述してください>>
+         */
+        public int update() throws BatchAppException
+        {
+         return m_entity.update();
+        }
+       
+        /**
+         * データ削除処理
+         *
+         * @exception <<コメントを記述してください>>
+         */
+        public int delete() throws BatchAppException
+        {
+         return m_entity.delete();
+        }
+       
+        /**
+         * Stored Procedure処理
+         *
+         * @exception <<コメントを記述してください>>
+         */
+        public List call() throws BatchAppException
+        {
+         return m_entity.call();
+        }
+       
+        /**
+         * カレントレコードに対してアクセスする
+         *
+         * @exception <<コメントを記述してください>>
+         */
+        public boolean next() throws BatchAppException
+        {
+         return m_entity.next();
+        }
+       
+        /**
+         * entityには１つ以上のレコードを持っているか
+         *
+         * @exception <<コメントを記述してください>>
+         */
+        public boolean hasRecord(boolean moveCursor) throws BatchAppException
+        {
+         return m_entity.hasRecord(moveCursor);
+        }
+       
+        //}}user_implement_dev:db_main
+
+	//{{entity_class(wizard code)
+
+	//////////////////////////////
+
+	class interEntity
+	{
+
+		//////////////////////////////
+
+		// Cacheモード
+		private boolean bCachemode = true;
+		public boolean getCacheMode() { return bCachemode; }
+		public void setCacheMode( boolean bFlag ) { bCachemode = bFlag; }
+
+		// DBレコードコレクションクラス インスタンス
+		protected IDbRecordset m_doRs=null;
+		// 日付クラスインスタンス
+		public java.sql.Date m_dat=null;
+
+		//////////////////////////////
+
+		public int beginProc() throws BatchAppException
+		{
+			// SQL文をprepareします
+			prepareAll();
+
+			return SUCCESS;
+		}
+
+		public int endProc() throws BatchAppException
+		{
+
+			clearAll();
+
+			return SUCCESS;
+		}
+
+		public int execute() throws BatchAppException
+		{
+			int ret = SUCCESS;
+
+
+			return ret;
+		}
+
+		public int create() throws BatchAppException
+		{
+			return BREAK;
+		}
+
+		public void setIN19_R(String value) throws FoundationException { getAdapt_R().setString(1, value); }
+		public void setIN20_R(String value) throws FoundationException { getAdapt_R().setString(2, value); }
+
+		public int read() throws BatchAppException
+		{
+			return read(bCachemode);
+		}
+
+		public int read(boolean cache) throws BatchAppException
+		{
+			try {
+				if(m_doRs!=null) {
+					m_doRs.close();
+					m_doRs = null;
+				}
+
+				setIN19_R(m_med.getCOMPANY_CD());
+				setIN20_R(m_med.getPLANT_CD());
+			} catch(FoundationException e) {
+				BatchAppException be=new BatchAppException("readT_ANS_DLV_DATE", "read", "レコード検索条件設定処理失敗");
+				be.addMessage(e.getErrmsg());
+				throw be;
+			}
+
+			m_doRs = getRecordset(cache);
+
+			return SUCCESS;
+		}
+
+		public int update() throws BatchAppException
+		{
+			return BREAK;
+		}
+
+		public int delete() throws BatchAppException
+		{
+			return BREAK;
+		}
+
+		public List call() throws BatchAppException
+		{
+			return null;
+		}
+
+		public String getOD_NO_R() throws FoundationException { return m_doRs.getString(1); }
+		public String getORD_NO_R() throws FoundationException { return m_doRs.getString(2); }
+		public String getPART_DLV_SEQ_NO_R() throws FoundationException { return m_doRs.getString(3); }
+		public String getPLANT_CD_R() throws FoundationException { return m_doRs.getString(4); }
+		public String getITEM_CD_R() throws FoundationException { return m_doRs.getString(5); }
+		public String getDESINATED_SHIP_DATE_R() throws FoundationException { return m_doRs.getString(6); }
+		public String getDESINATED_SHIP_QTY_R() throws FoundationException { return m_doRs.getString(7); }
+		public String getMRP_ODR_TYP_R() throws FoundationException { return m_doRs.getString(8); }
+		public String getOUTSIDE_TYP_R() throws FoundationException { return m_doRs.getString(9); }
+		public String getISSUE_TYP_R() throws FoundationException { return m_doRs.getString(10); }
+		public String getODR_LT_R() throws FoundationException { return m_doRs.getString(11); }
+		public String getFIXED_LT_R() throws FoundationException { return m_doRs.getString(12); }
+		public String getPROP_LT_R() throws FoundationException { return m_doRs.getString(13); }
+		public String getSAFETY_LT_R() throws FoundationException { return m_doRs.getString(14); }
+		public String getISSUE_LT_R() throws FoundationException { return m_doRs.getString(15); }
+		public String getPROP_LOT_SIZE_R() throws FoundationException { return m_doRs.getString(16); }
+		public String getHIGH_LEVEL_NO_R() throws FoundationException { return m_doRs.getString(17); }
+		public String getITEM_SPOIL_R() throws FoundationException { return m_doRs.getString(18); }
+		public String getSUM_TOTAL_SHIP_QTY_R() throws FoundationException { return m_doRs.getString(19); }
+
+		public boolean next() throws BatchAppException
+		{
+			try {
+				if(m_doRs.next()==false) return false;
+
+				m_med.setOD_NO(getOD_NO_R());
+				m_med.setODR_NO(getORD_NO_R());
+				m_med.setPART_DLV_SEQ_NO(getPART_DLV_SEQ_NO_R());
+				m_med.setPLANT_CD(getPLANT_CD_R());
+				m_med.setITEM_CD(getITEM_CD_R());
+				m_med.setDESINATED_SHIP_DATE(getDESINATED_SHIP_DATE_R());
+				m_med.setDESINATED_SHIP_QTY(getDESINATED_SHIP_QTY_R());
+				m_med.setMRP_ODR_TYP(getMRP_ODR_TYP_R());
+				m_med.setOUTSIDE_TYP(getOUTSIDE_TYP_R());
+				m_med.setISSUE_TYP(getISSUE_TYP_R());
+				m_med.setODR_LT(getODR_LT_R());
+				m_med.setFIXED_LT(getFIXED_LT_R());
+				m_med.setPROP_LT(getPROP_LT_R());
+				m_med.setSAFETY_LT(getSAFETY_LT_R());
+				m_med.setISSUE_LT(getISSUE_LT_R());
+				m_med.setPROP_LOT_SIZE(getPROP_LOT_SIZE_R());
+				m_med.setHIGH_LEVEL_NO(getHIGH_LEVEL_NO_R());
+				m_med.setITEM_SPOIL(getITEM_SPOIL_R());
+				m_med.setSUM_TOTAL_SHIP_QTY(getSUM_TOTAL_SHIP_QTY_R());
+			} catch(FoundationException e) {
+				BatchAppException be=new BatchAppException("readT_ANS_DLV_DATE", "next", "レコード移動失敗");
+				be.addMessage(e.getErrmsg());
+				throw be;
+			}
+
+			return true;
+		}
+
+		public boolean hasRecord(boolean moveCursor) throws BatchAppException
+		{
+			if(read(false)!=SUCCESS) return false;
+
+			try {
+				boolean ret;
+
+				if(moveCursor) {
+					ret = next();
+				} else {
+					ret = m_doRs.next();
+				}
+
+				m_doRs.close();
+				m_doRs = null;
+
+				return ret;
+			} catch(FoundationException e) {
+				BatchAppException be=new BatchAppException("readT_ANS_DLV_DATE", "hasRecord", "レコード存在チェック失敗");
+				be.addMessage(e.getErrmsg());
+				throw be;
+			}
+		}
+
+		//////////////////////////////
+
+	}
+
+	//}}entity_class(wizard code)
+
+	//////////////////////////////
+
+	/**
+	 * DBに対して接続します
+	 */
+	void open() throws SystemException
+	{
+		try {
+			setConnection( m_conductor.m_transactionConn );
+		} catch(BatchAppException e) {
+			throw new SystemException("SYSERR", "コネクションの設定に失敗しました", null, null, e);
+		}
+
+		return;
+	}
+
+	/**
+	 * SQL文をprepareします
+	 *
+		 */
+	void prepareAll() throws BatchAppException
+	{
+		String sCREATE=m_inscmd,
+			   sREAD=m_selcmd,
+			   sUPDATE=m_updcmd,
+			   sDELETE=m_delcmd,
+			   sSP=m_calcmd;
+
+		//{{user_implement_dev:prepare
+                 // TODO: ここに準備処理を記述してください
+                //}}user_implement_dev:prepare
+
+		prepareCreate(sCREATE);
+		prepareRead(sREAD);
+		prepareUpdate(sUPDATE);
+		prepareDelete(sDELETE);
+		prepareSp(sSP);
+		return;
+	}
+
+	//////////////////////////////
+
+	/**
+	 * readT_ANS_DLV_DATEクラスの標準コンストラクタ
+	 *
+		 */
+	public readT_ANS_DLV_DATE(medKV0030B001 med, BatchAppConductor cdr) throws SystemException
+	{
+		//{{user_implement_dev:constractor
+                 // TODO: ここに初期処理を記述してください
+                //}}user_implement_dev:constractor
+
+		try {
+			m_container = new ManageContainer();
+		} catch(FoundationException e) {
+			throw new SystemException("SYSERR", "コンテナ接続に失敗しました", null, null, e);
+		}
+
+		m_med = med;
+		m_conductor = cdr;
+
+		// DBに接続します
+		open();
+
+		return;
+	}
+
+	/**
+	 * インスタンス破壊時に行う処理
+	 *
+		 */
+	protected void finalize()
+	{
+		try {
+			// DB接続を切断します
+			close();
+		} catch(BatchAppException e) {
+			System.out.println(e.getErrmsg());
+		}
+
+		// 各メンバ変数の初期化
+		m_med = null;
+		objMessage = null;
+
+		// todo: インスタンス消滅時に実行する処理を記述してください
+
+		return;
+	}
+
+	//////////////////////////////
+
+	ManageContainer m_container;
+
+	// mediatorクラス インスタンス
+	public medKV0030B001 m_med=null;
+
+	protected BatchAppConductor m_conductor;
+
+	// interEntityクラスインスタンス
+	public interEntity m_entity=new interEntity();
+
+	// 各状態で実行するsql文の定義
+	protected static String m_selcmd = "select "
++"  A.OD_NO, "
++"  A.ODR_NO as ORD_NO, "
++"  A.PART_DLV_SEQ_NO as PART_DLV_SEQ_NO, "
++"  F.PLANT_CD as PLANT_CD, "
++"  C.ITEM_CD as ITEM_CD, "
++"  to_char(A.DESINATED_SHIP_DATE, 'YYYY/MM/DD') as DESINATED_SHIP_DATE, "
++"  A.DESINATED_SHIP_QTY as DESINATED_SHIP_QTY, "
++"  D.MRP_ODR_TYP as MRP_ODR_TYP, "
++"  D.OUTSIDE_TYP as OUTSIDE_TYP, "
++"  D.ISSUE_TYP as ISSUE_TYP, "
++"  D.ODR_LT as ODR_LT, "
++"  D.FIXED_LT as FIXED_LT, "
++"  D.PROP_LT as PROP_LT, "
++"  D.SAFETY_LT as SAFETY_LT, "
++"  D.ISSUE_LT as ISSUE_LT, "
++"  D.PROP_LOT_SIZE as PROP_LOT_SIZE, "
++"  D.HIGH_LEVEL_NO as HIGH_LEVEL_NO, "
++"  D.ITEM_SPOIL as ITEM_SPOIL, "
++"  nvl(G.SUM_TOTAL_SHIP_QTY, 0) as SUM_TOTAL_SHIP_QTY "
++"from "
++"  T_ANS_DLV_DATE A, "
++"  T_ODR B, "
++"  T_ODR_CTL C, "
++"  M_ITEM D, "
++"  M_CUST_BASE E, "
++"  M_WH F, "
++"  ( "
++"    select "
++"      ODR_NO, "
++"      PART_DLV_SEQ_NO, "
++"      sum(TOTAL_SHIP_QTY) as SUM_TOTAL_SHIP_QTY, "
++"      SHP_CMPLT_FLG, "
++"      DEPO_TRANSFER_PROC_FLG "
++"    from "
++"      T_SHIP_ODR "
++"    group by "
++"      ODR_NO, "
++"      PART_DLV_SEQ_NO, "
++"      SHP_CMPLT_FLG, "
++"      DEPO_TRANSFER_PROC_FLG "
++"  ) G "
++"where "
++"  B.ODR_NO = A.ODR_NO "
++"  and C.ODR_CTL_NO = B.ODR_CTL_NO "
++"  and D.ITEM_CD = C.ITEM_CD "
++"  and D.MRP_ODR_TYP in (4, 5, 6, 7) "
++"  and E.COMPANY_CD = ? "
++"  and E.CUST_CD = C.CUST_CD "
++"  and E.DLV_LOC_CD = B.DLV_LOC_CD "
++"  and F.WH_CD = E.SHIP_WH_CD "
++"  and F.PLANT_CD = ? "
++"  and G.ODR_NO(+) = A.ODR_NO "
++"  and G.PART_DLV_SEQ_NO(+) = A.PART_DLV_SEQ_NO "
++"  and nvl(G.SHP_CMPLT_FLG,0) = 0 and nvl(G.DEPO_TRANSFER_PROC_FLG,0) = 0";
+	protected static String m_inscmd = null;
+	protected static String m_updcmd = null;
+	protected static String m_delcmd = null;
+	protected static String m_calcmd = null;
+
+	// トランザクション利用の可否を設定します
+	boolean m_useTransaction=true;
+
+	//////////////////////////////
+
+}

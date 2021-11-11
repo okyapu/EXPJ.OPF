@@ -1,0 +1,335 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+標準原価計算エラーリスト出力
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/DC0100/DC0100010.html,v $
+$Author: geng-jia $
+$Revision: 1.5 $ $Date: 2017/02/13 06:34:21 $
+********************************************************* --%>
+<html>
+<head>
+<title>標準原価計算エラーリスト出力</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="DC0100010" version="DC0100010 $Revision: 1.5 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+<table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+  <tr height="5">
+    <td colspan="3"></td>
+  </tr>
+  <tr height="94">
+    <td width="5"></td>
+    <td valign="top" width="958">
+      <table width="958" border="0" cellspacing="0" cellpadding="0">
+        <tr height="12">
+          <td class="frame01" width="12"></td>
+          <td class="frame02" colspan="3"></td>
+          <td class="frame03" width="12"></td>
+        </tr>
+        <tr>
+          <td width="12" class="frame04"></td>
+          <td colspan="3" class="frame05">
+            <table orftype="DataGrid" mode="FORM" name="DC0100010form1" width="934" height="50" border="1" cellspacing="0" cellpadding="0"
+                 status="<%= TypeConverter.sanitizer(aDC0100010Control.getReadStatusString()) %>"
+                 script1="onLoad;0;CALL;onDecision@0,1"
+                 script2="onDecision;0;CHKRQ;A@*0,*1"
+                 script3="child;0;UNMASK;_DC0100010button1/Select"
+                 script4="child;1;MASK;_DC0100010button1/Select"
+                 script5="onDecision;1;CHK;?DC0100010form1/*[eq]NORMAL@*2,*4"
+                 script6="child;2;CHK;?PLANT_CD[eq]SAME[and]?YEAR[eq]SAME[and]?HALF_TERM_TYP[eq]SAME@*3,*4"
+                 script7="child;3;UNMASK;_DC0100010button0/Print,_DC0100010button0/IssDelete"
+                 script8="child;4;MASK;_DC0100010button0/Print,_DC0100010button0/IssDelete"
+            >
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td width="88"></td>
+                  <td width="22"></td>
+                  <td width="170" align="right"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td width="88"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PLANT_CD">工場コード</span></td>
+                  <td>
+                    <orftextinput name="PLANT_CD" tablename="T_CS_CALC_ERROR" columnname="PLANT_CD" dbtype="varchar2" tablejname="原価計算エラー" columnjname="工場コード" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="2" required="A" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orfpeeker name="PeekerPlantCd" value="" pattern="select" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="PLANT_CD_D01" sqlparam_1="_PLANT_CD"
+                      script1="onClick;0;PEEKER;_DC0100010form1/PLANT_CD:_DC0100010form1/PLANT_NAME@<%=contextNo%>"
+                    >
+                    </orfpeeker>
+                  </td>
+                  <td>
+                    <orftextinput name="PLANT_NAME" tablename="M_PLANT" columnname="PLANT_NAME" dbtype="varchar2" tablejname="工場" columnjname="工場名" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.YEAR">年度</span></td>
+                  <td>
+                    <orftextinput name="YEAR" tablename="T_CS_CALC_ERROR" columnname="YEAR" dbtype="number" tablejname="原価計算エラー" columnjname="年度" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_N;" maxlength="4" required="A" attribute="TIS_RIGHT">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.HALF_TERM_TYP">半期区分</span></td>
+                  <td>
+                    <orfcombobox name="HALF_TERM_TYP" tablename="T_CS_CALC_ERROR" columnname="HALF_TERM_TYP" dbtype="number" tablejname="原価計算エラー" columnjname="半期区分" orteus="true" width="260" height="">
+                    </orfcombobox>
+                  </td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="DOWNLOAD_FILE" orteus="true" width="" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame06" width="12"></td>
+        </tr>
+        <tr height="32">
+          <td class="frame07" width="12"></td>
+          <td class="frame08" width="769"></td>
+          <td class="frame09" width="60"></td>
+          <td class="frame10" width="105">
+            <table orftype="DataGrid" mode="BUTTON" name="DC0100010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="Select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="22" lock="0" attribute=""
+                      script1="onClick;0;SUBMIT;_DC0100010form1/*@DC0100010Servlet"
+                    >
+                    </orfbutton>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame11" width="12"></td>
+        </tr>
+      </table>
+    </td>
+    <td width="5"></td>
+  </tr>
+  <tr height="5">
+    <td colspan="3"></td>
+  </tr>
+  <tr height="439">
+    <td width="5"></td>
+    <td valign="top" width="958">
+      <table width="958" border="0" cellspacing="0" cellpadding="0">
+        <tr height="12">
+          <td class="frame01" width="12"></td>
+          <td class="frame02" colspan="3"></td>
+          <td class="frame03" width="12"></td>
+        </tr>
+        <tr>
+          <td class="frame04" width="12"></td>
+          <td class="frame05" colspan="3">
+            <table orftype="DataGrid" mode="FORM" name="DC0100010form2" width="934" height="415" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td width="88"></td>
+                  <td width="22"></td>
+                  <td width="170"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0487">【出力対象】</span></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0488">【未出力件数】</span></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0489">【出力済件数】</span></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <orfcheckbox name="c_DC0020B001" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0269" width="260" height="" text="標準原価エラーチェック">
+                    </orfcheckbox>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="DC0020B001_0_COUNT" orteus="true" width="150" editable="false" visible="true" text="" kind="OBT_INTEGER_Z;14;FLOOR;" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="DC0020B001_1_COUNT" orteus="true" width="150" editable="false" visible="true" text="" kind="OBT_INTEGER_Z;14;FLOOR;" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <orfcheckbox name="c_DC0010B001" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0268" width="260" height="" text="標準原価計算">
+                    </orfcheckbox>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="DC0010B001_0_COUNT" orteus="true" width="150" editable="false" visible="true" text="" kind="OBT_INTEGER_Z;14;FLOOR;" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="DC0010B001_1_COUNT" orteus="true" width="150" editable="false" visible="true" text="" kind="OBT_INTEGER_Z;14;FLOOR;" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    <orfcheckbox name="c_ReOut" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0264" width="260" height="" text="出力済も出力する">
+                    </orfcheckbox>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame06" width="12"></td>
+        </tr>
+        <tr height="12">
+          <td class="frame18" width="12"></td>
+          <td class="frame19" colspan="3"></td>
+          <td class="frame20" width="12"></td>
+        </tr>
+      </table>
+    </td>
+    <td width="5"></td>
+  </tr>
+  <tr height="5">
+    <td colspan="3"></td>
+  </tr>
+  <tr height="42">
+    <td class="under" width="968" colspan="3">
+      <table width="968" border="0">
+        <tr>
+          <td width="548"></td>
+          <td width="420">
+            <table orftype="DataGrid" mode="BUTTON" name="DC0100010button0" width="420" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105"></td>
+                  <td width="105"></td>
+                  <td width="105"></td>
+                  <td width="105"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="Print" value="帳票出力" pattern="print" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnPrint" width="100" height="22" lock="1" attribute=""
+                      script1="onClick;0;CHK;_DC0100010form2/c_DC0010B001[neq]true[and]_DC0100010form2/c_DC0020B001[neq]true@#DC10101"
+                      script2="onClick;1;PRINTER;_DC0100010form1/*,_DC0100010form2/*@DC0100010Servlet:H,H,H"
+                    >
+                    </orfbutton>
+                  </td>
+                  <td>
+                    <orfbutton name="IssDelete" value="出力済削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnIssDelete" width="100" height="22" lock="1" attribute=""
+                      script1="onClick;0;CHK;_DC0100010form2/c_DC0010B001[neq]true[and]_DC0100010form2/c_DC0020B001[neq]true@#DC10101"
+                      script2="onClick;1;SUBMIT;_DC0100010form1/*,_DC0100010form2/*@DC0100010Servlet,,$DC10102"
+                    >
+                    </orfbutton>
+                  </td>
+                  <td>
+                    <orfbutton name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" height="22" lock="0" attribute=""
+                      script1="onClick;0;SUBMIT;@DC0100010Servlet,,$ZZ07008"
+                    >
+                    </orfbutton>
+                  </td>
+                  <td>
+                    <orfbutton name="Close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" height="22" lock="0" attribute=""
+                      script1="onClick;0;CLOSE"
+                    >
+                    </orfbutton>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<%
+MessageStruct msgStruct = aDC0100010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

@@ -1,0 +1,502 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+â¡çHîÔï™óﬁÉ}ÉXÉ^ÉÅÉìÉeÉiÉìÉX
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/DA0050/DA0050010.html,v $
+$Author: geng-jia $
+$Revision: 1.3 $ $Date: 2017/02/13 06:32:09 $
+********************************************************* --%>
+<html>
+<head>
+<title>â¡çHîÔï™óﬁÉ}ÉXÉ^ÉÅÉìÉeÉiÉìÉX</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="DA0050010" version="DA0050010 $Revision: 1.3 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+<table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+  <tr height="5">
+    <td colspan="3"></td>
+  </tr>
+  <tr height="94">
+    <td width="5"></td>
+    <td valign="top" width="958">
+      <table width="958" border="0" cellspacing="0" cellpadding="0">
+        <tr height="12">
+          <td class="frame01" width="12"></td>
+          <td class="frame02" colspan="3"></td>
+          <td class="frame03" width="12"></td>
+        </tr>
+        <tr>
+          <td width="12" class="frame04"></td>
+          <td colspan="3" class="frame05">
+            <table orftype="DataGrid" mode="FORM" name="DA0050010form1" width="934" height="50" border="1" cellspacing="0" cellpadding="0"
+              status="<%= TypeConverter.sanitizer(aDA0050010Control.getReadStatusString()) %>"
+              script1="onLoad;0;CALL;onDecision@0,1,2"
+              script2="onDecision;0;CHKRQ;A@*0,*1"
+              script3="child;0;UNMASK;_DA0050010button1/Select"
+              script4="child;1;MASK;_DA0050010button1/Select"
+              script5="onDecision;1;CHKRQ;A,B@*2,*4"
+              script6="child;2;CHK;_PLANT_CD[neq]_h_PLANT_CD[or]_PROC_COST_CLS_CD[neq]_h_PROC_COST_CLS_CD@*3,*4"
+              script7="child;3;UNMASK;_DA0050010button2/Insert"
+              script8="child;4;MASK;_DA0050010button2/Insert"
+              script9="onDecision;2;CHK;?DA0050010form1/*[eq]NORMAL@*5,*8"
+              script10="child;5;CHKRQ;A,B@*6,*8"
+              script11="child;6;CHK;_PLANT_CD[eq]_h_PLANT_CD[and]_PROC_COST_CLS_CD[eq]_h_PROC_COST_CLS_CD@*7,*8"
+              script12="child;7;UNMASK;_DA0050010button2/Update,_DA0050010button2/Delete"
+              script13="child;8;MASK;_DA0050010button2/Update,_DA0050010button2/Delete"
+            >
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td width="88"></td>
+                  <td width="22"></td>
+                  <td width="170" align="right"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td width="88"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PLANT_CD">çHèÍÉRÅ[Éh</span></td>
+                  <td>
+                    <orftextinput name="PLANT_CD" tablename="M_PROC_COST_CLS" columnname="PLANT_CD" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="çHèÍÉRÅ[Éh" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="2" required="A" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="h_PLANT_CD" tablename="M_PROC_COST_CLS" columnname="PLANT_CD" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="çHèÍÉRÅ[Éh" orteus="true" width="" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td>
+                    <orfpeeker name="PeekerPlantCd" value="" pattern="select" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="PLANT_CD_D01" sqlparam_1="_PLANT_CD"
+                      script1="onClick;0;PEEKER;_DA0050010form1/PLANT_CD:_DA0050010form1/PLANT_NAME@<%=contextNo%>"
+                    >
+                    </orfpeeker>
+                  </td>
+                  <td>
+                    <orftextinput name="PLANT_NAME" tablename="M_PLANT" columnname="PLANT_NAME" dbtype="varchar2" tablejname="çHèÍ" columnjname="çHèÍñº" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_CLS_CD">â¡çHîÔï™óﬁÉRÅ[Éh</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_CLS_CD" tablename="M_PROC_COST_CLS" columnname="PROC_COST_CLS_CD" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔï™óﬁÉRÅ[Éh" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="25" required="A" attribute=""
+                    >
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="h_PROC_COST_CLS_CD" tablename="M_PROC_COST_CLS" columnname="PROC_COST_CLS_CD" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔï™óﬁÉRÅ[Éh" orteus="true" width="" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute=""
+                    >
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td>
+                    <orfpeeker name="PeekerProcCostClsCd" value="" pattern="select" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="PROC_COST_CLS_CD_D01" sqlparam_1="_PLANT_CD" sqlparam_2="_PROC_COST_CLS_CD"
+                      script1="onClick;0;PEEKER;_DA0050010form1/PROC_COST_CLS_CD@<%=contextNo%>"
+                    >
+                    </orfpeeker>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame06" width="12"></td>
+        </tr>
+        <tr height="32">
+          <td class="frame07" width="12"></td>
+          <td class="frame08" width="769"></td>
+          <td class="frame09" width="60"></td>
+          <td class="frame10" width="105">
+            <table orftype="DataGrid" mode="BUTTON" name="DA0050010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="Select" value="ì«çû" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="22" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_DA0050010form1/*@DA0050010Servlet"
+></orfbutton></td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame11" width="12"></td>
+        </tr>
+      </table>
+      </td>
+    <td width="5"></td>
+  </tr>
+  <tr height="5">
+    <td colspan="3"></td>
+  </tr>
+  <tr height="439">
+    <td width="5"></td>
+    <td valign="top" width="958">
+      <table width="958" border="0" cellspacing="0" cellpadding="0">
+        <tr height="12">
+          <td class="frame01" width="12"></td>
+          <td class="frame02" colspan="3"></td>
+          <td class="frame03" width="12"></td>
+        </tr>
+        <tr>
+          <td class="frame04" width="12"></td>
+          <td class="frame05" colspan="3">
+            <table orftype="DataGrid" mode="FORM" name="DA0050010form2" width="934" height="395" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td width="88"></td>
+                  <td width="22"></td>
+                  <td width="170"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_CLS_NAME">â¡çHîÔï™óﬁñº</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_CLS_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_CLS_NAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔï™óﬁñº" orteus="true" width="320" editable="true" visible="true" text="" kind="" maxlength="40" required="B" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0483">Åyâ¡çHîÔñºèÃÅz</span></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0484">Åyâ¡çHîÔó™èÃÅz</span></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_01">â¡çHîÔ01</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_01_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_01_NAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ01ñºèÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="40" required="B" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_01_ANAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_01_ANAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ01ó™èÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="20" required="B" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_02">â¡çHîÔ02</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_02_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_02_NAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ02ñºèÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="40" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_02_ANAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_02_ANAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ02ó™èÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="20" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_03">â¡çHîÔ03</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_03_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_03_NAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ03ñºèÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="40" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_03_ANAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_03_ANAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ03ó™èÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="20" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_04">â¡çHîÔ04</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_04_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_04_NAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ04ñºèÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="40" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_04_ANAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_04_ANAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ04ó™èÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="20" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_05">â¡çHîÔ05</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_05_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_05_NAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ05ñºèÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="40" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_05_ANAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_05_ANAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ05ó™èÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="20" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_06">â¡çHîÔ06</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_06_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_06_NAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ06ñºèÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="40" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_06_ANAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_06_ANAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ06ó™èÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="20" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_07">â¡çHîÔ07</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_07_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_07_NAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ07ñºèÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="40" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_07_ANAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_07_ANAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ07ó™èÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="20" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_08">â¡çHîÔ08</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_08_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_08_NAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ08ñºèÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="40" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_08_ANAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_08_ANAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ08ó™èÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="20" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_09">â¡çHîÔ09</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_09_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_09_NAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ09ñºèÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="40" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_09_ANAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_09_ANAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ09ó™èÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="20" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_10">â¡çHîÔ10</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_10_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_10_NAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ10ñºèÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="40" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_10_ANAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_10_ANAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ10ó™èÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="20" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_11">â¡çHîÔ11</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_11_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_11_NAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ11ñºèÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="40" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_11_ANAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_11_ANAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ11ó™èÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="20" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_COST_12">â¡çHîÔ12</span></td>
+                  <td>
+                    <orftextinput name="PROC_COST_12_NAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_12_NAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ12ñºèÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="40" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="PROC_COST_12_ANAME" tablename="M_PROC_COST_CLS" columnname="PROC_COST_12_ANAME" dbtype="varchar2" tablejname="â¡çHîÔï™óﬁÉ}ÉXÉ^" columnjname="â¡çHîÔ12ó™èÃ" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="20" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame06" width="12"></td>
+        </tr>
+        <tr height="32">
+          <td class="frame07" width="12"></td>
+          <td class="frame08" width="559"></td>
+          <td class="frame09" width="60"></td>
+          <td class="frame10" width="315">
+            <table orftype="DataGrid" mode="BUTTON" name="DA0050010button2" width="315" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105"></td>
+                  <td width="105"></td>
+                  <td width="105"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="Insert" value="ìoò^" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="22" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_DA0050010form1/*,_DA0050010form2/*@DA0050010Servlet,,$ZZ07001"
+></orfbutton>
+                  </td>
+                  <td>
+                    <orfbutton name="Update" value="çXêV" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="22" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_DA0050010form1/*,_DA0050010form2/+@DA0050010Servlet,,$ZZ07003"
+></orfbutton>
+                  </td>
+                  <td>
+                    <orfbutton name="Delete" value="çÌèú" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDelete" width="100" height="22" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_DA0050010form1/*,_DA0050010form2/*@DA0050010Servlet,,$ZZ07004"
+></orfbutton>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame11" width="12"></td>
+        </tr>
+      </table>
+    </td>
+    <td width="5"></td>
+  </tr>
+  <tr height="5">
+    <td colspan="3"></td>
+  </tr>
+  <tr height="42">
+    <td class="under" width="968" colspan="3">
+      <table width="968" border="0">
+        <tr>
+          <td width="758"></td>
+          <td align="right" width="210">
+            <table orftype="DataGrid" mode="BUTTON" name="DA0050010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105"></td>
+                  <td width="105"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="Clear" value="ÉNÉäÉA" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" height="22" lock="0" attribute=""
+                      script1="onClick;0;SUBMIT;@DA0050010Servlet,,$ZZ07008"
+                    >
+                    </orfbutton>
+                  </td>
+                  <td>
+                    <orfbutton name="Close" value="ï¬Ç∂ÇÈ" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" height="22" lock="0" attribute=""
+                      script1="onClick;0;CLOSE"
+                    >
+                    </orfbutton>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<%
+MessageStruct msgStruct = aDA0050010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+為替レート情報メンテナンス
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AA0120/AA0120010.html,v $
+$Author: geng-jia $ 
+$Revision: 1.6 $　$Date: 2017/02/13 02:17:57 $
+********************************************************* --%>
+<html>
+<head>
+<title>為替レート情報メンテナンス</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AA0120010" version="AA0120010 $Revision: 1.6 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr> 
+      <td colspan="3" height="5"></td>
+    </tr>
+    <tr> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td width="12" height="12" class="frame01"></td>
+            <td height="12" colspan="3" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" name="AA0120010form1" width="934" height="96" mode="FORM" border="1" cellspacing="0" cellpadding="0"
+                 status="<%= TypeConverter.sanitizer(aAA0120010Control.getReadStatusString()) %>"
+                 script1="onLoad;0;CALL;onDecision@0,1,2,3"
+                 script2="onDecision;0;CHKRQ;A@*0,*3"
+                 script3="onDecision;1;CHK;?AA0120010form1/*[eq]INITIAL@*4,*6"
+                 script4="onDecision;2;CHKRQ;?AA0120010view1/?[eq]SINGLE@*7,*5"
+				 script5="onDecision;3;CHK;_AA0120010form1/EXCH_TYP_K[eq]2@*8,*9"
+                 script6="child;0;UNMASK;_AA0120010button1/Select"
+                 script7="child;1;UNMASK;_AA0120010button2/LineInsert"
+                 script8="child;2;UNMASK;_AA0120010button2/LineUpdate,_AA0120010button2/LineCopy,_AA0120010button2/LineDelete"
+                 script9="child;3;MASK;_AA0120010button1/Select"
+                 script10="child;4;MASK;_AA0120010button2/LineInsert"
+                 script11="child;5;MASK;_AA0120010button2/LineUpdate,_AA0120010button2/LineCopy,_AA0120010button2/LineDelete"
+                 script12="child;6;CHK;?CUR_CD[eq]SAME@*1,*4"
+                 script13="child;7;CHK;?CUR_CD[eq]SAME@*2,*5"
+				 script14="child;8;UNMASK;_AA0120010form1/EXCH_RESERVE_CD_K"
+			     script15="child;9;MASK;_AA0120010form1/EXCH_RESERVE_CD_K@*10"
+				 script16="child;10;SET;_AA0120010form1/EXCH_RESERVE_CD_K="
+              >
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=170 align="right">&nbsp;</td>
+                  <td width=150>&nbsp;</td>
+                  <td width=22>&nbsp;</td>
+                  <td width=88>&nbsp;</td>
+                  <td width=22>&nbsp;</td>
+                  <td width=150>&nbsp;</td>
+                  <td width=22>&nbsp;</td>
+                  <td width=150>&nbsp;</td>
+                  <td width=88>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_CD">通貨コード</span></td>
+                  <td><orftextinput  name="CUR_CD" tablename="M_CUR" columnname="CUR_CD" dbtype="varchar2" tablejname="通貨" columnjname="通貨コード" orteus="true" width="260" required="A" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerCurCd" value="" pattern="select" orteus="false" width="22" attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AA0120010form1/CUR_CD@<%=contextNo%>"
+                     sqlname="CUR_CD_01"
+                     sqlparam_1="_CUR_CD"
+                  ></orfpeeker></td>
+                  <td><orftextinput  name="CUR_NAME" tablename="M_CUR" columnname="CUR_NAME" dbtype="varchar2" tablejname="通貨" columnjname="通貨名" orteus="true" width="320" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_APR_EXCH_RATE" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+				 <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXCH_TYP">為替種別</span></td>
+                  <td><orfcombobox  name="EXCH_TYP_K" tablename="M_EXCH_RATE" columnname="EXCH_TYP" dbtype="varchar2" tablejname="為替レートマスタ" columnjname="為替種別" orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXCH_RESERVE_CD">為替予約コード</span></td>
+                  <td><orftextinput  name="EXCH_RESERVE_CD_K" tablename="M_EXCH_RATE" columnname="EXCH_RESERVE_CD" dbtype="varchar2" tablejname="為替レートマスタ" columnjname="為替予約コード"   orteus="true" width="260" required="" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXCH_START_DATE">為替開始日付</span></td>
+                  <td><orftextinput  name="EXCH_START_DATE_K" tablename="M_EXCH_RATE" columnname="EXCH_START_DATE" dbtype="varchar2" tablejname="為替レートマスタ" columnjname="為替開始日付" orteus="true" width="150" required="" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarExchStartDate" value="" pattern="none" orteus="false" width="22" attribute="BTS_CALENDAR"
+                     script1="onClick;0;CALENDAR;_AA0120010form1/EXCH_START_DATE_K"></orfcalendar></td>
+                  <td align="center"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0043">～</span></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="EXCH_END_DATE_K" tablename="M_EXCH_RATE" columnname="EXCH_START_DATE" dbtype="varchar2" tablejname="為替レートマスタ" columnjname="為替開始日付" orteus="true" width="150" required="" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarExchEndDate" value="" pattern="none" orteus="false" width="22" attribute="BTS_CALENDAR"
+                     script1="onClick;0;CALENDAR;_AA0120010form1/EXCH_END_DATE_K"></orfcalendar></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"> 
+              <table orftype="DataGrid" name="AA0120010button1" width="105" height="22" mode="BUTTON" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton name="Select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AA0120010form1/*@AA0120010Servlet"
+></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="67"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" height="5"></td>
+    </tr>
+    <tr> 
+      <td width="5"></td>
+      <td valign="top" width="959" height="314"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" name="AA0120010view1" width="934" height="270" mode="VIEW" border="1" cellspacing="0" cellpadding="0" attribute="DGS_HSCRONOFF">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=100><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXCH_TYP">為替種別</span></td>
+                  <td hidden="true">&nbsp;</td>
+                  <td width=150><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXCH_RESERVE_CD">為替予約コード</span></td>
+                  <td width=100><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXCH_START_DATE">為替開始日付</span></td>
+                  <td width=100 align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXCH_RATE">為替レート</span></td>
+                  <td hidden="true">&nbsp;</td>
+                </tr>
+                </orloophead><orloop> 
+                <tr> 
+                  <td><orflabel  name="l_EXCH_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明" orteus="true"></orflabel></td>
+                  <td><orflabel  name="l_EXCH_TYP" tablename="M_EXCH_RATE" columnname="EXCH_TYP" dbtype="number" tablejname="為替レートマスタ" columnjname="為替種別" orteus="true" visible="false"></orflabel></td>
+                  <td><orflabel  name="l_EXCH_RESERVE_CD" tablename="M_EXCH_RATE" columnname="EXCH_RESERVE_CD" dbtype="varchar2" tablejname="為替レートマスタ" columnjname="為替予約コード" orteus="true"></orflabel></td>
+                  <td align="right"><orflabel  name="l_EXCH_START_DATE" tablename="M_EXCH_RATE" columnname="EXCH_START_DATE" dbtype="varchar2" tablejname="為替レートマスタ" columnjname="為替開始日付" orteus="true" kind="OBT_DATE;TYPE_YMD"></orflabel></td>
+                  <td align="right"><orflabel  name="l_EXCH_RATE" tablename="M_EXCH_RATE" columnname="EXCH_RATE" dbtype="varchar2" tablejname="為替レートマスタ" columnjname="為替終了日付" orteus="true" kind="OBT_NUMBER_P;14.2;FLOOR;6"></orflabel></td>
+                  <td><orflabel  name="l_MODIFY_COUNT" tablename="M_EXCH_RATE" columnname="MODIFY_COUNT" dbtype="number" tablejname="為替レートマスタ" columnjname="更新回数" orteus="true" visible="false"></orflabel></td>
+                </tr>
+                </orloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame15" height="32"></td>
+            <td width="420" class="frame10" height="32"> 
+              <table orftype="DataGrid" name="AA0120010button2" width="420" height="22" mode="BUTTON" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton name="LineInsert" value="行追加" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnLineInsert" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SCRCHG;_AA0120010form1/*@AA0120010Servlet"
+></orfbutton></td>
+                  <td><orfbutton name="LineUpdate" value="行修正" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnLineUpdate" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SCRCHG;_AA0120010form1/*,_AA0120010view1/+@AA0120010Servlet"
+></orfbutton></td>
+                  <td><orfbutton name="LineCopy" value="行複写" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnLineCopy" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SCRCHG;_AA0120010form1/*,_AA0120010view1/+@AA0120010Servlet"
+></orfbutton></td>
+                  <td><orfbutton name="LineDelete" value="行削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnLineDelete" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AA0120010form1/*,_AA0120010view1/+,_AA0120010form3/*@AA0120010Servlet,,$ZZ07004"
+></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="60" class="frame16" height="32"></td>
+            <td width="454" class="frame08" height="32"></td>
+            <td width="12" class="frame17" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" height="5"></td>
+    </tr>
+    <tr> 
+      <td width="5"></td>
+      <td valign="top" width="959" height="74"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" name="AA0120010form3" width="934" mode="FORM" border="1" cellspacing="0" cellpadding="0" height="50">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=170 align="right">&nbsp;</td>
+                  <td width=150><orfdata excell='true'></orfdata></td>
+                  <td width=22><orfdata excell='true'></orfdata></td>
+                  <td width=88><orfdata excell='true'></orfdata></td>
+                  <td width=22><orfdata excell='true'></orfdata></td>
+                  <td width=170 align="right"><orfdata excell='true'></orfdata></td>
+                  <td width=150><orfdata excell='true'></orfdata></td>
+                  <td width=22><orfdata excell='true'></orfdata></td>
+                  <td width=88><orfdata excell='true'></orfdata></td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_UNIT">通貨単位</span></td>
+                  <td><orftextinput  name="CUR_UNIT" tablename="M_CUR" columnname="CUR_UNIT" dbtype="varchar2" tablejname="通貨" columnjname="通貨単位"   orteus="true" width="320" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_SYMBOL">通貨記号</span></td>
+                  <td><orftextinput  name="CUR_SYMBOL" tablename="M_CUR" columnname="CUR_SYMBOL" dbtype="varchar2" tablejname="通貨" columnjname="通貨記号" orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DECIMAL_FIG">小数桁数</span></td>
+                  <td><orftextinput  name="DECIMAL_FIG" tablename="M_CUR" columnname="DECIMAL_FIG" dbtype="number" tablejname="通貨" columnjname="小数桁数" orteus="true" width="150" attribute="TIS_RIGHT" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame18" height="12"></td>
+            <td colspan="3" class="frame19" height="12"></td>
+            <td width="12" class="frame20" height="12"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" height="5"> </td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" name="AA0120010button0" width="210" height="22" mode="BUTTON" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" 
+                     script1="onClick;0;SUBMIT;@AA0120010Servlet,,$ZZ07008" lock="0"></orfbutton></td>
+                  <td><orfbutton  name="Close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100"
+                     script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAA0120010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

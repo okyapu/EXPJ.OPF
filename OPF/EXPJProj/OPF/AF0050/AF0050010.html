@@ -1,0 +1,504 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+保管区移動出庫実績入力
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AF0050/AF0050010.html,v $
+$Author: geng-jia $	
+$Revision: 1.10 $ $Date: 2017/02/13 03:25:37 $
+********************************************************* --%>
+<html>
+<head>
+<title>保管区移動出庫実績入力</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AF0050010" version="AF0050010 $Revision: 1.10 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968"></td>
+    </tr>
+    <tr height="117"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AF0050010form1" width="934" height="96" border="1" cellspacing="0" cellpadding="0"
+                 script1="onLoad;0;CALL;child@0,3"
+                   script2="child;0;CHK;_AF0050010form1/h_TRANSFER[eq]1@*1,*2"
+                     script3="child;1;CHK;_AF0050010form2/c_TRANSFER[eq]false"
+                     script4="child;2;CHK;_AF0050010form2/c_TRANSFER[eq]false"
+
+                   script5="child;3;CHK;_AF0050010form1/JOB_ODR_CD[neq]@*4,*6"
+                     script6="child;4;UNMASK;_AF0050010form1/JOB_ODR_CD,_AF0050010form1/PeekerJobOdrCd@*5"
+                     script7="child;5;SET;_AF0050010form1/c_JOB_ODR=true"
+                     script8="child;6;MASK;_AF0050010form1/JOB_ODR_CD,_AF0050010form1/PeekerJobOdrCd"
+
+                 script9="onLoad;1;CALL;onDecision@0,1,2"
+                   script10="onDecision;0;CHK;_AF0050010form1/c_JOB_ODR[eq]true@*7,*10"
+                     script11="child;7;CHKRQ;A,B@*8,*9"
+                       script12="child;8;UNMASK;_AF0050010button1/select"
+                       script13="child;9;MASK;_AF0050010button1/select,_AF0050010button2/insert"
+                       script14="child;10;CHKRQ;B@*11,*12"
+                         script15="child;11;UNMASK;_AF0050010button1/select"
+                         script16="child;12;MASK;_AF0050010button1/select"
+
+                   script17="onDecision;1;CHK;_AF0050010form1/c_JOB_ODR[eq]true@*13,*16"
+                     script18="child;13;CHKRQ;A,B,C@*14,*15"
+                       script19="child;14;UNMASK;_AF0050010button2/insert"
+                       script20="child;15;MASK;_AF0050010button2/insert"
+                     script21="child;16;CHKRQ;B,C@*17,*18"
+                       script22="child;17;UNMASK;_AF0050010button2/insert"
+                       script23="child;18;MASK;_AF0050010button2/insert"
+					   
+									   
+					   script24="onDecision;2;CHK;_AF0050010form1/c_JOB_ODR[eq]true@*19,*20"
+					   script25="child;19;UNMASK;_AF0050010form2/c_i_JOB_ODR"
+					   script26="child;20;MASK;_AF0050010form2/c_i_JOB_ODR@*21"
+					   script27="child;21;SET;_AF0050010form2/c_i_JOB_ODR=false"
+					   
+				   script28="onLoad;2;CALL;child@22"
+				   script29="child;22;CHK;_AF0050010form1/h_lotCtrl[eq]true@*23,*24"
+				   script30="child;23;UNMASK;_AF0050010form1/LOT_NO,_AF0050010form1/PeekerWStockLotCd@*26"
+				   script31="child;24;MASK;_AF0050010form1/LOT_NO,_AF0050010form1/PeekerWStockLotCd@*25"
+				   script32="child;25;SET;_AF0050010form3/STOCK_ON_HAND_QTY=,_AF0050010form3/DEFECT_QTY=,_AF0050010form3/ALLOCABLE_QTY="
+				   script33="child;26;CHK;_AF0050010form1/h_lotFlg[eq]1@,*25"
+					   
+					   
+              ><orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CD">製番</span></td>
+                  <td><orftextinput  name="JOB_ODR_CD" maxlength="25" required="A" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerJobOdrCd" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AF0050010form1/JOB_ODR_CD@<%=contextNo%>"
+                     sqlname="JOB_ODR_CD_04" sqlparam_1="<%=aAF0050010Control.getsysPLANT_CD()%>" sqlparam_2="_AF0050010form1/JOB_ODR_CD"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_JOB_ODR" orteus="true" value="true" width="190" mlang="true" mlkind="common" mlname="Expj.Cmt0210"
+                        script1="onClick;0;CHK;_THIS[eq]true@*0,*1"
+                          script2="child;0;UNMASK;_AF0050010form1/JOB_ODR_CD,_AF0050010form1/PeekerJobOdrCd,_AF0050010form2/c_i_JOB_ODR"
+                          script3="child;1;SET;_AF0050010form1/JOB_ODR_CD=,_AF0050010form2/c_i_JOB_ODR=false@*2"
+                          script4="child;2;MASK;_AF0050010form1/JOB_ODR_CD,_AF0050010form1/PeekerJobOdrCd,_AF0050010form2/c_i_JOB_ODR"
+                      ></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                  <td><orftextinput  name="ITEM_CD" maxlength="25" orteus="true" width="260" required="B"></orftextinput></td>
+                  <td><orftextinput  name="h_JOB_ODR" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_TRANSFER" orteus="true" visible="false"></orftextinput></td>
+                  <td><orfpeeker name="PeekerItemCd" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="ITEM_CD_10" sqlparam_1="_AF0050010form1/ITEM_CD"
+ script1="onClick;0;PEEKER;_AF0050010form1/ITEM_CD@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput  name="ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" editable="false" orteus="true" width="320"></orftextinput></td>
+                  <td><orftextinput  name="BUSINESS_OPR_DATE" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_WH_CD_1">出庫元保管区コード</span></td>
+                  <td><orftextinput  name="WH_CD" maxlength="25" orteus="true" width="260" required="B"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerWhCd" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AF0050010form1/WH_CD@<%=contextNo%>"
+                     sqlname="WH_CD_01" sqlparam_1="<%=aAF0050010Control.getsysPLANT_CD()%>" sqlparam_2="_AF0050010form1/WH_CD"></orfpeeker></td>
+                  <td><orftextinput  name="WH_NAME" editable="false" orteus="true" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_LOT_CD">在庫ロット番号</span></td>
+                  <td><orftextinput  name="LOT_NO" maxlength="25" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerWStockLotCd" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="LOT_NO_10" sqlparam_1="_AF0050010form1/LOT_NO" sqlparam_2="_AF0050010form1/ITEM_CD" sqlparam_3="_AF0050010form1/WH_CD"
+ script1="onClick;0;PEEKER;_AF0050010form1/LOT_NO:_AF0050010form1/ITEM_CD:_AF0050010form1/WH_CD@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orftextinput name="h_lotFlg" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td><orftextinput name="h_lotCtrl" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07"></td>
+            <td width="769" class="frame08"> </td>
+            <td width="60" class="frame09"></td>
+            <td width="105" class="frame10">
+            <table orftype="DataGrid" mode="BUTTON" name="AF0050010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton  name="select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" lock="0"
+                      script1="onClick;0;CHK;_AF0050010form1/c_JOB_ODR[eq]true@*0,*1"
+                        script2="child;0;SET;_AF0050010form1/h_JOB_ODR=1"
+                        script3="child;1;SET;_AF0050010form1/h_JOB_ODR=0"
+                      script4="onClick;1;SUBMIT;_AF0050010form1/*@AF0050010Servlet"
+                    ></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table>
+            </td>
+            <td width="12" class="frame11"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="245"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AF0050010form2" width="934" height="178" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_QTY">出庫数</span></td>
+                  <td><orftextinput  name="RCV_ISSUE_QTY" tablename="T_RCV_ISSUE" columnname="RCV_ISSUE_QTY" attribute="TIS_RIGHT" orteus="true" width="150" kind="OBT_NUMBER_P;14.1;FLOOR;4" required="Z"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT" tablename="M_ITEM" columnname="T_RCV_ISSUE" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox name="c_TRANSFER" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0213" width="190" height="" text="" editable="true" visible="true"
+					></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_DATE">出庫日</span></td>
+                  <td><orftextinput  name="RCV_ISSUE_DATE" tablename="T_RCV_ISSUE" columnname="RCV_ISSUE_DATE" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD" required="C"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarRcvIssueDate" orteus="false" width="22" attribute="BTS_CALENDAR" script1="onClick;0;CALENDAR;_AF0050010form2/RCV_ISSUE_DATE"></orfcalendar></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox name="c_i_JOB_ODR" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0212" width="190" height="" text="" editable="true" visible="true"
+></orfcheckbox>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.RCV_PLANT_CD_1">出庫先工場コード</span></td>
+                  <td><orftextinput  name="w_IN_PLANT_CD" editable="false" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="w_PLANT_NAME" editable="false" orteus="true" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.RCV_WH_CD_1">出庫先保管区コード</span></td>
+                  <td><orftextinput  name="w_IN_WH_CD" maxlength="25" orteus="true" width="260" required="C"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerWInWhCd" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AF0050010form2/w_IN_WH_CD@<%=contextNo%>"
+                     sqlname="WH_CD_04" sqlparam_1="_AF0050010form2/w_IN_WH_CD"></orfpeeker></td>
+                  <td><orftextinput  name="w_IN_WH_NAME" editable="false" orteus="true" width="320"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt6854">保管区移動理由</span></td>
+                  <td><orftextinput  name="RCV_ISSUE_COMMENT" tablename="T_RCV_ISSUE" columnname="RCV_ISSUE_COMMENT" maxlength="80" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerRcvIssueCd" value="" pattern="none" orteus="false" width="22"
+                     attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AF0050010form2/RCV_ISSUE_COMMENT@<%=contextNo%>"
+                     sqlname="RCV_ISSUE_CD_01" sqlparam_1="_AF0050010form2/RCV_ISSUE_COMMENT"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_LOT_NO">メーカロット番号</span></td>
+                  <td><orftextinput  name="VEND_LOT_NO" tablename="T_RCV_ISSUE" columnname="VEND_LOT_NO" maxlength="25" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07"></td>
+            <td width="769" class="frame08"> </td>
+            <td width="60" class="frame09"></td>
+            <td width="105" class="frame10">
+            <table orftype="DataGrid" mode="BUTTON" name="AF0050010button2" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td>&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton  name="insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" lock="1"
+                      script1="onClick;0;CHK;_AF0050010form1/c_JOB_ODR[eq]true@*0,*1"
+                        script2="child;0;SET;_AF0050010form1/h_JOB_ODR=1"
+                        script3="child;1;SET;_AF0050010form1/h_JOB_ODR=0"
+                      script4="onClick;1;CHK;_AF0050010form2/c_TRANSFER[eq]true@*2,*3"
+                        script5="child;2;SET;_AF0050010form1/h_TRANSFER=1"
+                        script6="child;3;SET;_AF0050010form1/h_TRANSFER=0"
+                      script7="onClick;2;CHK;_AF0050010form2/RCV_ISSUE_QTY[lte]0@#AF00055"
+                      script8="onClick;3;CHK;_AF0050010form2/RCV_ISSUE_DATE[gt]_AF0050010form1/BUSINESS_OPR_DATE@#ZZ05103"
+                      script9="onClick;4;CHK;_AF0050010form2/w_IN_WH_CD[eq]_AF0050010form1/WH_CD@#AF00054"
+                      script10="onClick;5;SUBMIT;_AF0050010form1/*,_AF0050010form2/*,_AF0050010form3/*@AF0050010Servlet,,$ZZ07001"
+                    ></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="166"> 
+      <td width="5"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td class="frame01"></td>
+            <td colspan="3" class="frame02"></td>
+            <td class="frame03"></td>
+          </tr>
+          <tr>
+<%
+	String ColKind1 = "OBT_NUMBER;14.1;FLOOR;4";
+    String ColKind2 = "OBT_NUMBER;14.1;FLOOR;4";
+    String ColKind3 = "OBT_NUMBER;14.1;FLOOR;4";
+
+
+	if(aAF0050010Struct.getSTOCK_ON_HAND_QTY() == null){
+        ColKind1 ="";
+    }
+	
+	if(aAF0050010Struct.getDEFECT_QTY() == null){
+	    ColKind2 ="";
+    }
+
+	if(aAF0050010Struct.getALLOCABLE_QTY() == null){
+        ColKind3 ="";
+    }
+%> 
+            <td class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AF0050010form3" width="934" height="142" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TRANSPORT_SLIP_CD">積送伝票番号</span></td>
+                  <td><orftextinput  name="TRANSPORT_SLIP_CD" tablename="T_TRANSPORT_STOCK" columnname="TRANSPORT_SLIP_CD" editable="false" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DRAW_CD">図面番号</span></td>
+                  <td><orftextinput  name="DRAW_CD" tablename="M_ITEM" columnname="DRAW_CD" editable="false" orteus="true" width="260"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_SPEC">規格</span></td>
+                  <td><orftextinput  name="SPEC" tablename="M_ITEM" columnname="SPEC" editable="false" orteus="true" width="712"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_ON_HAND_QTY_3">保管区在庫数</span></td>
+                  <td><orftextinput  name="w_WH_STOCK_ON_HAND_QTY" attribute="TIS_RIGHT" editable="false" kind="OBT_NUMBER;14.1;FLOOR;4" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_1" orteus="false" width="110" editable="false"
+                        script1="onLoad;0;CALL;child@0"
+                        script2="child;0;SET;_THIS=_AF0050010form2/STOCK_UNIT"
+                  ></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_ON_HAND_QTY_5">ロット別手持在庫数</span></td>
+                  <td><orftextinput  name="STOCK_ON_HAND_QTY" columnjname="ロット別手持在庫数" editable="false" kind="<%= ColKind1 %>" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_4" orteus="false" width="110" editable="false"
+                        script1="onLoad;0;CALL;child@0"
+                        script2="child;0;SET;_THIS=_AF0050010form2/STOCK_UNIT"
+                  ></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0306">在庫累計数</span></td>
+                  <td><orftextinput  name="w_TOTAL_STOCK_ON_HAND_QTY" attribute="TIS_RIGHT" editable="false" kind="OBT_NUMBER;14.1;FLOOR;4" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_2" orteus="false" width="110" editable="false"
+                        script1="onLoad;0;CALL;child@0"
+                        script2="child;0;SET;_THIS=_AF0050010form2/STOCK_UNIT"
+                  ></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DEFECT_QTY_6">ロット別不良数</span></td>
+                  <td><orftextinput  name="DEFECT_QTY" columnjname="ロット別不良数" editable="false" kind="<%= ColKind2 %>" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_5" orteus="false" width="110" editable="false"
+                        script1="onLoad;0;CALL;child@0"
+                        script2="child;0;SET;_THIS=_AF0050010form2/STOCK_UNIT"
+                  ></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0331">品目在庫未引当数</span></td>
+                  <td><orftextinput  name="NON_ALC_QTY" attribute="TIS_RIGHT" editable="false" kind="OBT_NUMBER;14.1;FLOOR;4" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_3" orteus="false" width="110" editable="false"
+                        script1="onLoad;0;CALL;child@0"
+                        script2="child;0;SET;_THIS=_AF0050010form2/STOCK_UNIT"
+                  ></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0340">出庫可能数</span></td>
+                  <td><orftextinput  name="ALLOCABLE_QTY" columnjname="引当可能数" editable="false" kind="<%= ColKind3 %>" orteus="true" width="150"></orftextinput></td>
+                  <td><orftextinput  name="STOCK_UNIT_6" orteus="false" width="110" editable="false"
+                        script1="onLoad;0;CALL;child@0"
+                        script2="child;0;SET;_THIS=_AF0050010form2/STOCK_UNIT"
+                  ></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" class="frame18"></td>
+            <td colspan="3" class="frame19"></td>
+            <td width="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AF0050010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" script1="onClick;0;SUBMIT;@AF0050010Servlet,,$ZZ07008" lock="0"></orfbutton></td>
+                  <td><orfbutton  name="close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAF0050010Control.getMessage();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

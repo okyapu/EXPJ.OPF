@@ -1,0 +1,22 @@
+/*
+ * EXPLANNER/J(HTML5)用カスタムスタイルシート定義
+ */
+
+
+/* 一覧表内「数値」項目 右側余白 */
+.expj-label {
+  padding-right:2px;
+}
+div.orteusView > div.orteusView_BodyArea > table > tbody input[type="text"] {
+  padding-right:2px;
+}
+
+
+/* 一覧表内「数値」項目 文字間隔 */
+td.expj-align-right{
+  letter-spacing:1px
+}
+div.orteusView > div.orteusView_BodyArea > table > tbody input[type="text"] {
+  letter-spacing:1px
+}
+

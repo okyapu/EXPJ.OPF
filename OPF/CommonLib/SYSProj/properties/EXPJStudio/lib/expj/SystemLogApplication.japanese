@@ -1,0 +1,25 @@
+#
+# システムログ：アプリケーション定義ファイル
+# SystemLogApplication
+#
+# Copyright (c) 2003 NEC Informatec Systems, Ltd.
+#
+# version 1.00
+# 2003/06/06 新規作成 M.Sakamoto
+# 2003/06/25 Copyrightの記述修正 Y.Inada
+#            前：Copyright (c) 2003 NEC informatec Systems,Ltd.
+#            後：Copyright (c) 2003 NEC Informatec Systems,Ltd.
+#
+# version 1.01
+# 2003/08/01 ファイル名修正 Y.Inada
+#            前：SystemLogApplication.properties
+#            後：SystemLogApplication
+#
+# version 1.02
+# 2004/12/03 N.Saito
+#            共通定義変更
+#            個別定義廃止
+#
+
+com.nec.jp.orteus.metamorBase=com.nec.jp.orteus.metamorBase
+

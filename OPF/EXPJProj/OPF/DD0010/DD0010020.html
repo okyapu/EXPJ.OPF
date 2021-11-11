@@ -1,0 +1,421 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+標準原価参照（一覧）
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/DD0010/DD0010020.html,v $
+$Author: geng-jia $
+$Revision: 1.4 $　$Date: 2017/02/13 06:34:45 $
+********************************************************* --%>
+<html>
+<head>
+<title>標準原価参照（一覧）</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="DD0010020" version="DD0010020 $Revision: 1.4 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="3">
+<% ScreenMoveUtil su = new ScreenMoveUtil("DD0010010Servlet", so); %>
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5">
+      <td colspan="3"></td>
+    </tr>
+    <tr height="117">
+      <td width="5"></td>
+      <td valign="top" width="958">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td class="frame01" width="12"></td>
+            <td class="frame02" colspan="3"></td>
+            <td class="frame03" width="12"></td>
+          </tr>
+          <tr>
+            <td class="frame04" width="12"></td>
+            <td class="frame05" colspan="3">
+              <table orftype="DataGrid" name="DD0010020form1" width="934" height="73" mode="FORM" border="1" cellspacing="0" cellpadding="0"
+                status="<%= TypeConverter.sanitizer(aDD0010020Control.getReadStatusString()) %>"
+                script1="onLoad;0;CALL;onDecision@0,1,2"
+                script2="onDecision;0;CHKRQ;A@*0,*1"
+                script3="child;0;UNMASK;_DD0010020button1/Select"
+                script4="child;1;MASK;_DD0010020button1/Select"
+                script5="onDecision;1;CHK;?DD0010020form1/*[eq]NORMAL@*2,*4"
+                script6="child;2;CHK;?PLANT_CD[eq]SAME[and]?YEAR[eq]SAME[and]?HALF_TERM_TYP[eq]SAME[and]?ROOT_ITEM_CD[eq]SAME@*3,*4"
+                script7="child;3;UNMASK;_DD0010020button0/MoveTree"
+                script8="child;4;MASK;_DD0010020button0/MoveTree"
+                script9="onDecision;2;CHK;?DD0010020form1/*[eq]NORMAL[or]?DD0010020form1/*[eq]TOO_MANY@*5,*7"
+                script10="child;5;CHK;?PLANT_CD[eq]SAME[and]?YEAR[eq]SAME[and]?HALF_TERM_TYP[eq]SAME[and]?ROOT_ITEM_CD[eq]SAME@*6,*7"
+                script11="child;6;UNMASK;_DD0010020button0/CsvOut"
+                script12="child;7;MASK;_DD0010020button0/CsvOut"
+              >
+                <orloophead>
+                  <tr bgcolor="#ccff99">
+                    <td width="170" align="right"></td>
+                    <td width="150"></td>
+                    <td width="22"></td>
+                    <td width="88"></td>
+                    <td width="22"></td>
+                    <td width="170" align="right"></td>
+                    <td width="150"></td>
+                    <td width="22"></td>
+                    <td width="88"></td>
+                  </tr>
+                </orloophead>
+                <ornoloop>
+                  <tr>
+                    <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PLANT_CD">工場コード</span></td>
+                    <td>
+                      <orftextinput name="PLANT_CD" tablename="T_ITEM_COST" columnname="PLANT_CD" dbtype="varchar2" tablejname="品目別原価" columnjname="工場コード" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="2" required="A" attribute="">
+                      </orftextinput>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <orfpeeker name="PeekerPlantCd" value="" pattern="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="PLANT_CD_D01" sqlparam_1="_PLANT_CD"
+                        script1="onClick;0;PEEKER;_DD0010020form1/PLANT_CD:_DD0010020form1/PLANT_NAME@<%=contextNo%>"
+                      >
+                      </orfpeeker>
+                    </td>
+                    <td>
+                      <orftextinput name="PLANT_NAME" tablename="M_PLANT" columnname="PLANT_NAME" dbtype="varchar2" tablejname="工場" columnjname="工場名" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                      </orftextinput>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.YEAR">年度</span></td>
+                    <td>
+                      <orftextinput name="YEAR" tablename="T_ITEM_COST" columnname="YEAR" dbtype="number" tablejname="品目別原価" columnjname="年度" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_N;" maxlength="4" required="A" attribute="TIS_RIGHT">
+                      </orftextinput>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.HALF_TERM_TYP">半期区分</span></td>
+                    <td>
+                      <orfcombobox name="HALF_TERM_TYP" tablename="T_ITEM_COST" columnname="HALF_TERM_TYP" dbtype="number" tablejname="品目別原価" columnjname="半期区分" orteus="true" width="260" height="">
+                      </orfcombobox>
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ROOT_ITEM_CD">最上位品目番号</span></td>
+                    <td>
+                      <orftextinput name="ROOT_ITEM_CD" tablename="T_ITEM_COST" columnname="ROOT_ITEM_CD" dbtype="varchar2" tablejname="品目別原価" columnjname="最上位品目番号" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="25" required="A" attribute="">
+                      </orftextinput>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <orfpeeker name="PeekerItemCd" value="" pattern="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="ROOT_ITEM_CD_D01" sqlparam_1="_YEAR" sqlparam_2="_HALF_TERM_TYP" sqlparam_3="_PLANT_CD" sqlparam_4="_ROOT_ITEM_CD"
+                        script1="onClick;0;PEEKER;_DD0010020form1/ROOT_ITEM_CD:_DD0010020form1/ROOT_ITEM_NAME@<%=contextNo%>"
+                      >
+                      </orfpeeker>
+                    </td>
+                    <td>
+                      <orftextinput name="ROOT_ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2" tablejname="品目" columnjname="品目名" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                      </orftextinput>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <orftextinput name="DOWNLOAD_FILE" orteus="true" width="" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                      </orftextinput>
+                    </td>
+                  </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td class="frame06" width="12"></td>
+          </tr>
+          <tr height="32">
+            <td class="frame07" width="12"></td>
+            <td class="frame08" width="769"></td>
+            <td class="frame09" width="60"></td>
+            <td class="frame10" width="105">
+              <table orftype="DataGrid" mode="BUTTON" name="DD0010020button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                  <tr bgcolor="#ccff99">
+                    <td width="105"></td>
+                  </tr>
+                </orloophead>
+                <ornoloop>
+                  <tr>
+                    <td>
+                      <orfbutton name="Select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="22" lock="0" attribute=""
+                        script1="onClick;0;SUBMIT;_DD0010020form1/*@DD0010020Servlet"
+                      >
+                      </orfbutton>
+                    </td>
+                  </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td class="frame11" width="12"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3"></td>
+    </tr>
+    <tr height="74">
+      <td width="5"></td>
+      <td valign="top" width="958">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td class="frame01" width="12"></td>
+            <td class="frame02" colspan="3"></td>
+            <td class="frame03" width="12"></td>
+          </tr>
+          <tr>
+            <td class="frame04" width="12"></td>
+            <td class="frame05" colspan="3">
+              <table orftype="DataGrid" name="DD0010020form2" width="934" height="50" mode="FORM" border="1" cellspacing="0" cellpadding="0"
+              >
+                <orloophead>
+                  <tr bgcolor="#ccff99">
+                    <td width="170" align="right"></td>
+                    <td width="150"></td>
+                    <td width="22"></td>
+                    <td width="88"></td>
+                    <td width="22"></td>
+                    <td width="170" align="right"></td>
+                    <td width="150"></td>
+                    <td width="22"></td>
+                    <td width="88"></td>
+                  </tr>
+                </orloophead>
+                <ornoloop>
+                  <tr>
+                    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TOTAL_MATR_COST">積上材料費</span></td>
+                    <td>
+                      <orftextinput name="TOTAL_MATR_COST" tablename="T_ITEM_COST" columnname="TOTAL_MATR_COST" dbtype="number" tablejname="品目別原価" columnjname="積上材料費" orteus="true" width="150" editable="false" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                      </orftextinput>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TOTAL_SBCNT_MATR_COST">積上材料費（外注）</span></td>
+                    <td>
+                      <orftextinput name="TOTAL_SBCNT_MATR_COST" tablename="T_ITEM_COST" columnname="TOTAL_SBCNT_MATR_COST" dbtype="number" tablejname="品目別原価" columnjname="積上材料費（外注）" orteus="true" width="150" editable="false" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                      </orftextinput>
+                    </td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TOTAL_PROC_COST_SUM_ALL">積上加工費合計</span></td>
+                    <td>
+                      <orftextinput name="TOTAL_PROC_COST_SUM_ALL" tablename="T_ITEM_COST" columnname="TOTAL_PROC_COST_SUM_ALL" dbtype="number" tablejname="品目別原価" columnjname="積上加工費合計" orteus="true" width="150" editable="false" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                      </orftextinput>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TOTAL_COST">標準原価計</span></td>
+                    <td>
+                      <orftextinput name="TOTAL_COST" orteus="true" width="150" editable="false" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                      </orftextinput>
+                    </td>
+                    <td>
+                      <orftextinput name="HOME_CUR_UNIT" tablename="M_CUR" columnname="CUR_UNIT" dbtype="varchar2" tablejname="通貨" columnjname="通貨単位"  orteus="true" width="110" editable="false" visible="true" text="" kind="" maxlength="12" required="" attribute="">
+                      </orftextinput>
+                    </td>
+                    <td></td>
+                  </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td class="frame06" width="12"></td>
+          </tr>
+          <tr height="12">
+            <td class="frame18" width="12"></td>
+            <td class="frame19" colspan="3"></td>
+            <td class="frame20" width="12"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3"></td>
+    </tr>
+    <tr height="337">
+      <td width="5"></td>
+      <td valign="top" width="958">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td class="frame01" width="12"></td>
+            <td class="frame02" colspan="3"></td>
+            <td class="frame03" width="12"></td>
+          </tr>
+          <tr>
+            <td class="frame04" width="12"></td>
+            <td class="frame05" colspan="3">
+              <table orftype="DataGrid" name="DD0010020view1" width="934" height="313" mode="VIEW" border="1" cellspacing="0" cellpadding="0" attribute="DGS_SELECTMULTI">
+                <orloophead>
+                  <tr bgcolor="#ccff99">
+                    <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                    <td width="150"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME">品目名</span></td>
+                    <td width="80" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.NECESSARY_QTY">必要所要量</span></td>
+                    <td width="60"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_UNIT">計量単位</span></td>
+                    <td width="80" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_MATR_COST">単品材料費</span></td>
+                    <td width="80" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TOTAL_MATR_COST">積上材料費</span></td>
+                    <td width="80" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_SBCNT_MATR_COST">単品材料費（外注）</span></td>
+                    <td width="80" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TOTAL_SBCNT_MATR_COST">積上材料費（外注）</span></td>
+                    <td width="80" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_PROC_COST_SUM_ALL">自工程加工費合計</span></td>
+                    <td width="80" align="right" sorttype="numeric"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TOTAL_PROC_COST_SUM_ALL">積上加工費合計</span></td>
+                    <td width="60"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_UNIT">通貨単位</span></td>
+                    <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OUTSIDE_TYP_4">品目内外作区分</span></td>
+                    <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OUTSIDE_TYP_6">工程内外作区分</span></td>
+                    <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CLASIFICATION_CD_1">品目管理コード</span></td>
+                    <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CS_PROC_CD">工程コード</span></td>
+                    <td width="150"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CS_PROC_NAME">工程名</span></td>
+                    <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PARENT_ITEM_CD">親品目番号</span></td>
+                  </tr>
+                </orloophead>
+                <orloop>
+                  <tr>
+                    <td>
+                      <orflabel name="l_ITEM_CD" tablename="T_ITEM_COST" columnname="ITEM_CD" dbtype="varchar2" tablejname="品目別原価" columnjname="品目番号" orteus="true" width="" height="" text="" kind="" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2" tablejname="品目" columnjname="品目名" orteus="true" width="" height="" text="" kind="" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_NECESSARY_QTY" tablename="T_ITEM_COST" columnname="NECESSARY_QTY" dbtype="number" tablejname="品目別原価" columnjname="必要所要量" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_STOCK_UNIT" tablename="T_ITEM_COST" columnname="STOCK_UNIT" dbtype="varchar2" tablejname="品目別原価" columnjname="計量単位" orteus="true" width="" height="" text="" kind="" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_OWN_MATR_COST" tablename="T_ITEM_COST" columnname="OWN_MATR_COST" dbtype="number" tablejname="品目別原価" columnjname="単品材料費" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_TOTAL_MATR_COST" tablename="T_ITEM_COST" columnname="TOTAL_MATR_COST" dbtype="number" tablejname="品目別原価" columnjname="積上材料費" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_OWN_SBCNT_MATR_COST" tablename="T_ITEM_COST" columnname="OWN_SBCNT_MATR_COST" dbtype="number" tablejname="品目別原価" columnjname="単品材料費（外注）" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_TOTAL_SBCNT_MATR_COST" tablename="T_ITEM_COST" columnname="TOTAL_SBCNT_MATR_COST" dbtype="number" tablejname="品目別原価" columnjname="積上材料費（外注）" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_OWN_PROC_COST_SUM_ALL" tablename="T_ITEM_COST" columnname="OWN_PROC_COST_SUM_ALL" dbtype="number" tablejname="品目別原価" columnjname="自工程加工費合計" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_TOTAL_PROC_COST_SUM_ALL" tablename="T_ITEM_COST" columnname="TOTAL_PROC_COST_SUM_ALL" dbtype="number" tablejname="品目別原価" columnjname="積上加工費合計" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_HOME_CUR_UNIT" tablename="M_CUR" columnname="CUR_UNIT" dbtype="varchar2" tablejname="通貨" columnjname="通貨単位" orteus="true" width="" height="" text="" kind="" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_OUTSIDE_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明" orteus="true" width="" height="" text="" kind="" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_PROC_OUTSIDE_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明" orteus="true" width="" height="" text="" kind="" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_CLASIFICATION_CD" tablename="T_ITEM_COST" columnname="CLASIFICATION_CD" dbtype="varchar2" tablejname="品目別原価" columnjname="品目管理コード" orteus="true" width="" height="" text="" kind="" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_CS_PROC_CD" tablename="T_ITEM_COST" columnname="CS_PROC_CD" dbtype="varchar2" tablejname="品目別原価" columnjname="工程コード" orteus="true" width="" height="" text="" kind="" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_CS_PROC_NAME" tablename="M_CS_PROC" columnname="CS_PROC_NAME" dbtype="varchar2" tablejname="工程マスタ" columnjname="工程名" orteus="true" width="" height="" text="" kind="" maxlength="">
+                      </orflabel>
+                    </td>
+                    <td>
+                      <orflabel name="l_PARENT_ITEM_CD" tablename="T_ITEM_COST" columnname="PARENT_ITEM_CD" dbtype="varchar2" tablejname="品目別原価" columnjname="親品目番号" orteus="true" width="" height="" text="" kind="" maxlength="">
+                      </orflabel>
+                    </td>
+                  </tr>
+                </orloop>
+              </table>
+            </td>
+            <td class="frame06" width="12"></td>
+          </tr>
+          <tr height="12">
+            <td class="frame18" width="12"></td>
+            <td class="frame19" colspan="3"></td>
+            <td class="frame20" width="12"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3"></td>
+    </tr>
+    <tr height="42">
+      <td class="under" colspan="3">
+        <table width="968" border="0">
+          <tr>
+            <td width="538"></td>
+            <td align="right" width="420">
+              <table orftype="DataGrid" mode="BUTTON" name="DD0010020button0" width="420" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                  <tr bgcolor="#ccff99">
+                    <td width="105"></td>
+                    <td width="105"></td>
+                    <td width="105"></td>
+                    <td width="105"></td>
+                  </tr>
+                </orloophead>
+                <ornoloop>
+                  <tr>
+                    <td>
+                      <orfbutton name="CsvOut" value="CSV出力" pattern="print" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCsvOut" width="100" height="22" lock="0" attribute=""
+                        script1="onClick;0;SUBMIT;_DD0010020form1/*,_DD0010020form2/*@DD0010020Servlet,,$ZZ07011"
+                      >
+                      </orfbutton>
+                    </td>
+                    <td>
+                    <orfbutton name="MoveTree" value="ツリー表示" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnMoveTree" width="100" height="22" lock="1" attribute=""
+                        script1="onClick;0;SCRMV;_DD0010020form1/*@DD0010010Servlet,<%=contextNo%>,<%=su.getScreenName()%>,<%=su.getScreenID()%>"
+                      > </orfbutton>                    </td>
+                    <td>
+                      <orfbutton name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" height="22" lock="0" attribute=""
+                        script1="onClick;0;SUBMIT;@DD0010020Servlet,,$ZZ07008"
+                      >
+                      </orfbutton>
+                    </td>
+                    <td>
+                      <orfbutton name="Close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" height="22" lock="0" attribute=""
+                        script1="onClick;0;CLOSE"
+                      >
+                      </orfbutton>
+                    </td>
+                  </tr>
+                </ornoloop>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+<%
+MessageStruct msgStruct = aDD0010020Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

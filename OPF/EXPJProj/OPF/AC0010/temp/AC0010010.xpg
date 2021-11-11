@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<page>
+  <opfid>AC0010</opfid>
+  <process-name>AC0010010</process-name>
+  <page-name>AC0010010</page-name>
+  <page-jname>所要量計算</page-jname>
+  <event-list>
+    <event>
+      <event-name>execute</event-name>
+      <event-jname>実行</event-jname>
+      <event-type>insert</event-type>
+    </event>
+    <event>
+      <event-name>clear</event-name>
+      <event-jname>クリア</event-jname>
+      <event-type>none</event-type>
+    </event>
+    <event>
+      <event-name>close</event-name>
+      <event-jname>閉じる</event-jname>
+      <event-type>none</event-type>
+    </event>
+  </event-list>
+  <field-list>
+    <field>
+      <field-type>radio</field-type>
+      <field-name>rdoPlantTyp1</field-name>
+    </field>
+    <field>
+      <field-type>text</field-type>
+      <field-name>txtPlantCd</field-name>
+    </field>
+    <field>
+      <field-type>radio</field-type>
+      <field-name>rdoPlantTyp2</field-name>
+    </field>
+    <field>
+      <field-type>text</field-type>
+      <field-name>rdoPlantTyp</field-name>
+    </field>
+  </field-list>
+  <block-list></block-list>
+  <resource-list>
+  </resource-list>
+</page>

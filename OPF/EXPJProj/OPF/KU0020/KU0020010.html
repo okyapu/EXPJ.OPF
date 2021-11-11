@@ -1,0 +1,272 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+出荷関連伝票出力
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/KU0020/KU0020010.html,v $
+$Author: geng-jia $ 
+$Revision: 1.5 $ $Date: 2017/02/13 07:00:04 $
+********************************************************* --%>
+<html>
+<head>
+<title>出荷関連伝票出力</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="KU0020010" version="KU0020010 $Revision: 1.5 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="1">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr>
+      <td width="5"></td>
+      <td valign="top" width="958" height="538">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="12" class="frame01"></td>
+            <td height="12" class="frame02"></td>
+            <td width="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td class="frame05">
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" status="<%= TypeConverter.sanitizer(aKU0020010Control.getReadStatusString()) %>" name="KU0020010form1" width="934" height="514" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="right">&nbsp;</td>
+                  <td width="22" align="right">&nbsp;</td>
+                  <td width="40" align="right">&nbsp;</td>
+                  <td width="22" align="right">&nbsp;</td>
+                  <td width="198" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="38" align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r1_PrintType" orteus="true" value="true" text="出荷指示リスト" group="PrintType" mlang="true" mlkind="common" mlname="Expj.Cmt0604"
+                     script1="onLoad;0;CALL;onClick@0"
+                     script2="onClick;0;CHK;_THIS[eq]true@*0"
+                     script3="child;0;UNMASK;_DESINATED_SHIP_DATE_FROM,_CalendarDesinatedShipDateFrom,_DESINATED_SHIP_DATE_TO,_CalendarDesinatedShipDateTo,_SLIP_CD_FROM,_PeekerSlipCdFrom,_SLIP_CD_TO,_PeekerSlipCdTo"
+                  ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r2_PrintType" orteus="true" value="true" text="出荷指示アラームリスト" group="PrintType" mlang="true" mlkind="common" mlname="Expj.Cmt0605"
+                     script1="onLoad;0;CALL;onClick@0"
+                     script2="onClick;0;CHK;_THIS[eq]true@*0"
+                     script3="child;0;SET;_DESINATED_SHIP_DATE_FROM=,_DESINATED_SHIP_DATE_TO=,_SLIP_CD_FROM=,_SLIP_CD_TO=@*1"
+                     script4="child;1;MASK;_DESINATED_SHIP_DATE_FROM,_CalendarDesinatedShipDateFrom,_DESINATED_SHIP_DATE_TO,_CalendarDesinatedShipDateTo,_SLIP_CD_FROM,_PeekerSlipCdFrom,_SLIP_CD_TO,_PeekerSlipCdTo"
+                  ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r3_PrintType" orteus="true" value="true" text="出荷伝票" group="PrintType" mlang="true" mlkind="common" mlname="Expj.Cmt0606"
+                     script1="onLoad;0;CALL;onClick@0"
+                     script2="onClick;0;CHK;_THIS[eq]true@*0"
+                     script3="child;0;UNMASK;_DESINATED_SHIP_DATE_FROM,_CalendarDesinatedShipDateFrom,_DESINATED_SHIP_DATE_TO,_CalendarDesinatedShipDateTo,_SLIP_CD_FROM,_PeekerSlipCdFrom,_SLIP_CD_TO,_PeekerSlipCdTo"
+                  ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DESINATED_SHIP_DATE">出荷指定日</span></td>
+                  <td><orftextinput  name="DESINATED_SHIP_DATE_FROM" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarDesinatedShipDateFrom" value="" pattern="none" orteus="false" width="22" attribute="BTS_CALENDAR"
+                     script1="onClick;0;CALENDAR;_KU0020010form1/DESINATED_SHIP_DATE_FROM"></orfcalendar></td>
+                  <td align=center><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0043">～</span></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="DESINATED_SHIP_DATE_TO" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfcalendar  name="CalendarDesinatedShipDateTo" value="" pattern="none" orteus="false" width="22" attribute="BTS_CALENDAR"
+                     script1="onClick;0;CALENDAR;_KU0020010form1/DESINATED_SHIP_DATE_TO"></orfcalendar></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SLIP_CD">伝票番号</span></td>
+                  <td><orftextinput  name="SLIP_CD_FROM" orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerSlipCdFrom" value="" pattern="none" orteus="false" width="22" attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_KU0020010form1/SLIP_CD_FROM@<%=contextNo%>"
+                     sqlname="SLIP_CD_01" sqlparam_1="_SLIP_CD_FROM"></orfpeeker></td>
+                  <td align=center><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0043">～</span></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="SLIP_CD_TO" orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerSlipCdTo" value="" pattern="none" orteus="false" width="22" attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_KU0020010form1/SLIP_CD_TO@<%=contextNo%>"
+                     sqlname="SLIP_CD_01" sqlparam_1="_SLIP_CD_TO"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.WH_CD">保管区コード</span></td>
+                  <td><orftextinput  name="WH_CD" orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerWhCd" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="WH_CD_01" sqlparam_1="_" sqlparam_2="_WH_CD"
+ script1="onClick;0;PEEKER;_KU0020010form1/WH_CD@<%=contextNo%>"
+></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+                  <td><orftextinput  name="CUST_CD" orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerCustCd" value="" pattern="none" orteus="false" width="22" attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_KU0020010form1/CUST_CD@<%=contextNo%>"
+                     sqlname="CUST_CD_01" sqlparam_1="_CUST_CD"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_ReOut" orteus="true" value="true" text="出力済再出力" mlang="true" mlkind="common" mlname="Expj.Cmt0203"></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="DOWNLOAD_FILE" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                </ornoloop> 
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame18"></td>
+            <td class="frame19" height="12"> </td>
+            <td width="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42">
+      <td colspan="3" width="968" height="42" class="under">
+        <table width="968" border="0">
+          <tr>
+            <td align="left" width="748"></td>
+            <td align="right" width="315">
+              <table orftype="DataGrid" mode="BUTTON" name="KU0020010button0" width="315" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton name="Print" value="帳票出力" pattern="print" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnPrint" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;CHK;_KU0020010form1/DESINATED_SHIP_DATE_FROM[neq][and]_KU0020010form1/DESINATED_SHIP_DATE_TO[neq][and]_KU0020010form1/DESINATED_SHIP_DATE_FROM[gt]_KU0020010form1/DESINATED_SHIP_DATE_TO@#KU01004"
+ script2="onClick;1;CHK;_KU0020010form1/SLIP_CD_FROM[neq][and]_KU0020010form1/SLIP_CD_TO[neq][and]_KU0020010form1/SLIP_CD_FROM[gt]_KU0020010form1/SLIP_CD_TO@#KU01005"
+ script3="onClick;2;PRINTER;_KU0020010form1/*@KU0020010Servlet:H,H,H"
+></orfbutton></td>
+                  <td><orfbutton  name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100"
+                     script1="onClick;0;SUBMIT;@KU0020010Servlet,,$ZZ07008"
+                     lock="0"></orfbutton></td>
+                  <td><orfbutton  name="Close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100"
+                     script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aKU0020010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+分類マスタメンテナンス
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AA0190/AA0190010.html,v $
+$Author: geng-jia $	
+$Revision: 1.5 $　$Date: 2017/02/13 02:29:49 $
+********************************************************* --%>
+<html>
+<head>
+<title>分類マスタメンテナンス</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" version="AA0190010 $Revision: 1.5 $" name="AA0190010" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="3">
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="71"> 
+      <td width="5" height="71"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+			  <table orftype="DataGrid" name="AA0190010form1" mode="FORM" status="<%= TypeConverter.sanitizer(aAA0190010Control.getReadStatusString()) %>" float=""
+ script1="onLoad;1;CALL;onDecision@0,1"
+   
+ script2="onDecision;0;CHKRQ;A@*1,*0"
+ script4="child;0;MASK;_AA0190010button1/Select@*10"
+ script5="child;1;UNMASK;_AA0190010button1/Select@*2"
+	   
+ script6="child;2;CHKRQ;B@*3,*10"
+ script7="child;3;CHK;?AA0190010form1/*[eq]INITIAL[or]?AA0190010form1/*[eq]NOT_FOUND@*5,*4"
+ script8="child;4;CHK;?AA0190010form1/*[eq]NORMAL@*5,*10"
+ script9="child;5;CHK;_AA0190010form1/CLASS_CD1[eq]_AA0190010form1/h_CLASS_CD1[and]_AA0190010form1/CLASS_CD2[eq]_AA0190010form1/h_CLASS_CD2@*8,*6"
+ script10="child;6;MASK;_AA0190010button2/Update,_AA0190010button2/Delete,_AA0190010button2/Alldelete@*7"
+ script11="child;7;UNMASK;_AA0190010button2/Insert"
+ script12="child;8;MASK;_AA0190010button2/Insert@*9"
+ script13="child;9;UNMASK;_AA0190010button2/Update,_AA0190010button2/Alldelete"
+ script14="child;10;MASK;_AA0190010button2/Update,_AA0190010button2/Delete,_AA0190010button2/Alldelete,_AA0190010button2/Insert"
+  
+ script16="onDecision;1;SELCHK;AA0190010view1:_CLASS_CD3[eq]@*12,*11"
+ script17="child;11;CHK;_AA0190010form1/CLASS_CD1[eq]_AA0190010form1/h_CLASS_CD1[and]_AA0190010form1/CLASS_CD2[eq]_AA0190010form1/h_CLASS_CD2@*13,*12"
+ script18="child;12;MASK;_AA0190010button2/Delete"
+ script19="child;13;UNMASK;_AA0190010button2/Delete"
+ width="934" height="50" border="1" cellspacing="1" cellpadding="1">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="87">&nbsp;</td>
+                  <td width="23">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="92">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required="true"> <span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4124">大分類</span> </td>
+                  <td><orftextinput name="CLASS_CD1" orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="OBT_N;" maxlength="2" required="A" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerCLASS_CD1" value="" pattern="none" revokectrl="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" visible="true" sqlname="CLASS_CD_01" sqlparam_1="_AA0190010form1/CLASS_CD1"
+ script1="onClick;0;PEEKER;_AA0190010form1/CLASS_CD1@<%=contextNo%>"
+></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_CLASS_CD1" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required="true"> <span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4125">中分類</span></td>
+                  <td><orftextinput name="CLASS_CD2" orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="OBT_N;" maxlength="2" required="A" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerCLASS_CD2" value="" pattern="none" revokectrl="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" visible="true" sqlname="CLASS_CD_02" sqlparam_1="_AA0190010form1/CLASS_CD1" sqlparam_2="_AA0190010form1/CLASS_CD2"
+ script1="onClick;0;PEEKER;_AA0190010form1/CLASS_CD2@<%=contextNo%>"
+></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_CLASS_CD2" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+			  <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"><table orftype="DataGrid" mode="BUTTON" status="" float=""
+ name="AA0190010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td>&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="Select" value="読込" pattern="select" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="1" attribute="" visible="true"
+			    script1="onClick;1;CHK;_AA0190010form1/CLASS_CD1[gt]99[or]_AA0190010form1/CLASS_CD1[lt]01[or]~LEN(_AA0190010form1/CLASS_CD1)[eq]1@!AA20002"
+				script2="onClick;2;CHK;_AA0190010form1/CLASS_CD2[gt]99[or]_AA0190010form1/CLASS_CD2[lt]01[or]~LEN(_AA0190010form1/CLASS_CD2)[eq]1@!AA20003"				
+				script3="onClick;3;CHK;?AA0190010form1/*[eq]NOT_FOUND@*0,*2"
+                script4="child;0;CHK;_AA0190010form1/CLASS_CD1[eq]_AA0190010form1/h_CLASS_CD1[and]_AA0190010form1/CLASS_CD2[eq]_AA0190010form1/h_CLASS_CD2@*2,*1"
+                script5="child;1;CFMPUT;_AA0190010button1/Select=YES:2@AA00176"
+				script6="child;2;SUBMIT;_AA0190010form1/*@AA0190010Servlet"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+	<tr height="71"> 
+      <td width="5" height="71"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+			  <table orftype="DataGrid" mode="FORM" status="" float=""
+ name="AA0190010form2" width="934" height="50" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align=right>&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4127">大分類名称</span></td>
+                  <td><orftextinput name="CLASS_NAME1" orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="B" attribute="" 
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="MODIFY_COUNT_CD1" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4128">中分類名称</span></td>
+                  <td><orftextinput name="CLASS_NAME2" orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="B" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="MODIFY_COUNT_CD2" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="467"> 
+      <td width="5" height="467"></td>
+      <td valign="top" width="958" height="467"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+			   <table orftype="DataGrid" name="AA0190010view1" attribute="DGS_SELECTMULTI" mode="VIEW" status="" float=""
+ width="934" height="316" border="1" cellspacing="1" cellpadding="1">
+                 <orloophead>
+                 <tr bgcolor="#ccff99">
+                   <td width="100" align="left"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4126">小分類</span> </td>
+                   <td width="770" align="left"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4129">小分類名称</span> </td>
+                   <td width="50" hidden="true">h_MODEFY_COUNT</td>
+                 </tr>
+                 </orloophead><orloop>
+<%
+	String WriteStatus = "";
+	WriteStatus =aAA0190010Struct.getWriteStatus() ;
+%>
+                 <tr>                   
+                   <td><orftextinput name="CLASS_CD3" orteus="true" width="260" editable="<%= WriteStatus %>" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+
+></orftextinput></td>
+                   <td><orftextinput name="CLASS_NAME3" orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                   <td><orflabel name="MODIFY_COUNT_CD3" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                 </tr>
+                 </orloop>
+		      </table>
+			   <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="559" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="315" class="frame10" height="32">
+			<table orftype="DataGrid" mode="BUTTON" status="" float=""
+ name="AA0190010button2" width="420" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+			    <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="Insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="" lock="1" attribute="" visible="true"
+ script1="onClick;0;CHK;_AA0190010form2/CLASS_NAME1[eq]@!AA20004"
+ script2="onClick;1;CHK;_AA0190010form2/CLASS_NAME2[eq]@!AA20005"
+ script3="onClick;2;CHK;_AA0190010form1/CLASS_CD1[gt]99[or]_AA0190010form1/CLASS_CD1[lt]01[or]~LEN(_AA0190010form1/CLASS_CD1)[eq]1@!AA20002"
+ script4="onClick;3;CHK;_AA0190010form1/CLASS_CD2[gt]99[or]_AA0190010form1/CLASS_CD2[lt]01[or]~LEN(_AA0190010form1/CLASS_CD2)[eq]1@!AA20003"
+ script5="onClick;4;CHK;?AA0190010form1/*[eq]NOT_FOUND@*0" 
+ script6="child;0;CHK;_AA0190010form1/CLASS_CD1[eq]_AA0190010form1/h_CLASS_CD1[and]_AA0190010form1/CLASS_CD2[eq]_AA0190010form1/h_CLASS_CD2@,$AA00176"
+ script8="onClick;5;SUBMIT;_AA0190010form1/*,_AA0190010form2/*,_AA0190010view1/*@AA0190010Servlet,,$ZZ07001" 
+></orfbutton></td>
+                <td><orfbutton name="Update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="" lock="1" attribute="" visible="true"
+script1="onClick;0;CHK;_AA0190010form2/CLASS_NAME1[eq]@!AA20004"
+script2="onClick;1;CHK;_AA0190010form2/CLASS_NAME2[eq]@!AA20005"
+script3="onClick;2;CHK;_AA0190010form1/CLASS_CD1[gt]99[or]_AA0190010form1/CLASS_CD1[lt]01[or]~LEN(_AA0190010form1/CLASS_CD1)[eq]1@!AA20002"
+script4="onClick;3;CHK;_AA0190010form1/CLASS_CD2[gt]99[or]_AA0190010form1/CLASS_CD2[lt]01[or]~LEN(_AA0190010form1/CLASS_CD2)[eq]1@!AA20003"
+script5="onClick;4;SUBMIT;_AA0190010form1/*,_AA0190010form2/*,_AA0190010view1/*@AA0190010Servlet,,$ZZ07003"
+></orfbutton></td>
+                <td><orfbutton name="Delete" value="選択削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDeleteAssort_1" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;1;SUBMIT;_AA0190010form1/*,_AA0190010form2/*,_AA0190010view1/+@AA0190010Servlet,,$ZZ07004"
+></orfbutton></td>
+                <td><orfbutton name="Alldelete" value="全削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDeleteAll" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;CHK;_AA0190010form2/CLASS_NAME1[eq][or]_AA0190010form2/CLASS_NAME1[eq]''@!AA20004"
+ script2="onClick;1;CHK;_AA0190010form2/CLASS_NAME2[eq][or]_AA0190010form2/CLASS_NAME2[eq]''@!AA20005"
+ script3="onClick;2;SUBMIT;_AA0190010form1/*,_AA0190010form2/*,_AA0190010view1/*@AA0190010Servlet,,$ZZ07014"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="467"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AA0190010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105></td>
+                  <td width=105></td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" height="" lock="0" attribute=""
+ script2="onClick;0;SUBMIT;@AA0190010Servlet,,$ZZ07008"
+></orfbutton></td>
+                  <td><orfbutton name="Close" value="閉じる" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" height="" lock="0" attribute=""
+ script2="onClick;0;CLOSE"
+></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+<%
+MessageStruct msgStruct = aAA0190010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

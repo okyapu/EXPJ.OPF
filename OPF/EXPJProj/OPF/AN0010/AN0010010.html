@@ -1,0 +1,244 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+業務ロックパラメータメンテナンス
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AN0010/AN0010010.html,v $
+$Author: geng-jia $
+$Revision: 1.4 $ $Date: 2017/02/13 03:36:07 $
+********************************************************* --%>
+<html>
+<head>
+<title>業務ロックパラメータメンテナンス</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AN0010010" version="AN0010010 $Revision: 1.4 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="71">
+      <td width="5" height="71"></td>
+      <td valign="top" width="958">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <table orftype="DataGrid" mode="FORM" name="AN0010010form1" width="934" height="27" border="1"
+                   cellspacing="0" cellpadding="0"
+                   script1="onLoad;0;CALL;onDecision@0,1,2"
+                   script2="onDecision;0;CHKRQ;A@*0,*1"
+                   script3="child;0;UNMASK;_AN0010010button1/Select"
+                   script4="child;1;MASK;_AN0010010button1/Select"
+                   script5="onDecision;1;CHKRQ;A@*2,*5"
+                   script6="child;2;CHK;?AN0010010view1/*[eq]NORMAL@*3,*5"
+                   script7="child;3;CHK;_AN0010010form1/h_ExistSysBusinessLock[eq]false[or]_AN0010010form1/PROGRAM_CD[neq]_AN0010010form1/h_PROGRAM_CD@*4,*5"
+                   script8="child;4;UNMASK;_AN0010010button2/Insert"
+                   script9="child;5;MASK;_AN0010010button2/Insert"
+                   script10="onDecision;2;CHK;?AN0010010view1/*[eq]NORMAL[and]_AN0010010form1/h_ExistSysBusinessLock[eq]true[and]_AN0010010form1/PROGRAM_CD[eq]_AN0010010form1/h_PROGRAM_CD@*6,*7"
+                   script11="child;6;UNMASK;_AN0010010button2/Update"
+                   script12="child;7;MASK;_AN0010010button2/Update">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=170 align=right>&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=170 align=right>&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88 align=left>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common"
+                       mlname="Expj.MODE_FORM_FROM_NAME">業務ロック元名</span></td>
+                  <td><orftextinput  name="PROGRAM_CD" tablename="SYS_OBJECTS" columnname="PROGRAM_CD" dbtype="varchar2"
+                       tablejname="オブジェクト" columnjname="処理ID" orteus="true" width="260" maxlength="25" required="A"></orftextinput></td>
+                  <td><orftextinput  name="h_PROGRAM_CD" tablename="SYS_OBJECTS" columnname="PROGRAM_CD" dbtype="varchar2"
+                       tablejname="オブジェクト" columnjname="処理ID" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerProgramCd" value="" pattern="none" orteus="false" width="22"
+                       attribute="BTS_PEEKER"
+                       script1="onClick;0;PEEKER;_AN0010010form1/PROGRAM_CD@<%=contextNo%>" sqlname="PROGRAM_CD_01" 
+                       sqlparam_1="_PROGRAM_CD"></orfpeeker></td>
+                  <td><orftextinput  name="PROGRAM_NAME" tablename="SYS_OBJECTS" columnname="PROGRAM_NAME" dbtype="varchar2"
+                       tablejname="オブジェクト" columnjname="処理名" orteus="true" width="320" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_ExistSysBusinessLock" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32">
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"> </td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32">
+              <table orftype="DataGrid" mode="BUTTON" name="AN0010010button1" width="105" height="22"
+                   border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton name="Select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AN0010010form1/*@AN0010010Servlet"
+></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="462">
+      <td width="5" height="462"></td>
+      <td valign="top" width="958" height="462">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <table orftype="DataGrid" name="AN0010010view1" mode="VIEW" attribute="DGS_SORTOFF|DGS_SELECTOFF"
+                   status="<%= TypeConverter.sanitizer(aAN0010010Control.getReadStatusString()) %>"
+                   width="934" height="418" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td hidden=true>&nbsp;</td>
+                  <td hidden=true>&nbsp;</td>
+                  <td hidden=true>&nbsp;</td>
+                  <td hidden=true>&nbsp;</td>
+                  <td hidden=true>&nbsp;</td>
+                  <td width=100>
+                      <span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROGRAM_CD_3">業務ロック先</span></td>
+                  <td width=630>
+                      <span orteus="true" mlang="true" mlkind="common" mlname="Expj.MODE_FORM_TO_NAME">業務ロック先名</span></td>
+                  <td width=100><orfdata excell="false"></orfdata>
+                      <span orteus="true" mlang="true" mlkind="common" mlname="Expj.TARGET_PLANT_TYP">対象工場区分</span></td>
+                </tr>
+                </orloophead><orloop>
+                <tr>
+                  <td><orflabel  name="h_TARGET_PLANT_TYP"
+                       tablename="SYS_BUSINESS_LOCK" columnname="TARGET_PLANT_TYP" dbtype="number"
+                       tablejname="業務ロック" columnjname="対象工場区分" orteus="true" visible="false"></orflabel></td>
+                  <td><orflabel  name="h_TARGET_PLANT_TYP2"
+                       tablename="SYS_BUSINESS_LOCK" columnname="TARGET_PLANT_TYP" dbtype="number"
+                       tablejname="業務ロック" columnjname="対象工場区分" orteus="true" visible="false"></orflabel></td>
+                  <td><orflabel  name="h_CHANGEABLE_TYP"
+                       tablename="SYS_BUSINESS_LOCK" columnname="CHANGEABLE_TYP" dbtype="number"
+                       tablejname="業務ロック" columnjname="更新可否区分" orteus="true" visible="false"></orflabel></td>
+                  <td><orflabel  name="h_MODIFY_COUNT"
+                       tablename="SYS_BUSINESS_LOCK" columnname="MODIFY_COUNT" dbtype="number"
+                       tablejname="業務ロック" columnjname="更新数" orteus="true" visible="false"></orflabel></td>
+                  <td><orflabel  name="h_MODIFY_COUNT2"
+                       tablename="SYS_BUSINESS_LOCK" columnname="MODIFY_COUNT" dbtype="number"
+                       tablejname="業務ロック" columnjname="更新数" orteus="true" visible="false"></orflabel></td>
+                  <td><orflabel  name="l_PROGRAM_CD"
+                       tablename="SYS_OBJECTS" columnname="PROGRAM_CD" dbtype="varchar2"
+                       tablejname="オブジェクト" columnjname="処理ID" orteus="true"></orflabel></td>
+                  <td><orflabel  name="l_PROGRAM_NAME"
+                       tablename="SYS_OBJECTS" columnname="PROGRAM_NAME" dbtype="varchar2"
+                       tablejname="オブジェクト" columnjname="処理名" orteus="true"></orflabel></td>
+                  <td><orfcombobox  name="TARGET_PLANT_TYP"
+                       tablename="SYS_BUSINESS_LOCK" columnname="TARGET_PLANT_TYP" dbtype="number"
+                       tablejname="業務ロック" columnjname="対象工場区分" orteus="true"
+                       script1="onDecision;0;CHK;?THIS[eq]DIFFER@*0"
+                       script2="child;0;CHK;_h_CHANGEABLE_TYP[eq]1@*1"
+                       script3="child;1;CFMPUT;_AN0010010view1/TARGET_PLANT_TYP=NO@AN01001"></orfcombobox></td>
+                </tr>
+                </orloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32">
+            <td width="12" class="frame15" height="32"></td>
+            <td width="210" class="frame10" height="32">
+              <table orftype="DataGrid" mode="BUTTON" name="AN0010010button2" width="210" height="22"
+                   border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton name="Insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AN0010010form1/*,_AN0010010view1/*@AN0010010Servlet,,$ZZ07001"
+></orfbutton></td>
+                  <td><orfbutton name="Update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_AN0010010form1/*,_AN0010010view1/*@AN0010010Servlet,,$ZZ07003"
+></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="60" class="frame16" height="32"></td>
+            <td width="664" class="frame08" height="32"></td>
+            <td width="12" class="frame17" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="462"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42">
+      <td colspan="3" width="968" height="42" class="under">
+        <table width="968" border="0">
+          <tr>
+            <td align="left" width="748"></td>
+            <td align="right" width="210">
+              <table orftype="DataGrid" mode="BUTTON" name="AN0010010button0" width="210" height="22"
+                   border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton  name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common"
+                       mlname="Expj.BtnClear" width="100" script1="onClick;0;SUBMIT;_AN0010010form1/*@AN0010010Servlet,,$ZZ07008" lock="0"></orfbutton></td>
+                  <td><orfbutton  name="Close" value="閉じる" pattern="none" orteus="true" mlang="true" mlkind="common"
+                       mlname="Expj.BtnClose" width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+  MessageStruct msgStruct = aAN0010010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>
+

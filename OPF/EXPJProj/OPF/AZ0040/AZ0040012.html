@@ -1,0 +1,243 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+>検索実行
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AZ0040/AZ0040012.html,v $
+$Author: geng-jia $
+$Revision: 1.9 $ $Date: 2017/02/20 10:02:37 $
+********************************************************* --%>
+
+<%@ page import="java.sql.Types" %>
+<html>
+<head>
+<%@include file="common/expj.jsp" %>
+<link rel="stylesheet" href="common/metamorbase.css">
+
+<script src="common/libs/jquery-2.2.4.min.js"></script>
+<script src="common/libs/OrteusUtils.js"></script>
+<script language="JavaScript" src="common/nonflash.js"></script>
+
+<title>検索実行</title>
+
+
+<script language="JavaScript">
+<!--
+/* クエリ一覧ボタン押下時の処理 */
+function checkReturn()
+{
+
+	// 確認メッセージ出力
+	if(displayConfirmMessage("AZ90001") == false)  return false;
+
+	// submit済フラグ ON
+	prepareSubmit();
+	PreparNoLock();
+
+	document.header.target="_self";
+	return true;
+}
+/* CSV出力ボタン押下時の処理 */
+function checkCsv()
+{
+<% if(aAZ0040010Control.getsub2Data() == null || aAZ0040010Control.getsub2Data().size() == 0){ %>
+	// 明細なしのとき 実行不可
+	displayErrorMessage("AZ00015"); return false;
+<% } %>
+
+	prepareSubmitNoDisp();
+	PreparNoLock();
+	
+	if (com.nec.jp.orteus.utils.ClientInfo.browser.isMSIE) {
+		document.header.target="_blank";
+	}
+    if (typeof(parent.expj) !== 'undefined' && parent.expj !== null) {
+      setTimeout(function () {
+        parent.expj.common.controlLoadingScreen(false);
+      }, 0); 
+    }
+	return true;
+}
+/* その他送信ボタン押下時のチェック */
+function checkSubmit()
+{
+
+	// submit済フラグ ON
+	prepareSubmit();
+	PreparNoLock();
+
+	document.header.target="_self";
+	return true;
+}
+//-->
+</script>
+
+<script language="JavaScript">
+<!--
+function initialize()
+{
+	sizing();
+}
+//-->
+</script>
+
+<script language="JavaScript">
+<!--
+/* 入力項目のサイズ設定 */
+function sizing()
+{
+	var fm = document.header;
+	fm.QUERY_NAME.size = 100;
+	fm.QUERY_GROUP.size = 50;
+	fm.QUERY_MEMO.size = 100;
+	
+    if (com.nec.jp.orteus.utils.ClientInfo.browser.isChrome) {
+      // formタグのmargin-bottomを修正
+      $('form').css('margin-bottom', '0px');
+    }
+	
+}
+// -->
+</script>
+
+<script language="JavaScript">
+<!--
+function PreparLock(){ document.header.SUBMIT_BUTTON_TYPE.value=1; }
+
+function PreparNoLock(){ document.header.SUBMIT_BUTTON_TYPE.value=0; }
+
+// -->
+</script>
+
+</head>
+<body onLoad="initialize();loadComplete()">
+<form name="header" method="post" action="">
+	<%
+		//画面表示用 Struct
+		aAZ0040010Struct = null;
+		aAZ0040010Struct=(AZ0040010Struct)aAZ0040010Control.getSelStruct();
+	%>
+<table width="100%" border="0" height="100%">
+<!----------------------------------------------------------------------------->
+<tr>
+  <td>
+<%
+	AZ0040010Struct currentQuery = aAZ0040010Control.getSelStruct();
+	// クエリ名/分類/概要いずれか設定があれば表示
+	if(currentQuery.getQUERY_NAME() != null || currentQuery.getQUERY_GROUP() != null || currentQuery.getQUERY_MEMO() != null){
+%>
+    <table border="0" width="100%">
+      <tr> 
+        <td width="120" class="name"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0413">クエリ名</span></td>
+        <td>
+          <input type="text" name="QUERY_NAME" size="100" class="readonly" readonly value="<%= TypeConverter.sanitizer(currentQuery.getQUERY_NAME()) %>">
+        </td>
+      </tr>
+      <tr>
+        <td class="name"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0014">分類</span></td>
+        <td>
+          <input type="text" name="QUERY_GROUP" size="50" class="readonly" readonly value="<%= TypeConverter.sanitizer(currentQuery.getQUERY_GROUP()) %>">
+        </td>
+      </tr>
+      <tr>
+        <td class="name"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0006">概要</span></td>
+        <td> 
+          <input type="text" name="QUERY_MEMO" size="100" class="readonly" readonly value="<%= TypeConverter.sanitizer(currentQuery.getQUERY_MEMO()) %>">
+        </td>
+      </tr>
+      <tr> 
+        <td colspan="3"> <hr></td>
+      </tr>
+    </table>
+<%	}
+	// タイトル未定のときは ダミーの入力域を配置
+	else{ %>
+      <input type="hidden" name="QUERY_NAME" value="<%= TypeConverter.sanitizer(aAZ0040010Struct.getQUERY_NAME()) %>">
+      <input type="hidden" name="QUERY_GROUP" value="<%= TypeConverter.sanitizer(aAZ0040010Struct.getQUERY_GROUP()) %>">
+      <input type="hidden" name="QUERY_MEMO" value="<%= TypeConverter.sanitizer(aAZ0040010Struct.getQUERY_MEMO()) %>">
+<%	} %>
+  </td>
+</tr>
+<!----------------------------------------------------------------------------->
+<%
+List cloname = aAZ0040010Control.getsub2Name();
+List clotype = aAZ0040010Control.getsub2Type();
+List clodata = aAZ0040010Control.getsub2Data();
+
+int ixx = 0;
+int iyy = 0;
+
+%>
+
+<tr>
+  <td height="100%">
+    <div class="center" style="height:400px;">
+      <table class="outer" cellspacing=0 cellpadding=0><tr><td>
+        <table cellspacing=1 cellpadding=3>
+          <tr class="header"> 
+<%
+            for (ixx = 0; ixx < cloname.size(); ixx++) {
+%>
+              <td><%= cloname.get(ixx)%></td>
+<%
+            }
+%>
+          </tr>
+
+<%      for (iyy = 0; iyy < clodata.size(); iyy++) { %>
+          <tr class="rows">
+<%
+          String[] val = (String[])clodata.get(iyy);
+          if (val != null) {
+            for (ixx = 0; ixx < cloname.size() && val[ixx] != null; ixx++) {
+              String align = null;
+              String valtemp = val[ixx];
+			  if (valtemp!=null) {
+   			     valtemp = valtemp.replaceAll("<","&lt;");
+			     valtemp = valtemp.replaceAll(">","&gt;");
+			     valtemp = valtemp.replaceAll(" ","&nbsp;");
+			  }
+              if( ((Integer)clotype.get(ixx)).intValue() == Types.NUMERIC ){
+                align = "align=right";
+              }
+%>
+              <td <%= TypeConverter.sanitizer(align) %>><%= valtemp %></td>
+<%
+            } 
+          } 
+%>
+          </tr>
+<%      } %>
+        </table>
+      </td>
+      </tr>
+      </table>
+    </div>
+  </td>
+</tr>
+<!----------------------------------------------------------------------------->
+<tr>
+  <td height="50" width="100%">
+    <table height="50" width="100%">
+      <tr> 
+        <td height="30"><hr></td>
+      </tr>
+      <tr> 
+        <td height="30" align="right">
+          <input type="hidden" name="SUBMIT_BUTTON_TYPE" value="0">
+          <input type="submit" name="sub2csv" value="ＣＳＶ出力" pattern="none" orteus="true" class="button" mlang="true" mlkind="common" mlname="Expj.BtnCsvOut" onClick="return checkCsv();">
+<% if(aAZ0040010Control.cansub2Condition() != false){ %>
+          <input type="submit" name="sub2condition" value="検索条件設定" pattern="none" orteus="true" class="button" mlang="true" mlkind="common" mlname="Expj.BtnSetCondition" onClick="return checkSubmit();">
+<% } %>
+          <input type="submit" name="sub2return" value="戻る" pattern="none" orteus="true" class="button" mlang="true" mlkind="common" mlname="Expj.BtnReturn" onClick="return checkReturn();">
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<!----------------------------------------------------------------------------->
+<% MessageStruct msgStruct = aAZ0040010Control.getMessage(); %>
+<%@ include file="common/SetServerMessage.jsp" %>
+</table>
+</form></body>
+</html>

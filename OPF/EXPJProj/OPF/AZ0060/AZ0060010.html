@@ -1,0 +1,4443 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+マスタ系承認
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AZ0060/AZ0060010.html,v $
+$Author: geng-jia $	
+$Revision: 1.16 $　$Date: 2017/02/20 10:23:38 $
+********************************************************* --%>
+<html>
+<head>
+<title>マスタ系承認</title>
+<%@include file="common/expj_v5.jsp" %>
+<% 
+String screen_Url = null;
+if("BA0040010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	screen_Url = "BA0020010Servlet";
+}else{
+	screen_Url = aAZ0060010Control.getScreen_url();
+}
+ScreenMoveUtil su1 = new ScreenMoveUtil(screen_Url,so); 
+ScreenMoveUtil su2 = new ScreenMoveUtil(screen_Url,so); 
+%>
+</head>
+<body flash="true" version="AZ0060010 $Revision: 1.16 $" name="AZ0060010" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="4">
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="71"> 
+      <td width="5" height="71"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" status="" float=""
+ name="AZ0060010form1" width="934" height="27" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orftextinput name="h_APPR_POWER_TYP" orteus="true" width="" editable="true" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td><orfradiobutton name="r1_FILTER1" value="true" check="true" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5096" width="190" height="" text="依頼" group="FILTER1" editable="true" visible="true"
+></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton name="r2_FILTER1" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3168" width="190" height="" text="承認待ち" group="FILTER1" editable="true" visible="true"
+></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton name="r3_FILTER1" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3169" width="190" height="" text="保留" group="FILTER1" editable="true" visible="true"
+></orfradiobutton></td>
+                  <td><orftextinput name="h_SELECT_TYP" orteus="true" width="" editable="true" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td><orftextinput name="h_HISTORY_FOR_APPR" orteus="true" width="" editable="true" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td><orftextinput name="h_REQUEST_APPR_SAME" orteus="true" width="" editable="true" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                </tr>
+                </ornoloop>
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32">
+				<table orftype="DataGrid" mode="BUTTON" status="" float=""
+	 name="AZ0060010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+					<orloophead>
+					<tr bgcolor="#ccff99">
+					  <td width="105">&nbsp;</td>
+					</tr>
+					</orloophead><ornoloop>
+					<tr>
+					  <td><orfbutton name="Select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_AZ0060010form1/*@AZ0060010Servlet,,"
+></orfbutton></td>
+				      
+					</tr>
+					</ornoloop>
+			  </table>
+		    </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+	<tr height="190"> 
+      <td width="5" height="190"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+		  <%
+			aAZ0060010Control.setList(aAZ0060010Control.getResultList());
+		  %>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに中段検索条件用のDataGridを配置する。↓ -->
+			  
+              <table orftype="DataGrid" name="AZ0060010view1" attribute="DGS_SELECTSINGLE" mode="VIEW" status="" float="" width="934" height="163" border="1" cellspacing="1" cellpadding="1"
+			  script1="onClick;0;SUBMIT;ClickShow=ACT,_AZ0060010form1/*,_AZ0060010view1/+@AZ0060010Servlet">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td hidden="true">&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5078">対象業務</span></td>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5079">依頼数</span></td>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5080">承認待ち数</span></td>
+                  <td align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5081">保留数</span></td>
+                </tr>
+                </orloophead><orloop>
+                <tr>
+                  <td><orflabel name="h_SCREEN_URL" orteus="true" visible="true"></orflabel></td>
+                  <td><orflabel name="l_SCREEN_NAME" tablename="SCREEN_MST" columnname="SCREEN_NAME" dbtype="varchar2" tablejname="画面マスタ" columnjname="画面名"  orteus="true" width="200" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                  <td><orflabel name="l_REQUEST_COUNT" orteus="true" width="100" height="" text="" maxlength="" attribute="" password="" visible=""
+></orflabel></td>
+                  <td><orflabel name="l_APPRING_COUNT" orteus="true" width="100" height="" text="" maxlength="" attribute="" password="" visible=""
+></orflabel></td>
+                  <td><orflabel name="l_RESERVE_COUNT" orteus="true" width="100" height="" text="" maxlength="" attribute="" password="" visible=""
+></orflabel></td>
+                </tr>
+                </orloop>
+              </table>
+              <!-- ここに中段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="190"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+	<tr height="71"> 
+      <td width="5" height="71"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" status="" float=""
+ name="AZ0060010form2" width="934" height="27" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22" >&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3163">保留理由</span></td>
+                  <td><orftextinput name="RESERVE_CAUSE" orteus="true" width="712" editable="true" visible="true" password="false" text="" kind="" maxlength="80" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+			    </ornoloop>
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="211"> 
+      <td width="5" height="211"></td>
+      <td valign="top" width="958" height="211"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+		  <%
+			aAZ0060010Control.setList(aAZ0060010Control.getDetailList());		  
+		  %>
+
+
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" attribute="DGS_SELECTMULTI" mode="VIEW" status="<%= TypeConverter.sanitizer(aAZ0060010Control.getReadStatusString()) %>" float=""
+ name="AZ0060010view2" width="934" height="170" border="1" cellspacing="0" cellpadding="0"
+  script1="onLoad;0;CALL;onDecision@0,1"
+ 	script2="onDecision;0;CHK;?AZ0060010view2/*[eq]NORMAL@*0,*1"
+		script3="child;0;UNMASK;_AZ0060010button2/CheckAll"
+		script4="child;1;MASK;_AZ0060010button2/CheckAll"
+ script5="onLoad;1;CALL;onClick@0,1,2,3,4"
+	script6="onClick;0;CHK;?AZ0060010view2/?[eq]NOT_SELECTED@*2,*3"
+		script7="child;2;MASK;_AZ0060010button2/ApprAssort,_AZ0060010button2/ReserveAssort,_AZ0060010button2/ReserveDelAssort,_AZ0060010button2/ApprDelAssort,_AZ0060010button2/MastInfo,_AZ0060010button2/ApprInfo"
+ 		script9="child;3;SELCHK;AZ0060010view2:_h_STATUS[eq]1@*4,*6"
+			script10="child;4;UNMASK;_AZ0060010button2/ApprAssort,_AZ0060010button2/ReserveAssort,_AZ0060010button2/ApprDelAssort@*5"
+				script11="child;5;MASK;_AZ0060010button2/ReserveDelAssort"
+			script12="child;6;SELCHK;AZ0060010view2:_h_STATUS[eq]2@*7,*9"
+				script13="child;7;UNMASK;_AZ0060010button2/ReserveDelAssort@*8"
+					script14="child;8;MASK;_AZ0060010button2/ApprAssort,_AZ0060010button2/ReserveAssort,_AZ0060010button2/ApprDelAssort"
+				script15="child;9;MASK;_AZ0060010button2/ApprAssort,_AZ0060010button2/ReserveAssort,_AZ0060010button2/ReserveDelAssort,_AZ0060010button2/ApprDelAssort"
+	script16="onClick;1;CHK;?AZ0060010view2/?[eq]SINGLE@*10,*17"
+		script17="child;10;SELCHK;AZ0060010view2:_h_PROC_TYP[eq]1@*11,*13"
+				script18="child;11;UNMASK;_AZ0060010button2/ApprInfo@*12"
+					script19="child;12;MASK;_AZ0060010button2/MastInfo"
+				script20="child;13;SELCHK;AZ0060010view2:_h_PROC_TYP[eq]2@*14,*15"
+					script21="child;14;UNMASK;_AZ0060010button2/MastInfo,_AZ0060010button2/ApprInfo"
+					script22="child;15;UNMASK;_AZ0060010button2/MastInfo@*16"
+					script23="child;16;MASK;_AZ0060010button2/ApprInfo"
+		script24="child;17;MASK;_AZ0060010button2/MastInfo,_AZ0060010button2/ApprInfo"
+ 	 	script25="onClick;2;CHK;_AZ0060010form1/h_APPR_POWER_TYP[eq]0@*18"
+		script26="child;18;MASK;_AZ0060010button2/ApprAssort,_AZ0060010button2/ReserveAssort,_AZ0060010button2/ReserveDelAssort"
+	script27="onClick;3;CHK;?AZ0060010view2/?[eq]NOT_SELECTED@*19,*20"
+				script28="child;19;MASK;_AZ0060010button2/ApprDelAssort"
+				script29="child;20;SELCHK;AZ0060010view2:_l_REQUEST_BY[eq]<%=aAZ0060010Control.getsysUSER_CD()%>@*21,*19"
+					script30="child;21;UNMASK;_AZ0060010button2/ApprDelAssort"					
+	script31="onClick;4;CHK;?AZ0060010view2/?[neq]NOT_SELECTED@*22"
+			script32="child;22;CHK;_AZ0060010form1/h_REQUEST_APPR_SAME[eq]0@*23"
+			script33="child;23;SELCHKT;AZ0060010view2:_l_REQUEST_BY[eq]<%=aAZ0060010Control.getsysUSER_CD()%>@*24"
+				script34="child;24;MASK;_AZ0060010button2/ApprAssort,_AZ0060010button2/ReserveAssort,_AZ0060010button2/ReserveDelAssort"					
+	script35="onClick;5;CHK;?AZ0060010view2/?[eq]SINGLE@*25"
+		script36="child;25;FSHOW;AZ0060010float1@93"
+	script37="onClick;6;CHK;?AZ0060010view2/?[eq]SINGLE@*26"
+ 		script38="child;26;SUBMIT;ClickDetail=ACT,_AZ0060010view2/+@AZ0060010Servlet"
+	script39="onDecision;1;CHK;?AZ0060010view2/*[eq]ERROR@*27,*28"
+		script40="child;27;MASK;_AZ0060010button1/Select,_AZ0060010button0/Clear"
+		script41="child;28;UNMASK;_AZ0060010button1/Select"
+>
+                <orloophead>
+                <tr bgcolor="#ccff99">
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+                  <td width="60"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXEC_TYP">処理区分</span></td>
+				  <td hidden="true">&nbsp;</td>
+				  <td width="70"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5099">承認状態</span></td>
+				  <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5082">依頼日付</span></td>
+				  <td width="70"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3167">依頼者</span></td>
+				  <td hidden="true">&nbsp;</td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3165">承認備考</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3163">保留理由</span></td>
+                  <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5088">キー1</span></td>
+                  <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5089">キー2</span></td>
+                  <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5090">キー3</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5091">項目1</span></td>
+				  <td width="95"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5092">項目2</span></td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				</tr>
+                </orloophead><orloop>
+                <tr>
+				   <td><orflabel name="h_STATUS" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				   <td><orflabel name="h_APPR_ID" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                  <td><orflabel name="l_PROC_TYP_VALUE" orteus="true" width="60" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="h_PROC_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				   <td><orflabel name="l_STATUS_NAME" orteus="true" width="70"></orflabel></td>
+				  <td><orflabel name="l_REQUEST_DATE" orteus="true" width="80" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="l_REQUEST_BY_NAME" orteus="true" width="70" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                  <td><orflabel name="l_REQUEST_BY" orteus="true" width="100" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                  <td><orflabel name="l_APPR_REMARKS" orteus="true" width="100" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                  <td><orflabel name="l_RESERVE_CAUSE" orteus="true" width="100" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                  <td><orflabel name="l_ITEM_COL1" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                  <td><orflabel name="l_ITEM_COL2" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                  <td><orflabel name="l_ITEM_COL3" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                  <td><orflabel name="l_ITEM_COL4" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="l_ITEM_COL5" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+  				  <td><orflabel name="h_MODIFY_COUNT" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+			   	  <td><orflabel name="h_KEY1" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="h_VALUE1" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				 <td><orflabel name="h_KEY2" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="h_VALUE2" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="h_KEY3" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="h_VALUE3" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="h_KEY4" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="h_VALUE4" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="h_KEY5" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="h_VALUE5" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="h_KEY6" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="h_VALUE6" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="h_KEY7" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="h_VALUE7" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="h_TABLE_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                </tr>
+                </orloop>
+              </table>
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="735" class="frame08" height="32">
+              <table orftype="DataGrid" name="AZ0060010button2" mode="BUTTON" status="" float=""
+ width="735" height="22" border="1" cellspacing="1" cellpadding="1">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+				  <td width="105">&nbsp;</td>
+				</tr>
+                </orloophead><ornoloop>
+				<tr>
+                  <td><orfbutton name="ApprAssort" value="選択承認" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnApprAssort" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_AZ0060010form1/*,_AZ0060010view1/+,_AZ0060010view2/+@AZ0060010Servlet,,$AZ00038"
+></orfbutton></td>
+                  <td><orfbutton name="ReserveAssort" value="選択保留" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReserveAssort" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_AZ0060010form1/*,_AZ0060010view1/+,_AZ0060010form2/*,_AZ0060010view2/+@AZ0060010Servlet,,$AZ00039"
+></orfbutton></td>
+                  <td><orfbutton name="ReserveDelAssort" value="選択保留解除" pattern="update" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReserveDelAssort" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_AZ0060010form1/*,_AZ0060010view1/+,_AZ0060010view2/+@AZ0060010Servlet,,$AZ00040"
+></orfbutton></td>
+                  <td><orfbutton name="ApprDelAssort" value="選択依頼削除" pattern="delete" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnApprDelAssort" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_AZ0060010form1/*,_AZ0060010view1/+,_AZ0060010view2/+@AZ0060010Servlet,,$AZ00099"
+></orfbutton></td>
+				  <td><orfbutton name="CheckAll" value="全選択" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCheckAll" width="100" height="22" lock="0" attribute="" visible="true"
+ script1="onClick;0;DGSALL;AZ0060010view2"
+></orfbutton></td>
+				  <td><orfbutton name="MastInfo" value="変更前" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnBeforeData" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SCRMV;h_SCREENMOVE_TYP=0,_AZ0060010view2/+@<%=screen_Url%>,<%=contextNo%>,<%=su1.getScreenName()%>,<%=su1.getScreenID()%>"
+></orfbutton></td>
+                  <td><orfbutton name="ApprInfo" value="変更後" pattern="select" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnAfterData" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SCRMV;h_SCREENMOVE_TYP=1,_AZ0060010view2/+@<%=screen_Url%>,<%=contextNo%>,<%=su2.getScreenName()%>,<%=su2.getScreenID()%>"
+></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="139" class="frame10" height="32"></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="211"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AZ0060010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105></td>
+                  <td width=105></td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" height="" lock="0" attribute=""
+ script1="onClick;0;SUBMIT;@AZ0060010Servlet,,$ZZ07008"
+></orfbutton></td>
+                  <td><orfbutton name="Close" value="閉じる" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" height="" lock="0" attribute=""
+ script1="onClick;0;CLOSE"
+></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<table orftype="DataGrid" mode="DETAIL" status="" float="AZ0060010float1"
+ name="AZ0060010Detail1" width="410" height="200" border="1" cellspacing="0" cellpadding="0">
+    <orloophead>
+	  <tr bgcolor="#ccff99">
+		<td width="130" align="right">&nbsp;</td>
+		<td width="100"><orfdata excell="true"></orfdata></td>
+		<td width="100">&nbsp;</td>
+		<td width="60">&nbsp;</td>
+	  </tr>
+	</orloophead>
+	<ornoloop>
+	<!-- 利用者メンテナンス-->
+	<%
+		if("AA0090030Servlet".equals(aAZ0060010Control.getScreen_url())){
+	%>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.USER_CD">ユーザコード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.USER_NAME">ユーザ名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PLANT_CD">工場コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ORG_CD">部門コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PASSWORD">パスワード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3161">承認権限</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EMAIL">メールアドレス</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.LOCALE">多言語</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <%
+	 	 }
+	  %>
+	  <!-- 製品単価メンテナンス-->
+	  <%
+	  if("KA0040010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_IN_DATE">有効開始日付</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_TYP">単価区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td ><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST">単価</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+      </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 支給品単価メンテナンス -->
+	  <%
+	  if("AA0040030Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_CD">取引先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_IN_DATE">有効開始日付</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_TYP">単価区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST">単価</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ONEROUS_FLG">有償フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 外注単価メンテナンス、メイン画面-->
+	  <%
+	  if("AA0040020Servlet".equals(aAZ0060010Control.getScreen_url()) && "M_SBCNT_UNIT_COST_H".equals(aAZ0060010Control.getTable_name())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_CD">品目別作業コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_CD">取引先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_ITEM_CD">取引先品目番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <%
+	  	}
+	  %>
+	   <!-- 外注単価メンテナンス、サッブ画面-->
+	  <%
+	  if("AA0040020Servlet".equals(aAZ0060010Control.getScreen_url()) && "M_SBCNT_UNIT_COST".equals(aAZ0060010Control.getTable_name())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_CD">品目別作業コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_CD">取引先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_IN_DATE">有効開始日付</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_TYP">単価区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST">単価</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROCESSING_COST">加工費</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MATERIAL_COST">材料費</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OTHER_OVERHEADS">その他経費</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+      </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 為替レート情報メンテナンス-->
+	  <%
+	  if("AA0120010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" >通貨コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">為替種別</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" >為替予約コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" >為替開始日付</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">為替レート</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 購入単価メンテナンス メイン画面-->
+	  <%
+	  if("AA0040010Servlet".equals(aAZ0060010Control.getScreen_url()) && "M_PUCH_UNIT_COST_H".equals(aAZ0060010Control.getTable_name())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_CD">取引先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		 <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PUCH_PRIORITY_REF_NO_1">取引先優先順位</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_ITEM_CD">取引先品目番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 購入単価メンテナンス サッブ画面表示する項目-->
+	  <%
+	  if("AA0040010Servlet".equals(aAZ0060010Control.getScreen_url()) && "M_PUCH_UNIT_COST".equals(aAZ0060010Control.getTable_name())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	 
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_CD">取引先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_IN_DATE">有効開始日付</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PUCH_SIZE">サイズ</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_TYP">単価区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST">単価</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROCESSING_COST">加工費</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MATERIAL_COST">材料費</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OTHER_OVERHEADS">その他経費</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+      </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 取引先メンテナンス-->
+	  <%
+	  if("AA0070010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_CD">取引先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	 
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_NAME">取引先名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_ANAME">取引先略称</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ZIP_CD">郵便番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_1">住所1</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_2">住所2</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_K_1">住所(カナ)1</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_K_2">住所(カナ)2</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TEL">電話番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FAX">FAX番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EMAIL">メールアドレス</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_ORG">相手先担当部門</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_PERSON">相手先担当者</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_ORG_CD_1">自社担当部門コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_ORG_NAME_1">担当部門</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_PERSON_CD_1">担当者コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ROUND_TYP">まるめ区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_CD_1">消費税コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_APPLY_TYP">消費税適用区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_CALC_TYP">消費税計算区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INSPC_ACPT_APP_TYP">検収計上区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_REM">備考</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_CD">通貨コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXCH_TYP">為替種別</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.IMPORT_TRN_TYP">輸入取引区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 得意先メンテナンス-->
+	  <%
+	  if("KA0100010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_NAME">得意先名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ANAME">得意先名略称</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_KNAME">得意先名（カナ）</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_ORG_CD">自社担当部門コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_PERSON_CD">自社担当者コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_CD">通貨コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INSPC_ACPT_TYP">検収区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXCH_TYP">為替種別</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_CD">税コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_CALC_TYP">消費税計算区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_APPLY_TYP">消費税適用区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DETAIL_ROUND_TYP">明細計算まるめ区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EDI_CUST_VEND_CD">EDI相手取引先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PARTIAL_SHIP_INST_FLG">分納出荷指示F</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 得意先納品場所メンテナンス-->
+	  <%
+	  if("KA0100020Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	 
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_CD">納品場所コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_NAME">納品場所名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_KNAME">納品場所名（カナ）</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_ENAME">納品場所名（英名）</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ZIP_CD">郵便番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_1">住所1</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_2">住所2</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_K_1">住所(カナ)1</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_K_2">住所(カナ)2</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TEL">電話番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FAX">FAX番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TRANSPORT_CD">運送便コード</span></td>
+		<td></td>
+		<td></td>
+
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DEPO_WH_CD">払出預託保管区</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SHIP_WH_CD">出荷倉庫コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TRANSPORT_LT">運送日数</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+      </tr>
+	  
+	  <%
+	  	}
+	  %>
+	  <!-- 請求条件メンテナンス　＆請求条件データ一括登録  メイン画面表示する項目-->
+	  <%
+	  if(("BA0020010Servlet".equals(aAZ0060010Control.getScreen_url()) || "BA0040010Servlet".equals(aAZ0060010Control.getScreen_url())) && "M_CUST_STL_CTRL".equals(aAZ0060010Control.getTable_name())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.BILL_ADDRESSEE_CD">請求先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">決済条件コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">請求部門コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">EDI取引区分(請求)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">EDI取引区分(入金)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">請求残高管理フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">売掛金残高管理フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">回収条件基準金額</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">入金相殺区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <%
+	  	}
+	  %>
+	  <!-- 請求条件メンテナンス　＆請求条件データ一括登録  サッブ画面表示する項目-->
+	  <%
+	  if(("BA0020010Servlet".equals(aAZ0060010Control.getScreen_url()) || "BA0040010Servlet".equals(aAZ0060010Control.getScreen_url())) && "M_CLAIM_CUST_CTRL".equals(aAZ0060010Control.getTable_name())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.BILL_ADDRESSEE_CD">請求先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">決済条件コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 得意先メンテナンス メイン画面表示する項目-->
+	  <%
+	  if("BA0050010Servlet".equals(aAZ0060010Control.getScreen_url()) && "M_CUST".equals(aAZ0060010Control.getTable_name())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">得意先正式名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">得意先名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">得意先カナ名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">得意先英名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">得意先略称</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">代表者役職名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">代表者名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">自社担当部門コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">自社担当者コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <%
+	  	}
+	  %>
+	  <!-- 得意先メンテナンス サッブ画面表示する項目-->
+	  <%
+	  if("BA0050010Servlet".equals(aAZ0060010Control.getScreen_url()) && "M_CUST_BRANCH".equals(aAZ0060010Control.getTable_name())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支店コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">支店正式名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">支店名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">支店名(カナ)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">支店名(英名)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">支店昇順</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">担当者所属部門名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">担当者名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">郵便番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">住所１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">住所２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">住所(カナ)１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">住所(カナ)２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">電話番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">ＦＡＸ番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">自社担当部門コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">自社担当者コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">ＥＤＩ相手取引先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">ＥＤＩ自社取引先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">備考１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">備考２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">備考３</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <%
+	  	}
+	  %>
+	  <!-- 会社メンテナンス-->
+	  <%
+	  if("BZ0010010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">会社コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">会社正式名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">会社名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">会社名(カナ)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">会社名(英名)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">郵便番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>  
+      </tr>
+	   <tr>
+		<td><span orteus="true">住所１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">住所２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">住所(カナ)１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">住所(カナ)２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">電話番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">ＦＡＸ番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <%
+	  	}
+	  %>
+	  <!-- 利用者所属会社メンテナンス-->
+	  <%
+	  if("BZ0020010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">利用者コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">会社コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">利用者区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <%
+	  	}
+	  %>
+	  <!-- 銀行メンテナンス メイン画面表示する項目-->
+	  <%
+	  if("BZ0050010Servlet".equals(aAZ0060010Control.getScreen_url()) && "M_BANK_H".equals(aAZ0060010Control.getTable_name())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">銀行略名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行名(半角カナ)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行名(英名)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行名(ＦＢ)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	         <!-- 銀行メンテナンス サッブ画面表示する項目-->
+	  <%
+	  if("BZ0050010Servlet".equals(aAZ0060010Control.getScreen_url()) && "M_BANK".equals(aAZ0060010Control.getTable_name())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行支店コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">カレンダ番号</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行支店名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行支店略名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行支店名(半角カナ)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行支店名(英名)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行支店名(ＦＢ)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行支店名称</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行支店名称(英名)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">郵便番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">住所１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">住所２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">住所(カナ)１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">住所(カナ)２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">電話番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">ＦＡＸ番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  
+      <!--銀行口座メンテナンス -->
+	  <%
+	  if("BZ0110010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">口座管理コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">口座管理名称</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">銀行コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行支店コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">口座種別</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">口座番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">口座名称</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">ＦＢデータ区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">振込依頼人コード</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">口座名称(ＦＢ)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 再評価為替レートメンテナンス-->
+	  <%
+	  if("BZ0210010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" >通貨コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">為替種別</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" >為替予約コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" >為替開始日付</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">為替レート</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 科目メンテナンス-->
+	  <%
+	  if("BZ0250010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">科目コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">補助区分コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">原始区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">科目名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">科目略名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">科目名（半角カナ）</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">貸借区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">科目区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">補助区分既定値</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">内部取引区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 銀行手数料メンテナンス-->
+	   <%
+	  if("BZ0270010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">銀行コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">振込先区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">振込内容区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">振込情報区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">有効開始日</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">有効終了日</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">下限金額</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">上限金額</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">振込手数料</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">消費税コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 取引先メンテナンス-->
+	   <%
+	  if("CA0020010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">取引先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">取引先正式名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">取引先名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	    <tr>
+		<td><span orteus="true">取引先カナ名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">郵便番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">住所１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">住所２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">住所（カナ）１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">住所（カナ）２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">電話番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">ＦＡＸ番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+	    <td><span orteus="true">相手先担当部門</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">相手先担当者</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">自社担当部門コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">自社担当者コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">備考</span></td>
+		<td></td>
+		<td></td>
+		<td></td>  
+      </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 取引先支払条件メンテナンス-->
+	  <%
+	  if("CA0040010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">取引先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">科目コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">補助区分コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払パターンコード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">端数処理区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 支払方法メンテナンス -->
+	  <%
+	  if("CA0060010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払方法コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払方法</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">科目コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">補助区分コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払対象</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 支払パターンメンテナンス -->
+	  <%
+	  if("CA0080010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払パターンコード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払パターン名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">条件区分</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払方法コード１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払方法コード２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">基準金額</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">割合１</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">割合２</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 利用者権限管理メンテナンス -->
+	   <%
+	  if("CA0100010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">利用者コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">所属部門コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">伝票管理部門コード（規定値）</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払締め管理部門コード（規定値）</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払計算管理部門コード（規定値）</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払確定管理部門コード（規定値）</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 買掛仕訳パターンメンテナンス -->
+	  <%
+	  if("CA0120010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">パターンコード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">分類１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">分類２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">分類３</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">買掛仕訳パターン名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">借方科目コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">借方補助区分コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">借方部門設定区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">借方部門コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">貸方科目コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">貸方補助区分コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">貸方部門設定区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">貸方部門コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">伝票種類（一般会計）</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">パターンコード（一般会計）</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 販売単価メンテナンスJa -->
+	   <%
+	  if("KA1020010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+	  	<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PURPOSE_UNIT_PRICE_TYP">用途別単価区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_IN_DATE_4">有効開始日</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SBCNT_SIZE">サイズ</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_TYP">単価区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST">単価</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 得意先メンテナンスJa -->
+	<%
+	if("KA1030010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	%>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+	  	<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_NAME_1">得意先名称</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ANAME_2">得意先名称略称</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_KNAME_1">得意先名称(カナ)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_ORG_CD">自社担当部門コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_PERSON_CD">自社担当者コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_CD">通貨コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INSPC_ACPT_TYP">検収区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXCH_TYP">為替種別</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_CD_1">消費税コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_CALC_TYP">消費税計算区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_APPLY_TYP">消費税適用区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DETAIL_ROUND_TYP">明細計算まるめ区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_GRP_CD">得意先グループコード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 納品場所メンテナンスJa -->
+	<%
+	if("KA1040010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	%>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+	  	<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_CD">納品場所コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_NAME">納品場所名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_KNAME">納品場所名(カナ)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_ENAME">納品場所名(英名)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ZIP_CD">郵便番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_1">住所1</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_2">住所2</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_K_1">住所(カナ)1</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_K_2">住所(カナ)2</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TEL">電話番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FAX">FAX番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CNCNTRT_DLV_LOC_CD">集結場所コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SHIP_CTL_TYP">出荷管理先区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_SLIP_ISS_FLG">納品書発行フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.IDENT_CARD_F_ISS_TYP">現品エフ発行区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.IDENT_CARD_F_FORMAT_TYP">現品エフフォーマット区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SHIP_FIX_TERM">出荷固定期間</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MASS_PRODUCT_TYP">量産区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DECISION_REPLACE_PTN">確定置換パターン</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SHIP_RSLT_APPLY_TYP">出荷実績適用区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CNCNTRT_SHIP_RSLT_APPLY_TYP">集結先出荷実績適用区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.NEXT_DLV_SHIFT_EFF_FLG">次便ずらし有無フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNCNFM_PLAN_AVG_FLG">内示計画均等割りフラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TRANSPORT_CD">運送便コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CNCNTRT_TRANS_LT">集結場所への運送日数</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_TRANS_LT">納品場所への運送日数</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 得意先指定納品場所メンテナンスJa -->
+	<%
+	if("KA1080010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	%>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+	  	<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_DESINATED_DLV_LOC_CD">得意先指定納品場所コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_OPTION_CHANGE_VALUE">納品場所任意変換値</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_DESINATED_DLV_LOC_NAME">得意先指定納品場所名称</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_DESINATED_DLV_LOC_KNAME">得意先指定納品場所名称（カナ）</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_DESINATED_DLV_LOC_ENAME">得意先指定納品場所名称（英名）</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ZIP_CD">郵便番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_1">住所1</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_2">住所2</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_K_1">住所(カナ)1</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_K_2">住所(カナ)2</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TEL">電話番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FAX">FAX番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FINAL_DLV_LOC_CD">最終納品場所コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARKS_1">備考１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARKS_2">備考２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.REMARKS_3">備考３</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	<!-- 品目メンテナンス -->
+	<%
+	if("AA0010010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	%>
+	<tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME">品目名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DRAW_CD">図面番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.HIGH_LEVEL_NO">レベル番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPEC">規格</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_TYP">出庫区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_QTY_TYP">在庫数単位区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OUTSIDE_TYP">内外作区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACPT_INSPC_TYP">受入検査区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_UNIT_FLG">荷姿管理フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PRODUCT_TYP">製品区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_UNIT">計量単位</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ABC_TYP">棚卸区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PKG_UNIT">荷姿計量単位</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OPR_RSLT_TYP">作業実績区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PKG_UNIT_QTY">荷姿単位数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPL_ITEM_TYP">受給品区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_LT">手配リードタイム</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_LT">払出リードタイム</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FIXED_LT">固定分リードタイム</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROP_LOT_SIZE">比例分ロットサイズ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROP_LT">品目比例分リードタイム</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_SPOIL">品目仕損率</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SAFETY_LT">安全日数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SAFETY_STOCK">安全在庫量</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MRP_ODR_TYP">品目手配区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MANHOUR_TYP">工数管理品目区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.LOT_SIZING_TYP">ロットまとめ区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MPS_FLG">MPS品目フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MAX_PERIOD">最大まとめ期間</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FIXED_ODR_QTY">定量発注数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MAX_ODR_QTY">最大手配数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MIN_ODR_QTY">最小手配数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_POINT">発注点在庫数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MUL_ODR_QTY">まるめ単位</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CLASIFICATION_CD">管理コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_WEIGHT">単位重量</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_CD_1">消費税コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CAL_NO">カレンダ番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4091">保管区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5070">品質期限年数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.LOT_CTRL_FLG">ロット管理フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5071">品質期限月数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4092">ロット採番区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5072">品質期限日数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	 <%
+	  	}
+	  %>
+
+	 <!-- 得意先メンテナンスJF-->
+	  <%
+	  if("KA2100010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_FNAME">得意先正式名称</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_NAME">得意先名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ANAME">得意先名略称</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_KNAME">得意先名（カナ）</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_GRP_CD">得意先グループコード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_DLV_LOC_CD">得意先納品場所コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_ORG_CD">自社担当部門コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OWN_PERSON_CD">自社担当者コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_CD">通貨コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INSPC_ACPT_TYP">検収区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXCH_TYP">為替種別</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_CD">税コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_CALC_TYP">消費税計算区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_APPLY_TYP">消費税適用区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DETAIL_ROUND_TYP">明細計算まるめ区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4170">得意先フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DELIVERY_FLG">納入先フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+      <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.BALA_ACCO_FLG">帳合先フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+      	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_USE_TYP">単価取得区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <%
+	  	}
+	  %>
+	  
+	 <!-- 納品場所メンテナンスJF-->
+	  <%
+	  if("KA2100020Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	 
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_CD">納品場所コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_NAME">納品場所名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_KNAME">納品場所名（カナ）</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_ENAME">納品場所名（英名）</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ZIP_CD">郵便番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_1">住所1</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_2">住所2</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_K_1">住所(カナ)1</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ADDRESS_K_2">住所(カナ)2</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TEL">電話番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FAX">FAX番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+      <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4131">営業倉庫</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+      <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4038">代表納品場所</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TRANSPORT_CD">運送便コード</span></td>
+		<td></td>
+		<td></td>
+
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SHIP_WH_CD">出荷倉庫コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TRANSPORT_LT">運送日数</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+      </tr>
+	  
+	  <%
+	  	}
+	  %>
+	  
+	  <!-- 製品単価メンテナンス-->
+	  <%
+	  if("KA2040010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>　
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>  
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPCL_PRICE_CO">特値区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>	  
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PUCH_ODR_UNIT">単位</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>	  	  
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_IN_DATE">有効開始日付</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_PHASE_OUT_DATE_5">有効終了日付</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>  	  
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.COMM_SIZE">サイズ</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>  	
+	  <tr>
+		<td ><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST">単価</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_TYP">単価区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  
+	  <%
+	  	}
+	  %>
+	  
+	<!-- 品目メンテナンス JF-->
+	<%
+	if("AA2010010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	%>
+	<tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME">品目名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DRAW_CD">図面番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.HIGH_LEVEL_NO">レベル番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPEC">規格</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_TYP">出庫区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_QTY_TYP">在庫数単位区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OUTSIDE_TYP">内外作区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACPT_INSPC_TYP">受入検査区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_UNIT_FLG">荷姿管理フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PRODUCT_TYP">製品区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_UNIT">計量単位</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ABC_TYP">棚卸区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OPR_RSLT_TYP">作業実績区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPL_ITEM_TYP">受給品区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_LT">手配リードタイム</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ISSUE_LT">払出リードタイム</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FIXED_LT">固定分リードタイム</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROP_LOT_SIZE">比例分ロットサイズ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROP_LT">品目比例分リードタイム</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_SPOIL">品目仕損率</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MRP_ODR_TYP">品目手配区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MPS_FLG">MPS品目フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.LOT_SIZING_TYP">ロットまとめ区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MAX_PERIOD">最大まとめ期間</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MUL_ODR_QTY">まるめ単位</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4088">代表パターンコード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SET_LT_1">セットリードタイム</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_WEIGHT">単位重量</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CLASIFICATION_CD">管理コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JANCODE">ＪＡＮコード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TAX_CD_1">消費税コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CAL_NO">カレンダ番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SAFETY_LT">安全日数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SAFETY_STOCK">安全在庫量</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_POINT">発注点在庫数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4090">最大在庫数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MAX_ODR_QTY">最大手配数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MIN_ODR_QTY">最小手配数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4091">保管区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.FIXED_ODR_QTY">定量発注数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_STATUS">初期在庫状態</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.LOT_CTRL_FLG">ロット管理フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4092">ロット採番区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4093">賞味期限年数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4094">賞味期限月数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4095">賞味期限日数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4096">出荷期限年数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4097">出荷期限月数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt4098">出荷期限日数</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	 <%
+	  	}
+	  %>
+	  	
+	  <!-- 取引先支払条件メンテナンスJF-->
+	  <%
+	  if("CA2040010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">取引先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">科目コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">補助区分コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払パターンコード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">条件区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">端数処理区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  	  <tr>
+		<td><span orteus="true">支払方法コード１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払対象区分１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払方法名１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払方法コード２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支払対象区分２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  <!-- 在庫状態メンテナンスJF-->
+	  <%
+	  if("AA2340010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+      <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_STATUS_1">在庫状態</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+ </tr>
+      <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_STATUS_NAME">在庫状態名称</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+ </tr>
+      <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_TYP_1">在庫状態タイプ</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+ </tr>
+      <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EFF_STOCK_TYPE">有効在庫区分</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+ </tr>
+      <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SHIP_TYP">出荷区分</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+ </tr>
+      <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.TRANSPORT_LT">在庫状態優先順位</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>	  
+     </tr>
+
+	  <%
+	  	}
+	  %>
+	  
+	  <!-- 得意先組合せメンテナンスJF-->
+	  <%
+	  if("KA2130010Servlet".equals(aAZ0060010Control.getScreen_url())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_CD_1">納入先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.BALA_ACCO_PATTERN_NO">帳合パターンコード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_PRIORITY_REF_NO">得意先優先順位</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.BALA_ACCO_PATTERN_PRIORITY_REF_NO">帳合パターン優先順位</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.BALA_ACCO_CD_1">帳合先コード1</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.BALA_ACCO_CD_2">帳合先コード2</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.BALA_ACCO_CD_3">帳合先コード3</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <%
+	  	}
+	  %>
+	  
+	  <!-- 請求条件メンテナンスJFメイン画面-->
+	  <%
+	  if("BA2020010Servlet".equals(aAZ0060010Control.getScreen_url()) && "M_CUST_STL_CTRL".equals(aAZ0060010Control.getTable_name())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.BILL_ADDRESSEE_CD">請求先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">決済条件コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">請求部門コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">EDI取引区分(請求)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">EDI取引区分(入金)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">請求残高管理フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">売掛金残高管理フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">回収条件基準金額</span></td>
+		<td align="right"></td>
+		<td align="right"></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">入金相殺区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <%
+	  	}
+	  %>
+	  
+	  <!-- 請求条件メンテナンスJFサッブ-->
+	  <%
+	  if("BA2020010Servlet".equals(aAZ0060010Control.getScreen_url()) && "M_CLAIM_CUST_CTRL".equals(aAZ0060010Control.getTable_name())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.BILL_ADDRESSEE_CD">請求先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">決済条件コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <%
+	  	}
+	  %>
+	  
+	  <!-- 得意先メンテナンス(売掛) メイン画面表示する項目-->
+	  <%
+	  if("BA2050010Servlet".equals(aAZ0060010Control.getScreen_url()) && "M_CUST".equals(aAZ0060010Control.getTable_name())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">得意先正式名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">得意先名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">得意先カナ名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">得意先英名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">得意先略称</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">代表者役職名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">代表者名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">請求先フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">入金先フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">請求サイクル</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">仮単価売上計上フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">入金入力区分</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">取引停止フラグ</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <%
+	  	}
+	  %>
+	  <!-- 得意先メンテナンス(売掛) サッブ画面表示する項目-->
+	  <%
+	  if("BA2050010Servlet".equals(aAZ0060010Control.getScreen_url()) && "M_CUST_BRANCH".equals(aAZ0060010Control.getTable_name())){
+	  %>
+	   <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">得意先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">支店コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">支店正式名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">支店名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">支店名(カナ)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">支店名(英名)</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">支店昇順</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true">担当者所属部門名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">担当者名</span></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+	   <tr>
+		<td><span orteus="true">郵便番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">住所１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">住所２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">住所(カナ)１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">住所(カナ)２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">電話番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">ＦＡＸ番号</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">ＥＤＩ相手取引先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">ＥＤＩ自社取引先コード</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <tr>
+		<td><span orteus="true">備考１</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">備考２</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	  <tr>
+		<td><span orteus="true">備考３</span></td>
+		<td></td>
+		<td></td>
+		<td></td>	  
+      </tr>
+	   <%
+	  	}
+	  %>
+
+	</ornoloop>
+  </table>
+<%
+  MessageStruct msgStruct = aAZ0060010Control.getMsgStruct();
+%>
+  <%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

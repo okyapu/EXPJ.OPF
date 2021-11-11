@@ -1,0 +1,676 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+購入品マスタメンテナンス
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/DA0020/DA0020010.html,v $
+$Author: geng-jia $
+$Revision: 1.4 $ $Date: 2017/02/17 10:02:21 $
+********************************************************* --%>
+<html>
+<head>
+<title>購入品マスタメンテナンス</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="DA0020010" version="DA0020010 $Revision: 1.4 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+<table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td colspan="3" width="968" height="5"></td>
+  </tr>
+  <tr>
+    <td width="5"></td>
+    <td valign="top" width="958" height="140">
+      <table width="958" border="0" cellspacing="0" cellpadding="0">
+        <tr height="12">
+          <td class="frame01" width="12"></td>
+          <td class="frame02" colspan="3"></td>
+          <td class="frame03" width="12"></td>
+        </tr>
+        <tr>
+          <td width="12" class="frame04"></td>
+          <td colspan="3" class="frame05">
+            <table orftype="DataGrid" mode="FORM" status="<%= TypeConverter.sanitizer(aDA0020010Control.getReadStatusString()) %>" name="DA0020010form1" width="934" height="96" border="1" cellspacing="0" cellpadding="0"
+              script1="onLoad;0;CALL;onDecision@0,1,2,3,4,5"
+              script2="onDecision;0;CHKRQ;A@*0,*1"
+              script3="child;0;UNMASK;_DA0020010button1/Select"
+              script4="child;1;MASK;_DA0020010button1/Select"
+              script5="onDecision;1;CHK;_DA0020010form2/CS_PUCH_TYP[eq]1@*2,*3"
+              script6="child;2;CHKRQ;A,C@*4,*6"
+              script7="child;3;CHKRQ;A,B,C@*4,*6"
+              script8="child;4;CHK;_PLANT_CD[neq]_h_PLANT_CD[or]_YEAR[neq]_h_YEAR[or]_HALF_TERM_TYP[neq]_h_HALF_TERM_TYP[or]_COST_TYP[neq]_h_COST_TYP[or]_ITEM_CD[neq]_h_ITEM_CD[or]_CS_PROC_CD[neq]_h_CS_PROC_CD@*5,*6"
+              script9="child;5;UNMASK;_DA0020010button2/Insert"
+              script10="child;6;MASK;_DA0020010button2/Insert"
+              script11="onDecision;2;CHK;_DA0020010form2/CS_PUCH_TYP[eq]1@*7,*8"
+              script12="child;7;CHKRQ;A,C@*9,*11"
+              script13="child;8;CHKRQ;A,B,C@*9,*11"
+              script14="child;9;CHK;?DA0020010form1/*[eq]NORMAL[and]_DA0020010form2/DEL_FLG[eq]0[and]_PLANT_CD[eq]_h_PLANT_CD[and]_YEAR[eq]_h_YEAR[and]_HALF_TERM_TYP[eq]_h_HALF_TERM_TYP[and]_COST_TYP[eq]_h_COST_TYP[and]_ITEM_CD[eq]_h_ITEM_CD[and]_CS_PROC_CD[eq]_h_CS_PROC_CD@*10,*11"
+              script15="child;10;UNMASK;_DA0020010button2/Update"
+              script16="child;11;MASK;_DA0020010button2/Update"
+              script17="onDecision;3;CHK;?DA0020010form1/*[eq]NORMAL[and]_DA0020010form2/DEL_FLG[eq]0[and]_PLANT_CD[eq]_h_PLANT_CD[and]_YEAR[eq]_h_YEAR[and]_HALF_TERM_TYP[eq]_h_HALF_TERM_TYP[and]_COST_TYP[eq]_h_COST_TYP[and]_ITEM_CD[eq]_h_ITEM_CD[and]_CS_PROC_CD[eq]_h_CS_PROC_CD@*12,*13"
+              script18="child;12;UNMASK;_DA0020010button2/Delete"
+              script19="child;13;MASK;_DA0020010button2/Delete"
+              script20="onDecision;4;CHK;?DA0020010form1/*[eq]NORMAL[and]_DA0020010form2/DEL_FLG[eq]1[and]_PLANT_CD[eq]_h_PLANT_CD[and]_YEAR[eq]_h_YEAR[and]_HALF_TERM_TYP[eq]_h_HALF_TERM_TYP[and]_COST_TYP[eq]_h_COST_TYP[and]_ITEM_CD[eq]_h_ITEM_CD[and]_CS_PROC_CD[eq]_h_CS_PROC_CD@*14,*15"
+              script21="child;14;UNMASK;_DA0020010button2/CancelDelete"
+              script22="child;15;MASK;_DA0020010button2/CancelDelete"
+              script23="onDecision;5;CHK;_DA0020010form2/CS_PUCH_TYP[eq]2@*16,*17"
+              script24="child;16;UNMASK;_DA0020010form2/CS_PROC_CD,_DA0020010form2/PeekerCsProcCd"
+              script25="child;17;SET;_DA0020010form2/CS_PROC_CD=@*18"
+              script26="child;18;MASK;_DA0020010form2/CS_PROC_CD,_DA0020010form2/PeekerCsProcCd"
+            >
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td width="88"></td>
+                  <td width="22"></td>
+                  <td width="170" align="right"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td width="88"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PLANT_CD">工場コード</span></td>
+                  <td>
+                    <orftextinput name="PLANT_CD" tablename="M_CS_PUCH" columnname="PLANT_CD" dbtype="varchar2" tablejname="購入品マスタ" columnjname="工場コード" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="2" required="A" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="h_PLANT_CD" tablename="M_CS_PUCH" columnname="PLANT_CD" dbtype="varchar2" tablejname="購入品マスタ" columnjname="工場コード" orteus="true" width="260" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td>
+                    <orfpeeker name="PeekerPlantCd" value="" pattern="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="PLANT_CD_D01" sqlparam_1="_PLANT_CD"
+                      script1="onClick;0;PEEKER;_DA0020010form1/PLANT_CD:_DA0020010form1/PLANT_NAME@<%=contextNo%>"
+                    >
+                    </orfpeeker>
+                  </td>
+                  <td>
+                    <orftextinput name="PLANT_NAME" tablename="M_PLANT" columnname="PLANT_NAME" dbtype="varchar2" tablejname="工場" columnjname="工場名" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.YEAR">年度</span></td>
+                  <td>
+                    <orftextinput name="YEAR" tablename="M_CS_PUCH" columnname="YEAR" dbtype="number" tablejname="購入品マスタ" columnjname="年度" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_N;" maxlength="4" required="A" attribute="TIS_RIGHT">
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="h_YEAR" tablename="M_CS_PUCH" columnname="YEAR" dbtype="number" tablejname="購入品マスタ" columnjname="年度" orteus="true" width="150" editable="true" visible="false" text="" kind="OBT_N;" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.HALF_TERM_TYP">半期区分</span></td>
+                  <td>
+                    <orfcombobox name="HALF_TERM_TYP" tablename="M_CS_PUCH" columnname="HALF_TERM_TYP" dbtype="number" tablejname="購入品マスタ" columnjname="半期区分" orteus="true" width="260" height="">
+                    </orfcombobox>
+                  </td>
+                  <td>
+                    <orftextinput name="h_HALF_TERM_TYP" tablename="M_CS_PUCH" columnname="HALF_TERM_TYP" dbtype="number" tablejname="購入品マスタ" columnjname="半期区分" orteus="true" width="" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.COST_TYP">原価種別</span></td>
+                  <td>
+                    <orfcombobox name="COST_TYP" tablename="M_CS_PUCH" columnname="COST_TYP" dbtype="number" tablejname="購入品マスタ" columnjname="原価種別" orteus="true" width="260" height="">
+                    </orfcombobox>
+                  </td>
+                  <td>
+                    <orftextinput name="h_COST_TYP" tablename="M_CS_PUCH" columnname="COST_TYP" dbtype="number" tablejname="購入品マスタ" columnjname="原価種別" orteus="true" width="" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                  <td>
+                    <orftextinput name="ITEM_CD" tablename="M_CS_PUCH" columnname="ITEM_CD" dbtype="varchar2" tablejname="購入品マスタ" columnjname="品目番号" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="25" required="A" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="h_ITEM_CD" tablename="M_CS_PUCH" columnname="ITEM_CD" dbtype="varchar2" tablejname="購入品マスタ" columnjname="品目番号" orteus="true" width="260" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td>
+                    <orfpeeker name="PeekerItemCd" value="" pattern="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="ITEM_CD_D02" sqlparam_1="_ITEM_CD"
+                      script1="onClick;0;PEEKER;_DA0020010form1/ITEM_CD:_DA0020010form1/ITEM_NAME:_DA0020010form2/CLASIFICATION_CD:_DA0020010form2/STOCK_UNIT@<%=contextNo%>"
+                    >
+                    </orfpeeker>
+                  </td>
+                  <td>
+                    <orftextinput name="ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2" tablejname="品目" columnjname="品目名" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame06" width="12"></td>
+        </tr>
+        <tr height="32">
+          <td class="frame07" width="12"></td>
+          <td class="frame08" width="769"></td>
+          <td class="frame09" width="60"></td>
+          <td class="frame10" width="105">
+            <table orftype="DataGrid" mode="BUTTON" name="DA0020010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="Select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="22" lock="0" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_DA0020010form1/*@DA0020010Servlet"
+></orfbutton>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame11" width="12"></td>
+        </tr>
+      </table>
+    </td>
+    <td width="5"></td>
+  </tr>
+  <tr height="5">
+    <td colspan="3"></td>
+  </tr>
+  <tr>
+    <td width="5"></td>
+    <td valign="top" width="958" height="393">
+      <table width="958" border="0" cellspacing="0" cellpadding="0">
+        <tr height="12">
+          <td class="frame01" width="12"></td>
+          <td class="frame02" colspan="3"></td>
+          <td class="frame03" width="12"></td>
+        </tr>
+        <tr>
+          <td class="frame04" width="12"></td>
+          <td class="frame05" colspan="3">
+            <table orftype="DataGrid" mode="FORM" name="DA0020010form2" width="934" height="349" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td width="88"></td>
+                  <td width="22"></td>
+                  <td width="170" align="right"></td>
+                  <td width="150"></td>
+                  <td width="22"></td>
+                  <td></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CS_PUCH_TYP">購入品単価種別</span></td>
+                  <td>
+                    <orfcombobox name="CS_PUCH_TYP" tablename="M_CS_PUCH" columnname="CS_PUCH_TYP" dbtype="number" tablejname="購入品マスタ" columnjname="購入品単価種別" orteus="true" width="260" height="">
+                    </orfcombobox>
+                  </td>
+                  <td>
+                    <orftextinput name="h_CS_PUCH_TYP" tablename="M_CS_PUCH" columnname="CS_PUCH_TYP" dbtype="number" tablejname="購入品マスタ" columnjname="購入品単価種別" orteus="true" width="" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CS_PROC_CD">工程コード</span></td>
+                  <td>
+                    <orftextinput name="CS_PROC_CD" tablename="M_CS_PUCH" columnname="CS_PROC_CD" dbtype="varchar2" tablejname="購入品マスタ" columnjname="工程コード" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="25" required="B" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orfpeeker name="PeekerCsProcCd" value="" pattern="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="CS_PROC_CD_D01" sqlparam_1="_DA0020010form1/PLANT_CD" sqlparam_2="_CS_PROC_CD"
+                      script1="onClick;0;PEEKER;_DA0020010form2/CS_PROC_CD:_DA0020010form2/CS_PROC_NAME@<%=contextNo%>"
+                    >
+                    </orfpeeker>
+                  </td>
+                  <td>
+                    <orftextinput name="CS_PROC_NAME" tablename="M_CS_PROC" columnname="CS_PROC_NAME" dbtype="varchar2" tablejname="工程マスタ" columnjname="工程名" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_ACCEPT_TYP">単価採用区分</span></td>
+                  <td>
+                    <orfcombobox name="UNIT_COST_ACCEPT_TYP" tablename="M_CS_PUCH" columnname="UNIT_COST_ACCEPT_TYP" dbtype="number" tablejname="購入品マスタ" columnjname="単価採用区分" orteus="true" width="260" height="">
+                    </orfcombobox>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CLASIFICATION_CD_1">品目管理コード</span></td>
+                  <td>
+                    <orftextinput name="CLASIFICATION_CD" tablename="M_CS_PUCH" columnname="CLASIFICATION_CD" dbtype="varchar2" tablejname="購入品マスタ" columnjname="品目管理コード" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="25" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orfcheckbox name="c_NoCheckClasificationCd" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0253" width="150" height="" text="品目情報と比較しない">
+                    </orfcheckbox>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_UNIT">計量単位</span></td>
+                  <td>
+                    <orftextinput name="STOCK_UNIT" tablename="M_CS_PUCH" columnname="STOCK_UNIT" dbtype="varchar2" tablejname="購入品マスタ" columnjname="計量単位" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="12" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orfcheckbox name="c_NoCheckStockUnit" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0253" width="150" height="" text="品目情報と比較しない">
+                    </orfcheckbox>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ORG_CD">部門コード</span></td>
+                  <td>
+                    <orftextinput name="ORG_CD" tablename="M_CS_PUCH" columnname="ORG_CD" dbtype="varchar2" tablejname="購入品マスタ" columnjname="部門コード"  orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="25" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orfpeeker name="PeekerOrgCd" value="" pattern="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="ORG_CD_D01" sqlparam_1="_ORG_CD"
+                      script1="onClick;0;PEEKER;_DA0020010form2/ORG_CD:_DA0020010form2/ORG_NAME@<%=contextNo%>"
+                    >
+                    </orfpeeker>
+                  </td>
+                  <td>
+                    <orftextinput name="ORG_NAME" tablename="M_ORG" columnname="ORG_NAME" dbtype="varchar2" tablejname="部門" columnjname="部門名"  orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ONEROUS_CONS_FLG">有償支給品フラグ</span></td>
+                  <td>
+                    <orfcombobox name="ONEROUS_CONS_FLG" tablename="M_CS_PUCH" columnname="ONEROUS_CONS_FLG" dbtype="number" tablejname="購入品マスタ" columnjname="有償支給品フラグ" orteus="true" width="260" height="">
+                    </orfcombobox>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_CD">取引先コード</span></td>
+                  <td>
+                    <orftextinput name="VEND_CD" tablename="M_CS_PUCH" columnname="VEND_CD" dbtype="varchar2" tablejname="購入品マスタ" columnjname="取引先コード" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="25" required="C" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orfpeeker name="PeekerVendCd" value="" pattern="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="VEND_CD_D01" sqlparam_1="_VEND_CD"
+                      script1="onClick;0;PEEKER;_DA0020010form2/VEND_CD:_DA0020010form2/VEND_NAME@<%=contextNo%>"
+                    >
+                    </orfpeeker>
+                  </td>
+                  <td>
+                    <orftextinput name="VEND_NAME" tablename="M_VEND_CTRL" columnname="VEND_NAME" dbtype="varchar2" tablejname="取引先マスタ" columnjname="取引先名称" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_2">購入単価</span></td>
+                  <td>
+                    <orftextinput name="UNIT_COST" tablename="M_CS_PUCH" columnname="UNIT_COST" dbtype="number" tablejname="購入品マスタ" columnjname="購入単価" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="CUR_UNIT" tablename="M_CUR" columnname="CUR_UNIT" dbtype="varchar2" tablejname="通貨" columnjname="通貨単位" orteus="true" width="110" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_TYP_2">購入単価区分</span></td>
+                  <td>
+                    <orfcombobox name="UNIT_COST_TYP" tablename="M_CS_PUCH" columnname="UNIT_COST_TYP" dbtype="number" tablejname="購入品マスタ" columnjname="購入単価区分" orteus="true" width="260" height="">
+                    </orfcombobox>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PUCH_UNIT_QTY">購入品単位数</span></td>
+                  <td>
+                    <orftextinput name="PUCH_UNIT_QTY" tablename="M_CS_PUCH" columnname="PUCH_UNIT_QTY" dbtype="number" tablejname="購入品マスタ" columnjname="購入品単位数" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_P;14.1;FLOOR;4" maxlength="" required="" attribute=""
+                    >
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_CD_1">取引通貨コード</span></td>
+                  <td>
+                    <orftextinput name="CUR_CD" tablename="M_CS_PUCH" columnname="CUR_CD" dbtype="varchar2" tablejname="購入品マスタ" columnjname="取引通貨コード" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="25" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orfpeeker name="PeekerCurCd" value="" pattern="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="CUR_CD_D01" sqlparam_1="_CUR_CD"
+                      script1="onClick;0;PEEKER;_DA0020010form2/CUR_CD:_DA0020010form2/CUR_NAME@<%=contextNo%>"
+                    >
+                    </orfpeeker>
+                  </td>
+                  <td>
+                    <orftextinput name="CUR_NAME" tablename="M_CUR" columnname="CUR_NAME" dbtype="varchar2" tablejname="通貨" columnjname="通貨名" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXCH_RATE_1">取引為替レート</span></td>
+                  <td>
+                    <orftextinput name="EXCH_RATE" tablename="M_CS_PUCH" columnname="EXCH_RATE" dbtype="number" tablejname="購入品マスタ" columnjname="取引為替レート" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;6" maxlength="" required="" attribute=""
+                    >
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SUB_VEND_CD">第二取引先コード</span></td>
+                  <td>
+                    <orftextinput name="SUB_VEND_CD" tablename="M_CS_PUCH" columnname="SUB_VEND_CD" dbtype="varchar2" tablejname="購入品マスタ" columnjname="第二取引先コード" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="25" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orfpeeker name="PeekerSubVendCd" value="" pattern="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="VEND_CD_D01" sqlparam_1="_SUB_VEND_CD"
+                      script1="onClick;0;PEEKER;_DA0020010form2/SUB_VEND_CD:_DA0020010form2/SUB_VEND_NAME@<%=contextNo%>"
+                    >
+                    </orfpeeker>
+                  </td>
+                  <td>
+                    <orftextinput name="SUB_VEND_NAME" tablename="M_VEND_CTRL" columnname="VEND_NAME" dbtype="varchar2" tablejname="取引先マスタ" columnjname="取引先名称" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SUB_UNIT_COST">第二購入単価</span></td>
+                  <td>
+                    <orftextinput name="SUB_UNIT_COST" tablename="M_CS_PUCH" columnname="SUB_UNIT_COST" dbtype="number" tablejname="購入品マスタ" columnjname="第二購入単価" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;4" maxlength="" required="" attribute=""
+                    >
+                    </orftextinput>
+                  </td>
+                  <td>
+                    <orftextinput name="SUB_CUR_UNIT" tablename="M_CUR" columnname="CUR_UNIT" dbtype="varchar2" tablejname="通貨" columnjname="通貨単位" orteus="true" width="110" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SUB_UNIT_COST_TYP">第二購入単価区分</span></td>
+                  <td>
+                    <orfcombobox name="SUB_UNIT_COST_TYP" tablename="M_CS_PUCH" columnname="SUB_UNIT_COST_TYP" dbtype="number" tablejname="購入品マスタ" columnjname="第二購入単価区分" orteus="true" width="260" height="">
+                    </orfcombobox>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SUB_PUCH_UNIT_QTY">第二購入品単位数</span></td>
+                  <td>
+                    <orftextinput name="SUB_PUCH_UNIT_QTY" tablename="M_CS_PUCH" columnname="SUB_PUCH_UNIT_QTY" dbtype="number" tablejname="購入品マスタ" columnjname="第二購入品単位数" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_P;14.1;FLOOR;4" maxlength="" required="" attribute=""
+                    >
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SUB_CUR_CD">第二取引通貨コード</span></td>
+                  <td>
+                    <orftextinput name="SUB_CUR_CD" tablename="M_CS_PUCH" columnname="SUB_CUR_CD" dbtype="varchar2" tablejname="購入品マスタ" columnjname="第二取引通貨コード" orteus="true" width="260" editable="true" visible="true" text="" kind="" maxlength="25" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orfpeeker name="PeekerSubCurCd" value="" pattern="none" orteus="false" width="22" height="22" lock="0" attribute="BTS_PEEKER" sqlname="CUR_CD_D01" sqlparam_1="_SUB_CUR_CD"
+                      script1="onClick;0;PEEKER;_DA0020010form2/SUB_CUR_CD:_DA0020010form2/SUB_CUR_NAME@<%=contextNo%>"
+                    >
+                    </orfpeeker>
+                  </td>
+                  <td>
+                    <orftextinput name="SUB_CUR_NAME" tablename="M_CUR" columnname="CUR_NAME" dbtype="varchar2" tablejname="通貨" columnjname="通貨名" orteus="true" width="320" editable="false" visible="true" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SUB_EXCH_RATE">第二取引為替レート</span></td>
+                  <td>
+                    <orftextinput name="SUB_EXCH_RATE" tablename="M_CS_PUCH" columnname="SUB_EXCH_RATE" dbtype="number" tablejname="購入品マスタ" columnjname="第二取引為替レート" orteus="true" width="150" editable="true" visible="true" text="" kind="OBT_NUMBER_Z;14.2;FLOOR;6" maxlength="" required="" attribute=""
+                    >
+                    </orftextinput>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <orftextinput name="DEL_FLG" tablename="M_CS_PUCH" columnname="DEL_FLG" dbtype="number" tablejname="購入品マスタ" columnjname="削除フラグ" orteus="true" width="" editable="true" visible="false" text="" kind="" maxlength="" required="" attribute="">
+                    </orftextinput>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame06" width="12"></td>
+        </tr>
+        <tr height="32">
+          <td class="frame07" width="12"></td>
+          <td class="frame08" width="454"></td>
+          <td class="frame09" width="60"></td>
+          <td class="frame10" width="420">
+            <table orftype="DataGrid" mode="BUTTON" name="DA0020010button2" width="420" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105"></td>
+                  <td width="105"></td>
+                  <td width="105"></td>
+                  <td width="105"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="Insert" value="登録" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100" height="22" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_DA0020010form2/SUB_VEND_CD[eq][and]_DA0020010form2/UNIT_COST_ACCEPT_TYP[eq]2@#DA02101"
+ script2="onClick;1;CHK;_DA0020010form2/c_NoCheckClasificationCd[neq]true[and]_DA0020010form2/CLASIFICATION_CD[eq]@$DA02103"
+ script3="onClick;2;CHK;_DA0020010form2/c_NoCheckStockUnit[neq]true[and]_DA0020010form2/STOCK_UNIT[eq]@$DA02104"
+ script4="onClick;3;CHK;_DA0020010form2/UNIT_COST[numeq]0@$DA02105"
+ script5="onClick;4;CHK;_DA0020010form2/CUR_CD[eq]@$DA02106"
+ script6="onClick;5;CHK;_DA0020010form2/EXCH_RATE[numeq]0@$DA02107"
+ script7="onClick;6;CHK;_DA0020010form2/SUB_VEND_CD[neq][and]_DA0020010form2/SUB_UNIT_COST[numeq]0@$DA02108"
+ script8="onClick;7;CHK;_DA0020010form2/SUB_VEND_CD[neq][and]_DA0020010form2/SUB_CUR_CD[eq]@$DA02109"
+ script9="onClick;8;CHK;_DA0020010form2/SUB_VEND_CD[neq][and]_DA0020010form2/SUB_EXCH_RATE[numeq]0@$DA02110"
+ script10="onClick;9;SUBMIT;_DA0020010form1/*,_DA0020010form2/*@DA0020010Servlet,,$ZZ07001"
+></orfbutton>
+                  </td>
+                  <td>
+                    <orfbutton name="Update" value="更新" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnUpdate" width="100" height="22" lock="1" attribute="" visible=""
+ script1="onClick;0;CHK;_DA0020010form2/SUB_VEND_CD[eq][and]_DA0020010form2/UNIT_COST_ACCEPT_TYP[eq]2@#DA02101"
+ script2="onClick;1;CHK;_DA0020010form2/CS_PUCH_TYP[neq]_DA0020010form2/h_CS_PUCH_TYP@#DA02102"
+ script3="onClick;2;CHK;_DA0020010form2/c_NoCheckClasificationCd[neq]true[and]_DA0020010form2/CLASIFICATION_CD[eq]@$DA02103"
+ script4="onClick;3;CHK;_DA0020010form2/c_NoCheckStockUnit[neq]true[and]_DA0020010form2/STOCK_UNIT[eq]@$DA02104"
+ script5="onClick;4;CHK;_DA0020010form2/UNIT_COST[numeq]0@$DA02105"
+ script6="onClick;5;CHK;_DA0020010form2/CUR_CD[eq]@$DA02106"
+ script7="onClick;6;CHK;_DA0020010form2/EXCH_RATE[numeq]0@$DA02107"
+ script8="onClick;7;CHK;_DA0020010form2/SUB_VEND_CD[neq][and]_DA0020010form2/SUB_UNIT_COST[numeq]0@$DA02108"
+ script9="onClick;8;CHK;_DA0020010form2/SUB_VEND_CD[neq][and]_DA0020010form2/SUB_CUR_CD[eq]@$DA02109"
+ script10="onClick;9;CHK;_DA0020010form2/SUB_VEND_CD[neq][and]_DA0020010form2/SUB_EXCH_RATE[numeq]0@$DA02110"
+ script11="onClick;10;SUBMIT;_DA0020010form1/*,_DA0020010form2/*@DA0020010Servlet,,$ZZ07003"
+></orfbutton>
+                  </td>
+                  <td>
+                    <orfbutton name="Delete" value="削除" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnDelete" width="100" height="22" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_DA0020010form1/*,_DA0020010form2/*@DA0020010Servlet,,$ZZ07004"
+></orfbutton>
+                  </td>
+                  <td>
+                    <orfbutton name="CancelDelete" value="削除取消" pattern="delete" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCancelDelete" width="100" height="22" lock="1" attribute="" visible=""
+ script1="onClick;0;SUBMIT;_DA0020010form1/*,_DA0020010form2/*@DA0020010Servlet,,$ZZ07016"
+></orfbutton>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+          <td class="frame11" width="12"></td>
+        </tr>
+      </table>
+    </td>
+    <td width="5"></td>
+  </tr>
+  <tr height="5">
+    <td colspan="3"></td>
+  </tr>
+  <tr height="42">
+    <td class="under" width="968" colspan="3"><table width="968" border="0">
+        <tr>
+          <td width="758"></td>
+          <td align="right" width="210"><table orftype="DataGrid" mode="BUTTON" name="DA0020010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105"></td>
+                  <td width="105"></td>
+                </tr>
+              </orloophead>
+              <ornoloop>
+                <tr>
+                  <td>
+                    <orfbutton name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" height="22" lock="0" attribute=""
+                      script1="onClick;0;SUBMIT;@DA0020010Servlet,,$ZZ07008"
+                    >
+                    </orfbutton>
+                  </td>
+                  <td>
+                    <orfbutton name="Close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" height="22" lock="0" attribute=""
+                      script1="onClick;0;CLOSE"
+                    >
+                    </orfbutton>
+                  </td>
+                </tr>
+              </ornoloop>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<%
+MessageStruct msgStruct = aDA0020010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

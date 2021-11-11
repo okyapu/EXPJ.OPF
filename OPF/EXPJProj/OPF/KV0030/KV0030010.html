@@ -1,0 +1,198 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+生産管理Ｉ／Ｆ
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/KV0030/KV0030010.html,v $
+$Author: geng-jia $	
+$Revision: 1.6 $ $Date: 2017/02/13 07:02:50 $
+********************************************************* --%>
+<html>
+<head>
+<title>生産管理Ｉ／Ｆ</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="KV0030010" version="KV0030010 $Revision: 1.6 $" onLoad="onInitializeOnLoad();" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="1">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+
+  <!--first start -->
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+  <!--first end -->
+
+  <!--second start -->
+    <tr height="538"> 
+      <td width="5" height="538"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td height="12" width="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td height="12" width="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td height="12" width="12" class="frame04"></td>
+            <td height="494" colspan="3" class="frame05"> 
+              <!--ここにバッチ選択用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="KV0030010form1" width="934" height="494" border="0" cellspacing="0" cellpadding="0" align="center"
+			     script1="onLoad;0;CALL;onDecision@0,1,2,3,4"
+			     script2="onDecision;0;CHK;_KV0030010form1/rdoPlantTyp1[eq]true@*0"
+     			     script3="child;0;CHK;_KV0030010form1/txtPlantCd[eq]@*1,*2"
+ 			     script4="child;1;MASK;_KV0030010button1/execute"
+ 			     script5="child;2;UNMASK;_KV0030010button1/execute"
+			     script6="onDecision;1;CHK;_KV0030010form1/rdoPlantTyp2[eq]true@*2"
+			     script7="onDecision;2;CHK;_KV0030010form1/rdoPlantTyp2[eq]true@*3"
+			     script8="child;3;MASK;_KV0030010form1/txtPlantCd,_KV0030010form1/PeekerIPlantCd"
+			     script9="onDecision;3;CHK;_KV0030010form1/rdoPlantTyp1[eq]true@*4"
+			     script10="child;4;UNMASK;_KV0030010form1/txtPlantCd"
+			     script11="onDecision;4;CHK;_KV0030010form1/rdoPlantTyp2[eq]true@*5"
+			     script12="child;5;SET;_KV0030010form1/txtPlantCd="
+			    		    
+                ><orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="170" height="23" align="center">&nbsp;</td>
+                  <td width="150" height="23" align="center">&nbsp;</td>
+                  <td width="110" height="23" align="center">&nbsp;</td>
+                  <td width="40" height="23" align="center">&nbsp;</td>
+                  <td width="22" height="23" align="center">&nbsp;</td>
+                  <td width="88" height="23" align="center">&nbsp;</td>
+                  <td width="22" height="23" align="center">&nbsp;</td>
+                  <td width="150" height="23" align="center">&nbsp;</td>
+                  <td width="70" height="23" align="center">&nbsp;</td>
+                  <td width="822" height="23" align="center">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="rdoPlantTyp1" orteus="true" value="true" 
+			 mlang="true" mlkind="common" mlname="Expj.Cmt0038" group="rdoPlantTyp" checked
+			 script1="onClick;0;UNMASK;_KV0030010form1/txtPlantCd,_KV0030010form1/PeekerIPlantCd"
+			 script2="onClick;1;SET;_KV0030010form1/rdoPlantTyp=1"
+			></orfradiobutton> </td>
+                  <td required=true><orftextinput  name="txtPlantCd" orteus="true" maxlength="3" width="260" required="A"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerIPlantCd" value="" pattern="none" orteus="false"   width="22" height="22" attribute="BTS_PEEKER" script1="onClick;0;PEEKER;_KV0030010form1/txtPlantCd@<%=contextNo%>" sqlname="PLANT_CD_01" sqlparam_1="_KV0030010form1/txtPlantCd"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="rdoPlantTyp2" orteus="true" value="true"  
+			 mlang="true" mlkind="common" mlname="Expj.Cmt0036" group="rdoPlantTyp"
+			 script1="onClick;0;MASK;_KV0030010form1/txtPlantCd,_KV0030010form1/PeekerIPlantCd"
+			 script2="onClick;1;SET;_KV0030010form1/rdoPlantTyp=2,_KV0030010form1/txtPlantCd="
+			></orfradiobutton></td>
+                  <td><orftextinput  name="rdoPlantTyp" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table> 
+              <!--ここにバッチ選択用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" height="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"> </td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"> 
+		<table orftype="DataGrid" mode="BUTTON" name="KV0030010button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+		  <orloophead>
+		  <tr bgcolor="#ccff99">
+			<td width=105>&nbsp;</td>
+		  </tr>
+		  </orloophead><ornoloop>
+		  <tr>
+			<td><orfbutton  name="execute" value="実行" pattern="insert" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnExecute" width="100"
+			   script1="onClick;0;CHK;_KV0030010form1/rdoPlantTyp1[eq]true@*2,*1"
+			   script2="child;1;CHK;_KV0030010form1/rdoPlantTyp2[eq]true@*4,!AZ00006"
+			   script3="child;2;CHK;_KV0030010form1/txtPlantCd[neq]@*3,!ZZ01104"
+			   script4="child;3;SUBMIT;_KV0030010form1/*@KV0030010Servlet,,$ZZ07010"
+			   script5="child;4;SUBMIT;_KV0030010form1/*@KV0030010Servlet,,$ZZ07010"
+			  ></orfbutton></td>
+		  </tr>
+		  </ornoloop>
+		   </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="538"></td>
+    </tr>
+  <!--second end -->
+
+  <!--third start -->
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+  <!--third end -->
+  
+  <!--four start -->
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+		<td width="968" align="left"></td>
+		<td align="right" width="210">
+		<table orftype="DataGrid" mode="BUTTON" name="KV0030010button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton  name="clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" script1="onClick;0;SUBMIT;@KV0030010Servlet,,$ZZ07008" lock="0"></orfbutton></td>				
+                  <td><orfbutton  name="close" value="閉じる" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" script1="onClick;0;CLOSE"></orfbutton></td>
+                </tr>
+                </ornoloop></table> </td>
+		  </tr>
+		</table>
+	  </td>
+    </tr>
+  <!--four end -->
+  
+  </table>
+
+  <%
+MessageStruct msgStruct = aKV0030010Control.getMsgStruct();
+%>
+  <%@ include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

@@ -1,0 +1,597 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+棚卸調査表出力
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AH0030/AH0030010.html,v $
+$Author: geng-jia $
+$Revision: 1.8 $ $Date: 2017/02/13 03:30:23 $
+********************************************************* --%>
+<html>
+<head>
+<title>棚卸調査表出力</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AH0030010" version="AH0030010 $Revision: 1.8 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+
+    <tr height="71"> 
+      <td width="5" height="71"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AH0030010form1" width="934" height="27" border="1" cellspacing="0" cellpadding="0"
+				 status="<%= TypeConverter.sanitizer(aAH0030010Control.getReadStatusString()) %>"
+				 	 script1="onLoad;0;CALL;child@0,7,10,13,16,19"					
+
+					 script2="child;0;CHK;_AH0030010form1/h_sheet[eq]1@*1,*2"				
+					 script3="child;1;SET;_AH0030010form2/r1_sheet2=true"			
+					 script4="child;2;CHK;_AH0030010form1/h_sheet[eq]2@*3,*4"				
+					 script5="child;3;SET;_AH0030010form2/r1_sheet3=true"			
+					 script6="child;4;CHK;_AH0030010form1/h_sheet[eq]3@*5,*6"				
+					 script7="child;5;SET;_AH0030010form2/r1_sheet4=true"			
+					 script8="child;6;SET;_AH0030010form2/r1_sheet1=true"			
+
+					 script9="child;7;CHK;_AH0030010form1/h_stock[eq]1@*8,*9"
+					 script10="child;8;SET;_AH0030010form2/r2_stock2=true@*30"			
+					 script11="child;9;SET;_AH0030010form2/r2_stock1=true"			
+
+					 script12="child;10;CHK;_AH0030010form2/h_wh[eq]1@*11,*12"				
+					 script13="child;11;SET;_AH0030010form2/r3_wh2=true"			
+					 script14="child;12;SET;_AH0030010form2/r3_wh1=true"		
+						 
+                     script15="child;13;CHK;_AH0030010form2/h_lot[eq]1@*14,*15"				
+					 script16="child;14;SET;_AH0030010form2/r4_lot_no2=true"			
+					 script17="child;15;SET;_AH0030010form2/r4_lot_no1=true"
+						 
+					 script18="child;16;CHK;_AH0030010form2/h_item[eq]1@*17,*18"				
+					 script19="child;17;SET;_AH0030010form2/r5_item_cd2=true"			
+					 script20="child;18;SET;_AH0030010form2/r5_item_cd1=true"			
+
+					 script21="child;19;CHK;?AH0030010form1/*[neq]NORMAL@*20"			
+					 script22="child;20;MASK;_AH0030010button0/Print,_AH0030010button0/csv_export"		
+
+
+				     script23="onLoad;1;CALL;onDecision@0,1"				
+
+					 script24="onDecision;0;CHKRQ;A@*21,*22"			
+					 script25="child;21;UNMASK;_AH0030010button1/select"		
+					 script26="child;22;MASK;_AH0030010button1/select"		
+
+					 script27="onDecision;1;CHKRQ;A@*23,*29"			
+					 script28="child;23;CHK;?AH0030010form1/*[eq]NORMAL@*24,*29"		
+					 script29="child;24;CHK;_AH0030010form1/INV_DATE[eq]_AH0030010form1/h_saveINV_DATE@*25,*29"	
+					 script30="child;25;CHK;_AH0030010form2/WH_CD[eq][and]_AH0030010form2/r3_wh2[eq]true@*29,*26"
+					 script31="child;26;CHK;_AH0030010form2/LOT_NO[eq][and]_AH0030010form2/r4_lot_no2[eq]true@*29,*27"
+					 script32="child;27;CHK;_AH0030010form2/ITEM_CD[eq][and]_AH0030010form2/r5_item_cd2[eq]true@*29,*28"
+									 
+							 
+									
+					 script35="child;28;UNMASK;_AH0030010button0/Print,_AH0030010button0/csv_export"			
+					 script36="child;29;MASK;_AH0030010button0/Print,_AH0030010button0/csv_export"			
+					 script37="child;30;MASK;_AH0030010form2/LOT_NO"			
+				     script38="onLoad;2;CALL;onDecision@2"
+				  	 script39="onDecision;2;CHK;_h_SYS_LOT_CTRL_FLG[neq]true[or]_AH0030010form2/r2_stock2[eq]true@*31,*32"
+				     script40="child;31;MASK;_AH0030010form2/r4_lot_no1,_AH0030010form2/r4_lot_no2"
+					 script41="child;32;UNMASK;_AH0030010form2/r4_lot_no1,_AH0030010form2/r4_lot_no2"
+					 
+					 script42="onLoad;3;CALL;child@33"
+					 script43="child;33;CHK;_AH0030010form2/r1_sheet2[eq]true@*34"
+					 script44="child;34;SET;_AH0030010form2/r2_stock1=true@*35"
+					 script45="child;35;MASK;_AH0030010form2/r2_stock2"		
+					 
+              >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INV_DATE">棚卸日</span></td>
+                  <td><orftextinput  name="INV_DATE" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD" required="A"></orftextinput></td>
+                  <td><orfcalendar  name="CalendarINV_DATE" value="" pattern="none" orteus="false" width="22" attribute="BTS_CALENDAR"
+					 script1="onClick;0;CALENDAR;_AH0030010form1/INV_DATE"
+                  ></orfcalendar></td>
+                  <td><orftextinput  name="w_INV_status" orteus="true" width="360" editable="false"></orftextinput></td>
+				  <td><orftextinput  name="h_saveINV_DATE" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_sheet" orteus="true" visible="false"></orftextinput></td>
+				  <td><orftextinput  name="h_stock" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput name="h_SYS_LOT_CTRL_FLG" orteus="true" visible="false"></orftextinput></td>
+				  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"><table orftype="DataGrid" mode="BUTTON" name="AH0030010button1" width="105" height="22" border="" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="" lock="0" attribute="" visible=""
+ script1="onClick;0;CHK;1[eq]1@*0"	
+
+					 script2="child;0;CHK;_AH0030010form2/r1_sheet2[eq]true@*1,*2"	
+						 script3="child;1;SET;_AH0030010form1/h_sheet=1@*7"
+					 script4="child;2;CHK;_AH0030010form2/r1_sheet3[eq]true@*3,*4"	
+						 script5="child;3;SET;_AH0030010form1/h_sheet=2@*7"
+					 script6="child;4;CHK;_AH0030010form2/r1_sheet4[eq]true@*5,*6"	
+						 script7="child;5;SET;_AH0030010form1/h_sheet=3@*7"
+						 script8="child;6;SET;_AH0030010form1/h_sheet=0@*7"
+
+					 script9="child;7;CHK;_AH0030010form2/r2_stock2[eq]true@*8,*9"	
+						 script10="child;8;SET;_AH0030010form1/h_stock=1@*10"
+						 script11="child;9;SET;_AH0030010form1/h_stock=0@*10"
+
+					 script12="child;10;CHK;_AH0030010form2/r3_wh2[eq]true@*11,*12"	
+						 script13="child;11;SET;_AH0030010form2/h_wh=1@*13"
+						 script14="child;12;SET;_AH0030010form2/h_wh=0@*13"
+						 
+				     script15="child;13;CHK;_AH0030010form2/r4_lot_no2[eq]true@*14,*15"	
+						 script16="child;14;SET;_AH0030010form2/h_lot=1@*16"
+						 script17="child;15;SET;_AH0030010form2/h_lot=0@*16"
+						 
+				     script18="child;16;CHK;_AH0030010form2/r5_item_cd2[eq]true@*17,*18"	
+						 script19="child;17;SET;_AH0030010form2/h_item=1@*19"
+						 script20="child;18;SET;_AH0030010form2/h_item=0@*19"
+
+					 script21="child;19;SUBMIT;_AH0030010form1/*,_AH0030010form2/*@AH0030010Servlet"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+
+    <tr height="462"> 
+      <td width="5" height="462"></td>
+      <td valign="top" width="958" height="462"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <table orftype="DataGrid" mode="FORM" name="AH0030010form2" width="934" height="438" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r1_sheet1" orteus="true" value="true" group="sheet" mlang="true" mlkind="common" mlname="Expj.Cmt0600" width="190"
+				  script2="onClick;0;CHK;1[eq]1@*0"	
+						 script3="child;0;CHK;_THIS[eq]true@*1"
+						 script4="child;1;SET;_THIS=true@*2"
+						 script5="child;2;SET;_AH0030010form2/r2_stock1=true@*3"
+						 script6="child;3;UNMASK;_AH0030010form2/r4_lot_no1,_AH0030010form2/r4_lot_no2@*4"
+						 script7="child;4;SET;_AH0030010form2/LOT_NO=,_AH0030010form2/r4_lot_no1=true@*5"
+						 script8="child;5;UNMASK;_AH0030010form2/r2_stock1@*6"
+						 script9="child;6;UNMASK;_AH0030010form2/r2_stock2"
+				  ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r2_stock1" orteus="true" value="true" group="stock" mlang="true" mlkind="common" mlname="Expj.Cmt0234" width="190"
+				  script1="onLoad;0;CALL;onClick@0"	
+
+					 script2="onClick;0;CHK;1[eq]1@*0"	
+						 script3="child;0;CHK;_THIS[eq]true@*1"
+						 script4="child;1;CHK;_AH0030010form2/r4_lot_no2[eq]true@*2,*3"
+						 script5="child;2;UNMASK;_AH0030010form2/r4_lot_no1,_AH0030010form2/r4_lot_no2,_AH0030010form2/LOT_NO"
+						 script6="child;3;UNMASK;_AH0030010form2/r4_lot_no1,_AH0030010form2/r4_lot_no2"
+				  ></orfradiobutton></td>
+                  <td><orftextinput  name="DOWNLOAD_FILE" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r1_sheet2" orteus="true" value="true" group="sheet" mlang="true" mlkind="common" mlname="Expj.Cmt0601" width="190"
+				  
+					     script2="onClick;0;CHK;1[eq]1@*0"	
+						 script3="child;0;CHK;_THIS[eq]true@*1"
+						 script4="child;1;SET;_THIS=true@*2"
+						 script5="child;2;SET;_AH0030010form2/r2_stock1=true@*3"
+						 script6="child;3;UNMASK;_AH0030010form2/r4_lot_no1,_AH0030010form2/r4_lot_no2@*4"
+						 script7="child;4;SET;_AH0030010form2/LOT_NO=,_AH0030010form2/r4_lot_no1=true@*5"
+						 script8="child;5;MASK;_AH0030010form2/r2_stock2@*6"
+						 script9="child;6;UNMASK;_AH0030010form2/r2_stock1"
+				  ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r2_stock2" orteus="true" value="true" group="stock" mlang="true" mlkind="common" mlname="Expj.Cmt0235" width="190"
+				     script1="onLoad;0;CALL;onClick@0"	
+
+					 script2="onClick;0;CHK;1[eq]1@*0"	
+						 script3="child;0;CHK;_THIS[eq]true@*1"
+						 script4="child;1;SET;_THIS=true@*2"
+						 script5="child;2;MASK;_AH0030010form2/r4_lot_no1,_AH0030010form2/r4_lot_no2,_AH0030010form2/LOT_NO@*3"
+						 script6="child;3;SET;_AH0030010form2/LOT_NO=,_AH0030010form2/r4_lot_no1=true"
+					 ></orfradiobutton></td>
+                  <td><orftextinput  name="h_wh" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r1_sheet3" orteus="true" value="true" group="sheet" mlang="true" mlkind="common" mlname="Expj.Cmt0602" width="190"
+				 
+					     script2="onClick;0;CHK;1[eq]1@*0"	
+						 script3="child;0;CHK;_THIS[eq]true@*1"
+						 script4="child;1;SET;_THIS=true@*2"
+						 script5="child;2;CHK;_AH0030010form2/r2_stock1[eq]true@*3"
+						 script6="child;3;UNMASK;_AH0030010form2/r4_lot_no1,_AH0030010form2/r4_lot_no2@*4"
+						 script7="child;4;SET;_AH0030010form2/LOT_NO=,_AH0030010form2/r4_lot_no1=true@*5"
+						 script8="child;5;UNMASK;_AH0030010form2/r2_stock1,_AH0030010form2/r2_stock2"
+						 ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_lot" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="h_item" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r1_sheet4" orteus="true" value="true" group="sheet" mlang="true" mlkind="common" mlname="Expj.Cmt0603" width="190"
+				  script1="onLoad;0;CALL;onClick@0"	
+
+					 script2="onClick;0;CHK;1[eq]1@*0"	
+						 script3="child;0;CHK;_THIS[eq]true@*1"
+						 script4="child;1;SET;_THIS=true@*2"
+						 script5="child;2;UNMASK;_AH0030010form2/r4_lot_no1,_AH0030010form2/r4_lot_no2@*3"
+						 script6="child;3;SET;_AH0030010form2/r2_stock1=true@*4"
+						 script7="child;4;MASK;_AH0030010form2/r2_stock1,_AH0030010form2/r2_stock2"
+				  ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r3_wh1" orteus="true" value="true" group="wh" mlang="true" mlkind="common" mlname="Expj.Cmt0053" width="190"
+					 script1="onLoad;0;CALL;onClick@0"	
+
+					 script2="onClick;0;CHK;1[eq]1@*0"	
+						 script3="child;0;CHK;_THIS[eq]true@*1"
+						 script4="child;1;SET;_AH0030010form2/WH_CD=@*2"
+						 script5="child;2;MASK;_AH0030010form2/WH_CD"
+                  ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r3_wh2" orteus="true" value="true" group="wh" mlang="true" mlkind="common" mlname="Expj.Cmt0230" width="190"
+					 script1="onLoad;0;CALL;onClick@0"	
+
+					 script2="onClick;0;CHK;1[eq]1@*0"	
+						 script3="child;0;CHK;_THIS[eq]true@*1"
+						 script4="child;1;UNMASK;_AH0030010form2/WH_CD"
+                  ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="WH_CD" maxlength="25" orteus="true" width="260" kind="OBT_WILD" required="B"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0002">（ワイルドカード指定可）</span></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				 <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r5_item_cd1" orteus="true" value="true" group="item" mlang="true" mlkind="common" mlname="Expj.CmtAll_ItemCd" width="190"
+					 script1="onLoad;0;CALL;onClick@0"	
+
+					 script2="onClick;0;CHK;1[eq]1@*0"	
+						 script3="child;0;CHK;_THIS[eq]true@*1"
+						 script4="child;1;SET;_AH0030010form2/ITEM_CD=@*2"
+						 script5="child;2;MASK;_AH0030010form2/ITEM_CD"
+                  ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r5_item_cd2" orteus="true" value="true" group="item" mlang="true" mlkind="common" mlname="Expj.CmtItemCd" width="190"
+					 script1="onLoad;0;CALL;onClick@0"	
+
+					 script2="onClick;0;CHK;1[eq]1@*0"	
+						 script3="child;0;CHK;_THIS[eq]true@*1"
+						 script4="child;1;UNMASK;_AH0030010form2/ITEM_CD"
+                  ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="ITEM_CD" maxlength="25" orteus="true" width="260" kind="OBT_WILD" required="D"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0002">（ワイルドカード指定可）</span></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r4_lot_no1" orteus="true" value="true" group="lot" mlang="true" mlkind="common" mlname="Expj.CmtAll_LotNo" width="190"
+					 script1="onLoad;0;CALL;onClick@0"	
+
+					 script2="onClick;0;CHK;1[eq]1@*0"	
+						 script3="child;0;CHK;_THIS[eq]true@*1"
+						 script4="child;1;SET;_AH0030010form2/LOT_NO=@*2"
+						 script5="child;2;MASK;_AH0030010form2/LOT_NO"
+                  ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton  name="r4_lot_no2" orteus="true" value="true" group="lot" mlang="true" mlkind="common" mlname="Expj.CmtLotNo" width="190"
+					 script1="onLoad;0;CALL;onClick@0"	
+
+					 script2="onClick;0;CHK;1[eq]1@*0"	
+						 script3="child;0;CHK;_THIS[eq]true@*1"
+						 script4="child;1;UNMASK;_AH0030010form2/LOT_NO"
+                  ></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="LOT_NO" maxlength="25" orteus="true" width="260" kind="OBT_WILD" required="C"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0002">（ワイルドカード指定可）</span></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" height="12" class="frame18"></td>
+            <td colspan="3" height="12" class="frame19"></td>
+            <td width="12" height="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="462"></td>
+    </tr>
+
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="548"></td>
+            <td align="right" width="420"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AH0030010button0" width="420" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  name="Print" value="帳票出力" pattern="print" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnPrint" width="100"
+					 script1="onClick;0;CHK;1[eq]1@*0"	
+
+					 script2="child;0;CHK;_AH0030010form2/r1_sheet2[eq]true[and]_AH0030010form2/r2_stock2[eq]true@!AH00033,*1"	
+						
+					 script3="child;1;CHK;_AH0030010form2/r1_sheet2[eq]true@*2,*3"	
+						 script4="child;2;SET;_AH0030010form1/h_sheet=1@*8"
+					 script5="child;3;CHK;_AH0030010form2/r1_sheet3[eq]true@*4,*5"	
+						 script6="child;4;SET;_AH0030010form1/h_sheet=2@*8"
+					 script7="child;5;CHK;_AH0030010form2/r1_sheet4[eq]true@*6,*7"	
+						 script8="child;6;SET;_AH0030010form1/h_sheet=3@*8"
+						 script9="child;7;SET;_AH0030010form1/h_sheet=0@*8"
+						
+					 script10="child;8;CHK;_AH0030010form2/r2_stock2[eq]true@*9,*10"	
+						 script11="child;9;SET;_AH0030010form1/h_stock=1@*11"
+						 script12="child;10;SET;_AH0030010form1/h_stock=0@*11"
+						
+					 script13="child;11;CHK;_AH0030010form2/r3_wh2[eq]true@*12,*13"	
+						 script14="child;12;SET;_AH0030010form2/h_wh=1@*14"
+						 script15="child;13;SET;_AH0030010form2/h_wh=0@*14"
+						 
+				     script16="child;14;CHK;_AH0030010form2/r4_lot_no2[eq]true@*15,*16"	
+						 script17="child;15;SET;_AH0030010form2/h_lot=1@*17"
+						 script18="child;16;SET;_AH0030010form2/h_lot=0@*17"
+						 
+					script19="child;17;CHK;_AH0030010form2/r5_item_cd2[eq]true@*18,*19"	
+						 script20="child;18;SET;_AH0030010form2/h_item=1@*20"
+						 script21="child;19;SET;_AH0030010form2/h_item=0@*20"
+
+					 script22="child;20;PRINTER;_AH0030010form1/*,_AH0030010form2/*@AH0030010Servlet:C,M,M"	
+
+					 lock="1"
+                  ></orfbutton></td>
+                  <td><orfbutton  name="csv_export" value="CSV出力" pattern="print" revokeCtrl="disabled"  orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCsvOut" width="100"
+					 script1="onClick;0;CHK;1[eq]1@*0"	
+
+					 script2="child;0;CHK;_AH0030010form2/r1_sheet2[eq]true[and]_AH0030010form2/r2_stock2[eq]true@!AH00033,*1"	
+						
+					 script3="child;1;CHK;_AH0030010form2/r1_sheet2[eq]true@*2,*3"	
+						 script4="child;2;SET;_AH0030010form1/h_sheet=1@*8"
+					 script5="child;3;CHK;_AH0030010form2/r1_sheet3[eq]true@*4,*5"	
+						 script6="child;4;SET;_AH0030010form1/h_sheet=2@*8"
+					 script7="child;5;CHK;_AH0030010form2/r1_sheet4[eq]true@*6,*7"	
+						 script8="child;6;SET;_AH0030010form1/h_sheet=3@*8"
+						 script9="child;7;SET;_AH0030010form1/h_sheet=0@*8"
+						
+					 script10="child;8;CHK;_AH0030010form2/r2_stock2[eq]true@*9,*10"	
+						 script11="child;9;SET;_AH0030010form1/h_stock=1@*11"
+						 script12="child;10;SET;_AH0030010form1/h_stock=0@*11"
+						
+					 script13="child;11;CHK;_AH0030010form2/r3_wh2[eq]true@*12,*13"	
+						 script14="child;12;SET;_AH0030010form2/h_wh=1@*14"
+						 script15="child;13;SET;_AH0030010form2/h_wh=0@*14"
+						 
+					 script16="child;14;CHK;_AH0030010form2/r4_lot_no2[eq]true@*15,*16"	
+						 script17="child;15;SET;_AH0030010form2/h_lot=1@*17"
+						 script18="child;16;SET;_AH0030010form2/h_lot=0@*17"
+						 
+					 script19="child;17;CHK;_AH0030010form2/r5_item_cd2[eq]true@*18,*19"	
+						 script20="child;18;SET;_AH0030010form2/h_item=1@*20"
+						 script21="child;19;SET;_AH0030010form2/h_item=0@*20"
+
+					 script22="child;20;SUBMIT;_AH0030010form1/*,_AH0030010form2/*@AH0030010Servlet,,$ZZ07011"
+
+					 lock="1"
+                  ></orfbutton></td>
+                  <td><orfbutton  name="clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100"
+					 script1="onClick;0;SUBMIT;_AH0030010form1/*,_AH0030010form2/*@AH0030010Servlet,,$ZZ07008"
+					 lock="0"
+                  ></orfbutton></td>
+                  <td><orfbutton  name="close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100"
+					 script1="onClick;0;CLOSE"
+                  ></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAH0030010Control.getMessage();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

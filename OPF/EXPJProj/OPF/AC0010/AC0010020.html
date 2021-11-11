@@ -1,0 +1,204 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+
+所要量アラームリスト出力
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AC0010/AC0010020.html,v $
+$Author: geng-jia $    
+$Revision: 1.9 $ $Date: 2017/02/13 02:32:21 $
+********************************************************* --%>
+<html>
+<head>
+<title>所要量アラームリスト出力</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" name="AC0010020" version="AC0010020 $Revision: 1.9 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="1">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="538"> 
+      <td width="5" height="538"></td>
+      <td valign="top" width="958" height="538"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="AC0010020form1" width="934" height="514" border="1" cellspacing="0" cellpadding="0"
+                   script1="onLoad;0;CALL;onDecision@0,1"
+                   script10="onDecision;0;CHKRQ;A@*71,*72"
+                   script11="onDecision;1;CHK;_AC0010020form1/IN_c_CHECK3[eq]1@*70"
+                   script70="child;70;SET;_AC0010020form1/c_CHECK3=true,_AC0010020form1/IN_c_CHECK3=0"
+                   script71="child;71;UNMASK;_AC0010020button0/Print"
+                   script72="child;72;MASK;_AC0010020button0/Print"
+                >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=170 align=right>&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=88 align=center>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=150 align=left>&nbsp;</td>
+                  <td width=22 align=left>&nbsp;</td>
+                  <td width=170 align=left>&nbsp;</td>
+                  <td width=88 align=left>&nbsp;</td>
+                  <td width=50 align=left>&nbsp;</td>
+                  <td width=2 align=left>&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orftextinput  name="user_PLANT_CD" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="OD_NO" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="ITEM_CD" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="MRP_DATE" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="JOB_ODR_DETAIL_NO" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="JOB_ODR_CANCEL_NO" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="DUE_DATE" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="PRD_DUE_DATE" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="DM_QTY" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><orftextinput  name="MSG" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="PLANT_NAME" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="BUSINESS_OPR_DATE" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="DOWNLOAD_FILE" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="SUBMIT_BUTTON_TYPE" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="PRINTER_TYPE" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="SELECTED_PRINTER" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td required=true><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PLANT_CD"></span></td>
+                  <td><orftextinput  width="260" name="PLANT_CD" orteus="true"   maxlength="2" required="A"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  width="22" name="PLANT_CD_PEEKER" value="" pattern="select" attribute="BTS_PEEKER" 
+                         script1="onClick;0;PEEKER;_AC0010020form1/PLANT_CD@<%=contextNo%>" sqlname="PLANT_CD_01" sqlparam_1="_AC0010020form1/PLANT_CD"></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="IN_PLANT_CD" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MRP_DATE"></span></td>
+                  <td><orftextinput  name="MRP_DATE_FROM" orteus="true" maxlength="10" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  width="22" name="MRP_DATE_FROM_CALENDAR" value="" pattern="none" attribute="BTS_CALENDAR" 
+                       script1="onClick;0;CALENDAR;_AC0010020form1/MRP_DATE_FROM"
+                      ></orfcalendar></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0043"></span></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  width="150" name="MRP_DATE_TO" orteus="true" maxlength="10" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  name="MRP_DATE_TO_CALENDAR" value="" pattern="none" attribute="BTS_CALENDAR"
+                        script1="onClick;0;CALENDAR;_AC0010020form1/MRP_DATE_TO"
+                       ></orfcalendar></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="IN_MRP_DATE_FROM" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="IN_MRP_DATE_TO" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CD"></span></td>
+                  <td><orftextinput  width="260" name="JOB_ODR_CD" maxlength="25" kind="OBT_WILD" orteus="true"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0002"></span></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="IN_JOB_ODR_CD" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfcheckbox  name="c_CHECK3" orteus="true" value="1" mlang="true" mlkind="common" mlname="Expj.Cmt0246"
+                       ></orfcheckbox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="IN_c_CHECK3" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                </ornoloop>
+              </table>              
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" height="12" class="frame18"></td>
+            <td colspan="3" height="12" class="frame19"></td>
+            <td width="12" height="12" class="frame20"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="538"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="653"></td>
+            <td align="right" width="315"> 
+              <table orftype="DataGrid" mode="BUTTON" name="AC0010020button0" width="315" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton  width="100" name="Print" value="印刷" pattern="print" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnPrint"
+                        script1="onClick;0;CHK;_AC0010020form1/MRP_DATE_FROM[neq][and]_AC0010020form1/MRP_DATE_FROM[gt]_AC0010020form1/BUSINESS_OPR_DATE@!AC30773"
+                        script2="onClick;1;CHK;_AC0010020form1/MRP_DATE_TO[neq][and]_AC0010020form1/MRP_DATE_TO[gt]_AC0010020form1/BUSINESS_OPR_DATE@!AC30773"
+                        script3="onClick;2;CHK;_AC0010020form1/MRP_DATE_FROM[neq][and]_AC0010020form1/MRP_DATE_TO[neq][and]_AC0010020form1/MRP_DATE_FROM[gt]_AC0010020form1/MRP_DATE_TO@!AC30772"
+                        script4="onClick;3;PRINTER;_AC0010020form1/*@AC0010020Servlet:H,H,H"
+                        lock="0"
+                      ></orfbutton></td>
+                  <td><orfbutton  name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" 
+                        script1="onClick;0;SUBMIT;@AC0010020Servlet,,$ZZ07008" lock="0"
+                       ></orfbutton></td>
+                  <td><orfbutton  name="Close" value="閉じる" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" 
+                        script1="onClick;0;CLOSE"
+
+                       ></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<%
+MessageStruct msgStruct = aAC0010020Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

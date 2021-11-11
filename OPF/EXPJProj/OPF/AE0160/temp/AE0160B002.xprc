@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+<process><process-name>AE0160B002</process-name><process-jname>受入実績CSV取込バッチ</process-jname><process-type>orteus-batch</process-type><process-description></process-description><event-list/><db-list><db><table-name>T_ACPT_RSLT_TEMP</table-name><db-file>..\..\..\common\db\temp\T_ACPT_RSLT_TEMP.xml</db-file><io-type>out</io-type></db></db-list><page-list/></process>

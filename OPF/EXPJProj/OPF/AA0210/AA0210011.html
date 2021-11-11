@@ -1,0 +1,193 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+取引先データ取込処理（CSVアップロード）
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AA0210/AA0210011.html,v $
+$Author: geng-jia $	
+$Revision: 1.2 $　$Date: 2017/02/13 02:30:36 $
+********************************************************* --%>
+<html>
+<head>
+<title>取引先データ取込処理（CSVアップロード）</title>
+<%@include file="common/expj_v5.jsp" %>
+<%@include file="common/upload.jsp" %>
+</head>
+<body flash="true" version="AA0210011 $Revision: 1.2 $" name="AA0210011" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="71">
+      <td width="5" height="71"></td>
+      <td valign="top" width="958">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" status="" float="" name="AA0210011form1" width="934" height="27"
+                 script1 = "onLoad;0;CALL;onDecision@0,1"
+                 script2 = "onDecision;0;CHKRQ;A@*0,*1"
+                   script3 = "child;0;UNMASK;_AA0210011button1/CsvIn"
+                   script4 = "child;1;MASK;_AA0210011button1/CsvIn"
+                 script5 = "onDecision;1;CHK;?AA0210011view1/$[eq]0@*2,*3"
+                   script6 = "child;2;MASK;_AA0210011button0/CsvOut"
+                   script7 = "child;3;UNMASK;_AA0210011button0/CsvOut">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead>
+                <ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0046">取込ファイル</span></td>
+                  <td><orftextinput name="FileName" orteus="true" width="712" editable="false" visible="true" password="false" text="" kind="" maxlength="" required="A" attribute=""
+></orftextinput></td>
+                  <td><orftextinput  name="CANCEL_FILE" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="DOWNLOAD_FILE" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32">
+            <td width="12" class="frame07" height="32"></td>
+            <td width="664" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="210" class="frame10" height="32">
+             <table orftype="DataGrid" mode="BUTTON" status="" float="" name="AA0210011button1" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+               </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="Browse" value="参照" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnBrowse" width="100" height="" lock="0" attribute="" visible="true"
+ script1="onClick;0;FILEDLG;_AA0210011form1/FileName"
+></orfbutton></td>
+                <td><orfbutton name="CsvIn" value="取込" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCsvIn" width="100" height="" lock="1" attribute="" visible="true"
+ script1="onClick;0;FILEUPLOAD;AA0210010Servlet"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+             </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+      <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="462">
+      <td width="5" height="462"></td>
+      <td valign="top" width="958" height="462">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" attribute="DGS_SELECTOFF" mode="VIEW" status="" float="" name="AA0210011view1"
+               width="934" height="438" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="130"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3094">エラー箇所</span></td>
+                  <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3095">エラー区分</span></td>
+				  <td width="130"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_CD">取引先コード</span></td>
+                  <td width="130"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3097">エラー項目名</span></td>
+                  <td width="447"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3098">エラー内容</span></td>
+                </tr>
+                </orloophead><orloop>
+                <tr>
+                  <td><orflabel name="l_ERR_ADR" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                  <td><orflabel name="l_ERR_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                  <td><orflabel name="l_VEND_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                  <td><orflabel name="l_ERROR_FIELD_NAME" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                  <td><orflabel name="l_ERR_TEXT" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+                </tr>
+                </orloop>
+              </table>
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="462"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42">
+      <td colspan="3" width="968" height="42" class="under">
+        <table width="968" border="0">
+          <tr>
+            <td align="left" width="748"></td>
+            <td align="right" width="210">
+              <table orftype="DataGrid" mode="BUTTON" name="AA0210011button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width=105>&nbsp;</td>
+                  <td width=105>&nbsp;</td>
+                </tr>
+                </orloophead>
+                <ornoloop>
+                <tr>
+                  <td><orfbutton name="CsvOut" value="CSV出力" pattern="print" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCsvOut" width="100" height="" lock="0" attribute="" visible="true"
+ script1="onClick;0;SCRCHG;_AA0210011form1/*@AA0210010Servlet,,$ZZ07011"></orfbutton></td>
+                  <td><orfbutton  name="return_sub1" value="戻る" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReturn" width="100"
+ script1="onClick;0;SCRCHG;_AA0210011form1/*@AA0210010Servlet,,$ZZ07013" lock="0"></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+<%
+MessageStruct msgStruct = aAA0210010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

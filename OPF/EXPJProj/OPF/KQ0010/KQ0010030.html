@@ -1,0 +1,553 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+受注承認
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/KQ0010/KQ0010030.html,v $
+$Author: geng-jia $	
+$Revision: 1.8 $　$Date: 2017/02/17 10:14:10 $
+********************************************************* --%>
+<html>
+<head>
+<title>受注承認</title>
+<%@include file="common/expj_v5.jsp" %>
+</head>
+<body flash="true" version="KQ0010030 $Revision: 1.8 $" name="KQ0010030" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="3">
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="71"> 
+      <td width="5" height="71"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+			  <table orftype="DataGrid" mode="FORM" status="" float=""
+ name="KQ0010030form1" width="934" height="73" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="34">&nbsp;</td>
+                  <td width="20">&nbsp;</td>
+                  <td width="34">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+				  <td width="22">&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                   <td><orftextinput name="h_APPR_POWER_TYP" orteus="true" width="" editable="true" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td><orfradiobutton name="r1_FILTER1" value="true" check="true" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5096" width="190" height="" text="依頼" group="FILTER1" editable="true" visible="true"
+></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfradiobutton name="r2_FILTER1" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3168" width="190" height="" text="承認待ち" group="FILTER1" editable="true" visible="true"
+></orfradiobutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_REQUEST_APPR_SAME" orteus="true" width="" editable="true" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+				  <td><orfradiobutton name="r3_FILTER1" value="true" check="false" orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3169" width="190" height="" text="保留" group="FILTER1" editable="true" visible="true"
+></orfradiobutton></td>
+                  <td><orftextinput name="h_SELECT_TYP" orteus="true" width="" editable="true" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+                  <td><orftextinput name="CUST_CD" tablename="T_ODR_CTL" columnname="CUST_CD" dbtype="varchar2" tablejname="" columnjname=""  orteus="true" width="260" editable="true" visible="true" password="false" text="" kind="OBT_WILD;" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerCustCd" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="CUST_CD_01" sqlparam_1="_KQ0010030form1/CUST_CD"
+ script1="onClick;0;PEEKER;_KQ0010030form1/CUST_CD@<%=contextNo%>"></orfpeeker></td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0002"></span></td>
+                  <td>&nbsp;</td>
+				  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_ACPT_DATE">受注日</span></td>
+                  <td><orftextinput  name="START_DATE" tablename="T_ODR" columnname="ODR_ACPT_DATE" dbtype="date" tablejname="受注明細" columnjname="受注日" maxlength="10" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  width="22" name="START_DATE_CALENDAR" pattern="none" attribute="BTS_CALENDAR" 
+                       script1="onClick;0;CALENDAR;_KQ0010030form1/START_DATE"
+                      ></orfcalendar></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0043"></span></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="END_DATE" tablename="T_ODR" columnname="ODR_ACPT_DATE" dbtype="date" tablejname="受注明細" columnjname="受注日" maxlength="10" orteus="true" width="150" kind="OBT_DATE;TYPE_YMD"></orftextinput></td>
+                  <td><orfcalendar  width="22" name="END_DATE_CALENDAR" pattern="none" attribute="BTS_CALENDAR"
+                        script1="onClick;0;CALENDAR;_KQ0010030form1/END_DATE"
+                       ></orfcalendar></td>
+				  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32"></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32"><table orftype="DataGrid" mode="BUTTON" status="" float=""
+ name="KQ0010030button1" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td>&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="Select" value="読込" pattern="select" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100" height="22" lock="1" attribute="" visible="true"
+  script1="onClick;0;CHK;_KQ0010030form1/START_DATE[neq][and]_KQ0010030form1/END_DATE[neq][and]_KQ0010030form1/END_DATE[lt]_KQ0010030form1/START_DATE@!KQ10318"
+ script2="onClick;1;SUBMIT;_KQ0010030form1/*@KQ0010030Servlet;"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="71"></td>
+    </tr>
+	<tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="51"> 
+      <td width="5" height="51"></td>
+      <td valign="top" width="958"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに中段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" status="" float=""
+ name="KQ0010030form2" width="934" height="27" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150">&nbsp;</td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                  <td width="22" >&nbsp;</td>
+                  <td width="170">&nbsp;</td>
+                  <td width="150"><orflabel name="h_ODR_NO" orteus="true" visible="false"></orflabel></td>
+                  <td width="22">&nbsp;</td>
+                  <td width="88">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3163">保留理由</span></td>
+                  <td><orftextinput name="RESERVE_CAUSE" orteus="true" width="712" editable="true" visible="true" password="false" text="" kind="" maxlength="80" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                </ornoloop>
+              </table>
+              <!-- ここに中段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="51"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="416"> 
+      <td width="5" height="416"></td>
+      <td valign="top" width="958" height="416"> 
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12"> 
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr> 
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05"> 
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="VIEW" status="<%= TypeConverter.sanitizer(aKQ0010030Control.getReadStatusString()) %>" float="" attribute="DGS_SELECTMULTI"
+ name="KQ0010030view1" width="934" height="318" border="1" cellspacing="0" cellpadding="0"
+   script1="onLoad;0;CALL;onDecision@0,1"
+ 	script2="onDecision;0;CHK;?KQ0010030view1/*[eq]NORMAL@*0,*1"
+		script3="child;0;UNMASK;_KQ0010030button2/CheckAll,_KQ0010030button2/CheckClear"
+		script4="child;1;MASK;_KQ0010030button2/CheckAll,_KQ0010030button2/CheckClear"
+ script5="onLoad;1;CALL;onClick@0,1,2"
+	script6="onClick;0;CHK;?KQ0010030view1/?[eq]NOT_SELECTED@*2,*3"
+		script7="child;2;MASK;_KQ0010030button2/ApprAssort,_KQ0010030button2/ReserveAssort,_KQ0010030button2/ReserveDelAssort,_KQ0010030button2/ApprDelAssort"
+ 		script9="child;3;SELCHK;KQ0010030view1:_h_STATUS[eq]1@*4,*6"
+			script10="child;4;UNMASK;_KQ0010030button2/ApprAssort,_KQ0010030button2/ReserveAssort,_KQ0010030button2/ApprDelAssort@*5"
+				script11="child;5;MASK;_KQ0010030button2/ReserveDelAssort"
+			script12="child;6;SELCHK;KQ0010030view1:_h_STATUS[eq]2@*7,*9"
+				script13="child;7;UNMASK;_KQ0010030button2/ReserveDelAssort@*8"
+					script14="child;8;MASK;_KQ0010030button2/ApprAssort,_KQ0010030button2/ReserveAssort,_KQ0010030button2/ApprDelAssort"
+				script15="child;9;MASK;_KQ0010030button2/ApprAssort,_KQ0010030button2/ReserveAssort,_KQ0010030button2/ReserveDelAssort,_KQ0010030button2/ApprDelAssort"
+ 	script16="onClick;1;CHK;_KQ0010030form1/h_APPR_POWER_TYP[eq]0@*16"
+		script17="child;16;MASK;_KQ0010030button2/ApprAssort,_KQ0010030button2/ReserveAssort,_KQ0010030button2/ReserveDelAssort@*17"
+	script18="onClick;2;CHK;?KQ0010030view1/?[eq]NOT_SELECTED@*17,*18"
+				script19="child;17;MASK;_KQ0010030button2/ApprDelAssort"
+				script20="child;18;SELCHK;KQ0010030view1:_l_REQUEST_BY[eq]<%=aKQ0010030Control.getsysUSER_CD()%>@*19,*17"
+					script21="child;19;UNMASK;_KQ0010030button2/ApprDelAssort"
+	script22="onClick;3;CHK;?KQ0010030view1/?[eq]SINGLE@*20"
+		script23="child;20;FSHOW;KQ0010030float1@136"
+	script24="onClick;4;CHK;?KQ0010030view1/?[eq]SINGLE@*21"
+ 		script25="child;21;SUBMIT;ClickDetail=ACT,_KQ0010030view1/+@KQ0010030Servlet"
+	script26="onDecision;1;CHK;?KQ0010030view1/*[eq]ERROR@*22,*23"
+		script27="child;22;MASK;_KQ0010030button1/Select"
+		script28="child;23;UNMASK;_KQ0010030button1/Select"
+ >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+                  <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXEC_TYP">処理区分</span></td>
+                  <td hidden="true">&nbsp;</td>
+				  <td width="80"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5099">承認状態</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5082">依頼日付</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3167">依頼者</span></td>
+				  <td hidden="true">&nbsp;</td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3165">承認備考</span></td>
+                  
+                  
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3163">保留理由</span></td>
+                  <td width="70"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_TYP">注文区分</span></td>
+                  <td hidden="true">&nbsp;</td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ODR_NO">得意先注文番号</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ITEM_CD">得意先品目番号</span></td>
+				  <td width="150"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ITEM_NAME">得意先品目名</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+				  <td width="150"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME">品目名</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_NAME">得意先名</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DESINATED_DLV_DATE">指定納期</span></td>
+                  <td width="100" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_QTY_4">受注数量</span></td>
+                  <td width="60"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_UNIT_1">単位</span></td>
+                  <td width="100" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST">単価</span></td>
+                  <td width="60"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_UNIT">通貨単位</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPCL_PRICE_CO">特値区分</span></td>
+				  <td hidden="true">&nbsp;</td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_CD">納品場所コード</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_NAME">納品場所名</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DEPO_TYP">預託倉庫区分</span></td>
+                  <td hidden="true">&nbsp;</td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_ACPT_DATE">受注日</span></td>
+                  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CD">製番</span></td>
+				  <td width="100" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt3152">手配数量</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_DLV_DATE">製番納期</span></td>
+				  <td width="120"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ALC_GRP_CD">引当グループコード</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SHIP_REMARK">備考</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUS_DLV_KEY_CD">納品キー番号</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUS_DLV_CD">納入番号</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROJECT_CD">案件番号</span></td>
+				  <td width="100" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ESTIMATES_CD">見積番号</span></td>
+				  <td width="100" align="right"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DETAIL_NO">明細番号</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ARRANGE_ITEMS_SPECIES">手配品目種</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt6705">受注担当者コード</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt6706">受注担当部門コード</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ORGN_ODR_NO">元受注番号</span></td>
+				  <td width="100"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt6679">増額受注</span></td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+				  <td hidden="true">&nbsp;</td>
+                </tr>
+                </orloophead><orloop>
+                <tr>
+				  <td><orflabel name="h_STATUS" orteus="true" visible="false"></orflabel></td>
+				  <td><orflabel name="h_APPR_ID" orteus="true" visible="false"></orflabel></td>
+				  <td><orflabel name="h_SCREEN_URL" orteus="true" visible="false"></orflabel></td>
+                  <td><orflabel name="l_PROC_TYP_VALUE" orteus="true" width="80"></orflabel></td>
+                  <td><orflabel name="h_PROC_TYP" orteus="true" width=""></orflabel></td>
+				  <td><orflabel name="l_STATUS_NAME" orteus="true" width=""></orflabel></td>
+				  <td><orflabel name="l_REQUEST_DATE" orteus="true" width="100" kind="OBT_DATE;TYPE_YMD"></orflabel></td>
+				  <td><orflabel name="l_REQUEST_BY_NAME" orteus="true" width="100" ></orflabel></td>
+				  <td><orflabel name="l_REQUEST_BY" orteus="true" width="100" ></orflabel></td>
+				  <td><orflabel name="l_APPR_REMARKS" orteus="true" width="100"></orflabel></td>
+                  <td><orflabel name="l_RESERVE_CAUSE" orteus="true" width="100"></orflabel></td>
+                  <td><orflabel name="l_ODR_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明"   orteus="true"></orflabel></td>
+                  <td><orflabel name="l_ODR_TYP" tablename="T_ODR" columnname="ODR_TYP" dbtype="number" tablejname="受注明細" columnjname="注文区分"   orteus="true"></orflabel></td>
+                  <td><orflabel name="l_CUST_ODR_NO" tablename="T_ODR" columnname="CUST_ODR_NO" dbtype="varchar2" tablejname="受注明細" columnjname="得意先注文番号"   orteus="true"></orflabel></td>
+                  <td><orflabel name="l_CUST_ITEM_CD" tablename="T_ODR_CTL" columnname="CUST_ITEM_CD" dbtype="varchar2" tablejname="受注管理" columnjname="得意先品目番号"   orteus="true"></orflabel></td>
+                  <td><orflabel name="l_CUST_ITEM_NAME" tablename="M_ITEM_SPEC" columnname="CUST_ITEM_NAME" dbtype="varchar2" tablejname="製品" columnjname="得意先品目名"   orteus="true"></orflabel></td>
+				  <td><orflabel name="l_ITEM_CD" tablename="T_ODR_CTL" columnname="ITEM_CD" dbtype="varchar2" tablejname="受注管理" columnjname="品目番号"   orteus="true"></orflabel></td>
+                  <td><orflabel name="l_ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2" tablejname="品目" columnjname="品目名"   orteus="true"></orflabel></td>
+				  <td><orflabel name="l_CUST_CD" tablename="T_ODR_CTL" columnname="CUST_CD" dbtype="varchar2" tablejname="受注管理" columnjname="得意先コード"   orteus="true"></orflabel></td>
+                  <td><orflabel name="l_CUST_ANAME" tablename="M_CUST" columnname="CUST_NAME" dbtype="varchar2" tablejname="得意先" columnjname="得意先略称"   orteus="true"></orflabel></td>
+                  <td><orflabel name="l_DESINATED_DLV_DATE" tablename="T_ODR" columnname="DESINATED_DLV_DATE" dbtype="date" tablejname="受注明細" columnjname="指定納期"   orteus="true" kind="OBT_DATE;TYPE_YMD"></orflabel></td>
+                  <td><orflabel name="l_ODR_QTY" tablename="T_ODR" columnname="ODR_QTY" dbtype="number" tablejname="受注明細" columnjname="受注数量"   orteus="true" kind="OBT_NUMBER_Z;14.1;CEIL;4"></orflabel></td>
+                  <td><orflabel name="l_UNIT_CD" tablename="T_ODR" columnname="UNIT_CD" dbtype="varchar2" tablejname="受注明細" columnjname="単位"   orteus="true"></orflabel></td>
+                  <td><orflabel name="l_ODR_UNIT_PRICE" tablename="T_ODR" columnname="ODR_UNIT_PRICE" dbtype="number" tablejname="受注明細" columnjname="受注単価"   orteus="true" kind="OBT_NUMBER_Z;14.2;CEIL;4"></orflabel></td>
+                  <td><orflabel name="l_CUR_UNIT" tablename="M_CUR" columnname="CUR_UNIT" dbtype="varchar2" tablejname="通貨" columnjname="通貨単位"   orteus="true"></orflabel></td>
+                  <td><orflabel name="l_SPCL_PRICE_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明"   orteus="true"></orflabel></td>
+                  <td><orflabel name="l_SPCL_PRICE_TYP" tablename="T_ODR" columnname="SPCL_PRICE_TYP" dbtype="number" tablejname="受注明細" columnjname="特値区分"   orteus="true"></orflabel></td>
+				  <td><orflabel name="l_DLV_LOC_CD" tablename="T_ODR" columnname="DLV_LOC_CD" dbtype="varchar2" tablejname="受注明細" columnjname="納品場所コード"   orteus="true"></orflabel></td>
+                  <td><orflabel name="l_DLV_LOC_NAME" tablename="M_CUST_BASE" columnname="DLV_LOC_NAME" dbtype="varchar2" tablejname="得意先納品場所" columnjname="納品場所名"   orteus="true"></orflabel></td>
+                  <td><orflabel name="l_DEPO_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明"   orteus="true"></orflabel></td>
+                  <td><orflabel name="l_DEPO_TYP" tablename="T_ODR" columnname="DEPO_TYP" dbtype="number" tablejname="受注明細" columnjname="預託倉庫区分"   orteus="true"></orflabel></td>
+                  <td><orflabel name="l_ODR_ACPT_DATE" tablename="T_ODR" columnname="ODR_ACPT_DATE" dbtype="varchar2" tablejname="" columnjname=""  orteus="true" width="" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="" visible=""
+></orflabel></td>                  
+				  <td><orflabel name="l_JOB_ODR_CD" tablename="T_JOB_ODR" columnname="JOB_ODR_CD" dbtype="varchar2" tablejname="製番計画" columnjname="製番"  orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="l_JOB_ODR_QTY" tablename="T_JOB_ODR" columnname="JOB_ODR_QTY" dbtype="number" tablejname="製番計画" columnjname="製番数"  orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="l_JOB_ODR_DLV_DATE" tablename="T_JOB_ODR" columnname="JOB_ODR_DLV_DATE" dbtype="date" tablejname="" columnjname=""  orteus="true" width="" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel name="l_ALC_GRP_CD" tablename="T_JOB_ODR" columnname="ALC_GRP_CD" dbtype="varchar2" tablejname="製番計画" columnjname="引当グループコード"  orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+				  <td><orflabel  name="l_REMARKS" tablename="T_ODR" columnname="REMARKS" dbtype="varchar2" tablejname="受注明細" columnjname="備考"   orteus="true"></orflabel></td>
+				  <td><orflabel name="l_CUS_DLV_KEY_CD" orteus="true" width="100"></orflabel></td>
+				  <td><orflabel name="l_CUS_DLV_CD" orteus="true" width="100"></orflabel></td>
+				  <td><orflabel name="l_PROJECT_CD" orteus="true" width="100"></orflabel></td>
+				  <td><orflabel name="l_ESTIMATE_NO" orteus="true" width="100"></orflabel></td>
+				  <td><orflabel name="l_DETAL_NO" orteus="true" width="100"></orflabel></td>
+				  <td><orflabel name="l_ESTIMATE_TYPE" orteus="true" width="100"></orflabel></td>
+				  <td><orflabel name="l_OWN_PERSON_CD" orteus="true" width="100"></orflabel></td>
+				  <td><orflabel name="l_OWN_ORG_CD" orteus="true" width="100"></orflabel></td>
+				  <td><orflabel name="l_ORGN_ODR_NO" orteus="true" width="100"></orflabel></td>
+				  <td><orflabel name="l_ADD_ODR_FLG" orteus="true" width="100"></orflabel></td>
+				  <td><orflabel name="h_ODR_NO" orteus="true" visible="false"></orflabel></td>
+				  <td><orflabel name="h_MODIFY_COUNT" orteus="true" visible="false"></orflabel></td>
+				  <td><orflabel name="l_h_ESTIMATE_TYPE" orteus="true" visible="false"></orflabel></td>
+                </tr>
+                </orloop>
+              </table>
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32"> 
+            <td width="12" class="frame07" height="32"></td>
+            <td width="630" class="frame08" height="32"><table orftype="DataGrid" mode="BUTTON" status="" float=""
+ name="KQ0010030button2" width="630" height="22" border="1" cellspacing="0" cellpadding="0">
+              <orloophead>
+              <tr bgcolor="#ccff99">
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+                <td width="105">&nbsp;</td>
+              </tr>
+              </orloophead><ornoloop>
+              <tr>
+                <td><orfbutton name="ApprAssort" value="選択承認" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnApprAssort" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_KQ0010030form1/*,_KQ0010030view1/+@KQ0010030Servlet,,$AZ00038"
+></orfbutton></td>
+                  <td><orfbutton name="ReserveAssort" value="選択保留" pattern="update" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReserveAssort" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_KQ0010030form1/*,_KQ0010030form2/*,_KQ0010030view1/+@KQ0010030Servlet,,$AZ00039"
+></orfbutton></td>
+                  <td><orfbutton name="ReserveDelAssort" value="選択保留解除" pattern="update" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnReserveDelAssort" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_KQ0010030form1/*,_KQ0010030view1/+@KQ0010030Servlet,,$AZ00040"
+></orfbutton></td>
+                  <td><orfbutton name="ApprDelAssort" value="選択依頼削除" pattern="delete" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnApprDelAssort" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;SUBMIT;_KQ0010030form1/*,_KQ0010030view1/+@KQ0010030Servlet,,$AZ00099"
+></orfbutton></td>
+				  <td><orfbutton name="CheckAll" value="全選択" pattern="none" revokeCtrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCheckAll" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;DGSALL;KQ0010030view1"
+></orfbutton></td>
+                <td><orfbutton name="CheckClear" value="全解除" pattern="none" revokectrl="disabled" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCheckClear" width="100" height="22" lock="1" attribute="" visible="true"
+ script1="onClick;0;DGSCANCEL;KQ0010030view1"
+></orfbutton></td>
+              </tr>
+              </ornoloop>
+            </table></td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="244" class="frame10" height="32"></td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5" height="416"></td>
+    </tr>
+    <tr height="5"> 
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42"> 
+      <td colspan="3" width="968" height="42" class="under"> 
+        <table width="968" border="0">
+          <tr> 
+            <td align="left" width="748"></td>
+            <td align="right" width="210"> 
+              <table orftype="DataGrid" mode="BUTTON" name="KQ0010030button0" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width=105></td>
+                  <td width=105></td>
+                </tr>
+                </orloophead><ornoloop> 
+                <tr> 
+                  <td><orfbutton name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100" height="" lock="0" attribute=""
+ script1="onClick;0;SUBMIT;@KQ0010030Servlet,,$ZZ07008"
+></orfbutton></td>
+                  <td><orfbutton name="Close" value="閉じる" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100" height="" lock="0" attribute=""
+ script1="onClick;0;CLOSE"
+></orfbutton></td>
+                </tr>
+                </ornoloop> 
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <table orftype="DataGrid" name="KQ0010030detail1" mode="DETAIL" status="" float="KQ0010030float1"
+ width="410" height="200" border="1" cellspacing="1" cellpadding="1">
+    <orloophead>
+    <tr bgcolor="#ccff99">
+      <td width="130" align="right">&nbsp;</td>
+      <td width="100"><orfdata excell="true"></orfdata></td>
+      <td width="100"><orfdata excell="true"></orfdata></td>
+      <td width="60">&nbsp;</td>
+    </tr>
+    </orloophead> <ornoloop>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5084">項目名</span></td>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5085">変更前</span></td>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5086">変更後</span></td>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt5087">変更有無</span></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACPT_ODR_CD">受注番号</span></td>
+      <td><orflabel name="d_OLD_ODR_NO" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+      <td><orflabel name="d_NEW_ODR_NO" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+      <td><orflabel name="d_ODR_NO_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_TYP">注文区分</span></td>
+      <td><orflabel name="d_OLD_ODR_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+      <td><orflabel name="d_NEW_ODR_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+      <td><orflabel name="d_ODR_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ODR_NO">得意先注文番号</span></td>
+      <td><orflabel name="d_OLD_CUST_ODR_NO" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+      <td><orflabel name="d_NEW_CUST_ODR_NO" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+      <td><orflabel name="d_CUST_ODR_NO_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_CD">得意先コード</span></td>
+      <td><orflabel name="d_OLD_CUST_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+      <td><orflabel name="d_NEW_CUST_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+      <td><orflabel name="d_CUST_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUST_ITEM_CD">得意先品目番号</span></td>
+      <td><orflabel name="d_OLD_CUST_ITEM_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="true" visible="true"
+></orflabel></td>
+      <td><orflabel name="d_NEW_CUST_ITEM_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="true" visible="true"
+></orflabel></td>
+      <td><orflabel name="d_CUST_ITEM_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+    </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_LOC_CD">納品場所コード</span></td>
+      <td><orflabel name="d_OLD_DLV_LOC_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+      <td><orflabel name="d_NEW_DLV_LOC_CD" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+      <td><orflabel name="d_DLV_LOC_CD_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+    </tr>
+    <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_QTY_4">受注数量</span></td>
+		<td><orflabel name="d_OLD_ODR_QTY" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.1;CEIL;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ODR_QTY" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.1;CEIL;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ODR_QTY_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DESINATED_DLV_DATE">指定納期</span></td>
+		<td><orflabel name="d_OLD_DESINATED_DLV_DATE" orteus="true" width="" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_DESINATED_DLV_DATE" orteus="true" width="" height="" text="" kind="OBT_DATE;TYPE_YMD" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_DESINATED_DLV_DATE_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPCL_PRICE_CO">特値区分</span></td>
+		<td><orflabel name="d_OLD_SPCL_PRICE_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_SPCL_PRICE_TYP" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_SPCL_PRICE_TYP_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+	  <tr>
+		<td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST">単価</span></td>
+		<td><orflabel name="d_OLD_ODR_UNIT_PRICE" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;CEIL;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_NEW_ODR_UNIT_PRICE" orteus="true" width="" height="" text="" kind="OBT_NUMBER_Z;14.2;CEIL;4" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+		<td><orflabel name="d_ODR_UNIT_PRICE_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+	  </tr>
+    <tr>
+      <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SHIP_REMARK">備考</span></td>
+      <td><orflabel name="d_OLD_REMARKS" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+      <td><orflabel name="d_NEW_REMARKS" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+      <td><orflabel name="d_REMARKS_CHANGE" orteus="true" width="" height="" text="" kind="" maxlength="" attribute="" password="false" visible="true"
+></orflabel></td>
+    </tr>
+    </ornoloop>
+  </table>
+  <%
+MessageStruct msgStruct = aKQ0010030Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

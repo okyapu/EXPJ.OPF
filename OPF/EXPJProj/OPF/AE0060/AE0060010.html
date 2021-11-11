@@ -1,0 +1,747 @@
+<%-- ********************************************************
+Copyright (c) 2003-2004 NEC Corporation
+Copyright (c) 2003-2004 NEC Informatec Systems,Ltd.
+
+受入実績入力
+$Source: D:/EXPJCVS/EXPJPROJ/expjprsaUV2/EXPJProj/OPF/AE0060/AE0060010.html,v $
+$Author: geng-jia $
+$Revision: 1.28 $ $Date: 2017/02/20 09:59:37 $
+********************************************************* --%>
+<html>
+<head>
+<title>受入実績入力</title>
+<%@include file="common/expj_v5.jsp" %>
+<%ScreenMoveUtil su = new ScreenMoveUtil("AE0200010Servlet", so);%>
+</head>
+<body flash="true" name="AE0060010" version="AE0060010 $Revision: 1.28 $" onLoad="onInitializeOnLoad()" bgcolor="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" widthResize="true" heightResize="2">
+
+  <table width="968" bgcolor="white" class="back" height="590" border="0" cellspacing="0" cellpadding="0">
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr>
+      <td width="5"></td>
+      <td valign="top" width="958" height="94">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <!-- ここに上段検索条件用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" status="<%= TypeConverter.sanitizer(aAE0060010Control.getReadStatusString()) %>" name="AE0060010form1" width="934" height="50" border="1" cellspacing="0" cellpadding="0"
+                 script1="onLoad;0;CALL;onDecision@0,1,2,3,4"
+                 script2="onDecision;0;CHKRQ;A@*0,*1"
+                 script3="child;0;UNMASK;_AE0060010button1/Select"
+                 script4="child;1;MASK;_AE0060010button1/Select"
+                 script5="onDecision;1;CHK;_AE0060010detail1/PUCH_ODR_STS_TYP[neq]9[and]_PUCH_ODR_CD[eq]_h_PUCH_ODR_CD[and]?AE0060010form1/*[eq]NORMAL@*2,*4"
+                 script6="child;2;CHKRQ;A,B@*3,*4"
+                 script7="child;3;UNMASK;_AE0060010button2/Insert"
+                 script8="child;4;MASK;_AE0060010button2/Insert"
+                 script9="onDecision;2;CHK;_AE0060010detail1/PUCH_ODR_STS_TYP[eq]9[and]_PUCH_ODR_CD[eq]_h_PUCH_ODR_CD[and]?AE0060010form1/*[eq]NORMAL[and]_AE0060010form2/h_ODR_CANCEL_SLIP_ISS_FLG[numeq]0@*5,*6"
+                 script10="child;5;UNMASK;_AE0060010button0/CancelComplete"
+                 script11="child;6;MASK;_AE0060010button0/CancelComplete"
+                 script12="onDecision;3;CHK;?AE0060010form1/*[eq]NORMAL[and]_AE0060010form2/h_ODR_CANCEL_SLIP_ISS_FLG[numeq]0[and]_AE0060010form1/ACPT_NO[numeq]1@*7,*8"
+                 script13="child;7;UNMASK;_AE0060010form2/c_CANCEL"
+                 script14="child;8;MASK;_AE0060010form2/c_CANCEL"
+				 script15="onLoad;2;CALL;child@9"
+				 script16="child;9;CHK;_AE0060010form2/c_CANCEL[eq]true@*10,*13"
+				 script17="child;10;UNMASK;_AE0060010form2/ODR_CANCEL_CAUSE_CD,_AE0060010form2/PeekerOdrCancelCauseCd@*11"
+				 script18="child;11;MASK;_AE0060010form2/c_COMPLETE,_AE0060010form2/ACPT_QTY,_AE0060010form2/DISC_AMOUNT,_AE0060010form2/NET_AMOUNT,_AE0060010form2/LOT_NO,_AE0060010form2/LotInsert,_AE0060010form2/PeekerLotNo@*12"
+				 script19="child;12;SET;_AE0060010form2/c_COMPLETE=true,_AE0060010form2/ACPT_QTY=0,_AE0060010/LOT_NO="
+				 script20="child;13;UNMASK;_AE0060010form2/c_COMPLETE,_AE0060010form2/ACPT_QTY,_AE0060010form2/DISC_AMOUNT,_AE0060010form2/NET_AMOUNT,_AE0060010form2/LOT_NO,_AE0060010form2/LotInsert,_AE0060010form2/PeekerLotNo@*14"
+				 script21="child;14;MASK;_AE0060010form2/ODR_CANCEL_CAUSE_CD,_AE0060010form2/PeekerOdrCancelCauseCd@*15"
+				 script22="child;15;SET;_AE0060010form2/ODR_CANCEL_CAUSE_CD="
+                 script23="onDecision;4;CHK;?AE0060010form1/*[eq]NORMAL[and]?AE0060010form1/PUCH_ODR_CD[eq]SAME[and]_AE0060010form2/h_ODR_CANCEL_SLIP_ISS_FLG[numeq]1@*16,*17"
+                 script24="child;16;UNMASK;_AE0060010button0/CancelOdrCancel"
+                 script25="child;17;MASK;_AE0060010button0/CancelOdrCancel"
+				 script26="onLoad;3;CALL;child@18"
+				 script27="child;18;CHK;_AE0060010form1/h_LOTCTRL[neq]true@*19"
+				 script28="child;19;MASK;_AE0060010form2/LOT_NO,_AE0060010form2/LotInsert,_AE0060010form2/PeekerLotNo@*20"
+				 script29="child;20;SET;_AE0060010form2/LOT_NO="
+              >
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PUCH_ODR_CD">発注番号</span></td>
+                  <td><orftextinput  name="PUCH_ODR_CD" tablename="T_ACPT_RSLT" columnname="PUCH_ODR_CD" dbtype="varchar2" tablejname="受入実績" columnjname="発注番号"   orteus="true" width="260" maxlength="25" required="A"></orftextinput></td>
+                  <td><orftextinput  name="h_PUCH_ODR_CD" tablename="T_ACPT_RSLT" columnname="PUCH_ODR_CD" dbtype="varchar2" tablejname="受入実績" columnjname="発注番号"   orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerPuchOdrCd" value="" pattern="none" orteus="false" width="22"   attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AE0060010form1/PUCH_ODR_CD@<%=contextNo%>"
+                     sqlname="PUCH_ODR_CD_11" sqlparam_1="<%=aAE0060010Control.getsysPLANT_CD()%>" sqlparam_2="_PUCH_ODR_CD"
+                  ></orfpeeker></td>
+                  <td><orftextinput name="h_LOTCTRL" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACPT_NO">受入回数</span></td>
+                  <td><orftextinput  name="ACPT_NO" tablename="T_ACPT_RSLT" columnname="ACPT_NO" dbtype="number" tablejname="受入実績" columnjname="受入回数"   orteus="true" width="150" editable="false" kind="OBT_INTEGER_P;6"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="THIS_MONTH" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="INSTALL_FLG" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="PUCH_ODR_MODIFY_COUNT" tablename="T_RLSD_PUCH_ODR" columnname="MODIFY_COUNT" dbtype="number" tablejname="発注残" columnjname="更新数"   orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                </ornoloop>
+              </table>
+              <!-- ここに上段検索条件用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32">
+            <td width="12" class="frame07" height="32"></td>
+            <td width="664" class="frame08" height="32"> </td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="210" class="frame10" height="32">
+              <table orftype="DataGrid" mode="BUTTON" name="AE0060010button1" width="210" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton  name="Detail" value="詳細" pattern="none" revokeCtrl="disabled"  orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnDetail" width="100"
+                     script1="onClick;0;FSHOW;AE0060010float1"
+                  ></orfbutton></td>
+                  <td><orfbutton  name="Select" value="読込" pattern="select" revokeCtrl="disabled"   orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelect" width="100"
+                     script1="onClick;0;CHK;_AE0060010form1/PUCH_ODR_CD[eq]@!ZZ01104"
+                     script2="onClick;1;SUBMIT;_AE0060010form1/*@AE0060010Servlet"
+                     lock="0"
+                  ></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr>
+      <td width="5"></td>
+      <td valign="top" width="958" height="439">
+        <table width="958" border="0" cellspacing="0" cellpadding="0">
+          <tr height="12">
+            <td width="12" height="12" class="frame01"></td>
+            <td colspan="3" height="12" class="frame02"></td>
+            <td width="12" height="12" class="frame03"></td>
+          </tr>
+          <tr>
+            <td width="12" class="frame04"></td>
+            <td colspan="3" class="frame05">
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↓ -->
+              <table orftype="DataGrid" mode="FORM" name="AE0060010form2" width="934" height="395" border="1" cellspacing="0" cellpadding="0">
+                <orloophead> 
+                <tr bgcolor="#ccff99"> 
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="170" align="right">&nbsp;</td>
+                  <td width="150" align="left">&nbsp;</td>
+                  <td width="22" align="left">&nbsp;</td>
+                  <td width="88" align="left">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop> 
+				<tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+                  <td><orftextinput name="ITEM_CD" tablename="T_RLSD_PUCH_ODR" columnname="ITEM_CD" dbtype="varchar2" tablejname="発注残" columnjname="品目番号" orteus="true" width="260" editable="false" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td><orftextinput name="h_LOT_CTRL_FLG" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="ITEM_NAME" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2" tablejname="品目" columnjname="品目名"  orteus="true" width="320" editable="false" visible="true" password="false" text="" kind="" maxlength="40" required="" attribute=""
+></orftextinput></td>
+                  <td><orftextinput name="h_FINAL_PROC_CD" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td><orftextinput name="h_LOT_NUMBERING_TYP" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td><orftextinput name="h_WORK_ODR_CD" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACPT_QTY_2">受入数</span></td>
+                  <td><orftextinput name="ACPT_QTY" tablename="T_ACPT_RSLT" columnname="ACPT_QTY" dbtype="number" tablejname="受入実績" columnjname="受入数"   orteus="true" width="150"
+                     kind="<%=Kind.convertNumeric(aAE0060010Struct.getUNIT_QTY_TYP(), Kind.Z, 14, 1, Kind.FLOOR, 4)%>"
+                     script1="onDecision;0;SET;_PUCH_ODR_AMOUNT=[{_UNIT_COST}*{_ACPT_QTY}]"
+                     script2="onDecision;1;SET;_DISC_AMOUNT=0"
+                     script3="onDecision;2;SET;_NET_AMOUNT=[{_PUCH_ODR_AMOUNT}-{_DISC_AMOUNT}]"
+                     script4="onDecision;3;SET;_AMOUNT_INCLUDE_TAX=[{_NET_AMOUNT}+{_TAX_AMOUNT_1}+{_TAX_AMOUNT_2}+{_TAX_AMOUNT_3}]"
+                     script5="onDecision;4;SET;_HOME_CUR_AMOUNT=[{_AMOUNT_INCLUDE_TAX}*{_EXCH_RATE}]"
+                     script6="onDecision;5;CHK;?THIS[eq]DIFFER@*0"
+                     script7="child;0;SET;_SelectUnitCostFlag=false"
+                  ></orftextinput></td>
+                  <td><orftextinput  name="d2_STOCK_UNIT" orteus="false" width="110" editable="false" text="<%= TypeConverter.sanitizer(aAE0060010Struct.getSTOCK_UNIT()) %>"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="h_ACPT_QTY" tablename="T_ACPT_RSLT" columnname="ACPT_QTY" dbtype="number" tablejname="受入実績" columnjname="受入数" orteus="true" visible="false"></orftextinput></td>
+                  <td><orfcheckbox  name="c_COMPLETE" orteus="true" value="true" text="全受入完了" mlang="true" mlkind="common" mlname="Expj.ACPT_CMPLT_DATE_1"></orfcheckbox></td>
+                  <td><orfcheckbox  name="c_CANCEL" orteus="true" value="true" text="注文取消" mlang="true" mlkind="common" mlname="Expj.Cmt0075" width="190"
+				      script1="onClick;0;CHK;_AE0060010form2/c_CANCEL[eq]true@*0,*6"
+				      script2="child;0;UNMASK;_ODR_CANCEL_CAUSE_CD,_PeekerOdrCancelCauseCd@*1"
+				      script3="child;1;MASK;_c_COMPLETE,_ACPT_QTY,_DISC_AMOUNT,_NET_AMOUNT,_LOT_NO,_PeekerLotNo,_LotInsert@*2"
+				      script4="child;2;SET;_c_COMPLETE=true,_h_ACPT_QTY=_ACPT_QTY,_ACPT_QTY=0,_h_LOT_NO=_LOT_NO,_LOT_NO="
+				      script5="child;3;UNMASK;_c_COMPLETE,_ACPT_QTY,_DISC_AMOUNT,_NET_AMOUNT,_LOT_NO,_PeekerLotNo,_LotInsert@*4"
+				      script6="child;4;MASK;_ODR_CANCEL_CAUSE_CD,_PeekerOdrCancelCauseCd@*5"
+				      script7="child;5;SET;_c_COMPLETE=false,_ACPT_QTY=_h_ACPT_QTY,_ODR_CANCEL_CAUSE_CD=,_LOT_NO=_h_LOT_NO,"
+				      script8="child;6;CHK;_AE0060010form2/h_LOT_CTRL_FLG[eq]1@*3,*7"
+  				      script9="child;7;UNMASK;_c_COMPLETE,_ACPT_QTY,_DISC_AMOUNT,_NET_AMOUNT@*4"
+					  ></orfcheckbox></td>
+                  <td><orftextinput  name="BUSINESS_OPR_DATE" tablename="SYS_DATE_CTRL" columnname="BUSINESS_OPR_DATE" dbtype="date" tablejname="日付制御" columnjname="業務運用日"   orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr> 
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACPT_DATE">受入日</span></td>
+                  <td><orftextinput  name="ACPT_DATE" tablename="T_ACPT_RSLT" columnname="ACPT_DATE" dbtype="date" tablejname="受入実績" columnjname="受入日"   orteus="true" width="150" kind="OBT_DATE;TYPE_YMD" required="B"
+                     script1="onDecision;0;CHK;?THIS[eq]DIFFER@*0"
+                     script2="child;0;SET;_SelectUnitCostFlag=false"
+                  ></orftextinput></td>
+                  <td><orfcalendar  name="CalendarAcptDate" value="" pattern="none" orteus="false" width="22" attribute="BTS_CALENDAR" script1="onClick;0;CALENDAR;_AE0060010form2/ACPT_DATE"></orfcalendar></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_DATE_FLG"dbtype="number"  orteus="true" width="" editable="false" visible="false" password="false" ></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="h_ODR_CANCEL_SLIP_ISS_FLG" tablename="T_ACPT_RSLT" columnname="ODR_CANCEL_SLIP_ISS_FLG" dbtype="number" tablejname="受入実績" columnjname="取消伝票発行フラグ" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr> 
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.WH_CD_2">受入場所</span></td>
+                  <td><orftextinput  name="WH_CD" tablename="T_ACPT_RSLT" columnname="WH_CD" dbtype="varchar2" tablejname="受入実績" columnjname="受入場所"   orteus="true" width="260" maxlength="25" required="B"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerWhCd" value="" pattern="none" orteus="false" width="22" attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AE0060010form2/WH_CD@<%=contextNo%>"
+                     sqlname="WH_CD_10"   sqlparam_1="<%=aAE0060010Control.getsysPLANT_CD()%>" sqlparam_2="_WH_CD" 
+                  ></orfpeeker></td>
+                  <td><orftextinput  name="WH_NAME" tablename="M_WH" columnname="WH_NAME" dbtype="varchar2" tablejname="保管区" columnjname="保管区名"   orteus="true" width="320" editable="false"></orftextinput></td>
+                  <td><orftextinput name="h_PUCH_ODR_CD_1" orteus="true" width="" editable="false" visible="false" password="false" text="" kind="" maxlength="" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INSPC_WH_CD">検査待ち保管区</span></td>
+                  <td><orftextinput name="INSPC_WH_CD" tablename="M_WH" columnname="WH_CD" dbtype="varchar2" tablejname="保管区" columnjname="保管区番号" orteus="true" width="260" editable="false" visible="true" password="false" text="" kind="" maxlength="25" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput name="INSPC_WH_NAME" tablename="M_WH" columnname="WH_NAME" dbtype="varchar2" tablejname="保管区" columnjname="保管区名"  orteus="true" width="320" editable="false" visible="true" password="false" text="" kind="" maxlength="40" required="" attribute=""
+></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CUR_CD_1">取引通貨コード</span></td>
+                  <td><orftextinput  name="CUR_CD" tablename="M_CUR" columnname="CUR_CD" dbtype="varchar2" tablejname="通貨" columnjname="通貨コード"   orteus="true" width="260" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="CUR_NAME" tablename="M_CUR" columnname="CUR_NAME" dbtype="varchar2" tablejname="通貨" columnjname="通貨名"   orteus="true" width="320" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.STOCK_LOT_CD">在庫ロット番号</span></td>
+                  <td><orftextinput  name="LOT_NO" tablename="T_ACPT_RSLT" columnname="VEND_LOT_NO" dbtype="varchar2" tablejname="受入実績" columnjname="メーカロット番号"   orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td><orftextinput name="h_LOT_NO" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker name="PeekerLotNo" value="" pattern="none" revokeCtrl="none" orteus="false" width="22" height="" lock="1" attribute="BTS_PEEKER" visible="" sqlname="LOT_NO_08" sqlparam_1="_AE0060010form2/LOT_NO" sqlparam_2="_AE0060010form2/ITEM_CD"
+ script1="onClick;0;PEEKER;_AE0060010form2/LOT_NO:@<%=contextNo%>"
+></orfpeeker></td>
+                  <td><orfbutton name="LotInsert" value="ロット管理" pattern="none" revokeCtrl="disabled"  orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnLotInsert" width="100" height="22" lock="0" attribute="" visible="true"
+ script1="onClick;0;CHK;?AE0060010form1/*[neq]NORMAL@!ZZ01114"
+ script2="onClick;1;CHK;_AE0060010form2/h_ODR_CANCEL_SLIP_ISS_FLG[numeq]1[or]_AE0060010form2/c_CANCEL[eq]true@!AE20614"
+ script3="onClick;2;CHK;_AE0060010form2/h_LOT_CTRL_FLG[eq]1@*0,!AE20601"
+ script4="onClick;3;CHK;_AE0060010form2/ACPT_QTY[numeq]0@!AE20617"
+ script5="onClick;4;SET;_AE0060010form2/param1=AE0060010form2/ITEM_CD,_AE0060010form2/param2=AE0060010form2/LOT_NO,_AE0060010form2/param3=AE0060010form2/ACPT_DATE@*3"
+ script6="child;0;CHK;_AE0060010detail1/NON_NO_ITEM_FLG[neq]1@*1,!AE20608"
+ script7="child;1;CHK;_AE0060010form2/h_FINAL_PROC_CD[eq]0@!AE20602,*2"
+ script8="child;2;CHK;_AE0060010form2/h_LOT_NUMBERING_TYP[neq]0@!AE00165"
+ script9="child;3;SCRMV;_AE0060010form2/ITEM_CD,_AE0060010form2/ACPT_DATE,_AE0060010form2/LOT_NO,_AE0060010form2/param1,_AE0060010form2/param2,_AE0060010form2/param3@AE0200010Servlet,<%=contextNo%>,<%=su.getScreenName()%>,<%=su.getScreenID()%>"
+></orfbutton></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_LOT_NO">メーカロット番号</span></td>
+                  <td><orftextinput  name="VEND_LOT_NO" tablename="T_ACPT_RSLT" columnname="VEND_LOT_NO" dbtype="varchar2" tablejname="受入実績" columnjname="メーカロット番号"   orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST_TYP">単価区分</span></td>
+                  <td><orfcombobox  name="UNIT_COST_TYP" tablename="T_ACPT_RSLT" columnname="UNIT_COST_TYP" dbtype="number" tablejname="受入実績" columnjname="単価区分"   orteus="true" width="260"></orfcombobox></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfbutton  name="SelectUnitCost" value="単価読込" pattern="select" revokeCtrl="disabled"  orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnSelectUnitCost" width="100"
+                     script1="onClick;0;CHK;?AE0060010form1/*[neq]NORMAL@!ZZ01114"
+                     script2="onClick;1;CHK;_AE0060010detail1/PUCH_ODR_STS_TYP[eq]9[and]_AE0060010form2/h_ODR_CANCEL_SLIP_ISS_FLG[eq]0@!AE05005"
+                     script3="onClick;2;CHK;_AE0060010form2/h_ODR_CANCEL_SLIP_ISS_FLG[numneq]0@!AE00086"
+                     script4="onClick;3;CHK;_AE0060010detail1/UNIT_QTY_TYP[eq]1@*0,*1"
+                     script5="child;0;CHK;_AE0060010form2/ACPT_QTY[lt]0@#AE05019"
+                     script6="child;1;CHK;_AE0060010form2/ACPT_QTY[lt]0@#AE05018"
+                     script7="onClick;4;CHK;_ACPT_DATE[eq]@#AE20019"
+                     script8="onClick;5;CHK;_ACPT_DATE[neq][and]_ACPT_DATE[gt]_BUSINESS_OPR_DATE@#AE33111"
+                     script9="onClick;6;CHK;_AE0060010form2/h_DATE_FLG[eq]0@*2,*3"
+                     script10="onClick;7;SUBMIT;_AE0060010form1/*,_AE0060010form2/*,_AE0060010detail1/*@AE0060010Servlet"
+					 script11="child;2;CHK;_AE0060010detail1/PUCH_ODR_SLIP_ISS_DATE[gt]_ACPT_DATE@#AE05006"
+					 script12="child;3;CHK;_AE0060010detail1/PUCH_ODR_SLIP_ISS_DATE[gt]_ACPT_DATE@#AE05078"
+                     lock="0"
+                  ></orfbutton></td>
+                  <td><orftextinput  name="SelectUnitCostFlag" orteus="true" visible="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_COST">単価</span></td>
+                  <td><orftextinput  name="UNIT_COST" tablename="T_ACPT_RSLT" columnname="UNIT_COST" dbtype="number" tablejname="受入実績" columnjname="単価"   orteus="true" width="150" kind="OBT_NUMBER_Z;14.2;FLOOR;4"
+                     script1="onDecision;0;SET;_PUCH_ODR_AMOUNT=[{_UNIT_COST}*{_ACPT_QTY}]"
+                     script2="onDecision;1;SET;_DISC_AMOUNT=0"
+                     script3="onDecision;2;SET;_NET_AMOUNT=[{_PUCH_ODR_AMOUNT}-{_DISC_AMOUNT}]"
+                     script4="onDecision;3;SET;_AMOUNT_INCLUDE_TAX=[{_NET_AMOUNT}+{_TAX_AMOUNT_1}+{_TAX_AMOUNT_2}+{_TAX_AMOUNT_3}]"
+                     script5="onDecision;4;SET;_HOME_CUR_AMOUNT=[{_AMOUNT_INCLUDE_TAX}*{_EXCH_RATE}]"
+                  ></orftextinput></td>
+                  <td><orftextinput  name="VEND_CUR_UNIT" tablename="M_CUR" columnname="CUR_UNIT" dbtype="varchar2" tablejname="通貨" columnjname="通貨単位"   orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROCESSING_COST">加工費</span></td>
+                  <td><orftextinput  name="PROCESSING_COST" tablename="T_ACPT_RSLT" columnname="PROCESSING_COST" dbtype="number" tablejname="受入実績" columnjname="加工費"   orteus="true" width="150" kind="OBT_NUMBER_Z;14.2;FLOOR;4"></orftextinput></td>
+                  <td><orftextinput  name="d1_VEND_CUR_UNIT" orteus="false" width="110" editable="false" text="<%= TypeConverter.sanitizer(aAE0060010Struct.getVEND_CUR_UNIT()) %>"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0707">消費税</span></td>
+                  <td><orftextinput  name="TAX_AMOUNT_1" tablename="T_ACPT_RSLT" columnname="TAX_AMOUNT_1" dbtype="number" tablejname="受入実績" columnjname="税額1"   orteus="true" width="150" editable="false"
+                     kind="<%=Kind.convertNumeric(Kind.NUMBER, Kind.Z, 14, 2, aAE0060010Struct.getTAX_ROUND_TYP(), aAE0060010Struct.getVEND_DECIMAL_FIG())%>"
+                  ></orftextinput></td>
+                  <td><orftextinput  name="d7_VEND_CUR_UNIT" orteus="false" width="110" editable="false" text="<%= TypeConverter.sanitizer(aAE0060010Struct.getVEND_CUR_UNIT()) %>"></orftextinput></td>
+                  <td><orftextinput  name="TAX_RATE_1" tablename="T_ACPT_RSLT" columnname="TAX_RATE_1" dbtype="number" tablejname="受入実績" columnjname="税率1"   orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.MATERIAL_COST">材料費</span></td>
+                  <td><orftextinput  name="MATERIAL_COST" tablename="T_ACPT_RSLT" columnname="MATERIAL_COST" dbtype="number" tablejname="受入実績" columnjname="材料費"   orteus="true" width="150" kind="OBT_NUMBER_Z;14.2;FLOOR;4"></orftextinput></td>
+                  <td><orftextinput  name="d2_VEND_CUR_UNIT" orteus="false" width="110" editable="false" text="<%= TypeConverter.sanitizer(aAE0060010Struct.getVEND_CUR_UNIT()) %>"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0708">取引税</span></td>
+                  <td><orftextinput  name="TAX_AMOUNT_2" tablename="T_ACPT_RSLT" columnname="TAX_AMOUNT_2" dbtype="number" tablejname="受入実績" columnjname="税額2"   orteus="true" width="150" editable="false"
+                     kind="<%=Kind.convertNumeric(Kind.NUMBER, Kind.Z, 14, 2, aAE0060010Struct.getTAX_ROUND_TYP(), aAE0060010Struct.getVEND_DECIMAL_FIG())%>"
+                  ></orftextinput></td>
+                  <td><orftextinput  name="d8_VEND_CUR_UNIT" orteus="false" width="110" editable="false" text="<%= TypeConverter.sanitizer(aAE0060010Struct.getVEND_CUR_UNIT()) %>"></orftextinput></td>
+                  <td><orftextinput  name="TAX_RATE_2" tablename="T_ACPT_RSLT" columnname="TAX_RATE_2" dbtype="number" tablejname="受入実績" columnjname="税率2"   orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.OTHER_OVERHEADS">その他経費</span></td>
+                  <td><orftextinput  name="OTHER_OVERHEADS" tablename="T_ACPT_RSLT" columnname="OTHER_OVERHEADS" dbtype="number" tablejname="受入実績" columnjname="その他経費"   orteus="true" width="150" kind="OBT_NUMBER_Z;14.2;FLOOR;4"></orftextinput></td>
+                  <td><orftextinput  name="d3_VEND_CUR_UNIT" orteus="false" width="110" editable="false" text="<%= TypeConverter.sanitizer(aAE0060010Struct.getVEND_CUR_UNIT()) %>"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.Cmt0709">その他税</span></td>
+                  <td><orftextinput  name="TAX_AMOUNT_3" tablename="T_ACPT_RSLT" columnname="TAX_AMOUNT_3" dbtype="number" tablejname="受入実績" columnjname="税額3"   orteus="true" width="150" editable="false"
+                     kind="<%=Kind.convertNumeric(Kind.NUMBER, Kind.Z, 14, 2, aAE0060010Struct.getTAX_ROUND_TYP(), aAE0060010Struct.getVEND_DECIMAL_FIG())%>"
+                  ></orftextinput></td>
+                  <td><orftextinput  name="d9_VEND_CUR_UNIT" orteus="false" width="110" editable="false" text="<%= TypeConverter.sanitizer(aAE0060010Struct.getVEND_CUR_UNIT()) %>"></orftextinput></td>
+                  <td><orftextinput  name="TAX_RATE_3" tablename="T_ACPT_RSLT" columnname="TAX_RATE_3" dbtype="number" tablejname="受入実績" columnjname="税率3"   orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PUCH_ODR_AMOUNT_1">受入金額</span></td>
+                  <td><orftextinput  name="PUCH_ODR_AMOUNT" tablename="T_ACPT_RSLT" columnname="PUCH_ODR_AMOUNT" dbtype="number" tablejname="受入実績" columnjname="受入金額"   orteus="true" width="150" editable="false"
+                     kind="<%=Kind.convertNumeric(Kind.NUMBER, Kind.Z, 14, 2, aAE0060010Struct.getROUND_TYP(), aAE0060010Struct.getVEND_DECIMAL_FIG())%>"
+                  ></orftextinput></td>
+                  <td><orftextinput  name="d4_VEND_CUR_UNIT" orteus="false" width="110" editable="false" text="<%= TypeConverter.sanitizer(aAE0060010Struct.getVEND_CUR_UNIT()) %>"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.AMOUNT_INCLUDE_TAX">税込金額</span></td>
+                  <td><orftextinput  name="AMOUNT_INCLUDE_TAX" tablename="T_ACPT_RSLT" columnname="AMOUNT_INCLUDE_TAX" dbtype="number" tablejname="受入実績" columnjname="税込金額"   orteus="true" width="150" editable="false"
+                     kind="<%=Kind.convertNumeric(Kind.NUMBER, Kind.Z, 14, 2, aAE0060010Struct.getROUND_TYP(), aAE0060010Struct.getVEND_DECIMAL_FIG())%>"
+                  ></orftextinput></td>
+                  <td><orftextinput  name="d10_VEND_CUR_UNIT" orteus="false" width="110" editable="false" text="<%= TypeConverter.sanitizer(aAE0060010Struct.getVEND_CUR_UNIT()) %>"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DISC_AMOUNT">値引金額</span></td>
+                  <td><orftextinput  name="DISC_AMOUNT" tablename="T_ACPT_RSLT" columnname="DISC_AMOUNT" dbtype="number" tablejname="受入実績" columnjname="値引金額"   orteus="true" width="150"
+                     kind="<%=Kind.convertNumeric(Kind.NUMBER, Kind.Z, 14, 2, aAE0060010Struct.getROUND_TYP(), aAE0060010Struct.getVEND_DECIMAL_FIG())%>"
+                     script1="onDecision;0;SET;_NET_AMOUNT=[{_PUCH_ODR_AMOUNT}-{_DISC_AMOUNT}]"
+                     script2="onDecision;1;SET;_AMOUNT_INCLUDE_TAX=[{_NET_AMOUNT}+{_TAX_AMOUNT_1}+{_TAX_AMOUNT_2}+{_TAX_AMOUNT_3}]"
+                     script3="onDecision;2;SET;_HOME_CUR_AMOUNT=[{_AMOUNT_INCLUDE_TAX}*{_EXCH_RATE}]"
+                  ></orftextinput></td>
+                  <td><orftextinput  name="d5_VEND_CUR_UNIT" orteus="false" width="110" editable="false" text="<%= TypeConverter.sanitizer(aAE0060010Struct.getVEND_CUR_UNIT()) %>"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.HOME_CUR_AMOUNT">邦貨金額</span></td>
+                  <td><orftextinput  name="HOME_CUR_AMOUNT" tablename="T_ACPT_RSLT" columnname="HOME_CUR_AMOUNT" dbtype="number" tablejname="受入実績" columnjname="邦貨金額"   orteus="true" width="150" editable="false"
+                     kind="<%=Kind.convertNumeric(Kind.NUMBER, Kind.Z, 14, 2, aAE0060010Struct.getROUND_TYP(), aAE0060010Struct.getHOME_DECIMAL_FIG())%>"
+                  ></orftextinput></td>
+                  <td><orftextinput  name="HOME_CUR_UNIT" tablename="M_CUR" columnname="CUR_UNIT" dbtype="varchar2" tablejname="通貨" columnjname="通貨単位" orteus="true" width="110" editable="false"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.NET_AMOUNT">本体金額</span></td>
+                  <td><orftextinput  name="NET_AMOUNT" tablename="T_ACPT_RSLT" columnname="NET_AMOUNT" dbtype="number" tablejname="受入実績" columnjname="本体金額"   orteus="true" width="150"
+                     kind="<%=Kind.convertNumeric(Kind.NUMBER, Kind.Z, 14, 2, aAE0060010Struct.getROUND_TYP(), aAE0060010Struct.getVEND_DECIMAL_FIG())%>"
+                     script1="onDecision;0;SET;_DISC_AMOUNT=[{_PUCH_ODR_AMOUNT}-{_NET_AMOUNT}]"
+                     script2="onDecision;1;SET;_AMOUNT_INCLUDE_TAX=[{_NET_AMOUNT}+{_TAX_AMOUNT_1}+{_TAX_AMOUNT_2}+{_TAX_AMOUNT_3}]"
+                     script3="onDecision;2;SET;_HOME_CUR_AMOUNT=[{_AMOUNT_INCLUDE_TAX}*{_EXCH_RATE}]"
+                  ></orftextinput></td>
+                  <td><orftextinput  name="d6_VEND_CUR_UNIT" orteus="false" width="110" editable="false" text="<%= TypeConverter.sanitizer(aAE0060010Struct.getVEND_CUR_UNIT()) %>"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td required="true"><span orteus="true" mlang="true" mlkind="common" mlname="Expj.EXCH_RATE">為替レート</span></td>
+                  <td><orftextinput  name="EXCH_RATE" tablename="T_ACPT_RSLT" columnname="EXCH_RATE" dbtype="number" tablejname="受入実績" columnjname="為替レート"   orteus="true" width="150"
+                     kind="OBT_NUMBER_P;14.2;FLOOR;6" required="B"
+                     script1="onDecision;0;SET;_HOME_CUR_AMOUNT=[{_AMOUNT_INCLUDE_TAX}*{_EXCH_RATE}]"
+                  ></orftextinput></td>
+                  <td><orftextinput  name="d_HOME_CUR_UNIT" orteus="false" width="110" editable="false" text="<%= TypeConverter.sanitizer(aAE0060010Struct.getHOME_CUR_UNIT()) %>"></orftextinput></td>
+                  <td>&nbsp;</td>
+                </tr>
+				<tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ODR_CANCEL_CAUSE_CD">取消理由コード</span></td>
+                  <td><orftextinput name="ODR_CANCEL_CAUSE_CD" tablename="T_RLSD_PUCH_ODR" columnname="ODR_CANCEL_CAUSE_CD" dbtype="varchar2" tablejname="発注残" columnjname="取消理由コード" orteus="true" width="260" maxlength="64" editable="true"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orfpeeker  name="PeekerOdrCancelCauseCd" value="" pattern="none" orteus="false" width="22" attribute="BTS_PEEKER"
+                     script1="onClick;0;PEEKER;_AE0060010form2/ODR_CANCEL_CAUSE_CD@<%=contextNo%>"
+                     sqlname="ODR_CANCEL_CAUSE_CD_01" sqlparam_1="_ODR_CANCEL_CAUSE_CD"
+                  ></orfpeeker></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr> 
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DLV_CD">納品書番号</span></td>
+                  <td><orftextinput  name="DLV_CD" tablename="T_ACPT_RSLT" columnname="DLV_CD" dbtype="varchar2" tablejname="受入実績" columnjname="納品書番号"   orteus="true" width="260" maxlength="25"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACPT_RSLT_COMMENT_1">受入備考</span></td>
+                  <td><orftextinput  name="ACPT_RSLT_COMMENT" tablename="T_ACPT_RSLT" columnname="ACPT_RSLT_COMMENT" dbtype="varchar2" tablejname="受入実績" columnjname="受入実績備考"   orteus="true" width="712" maxlength="80"></orftextinput></td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td><orftextinput  name="param1" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="param2" orteus="true" visible="false"></orftextinput></td>
+                  <td><orftextinput  name="param3" orteus="true" visible="false"></orftextinput></td>
+                </tr>
+                </ornoloop> 
+              </table>
+              <!-- ここに下段メンテナンス用のDataGridを配置する。↑ -->
+            </td>
+            <td width="12" class="frame06"></td>
+          </tr>
+          <tr height="32">
+            <td width="12" class="frame07" height="32"></td>
+            <td width="769" class="frame08" height="32">　 </td>
+            <td width="60" class="frame09" height="32"></td>
+            <td width="105" class="frame10" height="32">
+              <table orftype="DataGrid" mode="BUTTON" name="AE0060010button2" width="105" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton  name="Insert" value="登録" pattern="insert" revokeCtrl="disabled"   orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnInsert" width="100"
+                     script1="onClick;0;CHK;_AE0060010detail1/PUCH_ODR_STS_TYP[eq]9@!AE05005"
+                     script2="onClick;1;CHK;_AE0060010detail1/UNIT_QTY_TYP[eq]1@*0,*1"
+                     script3="child;0;CHK;_AE0060010form2/ACPT_QTY[lt]0@#AE05019"
+                     script4="child;1;CHK;_AE0060010form2/ACPT_QTY[lt]0@#AE05018"
+                     script5="onClick;2;CHK;_AE0060010form2/ACPT_DATE[gt]_AE0060010form2/BUSINESS_OPR_DATE@#AE33111"
+                     script6="onClick;3;CHK;_AE0060010form2/h_DATE_FLG[eq]0@*11,*12"
+                     script7="onClick;4;CHK;_AE0060010form2/EXCH_RATE[lte]0@#AE00059"
+                     script8="onClick;5;CHK;_AE0060010form2/c_COMPLETE[neq]true[and][{_AE0060010form2/ACPT_QTY}+{_AE0060010detail1/SUM_ACPT_QTY}][gt]_AE0060010detail1/PUCH_ODR_QTY@$AE05043"
+                     script9="onClick;6;CHK;_AE0060010form2/c_COMPLETE[eq]true[and]_AE0060010form2/c_CANCEL[neq]true[and][{_AE0060010form2/ACPT_QTY}+{_AE0060010detail1/SUM_ACPT_QTY}][lt]_AE0060010detail1/PUCH_ODR_QTY@$AE05044"
+                     script10="onClick;7;CHK;_AE0060010form2/c_COMPLETE[eq]true[and]_AE0060010form2/c_CANCEL[neq]true[and][{_AE0060010form2/ACPT_QTY}+{_AE0060010detail1/SUM_ACPT_QTY}][gt]_AE0060010detail1/PUCH_ODR_QTY@$AE05045"
+                     script11="onClick;8;CHK;~TO_YYYY_MM(_AE0060010form2/ACPT_DATE)[lt]~TO_YYYY_MM(_AE0060010form2/BUSINESS_OPR_DATE)@$AE05007"
+                     script12="onClick;9;CHK;_AE0060010form2/SelectUnitCostFlag[eq]false@$AE00062"
+                     script13="onClick;10;CHK;_AE0060010form2/UNIT_COST[lt][{_AE0060010form2/PROCESSING_COST}+{_AE0060010form2/MATERIAL_COST}+{_AE0060010form2/OTHER_OVERHEADS}]@$AE00066"
+                     script14="onClick;11;CHK;_AE0060010form1/INSTALL_FLG[eq]1[and]_AE0060010detail1/SPL_ITEM_TYP[neq]2@*2"
+                     script15="child;2;CHK;_AE0060010form1/THIS_MONTH[gt]~TO_YYYY_MM(_AE0060010form2/ACPT_DATE)@$AE00156"
+					 script16="onClick;12;CHK;_AE0060010form2/ACPT_QTY[numeq]0.0[and]_AE0060010form2/LOT_NO[neq]@#AE20617"
+					 script17="onClick;13;CHK;_AE0060010form2/LOT_NO[neq][and]_AE0060010detail1/NON_NO_ITEM_FLG[eq]1@#AE20608"
+					 script18="onClick;14;CHK;_AE0060010form2/LOT_NO[neq][and]_AE0060010form2/h_LOT_CTRL_FLG[neq]1@#AE20601"
+					 script19="onClick;15;CHK;_AE0060010form2/c_CANCEL[neq]true[and]_AE0060010form2/h_LOT_CTRL_FLG[eq]1[and]_AE0060010form1/h_LOTCTRL[eq]true@*3"
+					 script20="child;3;CHK;_AE0060010form2/h_WORK_ODR_CD[eq]@*4,*5"
+					 script21="child;4;CHK;_AE0060010form2/h_LOT_NUMBERING_TYP[eq]0[and]_AE0060010detail1/NON_NO_ITEM_FLG[neq]1[and]_AE0060010form2/LOT_NO[eq][and]_AE0060010form2/ACPT_QTY[numneq]0@#AE20600"
+					 script22="child;5;CHK;_AE0060010form2/LOT_NO[neq]@*6,*7"
+					 script23="child;6;CHK;_AE0060010form2/h_FINAL_PROC_CD[neq]1@#AE20602"
+					 script24="child;7;CHK;_AE0060010form2/h_LOT_NUMBERING_TYP[eq]0[and]_AE0060010detail1/NON_NO_ITEM_FLG[neq]1[and]_AE0060010form2/h_FINAL_PROC_CD[eq]1[and]_AE0060010form2/ACPT_QTY[numneq]0@#AE20600"
+					 script25="onClick;16;CHK;_AE0060010form2/c_CANCEL[neq]true[and]_AE0060010form2/h_LOT_CTRL_FLG[eq]1[and]_AE0060010form1/h_LOTCTRL[eq]true@*8"
+					 script26="child;8;CHK;_AE0060010form2/LOT_NO[eq][and]_AE0060010detail1/NON_NO_ITEM_FLG[neq]1[and]_AE0060010form2/ACPT_QTY[numneq]0[and]_AE0060010form2/h_LOT_NUMBERING_TYP[neq]0@*9"
+					 script27="child;9;CHK;_AE0060010form2/h_WORK_ODR_CD[eq]@$AE20613,*10"
+					 script28="child;10;CHK;_AE0060010form2/h_FINAL_PROC_CD[eq]1@$AE20613"
+                     script29="onClick;17;SUBMIT;_AE0060010form1/*,_AE0060010form2/*,_AE0060010detail1/*@AE0060010Servlet,,$ZZ07001"
+					 script30="child;11;CHK;_AE0060010detail1/PUCH_ODR_SLIP_ISS_DATE[gt]_AE0060010form2/ACPT_DATE@#AE05006"
+					 script31="child;12;CHK;_AE0060010detail1/PUCH_ODR_SLIP_ISS_DATE[gt]_AE0060010form2/ACPT_DATE@#AE05078"
+                     lock="1"
+                  ></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+            <td width="12" class="frame11" height="32"></td>
+          </tr>
+        </table>
+      </td>
+      <td width="5"></td>
+    </tr>
+    <tr height="5">
+      <td colspan="3" width="968" height="5"></td>
+    </tr>
+    <tr height="42">
+      <td colspan="3" width="968" height="42" class="under">
+        <table width="968" border="0">
+          <tr>
+            <td align="left" width="548"></td>
+            <td align="right" width="420">
+              <table orftype="DataGrid" mode="BUTTON" name="AE0060010button0" width="420" height="22" border="1" cellspacing="0" cellpadding="0">
+                <orloophead>
+                <tr bgcolor="#ccff99">
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                  <td width="105">&nbsp;</td>
+                </tr>
+                </orloophead><ornoloop>
+                <tr>
+                  <td><orfbutton name="CancelComplete" value="完了解除" pattern="update" revokeCtrl="disabled"   orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCancelComplete" width="100"
+                     script1="onClick;0;CHK;_AE0060010detail1/PUCH_ODR_STS_TYP[neq]9@!AE05010"
+                     script2="onClick;1;CHK;_AE0060010detail1/ACPT_INSPC_TYP[eq]2[and]_AE0060010detail1/INSPC_CMPLT_FLG[eq]1@!AE20135"
+                     script3="onClick;2;SUBMIT;_AE0060010form1/*,_AE0060010detail1/*@AE0060010Servlet,,$AE05011"
+                     lock="1"
+                  ></orfbutton></td>
+                  <td><orfbutton name="CancelOdrCancel" value="取消解除" pattern="update"  revokeCtrl="disabled"  orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnCancelOdrCancel" width="100"
+                     script1="onClick;0;SUBMIT;_AE0060010form1/*,_AE0060010detail1/*@AE0060010Servlet,,$AE00088"
+                     lock="1"
+                  ></orfbutton></td>
+                  <td><orfbutton  name="Clear" value="クリア" pattern="none" orteus="true" mlang="true" mlkind="common" mlname="Expj.BtnClear" width="100"
+                     script1="onClick;0;SUBMIT;@AE0060010Servlet,,$ZZ07008"
+                     lock="0"
+                  ></orfbutton></td>
+                  <td><orfbutton  name="Close" value="閉じる" pattern="none" orteus="false" mlang="true" mlkind="common" mlname="Expj.BtnClose" width="100"
+                     script1="onClick;0;CLOSE"
+                  ></orfbutton></td>
+                </tr>
+                </ornoloop>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+<table float="AE0060010float1" orftype="DataGrid" mode="DETAIL" name="AE0060010detail1" width="358" height="200" border="1" cellspacing="0" cellpadding="0">
+  <orloophead> 
+  <tr bgcolor="#ccff99"> 
+    <td width="100" align="right">&nbsp;</td>
+    <td width="200" align="left"><orfdata excell="true"></orfdata></td>
+    <td width="30" align="left">&nbsp;</td>
+    <td hidden="true">&nbsp;</td>
+  </tr>
+  </orloophead><ornoloop> 
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_CD">品目番号</span></td>
+    <td><orflabel  name="ITEM_CD_DW" tablename="T_RLSD_PUCH_ODR" columnname="ITEM_CD" dbtype="varchar2" tablejname="発注残" columnjname="品目番号"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ITEM_NAME">品目名</span></td>
+    <td><orflabel  name="ITEM_NAME_DW" tablename="M_ITEM" columnname="ITEM_NAME" dbtype="varchar2" tablejname="品目" columnjname="品目名"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.JOB_ODR_CD">製番</span></td>
+    <td><orflabel  name="JOB_ODR_CD" tablename="T_OD" columnname="JOB_ODR_CD" dbtype="varchar2" tablejname="所要量" columnjname="製番"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.DRAW_CD">図面番号</span></td>
+    <td><orflabel  name="DRAW_CD" tablename="M_ITEM" columnname="DRAW_CD" dbtype="varchar2" tablejname="品目" columnjname="図面番号"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPEC">規格</span></td>
+    <td><orflabel  name="SPEC" tablename="M_ITEM" columnname="SPEC" dbtype="varchar2" tablejname="品目" columnjname="規格"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.UNIT_QTY_TYP">在庫数単位区分</span></td>
+    <td><orflabel  name="UNIT_QTY_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td><orftextinput  name="UNIT_QTY_TYP" tablename="M_ITEM" columnname="UNIT_QTY_TYP" dbtype="number" tablejname="品目" columnjname="在庫数単位区分"   orteus="true" visible="false"></orftextinput></td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_CD">取引先コード</span></td>
+    <td><orflabel  name="VEND_CD" tablename="T_RLSD_PUCH_ODR" columnname="VEND_CD" dbtype="varchar2" tablejname="発注残" columnjname="取引先コード"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.VEND_NAME">取引先名</span></td>
+    <td><orflabel  name="VEND_NAME" tablename="M_VEND_CTRL" columnname="VEND_NAME" dbtype="varchar2" tablejname="取引先マスタ" columnjname="取引先名称"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PUCH_ODR_QTY">発注数</span></td>
+    <td align="right"><orflabel  name="PUCH_ODR_QTY" tablename="T_RLSD_PUCH_ODR" columnname="PUCH_ODR_QTY" dbtype="number" tablejname="発注残" columnjname="発注数"   orteus="true"
+       kind="<%=Kind.convertNumeric(aAE0060010Struct.getUNIT_QTY_TYP(), Kind.Z, 14, 1, Kind.FLOOR, 4)%>"
+    ></orflabel></td>
+    <td><orflabel  name="STOCK_UNIT" tablename="M_ITEM" columnname="STOCK_UNIT" dbtype="varchar2" tablejname="品目" columnjname="計量単位"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACPT_QTY_5">受入累計数</span></td>
+    <td align="right"><orflabel  name="SUM_ACPT_QTY" tablename="T_ACPT_RSLT" columnname="ACPT_QTY" dbtype="number" tablejname="受入実績" columnjname="受入数"   orteus="true"
+       kind="<%=Kind.convertNumeric(aAE0060010Struct.getUNIT_QTY_TYP(), Kind.Z, 14, 1, Kind.FLOOR, 4)%>"
+    ></orflabel></td>
+    <td><orflabel  name="d1_STOCK_UNIT" orteus="false" text="<%= TypeConverter.sanitizer(aAE0060010Struct.getSTOCK_UNIT()) %>"></orflabel></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.ACPT_INSPC_TYP">受入検査区分</span></td>
+    <td><orflabel  name="ACPT_INSPC_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td><orftextinput  name="ACPT_INSPC_TYP" tablename="T_RLSD_PUCH_ODR" columnname="ACPT_INSPC_TYP" dbtype="number" tablejname="発注残" columnjname="発注時受入検査区分"   orteus="true" visible="false"></orftextinput></td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PUCH_ODR_INST_DATE_1">発注日</span></td>
+    <td><orflabel  name="PUCH_ODR_SLIP_ISS_DATE" tablename="T_RLSD_PUCH_ODR" columnname="PUCH_ODR_SLIP_ISS_DATE" dbtype="date" tablejname="発注残" columnjname="発注伝票発行日"   orteus="true" kind="OBT_DATE;TYPE_YMD"></orflabel></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PUCH_ODR_DLV_DATE">発注納期</span></td>
+    <td><orflabel  name="PUCH_ODR_DLV_DATE" tablename="T_RLSD_PUCH_ODR" columnname="PUCH_ODR_DLV_DATE" dbtype="date" tablejname="発注残" columnjname="発注納期"   orteus="true" kind="OBT_DATE;TYPE_YMD"></orflabel></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.CONFIRM_DLV_DATE_1">取引先回答納期</span></td>
+    <td><orflabel  name="CONFIRM_DLV_DATE" tablename="T_RLSD_PUCH_ODR" columnname="CONFIRM_DLV_DATE" dbtype="date" tablejname="発注残" columnjname="回答納期"   orteus="true" kind="OBT_DATE;TYPE_YMD"></orflabel></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.WORK_IN_PROC_CD_1">作業コード</span></td>
+    <td><orflabel  name="WORK_IN_PROC_CD" tablename="T_RLSD_PUCH_ODR" columnname="WORK_IN_PROC_CD" dbtype="varchar2" tablejname="発注残" columnjname="仕掛作業コード"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PROC_NAME">作業名</span></td>
+    <td><orflabel  name="PROC_NAME" tablename="T_WORK_IN_PROC_BY_PROC" columnname="PROC_NAME" dbtype="varchar2" tablejname="作業系列別仕掛" columnjname="仕掛作業名"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PUCH_ODR_PERSON">発注担当者コード</span></td>
+    <td><orflabel  name="PUCH_ODR_PERSON" tablename="T_RLSD_PUCH_ODR" columnname="PUCH_ODR_PERSON" dbtype="varchar2" tablejname="発注残" columnjname="発注担当者"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.USER_NAME">発注担当者名</span></td>
+    <td><orflabel  name="USER_NAME" tablename="USER_MST" columnname="USER_NAME" dbtype="varchar2" tablejname="ユーザマスタ" columnjname="ユーザ名"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PUCH_ODR_STS_TYP">発注状態区分</span></td>
+    <td><orflabel  name="PUCH_ODR_STS_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td><orflabel  name="PUCH_ODR_STS_TYP" tablename="T_RLSD_PUCH_ODR" columnname="PUCH_ODR_STS_TYP" dbtype="number" tablejname="発注残" columnjname="発注状態区分"   orteus="true" visible="false"></orflabel></td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.INSPC_CMPLT_FLG">検査完了フラグ</span></td>
+    <td><orflabel  name="INSPC_CMPLT_FLG_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td><orflabel  name="INSPC_CMPLT_FLG" tablename="T_RLSD_PUCH_ODR" columnname="INSPC_CMPLT_FLG" dbtype="number" tablejname="発注残" columnjname="検査完了フラグ"   orteus="true" visible="false"></orflabel></td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.SPL_ITEM_TYP">受給品区分</span></td>
+    <td><orflabel  name="SPL_ITEM_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td><orflabel  name="SPL_ITEM_TYP" tablename="T_RLSD_PUCH_ODR" columnname="SPL_ITEM_TYP" dbtype="number" tablejname="発注残" columnjname="受給品区分"   orteus="true" visible="false"></orflabel></td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PRODUCT_TYP">製品区分</span></td>
+    <td><orflabel  name="PRODUCT_TYP_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td><orflabel  name="PRODUCT_TYP" tablename="M_ITEM" columnname="PRODUCT_TYP" dbtype="number" tablejname="品目" columnjname="製品区分"   orteus="true" visible="false"></orflabel></td>
+  </tr>
+  <tr>
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.NON_NO_ITEM_FLG">備品発注フラグ</span></td>
+    <td><orflabel  name="NON_NO_ITEM_FLG_DN" tablename="SYS_TYPE_VALUE" columnname="DISPLAY_NAME" dbtype="varchar2" tablejname="コンボボックスデータ" columnjname="表示説明"   orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td><orflabel  name="NON_NO_ITEM_FLG" tablename="T_RLSD_PUCH_ODR" columnname="NON_NO_ITEM_FLG" dbtype="number" tablejname="発注残" columnjname="備品発注フラグ"   orteus="true" visible="false"></orflabel></td>
+  </tr>
+  <tr> 
+    <td><span orteus="true" mlang="true" mlkind="common" mlname="Expj.PUCH_ODR_COMMENT">発注備考</span></td>
+    <td><orflabel  name="PUCH_ODR_COMMENT" tablename="T_RLSD_PUCH_ODR" columnname="PUCH_ODR_COMMENT" dbtype="varchar2" tablejname="発注残" columnjname="発注備考" orteus="true"></orflabel></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  </ornoloop> 
+</table>
+<%
+MessageStruct msgStruct = aAE0060010Control.getMsgStruct();
+%>
+<%@include file="common/SetServerMessage.jsp" %>
+</body>
+</html>

@@ -1,0 +1,1 @@
+var APVERSION     = "EXPLANNER/J Ver4.0.9 (Powered By OrteusStudio Ver3.1.2)";           // Application Version
